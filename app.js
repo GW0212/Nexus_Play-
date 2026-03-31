@@ -638,6 +638,9 @@ async function steamspyFetch(params) {
   const {request, tag, appid} = params;
 
   // ── 1순위: 로컬 JSON (GitHub Actions 갱신) ──
+  if (request === 'mostplayed') {
+    const d = await loadLocalData('mostplayed.json'); if (d) return d;
+  }
   if (request === 'top100in2weeks') {
     const d = await loadLocalData('hot.json'); if (d) return d;
   }
@@ -1143,19 +1146,21 @@ async function loadHotGames(silent = false) {
     gridEl.innerHTML = '';
   }
 
-  const [ccuData, positiveData, ownedData] = await Promise.all([
-    steamspyFetch({request:'top100in2weeks'}),
-    steamspyFetch({request:'top100forever'}),
-    steamspyFetch({request:'top100owned'}),
+  const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.all([
+    steamspyFetch({request:'mostplayed'}).catch(()=>null),
+    steamspyFetch({request:'top100in2weeks'}).catch(()=>null),
+    steamspyFetch({request:'top100forever'}).catch(()=>null),
+    steamspyFetch({request:'top100owned'}).catch(()=>null),
   ]);
 
-  const ccuList = normalizeSteamList(ccuData);
+  const mostPlayedList = normalizeSteamList(mostPlayedData);
+  const ccuList = mostPlayedList.length ? mostPlayedList : normalizeSteamList(hot2WeeksData);
   const positiveList = normalizeSteamList(positiveData);
   const ownedList = normalizeSteamList(ownedData);
   const normalized = {
     ccu: ccuList,
     positive: positiveList,
-    average_2weeks: uniqueByAppId([...ccuList, ...ownedList]),
+    average_2weeks: normalizeSteamList(hot2WeeksData).length ? normalizeSteamList(hot2WeeksData) : uniqueByAppId([...ccuList, ...ownedList]),
   };
 
   if (!normalized.ccu.length && !normalized.positive.length && !normalized.average_2weeks.length) {
@@ -1171,7 +1176,13 @@ async function loadHotGames(silent = false) {
       positive: normalized.positive.length ? [...normalized.positive].sort((a,b)=>(b.positive||0)-(a.positive||0)) : [],
       average_2weeks: normalized.average_2weeks.length ? [...normalized.average_2weeks].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)) : [],
     };
-    if (!silent && statusEl) statusEl.className = 'hot-status hidden';
+    if (!silent && statusEl) {
+      statusEl.textContent = mostPlayedList.length
+        ? '✅ Steam 차트 실시간 인기 데이터를 기준으로 표시 중입니다.'
+        : '✅ Steam 데이터를 기준으로 표시 중입니다.';
+      statusEl.className = 'hot-status';
+      setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 2200);
+    }
   }
 
   if (!silent) {
