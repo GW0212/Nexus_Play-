@@ -1986,10 +1986,11 @@ function getScoreLabel(pos, neg) {
 function steamThumb(id)    { return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
 function steamThumbAlt(id) { return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
-function makeSteamCard(app, rank) {
+function makeSteamCard(app, rank, options = {}) {
   const tags = Object.keys(app.tags || {}).slice(0, 4);
   const ccu  = formatCCU(app.ccu);
   const score = getScoreLabel(app.positive||0, app.negative||0);
+  const showLive = options.showLive !== false;
   return `
     <a class="steam-card" href="https://store.steampowered.com/app/${app.appid}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
@@ -2000,7 +2001,7 @@ function makeSteamCard(app, rank) {
       <div class="steam-card-body">
         <div class="steam-card-title">${app.name||''}</div>
         <div class="steam-card-stats">
-          ${ccu  ? `<div class="steam-stat steam-stat-live"><span class="steam-stat-dot"></span>${ccu} 플레이 중</div>` : ''}
+          ${showLive && ccu ? `<div class="steam-stat steam-stat-live"><span class="steam-stat-dot"></span>${ccu} 플레이 중</div>` : ''}
           ${score ? `<div class="steam-stat" style="color:${score.color}">${score.text}</div>` : ''}
         </div>
         <div class="steam-card-tags">${tags.map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
@@ -2276,7 +2277,7 @@ function applyGenreGrid(list, genre) {
     ? list.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
     : list;
   gridEl.innerHTML = filtered.length
-    ? filtered.map(app=>makeSteamCard(app,null)).join('')
+    ? filtered.map(app=>makeSteamCard(app,null,{ showLive:false })).join('')
     : `<div class="grid-empty" style="grid-column:1/-1">${genre} 검색 결과 없음</div>`;
 }
 
