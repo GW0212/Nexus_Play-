@@ -2,7 +2,7 @@ name: Fetch Steam Data
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -109,7 +109,7 @@ jobs:
                 genre: tags.join(', '),
                 _source: 'steam_charts'
               });
-              await new Promise(resolve => setTimeout(resolve, 150));
+              await new Promise(resolve => setTimeout(resolve, 80));
             }
 
             fs.writeFileSync('data/mostplayed.json', JSON.stringify(merged, null, 2));
