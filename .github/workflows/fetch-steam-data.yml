@@ -2,7 +2,7 @@ name: Fetch Steam Data
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -113,7 +113,7 @@ jobs:
             }
 
             fs.writeFileSync('data/mostplayed.json', JSON.stringify(merged, null, 2));
-            console.log(`Saved data/mostplayed.json with ${merged.length} items`);
+            console.log(`Saved data/mostplayed.json with ${merged.length} items from Steam current players chart`);
           })().catch(err => {
             console.error(err);
             fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
