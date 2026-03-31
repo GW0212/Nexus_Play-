@@ -2,8 +2,8 @@ name: Fetch Steam Data
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # 매일 오전 6시 (UTC) 자동 실행
-  workflow_dispatch:       # 수동 실행 버튼
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
   fetch:
@@ -14,9 +14,110 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch SteamSpy Data
+      - name: Fetch Steam datasets
         run: |
           mkdir -p data/tags
+
+          echo "Fetching official Steam most played chart..."
+          node <<'NODE'
+          const fs = require('fs');
+
+          async function getJson(url, opts = {}) {
+            const res = await fetch(url, {
+              headers: {
+                'user-agent': 'Mozilla/5.0 (compatible; NexusPlayBot/1.0)',
+                'accept': 'application/json,text/plain,*/*'
+              },
+              ...opts
+            });
+            if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+            return await res.json();
+          }
+
+          function extractRanks(payload) {
+            const ranks = payload?.response?.ranks || payload?.response?.items || payload?.ranks || payload?.items || [];
+            return Array.isArray(ranks) ? ranks : [];
+          }
+
+          function toNum(...vals) {
+            for (const v of vals) {
+              const n = Number(v);
+              if (Number.isFinite(n) && n > 0) return n;
+            }
+            return 0;
+          }
+
+          function pickGenres(detail) {
+            const genres = Array.isArray(detail?.genres) ? detail.genres.map(g => g?.description).filter(Boolean) : [];
+            const cats = Array.isArray(detail?.categories) ? detail.categories.map(c => c?.description).filter(Boolean) : [];
+            return Array.from(new Set([...genres, ...cats])).slice(0, 8);
+          }
+
+          (async () => {
+            let chart;
+            try {
+              chart = await getJson('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json');
+            } catch (e) {
+              console.error('Most played endpoint failed:', e.message);
+              fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
+              process.exit(0);
+            }
+
+            const ranks = extractRanks(chart).slice(0, 100)
+              .map((row, idx) => ({
+                appid: Number(row.appid || row.app_id || row.id || row.appID),
+                rank: Number(row.rank || row.position || idx + 1),
+                ccu: toNum(
+                  row.concurrent_in_game,
+                  row.current_players,
+                  row.player_count,
+                  row.in_game,
+                  row.ccu,
+                  row.peak_in_game,
+                  row.peak_today
+                )
+              }))
+              .filter(r => Number.isFinite(r.appid) && r.appid > 0);
+
+            const merged = [];
+            for (let i = 0; i < ranks.length; i += 20) {
+              const batch = ranks.slice(i, i + 20);
+              const ids = batch.map(x => x.appid).join(',');
+              try {
+                const detailPayload = await getJson(`https://store.steampowered.com/api/appdetails?appids=${ids}&l=english&cc=us`);
+                for (const item of batch) {
+                  const raw = detailPayload?.[String(item.appid)];
+                  const detail = raw?.success ? raw.data : null;
+                  if (!detail || detail.type !== 'game') continue;
+                  const tags = pickGenres(detail);
+                  merged.push({
+                    appid: item.appid,
+                    name: detail.name || `App ${item.appid}`,
+                    developer: Array.isArray(detail.developers) ? detail.developers.join(', ') : '',
+                    ccu: item.ccu,
+                    positive: 0,
+                    negative: 0,
+                    average_2weeks: 0,
+                    rank: item.rank,
+                    tags: Object.fromEntries(tags.map(t => [t, 1])),
+                    tags_list: tags,
+                    genre: tags.join(', '),
+                    _source: 'steam_charts'
+                  });
+                }
+              } catch (e) {
+                console.error('Appdetails batch failed:', e.message);
+              }
+            }
+
+            fs.writeFileSync('data/mostplayed.json', JSON.stringify(merged, null, 2));
+            console.log(`Saved data/mostplayed.json with ${merged.length} items`);
+          })().catch(err => {
+            console.error(err);
+            fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
+            process.exit(0);
+          });
+          NODE
 
           echo "Fetching top 100 games (2 weeks)..."
           curl -s --max-time 30 \
@@ -28,7 +129,11 @@ jobs:
             "https://steamspy.com/api.php?request=top100forever" \
             -o data/top100.json || echo '{}' > data/top100.json
 
-          # Fetch tag data for each genre
+          echo "Fetching top 100 owned games..."
+          curl -s --max-time 30 \
+            "https://steamspy.com/api.php?request=top100owned" \
+            -o data/top100owned.json || echo '{}' > data/top100owned.json
+
           declare -A TAGS=(
             ["FPS"]="FPS"
             ["RPG"]="RPG"
