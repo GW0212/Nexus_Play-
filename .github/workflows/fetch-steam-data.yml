@@ -79,35 +79,37 @@ jobs:
               }))
               .filter(r => Number.isFinite(r.appid) && r.appid > 0);
 
-            const merged = [];
-            for (let i = 0; i < ranks.length; i += 20) {
-              const batch = ranks.slice(i, i + 20);
-              const ids = batch.map(x => x.appid).join(',');
+            async function getAppDetails(appid) {
               try {
-                const detailPayload = await getJson(`https://store.steampowered.com/api/appdetails?appids=${ids}&l=english&cc=us`);
-                for (const item of batch) {
-                  const raw = detailPayload?.[String(item.appid)];
-                  const detail = raw?.success ? raw.data : null;
-                  if (!detail || detail.type !== 'game') continue;
-                  const tags = pickGenres(detail);
-                  merged.push({
-                    appid: item.appid,
-                    name: detail.name || `App ${item.appid}`,
-                    developer: Array.isArray(detail.developers) ? detail.developers.join(', ') : '',
-                    ccu: item.ccu,
-                    positive: 0,
-                    negative: 0,
-                    average_2weeks: 0,
-                    rank: item.rank,
-                    tags: Object.fromEntries(tags.map(t => [t, 1])),
-                    tags_list: tags,
-                    genre: tags.join(', '),
-                    _source: 'steam_charts'
-                  });
-                }
+                const detailPayload = await getJson(`https://store.steampowered.com/api/appdetails?appids=${appid}&l=english&cc=us`);
+                const raw = detailPayload?.[String(appid)];
+                return raw?.success ? raw.data : null;
               } catch (e) {
-                console.error('Appdetails batch failed:', e.message);
+                console.error(`Appdetails failed for ${appid}:`, e.message);
+                return null;
               }
+            }
+
+            const merged = [];
+            for (const item of ranks) {
+              const detail = await getAppDetails(item.appid);
+              if (!detail || detail.type !== 'game') continue;
+              const tags = pickGenres(detail);
+              merged.push({
+                appid: item.appid,
+                name: detail.name || `App ${item.appid}`,
+                developer: Array.isArray(detail.developers) ? detail.developers.join(', ') : '',
+                ccu: item.ccu,
+                positive: 0,
+                negative: 0,
+                average_2weeks: 0,
+                rank: item.rank,
+                tags: Object.fromEntries(tags.map(t => [t, 1])),
+                tags_list: tags,
+                genre: tags.join(', '),
+                _source: 'steam_charts'
+              });
+              await new Promise(resolve => setTimeout(resolve, 150));
             }
 
             fs.writeFileSync('data/mostplayed.json', JSON.stringify(merged, null, 2));
