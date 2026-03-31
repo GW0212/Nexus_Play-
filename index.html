@@ -1201,6 +1201,7 @@ body {
             <button class="hot-sort-btn" onclick="setHotSort('average_2weeks')">⏱ 최근 2주 플레이타임</button>
           </div>
         </div>
+        <div class="genre-pills" id="hot-genre-pills" style="margin-bottom:14px"></div>
         <div id="hot-status" class="hot-status">Steam 데이터 불러오는 중...</div>
         <div class="hot-grid" id="hot-grid"></div>
       </div>
@@ -1710,8 +1711,10 @@ let genreSearch = '';
 let steamRecLoaded = false;
 let hotLoaded = false;
 let hotSortBy = 'ccu';
-let _hotRawData = null;
+let hotGenreFilter = '전체';
+let _hotRawData = { ccu: [], positive: [], average_2weeks: [] };
 let _steamGenreCache = {};
+let _prefetchStarted = false;
 
 // ── Data: Local-first, then SteamSpy API ──
 // GitHub Actions가 매일 data/ 폴더의 JSON을 갱신함
@@ -1738,13 +1741,47 @@ const TAG_FILE_MAP = {
   'Roguelike':'Roguelike','Co-op':'Co-op','Multiplayer':'Multiplayer',
 };
 
+const _sessionDataCache = new Map();
+
+function normalizeSteamList(data) {
+  if (!data) return [];
+  const list = Array.isArray(data) ? data : Object.values(data);
+  return list.filter(a => a && (a.appid || a.id) && (a.name || a.title)).map(a => ({
+    ...a,
+    appid: Number(a.appid || a.id),
+    name: a.name || a.title,
+    developer: a.developer || a.dev || '',
+    tags: a.tags || Object.fromEntries(((a.tags_list || a.tags || []) || []).slice ? (a.tags_list || a.tags || []).slice(0,6).map(t => [t, 1]) : []),
+  }));
+}
+
+function normalizeGenreItem(item, genre) {
+  if (!item) return null;
+  if (item.appid || item.name) return { ...item, appid: Number(item.appid), name: item.name || '', _source: item._source || 'steam' };
+  if (!(item.id && item.title)) return null;
+  return {
+    appid: Number(item.id),
+    name: item.title,
+    developer: item.dev || '',
+    ccu: item.ccu ?? Math.round((item.rating || 7) * 3200),
+    positive: item.positive ?? Math.round((item.rating || 7) * 10000),
+    negative: item.negative ?? Math.max(10, Math.round((10 - (item.rating || 7)) * 700)),
+    average_2weeks: item.average_2weeks ?? Math.round((item.rating || 7) * 90),
+    tags: Object.fromEntries((item.tags || []).slice(0, 6).map(t => [t, 1])),
+    _source: 'local',
+    _genre: genre || item.genre || '전체'
+  };
+}
+
 async function loadLocalData(path) {
   if (!DATA_BASE) return null;
+  if (_sessionDataCache.has(path)) return _sessionDataCache.get(path);
   try {
-    const res = await fetch(DATA_BASE + path, { cache: 'no-cache' });
+    const res = await fetch(DATA_BASE + path, { cache: 'force-cache' });
     if (!res.ok) return null;
     const d = await res.json();
     if (!d || d._note || Object.keys(d).length < 5) return null;
+    _sessionDataCache.set(path, d);
     return d;
   } catch { return null; }
 }
@@ -1758,6 +1795,9 @@ async function steamspyFetch(params) {
   }
   if (request === 'top100forever') {
     const d = await loadLocalData('top100.json'); if (d) return d;
+  }
+  if (request === 'top100owned') {
+    const d = await loadLocalData('top100owned.json'); if (d) return d;
   }
   if (request === 'tag' && tag) {
     const f = TAG_FILE_MAP[tag];
@@ -1774,13 +1814,34 @@ async function steamspyFetch(params) {
   for (const base of PROXIES) {
     try {
       const url = base + (base.includes('?') ? '&' : '?') + qs;
-      const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+      const res = await fetch(url, { signal: AbortSignal.timeout(6000), cache: 'force-cache' });
       if (!res.ok) continue;
       const d = await res.json();
       if (d && typeof d === 'object' && !d.error && !d._note) return d;
     } catch { /* next proxy */ }
   }
   return null;
+}
+
+function uniqueByAppId(list) {
+  const seen = new Set();
+  return list.filter(item => {
+    const id = Number(item.appid || item.id);
+    if (!id || seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+}
+
+async function prefetchCoreData() {
+  if (_prefetchStarted) return;
+  _prefetchStarted = true;
+  const genresToWarm = ['전체', 'FPS', 'RPG', '액션', '어드벤처', '전략'];
+  Promise.allSettled([
+    loadHotGames(true),
+    loadSteamRecommendations(),
+    ...genresToWarm.map(g => loadSteamGenreData(g, { silent: true }))
+  ]);
 }
 
 
@@ -2005,19 +2066,19 @@ async function loadSteamRecommendations() {
   const moreEl = document.getElementById('more-grid');
   if (!heroEl || !moreEl) return;
 
-  const tags = getTopTags(5);
+  const tags = getTopTags(8);
   if (!tags.length) return;
 
   moreEl.innerHTML = '<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 맞춤 추천 검색 중...</div></div>';
 
-  const results = await Promise.all(
-    tags.map((tag, ti) =>
-      steamspyFetch({request:'tag', tag}).then(d=>({d,w:tags.length-ti})).catch(()=>({d:null,w:0}))
-    )
-  );
+  const [owned, forever, ...tagResults] = await Promise.all([
+    steamspyFetch({request:'top100owned'}).catch(()=>null),
+    steamspyFetch({request:'top100forever'}).catch(()=>null),
+    ...tags.map((tag, ti) => steamspyFetch({request:'tag', tag}).then(d=>({d,w:tags.length-ti})).catch(()=>({d:null,w:0})))
+  ]);
 
   const map = {};
-  results.forEach(({d,w}) => {
+  tagResults.forEach(({d,w}) => {
     if (!d) return;
     Object.values(d).forEach(app => {
       if (!app.appid || !app.name) return;
@@ -2030,12 +2091,24 @@ async function loadSteamRecommendations() {
     });
   });
 
-  const sorted = Object.values(map).sort((a,b)=>b._score-a._score).slice(0,60);
+  [owned, forever].forEach((dataset, idx) => {
+    if (!dataset) return;
+    Object.values(dataset).forEach((app, rank) => {
+      if (!app.appid || !app.name) return;
+      if (selectedIds.includes(Number(app.appid))) return;
+      const k = app.appid;
+      if (!map[k]) map[k] = {...app, _score:0};
+      map[k]._score += idx === 0 ? Math.max(0, 120 - rank) * 0.18 : Math.max(0, 120 - rank) * 0.14;
+      map[k]._score += Math.log1p(app.owners || 0) * 0.6;
+    });
+  });
+
+  const sorted = Object.values(map).sort((a,b)=>b._score-a._score).slice(0,120);
   if (!sorted.length) {
     // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
     const local = getLocalRecommendations();
     renderHeroGrid(local.slice(0,3));
-    renderMoreGrid(local.slice(3,30));
+    renderMoreGrid(local.slice(3,60));
     const hs = document.getElementById('hero-grid')?.closest('.rec-hero');
     if (hs && !hs.querySelector('.rec-source-badge')) {
       const b = document.createElement('div');
@@ -2070,11 +2143,10 @@ async function loadSteamRecommendations() {
       </div>
     </div>`).join('');
 
-  moreEl.innerHTML = sorted.slice(3,60).map(app=>makeSteamCard(app,null)).join('');
+  moreEl.innerHTML = sorted.slice(3,120).map(app=>makeSteamCard(app,null)).join('');
 }
 
 // ── Genre tab ──
-const ORDERED_GENRES = ['전체','FPS','RPG','액션','어드벤처','전략','시뮬레이션','공호','서바이벌','격투','스포츠','샌드박스','인디','레이싱'];
 const ORDERED_GENRES2 = ['전체','FPS','RPG','액션','어드벤처','전략','시뮬레이션','공포','서바이벌','격투','스포츠','샌드박스','인디','레이싱'];
 
 function renderGenreTab() {
@@ -2087,6 +2159,18 @@ function renderGenreTab() {
   loadSteamGenreData(currentGenreFilter);
 }
 
+function applyGenreGrid(list, genre) {
+  const gridEl = document.getElementById('genre-grid');
+  if (!gridEl) return;
+  const q = genreSearch.toLowerCase();
+  const filtered = q
+    ? list.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
+    : list;
+  gridEl.innerHTML = filtered.length
+    ? filtered.map(app=>makeSteamCard(app,null)).join('')
+    : `<div class="grid-empty" style="grid-column:1/-1">${genre} 검색 결과 없음</div>`;
+}
+
 function setGenreFilter(g) {
   currentGenreFilter = g;
   document.querySelectorAll('.genre-pill').forEach(b =>
@@ -2094,61 +2178,69 @@ function setGenreFilter(g) {
   loadSteamGenreData(g);
 }
 
-async function loadSteamGenreData(genre) {
+async function loadSteamGenreData(genre, opts = {}) {
   const gridEl = document.getElementById('genre-grid');
-  if (!gridEl) return;
+  if (!gridEl && !opts.silent) return [];
 
-  const q = genreSearch.toLowerCase();
-  if (_steamGenreCache[genre]) {
-    const filtered = q
-      ? _steamGenreCache[genre].filter(a=>(a.name||'').toLowerCase().includes(q)||Object.keys(a.tags||{}).some(t=>t.toLowerCase().includes(q)))
-      : _steamGenreCache[genre];
-    gridEl.innerHTML = filtered.length
-      ? filtered.map(app=>makeSteamCard(app,null)).join('')
-      : '<div class="grid-empty" style="grid-column:1/-1">검색 결과 없음</div>';
-    return;
+  if (_steamGenreCache[genre]?.length) {
+    if (!opts.silent) applyGenreGrid(_steamGenreCache[genre], genre);
+    return _steamGenreCache[genre];
   }
 
-  gridEl.innerHTML = `<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 ${genre==='전체'?'전체':genre} 게임 불러오는 중...</div></div>`;
+  if (!opts.silent && gridEl) {
+    gridEl.innerHTML = `<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 ${genre==='전체'?'전체':genre} 게임 불러오는 중...</div></div>`;
+  }
 
-  const tags = GENRE_STEAM_TAGS[genre] || ['Action'];
-  const results = await Promise.all(tags.slice(0,3).map(tag=>steamspyFetch({request:'tag',tag}).catch(()=>null)));
+  const tags = genre === '전체'
+    ? ['Action','RPG','Adventure','Simulation','Strategy','Indie']
+    : (GENRE_STEAM_TAGS[genre] || ['Action']);
+  const results = await Promise.all(tags.slice(0,6).map(tag=>steamspyFetch({request:'tag',tag}).catch(()=>null)));
 
   const merged = {};
   results.forEach(d=>{
     if(!d) return;
     Object.values(d).forEach(app=>{
       if(!app.appid||!app.name) return;
-      if(!merged[app.appid]) merged[app.appid]={...app,_cnt:0};
+      if(!merged[app.appid]) merged[app.appid]={...app,_cnt:0,_source:'steam'};
       merged[app.appid]._cnt++;
     });
   });
 
-  const sorted = Object.values(merged)
-    .sort((a,b)=>(b._cnt-a._cnt)||((b.ccu||0)-(a.ccu||0)))
-    .slice(0,120);
+  let sorted = Object.values(merged)
+    .sort((a,b)=>(b._cnt-a._cnt)||((b.ccu||0)-(a.ccu||0))||((b.positive||0)-(a.positive||0)))
+    .slice(0,240)
+    .map(app => normalizeGenreItem(app, genre))
+    .filter(Boolean);
 
+  const localFallback = GAMES_CLEAN
+    .filter(g => genre === '전체' || g.genre === genre)
+    .map(g => normalizeGenreItem(g, genre))
+    .filter(Boolean);
+
+  sorted = uniqueByAppId([...sorted, ...localFallback]);
   _steamGenreCache[genre] = sorted;
 
-  const filtered = q ? sorted.filter(a=>(a.name||'').toLowerCase().includes(q)) : sorted;
-  if (!filtered.length && !q) {
-    // Steam 로드 실패 시 내장 게임으로 폴백
-    const fallback = GAMES_CLEAN.filter(g =>
-      genre === '전체' || g.genre === genre
-    );
-    gridEl.innerHTML = fallback.length
-      ? fallback.map((g,i) => makeGameCard(g, i*0.02)).join('')
-      : '<div class="grid-empty" style="grid-column:1/-1">게임 없음</div>';
-    return;
-  }
-  gridEl.innerHTML = filtered.length
-    ? filtered.map(app=>makeSteamCard(app,null)).join('')
-    : '<div class="grid-empty" style="grid-column:1/-1">검색 결과 없음</div>';
+  if (!opts.silent) applyGenreGrid(sorted, genre);
+  return sorted;
 }
 
 function renderGenreGrid() { loadSteamGenreData(currentGenreFilter); }
 
 // ── Hot tab ──
+function renderHotGenrePills() {
+  const el = document.getElementById('hot-genre-pills');
+  if (!el) return;
+  el.innerHTML = ORDERED_GENRES2.map(g =>
+    `<button class="genre-pill ${g==='전체'?'':genreClass(g)} ${g===hotGenreFilter?'active':''}" onclick="setHotGenreFilter('${g}')">${g}</button>`
+  ).join('');
+}
+
+function setHotGenreFilter(g) {
+  hotGenreFilter = g;
+  renderHotGenrePills();
+  renderHotGrid();
+}
+
 function setHotSort(by) {
   hotSortBy = by;
   document.querySelectorAll('.hot-sort-btn').forEach((b,i)=>
@@ -2156,50 +2248,94 @@ function setHotSort(by) {
   renderHotGrid();
 }
 
-async function loadHotGames() {
+function buildHotFallback() {
+  const base = GAMES_CLEAN.map((g,i) => normalizeGenreItem({
+    id: g.id, title: g.title, dev: g.dev, tags: g.tags,
+    ccu: Math.round(((g.rating||7) ** 2) * 900 + Math.max(0, 5000 - i * 11)),
+    positive: Math.round(((g.rating||7) ** 2) * 2200 + (2026 - (g.year||2020)) * 30),
+    negative: Math.max(5, Math.round((10-(g.rating||7)) * 900)),
+    average_2weeks: Math.round((11 - (g.rating||7)) * 35 + ((g.year||2020) >= 2022 ? 260 : 40) + (i % 17) * 4),
+    genre: g.genre
+  }, g.genre));
+  return {
+    ccu: [...base].sort((a,b)=>(b.ccu||0)-(a.ccu||0)),
+    positive: [...base].sort((a,b)=>((b.positive||0)-(a.positive||0))||((a.negative||0)-(b.negative||0))),
+    average_2weeks: [...base].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)),
+  };
+}
+
+async function loadHotGames(silent = false) {
+  if (hotLoaded && _hotRawData && (_hotRawData.ccu?.length || _hotRawData.positive?.length || _hotRawData.average_2weeks?.length)) {
+    if (!silent) {
+      renderHotGenrePills();
+      renderHotGrid();
+    }
+    return _hotRawData;
+  }
+
   hotLoaded = true;
   const statusEl = document.getElementById('hot-status');
   const gridEl = document.getElementById('hot-grid');
-  if (!statusEl||!gridEl) return;
-  statusEl.textContent = '🔄 Steam 실시간 인기 게임 불러오는 중...';
-  statusEl.className = 'hot-status';
-  gridEl.innerHTML = '';
-
-  const data = await steamspyFetch({request:'top100in2weeks'});
-
-  if (!data||!Object.keys(data).length) {
-    // GitHub Actions 데이터 없으면 내장 게임 목록 사용
-    statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못했습니다 — 내장 게임 목록으로 표시합니다. (repo에 .github/workflows/fetch-steam.yml을 추가하면 실시간 데이터가 표시됩니다)';
+  if (!silent && statusEl && gridEl) {
+    statusEl.textContent = '🔄 Steam 실시간 인기 게임 불러오는 중...';
     statusEl.className = 'hot-status';
-    setTimeout(()=>{statusEl.className='hot-status hidden'},6000);
-    // rating 기반으로 정렬 (높은 평점 순) - 정렬 버튼 무효화
-    _hotRawData = [...GAMES_CLEAN]
-      .sort((a,b) => (b.rating||7)-(a.rating||7))
-      .map((g,i) => ({
-        appid: g.id, name: g.title, developer: g.dev,
-        // ccu를 rating + position으로 차별화 (정렬 시 순서 달라짐)
-        ccu: Math.round((g.rating||7) * 8000 - i * 50),
-        positive: Math.round((g.rating||7) * 12000),
-        negative: Math.round((10-(g.rating||7)) * 1500),
-        average_2weeks: Math.round((g.rating||7) * 120 - i * 2),
-        tags: Object.fromEntries((g.tags||[]).slice(0,5).map(t=>[t,1])),
-      }));
-    renderHotGrid(); return;
+    gridEl.innerHTML = '';
   }
 
-  _hotRawData = Object.values(data).filter(a=>a.appid&&a.name);
-  statusEl.className = 'hot-status hidden';
-  renderHotGrid();
+  const [ccuData, positiveData, ownedData] = await Promise.all([
+    steamspyFetch({request:'top100in2weeks'}),
+    steamspyFetch({request:'top100forever'}),
+    steamspyFetch({request:'top100owned'}),
+  ]);
+
+  const ccuList = normalizeSteamList(ccuData);
+  const positiveList = normalizeSteamList(positiveData);
+  const ownedList = normalizeSteamList(ownedData);
+  const normalized = {
+    ccu: ccuList,
+    positive: positiveList,
+    average_2weeks: uniqueByAppId([...ccuList, ...ownedList]),
+  };
+
+  if (!normalized.ccu.length && !normalized.positive.length && !normalized.average_2weeks.length) {
+    _hotRawData = buildHotFallback();
+    if (!silent && statusEl) {
+      statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못해 내장 카탈로그 인기 순위로 표시합니다.';
+      statusEl.className = 'hot-status';
+      setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 5000);
+    }
+  } else {
+    _hotRawData = {
+      ccu: normalized.ccu.length ? [...normalized.ccu].sort((a,b)=>(b.ccu||0)-(a.ccu||0)) : [],
+      positive: normalized.positive.length ? [...normalized.positive].sort((a,b)=>(b.positive||0)-(a.positive||0)) : [],
+      average_2weeks: normalized.average_2weeks.length ? [...normalized.average_2weeks].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)) : [],
+    };
+    if (!silent && statusEl) statusEl.className = 'hot-status hidden';
+  }
+
+  if (!silent) {
+    renderHotGenrePills();
+    renderHotGrid();
+  }
+  return _hotRawData;
 }
 
 function renderHotGrid() {
   const gridEl = document.getElementById('hot-grid');
-  if (!gridEl||!_hotRawData) return;
-  let sorted = [..._hotRawData];
-  if (hotSortBy==='ccu') sorted.sort((a,b)=>(b.ccu||0)-(a.ccu||0));
-  else if (hotSortBy==='positive') sorted.sort((a,b)=>(b.positive||0)-(a.positive||0));
-  else if (hotSortBy==='average_2weeks') sorted.sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0));
-  gridEl.innerHTML = sorted.slice(0,100).map((app,i)=>makeSteamCard(app,i+1)).join('');
+  if (!gridEl || !_hotRawData) return;
+  let list = [...(_hotRawData[hotSortBy] || [])];
+  if (hotGenreFilter !== '전체') {
+    list = list.filter(app => {
+      const tags = Object.keys(app.tags || {}).map(t => t.toLowerCase());
+      const genreText = `${app._genre || ''} ${(app.genre || '')}`.toLowerCase();
+      if ((app._genre || app.genre) === hotGenreFilter) return true;
+      const aliases = (GENRE_STEAM_TAGS[hotGenreFilter] || []).map(t => t.toLowerCase());
+      return aliases.some(alias => tags.includes(alias) || genreText.includes(alias));
+    });
+  }
+  gridEl.innerHTML = list.length
+    ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1)).join('')
+    : '<div class="grid-empty" style="grid-column:1/-1">해당 조건의 인기 게임이 없습니다.</div>';
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -2213,17 +2349,16 @@ function showTab(tab) {
   document.querySelectorAll('.nav-tab').forEach((b,i)=>
     b.classList.toggle('active',(i===0&&tab==='rec')||(i===1&&tab==='genre')||(i===2&&tab==='hot')));
   if (tab==='genre') renderGenreTab();
-  if (tab==='hot'&&!hotLoaded) loadHotGames();
+  if (tab==='hot') loadHotGames();
 }
 
 async function renderApp() {
   steamRecLoaded = false;
-  _steamGenreCache = {};
   const local = getLocalRecommendations();
   renderHeroGrid(local.slice(0,3));
-  renderMoreGrid(local.slice(3,15));
+  renderMoreGrid(local.slice(3,30));
   showTab('rec');
-  loadSteamRecommendations();
+  prefetchCoreData();
 }
 
 function startApp() {
@@ -2232,7 +2367,9 @@ function startApp() {
   document.getElementById('onboarding').classList.remove('active');
   document.getElementById('app').classList.add('active');
   renderApp();
+  prefetchCoreData();
 }
+
 
 function goHome() {
   document.getElementById('onboarding').classList.remove('active');
@@ -2241,11 +2378,12 @@ function goHome() {
   renderApp();
 }
 
+
 function resetApp() {
   localStorage.removeItem(STORAGE_KEY);
   selectedIds=[]; currentObFilter='전체'; currentGenreFilter='전체';
-  obSearch=''; genreSearch=''; steamRecLoaded=false; hotLoaded=false;
-  _hotRawData=null; _steamGenreCache={};
+  obSearch=''; genreSearch=''; steamRecLoaded=false; hotLoaded=false; hotGenreFilter='전체';
+  _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _prefetchStarted=false;
   const si=document.getElementById('ob-search'); if(si) si.value='';
   const gi=document.getElementById('genre-search'); if(gi) gi.value='';
   updateObUI(); renderObFilter(); renderObGrid();
