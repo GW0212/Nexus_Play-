@@ -1122,11 +1122,63 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 .theme-btn.active{color:var(--text);background:linear-gradient(135deg, rgba(0,229,255,0.14), rgba(124,58,237,0.18));box-shadow:inset 0 0 0 1px rgba(0,229,255,0.18),var(--glow)}
 .theme-btn:hover{color:var(--text)}
 .empty-note{display:flex;align-items:center;justify-content:center;min-height:180px;padding:24px;border:1px dashed var(--border2);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
-:root[data-theme="light"] .section-label, :root[data-theme="light"] .steam-badge, :root[data-theme="light"] .nav-tab, :root[data-theme="light"] .reset-btn, :root[data-theme="light"] .theme-toggle-group, :root[data-theme="light"] .genre-pill, :root[data-theme="light"] .hot-sort-btn, :root[data-theme="light"] .ob-filter-btn, :root[data-theme="light"] .game-card, :root[data-theme="light"] .hero-card, :root[data-theme="light"] .steam-card, :root[data-theme="light"] .more-recs, :root[data-theme="light"] .rec-hero, :root[data-theme="light"] .genre-tab-content, :root[data-theme="light"] .hot-tab-content {box-shadow:0 14px 34px rgba(15,23,42,0.08)}
-:root[data-theme="light"] .steam-card, :root[data-theme="light"] .game-card, :root[data-theme="light"] .hero-card, :root[data-theme="light"] .more-recs, :root[data-theme="light"] .rec-hero, :root[data-theme="light"] .genre-tab-content, :root[data-theme="light"] .hot-tab-content {border-color:rgba(15,23,42,0.14)!important;background:linear-gradient(180deg, rgba(255,255,255,0.99), rgba(245,248,253,0.99))}
+:root[data-theme="light"] .section-label, :root[data-theme="light"] .steam-badge, :root[data-theme="light"] .nav-tab, :root[data-theme="light"] .reset-btn, :root[data-theme="light"] .theme-toggle-group, :root[data-theme="light"] .genre-pill, :root[data-theme="light"] .hot-sort-btn, :root[data-theme="light"] .ob-filter-btn {box-shadow:none}
+:root[data-theme="light"] .game-card, :root[data-theme="light"] .hero-card, :root[data-theme="light"] .steam-card {box-shadow:0 2px 12px rgba(15,23,42,0.08)}
+:root[data-theme="light"] .steam-card, :root[data-theme="light"] .game-card, :root[data-theme="light"] .hero-card {border-color:rgba(15,23,42,0.12)!important;background:#fff}
+:root[data-theme="light"] .more-recs, :root[data-theme="light"] .rec-hero, :root[data-theme="light"] .genre-tab-content, :root[data-theme="light"] .hot-tab-content {background:transparent;border-color:transparent!important;box-shadow:none}
 :root[data-theme="light"] .steam-card-title, :root[data-theme="light"] .game-card-title, :root[data-theme="light"] .hero-title, :root[data-theme="light"] .nav-logo {color:#0f172a!important;-webkit-text-fill-color:initial;text-shadow:none}
 :root[data-theme="light"] .steam-card-dev, :root[data-theme="light"] .game-card-dev, :root[data-theme="light"] .ob-subtitle, :root[data-theme="light"] .hero-dev, :root[data-theme="light"] .steam-card-link, :root[data-theme="light"] .game-card-link, :root[data-theme="light"] .steam-stat, :root[data-theme="light"] .section-label, :root[data-theme="light"] .hot-status, :root[data-theme="light"] .grid-empty {color:#334155!important}
 :root[data-theme="light"] .tag-pill {background:#e2e8f0;color:#1e293b;border-color:rgba(15,23,42,0.10)}
+:root[data-theme="light"] .ob-card-overlay{background:linear-gradient(to top, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.4) 45%, transparent 80%)}
+:root[data-theme="light"] .ob-card-title{color:#0f172a;text-shadow:none}
+:root[data-theme="light"] .ob-card-genre{color:#475569}
+:root[data-theme="light"] .ob-card-meta-row{color:#64748b}
+:root[data-theme="light"] .ob-card{border-color:rgba(15,23,42,0.10);background:#fff}
+:root[data-theme="light"] .ob-card.selected{border-color:var(--accent);background:#f0fdff}
+:root[data-theme="light"] .ob-card.selected .ob-card-overlay{background:linear-gradient(to top, rgba(224,247,250,0.9) 0%, rgba(255,255,255,0.4) 45%, transparent 80%)}
+:root[data-theme="light"] .hero-card-overlay{background:linear-gradient(to top, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.35) 45%, transparent 100%)}
+:root[data-theme="light"] .hero-title{color:#0f172a!important;text-shadow:none}
+:root[data-theme="light"] .hero-genre-badge{background:rgba(15,23,42,0.08);color:#334155}
+:root[data-theme="light"] .hero-rating{color:#d97706}
+:root[data-theme="light"] .hero-dev{color:#475569}
+:root[data-theme="light"] .ob-footer{background:linear-gradient(to top, rgba(238,243,251,0.98) 70%, transparent)}
+:root[data-theme="light"] .ob-header{color:#0f172a}
+:root[data-theme="light"] .ob-title{background:linear-gradient(135deg, #0f172a 20%, #0f766e 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+:root[data-theme="light"] .ob-logo{color:#0f766e}
+:root[data-theme="light"] .ob-tip{background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.15)}
+:root[data-theme="light"] #onboarding{background:var(--bg)}
+:root[data-theme="light"] #onboarding::before{background:radial-gradient(ellipse 70% 50% at 30% -5%, rgba(124,58,237,0.06) 0%, transparent 60%),radial-gradient(ellipse 50% 40% at 85% 90%, rgba(0,229,255,0.04) 0%, transparent 55%)}
+:root[data-theme="light"] .ob-search-inner,:root[data-theme="light"] .genre-search-inner{background:#fff;border-color:rgba(15,23,42,0.15)}
+:root[data-theme="light"] .ob-search,:root[data-theme="light"] .genre-search{color:#0f172a}
+:root[data-theme="light"] .ob-filter-btn{background:rgba(15,23,42,0.04);color:#475569;border-color:rgba(15,23,42,0.12)}
+:root[data-theme="light"] .ob-filter-btn:hover{background:rgba(124,58,237,0.06);color:#6d28d9;border-color:rgba(124,58,237,0.3)}
+:root[data-theme="light"] .ob-filter-btn.active{background:linear-gradient(135deg, rgba(124,58,237,0.6), rgba(0,229,255,0.25));color:#fff}
+:root[data-theme="light"] .genre-pill{background:rgba(15,23,42,0.04);color:#475569;border-color:rgba(15,23,42,0.12)}
+:root[data-theme="light"] .nav-tabs{background:#f1f5f9;border-color:rgba(15,23,42,0.1)}
+:root[data-theme="light"] .nav-tab{color:#475569}
+:root[data-theme="light"] .nav-tab.active{background:#fff;color:#0f172a;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+:root[data-theme="light"] .steam-badge{background:#f8fafc;border-color:rgba(15,23,42,0.1);color:#475569}
+:root[data-theme="light"] .reset-btn{color:#475569;border-color:rgba(15,23,42,0.15)}
+:root[data-theme="light"] .reset-btn:hover{color:#dc2626;border-color:rgba(220,38,38,0.4);background:rgba(220,38,38,0.05)}
+:root[data-theme="light"] .theme-toggle-group{background:rgba(15,23,42,0.04);border-color:rgba(15,23,42,0.12)}
+:root[data-theme="light"] .theme-btn.active{background:linear-gradient(135deg, rgba(0,229,255,0.1), rgba(124,58,237,0.12));color:#0f172a;box-shadow:inset 0 0 0 1px rgba(0,229,255,0.15)}
+:root[data-theme="light"] .modal{background:#fff;border-color:rgba(15,23,42,0.15)}
+:root[data-theme="light"] .modal-overlay{background:rgba(15,23,42,0.5)}
+:root[data-theme="light"] .modal-hero::after{background:linear-gradient(to top, #fff 0%, transparent 60%)}
+:root[data-theme="light"] .modal-title{color:#0f172a}
+:root[data-theme="light"] .modal-desc{color:#475569}
+:root[data-theme="light"] .modal-stat{background:#f8fafc;border-color:rgba(15,23,42,0.1)}
+:root[data-theme="light"] .modal-stat-value{color:#0f172a}
+:root[data-theme="light"] .game-card-body{background:#fff}
+:root[data-theme="light"] .steam-card-body{background:#fff}
+:root[data-theme="light"] .steam-card-footer{border-top-color:rgba(15,23,42,0.08);background:#fafbfd}
+:root[data-theme="light"] .game-card-footer{background:#fafbfd}
+:root[data-theme="light"] .steam-card-link,:root[data-theme="light"] .game-card-link{color:#0891b2;background:rgba(8,145,178,0.06);border-color:rgba(8,145,178,0.2)}
+:root[data-theme="light"] .steam-link{color:#0891b2;background:rgba(8,145,178,0.06);border-color:rgba(8,145,178,0.2)}
+:root[data-theme="light"] .rec-source-badge{background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.15);color:#7c3aed}
+:root[data-theme="light"] .hot-sort-btn{background:rgba(15,23,42,0.04);color:#475569;border-color:rgba(15,23,42,0.12)}
+:root[data-theme="light"] .hot-sort-btn.active{background:linear-gradient(135deg, rgba(0,229,255,0.1), rgba(124,58,237,0.1));color:#0891b2;border-color:rgba(0,229,255,0.3)}
+:root[data-theme="light"] .empty-note{border-color:rgba(15,23,42,0.12);background:rgba(248,250,252,0.8)}
 
 @media (max-width:980px){.navbar{height:auto;min-height:72px;padding:12px 14px;gap:12px;flex-wrap:wrap;justify-content:space-between}.nav-tabs{order:3;width:100%;justify-content:space-between;overflow-x:auto;padding-bottom:2px}.nav-tab{flex:1 0 auto;text-align:center}.nav-right{margin-left:auto;flex-wrap:wrap;justify-content:flex-end}}
 @media (max-width:600px){.navbar{padding:10px 12px}.nav-logo{font-size:1.1rem}.nav-tabs{gap:6px}.nav-tab{font-size:0.75rem;padding:8px 10px}.theme-toggle-group{order:2;width:100%;justify-content:center}.theme-btn{flex:1;text-align:center}.reset-btn{width:100%;justify-content:center}.steam-badge{display:none}.section-title{font-size:2rem;line-height:1.02}.hot-controls{width:100%}.hot-sort-btn{flex:1;min-width:0;padding:8px 10px;font-size:0.72rem}.genre-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.genre-pill{flex:0 0 auto;white-space:nowrap}.steam-card-title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:2.3em}.steam-card-body{padding:9px 9px 8px}.steam-card-footer{padding:6px 9px 9px;gap:8px}.steam-card-dev{max-width:95px}.game-grid,.hot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:10px}.main-content{padding:16px 12px 28px}.rec-hero,.genre-tab-content,.hot-tab-content,.more-recs{padding:16px 12px}}
@@ -1233,10 +1285,17 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
         <div class="section-label">STEAM LIVE DATA</div>
         <div class="hot-header">
           <h2 class="section-title">실시간 인기 게임</h2>
-          <div class="hot-controls">
-            <button class="hot-sort-btn active" onclick="setHotSort('ccu')">🎮 현재 플레이어 수</button>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <div id="hot-refresh-timer" style="font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--text-muted);display:flex;align-items:center;gap:6px">
+              <span class="steam-stat-dot" style="width:5px;height:5px;border-radius:50%;background:var(--success);display:inline-block;animation:glowPulse 2s ease-in-out infinite"></span>
+              <span id="hot-refresh-text">10분마다 자동 갱신</span>
+            </div>
+            <button class="hot-sort-btn" onclick="forceRefreshHot()" style="font-size:0.72rem;padding:5px 12px">🔄 새로고침</button>
           </div>
         </div>
+        <div class="hot-controls" style="margin-bottom:12px">
+            <button class="hot-sort-btn active" onclick="setHotSort('ccu')">🎮 현재 플레이어 수</button>
+          </div>
         <div class="genre-pills" id="hot-genre-pills" style="margin-bottom:14px"></div>
         <div id="hot-status" class="hot-status">Steam 데이터 불러오는 중...</div>
         <div class="hot-grid" id="hot-grid"></div>
@@ -1978,17 +2037,17 @@ function uniqueByAppId(list) {
 
 const HOT_SORT_OPTIONS = ['ccu'];
 const GENRE_MATCHERS = {
-  'FPS': ['fps','first-person shooter','shooter','hero shooter','extraction shooter'],
+  'FPS': ['fps','first-person shooter','hero shooter','extraction shooter'],
   'RPG': ['rpg','jrpg','action rpg','crpg','party-based rpg','turn-based rpg'],
-  '액션': ['action','action-adventure','hack and slash',"beat 'em up"],
+  '액션': ['action-adventure','hack and slash',"beat 'em up",'action'],
   '어드벤처': ['adventure','story rich','visual novel','exploration','narrative'],
   '전략': ['strategy','turn-based strategy','real time strategy','4x','grand strategy','tower defense'],
   '시뮬레이션': ['simulation','management','city builder','life sim','automation'],
   '공포': ['horror','survival horror','psychological horror'],
-  '서바이벌': ['survival','open world survival craft','crafting'],
-  '격투': ['fighting','martial arts','versus',"beat 'em up"],
-  '스포츠': ['sports','soccer','football','basketball','baseball','tennis','hockey'],
-  '샌드박스': ['sandbox','base building','building','crafting','voxel','colony sim'],
+  '서바이벌': ['survival','open world survival craft'],
+  '격투': ['fighting','martial arts','versus'],
+  '스포츠': ['sports','soccer','football','basketball','baseball','tennis','hockey','golf'],
+  '샌드박스': ['sandbox','base building','building','voxel','colony sim'],
   '인디': ['indie','indie game'],
   '레이싱': ['racing','driving','automobile sim','rally'],
 };
@@ -2001,10 +2060,7 @@ function normalizeTextList(app) {
 function matchesGenreApp(app, genre) {
   if (!app || genre === '전체') return true;
   const primary = resolvePrimaryGenre(app);
-  if (primary === genre) return true;
-  const haystack = normalizeTextList(app).join(' | ');
-  const aliases = (GENRE_MATCHERS[genre] || []).map(v => v.toLowerCase());
-  return aliases.some(alias => haystack.includes(alias));
+  return primary === genre;
 }
 function clearLiveDataCache() {
   _sessionDataCache.clear();
@@ -2012,6 +2068,7 @@ function clearLiveDataCache() {
 }
 function maybeRefreshLiveData(force = false) {
   clearLiveDataCache();
+  window.__nexusLastRefresh = Date.now();
   if (force || currentTab === 'hot') loadHotGames(true).then(() => { if (currentTab === 'hot') renderHotGrid(); });
   if (force || currentTab === 'genre') loadSteamGenreData(currentGenreFilter, { force: true, silent: currentTab !== 'genre' }).then(() => {
     if (currentTab === 'genre') applyGenreGrid(_steamGenreCache[currentGenreFilter] || [], currentGenreFilter);
@@ -2020,6 +2077,25 @@ function maybeRefreshLiveData(force = false) {
 function initLiveAutoRefresh() {
   if (window.__nexusLiveRefresh) return;
   window.__nexusLiveRefresh = setInterval(() => maybeRefreshLiveData(true), LIVE_REFRESH_MS);
+  window.__nexusLastRefresh = Date.now();
+  // Update countdown timer every second
+  window.__nexusCountdown = setInterval(() => {
+    const el = document.getElementById('hot-refresh-text');
+    if (!el || currentTab !== 'hot') return;
+    const elapsed = Date.now() - (window.__nexusLastRefresh || Date.now());
+    const remaining = Math.max(0, LIVE_REFRESH_MS - elapsed);
+    const mins = Math.floor(remaining / 60000);
+    const secs = Math.floor((remaining % 60000) / 1000);
+    el.textContent = `다음 갱신: ${mins}분 ${String(secs).padStart(2,'0')}초`;
+  }, 1000);
+}
+function forceRefreshHot() {
+  hotLoaded = false;
+  clearLiveDataCache();
+  window.__nexusLastRefresh = Date.now();
+  const el = document.getElementById('hot-refresh-text');
+  if (el) el.textContent = '갱신 중...';
+  loadHotGames(false);
 }
 function applyThemeButtons() {
   const root = document.documentElement;
@@ -2058,29 +2134,116 @@ const THUMB_OVERRIDES = {
   "Marvel's Spider-Man: Miles Morales": { appid:1817190 },
   "EA SPORTS FC 26": { appid:3405690 },
   "EA SPORTS FC™ 26": { appid:3405690 },
+  "EA SPORTS FC 25": { appid:2669320 },
+  "EA SPORTS FC™ 25": { appid:2669320 },
   "Football Manager 26": { appid:3551340 },
+  "Football Manager 2026": { appid:3551340 },
+  "Football Manager 2025": { appid:2252570 },
+  "Football Manager 2024": { appid:2252570 },
   "NBA 2K26": { appid:3472040 },
+  "NBA 2K25": { appid:2688840 },
   "NBA 2K24": { appid:2338770 },
   "Heartopia": { appid:4025700 },
   "The Seven Deadly Sins: Origin": { appid:3679080 },
   "〈The Seven Deadly Sins: Origin〉": { appid:3679080 },
   "Battlefield 6": { appid:2622380 },
-  "Battlefield™ 6": { appid:2622380 }
+  "Battlefield™ 6": { appid:2622380 },
+  "Battlefield V": { appid:1238810 },
+  "Battlefield™ V": { appid:1238810 },
+  "Battlefield 1": { appid:1238840 },
+  "Battlefield™ 1": { appid:1238840 },
+  "F1 24": { appid:2488620 },
+  "F1® 24": { appid:2488620 },
+  "F1 23": { appid:2108330 },
+  "F1® 23": { appid:2108330 },
+  "Madden NFL 26": { appid:3414400 },
+  "Madden NFL 25": { appid:2583180 },
+  "NHL 25": { appid:2769170 },
+  "NHL™ 25": { appid:2769170 },
+  "PGA TOUR 2K25": { appid:2813220 },
+  "PGA TOUR 2K23": { appid:1588010 },
+  "TopSpin 2K25": { appid:1785650 },
+  "WWE 2K25": { appid:2882430 },
+  "WWE 2K24": { appid:2199460 },
+  "eFootball 2025": { appid:1665460 },
+  "eFootball™ 2025": { appid:1665460 },
+  "eFootball 2024": { appid:1665460 },
+  "eFootball™ 2024": { appid:1665460 },
+  "TEKKEN 8": { appid:1778820 },
+  "Tekken 8": { appid:1778820 },
+  "Street Fighter 6": { appid:1364780 },
+  "Street Fighter™ 6": { appid:1364780 },
+  "Need for Speed Unbound": { appid:1846380 },
+  "Need for Speed™ Unbound": { appid:1846380 },
+  "STAR WARS Jedi: Survivor": { appid:1774580 },
+  "STAR WARS Jedi: Survivor™": { appid:1774580 },
+  "Star Wars Outlaws": { appid:2842070 },
+  "Dragon Ball: Sparking! ZERO": { appid:1790600 },
+  "DRAGON BALL: Sparking! ZERO": { appid:1790600 },
+  "Monster Hunter Wilds": { appid:2246340 },
+  "MONSTER HUNTER WILDS": { appid:2246340 },
+  "Satisfactory": { appid:526870 },
+  "Path of Exile 2": { appid:2694490 },
+  "Warhammer 40,000: Space Marine 2": { appid:2183900 },
+  "Black Myth: Wukong": { appid:2358720 },
+  "Ghost of Tsushima DIRECTOR'S CUT": { appid:2215430 },
+  "Civilization VII": { appid:1295660 },
+  "Sid Meier's Civilization VII": { appid:1295660 },
+  "Sid Meier's Civilization® VII": { appid:1295660 },
+  "Marvel Rivals": { appid:2767030 },
+  "Delta Force": { appid:2612830 },
+  "Palworld": { appid:1623730 },
+  "Enshrouded": { appid:1203620 },
+  "Helldivers 2": { appid:553850 },
+  "HELLDIVERS™ 2": { appid:553850 },
+  "Wuthering Waves": { appid:2685760 },
+  "The First Descendant": { appid:2074920 },
+  "Once Human": { appid:2139460 },
+  "Forza Motorsport": { appid:2440510 },
+  "Forza Horizon 5": { appid:1551360 },
+  "Microsoft Flight Simulator 2024": { appid:2537590 },
+  "Microsoft Flight Simulator": { appid:1250410 },
 };
 const EXACT_GENRE_OVERRIDES = {
-  3405690: '스포츠',
-  3551340: '스포츠',
-  3472040: '스포츠',
-  2338770: '스포츠',
-  4025700: '시뮬레이션',
-  3679080: 'RPG',
-  1326470: '공포',
-  2622380: 'FPS',
+  3405690: '스포츠',   // EA SPORTS FC 26
+  3551340: '스포츠',   // Football Manager 26
+  3472040: '스포츠',   // NBA 2K26
+  2338770: '스포츠',   // NBA 2K24
+  2688840: '스포츠',   // NBA 2K25
+  2252570: '스포츠',   // Football Manager 2024
+  2669320: '스포츠',   // EA SPORTS FC 25
+  1665460: '스포츠',   // eFootball
+  1588010: '스포츠',   // PGA TOUR 2K23
+  1785650: '스포츠',   // TopSpin 2K25
+  2813220: '스포츠',   // PGA TOUR 2K25
+  2882430: '스포츠',   // WWE 2K25
+  2199460: '스포츠',   // WWE 2K24
+  2108330: '스포츠',   // F1 23
+  2488620: '스포츠',   // F1 24
+  4025700: '시뮬레이션', // Heartopia
+  3679080: 'RPG',      // The Seven Deadly Sins: Origin
+  1326470: '공포',     // Sons of the Forest
+  2622380: 'FPS',      // Battlefield 6
+  1238810: 'FPS',      // Battlefield V
+  1238840: 'FPS',      // Battlefield 1
+  2246340: 'RPG',      // Monster Hunter Wilds
+  553850:  'FPS',      // Helldivers 2
+  1364780: '격투',     // Street Fighter 6
+  1778820: '격투',     // TEKKEN 8
+  1790600: '격투',     // Dragon Ball Sparking ZERO
+  2767030: 'FPS',      // Marvel Rivals
+  2612830: 'FPS',      // Delta Force
+  1551360: '레이싱',   // Forza Horizon 5
+  2440510: '레이싱',   // Forza Motorsport
+  1250410: '시뮬레이션', // Microsoft Flight Simulator
+  2537590: '시뮬레이션', // Microsoft Flight Simulator 2024
+  1295660: '전략',     // Civilization VII
 };
 function normalizeTitleKey(v='') {
   return String(v)
     .replace(/[™®©]/g, '')
     .replace(/[〈〉<>]/g, '')
+    .replace(/\s*[:：]\s*/g, ': ')
     .replace(/\s+/g, ' ')
     .trim()
     .toLowerCase();
@@ -2090,7 +2253,13 @@ const THUMB_OVERRIDES_NORMALIZED = Object.fromEntries(
 );
 
 const POPULAR_GAME_IDS = new Set([
-  730,570,578080,1172470,1245620,1086940,271590,1174180,381210,440,252490,550,4000,289070,620,582010,292030,1091500,367520,413150,359550,553850,107410,431960,3240220,236390,1144200,1085660,1172470,252490,105600,2357570,440,227300
+  730,570,578080,1172470,1245620,1086940,271590,1174180,381210,440,252490,550,4000,289070,620,582010,292030,1091500,367520,413150,359550,553850,107410,431960,3240220,236390,1144200,1085660,252490,105600,2357570,440,227300,
+  // 추가 인기 게임
+  1623730,2358720,2215430,1817070,1593500,2379780,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,814380,374320,1145360,632470,435150,1113000,1687950,1462040,782330,546560,548430,1237970,581320,553850,1361210,671860,393380,686810,
+  883710,952060,418370,412020,214490,282140,1693980,275850,1604030,648800,815370,962130,1172620,1426210,1332010,753640,646570,632360,
+  2246340,2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,
+  // 스포츠/레이싱 인기
+  3405690,3551340,3472040,2669320,2488620,2882430,1665460
 ]);
 
 function resolvePrimaryGenre(app) {
@@ -2100,7 +2269,7 @@ function resolvePrimaryGenre(app) {
   const local = getGameById(appid);
   if (local?.genre) return local.genre;
   const haystack = normalizeTextList(app).join(' | ');
-  const genreOrder = ['FPS','RPG','액션','어드벤처','전략','공포','서바이벌','격투','스포츠','샌드박스','시뮬레이션','레이싱','인디'];
+  const genreOrder = ['FPS','격투','스포츠','레이싱','공포','서바이벌','RPG','전략','시뮬레이션','샌드박스','어드벤처','액션','인디'];
   for (const genre of genreOrder) {
     const aliases = (GENRE_MATCHERS[genre] || []).map(v => v.toLowerCase());
     if (aliases.some(alias => haystack.includes(alias))) return genre;
@@ -2154,11 +2323,17 @@ function makeSteamCard(app, rank, options = {}) {
   const ccu  = formatCCU(app.ccu);
   const score = getScoreLabel(app.positive||0, app.negative||0);
   const showLive = options.showLive === true;
+  const thumbId = resolveSteamThumbId(app, app.name);
+  const imgSrc = steamThumb(app, app.name);
+  const fallback1 = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
+  const fallback2 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg`;
+  const fallback3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
+  const fallback4 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_231x87.jpg`;
   return `
     <a class="steam-card" href="https://store.steampowered.com/app/${app.appid}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
-        <img class="steam-card-img" src="${steamThumb(app, app.name)}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
-             onerror="if(this.dataset.fallback==='1'){this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${resolveSteamThumbId(app, app.name)}/header.jpg';this.dataset.fallback='2';this.onerror=function(){this.remove()}}else{this.src='${steamThumbAlt(app, app.name)}';this.dataset.fallback='1'}">
+        <img class="steam-card-img" src="${imgSrc}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
+             onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${fallback1}'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='${fallback2}'}else if(this.dataset.fb==='2'){this.dataset.fb='3';this.src='${fallback3}'}else if(this.dataset.fb==='3'){this.dataset.fb='4';this.src='${fallback4}'}else{this.style.display='none'}">
         ${rank ? `<div class="steam-card-rank">${rank}</div>` : ''}
       </div>
       <div class="steam-card-body">
@@ -2311,12 +2486,24 @@ function getLocalRecommendations() {
     genreW[g.genre] = (genreW[g.genre]||0) + 3;
     (g.tags||[]).forEach(t => { tagW[t] = (tagW[t]||0)+1; });
   });
+  const currentYear = new Date().getFullYear();
   return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
     .map(g => {
       let s = (genreW[g.genre]||0)*4 + 1.2;
       (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2; });
-      s += (g.rating||7)*0.45;
+      s += (g.rating||7)*0.8;
+      // 최신 게임 보너스 (2020년 이후 출시작 우대)
+      if (g.year) {
+        const age = currentYear - g.year;
+        if (age <= 2) s += 6;
+        else if (age <= 4) s += 3;
+        else if (age <= 6) s += 1;
+        else s -= Math.min(3, (age - 6) * 0.4);
+      }
+      // 높은 평점 보너스
+      if ((g.rating||0) >= 9.0) s += 4;
+      else if ((g.rating||0) >= 8.5) s += 2;
       return {...g, _score:s};
     })
     .sort((a,b) => b._score - a._score);
@@ -2377,8 +2564,8 @@ async function loadSteamRecommendations() {
   });
 
   const sorted = Object.values(map)
-    .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 1000 || (app.owners||0) >= 1000000 || (app.positive||0) >= 5000)
-    .map(app => ({ ...app, _score: app._score + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 18 : 0) + Math.log1p(app.ccu||0) * 1.6 + Math.log1p(app.positive||0) * 0.25 }))
+    .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 500 || (app.owners||0) >= 500000 || (app.positive||0) >= 3000)
+    .map(app => ({ ...app, _score: app._score + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 25 : 0) + Math.log1p(app.ccu||0) * 2.2 + Math.log1p(app.positive||0) * 0.4 + Math.log1p(app.owners||0) * 0.3 }))
     .sort((a,b)=>b._score-a._score)
     .slice(0,120);
   if (!sorted.length) {
@@ -2405,20 +2592,23 @@ async function loadSteamRecommendations() {
     hs.insertBefore(b, hs.firstChild);
   }
 
-  heroEl.innerHTML = sorted.slice(0,3).map((app,i)=>`
+  heroEl.innerHTML = sorted.slice(0,3).map((app,i)=>{
+    const thumbId = resolveSteamThumbId(app, app.name);
+    return `
     <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${app.appid}','_blank')" style="animation-delay:${i*0.08}s">
-      <img src="${steamThumb(app, app.name)}" alt="${app.name}" onerror="this.src='${steamThumbAlt(app, app.name)}';this.onerror=null">
+      <img src="${steamThumb(app, app.name)}" alt="${app.name}"
+           onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg'}else{this.dataset.fb='3';this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'}">
       <div class="hero-card-overlay">
         <div class="hero-rank">${i+1}</div>
         <div class="hero-title">${app.name}</div>
         <div class="hero-meta">
-          ${formatCCU(app.ccu)?`<div class="hero-rating" style="color:var(--success)">🎮 ${formatCCU(app.ccu)} 플레이 중</div>`:''}
           <div class="hero-dev">${app.developer||''}</div>
         </div>
         <div class="hero-tags">${Object.keys(app.tags||{}).slice(0,3).map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
         <a href="https://store.steampowered.com/app/${app.appid}" target="_blank" class="steam-link" onclick="event.stopPropagation()">Steam에서 보기</a>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   moreEl.innerHTML = sorted.slice(3,120).map(app=>makeSteamCard(app,null,{ showLive:false })).join('');
 }
@@ -2571,6 +2761,7 @@ async function loadHotGames(silent = false) {
   }
 
   if (!silent) {
+    window.__nexusLastRefresh = Date.now();
     renderHotGenrePills();
     renderHotGrid();
   }
@@ -2585,7 +2776,7 @@ function renderHotGrid() {
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
   if (statusEl) statusEl.className = 'hot-status hidden';
   gridEl.innerHTML = list.length
-    ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1)).join('')
+    ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 게임이 없습니다.'}</div>`;
 }
 
