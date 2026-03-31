@@ -1097,6 +1097,30 @@ body {
   animation: fadeIn 0.3s ease;
 }
 
+
+
+:root[data-theme="light"] {
+  --bg:#f5f7fb; --surface:#ffffff; --surface2:#ffffff; --surface3:#edf2ff;
+  --border:rgba(15,23,42,0.08); --border2:rgba(15,23,42,0.14);
+  --text:#101827; --text-muted:#5b6475;
+  --glow:0 0 24px rgba(0,229,255,0.18); --glow2:0 0 24px rgba(124,58,237,0.18);
+}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 12% 10%, rgba(0,229,255,0.12), transparent 28%),radial-gradient(circle at 88% 18%, rgba(124,58,237,0.14), transparent 32%),radial-gradient(circle at 50% 100%, rgba(245,158,11,0.10), transparent 30%)}
+:root[data-theme="light"] body::before{background:radial-gradient(circle at 12% 10%, rgba(0,229,255,0.12), transparent 28%),radial-gradient(circle at 88% 18%, rgba(124,58,237,0.10), transparent 32%),radial-gradient(circle at 50% 100%, rgba(245,158,11,0.08), transparent 30%)}
+.nav-logo,.section-title,.ob-logo,.ob-title{position:relative}
+.nav-logo{text-shadow:0 0 18px rgba(0,229,255,0.16)}
+.section-title{background:linear-gradient(135deg,#fff 8%,rgba(0,229,255,0.95) 62%,rgba(124,58,237,0.92) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 18px rgba(0,229,255,0.14)}
+:root[data-theme="light"] .section-title{background:linear-gradient(135deg,#111827 8%,#0f766e 54%,#6d28d9 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section-label{position:relative;display:inline-flex;align-items:center;gap:8px}
+.section-label::before{content:'';width:26px;height:1px;background:linear-gradient(90deg,var(--accent2),var(--accent));box-shadow:var(--glow)}
+.theme-toggle-group{display:flex;align-items:center;gap:6px;padding:4px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);backdrop-filter:blur(10px)}
+.theme-btn{border:none;background:transparent;color:var(--text-muted);padding:8px 12px;border-radius:999px;font-size:0.76rem;font-weight:800;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+.theme-btn.active{color:var(--text);background:linear-gradient(135deg, rgba(0,229,255,0.14), rgba(124,58,237,0.18));box-shadow:inset 0 0 0 1px rgba(0,229,255,0.18),var(--glow)}
+.theme-btn:hover{color:var(--text)}
+.empty-note{display:flex;align-items:center;justify-content:center;min-height:180px;padding:24px;border:1px dashed var(--border2);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+@media (max-width:980px){.navbar{height:auto;min-height:72px;padding:12px 14px;gap:12px;flex-wrap:wrap;justify-content:space-between}.nav-tabs{order:3;width:100%;justify-content:space-between;overflow-x:auto;padding-bottom:2px}.nav-tab{flex:1 0 auto;text-align:center}.nav-right{margin-left:auto;flex-wrap:wrap;justify-content:flex-end}}
+@media (max-width:600px){.navbar{padding:10px 12px}.nav-logo{font-size:1.1rem}.nav-tabs{gap:6px}.nav-tab{font-size:0.75rem;padding:8px 10px}.theme-toggle-group{order:2;width:100%;justify-content:center}.theme-btn{flex:1;text-align:center}.reset-btn{width:100%;justify-content:center}.steam-badge{display:none}.section-title{font-size:2rem;line-height:1.02}.hot-controls{width:100%}.hot-sort-btn{flex:1;min-width:0;padding:8px 10px;font-size:0.72rem}.genre-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.genre-pill{flex:0 0 auto;white-space:nowrap}.steam-card-title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:2.3em}.steam-card-body{padding:9px 9px 8px}.steam-card-footer{padding:6px 9px 9px;gap:8px}.steam-card-dev{max-width:95px}.game-grid,.hot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:10px}.main-content{padding:16px 12px 28px}.rec-hero,.genre-tab-content,.hot-tab-content,.more-recs{padding-left:0;padding-right:0}}
+
 </style>
 </head>
 <body>
@@ -1159,6 +1183,10 @@ body {
         <div class="dot"></div>
         STEAM DATA LIVE
       </div>
+      <div class="theme-toggle-group" aria-label="테마 전환">
+        <button class="theme-btn" id="theme-dark-btn" onclick="setTheme('dark')">🌙 다크모드</button>
+        <button class="theme-btn" id="theme-light-btn" onclick="setTheme('light')">☀ 화이트 모드</button>
+      </div>
       <button class="reset-btn" onclick="resetApp()">↩ 다시 선택</button>
     </div>
   </nav>
@@ -1197,8 +1225,7 @@ body {
           <h2 class="section-title">실시간 인기 게임</h2>
           <div class="hot-controls">
             <button class="hot-sort-btn active" onclick="setHotSort('ccu')">🎮 현재 플레이어 수</button>
-            <button class="hot-sort-btn" onclick="setHotSort('positive')">⭐ 긍정적 리뷰</button>
-            <button class="hot-sort-btn" onclick="setHotSort('average_2weeks')">⏱ 최근 2주 플레이타임</button>
+            <button class="hot-sort-btn" onclick="setHotSort('average_2weeks')">⏱ 최근 2주 최다 플레이</button>
           </div>
         </div>
         <div class="genre-pills" id="hot-genre-pills" style="margin-bottom:14px"></div>
@@ -1748,7 +1775,9 @@ const GENRE_CLASS = {
 // ══════════════════════════════════════════════════════════════
 // CONSTANTS & CONFIG
 // ══════════════════════════════════════════════════════════════
-const STORAGE_KEY = 'nexus-play-v3';
+const STORAGE_KEY = 'nexus-play-v4';
+const THEME_KEY = 'nexus-play-theme';
+const LIVE_REFRESH_MS = 10 * 60 * 1000;
 
 const GENRE_STEAM_TAGS = {
   '전체':    ['Action','RPG','Adventure','Simulation','Strategy'],
@@ -1761,8 +1790,8 @@ const GENRE_STEAM_TAGS = {
   '공포':    ['Horror','Survival Horror','Psychological Horror'],
   '서바이벌':['Survival','Open World Survival Craft','Crafting'],
   '격투':    ['Fighting','Versus','Martial Arts'],
-  '스포츠':  ['Sports','Soccer','Basketball'],
-  '샌드박스':['Open World','Sandbox','Building'],
+  '스포츠':  ['Sports','Soccer','Basketball','Football','Soccer Sim','Baseball','Tennis'],
+  '샌드박스':['Sandbox','Building','Open World','Crafting','Automation','Colony Sim'],
   '인디':    ['Indie','2D','Indie Game'],
   '레이싱':  ['Racing','Driving','Automobile Sim'],
 };
@@ -1871,13 +1900,15 @@ function normalizeGenreItem(item, genre) {
 
 async function loadLocalData(path) {
   if (!DATA_BASE) return null;
-  if (_sessionDataCache.has(path)) return _sessionDataCache.get(path);
+  const cacheKey = `${path}::${Math.floor(Date.now() / LIVE_REFRESH_MS)}`;
+  if (_sessionDataCache.has(cacheKey)) return _sessionDataCache.get(cacheKey);
   try {
-    const res = await fetch(DATA_BASE + path, { cache: 'force-cache' });
+    const sep = path.includes('?') ? '&' : '?';
+    const res = await fetch(DATA_BASE + path + `${sep}v=${Math.floor(Date.now() / LIVE_REFRESH_MS)}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const d = await res.json();
-    if (!d || d._note || Object.keys(d).length < 5) return null;
-    _sessionDataCache.set(path, d);
+    if (!d || d._note || (Array.isArray(d) ? d.length === 0 : Object.keys(d).length < 1)) return null;
+    _sessionDataCache.set(cacheKey, d);
     return d;
   } catch { return null; }
 }
@@ -1932,6 +1963,67 @@ function uniqueByAppId(list) {
   });
 }
 
+const HOT_SORT_OPTIONS = ['ccu', 'average_2weeks'];
+const GENRE_MATCHERS = {
+  'FPS': ['fps','first-person shooter','shooter','hero shooter','extraction shooter'],
+  'RPG': ['rpg','jrpg','action rpg','crpg','party-based rpg','turn-based rpg'],
+  '액션': ['action','action-adventure','hack and slash',"beat 'em up"],
+  '어드벤처': ['adventure','story rich','visual novel','exploration','narrative'],
+  '전략': ['strategy','turn-based strategy','real time strategy','4x','grand strategy','tower defense'],
+  '시뮬레이션': ['simulation','management','city builder','life sim','automation'],
+  '공포': ['horror','survival horror','psychological horror'],
+  '서바이벌': ['survival','open world survival craft','crafting'],
+  '격투': ['fighting','martial arts','versus',"beat 'em up"],
+  '스포츠': ['sports','soccer','football','basketball','baseball','tennis','hockey'],
+  '샌드박스': ['sandbox','building','open world','crafting','automation','colony sim'],
+  '인디': ['indie','indie game'],
+  '레이싱': ['racing','driving','automobile sim','rally'],
+};
+function normalizeTextList(app) {
+  const tags = Object.keys(app.tags || {}).map(t => t.toLowerCase());
+  const tagsList = Array.isArray(app.tags_list) ? app.tags_list.map(t => String(t).toLowerCase()) : [];
+  const genre = String(app.genre || app._genre || '').toLowerCase();
+  return [...new Set([...tags, ...tagsList, genre])].filter(Boolean);
+}
+function matchesGenreApp(app, genre) {
+  if (!app || genre === '전체') return true;
+  if ((app._genre || app.genre) === genre) return true;
+  const haystack = normalizeTextList(app).join(' | ');
+  const aliases = (GENRE_MATCHERS[genre] || []).map(v => v.toLowerCase());
+  return aliases.some(alias => haystack.includes(alias));
+}
+function clearLiveDataCache() {
+  _sessionDataCache.clear();
+  hotLoaded = false;
+}
+function maybeRefreshLiveData(force = false) {
+  clearLiveDataCache();
+  if (force || currentTab === 'hot') loadHotGames(true).then(() => { if (currentTab === 'hot') renderHotGrid(); });
+  if (force || currentTab === 'genre') loadSteamGenreData(currentGenreFilter, { force: true, silent: currentTab !== 'genre' }).then(() => {
+    if (currentTab === 'genre') applyGenreGrid(_steamGenreCache[currentGenreFilter] || [], currentGenreFilter);
+  });
+}
+function initLiveAutoRefresh() {
+  if (window.__nexusLiveRefresh) return;
+  window.__nexusLiveRefresh = setInterval(() => maybeRefreshLiveData(true), LIVE_REFRESH_MS);
+}
+function applyThemeButtons() {
+  const root = document.documentElement;
+  const theme = root.dataset.theme || 'dark';
+  document.getElementById('theme-dark-btn')?.classList.toggle('active', theme === 'dark');
+  document.getElementById('theme-light-btn')?.classList.toggle('active', theme === 'light');
+}
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+  localStorage.setItem(THEME_KEY, document.documentElement.dataset.theme);
+  applyThemeButtons();
+}
+function initTheme() {
+  const stored = localStorage.getItem(THEME_KEY);
+  document.documentElement.dataset.theme = stored === 'light' ? 'light' : 'dark';
+  applyThemeButtons();
+}
+
 async function prefetchCoreData() {
   if (_prefetchStarted) return;
   _prefetchStarted = true;
@@ -1947,8 +2039,13 @@ async function prefetchCoreData() {
 const THUMB_OVERRIDES = {
   "Coral Island": { appid:1158160 },
   "Killer Instinct": { appid:577940 },
+  "Sons of the Forest": { appid:1326470 },
   "Marvel's Spider-Man Remastered": { appid:1817070 },
-  "Marvel's Spider-Man: Miles Morales": { appid:1817190 }
+  "Marvel's Spider-Man: Miles Morales": { appid:1817190 },
+  "EA SPORTS FC 26": { appid:3405690 },
+  "EA SPORTS FC™ 26": { appid:3405690 },
+  "Football Manager 26": { appid:3551340 },
+  "NBA 2K26": { appid:3472040 }
 };
 
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
@@ -1986,8 +2083,9 @@ function getScoreLabel(pos, neg) {
 }
 
 
-function steamThumb(id)    { return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
-function steamThumbAlt(id) { return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
+function resolveSteamThumbId(appOrId, title='') { return getThumbAppId(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : Number(appOrId), title); }
+function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOrId, title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
+function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
 function makeSteamCard(app, rank, options = {}) {
   const tags = Object.keys(app.tags || {}).slice(0, 4);
@@ -1997,8 +2095,8 @@ function makeSteamCard(app, rank, options = {}) {
   return `
     <a class="steam-card" href="https://store.steampowered.com/app/${app.appid}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
-        <img class="steam-card-img" src="${steamThumb(app.appid)}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
-             onerror="this.src='${steamThumbAlt(app.appid)}';this.onerror=function(){this.remove()}">
+        <img class="steam-card-img" src="${steamThumb(app, app.name)}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
+             onerror="if(this.dataset.fallback==='1'){this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${resolveSteamThumbId(app, app.name)}/header.jpg';this.dataset.fallback='2';this.onerror=function(){this.remove()}}else{this.src='${steamThumbAlt(app, app.name)}';this.dataset.fallback='1'}">
         ${rank ? `<div class="steam-card-rank">${rank}</div>` : ''}
       </div>
       <div class="steam-card-body">
@@ -2243,7 +2341,7 @@ async function loadSteamRecommendations() {
 
   heroEl.innerHTML = sorted.slice(0,3).map((app,i)=>`
     <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${app.appid}','_blank')" style="animation-delay:${i*0.08}s">
-      <img src="${steamThumb(app.appid)}" alt="${app.name}" onerror="this.src='${steamThumbAlt(app.appid)}';this.onerror=null">
+      <img src="${steamThumb(app, app.name)}" alt="${app.name}" onerror="this.src='${steamThumbAlt(app, app.name)}';this.onerror=null">
       <div class="hero-card-overlay">
         <div class="hero-rank">${i+1}</div>
         <div class="hero-title">${app.name}</div>
@@ -2276,17 +2374,18 @@ function applyGenreGrid(list, genre) {
   const gridEl = document.getElementById('genre-grid');
   if (!gridEl) return;
   const q = genreSearch.toLowerCase();
+  const base = (list || []).filter(app => matchesGenreApp(app, genre));
   const filtered = q
-    ? list.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
-    : list;
+    ? base.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
+    : base;
   gridEl.innerHTML = filtered.length
     ? filtered.map(app=>makeSteamCard(app,null,{ showLive:false })).join('')
-    : `<div class="grid-empty" style="grid-column:1/-1">${genre} 검색 결과 없음</div>`;
+    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${genre === '전체' ? '조건에 맞는 게임이 없습니다.' : `${genre} 장르 검색 결과 없음`}</div>`;
 }
 
 function setGenreFilter(g) {
   currentGenreFilter = g;
-  document.querySelectorAll('.genre-pill').forEach(b =>
+  document.querySelectorAll('#genre-pills .genre-pill').forEach(b =>
     b.classList.toggle('active', b.textContent.trim()===g));
   loadSteamGenreData(g);
 }
@@ -2294,45 +2393,35 @@ function setGenreFilter(g) {
 async function loadSteamGenreData(genre, opts = {}) {
   const gridEl = document.getElementById('genre-grid');
   if (!gridEl && !opts.silent) return [];
-
-  if (_steamGenreCache[genre]?.length) {
+  if (!opts.force && _steamGenreCache[genre]?.length) {
     if (!opts.silent) applyGenreGrid(_steamGenreCache[genre], genre);
     return _steamGenreCache[genre];
   }
-
   if (!opts.silent && gridEl) {
     gridEl.innerHTML = `<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 ${genre==='전체'?'전체':genre} 게임 불러오는 중...</div></div>`;
   }
-
   const tags = genre === '전체'
     ? ['Action','RPG','Adventure','Simulation','Strategy','Indie']
     : (GENRE_STEAM_TAGS[genre] || ['Action']);
   const results = await Promise.all(tags.slice(0,6).map(tag=>steamspyFetch({request:'tag',tag}).catch(()=>null)));
-
   const merged = {};
-  results.forEach(d=>{
-    if(!d) return;
-    Object.values(d).forEach(app=>{
-      if(!app.appid||!app.name) return;
-      if(!merged[app.appid]) merged[app.appid]={...app,_cnt:0,_source:'steam'};
-      merged[app.appid]._cnt++;
+  results.forEach(d => {
+    if (!d) return;
+    Object.values(d).forEach(app => {
+      if (!app.appid || !app.name) return;
+      const normalized = normalizeGenreItem(app, genre);
+      if (!normalized || !matchesGenreApp(normalized, genre)) return;
+      if (!merged[normalized.appid]) merged[normalized.appid] = { ...normalized, _cnt: 0, _source: 'steam' };
+      merged[normalized.appid]._cnt++;
     });
   });
-
   let sorted = Object.values(merged)
     .sort((a,b)=>(b._cnt-a._cnt)||((b.ccu||0)-(a.ccu||0))||((b.positive||0)-(a.positive||0)))
-    .slice(0,240)
-    .map(app => normalizeGenreItem(app, genre))
-    .filter(Boolean);
-
-  const localFallback = GAMES_CLEAN
-    .filter(g => genre === '전체' || g.genre === genre)
-    .map(g => normalizeGenreItem(g, genre))
-    .filter(Boolean);
-
-  sorted = uniqueByAppId([...sorted, ...localFallback]);
+    .slice(0,220);
+  const localFallback = GAMES_CLEAN.filter(g => genre === '전체' || g.genre === genre)
+    .map(g => normalizeGenreItem(g, genre)).filter(Boolean);
+  sorted = uniqueByAppId([...sorted, ...localFallback]).filter(app => matchesGenreApp(app, genre));
   _steamGenreCache[genre] = sorted;
-
   if (!opts.silent) applyGenreGrid(sorted, genre);
   return sorted;
 }
@@ -2355,9 +2444,9 @@ function setHotGenreFilter(g) {
 }
 
 function setHotSort(by) {
-  hotSortBy = by;
+  hotSortBy = HOT_SORT_OPTIONS.includes(by) ? by : 'ccu';
   document.querySelectorAll('.hot-sort-btn').forEach((b,i)=>
-    b.classList.toggle('active',(i===0&&by==='ccu')||(i===1&&by==='positive')||(i===2&&by==='average_2weeks')));
+    b.classList.toggle('active', HOT_SORT_OPTIONS[i] === hotSortBy));
   renderHotGrid();
 }
 
@@ -2438,20 +2527,14 @@ async function loadHotGames(silent = false) {
 
 function renderHotGrid() {
   const gridEl = document.getElementById('hot-grid');
+  const statusEl = document.getElementById('hot-status');
   if (!gridEl || !_hotRawData) return;
   let list = [...(_hotRawData[hotSortBy] || [])];
-  if (hotGenreFilter !== '전체') {
-    list = list.filter(app => {
-      const tags = Object.keys(app.tags || {}).map(t => t.toLowerCase());
-      const genreText = `${app._genre || ''} ${(app.genre || '')}`.toLowerCase();
-      if ((app._genre || app.genre) === hotGenreFilter) return true;
-      const aliases = (GENRE_STEAM_TAGS[hotGenreFilter] || []).map(t => t.toLowerCase());
-      return aliases.some(alias => tags.includes(alias) || genreText.includes(alias));
-    });
-  }
+  if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
+  if (statusEl) statusEl.className = 'hot-status hidden';
   gridEl.innerHTML = list.length
     ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1)).join('')
-    : '<div class="grid-empty" style="grid-column:1/-1">해당 조건의 인기 게임이 없습니다.</div>';
+    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 게임이 없습니다.'}</div>`;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -2475,6 +2558,7 @@ async function renderApp() {
   renderMoreGrid(local.slice(3,30));
   showTab('rec');
   prefetchCoreData();
+  maybeRefreshLiveData(false);
 }
 
 function startApp() {
@@ -2607,6 +2691,10 @@ function ensureSearchBars() {
   if (savedReady) startApp();
 })();
 
+
+initTheme();
+initLiveAutoRefresh();
+window.addEventListener('focus', () => maybeRefreshLiveData(false));
 </script>
 
 </body>
