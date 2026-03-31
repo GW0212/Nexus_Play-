@@ -1653,33 +1653,22 @@ const GENRE_CLASS = {
 // CONSTANTS & CONFIG
 // ══════════════════════════════════════════════════════════════
 const STORAGE_KEY = 'nexus-play-v3';
-const STEAMSPY_BASES = [
-  'https://steamspy.com/api.php',
-  'https://corsproxy.io/?https://steamspy.com/api.php',
-  'https://api.allorigins.win/raw?url=https%3A//steamspy.com/api.php',
-];
-
-const GENRE_CLASS_MAP = {
-  "FPS":"genre-fps","RPG":"genre-rpg","액션":"genre-action","어드벤처":"genre-adv",
-  "전략":"genre-strat","시뮬레이션":"genre-sim","공포":"genre-horror","서바이벌":"genre-surv",
-  "격투":"genre-fight","스포츠":"genre-sports","샌드박스":"genre-sandbox","인디":"genre-indie","레이싱":"genre-racing"
-};
 
 const GENRE_STEAM_TAGS = {
   '전체':    ['Action','RPG','Adventure','Simulation','Strategy'],
   'FPS':     ['FPS','First-Person Shooter','Shooter'],
   'RPG':     ['RPG','Action RPG','JRPG','Turn-Based RPG'],
-  '액션':    ['Action','Hack and Slash','Beat \'em up','Action-Adventure'],
-  '어드벤처':['Adventure','Exploration','Narrative','Puzzle Platformer'],
+  '액션':    ['Action','Hack and Slash','Action-Adventure'],
+  '어드벤처':['Adventure','Exploration','Narrative'],
   '전략':    ['Strategy','Turn-Based Strategy','Real Time Strategy','4X'],
-  '시뮬레이션':['Simulation','Management','City Builder','Life Sim'],
-  '공포':    ['Horror','Survival Horror','Psychological Horror','Atmospheric'],
+  '시뮬레이션':['Simulation','Management','City Builder'],
+  '공포':    ['Horror','Survival Horror','Psychological Horror'],
   '서바이벌':['Survival','Open World Survival Craft','Crafting'],
   '격투':    ['Fighting','Versus','Martial Arts'],
-  '스포츠':  ['Sports','Soccer','Basketball','Baseball','Football'],
-  '샌드박스':['Open World','Sandbox','Building','Creative'],
-  '인디':    ['Indie','2D','Pixel Graphics','Indie Game'],
-  '레이싱':  ['Racing','Driving','Automobile Sim','Rally'],
+  '스포츠':  ['Sports','Soccer','Basketball'],
+  '샌드박스':['Open World','Sandbox','Building'],
+  '인디':    ['Indie','2D','Indie Game'],
+  '레이싱':  ['Racing','Driving','Automobile Sim'],
 };
 
 const TAG_EN_MAP = {
@@ -1691,10 +1680,9 @@ const TAG_EN_MAP = {
   '싱글플레이어':'Singleplayer','플랫포머':'Platformer','핵앤슬래시':'Hack and Slash',
   '건설':'Building','크래프팅':'Crafting','메트로바니아':'Metroidvania','덱빌딩':'Deckbuilding',
   'jrpg':'JRPG','배틀로얄':'Battle Royale','전술':'Tactical','사이버펑크':'Cyberpunk',
-  '아케이드':'Arcade','트럭':'Driving','리얼리즘':'Realistic','도전적':'Difficult',
+  '아케이드':'Arcade','트럭':'Driving',
 };
 
-// ── Build catalog ──
 const EXCLUDED_TITLES = new Set([
   'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic'
 ]);
@@ -1713,7 +1701,6 @@ const GAMES_CLEAN = dedupeByIdTitle([
   ...EXTRA_GAMES
 ]);
 
-// ── State ──
 let selectedIds = [];
 let currentObFilter = '전체';
 let currentGenreFilter = '전체';
@@ -1726,19 +1713,86 @@ let hotSortBy = 'ccu';
 let _hotRawData = null;
 let _steamGenreCache = {};
 
-// ══════════════════════════════════════════════════════════════
-// HELPERS
-// ══════════════════════════════════════════════════════════════
-function genreClass(g)    { return GENRE_CLASS_MAP[g] || ''; }
+// ── Data: Local-first, then SteamSpy API ──
+// GitHub Actions가 매일 data/ 폴더의 JSON을 갱신함
+// 로컬 파일이 없으면 SteamSpy API 직접 호출 시도
+
+const DATA_BASE = (typeof location !== 'undefined' && location.href.includes('file://'))
+  ? null  // 로컬 파일 열기에선 fetch('./data/') 불가
+  : './data/';
+
+const TAG_FILE_MAP = {
+  'FPS':'FPS','First-Person Shooter':'FPS','Shooter':'FPS',
+  'RPG':'RPG','Action RPG':'RPG','JRPG':'RPG','Turn-Based RPG':'RPG',
+  'Action':'Action','Hack and Slash':'Action','Action-Adventure':'Action',
+  'Adventure':'Adventure','Exploration':'Adventure','Narrative':'Adventure',
+  'Strategy':'Strategy','Turn-Based Strategy':'Strategy','Real Time Strategy':'Strategy','4X':'Strategy',
+  'Simulation':'Simulation','Management':'Simulation','City Builder':'Simulation',
+  'Horror':'Horror','Survival Horror':'Horror','Psychological Horror':'Horror',
+  'Survival':'Survival','Open World Survival Craft':'Survival','Crafting':'Survival',
+  'Fighting':'Fighting','Versus':'Fighting','Martial Arts':'Fighting',
+  'Sports':'Sports','Soccer':'Sports','Basketball':'Sports',
+  'Open World':'Open_World','Sandbox':'Open_World','Building':'Open_World',
+  'Indie':'Indie','2D':'Indie','Pixel Graphics':'Indie',
+  'Racing':'Racing','Driving':'Racing','Automobile Sim':'Racing','Rally':'Racing',
+  'Roguelike':'Roguelike','Co-op':'Co-op','Multiplayer':'Multiplayer',
+};
+
+async function loadLocalData(path) {
+  if (!DATA_BASE) return null;
+  try {
+    const res = await fetch(DATA_BASE + path, { cache: 'no-cache' });
+    if (!res.ok) return null;
+    const d = await res.json();
+    if (!d || d._note || Object.keys(d).length < 5) return null;
+    return d;
+  } catch { return null; }
+}
+
+async function steamspyFetch(params) {
+  const {request, tag, appid} = params;
+
+  // ── 1순위: 로컬 JSON (GitHub Actions 갱신) ──
+  if (request === 'top100in2weeks') {
+    const d = await loadLocalData('hot.json'); if (d) return d;
+  }
+  if (request === 'top100forever') {
+    const d = await loadLocalData('top100.json'); if (d) return d;
+  }
+  if (request === 'tag' && tag) {
+    const f = TAG_FILE_MAP[tag];
+    if (f) { const d = await loadLocalData('tags/' + f + '.json'); if (d) return d; }
+  }
+
+  // ── 2순위: SteamSpy 직접 호출 ──
+  const PROXIES = [
+    'https://steamspy.com/api.php',
+    'https://corsproxy.io/?https://steamspy.com/api.php',
+    'https://api.allorigins.win/raw?url=https%3A//steamspy.com/api.php',
+  ];
+  const qs = new URLSearchParams(params).toString();
+  for (const base of PROXIES) {
+    try {
+      const url = base + (base.includes('?') ? '&' : '?') + qs;
+      const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+      if (!res.ok) continue;
+      const d = await res.json();
+      if (d && typeof d === 'object' && !d.error && !d._note) return d;
+    } catch { /* next proxy */ }
+  }
+  return null;
+}
+
+
+function genreClass(g)    { return GENRE_CLASS[g] || ''; }
 function getGameById(id)  { return GAMES_CLEAN.find(g => g.id === id); }
 function imgUrl(id)       { return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
-function imgUrlAlt(id)    { return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
+function imgUrlAlt(id)    { return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`; }
 function storeUrl(id)     { return `https://store.steampowered.com/app/${id}`; }
 
 function filterBySearch(g, q) {
   if (!q) return true;
-  const hay = (g.title+' '+(g.genre||'')+' '+(g.dev||'')+' '+(g.tags||[]).join(' ')).toLowerCase();
-  return hay.includes(q.toLowerCase());
+  return g.title.toLowerCase().includes(q.toLowerCase());
 }
 
 function formatCCU(n) {
@@ -1758,23 +1812,6 @@ function getScoreLabel(pos, neg) {
   return             { text:`부정 ${pct}%`,            color:'#f87171' };
 }
 
-// ══════════════════════════════════════════════════════════════
-// STEAM API
-// ══════════════════════════════════════════════════════════════
-async function steamspyFetch(params) {
-  const qs = new URLSearchParams(params).toString();
-  for (const base of STEAMSPY_BASES) {
-    try {
-      const url = base + (base.includes('?') ? '&' : '?') + qs;
-      const res = await fetch(url, { signal: AbortSignal.timeout(9000) });
-      if (!res.ok) continue;
-      const text = await res.text();
-      const data = JSON.parse(text);
-      if (data && typeof data === 'object' && !data.error) return data;
-    } catch(e) { /* try next */ }
-  }
-  return null;
-}
 
 function steamThumb(id)    { return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
 function steamThumbAlt(id) { return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
@@ -1837,7 +1874,7 @@ function renderObGrid() {
     <div class="ob-card ${selectedIds.includes(g.id)?'selected':''}" data-id="${g.id}"
          onclick="toggleSelect(${g.id})" style="animation-delay:${i*0.008}s">
       <img src="${imgUrl(g.id)}" alt="${g.title}" loading="lazy"
-           onerror="this.src='${imgUrlAlt(g.id)}';this.onerror=function(){this.closest('.ob-card').style.background='var(--surface3)'}">
+           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='${imgUrlAlt(g.id)}';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
       <div class="ob-card-genre-badge ${genreClass(g.genre)}">${g.genre}</div>
       <div class="ob-card-overlay">
         <div class="ob-card-title">${g.title}</div>
@@ -1995,7 +2032,17 @@ async function loadSteamRecommendations() {
 
   const sorted = Object.values(map).sort((a,b)=>b._score-a._score).slice(0,60);
   if (!sorted.length) {
-    moreEl.innerHTML = '<div class="grid-empty" style="grid-column:1/-1">Steam 데이터를 가져오지 못했습니다.</div>';
+    // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
+    const local = getLocalRecommendations();
+    renderHeroGrid(local.slice(0,3));
+    renderMoreGrid(local.slice(3,30));
+    const hs = document.getElementById('hero-grid')?.closest('.rec-hero');
+    if (hs && !hs.querySelector('.rec-source-badge')) {
+      const b = document.createElement('div');
+      b.className = 'rec-source-badge';
+      b.innerHTML = '✦ 내장 게임 카탈로그 기반 추천';
+      hs.insertBefore(b, hs.firstChild);
+    }
     return;
   }
 
@@ -2084,9 +2131,19 @@ async function loadSteamGenreData(genre) {
   _steamGenreCache[genre] = sorted;
 
   const filtered = q ? sorted.filter(a=>(a.name||'').toLowerCase().includes(q)) : sorted;
+  if (!filtered.length && !q) {
+    // Steam 로드 실패 시 내장 게임으로 폴백
+    const fallback = GAMES_CLEAN.filter(g =>
+      genre === '전체' || g.genre === genre
+    );
+    gridEl.innerHTML = fallback.length
+      ? fallback.map((g,i) => makeGameCard(g, i*0.02)).join('')
+      : '<div class="grid-empty" style="grid-column:1/-1">게임 없음</div>';
+    return;
+  }
   gridEl.innerHTML = filtered.length
     ? filtered.map(app=>makeSteamCard(app,null)).join('')
-    : '<div class="grid-empty" style="grid-column:1/-1">게임을 찾지 못했습니다.</div>';
+    : '<div class="grid-empty" style="grid-column:1/-1">검색 결과 없음</div>';
 }
 
 function renderGenreGrid() { loadSteamGenreData(currentGenreFilter); }
@@ -2111,15 +2168,22 @@ async function loadHotGames() {
   const data = await steamspyFetch({request:'top100in2weeks'});
 
   if (!data||!Object.keys(data).length) {
-    statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못했습니다. (CORS 제한) — 인기 게임 목록으로 대체 표시합니다.';
+    // GitHub Actions 데이터 없으면 내장 게임 목록 사용
+    statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못했습니다 — 내장 게임 목록으로 표시합니다. (repo에 .github/workflows/fetch-steam.yml을 추가하면 실시간 데이터가 표시됩니다)';
     statusEl.className = 'hot-status';
-    setTimeout(()=>{statusEl.className='hot-status hidden'},4000);
-    _hotRawData = GAMES_CLEAN.slice(0,80).map(g=>({
-      appid:g.id, name:g.title, developer:g.dev,
-      ccu:Math.round((g.rating||7)*3000), positive:Math.round((g.rating||7)*8000),
-      negative:Math.round((10-(g.rating||7))*2000),
-      tags:Object.fromEntries((g.tags||[]).slice(0,5).map(t=>[t,1])),
-    }));
+    setTimeout(()=>{statusEl.className='hot-status hidden'},6000);
+    // rating 기반으로 정렬 (높은 평점 순) - 정렬 버튼 무효화
+    _hotRawData = [...GAMES_CLEAN]
+      .sort((a,b) => (b.rating||7)-(a.rating||7))
+      .map((g,i) => ({
+        appid: g.id, name: g.title, developer: g.dev,
+        // ccu를 rating + position으로 차별화 (정렬 시 순서 달라짐)
+        ccu: Math.round((g.rating||7) * 8000 - i * 50),
+        positive: Math.round((g.rating||7) * 12000),
+        negative: Math.round((10-(g.rating||7)) * 1500),
+        average_2weeks: Math.round((g.rating||7) * 120 - i * 2),
+        tags: Object.fromEntries((g.tags||[]).slice(0,5).map(t=>[t,1])),
+      }));
     renderHotGrid(); return;
   }
 
