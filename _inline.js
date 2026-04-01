@@ -592,8 +592,6 @@ const TAG_FILE_MAP = {
 };
 
 const _sessionDataCache = new Map();
-const LEGACY_RECOMMENDATION_EXCLUDES = new Set([10,20,30,40,50,60,70,80,130,220,240,280,300,320,340,360,380,400,420,440,500,620,7300,17300]);
-const LEGACY_RECOMMENDATION_TITLES = /(half-?life(?![: ]alyx)|ricochet|day of defeat|deathmatch classic|team fortress classic|condition zero(?!.*deleted)|counter-?strike(?! 2))/i;
 
 function normalizeSteamList(data) {
   if (!data) return [];
@@ -1031,15 +1029,10 @@ function getLocalRecommendations() {
   });
   return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
-    .filter(g => !LEGACY_RECOMMENDATION_EXCLUDES.has(Number(g.id)))
-    .filter(g => !LEGACY_RECOMMENDATION_TITLES.test(String(g.title||'')))
-    .filter(g => (g.year || 0) >= 2017)
     .map(g => {
-      let s = (genreW[g.genre]||0)*5.5 + 1.2;
-      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2.4; });
-      s += (g.rating||7)*0.7;
-      s += Math.max(0, ((g.year||2020) - 2018)) * 0.9;
-      if ((g.rating||0) >= 9) s += 2.5;
+      let s = (genreW[g.genre]||0)*4 + 1.2;
+      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2; });
+      s += (g.rating||7)*0.45;
       return {...g, _score:s};
     })
     .sort((a,b) => b._score - a._score);
@@ -1100,14 +1093,8 @@ async function loadSteamRecommendations() {
   });
 
   const sorted = Object.values(map)
-    .filter(app => !LEGACY_RECOMMENDATION_EXCLUDES.has(Number(app.appid)))
-    .filter(app => !LEGACY_RECOMMENDATION_TITLES.test(String(app.name||'')))
-    .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 3000 || (app.owners||0) >= 2000000 || (app.positive||0) >= 15000)
-    .map(app => {
-      const recentBoost = POPULAR_GAME_IDS.has(Number(app.appid)) ? 20 : 0;
-      const qualityBoost = Math.log1p(app.ccu||0) * 1.9 + Math.log1p(app.positive||0) * 0.35 + Math.log1p(app.owners||0) * 0.55;
-      return { ...app, _score: app._score + recentBoost + qualityBoost };
-    })
+    .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 1000 || (app.owners||0) >= 1000000 || (app.positive||0) >= 5000)
+    .map(app => ({ ...app, _score: app._score + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 18 : 0) + Math.log1p(app.ccu||0) * 1.6 + Math.log1p(app.positive||0) * 0.25 }))
     .sort((a,b)=>b._score-a._score)
     .slice(0,120);
   if (!sorted.length) {
@@ -1245,7 +1232,18 @@ function setHotSort(by) {
   renderHotGrid();
 }
 function buildHotFallback() {
-  return { ccu: [], positive: [], average_2weeks: [] };
+  const base = GAMES_CLEAN.map((g,i) => normalizeGenreItem({
+    id: g.id, title: g.title, dev: g.dev, tags: g.tags,
+    ccu: Math.round(((g.rating||7) ** 2) * 900 + Math.max(0, 5000 - i * 11)),
+    positive: Math.round(((g.rating||7) ** 2) * 2200 + (2026 - (g.year||2020)) * 30),
+    negative: Math.max(5, Math.round((10-(g.rating||7)) * 900)),
+    genre: g.genre
+  }, g.genre));
+  return {
+    ccu: [...base].sort((a,b)=>(b.ccu||0)-(a.ccu||0)),
+    positive: [],
+    average_2weeks: [],
+  };
 }
 
 async function loadHotGames(silent = false) {
