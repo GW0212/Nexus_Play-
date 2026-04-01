@@ -557,6 +557,8 @@ let currentTab = 'rec';
 let obSearch = '';
 let genreSearch = '';
 let steamRecLoaded = false;
+let steamRecRequestSeq = 0;
+let steamRecSelectionKey = '';
 let hotLoaded = false;
 let hotSortBy = 'ccu';
 let hotGenreFilter = '전체';
@@ -690,7 +692,6 @@ async function prefetchCoreData() {
   const genresToWarm = ['전체', 'FPS', 'RPG', '액션', '어드벤처', '전략'];
   Promise.allSettled([
     loadHotGames(true),
-    loadSteamRecommendations(),
     ...genresToWarm.map(g => loadSteamGenreData(g, { silent: true }))
   ]);
 }
@@ -896,6 +897,10 @@ function renderMoreGrid(games) {
     '<div class="grid-empty" style="grid-column:1/-1">추천 결과 없음</div>';
 }
 
+function getSelectionKey() {
+  return [...selectedIds].sort((a,b)=>a-b).join(',');
+}
+
 function getLocalRecommendations() {
   const selected = GAMES_CLEAN.filter(g => selectedIds.includes(g.id));
   const tagW = {}, genreW = {};
@@ -926,7 +931,10 @@ function getTopTags(limit=6) {
 }
 
 async function loadSteamRecommendations() {
-  if (steamRecLoaded) return;
+  const selectionKey = getSelectionKey();
+  if (!selectionKey) return;
+  if (steamRecLoaded && steamRecSelectionKey === selectionKey) return;
+
   const heroEl = document.getElementById('hero-grid');
   const moreEl = document.getElementById('more-grid');
   if (!heroEl || !moreEl) return;
@@ -934,13 +942,18 @@ async function loadSteamRecommendations() {
   const tags = getTopTags(8);
   if (!tags.length) return;
 
-  moreEl.innerHTML = '<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 맞춤 추천 검색 중...</div></div>';
+  const requestId = ++steamRecRequestSeq;
+  return;
+
+  const isStale = () => requestId !== steamRecRequestSeq || selectionKey !== getSelectionKey();
 
   const [owned, forever, ...tagResults] = await Promise.all([
     steamspyFetch({request:'top100owned'}).catch(()=>null),
     steamspyFetch({request:'top100forever'}).catch(()=>null),
     ...tags.map((tag, ti) => steamspyFetch({request:'tag', tag}).then(d=>({d,w:tags.length-ti})).catch(()=>({d:null,w:0})))
   ]);
+
+  if (isStale()) return;
 
   const map = {};
   tagResults.forEach(({d,w}) => {
@@ -969,12 +982,17 @@ async function loadSteamRecommendations() {
   });
 
   const sorted = Object.values(map).sort((a,b)=>b._score-a._score).slice(0,120);
+  if (isStale()) return;
+
+  const hs = document.getElementById('hero-grid')?.closest('.rec-hero');
+
   if (!sorted.length) {
-    // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
     const local = getLocalRecommendations();
+    if (isStale()) return;
     renderHeroGrid(local.slice(0,3));
     renderMoreGrid(local.slice(3,60));
-    const hs = document.getElementById('hero-grid')?.closest('.rec-hero');
+    steamRecLoaded = false;
+    steamRecSelectionKey = '';
     if (hs && !hs.querySelector('.rec-source-badge')) {
       const b = document.createElement('div');
       b.className = 'rec-source-badge';
@@ -985,7 +1003,7 @@ async function loadSteamRecommendations() {
   }
 
   steamRecLoaded = true;
-  const hs = heroEl.closest('.rec-hero');
+  steamRecSelectionKey = selectionKey;
   if (hs && !hs.querySelector('.rec-source-badge')) {
     const b = document.createElement('div');
     b.className = 'rec-source-badge';
@@ -1227,6 +1245,8 @@ function showTab(tab) {
 
 async function renderApp() {
   steamRecLoaded = false;
+  steamRecSelectionKey = '';
+  ++steamRecRequestSeq;
   const local = getLocalRecommendations();
   renderHeroGrid(local.slice(0,3));
   renderMoreGrid(local.slice(3,30));
@@ -1254,8 +1274,9 @@ function goHome() {
 
 function resetApp() {
   localStorage.removeItem(STORAGE_KEY);
+  ++steamRecRequestSeq;
   selectedIds=[]; currentObFilter='전체'; currentGenreFilter='전체';
-  obSearch=''; genreSearch=''; steamRecLoaded=false; hotLoaded=false; hotGenreFilter='전체';
+  obSearch=''; genreSearch=''; steamRecLoaded=false; steamRecSelectionKey=''; hotLoaded=false; hotGenreFilter='전체';
   _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _prefetchStarted=false;
   const si=document.getElementById('ob-search'); if(si) si.value='';
   const gi=document.getElementById('genre-search'); if(gi) gi.value='';
