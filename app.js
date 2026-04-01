@@ -590,6 +590,8 @@ const TAG_FILE_MAP = {
 };
 
 const _sessionDataCache = new Map();
+const LEGACY_RECOMMENDATION_EXCLUDES = new Set([10,20,30,40,50,60,70,80,130,220,240,280,300,320,340,360,380,400,420,440,500,620,7300,17300]);
+const LEGACY_RECOMMENDATION_TITLES = /(half-?life(?![: ]alyx)|ricochet|day of defeat|deathmatch classic|team fortress classic|condition zero(?!.*deleted)|counter-?strike(?! 2))/i;
 
 function normalizeSteamList(data) {
   if (!data) return [];
@@ -905,10 +907,15 @@ function getLocalRecommendations() {
   });
   return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
+    .filter(g => !LEGACY_RECOMMENDATION_EXCLUDES.has(Number(g.id)))
+    .filter(g => !LEGACY_RECOMMENDATION_TITLES.test(String(g.title||'')))
+    .filter(g => (g.year || 0) >= 2017)
     .map(g => {
-      let s = (genreW[g.genre]||0)*4 + 1.2;
-      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2; });
-      s += (g.rating||7)*0.45;
+      let s = (genreW[g.genre]||0)*5.5 + 1.2;
+      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2.4; });
+      s += (g.rating||7)*0.7;
+      s += Math.max(0, ((g.year||2020) - 2018)) * 0.9;
+      if ((g.rating||0) >= 9) s += 2.5;
       return {...g, _score:s};
     })
     .sort((a,b) => b._score - a._score);

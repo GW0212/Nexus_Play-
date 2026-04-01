@@ -1935,6 +1935,8 @@ const TAG_FILE_MAP = {
 };
 
 const _sessionDataCache = new Map();
+const LEGACY_RECOMMENDATION_EXCLUDES = new Set([10,20,30,40,50,60,70,80,130,220,240,280,300,320,340,360,380,400,420,440,500,620,7300,17300]);
+const LEGACY_RECOMMENDATION_TITLES = /(half-?life(?![: ]alyx)|ricochet|day of defeat|deathmatch classic|team fortress classic|condition zero(?!.*deleted)|counter-?strike(?! 2))/i;
 
 function normalizeSteamList(data) {
   if (!data) return [];
@@ -2261,35 +2263,6 @@ const POPULAR_GAME_IDS = new Set([
   // 스포츠/레이싱 인기
   3405690,3551340,3472040,2669320,2488620,2882430,1665460
 ]);
-const LEGACY_RECOMMEND_BLOCKLIST = new Set([10,20,30,40,50,60,70,80,130,220,240,300,320,340,360,380,400,420,440,500,550,620,1250,4000,9390,227300]);
-const MODERN_RECOMMEND_KEEP = new Set([730,578080,1172470,1245620,1086940,271590,1174180,381210,252490,553850,431960,3240220,236390,1144200,2357570,1623730,2358720,2215430,1817070,1593500,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,1687950,1462040,782330,548430,1237970,581320,1361210,671860,393380,686810,1693980,1604030,1172620,1426210,1332010,753640,646570,632360,2246340,2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,3405690,3551340,3472040,2669320,2488620,2882430,1665460]);
-function getAppYear(app) {
-  const local = getGameById(Number(app?.appid || app?.id));
-  return Number(local?.year || app?.year || 0) || 0;
-}
-function isRecommendableModernGame(app) {
-  const appid = Number(app?.appid || app?.id || 0);
-  const year = getAppYear(app);
-  const rating = Number(app?.rating || getGameById(appid)?.rating || 0) || 0;
-  if (LEGACY_RECOMMEND_BLOCKLIST.has(appid)) return false;
-  if (MODERN_RECOMMEND_KEEP.has(appid)) return true;
-  if (year && year < 2015) return false;
-  if (year >= 2021) return true;
-  if (year >= 2018 && rating >= 8.0) return true;
-  return false;
-}
-function recommendationPopularityBonus(app) {
-  const appid = Number(app?.appid || app?.id || 0);
-  const year = getAppYear(app);
-  let bonus = 0;
-  if (POPULAR_GAME_IDS.has(appid)) bonus += 18;
-  if (MODERN_RECOMMEND_KEEP.has(appid)) bonus += 12;
-  if (year >= 2023) bonus += 12;
-  else if (year >= 2021) bonus += 8;
-  else if (year >= 2018) bonus += 4;
-  else if (year && year < 2015) bonus -= 20;
-  return bonus;
-}
 
 function resolvePrimaryGenre(app) {
   if (!app) return '전체';
@@ -2518,22 +2491,21 @@ function getLocalRecommendations() {
   const currentYear = new Date().getFullYear();
   return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
-    .filter(g => isRecommendableModernGame(g))
     .map(g => {
-      let s = (genreW[g.genre]||0)*5 + 2;
-      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2.4; });
-      s += (g.rating||7)*1.2;
+      let s = (genreW[g.genre]||0)*4 + 1.2;
+      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2; });
+      s += (g.rating||7)*0.8;
+      // 최신 게임 보너스 (2020년 이후 출시작 우대)
       if (g.year) {
         const age = currentYear - g.year;
-        if (age <= 1) s += 14;
-        else if (age <= 3) s += 10;
-        else if (age <= 5) s += 6;
-        else if (age <= 8) s += 2;
-        else s -= Math.min(8, (age - 8) * 0.9);
+        if (age <= 2) s += 6;
+        else if (age <= 4) s += 3;
+        else if (age <= 6) s += 1;
+        else s -= Math.min(3, (age - 6) * 0.4);
       }
-      s += recommendationPopularityBonus(g);
-      if ((g.rating||0) >= 9.0) s += 5;
-      else if ((g.rating||0) >= 8.5) s += 3;
+      // 높은 평점 보너스
+      if ((g.rating||0) >= 9.0) s += 4;
+      else if ((g.rating||0) >= 8.5) s += 2;
       return {...g, _score:s};
     })
     .sort((a,b) => b._score - a._score);
@@ -2594,24 +2566,8 @@ async function loadSteamRecommendations() {
   });
 
   const sorted = Object.values(map)
-    .map(app => {
-      const appid = Number(app.appid);
-      const year = getAppYear(app);
-      const local = getGameById(appid);
-      const recEligible = isRecommendableModernGame({ ...app, year, rating: local?.rating });
-      return {
-        ...app,
-        _year: year,
-        _eligible: recEligible,
-        _score: app._score
-          + recommendationPopularityBonus({ ...app, year, rating: local?.rating })
-          + Math.log1p(app.ccu||0) * 2.4
-          + Math.log1p(app.positive||0) * 0.55
-          + Math.log1p(app.owners||0) * 0.38
-      };
-    })
-    .filter(app => app._eligible)
-    .filter(app => (app.ccu||0) >= 1000 || (app.owners||0) >= 750000 || (app.positive||0) >= 5000 || POPULAR_GAME_IDS.has(Number(app.appid)))
+    .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 500 || (app.owners||0) >= 500000 || (app.positive||0) >= 3000)
+    .map(app => ({ ...app, _score: app._score + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 25 : 0) + Math.log1p(app.ccu||0) * 2.2 + Math.log1p(app.positive||0) * 0.4 + Math.log1p(app.owners||0) * 0.3 }))
     .sort((a,b)=>b._score-a._score)
     .slice(0,120);
   if (!sorted.length) {
@@ -2752,18 +2708,7 @@ function setHotSort(by) {
   renderHotGrid();
 }
 function buildHotFallback() {
-  const base = GAMES_CLEAN.map((g,i) => normalizeGenreItem({
-    id: g.id, title: g.title, dev: g.dev, tags: g.tags,
-    ccu: Math.round(((g.rating||7) ** 2) * 900 + Math.max(0, 5000 - i * 11)),
-    positive: Math.round(((g.rating||7) ** 2) * 2200 + (2026 - (g.year||2020)) * 30),
-    negative: Math.max(5, Math.round((10-(g.rating||7)) * 900)),
-    genre: g.genre
-  }, g.genre));
-  return {
-    ccu: [...base].sort((a,b)=>(b.ccu||0)-(a.ccu||0)),
-    positive: [],
-    average_2weeks: [],
-  };
+  return { ccu: [], positive: [], average_2weeks: [] };
 }
 
 async function loadHotGames(silent = false) {
@@ -2791,10 +2736,11 @@ async function loadHotGames(silent = false) {
   }));
 
   if (!mostPlayedList.length) {
-    _hotRawData = { ccu: [], positive: [], average_2weeks: [] };
+    _hotRawData = buildHotFallback();
     if (!silent && statusEl) {
-      statusEl.textContent = '⚠️ Steam 실시간 데이터를 아직 불러오지 못했습니다. GitHub Actions의 Fetch Steam Data를 1회 실행한 뒤 잠시 후 다시 확인해주세요.';
+      statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못해 내장 카탈로그 인기 순위로 표시합니다.';
       statusEl.className = 'hot-status';
+      setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 5000);
     }
   } else {
     _hotRawData = {
@@ -2819,10 +2765,10 @@ function renderHotGrid() {
   if (!gridEl || !_hotRawData) return;
   let list = [...(_hotRawData[hotSortBy] || [])];
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
-  if (statusEl && list.length) statusEl.className = 'hot-status hidden';
+  if (statusEl) statusEl.className = 'hot-status hidden';
   gridEl.innerHTML = list.length
     ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true })).join('')
-    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 데이터가 아직 준비되지 않았습니다. Fetch Steam Data 실행 후 1~2분 뒤 다시 확인해주세요.'}</div>`;
+    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 게임이 없습니다.'}</div>`;
 }
 
 // ══════════════════════════════════════════════════════════════
