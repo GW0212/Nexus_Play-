@@ -2526,61 +2526,30 @@ function getLocalRecommendations() {
   const selected = GAMES_CLEAN.filter(g => selectedIds.includes(g.id));
   const tagW = {}, genreW = {};
   selected.forEach(g => {
-    genreW[g.genre] = (genreW[g.genre]||0) + 1;
+    genreW[g.genre] = (genreW[g.genre]||0) + 3;
     (g.tags||[]).forEach(t => { tagW[t] = (tagW[t]||0)+1; });
   });
   const currentYear = new Date().getFullYear();
-
-  const scored = GAMES_CLEAN
+  return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
     .map(g => {
-      // 1) 장르 매칭 (최대 ~12)
-      let s = (genreW[g.genre]||0) * 3;
-      // 2) 태그 매칭 (최대 ~15)
-      let tagMatch = 0;
-      (g.tags||[]).forEach(t => { tagMatch += (tagW[t]||0); });
-      s += Math.min(tagMatch * 1.5, 15);
-      // 3) 평점 보너스 (최대 ~5)
-      s += ((g.rating||7) - 6) * 1.2;
-      // 4) 최신 게임 보너스/페널티 (최대 +15 / 최소 -20) ← 핵심 변경
+      let s = (genreW[g.genre]||0)*4 + 1.2;
+      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2; });
+      s += (g.rating||7)*0.8;
+      // 최신 게임 보너스 (2020년 이후 출시작 우대)
       if (g.year) {
         const age = currentYear - g.year;
-        if (age <= 1) s += 15;       // 2025-2026
-        else if (age <= 2) s += 12;  // 2024
-        else if (age <= 3) s += 9;   // 2023
-        else if (age <= 4) s += 6;   // 2022
-        else if (age <= 5) s += 3;   // 2021
-        else if (age <= 6) s += 0;   // 2020
-        else if (age <= 8) s -= 5;   // 2018-2019
-        else if (age <= 10) s -= 10; // 2016-2017
-        else s -= 20;                // 2015 이전
+        if (age <= 2) s += 6;
+        else if (age <= 4) s += 3;
+        else if (age <= 6) s += 1;
+        else s -= Math.min(3, (age - 6) * 0.4);
       }
-      // 5) 높은 평점 추가 보너스
-      if ((g.rating||0) >= 9.5) s += 5;
-      else if ((g.rating||0) >= 9.0) s += 3;
-      else if ((g.rating||0) >= 8.5) s += 1;
+      // 높은 평점 보너스
+      if ((g.rating||0) >= 9.0) s += 4;
+      else if ((g.rating||0) >= 8.5) s += 2;
       return {...g, _score:s};
     })
     .sort((a,b) => b._score - a._score);
-
-  // 프랜차이즈 중복 제거 (같은 시리즈에서 최대 2개만)
-  const result = [];
-  const seriesCount = {};
-  for (const g of scored) {
-    // 시리즈 키: 제목에서 숫자/부제 제거하여 기본 시리즈명 추출
-    const seriesKey = g.title
-      .replace(/\s*[:：\-–]\s*.*/,'')  // 부제 제거
-      .replace(/\s*\d+\s*$/,'')        // 후행 숫자 제거
-      .replace(/\s*(II|III|IV|V|VI|VII|VIII|IX|X)\s*$/i,'') // 로마숫자 제거
-      .replace(/\s*(Remastered|Definitive|Ultimate|GOTY|Redux|Director'?s?\s*Cut|Complete|Special|Legendary|Royal|Reload)\s*(Edition)?/gi,'')
-      .trim().toLowerCase();
-    const count = seriesCount[seriesKey] || 0;
-    if (count >= 2) continue; // 같은 시리즈에서 2개 초과 스킵
-    seriesCount[seriesKey] = count + 1;
-    result.push(g);
-    if (result.length >= 60) break;
-  }
-  return result;
 }
 
 function getTopTags(limit=6) {
@@ -2637,26 +2606,11 @@ async function loadSteamRecommendations() {
     });
   });
 
-  let sorted = Object.values(map)
+  const sorted = Object.values(map)
     .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 500 || (app.owners||0) >= 500000 || (app.positive||0) >= 3000)
     .map(app => ({ ...app, _score: app._score + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 25 : 0) + Math.log1p(app.ccu||0) * 2.2 + Math.log1p(app.positive||0) * 0.4 + Math.log1p(app.owners||0) * 0.3 }))
-    .sort((a,b)=>b._score-a._score);
-
-  // 프랜차이즈 중복 제거 (Steam 결과에서도)
-  const deduped = [];
-  const steamSeriesCount = {};
-  for (const app of sorted) {
-    const sk = (app.name||'').replace(/\s*[:：\-–]\s*.*/,'').replace(/\s*\d+\s*$/,'')
-      .replace(/\s*(II|III|IV|V|VI|VII|VIII|IX|X)\s*$/i,'')
-      .replace(/\s*(Remastered|Definitive|Ultimate|GOTY|Redux|Director'?s?\s*Cut|Complete|Special|Legendary)\s*(Edition)?/gi,'')
-      .trim().toLowerCase();
-    const cnt = steamSeriesCount[sk] || 0;
-    if (cnt >= 2) continue;
-    steamSeriesCount[sk] = cnt + 1;
-    deduped.push(app);
-    if (deduped.length >= 120) break;
-  }
-  sorted = deduped;
+    .sort((a,b)=>b._score-a._score)
+    .slice(0,120);
   if (!sorted.length) {
     // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
     const local = getLocalRecommendations();
@@ -2887,7 +2841,7 @@ async function renderApp() {
   steamRecLoaded = false;
   const local = getLocalRecommendations();
   renderHeroGrid(local.slice(0,3));
-  renderMoreGrid(local.slice(3,60));
+  renderMoreGrid(local.slice(3,30));
   showTab('rec');
   prefetchCoreData();
   maybeRefreshLiveData(false);
