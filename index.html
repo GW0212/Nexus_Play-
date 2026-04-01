@@ -2261,41 +2261,34 @@ const POPULAR_GAME_IDS = new Set([
   // 스포츠/레이싱 인기
   3405690,3551340,3472040,2669320,2488620,2882430,1665460
 ]);
-
-const LEGACY_RECOMMENDATION_IDS = new Set([10,20,30,40,50,60,70,80,130,220,240,320,340,380,400,420,500,550,620,221,222,280,300,360,380,420,2400,3200,3400,4000]);
-const LEGACY_RECOMMENDATION_KEYWORDS = [
-  'counter-strike', 'team fortress classic', 'day of defeat', 'ricochet',
-  'half-life: opposing force', 'counter-strike: condition zero', 'condition zero deleted scenes',
-  'deathmatch classic', 'half-life', 'half-life 2: deathmatch'
-];
-const MODERN_PRIORITY_IDS = new Set([
-  730,570,578080,271590,1172470,252490,381210,1091500,1245620,1086940,553850,
-  1623730,1203620,2358720,2215430,2379780,1868140,1627720,1888160,2246340,
-  2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,
-  2054970,2161700,1687950,1593500,1817070,1817190,1551360,2440510,
-  3405690,3551340,3472040,2669320,2488620,2882430,1665460
-]);
-function getRecommendationYear(app) {
-  const appid = Number(app?.appid || app?.id);
-  return getGameById(appid)?.year || Number(app?.year || 0) || 0;
+const LEGACY_RECOMMEND_BLOCKLIST = new Set([10,20,30,40,50,60,70,80,130,220,240,300,320,340,360,380,400,420,440,500,550,620,1250,4000,9390,227300]);
+const MODERN_RECOMMEND_KEEP = new Set([730,578080,1172470,1245620,1086940,271590,1174180,381210,252490,553850,431960,3240220,236390,1144200,2357570,1623730,2358720,2215430,1817070,1593500,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,1687950,1462040,782330,548430,1237970,581320,1361210,671860,393380,686810,1693980,1604030,1172620,1426210,1332010,753640,646570,632360,2246340,2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,3405690,3551340,3472040,2669320,2488620,2882430,1665460]);
+function getAppYear(app) {
+  const local = getGameById(Number(app?.appid || app?.id));
+  return Number(local?.year || app?.year || 0) || 0;
 }
-function isLegacyRecommendation(app) {
-  const appid = Number(app?.appid || app?.id);
-  if (LEGACY_RECOMMENDATION_IDS.has(appid)) return true;
-  const title = normalizeTitleKey(app?.name || app?.title || '');
-  return LEGACY_RECOMMENDATION_KEYWORDS.some(k => title.includes(k));
+function isRecommendableModernGame(app) {
+  const appid = Number(app?.appid || app?.id || 0);
+  const year = getAppYear(app);
+  const rating = Number(app?.rating || getGameById(appid)?.rating || 0) || 0;
+  if (LEGACY_RECOMMEND_BLOCKLIST.has(appid)) return false;
+  if (MODERN_RECOMMEND_KEEP.has(appid)) return true;
+  if (year && year < 2015) return false;
+  if (year >= 2021) return true;
+  if (year >= 2018 && rating >= 8.0) return true;
+  return false;
 }
-function isModernRecommendationCandidate(app) {
-  if (!app || !app.appid || !app.name) return false;
-  if (selectedIds.includes(Number(app.appid))) return false;
-  if (isLegacyRecommendation(app)) return false;
-  const year = getRecommendationYear(app);
-  const ccu = Number(app.ccu || 0);
-  const owners = Number(app.owners || 0);
-  const positive = Number(app.positive || 0);
-  if (year && year >= 2018) return true;
-  if (MODERN_PRIORITY_IDS.has(Number(app.appid))) return true;
-  return ccu >= 20000 || owners >= 2000000 || positive >= 20000;
+function recommendationPopularityBonus(app) {
+  const appid = Number(app?.appid || app?.id || 0);
+  const year = getAppYear(app);
+  let bonus = 0;
+  if (POPULAR_GAME_IDS.has(appid)) bonus += 18;
+  if (MODERN_RECOMMEND_KEEP.has(appid)) bonus += 12;
+  if (year >= 2023) bonus += 12;
+  else if (year >= 2021) bonus += 8;
+  else if (year >= 2018) bonus += 4;
+  else if (year && year < 2015) bonus -= 20;
+  return bonus;
 }
 
 function resolvePrimaryGenre(app) {
@@ -2525,21 +2518,22 @@ function getLocalRecommendations() {
   const currentYear = new Date().getFullYear();
   return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
+    .filter(g => isRecommendableModernGame(g))
     .map(g => {
-      let s = (genreW[g.genre]||0)*4 + 1.2;
-      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2; });
-      s += (g.rating||7)*0.8;
-      // 최신 게임 보너스 (2020년 이후 출시작 우대)
+      let s = (genreW[g.genre]||0)*5 + 2;
+      (g.tags||[]).forEach(t => { s += (tagW[t]||0)*2.4; });
+      s += (g.rating||7)*1.2;
       if (g.year) {
         const age = currentYear - g.year;
-        if (age <= 2) s += 6;
-        else if (age <= 4) s += 3;
-        else if (age <= 6) s += 1;
-        else s -= Math.min(3, (age - 6) * 0.4);
+        if (age <= 1) s += 14;
+        else if (age <= 3) s += 10;
+        else if (age <= 5) s += 6;
+        else if (age <= 8) s += 2;
+        else s -= Math.min(8, (age - 8) * 0.9);
       }
-      // 높은 평점 보너스
-      if ((g.rating||0) >= 9.0) s += 4;
-      else if ((g.rating||0) >= 8.5) s += 2;
+      s += recommendationPopularityBonus(g);
+      if ((g.rating||0) >= 9.0) s += 5;
+      else if ((g.rating||0) >= 8.5) s += 3;
       return {...g, _score:s};
     })
     .sort((a,b) => b._score - a._score);
@@ -2600,29 +2594,24 @@ async function loadSteamRecommendations() {
   });
 
   const sorted = Object.values(map)
-    .filter(app => isModernRecommendationCandidate(app) || POPULAR_GAME_IDS.has(Number(app.appid)))
     .map(app => {
-      const year = getRecommendationYear(app);
-      const currentYear = new Date().getFullYear();
-      let modernBonus = 0;
-      if (MODERN_PRIORITY_IDS.has(Number(app.appid))) modernBonus += 30;
-      if (year) {
-        const age = currentYear - year;
-        if (age <= 1) modernBonus += 18;
-        else if (age <= 3) modernBonus += 12;
-        else if (age <= 6) modernBonus += 5;
-        else if (age >= 10) modernBonus -= 20;
-      }
+      const appid = Number(app.appid);
+      const year = getAppYear(app);
+      const local = getGameById(appid);
+      const recEligible = isRecommendableModernGame({ ...app, year, rating: local?.rating });
       return {
         ...app,
+        _year: year,
+        _eligible: recEligible,
         _score: app._score
-          + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 20 : 0)
-          + modernBonus
-          + Math.log1p(app.ccu||0) * 2.6
+          + recommendationPopularityBonus({ ...app, year, rating: local?.rating })
+          + Math.log1p(app.ccu||0) * 2.4
           + Math.log1p(app.positive||0) * 0.55
-          + Math.log1p(app.owners||0) * 0.45
+          + Math.log1p(app.owners||0) * 0.38
       };
     })
+    .filter(app => app._eligible)
+    .filter(app => (app.ccu||0) >= 1000 || (app.owners||0) >= 750000 || (app.positive||0) >= 5000 || POPULAR_GAME_IDS.has(Number(app.appid)))
     .sort((a,b)=>b._score-a._score)
     .slice(0,120);
   if (!sorted.length) {
@@ -2804,7 +2793,7 @@ async function loadHotGames(silent = false) {
   if (!mostPlayedList.length) {
     _hotRawData = { ccu: [], positive: [], average_2weeks: [] };
     if (!silent && statusEl) {
-      statusEl.textContent = '⚠️ Steam 현재 플레이어 수 데이터를 가져오지 못했습니다. 잠시 후 다시 시도해주세요.';
+      statusEl.textContent = '⚠️ Steam 실시간 데이터를 아직 불러오지 못했습니다. GitHub Actions의 Fetch Steam Data를 1회 실행한 뒤 잠시 후 다시 확인해주세요.';
       statusEl.className = 'hot-status';
     }
   } else {
@@ -2830,10 +2819,10 @@ function renderHotGrid() {
   if (!gridEl || !_hotRawData) return;
   let list = [...(_hotRawData[hotSortBy] || [])];
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
-  if (statusEl) statusEl.className = 'hot-status hidden';
+  if (statusEl && list.length) statusEl.className = 'hot-status hidden';
   gridEl.innerHTML = list.length
     ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true })).join('')
-    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 게임이 없습니다.'}</div>`;
+    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 데이터가 아직 준비되지 않았습니다. Fetch Steam Data 실행 후 1~2분 뒤 다시 확인해주세요.'}</div>`;
 }
 
 // ══════════════════════════════════════════════════════════════
