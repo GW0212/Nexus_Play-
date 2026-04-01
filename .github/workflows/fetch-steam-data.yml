@@ -68,14 +68,18 @@ jobs:
                 appid: Number(row.appid || row.app_id || row.id || row.appID),
                 rank: Number(row.rank || row.position || idx + 1),
                 ccu: toNum(
-                  row.concurrent_in_game,
                   row.current_players,
+                  row.current_player_count,
+                  row.concurrent_in_game,
+                  row.current_in_game,
+                  row.players_right_now,
                   row.player_count,
+                  row.players,
                   row.in_game,
                   row.ccu
                 )
               }))
-              .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number(r.ccu) > 0);
+              .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number.isFinite(r.ccu) && r.ccu > 0);
 
             async function getAppDetails(appid) {
               try {
