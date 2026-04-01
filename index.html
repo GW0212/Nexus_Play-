@@ -1181,7 +1181,17 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 :root[data-theme="light"] .empty-note{border-color:rgba(15,23,42,0.12);background:rgba(248,250,252,0.8)}
 
 @media (max-width:980px){.navbar{height:auto;min-height:72px;padding:12px 14px;gap:12px;flex-wrap:wrap;justify-content:space-between}.nav-tabs{order:3;width:100%;justify-content:space-between;overflow-x:auto;padding-bottom:2px}.nav-tab{flex:1 0 auto;text-align:center}.nav-right{margin-left:auto;flex-wrap:wrap;justify-content:flex-end}}
-@media (max-width:600px){.navbar{padding:10px 12px;gap:10px}.nav-logo{width:100%;justify-content:center;font-size:1.2rem;letter-spacing:3px}.nav-tabs{width:100%;gap:6px;padding:4px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.nav-tab{min-height:42px;font-size:0.78rem;padding:10px 8px;display:flex;align-items:center;justify-content:center}.nav-right{width:100%;display:grid;grid-template-columns:1fr;gap:8px}.theme-toggle-group{order:2;width:100%;justify-content:center}.theme-btn{flex:1;text-align:center;min-height:40px}.reset-btn{width:100%;justify-content:center;min-height:42px;border-radius:10px}.steam-badge{display:none}.section-title{font-size:1.9rem;line-height:1.04}.hot-controls{width:100%}.hot-sort-btn{flex:1;min-width:0;padding:9px 10px;font-size:0.72rem}.genre-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.genre-pill{flex:0 0 auto;white-space:nowrap;min-height:38px}.steam-card-title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:2.3em}.steam-card-body{padding:9px 9px 8px}.steam-card-footer{padding:6px 9px 9px;gap:8px}.steam-card-dev{max-width:95px}.game-grid,.hot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:10px}.main-content{padding:14px 12px 24px}.rec-hero,.genre-tab-content,.hot-tab-content,.more-recs{padding:14px 12px;border-radius:14px}}
+@media (max-width:600px){.navbar{padding:10px 12px}.nav-logo{font-size:1.1rem}.nav-tabs{gap:6px}.nav-tab{font-size:0.75rem;padding:8px 10px}.theme-toggle-group{order:2;width:100%;justify-content:center}.theme-btn{flex:1;text-align:center}.reset-btn{width:100%;justify-content:center}.steam-badge{display:none}.section-title{font-size:2rem;line-height:1.02}.hot-controls{width:100%}.hot-sort-btn{flex:1;min-width:0;padding:8px 10px;font-size:0.72rem}.genre-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.genre-pill{flex:0 0 auto;white-space:nowrap}.steam-card-title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:2.3em}.steam-card-body{padding:9px 9px 8px}.steam-card-footer{padding:6px 9px 9px;gap:8px}.steam-card-dev{max-width:95px}.game-grid,.hot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:10px}.main-content{padding:16px 12px 28px}.rec-hero,.genre-tab-content,.hot-tab-content,.more-recs{padding:16px 12px}}
+
+
+@media (max-width: 768px) {
+  .app-title { font-size: clamp(1.35rem, 5.8vw, 1.8rem) !important; line-height: 1.15; }
+  .app-subtitle { font-size: 0.8rem !important; }
+  .topbar, .main-header, .header-inner { padding-left: 14px !important; padding-right: 14px !important; }
+  .tab-switcher, .main-tabs { gap: 8px !important; flex-wrap: wrap; }
+  .tab-btn, .main-tab-btn, .genre-pill, .hot-sort-btn, .ob-filter-btn { min-height: 42px !important; padding: 10px 14px !important; border-radius: 12px !important; }
+  .genre-search-wrap { padding-left: 14px !important; padding-right: 14px !important; }
+}
 
 </style>
 </head>
@@ -1573,7 +1583,6 @@ const GAMES = [
   { id:1290000, title:"PowerWash Simulator",           genre:"시뮬레이션", tags:["힐링","시뮬레이션","캐주얼","협동","스트레스해소"],     rating:8.6, year:2022, dev:"FuturLab",                  desc:"온갖 것을 세척하는 중독성 넘치는 힐링 게임." },
   { id:613100,  title:"House Flipper",                 genre:"시뮬레이션", tags:["시뮬레이션","힐링","건설","캐주얼","인테리어"],         rating:8.0, year:2018, dev:"Empyrean",                  desc:"집을 사서 고치고 파는 인테리어 시뮬." },
   { id:1551360, title:"Forza Horizon 5",               genre:"레이싱",     tags:["레이싱","오픈월드","멀티플레이어","캐주얼","현실적"],    rating:9.0, year:2021, dev:"Playground Games",         desc:"멕시코를 배경으로 한 역대 최고의 레이싱 게임." },
-  { id:1097130, title:"Circuit Superstars",           genre:"레이싱",     tags:["레이싱","탑다운","아케이드","모터스포츠","멀티플레이어"], rating:8.4, year:2023, dev:"Original Fire Games",       desc:"탑다운 시점과 피트스탑 운영이 살아 있는 모터스포츠 레이싱." },
   { id:228380,  title:"Wreckfest",                     genre:"레이싱",     tags:["레이싱","파괴","멀티플레이어","캐주얼","물리엔진"],      rating:8.7, year:2018, dev:"Bugbear Entertainment",    desc:"차를 부수고 난리치는 파괴적인 레이싱." },
   { id:812140,  title:"Assassin's Creed Odyssey",      genre:"RPG",        tags:["rpg","오픈월드","그리스","역사","액션"],                 rating:8.2, year:2018, dev:"Ubisoft Quebec",            desc:"고대 그리스를 무대로 한 방대한 오픈월드 RPG." },
 
@@ -1600,7 +1609,6 @@ const GAMES = [
   { id:544750,  title:"SOULCALIBUR VI",               genre:"격투",     tags:["격투","3D","무기","역사","경쟁"],                     rating:8.3, year:2018, dev:"Bandai Namco",            desc:"무기 기반 화려한 3D 격투 게임의 정석." },
   { id:245170,  title:"Skullgirls 2nd Encore",        genre:"격투",     tags:["격투","2D","인디","캐릭터","애니"],                   rating:9.0, year:2014, dev:"Hidden Variable",         desc:"아름다운 수제 애니메이션으로 만든 인디 격투 게임." },
   { id:1166990, title:"Granblue Fantasy Versus",      genre:"격투",     tags:["격투","애니","경쟁","스토리","rpg요소"],              rating:8.2, year:2020, dev:"Arc System Works",         desc:"인기 모바일 RPG 그랜블루를 화려한 격투 게임으로." },
-  { id:383980,  title:"Rivals of Aether",             genre:"격투",     tags:["격투","플랫폼","인디","대전","멀티플레이어"],           rating:9.0, year:2017, dev:"Aether Studios",           desc:"원소를 활용해 싸우는 플랫폼 파이터 명작." },
   { id:1498570, title:"THE KING OF FIGHTERS XV",      genre:"격투",     tags:["격투","팀","경쟁","클래식","멀티플레이어"],           rating:8.0, year:2022, dev:"SNK",                     desc:"KOF 시리즈의 30주년 기념작. 팀 배틀 격투의 전통." },
   { id:577940,  title:"Killer Instinct",              genre:"격투",     tags:["격투","무료","경쟁","콤보","Xbox"],                   rating:8.5, year:2013, dev:"Iron Galaxy",             desc:"화려한 콤보와 개성 강한 캐릭터의 무료 격투 게임." },
   { id:1372280, title:"Melty Blood: Type Lumina",     genre:"격투",     tags:["격투","비주얼노벨","애니","2D","경쟁"],               rating:8.6, year:2021, dev:"French Bread",            desc:"달의 노래 세계관의 정교한 2D 격투 게임." },
@@ -1963,7 +1971,7 @@ const EXTRA_CURATED_GAMES = [
   { id:493340, title:"Planet Zoo", genre:"시뮬레이션", tags:["동물원","시뮬레이션","건설","경영","동물"], rating:8.7, year:2019, dev:"Frontier Developments", desc:"동물원을 설계하고 동물을 관리하는 시뮬레이션." },
   { id:648350, title:"Two Point Hospital", genre:"시뮬레이션", tags:["병원","경영","유머","시뮬레이션","캐주얼"], rating:8.8, year:2018, dev:"Two Point Studios", desc:"유머러스한 병원 경영 시뮬레이션." },
   { id:1042550, title:"Snowrunner", genre:"시뮬레이션", tags:["트럭","오프로드","시뮬레이션","오픈월드","협동"], rating:8.7, year:2021, dev:"Saber Interactive", desc:"험로를 돌파하며 화물을 배달하는 오프로드 시뮬레이션." },
-  { id:2688950, title:"Planet Coaster 2", genre:"시뮬레이션", tags:["놀이공원","워터파크","시뮬레이션","경영","건설"], rating:7.8, year:2024, dev:"Frontier Developments", desc:"워터파크가 추가된 놀이공원 시뮬레이션 후속작." },
+  { id:3243440, title:"Planet Coaster 2", genre:"시뮬레이션", tags:["놀이공원","워터파크","시뮬레이션","경영","건설"], rating:7.8, year:2024, dev:"Frontier Developments", desc:"워터파크가 추가된 놀이공원 시뮬레이션 후속작." },
 
   // ── 추가 공포 (20) ──
   { id:739630, title:"Phasmophobia", genre:"공포", tags:["공포","협동","유령","조사","VR"], rating:9.1, year:2020, dev:"Kinetic Games", desc:"유령의 종류를 추리하며 조사하는 협동 공포 게임." },
@@ -2021,7 +2029,7 @@ const EXTRA_CURATED_GAMES = [
   { id:228440, title:"Mortal Kombat X", genre:"격투", tags:["격투","고어","경쟁","스토리","멀티플레이어"], rating:8.4, year:2015, dev:"NetherRealm Studios", desc:"세대교체 캐릭터가 등장하는 모탈 컴뱃 시리즈." },
   { id:242860, title:"Injustice: Gods Among Us Ultimate Edition", genre:"격투", tags:["격투","DC코믹스","슈퍼히어로","스토리","2D"], rating:8.3, year:2013, dev:"NetherRealm Studios", desc:"DC 히어로들이 맞붙는 격투 게임." },
   { id:627270, title:"Absolver", genre:"격투", tags:["격투","무술","온라인","커스터마이즈","인디"], rating:7.8, year:2017, dev:"Sloclap", desc:"무술 모션을 조합해 자신만의 스타일을 만드는 격투." },
-  { id:383980, title:"Rivals of Aether", genre:"격투", tags:["격투","플랫폼","인디","경쟁","도트"], rating:9.0, year:2017, dev:"Dan Fornace", desc:"원소 능력 기반의 인디 플랫폼 격투 게임." },
+  { id:412680, title:"Rivals of Aether", genre:"격투", tags:["격투","플랫폼","인디","경쟁","도트"], rating:9.0, year:2017, dev:"Dan Fornace", desc:"원소 능력 기반의 인디 플랫폼 격투 게임." },
   { id:1634040, title:"Under Night In-Birth II Sys:Celes", genre:"격투", tags:["격투","애니","2D","경쟁","인디"], rating:8.5, year:2024, dev:"French-Bread", desc:"독자적 시스템이 깊은 2D 애니 격투 게임." },
   { id:1240260, title:"DNF Duel", genre:"격투", tags:["격투","2D","던파","애니","경쟁"], rating:7.8, year:2022, dev:"Eighting", desc:"던전앤파이터 캐릭터들의 화려한 2D 격투." },
   { id:1229180, title:"Skullgirls 2nd Encore", genre:"격투", tags:["격투","애니","인디","2D","경쟁"], rating:9.1, year:2020, dev:"Hidden Variable Studios", desc:"핸드드로잉 애니메이션이 빛나는 인디 격투 명작." },
@@ -2041,12 +2049,13 @@ const EXTRA_CURATED_GAMES = [
   { id:751780, title:"Ace Combat 7: Skies Unknown", genre:"스포츠", tags:["비행","전투기","액션","밀리터리","VR"], rating:8.7, year:2019, dev:"Bandai Namco", desc:"전투기 공중전의 짜릿함을 느끼는 에이스 컴뱃 시리즈." },
   { id:1517290, title:"Windjammers 2", genre:"스포츠", tags:["스포츠","아케이드","디스크","2D","멀티플레이어"], rating:8.3, year:2022, dev:"Dotemu", desc:"프리스비 대전의 클래식을 부활시킨 아케이드 스포츠." },
   { id:386070, title:"Pool Nation FX", genre:"스포츠", tags:["당구","시뮬레이션","스포츠","멀티플레이어","캐주얼"], rating:7.5, year:2015, dev:"Cherry Pop Games", desc:"리얼한 물리의 당구 시뮬레이션 게임." },
-  { id:898580, title:"Premium Bowling", genre:"스포츠", tags:["볼링","스포츠","시뮬레이션","VR","캐주얼"], rating:7.8, year:2019, dev:"VISION3 Games", desc:"VR도 지원하는 현실적인 볼링 시뮬레이션." },
+  { id:685260, title:"Premium Bowling", genre:"스포츠", tags:["볼링","스포츠","시뮬레이션","VR","캐주얼"], rating:7.8, year:2019, dev:"VISION3 Games", desc:"VR도 지원하는 현실적인 볼링 시뮬레이션." },
   { id:1190180, title:"Skater XL", genre:"스포츠", tags:["스케이트","스포츠","시뮬레이션","물리","인디"], rating:7.3, year:2020, dev:"Easy Day Studios", desc:"물리 기반 조작의 인디 스케이트보드 시뮬레이션." },
   { id:1843760, title:"The Crew Motorfest", genre:"스포츠", tags:["레이싱","오픈월드","스포츠","멀티플레이어","축제"], rating:7.8, year:2023, dev:"Ubisoft Ivory Tower", desc:"하와이 배경의 오픈월드 레이싱 페스티벌." },
   { id:227200, title:"Worms W.M.D", genre:"스포츠", tags:["턴제","전략","파티","유머","멀티플레이어"], rating:8.6, year:2016, dev:"Team17", desc:"차량과 건물 진입이 추가된 웜즈 시리즈 최신작." },
   { id:233270, title:"Football Manager 2014", genre:"스포츠", tags:["축구","감독","시뮬레이션","전략","데이터"], rating:8.5, year:2013, dev:"Sports Interactive", desc:"풋볼 매니저 시리즈의 클래식 버전." },
-    { id:265930, title:"Goat Simulator", genre:"스포츠", tags:["코미디","시뮬레이션","샌드박스","파괴","스포츠"], rating:8.5, year:2014, dev:"Coffee Stain Studios", desc:"염소가 되어 세상을 파괴하는 유쾌한 시뮬레이션." },
+  { id:1437220, title:"Sports Story", genre:"스포츠", tags:["스포츠","인디","골프","RPG","도트"], rating:7.0, year:2022, dev:"Sidebar Games", desc:"골프를 중심으로 다양한 스포츠를 즐기는 인디 RPG." },
+  { id:265930, title:"Goat Simulator", genre:"스포츠", tags:["코미디","시뮬레이션","샌드박스","파괴","스포츠"], rating:8.5, year:2014, dev:"Coffee Stain Studios", desc:"염소가 되어 세상을 파괴하는 유쾌한 시뮬레이션." },
   { id:327890, title:"What the Golf?", genre:"스포츠", tags:["골프","코미디","퍼즐","인디","캐주얼"], rating:9.0, year:2020, dev:"Triband", desc:"골프의 모든 규칙을 비트는 코미디 물리 퍼즐 게임." },
   { id:924970, title:"Back 4 Blood", genre:"스포츠", tags:["FPS","협동","좀비","팀전","멀티플레이어"], rating:7.5, year:2021, dev:"Turtle Rock Studios", desc:"팀 기반 협동 좀비 사격 게임." },
   { id:1085660, title:"Destiny 2", genre:"스포츠", tags:["FPS","루터슈터","SF","레이드","멀티플레이어"], rating:8.3, year:2017, dev:"Bungie", desc:"광활한 우주에서 레이드와 PvP를 즐기는 온라인 FPS." },
@@ -2108,7 +2117,7 @@ const EXTRA_CURATED_GAMES = [
   { id:1293160, title:"GRID Legends", genre:"레이싱", tags:["레이싱","아케이드","스토리","멀티플레이어","자동차"], rating:8.0, year:2022, dev:"Codemasters", desc:"스토리 모드가 포함된 아케이드 레이싱 게임." },
   { id:1075200, title:"Wreckfest", genre:"레이싱", tags:["레이싱","파괴","물리","멀티플레이어","아케이드"], rating:8.9, year:2018, dev:"Bugbear Entertainment", desc:"차량 파괴와 충돌의 쾌감을 극대화한 레이싱." },
   { id:244050, title:"art of rally", genre:"레이싱", tags:["레이싱","랠리","인디","아트","미니멀"], rating:9.1, year:2020, dev:"Funselektor Labs", desc:"미니멀 아트 스타일의 탑뷰 랠리 인디 레이싱." },
-  { id:1097130, title:"Circuit Superstars", genre:"레이싱", tags:["레이싱","탑뷰","인디","아케이드","멀티플레이어"], rating:8.2, year:2022, dev:"Original Fire Games", desc:"탑뷰 시점의 캐주얼 아케이드 레이싱 인디 게임." },
+  { id:1880510, title:"Circuit Superstars", genre:"레이싱", tags:["레이싱","탑뷰","인디","아케이드","멀티플레이어"], rating:8.2, year:2022, dev:"Original Fire Games", desc:"탑뷰 시점의 캐주얼 아케이드 레이싱 인디 게임." },
   { id:352170, title:"TrackMania Turbo", genre:"레이싱", tags:["레이싱","아케이드","스턴트","속도감","멀티플레이어"], rating:8.5, year:2016, dev:"Nadeo", desc:"초스피드 스턴트 레이싱의 끝판왕." },
   { id:1507390, title:"WRC Generations", genre:"레이싱", tags:["레이싱","랠리","WRC","시뮬레이션","하이브리드"], rating:8.0, year:2022, dev:"KT Racing", desc:"하이브리드 랠리카가 등장하는 WRC 공식 레이싱." },
   { id:1843760, title:"The Crew Motorfest", genre:"레이싱", tags:["레이싱","오픈월드","자동차","축제","멀티플레이어"], rating:7.8, year:2023, dev:"Ubisoft Ivory Tower", desc:"하와이 배경의 오픈월드 레이싱 페스티벌." },
@@ -2194,9 +2203,9 @@ let hotSortBy = 'ccu';
 let hotGenreFilter = '전체';
 let _hotRawData = { ccu: [], positive: [], average_2weeks: [] };
 let _steamGenreCache = {};
-let _steamGenreRequests = {};
-let _steamGenreRenderToken = 0;
+let _steamGenreInflight = {};
 let _prefetchStarted = false;
+let _genreRequestToken = 0;
 
 // ── Data: Local-first, then SteamSpy API ──
 // GitHub Actions가 매일 data/ 폴더의 JSON을 갱신함
@@ -2243,18 +2252,16 @@ function normalizeSteamList(data) {
 
 function normalizeGenreItem(item, genre) {
   if (!item) return null;
-  const rawTitle = item.name || item.title || '';
-  const titleKey = normalizeTitleKey(rawTitle);
-  if (INVALID_STEAM_TITLE_KEYS.has(titleKey)) return null;
   if (item.appid || item.name) {
-    const normalized = { ...item, appid: getThumbAppId(item, rawTitle), name: rawTitle || '', _source: item._source || 'steam' };
-    if (!normalized.appid) return null;
+    const canonicalAppid = resolveCanonicalAppId(item, item.name || item.title || '');
+    const normalized = { ...item, appid: canonicalAppid, name: item.name || item.title || '', _source: item._source || 'steam' };
     normalized._genre = resolvePrimaryGenre(normalized);
     return normalized;
   }
   if (!(item.id && item.title)) return null;
+  const canonicalAppid = resolveCanonicalAppId(item.id, item.title);
   return {
-    appid: getThumbAppId(item, item.title),
+    appid: canonicalAppid,
     name: item.title,
     developer: item.dev || '',
     ccu: item.ccu ?? Math.round((item.rating || 7) * 3200),
@@ -2362,8 +2369,7 @@ function matchesGenreApp(app, genre) {
 function clearLiveDataCache() {
   _sessionDataCache.clear();
   hotLoaded = false;
-  _steamGenreCache = {};
-  _steamGenreRequests = {};
+  _steamGenreInflight = {};
 }
 function maybeRefreshLiveData(force = false) {
   clearLiveDataCache();
@@ -2463,7 +2469,7 @@ const THUMB_OVERRIDES = {
   "PGA TOUR 2K23": { appid:1588010 },
   "TopSpin 2K25": { appid:1785650 },
   "WWE 2K25": { appid:2882430 },
-  "WWE 2K24": { appid:2199460 },
+  "WWE 2K24": { appid:2315690 },
   "eFootball 2025": { appid:1665460 },
   "eFootball™ 2025": { appid:1665460 },
   "eFootball 2024": { appid:1665460 },
@@ -2502,12 +2508,20 @@ const THUMB_OVERRIDES = {
   "Forza Horizon 5": { appid:1551360 },
   "Microsoft Flight Simulator 2024": { appid:2537590 },
   "Microsoft Flight Simulator": { appid:1250410 },
-  "Planet Coaster 2": { appid:2688950 },
-  "Granblue Fantasy Versus": { appid:1166990 },
+  "Granblue Fantasy Versus": { appid:1090630 },
+  "Dragon Ball FighterZ": { appid:678950 },
+  "Mortal Kombat X": { appid:307780 },
+  "Injustice: Gods Among Us Ultimate Edition": { appid:242700 },
+  "Under Night In-Birth II Sys:Celes": { appid:2076010 },
+  "UNDER NIGHT IN-BIRTH II Sys:Celes": { appid:2076010 },
+  "Blade Strangers": { appid:565170 },
+  "Power Rangers: Battle for the Grid": { appid:1110100 },
+  "Them's Fightin' Herds": { appid:574980 },
   "Rivals of Aether": { appid:383980 },
   "Skullgirls 2nd Encore": { appid:245170 },
-  "Premium Bowling": { appid:898580 },
-  "Circuit Superstars": { appid:1097130 },
+  "MultiVersus": { appid:1818750 },
+  "Multiversus": { appid:1818750 },
+  "TEKKEN 8": { appid:1778820 },
 };
 const EXACT_GENRE_OVERRIDES = {
   3405690: '스포츠',   // EA SPORTS FC 26
@@ -2522,7 +2536,7 @@ const EXACT_GENRE_OVERRIDES = {
   1785650: '스포츠',   // TopSpin 2K25
   2813220: '스포츠',   // PGA TOUR 2K25
   2882430: '스포츠',   // WWE 2K25
-  2199460: '스포츠',   // WWE 2K24
+  2315690: '스포츠',   // WWE 2K24
   2108330: '스포츠',   // F1 23
   2488620: '스포츠',   // F1 24
   4025700: '시뮬레이션', // Heartopia
@@ -2556,7 +2570,6 @@ function normalizeTitleKey(v='') {
 const THUMB_OVERRIDES_NORMALIZED = Object.fromEntries(
   Object.entries(THUMB_OVERRIDES).map(([k,v]) => [normalizeTitleKey(k), v])
 );
-const INVALID_STEAM_TITLE_KEYS = new Set(['sports story']);
 
 const POPULAR_GAME_IDS = new Set([
   730,570,578080,1172470,1245620,1086940,271590,1174180,381210,440,252490,550,4000,289070,620,582010,292030,1091500,367520,413150,359550,553850,107410,431960,3240220,236390,1144200,1085660,252490,105600,2357570,440,227300,
@@ -2614,13 +2627,17 @@ function resolvePrimaryGenre(app) {
 
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
 function getGameById(id)  { return GAMES_CLEAN.find(g => g.id === id); }
-function getThumbAppId(gameOrId, title='') {
+function resolveCanonicalAppId(gameOrId, title='') {
   if (typeof gameOrId === 'object' && gameOrId) {
-    const titleKey = normalizeTitleKey(gameOrId.title || gameOrId.name || title);
-    return (THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || Number(gameOrId.appid || gameOrId.id);
+    const rawTitle = gameOrId.title || gameOrId.name || title;
+    const titleKey = normalizeTitleKey(rawTitle);
+    return Number((THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || gameOrId.appid || gameOrId.id || 0);
   }
   const titleKey = normalizeTitleKey(title);
-  return (THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || Number(gameOrId);
+  return Number((THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || gameOrId || 0);
+}
+function getThumbAppId(gameOrId, title='') {
+  return resolveCanonicalAppId(gameOrId, title);
 }
 function imgUrl(gameOrId, title='')       { const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
 function imgUrlAlt(gameOrId, title='')    { const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`; }
@@ -2665,7 +2682,7 @@ function makeSteamCard(app, rank, options = {}) {
   const fallback3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
   const fallback4 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_231x87.jpg`;
   return `
-    <a class="steam-card" href="https://store.steampowered.com/app/${app.appid}" target="_blank" rel="noopener">
+    <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${imgSrc}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
              onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${fallback1}'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='${fallback2}'}else if(this.dataset.fb==='2'){this.dataset.fb='3';this.src='${fallback3}'}else if(this.dataset.fb==='3'){this.dataset.fb='4';this.src='${fallback4}'}else{this.style.display='none'}">
@@ -2947,7 +2964,7 @@ async function loadSteamRecommendations() {
   heroEl.innerHTML = sorted.slice(0,3).map((app,i)=>{
     const thumbId = resolveSteamThumbId(app, app.name);
     return `
-    <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${app.appid}','_blank')" style="animation-delay:${i*0.08}s">
+    <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${thumbId}','_blank')" style="animation-delay:${i*0.08}s">
       <img src="${steamThumb(app, app.name)}" alt="${app.name}"
            onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg'}else{this.dataset.fb='3';this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'}">
       <div class="hero-card-overlay">
@@ -2957,7 +2974,7 @@ async function loadSteamRecommendations() {
           <div class="hero-dev">${app.developer||''}</div>
         </div>
         <div class="hero-tags">${Object.keys(app.tags||{}).slice(0,3).map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
-        <a href="https://store.steampowered.com/app/${app.appid}" target="_blank" class="steam-link" onclick="event.stopPropagation()">Steam에서 보기</a>
+        <a href="https://store.steampowered.com/app/${thumbId}" target="_blank" class="steam-link" onclick="event.stopPropagation()">Steam에서 보기</a>
       </div>
     </div>`;
   }).join('');
@@ -2992,6 +3009,12 @@ function applyGenreGrid(list, genre) {
 }
 
 function setGenreFilter(g) {
+  if (currentGenreFilter === g && _steamGenreCache[g]?.length) {
+    document.querySelectorAll('#genre-pills .genre-pill').forEach(b =>
+      b.classList.toggle('active', b.textContent.trim()===g));
+    applyGenreGrid(_steamGenreCache[g], g);
+    return;
+  }
   currentGenreFilter = g;
   document.querySelectorAll('#genre-pills .genre-pill').forEach(b =>
     b.classList.toggle('active', b.textContent.trim()===g));
@@ -3001,62 +3024,61 @@ function setGenreFilter(g) {
 async function loadSteamGenreData(genre, opts = {}) {
   const gridEl = document.getElementById('genre-grid');
   if (!gridEl && !opts.silent) return [];
+  const requestToken = ++_genreRequestToken;
+  const localFallback = GAMES_CLEAN.filter(g => genre === '전체' || g.genre === genre)
+    .map(g => normalizeGenreItem(g, genre)).filter(Boolean);
 
-  const requestToken = ++_steamGenreRenderToken;
   if (!opts.force && _steamGenreCache[genre]?.length) {
-    if (!opts.silent && requestToken === _steamGenreRenderToken) applyGenreGrid(_steamGenreCache[genre], genre);
+    if (!opts.silent) applyGenreGrid(_steamGenreCache[genre], genre);
     return _steamGenreCache[genre];
   }
 
-  if (_steamGenreRequests[genre] && !opts.force) {
-    const pending = await _steamGenreRequests[genre];
-    if (!opts.silent && requestToken === _steamGenreRenderToken) applyGenreGrid(pending, genre);
-    return pending;
+  if (!opts.silent) {
+    if (localFallback.length) applyGenreGrid(localFallback, genre);
+    else if (gridEl) gridEl.innerHTML = `<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 ${genre==='전체'?'전체':genre} 게임 불러오는 중...</div></div>`;
   }
 
-  if (!opts.silent && gridEl) {
-    gridEl.innerHTML = `<div class="grid-empty" style="grid-column:1/-1"><div class="steam-loading">🔄 Steam에서 ${genre==='전체'?'전체':genre} 게임 불러오는 중...</div></div>`;
+  if (!opts.force && _steamGenreInflight[genre]) {
+    const inflightResult = await _steamGenreInflight[genre].catch(() => localFallback);
+    if (!opts.silent && requestToken === _genreRequestToken) applyGenreGrid(inflightResult, genre);
+    return inflightResult;
   }
 
-  const loader = (async () => {
-    const tags = genre === '전체'
-      ? ['Action','RPG','Adventure','Simulation','Strategy','Indie']
-      : (GENRE_STEAM_TAGS[genre] || ['Action']);
+  const tags = genre === '전체'
+    ? ['Action','RPG','Adventure','Simulation','Strategy','Indie']
+    : (GENRE_STEAM_TAGS[genre] || ['Action']);
+
+  _steamGenreInflight[genre] = (async () => {
     const results = await Promise.all(tags.slice(0,6).map(tag=>steamspyFetch({request:'tag',tag}).catch(()=>null)));
-
     const merged = {};
-    results.forEach(d=>{
-      if(!d) return;
-      Object.values(d).forEach(app=>{
-        if(!app?.appid || !app?.name) return;
+    results.forEach(d => {
+      if (!d) return;
+      Object.values(d).forEach(app => {
+        if (!app.appid || !app.name) return;
         const normalized = normalizeGenreItem(app, genre);
         if (!normalized || !matchesGenreApp(normalized, genre)) return;
-        if(!merged[normalized.appid]) merged[normalized.appid]={...normalized,_cnt:0,_source:'steam'};
+        if (!merged[normalized.appid]) merged[normalized.appid] = { ...normalized, _cnt: 0, _source: 'steam' };
         merged[normalized.appid]._cnt++;
       });
     });
-
     let sorted = Object.values(merged)
       .sort((a,b)=>(b._cnt-a._cnt)||((b.ccu||0)-(a.ccu||0))||((b.positive||0)-(a.positive||0)))
-      .slice(0,240);
-
-    const localFallback = GAMES_CLEAN
-      .filter(g => genre === '전체' || g.genre === genre)
-      .map(g => normalizeGenreItem(g, genre)).filter(Boolean);
-
+      .slice(0,220);
     sorted = uniqueByAppId([...sorted, ...localFallback]).filter(app => matchesGenreApp(app, genre));
-    _steamGenreCache[genre] = sorted;
-    return sorted;
+    _steamGenreCache[genre] = sorted.length ? sorted : localFallback;
+    return _steamGenreCache[genre];
   })();
 
-  _steamGenreRequests[genre] = loader;
-
   try {
-    const sorted = await loader;
-    if (!opts.silent && requestToken === _steamGenreRenderToken) applyGenreGrid(sorted, genre);
+    const sorted = await _steamGenreInflight[genre];
+    if (!opts.silent && requestToken === _genreRequestToken) applyGenreGrid(sorted, genre);
     return sorted;
+  } catch {
+    _steamGenreCache[genre] = localFallback;
+    if (!opts.silent && requestToken === _genreRequestToken) applyGenreGrid(localFallback, genre);
+    return localFallback;
   } finally {
-    delete _steamGenreRequests[genre];
+    delete _steamGenreInflight[genre];
   }
 }
 
@@ -3224,7 +3246,7 @@ function resetApp() {
   localStorage.removeItem(STORAGE_KEY);
   selectedIds=[]; currentObFilter='전체'; currentGenreFilter='전체';
   obSearch=''; genreSearch=''; steamRecLoaded=false; hotLoaded=false; hotGenreFilter='전체';
-  _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _steamGenreRequests={}; _steamGenreRenderToken=0; _prefetchStarted=false;
+  _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _prefetchStarted=false;
   const si=document.getElementById('ob-search'); if(si) si.value='';
   const gi=document.getElementById('genre-search'); if(gi) gi.value='';
   updateObUI(); renderObFilter(); renderObGrid();
