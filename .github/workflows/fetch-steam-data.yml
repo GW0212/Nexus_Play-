@@ -15,23 +15,75 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch Steam datasets
+        shell: bash
         run: |
           mkdir -p data/tags
 
-          echo "Fetching official Steam most played chart..."
           node <<'NODE'
           const fs = require('fs');
+          const path = require('path');
 
-          async function getJson(url, opts = {}) {
-            const res = await fetch(url, {
-              headers: {
-                'user-agent': 'Mozilla/5.0 (compatible; NexusPlayBot/1.0)',
-                'accept': 'application/json,text/plain,*/*'
-              },
-              ...opts
-            });
-            if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-            return await res.json();
+          const TAGS = {
+            FPS: 'FPS',
+            RPG: 'RPG',
+            Action: 'Action',
+            Adventure: 'Adventure',
+            Strategy: 'Strategy',
+            Simulation: 'Simulation',
+            Horror: 'Horror',
+            Survival: 'Survival',
+            Fighting: 'Fighting',
+            Sports: 'Sports',
+            Open_World: 'Open World',
+            Indie: 'Indie',
+            Racing: 'Racing',
+            Roguelike: 'Roguelike',
+            'Co-op': 'Co-op',
+            Multiplayer: 'Multiplayer',
+          };
+
+          async function getJson(url, timeoutMs = 25000) {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), timeoutMs);
+            try {
+              const res = await fetch(url, {
+                signal: controller.signal,
+                headers: {
+                  'user-agent': 'Mozilla/5.0 (compatible; NexusPlayBot/1.0)',
+                  'accept': 'application/json,text/plain,*/*'
+                }
+              });
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              return await res.json();
+            } finally {
+              clearTimeout(timer);
+            }
+          }
+
+          function readJson(file, fallback) {
+            try {
+              return JSON.parse(fs.readFileSync(file, 'utf8'));
+            } catch {
+              return fallback;
+            }
+          }
+
+          function isUsefulJson(data) {
+            if (!data || data._note) return false;
+            if (Array.isArray(data)) return data.length > 0;
+            return typeof data === 'object' && Object.keys(data).length > 0;
+          }
+
+          function writeIfUseful(file, data, fallbackData) {
+            if (isUsefulJson(data)) {
+              fs.writeFileSync(file, JSON.stringify(data, null, 2));
+              return true;
+            }
+            if (isUsefulJson(fallbackData)) {
+              fs.writeFileSync(file, JSON.stringify(fallbackData, null, 2));
+              return true;
+            }
+            return false;
           }
 
           function extractRanks(payload) {
@@ -53,121 +105,115 @@ jobs:
             return Array.from(new Set([...genres, ...cats])).slice(0, 8);
           }
 
-          (async () => {
-            let chart;
+          async function fetchSteamSpy(request, extra = '') {
+            const url = `https://steamspy.com/api.php?request=${encodeURIComponent(request)}${extra}`;
             try {
-              chart = await getJson('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json');
-            } catch (e) {
-              console.error('Most played endpoint failed:', e.message);
-              fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
-              process.exit(0);
+              const data = await getJson(url, 20000);
+              return isUsefulJson(data) ? data : null;
+            } catch {
+              return null;
             }
+          }
 
-            const ranks = extractRanks(chart).slice(0, 100)
-              .map((row, idx) => ({
-                appid: Number(row.appid || row.app_id || row.id || row.appID),
-                rank: Number(row.rank || row.position || idx + 1),
-                ccu: toNum(
-                  row.current_players,
-                  row.current_player_count,
-                  row.concurrent_in_game,
-                  row.current_in_game,
-                  row.players_right_now,
-                  row.player_count,
-                  row.players,
-                  row.in_game,
-                  row.ccu
-                )
-              }))
-              .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number.isFinite(r.ccu) && r.ccu > 0);
+          async function fetchMostPlayed() {
+            try {
+              const chart = await getJson('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json');
+              const ranks = extractRanks(chart).slice(0, 100)
+                .map((row, idx) => ({
+                  appid: Number(row.appid || row.app_id || row.id || row.appID),
+                  rank: Number(row.rank || row.position || idx + 1),
+                  ccu: toNum(
+                    row.current_players,
+                    row.current_player_count,
+                    row.concurrent_in_game,
+                    row.current_in_game,
+                    row.players_right_now,
+                    row.player_count,
+                    row.players,
+                    row.in_game,
+                    row.ccu
+                  )
+                }))
+                .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number.isFinite(r.ccu) && r.ccu > 0);
 
-            async function getAppDetails(appid) {
-              try {
-                const detailPayload = await getJson(`https://store.steampowered.com/api/appdetails?appids=${appid}&l=english&cc=us`);
-                const raw = detailPayload?.[String(appid)];
-                return raw?.success ? raw.data : null;
-              } catch (e) {
-                console.error(`Appdetails failed for ${appid}:`, e.message);
-                return null;
+              const merged = [];
+              for (const item of ranks) {
+                try {
+                  const detailPayload = await getJson(`https://store.steampowered.com/api/appdetails?appids=${item.appid}&l=english&cc=us`, 15000);
+                  const raw = detailPayload?.[String(item.appid)];
+                  const detail = raw?.success ? raw.data : null;
+                  if (!detail || detail.type !== 'game') continue;
+                  const tags = pickGenres(detail);
+                  merged.push({
+                    appid: item.appid,
+                    name: detail.name || `App ${item.appid}`,
+                    developer: Array.isArray(detail.developers) ? detail.developers.join(', ') : '',
+                    ccu: item.ccu,
+                    positive: 0,
+                    negative: 0,
+                    average_2weeks: 0,
+                    rank: item.rank,
+                    tags: Object.fromEntries(tags.map(t => [t, 1])),
+                    tags_list: tags,
+                    genre: tags.join(', '),
+                    _source: 'steam_charts'
+                  });
+                } catch {}
+                await new Promise(resolve => setTimeout(resolve, 60));
               }
+              return merged;
+            } catch {
+              return null;
+            }
+          }
+
+          (async () => {
+            const fallbackMostPlayed = readJson('data/mostplayed.json', []);
+            const fallbackHot = readJson('data/hot.json', {});
+            const fallbackTop = readJson('data/top100.json', {});
+            const fallbackOwned = readJson('data/top100owned.json', {});
+
+            const [mostPlayed, hot, top, owned] = await Promise.all([
+              fetchMostPlayed(),
+              fetchSteamSpy('top100in2weeks'),
+              fetchSteamSpy('top100forever'),
+              fetchSteamSpy('top100owned')
+            ]);
+
+            const effectiveHot = isUsefulJson(hot) ? hot : fallbackHot;
+            const effectiveTop = isUsefulJson(top) ? top : fallbackTop;
+            const effectiveOwned = isUsefulJson(owned) ? owned : fallbackOwned;
+
+            if (!writeIfUseful('data/hot.json', hot, fallbackHot)) {
+              throw new Error('Unable to prepare data/hot.json');
+            }
+            if (!writeIfUseful('data/top100.json', top, fallbackTop)) {
+              throw new Error('Unable to prepare data/top100.json');
+            }
+            if (!writeIfUseful('data/top100owned.json', owned, fallbackOwned)) {
+              throw new Error('Unable to prepare data/top100owned.json');
             }
 
-            const merged = [];
-            for (const item of ranks) {
-              const detail = await getAppDetails(item.appid);
-              if (!detail || detail.type !== 'game') continue;
-              const tags = pickGenres(detail);
-              merged.push({
-                appid: item.appid,
-                name: detail.name || `App ${item.appid}`,
-                developer: Array.isArray(detail.developers) ? detail.developers.join(', ') : '',
-                ccu: item.ccu,
-                positive: 0,
-                negative: 0,
-                average_2weeks: 0,
-                rank: item.rank,
-                tags: Object.fromEntries(tags.map(t => [t, 1])),
-                tags_list: tags,
-                genre: tags.join(', '),
-                _source: 'steam_charts'
-              });
-              await new Promise(resolve => setTimeout(resolve, 80));
+            const mostPlayedOut = isUsefulJson(mostPlayed)
+              ? mostPlayed
+              : (isUsefulJson(effectiveHot) ? Object.values(effectiveHot).slice(0, 100) : fallbackMostPlayed);
+            if (!writeIfUseful('data/mostplayed.json', mostPlayedOut, fallbackMostPlayed)) {
+              throw new Error('Unable to prepare data/mostplayed.json');
             }
 
-            fs.writeFileSync('data/mostplayed.json', JSON.stringify(merged, null, 2));
-            console.log(`Saved data/mostplayed.json with ${merged.length} items from Steam current players chart`);
+            for (const [fileKey, tag] of Object.entries(TAGS)) {
+              const fallbackTag = readJson(path.join('data', 'tags', `${fileKey}.json`), {});
+              const fetchedTag = await fetchSteamSpy('tag', `&tag=${encodeURIComponent(tag)}`);
+              writeIfUseful(path.join('data', 'tags', `${fileKey}.json`), fetchedTag, fallbackTag);
+              await new Promise(resolve => setTimeout(resolve, 800));
+            }
+
+            console.log('Steam datasets refreshed successfully');
           })().catch(err => {
             console.error(err);
-            fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
-            process.exit(0);
+            process.exit(1);
           });
           NODE
-
-          echo "Fetching top 100 games (2 weeks)..."
-          curl -s --max-time 30 \
-            "https://steamspy.com/api.php?request=top100in2weeks" \
-            -o data/hot.json || echo '{}' > data/hot.json
-
-          echo "Fetching top 100 games (forever)..."
-          curl -s --max-time 30 \
-            "https://steamspy.com/api.php?request=top100forever" \
-            -o data/top100.json || echo '{}' > data/top100.json
-
-          echo "Fetching top 100 owned games..."
-          curl -s --max-time 30 \
-            "https://steamspy.com/api.php?request=top100owned" \
-            -o data/top100owned.json || echo '{}' > data/top100owned.json
-
-          declare -A TAGS=(
-            ["FPS"]="FPS"
-            ["RPG"]="RPG"
-            ["Action"]="Action"
-            ["Adventure"]="Adventure"
-            ["Strategy"]="Strategy"
-            ["Simulation"]="Simulation"
-            ["Horror"]="Horror"
-            ["Survival"]="Survival"
-            ["Fighting"]="Fighting"
-            ["Sports"]="Sports"
-            ["Open_World"]="Open+World"
-            ["Indie"]="Indie"
-            ["Racing"]="Racing"
-            ["Roguelike"]="Roguelike"
-            ["Co-op"]="Co-op"
-            ["Multiplayer"]="Multiplayer"
-          )
-
-          for KEY in "${!TAGS[@]}"; do
-            TAG="${TAGS[$KEY]}"
-            echo "Fetching tag: $KEY..."
-            curl -s --max-time 20 \
-              "https://steamspy.com/api.php?request=tag&tag=${TAG}" \
-              -o "data/tags/${KEY}.json" || echo '{}' > "data/tags/${KEY}.json"
-            sleep 1
-          done
-
-          echo "Done! Files:"
-          ls -lh data/ data/tags/
 
       - name: Commit & Push
         run: |
