@@ -72,12 +72,10 @@ jobs:
                   row.current_players,
                   row.player_count,
                   row.in_game,
-                  row.ccu,
-                  row.peak_in_game,
-                  row.peak_today
+                  row.ccu
                 )
               }))
-              .filter(r => Number.isFinite(r.appid) && r.appid > 0);
+              .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number(r.ccu) > 0);
 
             async function getAppDetails(appid) {
               try {
