@@ -1180,8 +1180,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 :root[data-theme="light"] .hot-sort-btn.active{background:linear-gradient(135deg, rgba(0,229,255,0.1), rgba(124,58,237,0.1));color:#0891b2;border-color:rgba(0,229,255,0.3)}
 :root[data-theme="light"] .empty-note{border-color:rgba(15,23,42,0.12);background:rgba(248,250,252,0.8)}
 
-@media (max-width:980px){.navbar{height:auto;min-height:72px;padding:12px 14px;gap:12px;flex-wrap:wrap;justify-content:space-between}.nav-tabs{order:3;width:100%;justify-content:space-between;overflow-x:auto;padding-bottom:2px}.nav-tab{flex:1 0 auto;text-align:center}.nav-right{margin-left:auto;flex-wrap:wrap;justify-content:flex-end}}
-@media (max-width:600px){.navbar{padding:10px 12px}.nav-logo{font-size:1.1rem}.nav-tabs{gap:6px}.nav-tab{font-size:0.75rem;padding:8px 10px}.theme-toggle-group{order:2;width:100%;justify-content:center}.theme-btn{flex:1;text-align:center}.reset-btn{width:100%;justify-content:center}.steam-badge{display:none}.section-title{font-size:2rem;line-height:1.02}.hot-controls{width:100%}.hot-sort-btn{flex:1;min-width:0;padding:8px 10px;font-size:0.72rem}.genre-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.genre-pill{flex:0 0 auto;white-space:nowrap}.steam-card-title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:2.3em}.steam-card-body{padding:9px 9px 8px}.steam-card-footer{padding:6px 9px 9px;gap:8px}.steam-card-dev{max-width:95px}.game-grid,.hot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:10px}.main-content{padding:16px 12px 28px}.rec-hero,.genre-tab-content,.hot-tab-content,.more-recs{padding:16px 12px}}
+@media (max-width:980px){.navbar{height:auto;min-height:72px;padding:12px 14px;gap:12px;flex-wrap:wrap;justify-content:center}.nav-logo{order:1;flex:1 1 100%;justify-content:center;text-align:center}.nav-tabs{order:3;width:100%;justify-content:space-between;overflow-x:auto;padding-bottom:2px}.nav-tab{flex:1 0 auto;text-align:center}.nav-right{order:2;width:100%;margin-left:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}}
+@media (max-width:600px){.navbar{padding:10px 12px}.nav-logo{font-size:1.1rem;justify-content:center;text-align:center;width:100%}.nav-tabs{gap:6px}.nav-tab{font-size:0.75rem;padding:8px 10px}.nav-right{display:grid;grid-template-columns:minmax(110px,auto) 1fr;grid-template-areas:'reset theme';gap:8px;width:100%}.reset-btn{grid-area:reset;width:100%;justify-content:center;min-height:46px;order:0}.theme-toggle-group{grid-area:theme;order:0;width:100%;justify-content:center}.theme-btn{flex:1;text-align:center;min-height:38px}.steam-badge{display:none}.section-title{font-size:2rem;line-height:1.02}.hot-controls{width:100%}.hot-sort-btn{flex:1;min-width:0;padding:8px 10px;font-size:0.72rem}.genre-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.genre-pill{flex:0 0 auto;white-space:nowrap}.steam-card-title{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:2.3em}.steam-card-body{padding:9px 9px 8px}.steam-card-footer{padding:6px 9px 9px;gap:8px}.steam-card-dev{max-width:95px}.game-grid,.hot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:10px}.main-content{padding:16px 12px 28px}.rec-hero,.genre-tab-content,.hot-tab-content,.more-recs{padding:16px 12px}}
 
 
 @media (max-width: 768px) {
@@ -1255,11 +1255,11 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
         <div class="dot"></div>
         STEAM DATA LIVE
       </div>
+      <button class="reset-btn" onclick="resetApp()">↩ 다시 선택</button>
       <div class="theme-toggle-group" aria-label="테마 전환">
         <button class="theme-btn" id="theme-dark-btn" onclick="setTheme('dark')">🌙 다크모드</button>
         <button class="theme-btn" id="theme-light-btn" onclick="setTheme('light')">☀ 화이트 모드</button>
       </div>
-      <button class="reset-btn" onclick="resetApp()">↩ 다시 선택</button>
     </div>
   </nav>
 
@@ -2699,7 +2699,26 @@ function resolveSteamThumbId(appOrId, title='') { return getThumbAppId(typeof ap
 function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOrId, title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
 function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
+function isTrustedThumbnailMapping(appOrGame) {
+  if (!appOrGame) return false;
+  const rawTitle = appOrGame.name || appOrGame.title || '';
+  const titleKey = normalizeTitleKey(rawTitle);
+  const thumbId = resolveSteamThumbId(appOrGame, rawTitle);
+  if (!thumbId) return false;
+  const overrideId = THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid ? Number(THUMB_OVERRIDES_NORMALIZED[titleKey].appid) : 0;
+  if (overrideId && overrideId === thumbId) return true;
+  const local = getGameById(Number(thumbId));
+  if (local && normalizeTitleKey(local.title) === titleKey) return true;
+  const sourceId = Number(appOrGame.appid || appOrGame.id || 0);
+  if (sourceId && sourceId === thumbId) return true;
+  return false;
+}
+function filterTrustedThumbnailGames(list) {
+  return (list || []).filter(item => isTrustedThumbnailMapping(item));
+}
+
 function makeSteamCard(app, rank, options = {}) {
+  if (options.safeOnly && !isTrustedThumbnailMapping(app)) return '';
   const tags = Object.keys(app.tags || {}).slice(0, 4);
   const ccu  = formatCCU(app.ccu);
   const score = getScoreLabel(app.positive||0, app.negative||0);
@@ -2909,7 +2928,10 @@ function getTopTags(limit=6) {
 }
 
 async function loadSteamRecommendations() {
-  if (steamRecLoaded) return;
+  const selectionKey = selectedIds.slice().sort((a,b)=>a-b).join(',');
+  if (steamRecLoaded && window.__steamRecSelectionKey === selectionKey) return;
+  window.__steamRecSelectionKey = selectionKey;
+  const requestToken = (window.__steamRecRequestToken = (window.__steamRecRequestToken || 0) + 1);
   const heroEl = document.getElementById('hero-grid');
   const moreEl = document.getElementById('more-grid');
   if (!heroEl || !moreEl) return;
@@ -2951,7 +2973,7 @@ async function loadSteamRecommendations() {
     });
   });
 
-  const sorted = Object.values(map)
+  const sorted = filterTrustedThumbnailGames(Object.values(map)
     .map(app => {
       const appid = Number(app.appid);
       const year = getAppYear(app);
@@ -2971,8 +2993,9 @@ async function loadSteamRecommendations() {
     .filter(app => app._eligible)
     .filter(app => (app.ccu||0) >= 1000 || (app.owners||0) >= 750000 || (app.positive||0) >= 5000 || POPULAR_GAME_IDS.has(Number(app.appid)))
     .sort((a,b)=>b._score-a._score)
-    .slice(0,120);
+    .slice(0,120));
   if (!sorted.length) {
+    if (requestToken !== window.__steamRecRequestToken || selectionKey !== window.__steamRecSelectionKey) return;
     // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
     const local = getLocalRecommendations();
     renderHeroGrid(local.slice(0,3));
@@ -2987,6 +3010,7 @@ async function loadSteamRecommendations() {
     return;
   }
 
+  if (requestToken !== window.__steamRecRequestToken || selectionKey !== window.__steamRecSelectionKey) return;
   steamRecLoaded = true;
   const hs = heroEl.closest('.rec-hero');
   if (hs && !hs.querySelector('.rec-source-badge')) {
@@ -3014,7 +3038,7 @@ async function loadSteamRecommendations() {
     </div>`;
   }).join('');
 
-  moreEl.innerHTML = sorted.slice(3,120).map(app=>makeSteamCard(app,null,{ showLive:false })).join('');
+  moreEl.innerHTML = sorted.slice(3,120).map(app=>makeSteamCard(app,null,{ showLive:false, safeOnly:true })).join('') || '<div class="grid-empty" style="grid-column:1/-1">추천 결과 없음</div>';
 }
 
 // ── Genre tab ──
@@ -3038,8 +3062,9 @@ function applyGenreGrid(list, genre) {
   const filtered = q
     ? base.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
     : base;
-  gridEl.innerHTML = filtered.length
-    ? filtered.map(app=>makeSteamCard(app,null,{ showLive:false })).join('')
+  const safeFiltered = filterTrustedThumbnailGames(filtered);
+  gridEl.innerHTML = safeFiltered.length
+    ? safeFiltered.map(app=>makeSteamCard(app,null,{ showLive:false, safeOnly:true })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${genre === '전체' ? '조건에 맞는 게임이 없습니다.' : `${genre} 장르 검색 결과 없음`}</div>`;
 }
 
@@ -3233,8 +3258,9 @@ function renderHotGrid() {
   let list = [...(_hotRawData[hotSortBy] || [])];
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
   if (statusEl && list.length) statusEl.className = 'hot-status hidden';
-  gridEl.innerHTML = list.length
-    ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true })).join('')
+  const safeList = filterTrustedThumbnailGames(list);
+  gridEl.innerHTML = safeList.length
+    ? safeList.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true, safeOnly:true })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 데이터 연결이 지연되어 대체 인기 리스트를 표시하지 못했습니다. 새로고침 후 다시 확인해주세요.'}</div>`;
 }
 
@@ -3254,6 +3280,7 @@ function showTab(tab) {
 
 async function renderApp() {
   steamRecLoaded = false;
+  window.__steamRecSelectionKey = selectedIds.slice().sort((a,b)=>a-b).join(',');
   const local = getLocalRecommendations();
   renderHeroGrid(local.slice(0,3));
   renderMoreGrid(local.slice(3,30));
@@ -3284,7 +3311,7 @@ function resetApp() {
   localStorage.removeItem(STORAGE_KEY);
   selectedIds=[]; currentObFilter='전체'; currentGenreFilter='전체';
   obSearch=''; genreSearch=''; steamRecLoaded=false; hotLoaded=false; hotGenreFilter='전체';
-  _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _prefetchStarted=false;
+  _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _prefetchStarted=false; window.__steamRecRequestToken=0; window.__steamRecSelectionKey='';
   const si=document.getElementById('ob-search'); if(si) si.value='';
   const gi=document.getElementById('genre-search'); if(gi) gi.value='';
   updateObUI(); renderObFilter(); renderObGrid();

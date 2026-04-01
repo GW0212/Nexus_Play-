@@ -1,1902 +1,4750 @@
 {
-  "10": {
-    "appid": 10,
-    "name": "Counter-Strike",
+  "620": {
+    "appid": 620,
+    "name": "Portal 2",
     "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 243818,
-    "negative": 6427,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 13244,
-    "average_2weeks": 643,
-    "median_forever": 182,
-    "median_2weeks": 52,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 7323
+    "ccu": 97209,
+    "positive": 235749,
+    "negative": 84,
+    "average_2weeks": 15861,
+    "owners": 2828988,
+    "genre": "어드벤처",
+    "tags": {
+      "퍼즐": 1,
+      "협동": 1,
+      "1인칭": 1,
+      "유머": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "협동",
+      "1인칭",
+      "유머",
+      "sf"
+    ]
   },
-  "70": {
-    "appid": 70,
-    "name": "Half-Life",
+  "546560": {
+    "appid": 546560,
+    "name": "Half-Life: Alyx",
     "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 143086,
-    "negative": 5135,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 978,
-    "average_2weeks": 97,
-    "median_forever": 146,
-    "median_2weeks": 145,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 634
-  },
-  "100": {
-    "appid": 100,
-    "name": "Counter-Strike: Condition Zero",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 13442,
-    "negative": 1535,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 256,
-    "average_2weeks": 0,
-    "median_forever": 34,
-    "median_2weeks": 0,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 83
-  },
-  "220": {
-    "appid": 220,
-    "name": "Half-Life 2",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 239721,
-    "negative": 5906,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 988,
-    "average_2weeks": 197,
-    "median_forever": 337,
-    "median_2weeks": 75,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 1555
-  },
-  "240": {
-    "appid": 240,
-    "name": "Counter-Strike: Source",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 175426,
-    "negative": 6808,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 7543,
-    "average_2weeks": 351,
-    "median_forever": 451,
-    "median_2weeks": 61,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 6187
-  },
-  "320": {
-    "appid": 320,
-    "name": "Half-Life 2: Deathmatch",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 12962,
-    "negative": 1334,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 494,
-    "average_2weeks": 3,
-    "median_forever": 39,
-    "median_2weeks": 3,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 159
-  },
-  "340": {
-    "appid": 340,
-    "name": "Half-Life 2: Lost Coast",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 12215,
-    "negative": 1471,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 0,
-    "average_2weeks": 0,
-    "median_forever": 0,
-    "median_2weeks": 0,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 2
-  },
-  "400": {
-    "appid": 400,
-    "name": "Portal",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 175024,
-    "negative": 2717,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 365,
-    "average_2weeks": 177,
-    "median_forever": 172,
-    "median_2weeks": 94,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 638
-  },
-  "440": {
-    "appid": 440,
-    "name": "Team Fortress 2",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 1044264,
-    "negative": 117208,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 24535,
-    "average_2weeks": 550,
-    "median_forever": 4571,
-    "median_2weeks": 74,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 43819
-  },
-  "550": {
-    "appid": 550,
-    "name": "Left 4 Dead 2",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 940221,
-    "negative": 23762,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 2707,
-    "average_2weeks": 568,
-    "median_forever": 518,
-    "median_2weeks": 103,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 25122
-  },
-  "730": {
-    "appid": 730,
-    "name": "Counter-Strike: Global Offensive",
-    "developer": "Valve",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 7642084,
-    "negative": 1173003,
-    "userscore": 0,
-    "owners": "100,000,000 .. 200,000,000",
-    "average_forever": 34245,
-    "average_2weeks": 662,
-    "median_forever": 6560,
-    "median_2weeks": 300,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 1013936
-  },
-  "4000": {
-    "appid": 4000,
-    "name": "Garry's Mod",
-    "developer": "Facepunch Studios",
-    "publisher": "Valve",
-    "score_rank": "",
-    "positive": 1122546,
-    "negative": 37161,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 10085,
-    "average_2weeks": 343,
-    "median_forever": 1124,
-    "median_2weeks": 134,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 18400
-  },
-  "8930": {
-    "appid": 8930,
-    "name": "Sid Meier's Civilization V",
-    "developer": "Firaxis Games, Aspyr (Mac), Aspyr (Linux)",
-    "publisher": "2K, Aspyr (Mac), Aspyr (Linux)",
-    "score_rank": "",
-    "positive": 195724,
-    "negative": 8541,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 8912,
-    "average_2weeks": 2190,
-    "median_forever": 2414,
-    "median_2weeks": 1542,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
-    "ccu": 12206
-  },
-  "49520": {
-    "appid": 49520,
-    "name": "Borderlands 2",
-    "developer": "Gearbox Software, Aspyr (Mac), Aspyr (Linux)",
-    "publisher": "2K, Aspyr (Mac), Aspyr (Linux)",
-    "score_rank": "",
-    "positive": 272900,
-    "negative": 22318,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3058,
-    "average_2weeks": 286,
-    "median_forever": 869,
-    "median_2weeks": 275,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 8551
-  },
-  "105600": {
-    "appid": 105600,
-    "name": "Terraria",
-    "developer": "Re-Logic",
-    "publisher": "Re-Logic",
-    "score_rank": "",
-    "positive": 1373979,
-    "negative": 35494,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 8273,
-    "average_2weeks": 647,
-    "median_forever": 2157,
-    "median_2weeks": 195,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 24580
-  },
-  "107410": {
-    "appid": 107410,
-    "name": "Arma 3",
-    "developer": "Bohemia Interactive",
-    "publisher": "Bohemia Interactive",
-    "score_rank": "",
-    "positive": 256128,
-    "negative": 27136,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 12127,
-    "average_2weeks": 612,
-    "median_forever": 960,
-    "median_2weeks": 189,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
-    "ccu": 7181
-  },
-  "108600": {
-    "appid": 108600,
-    "name": "Project Zomboid",
-    "developer": "The Indie Stone",
-    "publisher": "The Indie Stone",
-    "score_rank": "",
-    "positive": 355171,
-    "negative": 21892,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3807,
-    "average_2weeks": 713,
-    "median_forever": 825,
-    "median_2weeks": 209,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 22864
-  },
-  "218620": {
-    "appid": 218620,
-    "name": "PAYDAY 2",
-    "developer": "OVERKILL - a Starbreeze Studio.",
-    "publisher": "Starbreeze Entertainment",
-    "score_rank": "",
-    "positive": 594327,
-    "negative": 68755,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 10620,
-    "average_2weeks": 2562,
-    "median_forever": 560,
-    "median_2weeks": 719,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 27254
-  },
-  "219990": {
-    "appid": 219990,
-    "name": "Grim Dawn",
-    "developer": "Crate Entertainment",
-    "publisher": "Crate Entertainment",
-    "score_rank": "",
-    "positive": 93489,
-    "negative": 6241,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3088,
-    "average_2weeks": 505,
-    "median_forever": 927,
-    "median_2weeks": 584,
-    "price": "2499",
-    "initialprice": "2499",
-    "discount": "0",
-    "ccu": 2376
-  },
-  "221100": {
-    "appid": 221100,
-    "name": "DayZ",
-    "developer": "Bohemia Interactive",
-    "publisher": "Bohemia Interactive",
-    "score_rank": "",
-    "positive": 330349,
-    "negative": 99903,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 17472,
-    "average_2weeks": 1239,
-    "median_forever": 2336,
-    "median_2weeks": 410,
-    "price": "4999",
-    "initialprice": "4999",
-    "discount": "0",
-    "ccu": 37066
-  },
-  "227300": {
-    "appid": 227300,
-    "name": "Euro Truck Simulator 2",
-    "developer": "SCS Software",
-    "publisher": "SCS Software",
-    "score_rank": "",
-    "positive": 844480,
-    "negative": 22924,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 7428,
-    "average_2weeks": 448,
-    "median_forever": 1629,
-    "median_2weeks": 180,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 17281
-  },
-  "227940": {
-    "appid": 227940,
-    "name": "Heroes & Generals",
-    "developer": "TLM Partners",
-    "publisher": "TLM Partners",
-    "score_rank": "",
-    "positive": 96499,
-    "negative": 46264,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1367,
-    "average_2weeks": 0,
-    "median_forever": 98,
-    "median_2weeks": 0,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 0
-  },
-  "230410": {
-    "appid": 230410,
-    "name": "Warframe",
-    "developer": "Digital Extremes",
-    "publisher": "Digital Extremes",
-    "score_rank": "",
-    "positive": 545393,
-    "negative": 81110,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 12088,
-    "average_2weeks": 1043,
-    "median_forever": 510,
-    "median_2weeks": 255,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 36195
-  },
-  "236390": {
-    "appid": 236390,
-    "name": "War Thunder",
-    "developer": "Gaijin Entertainment",
-    "publisher": "Gaijin Network Ltd",
-    "score_rank": "",
-    "positive": 484469,
-    "negative": 272617,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 9124,
-    "average_2weeks": 732,
-    "median_forever": 496,
-    "median_2weeks": 244,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 50478
-  },
-  "238960": {
-    "appid": 238960,
-    "name": "Path of Exile",
-    "developer": "Grinding Gear Games",
-    "publisher": "Grinding Gear Games",
-    "score_rank": "",
-    "positive": 209822,
-    "negative": 25269,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 11873,
-    "average_2weeks": 2612,
-    "median_forever": 538,
-    "median_2weeks": 2065,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 4694
-  },
-  "239140": {
-    "appid": 239140,
-    "name": "Dying Light",
-    "developer": "Techland",
-    "publisher": "Techland",
-    "score_rank": "",
-    "positive": 435687,
-    "negative": 21945,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2037,
-    "average_2weeks": 265,
-    "median_forever": 1123,
-    "median_2weeks": 185,
-    "price": "2499",
-    "initialprice": "2499",
-    "discount": "0",
-    "ccu": 4953
-  },
-  "242760": {
-    "appid": 242760,
-    "name": "The Forest",
-    "developer": "Endnight Games Ltd",
-    "publisher": "Endnight Games Ltd",
-    "score_rank": "",
-    "positive": 599805,
-    "negative": 27986,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 1545,
-    "average_2weeks": 200,
-    "median_forever": 778,
-    "median_2weeks": 135,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 2892
-  },
-  "251570": {
-    "appid": 251570,
-    "name": "7 Days to Die",
-    "developer": "The Fun Pimps",
-    "publisher": "The Fun Pimps Entertainment LLC",
-    "score_rank": "",
-    "positive": 327889,
-    "negative": 42157,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 7319,
-    "average_2weeks": 867,
-    "median_forever": 1591,
-    "median_2weeks": 397,
-    "price": "4499",
-    "initialprice": "4499",
-    "discount": "0",
-    "ccu": 17045
-  },
-  "252490": {
-    "appid": 252490,
-    "name": "Rust",
-    "developer": "Facepunch Studios",
-    "publisher": "Facepunch Studios",
-    "score_rank": "",
-    "positive": 1071135,
-    "negative": 156649,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 24443,
-    "average_2weeks": 1336,
-    "median_forever": 3191,
-    "median_2weeks": 591,
-    "price": "3999",
-    "initialprice": "3999",
-    "discount": "0",
-    "ccu": 143870
-  },
-  "252950": {
-    "appid": 252950,
-    "name": "Rocket League",
-    "developer": "Psyonix LLC",
-    "publisher": "Psyonix LLC",
-    "score_rank": "",
-    "positive": 509445,
-    "negative": 73775,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 18218,
-    "average_2weeks": 507,
-    "median_forever": 2776,
-    "median_2weeks": 324,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 21106
-  },
-  "255710": {
-    "appid": 255710,
-    "name": "Cities: Skylines",
-    "developer": "Colossal Order",
-    "publisher": "Paradox Interactive",
-    "score_rank": "",
-    "positive": 256362,
-    "negative": 19408,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3389,
-    "average_2weeks": 366,
-    "median_forever": 833,
-    "median_2weeks": 190,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
-    "ccu": 8842
-  },
-  "261550": {
-    "appid": 261550,
-    "name": "Mount & Blade II: Bannerlord",
-    "developer": "TaleWorlds Entertainment",
-    "publisher": "TaleWorlds Entertainment",
-    "score_rank": "",
-    "positive": 232360,
-    "negative": 32031,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 8883,
-    "average_2weeks": 769,
-    "median_forever": 4238,
-    "median_2weeks": 458,
-    "price": "4999",
-    "initialprice": "4999",
-    "discount": "0",
-    "ccu": 14477
-  },
-  "271590": {
-    "appid": 271590,
-    "name": "Grand Theft Auto V Legacy",
-    "developer": "Rockstar North",
-    "publisher": "Rockstar Games",
-    "score_rank": "",
-    "positive": 1739980,
-    "negative": 250576,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 14113,
-    "average_2weeks": 514,
-    "median_forever": 5957,
-    "median_2weeks": 55,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 67851
-  },
-  "289070": {
-    "appid": 289070,
-    "name": "Sid Meier’s Civilization VI",
-    "developer": "Firaxis Games, Aspyr (Mac), Aspyr (Linux)",
-    "publisher": "2K, Aspyr (Mac), Aspyr (Linux)",
-    "score_rank": "",
-    "positive": 304053,
-    "negative": 45867,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 5917,
-    "average_2weeks": 554,
-    "median_forever": 1559,
-    "median_2weeks": 308,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 25420
-  },
-  "291480": {
-    "appid": 291480,
-    "name": "Warface: Clutch",
-    "developer": "MY.GAMES",
-    "publisher": "MY.GAMES",
-    "score_rank": "",
-    "positive": 54554,
-    "negative": 27643,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 1324,
-    "average_2weeks": 0,
-    "median_forever": 186,
-    "median_2weeks": 0,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 270
-  },
-  "291550": {
-    "appid": 291550,
-    "name": "Brawlhalla",
-    "developer": "Blue Mammoth Games",
-    "publisher": "Ubisoft",
-    "score_rank": "",
-    "positive": 314809,
-    "negative": 71647,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 2860,
-    "average_2weeks": 148,
-    "median_forever": 218,
-    "median_2weeks": 58,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 14169
+    "ccu": 96163,
+    "positive": 230706,
+    "negative": 169,
+    "average_2weeks": 15786,
+    "owners": 2768472,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "vr": 1,
+      "스토리": 1,
+      "공포": 1,
+      "퍼즐": 1
+    },
+    "tags_list": [
+      "fps",
+      "vr",
+      "스토리",
+      "공포",
+      "퍼즐"
+    ]
   },
   "292030": {
     "appid": 292030,
     "name": "The Witcher 3: Wild Hunt",
-    "developer": "CD PROJEKT RED",
-    "publisher": "CD PROJEKT RED",
-    "score_rank": "",
-    "positive": 802993,
-    "negative": 32356,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 3779,
-    "average_2weeks": 408,
-    "median_forever": 1010,
-    "median_2weeks": 80,
-    "price": "3999",
-    "initialprice": "3999",
-    "discount": "0",
-    "ccu": 15893
-  },
-  "304050": {
-    "appid": 304050,
-    "name": "Trove",
-    "developer": "gamigo US Inc.",
-    "publisher": "gamigo US Inc.",
-    "score_rank": "",
-    "positive": 74103,
-    "negative": 18267,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2567,
-    "average_2weeks": 30,
-    "median_forever": 200,
-    "median_2weeks": 30,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 758
-  },
-  "304930": {
-    "appid": 304930,
-    "name": "Unturned",
-    "developer": "Smartly Dressed Games",
-    "publisher": "Smartly Dressed Games",
-    "score_rank": "",
-    "positive": 506516,
-    "negative": 48852,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 11699,
-    "average_2weeks": 2293,
-    "median_forever": 334,
-    "median_2weeks": 1446,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 10408
-  },
-  "322330": {
-    "appid": 322330,
-    "name": "Don't Starve Together",
-    "developer": "Klei Entertainment",
-    "publisher": "Klei Entertainment",
-    "score_rank": "",
-    "positive": 475393,
-    "negative": 23668,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2956,
-    "average_2weeks": 417,
-    "median_forever": 530,
-    "median_2weeks": 70,
-    "price": "1499",
-    "initialprice": "1499",
-    "discount": "0",
-    "ccu": 30542
-  },
-  "346110": {
-    "appid": 346110,
-    "name": "ARK: Survival Evolved",
-    "developer": "Studio Wildcard, Instinct Games, Efecto Studios, Virtual Basement LLC",
-    "publisher": "Studio Wildcard, Snail Games USA",
-    "score_rank": "",
-    "positive": 612177,
-    "negative": 117993,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 11599,
-    "average_2weeks": 1194,
-    "median_forever": 1003,
-    "median_2weeks": 328,
-    "price": "1499",
-    "initialprice": "1499",
-    "discount": "0",
-    "ccu": 22170
-  },
-  "359550": {
-    "appid": 359550,
-    "name": "Tom Clancy's Rainbow Six Siege",
-    "developer": "Ubisoft Montreal",
-    "publisher": "Ubisoft",
-    "score_rank": "",
-    "positive": 1172854,
-    "negative": 225730,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 14394,
-    "average_2weeks": 460,
-    "median_forever": 2428,
-    "median_2weeks": 253,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 51847
-  },
-  "377160": {
-    "appid": 377160,
-    "name": "Fallout 4",
-    "developer": "Bethesda Game Studios",
-    "publisher": "Bethesda Softworks",
-    "score_rank": "",
-    "positive": 326054,
-    "negative": 66233,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 6115,
-    "average_2weeks": 770,
-    "median_forever": 1981,
-    "median_2weeks": 296,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 11179
-  },
-  "381210": {
-    "appid": 381210,
-    "name": "Dead by Daylight",
-    "developer": "Behaviour Interactive Inc.",
-    "publisher": "Behaviour Interactive Inc.",
-    "score_rank": "",
-    "positive": 630223,
-    "negative": 166993,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 11749,
-    "average_2weeks": 530,
-    "median_forever": 1417,
-    "median_2weeks": 255,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 44886
-  },
-  "386360": {
-    "appid": 386360,
-    "name": "SMITE",
-    "developer": "Titan Forge Games",
-    "publisher": "Hi-Rez Studios",
-    "score_rank": "",
-    "positive": 94368,
-    "negative": 25428,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 6387,
-    "average_2weeks": 1726,
-    "median_forever": 264,
-    "median_2weeks": 2572,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 1853
-  },
-  "413150": {
-    "appid": 413150,
-    "name": "Stardew Valley",
-    "developer": "ConcernedApe",
-    "publisher": "ConcernedApe",
-    "score_rank": "",
-    "positive": 872384,
-    "negative": 13811,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 4772,
-    "average_2weeks": 516,
-    "median_forever": 1696,
-    "median_2weeks": 214,
-    "price": "1499",
-    "initialprice": "1499",
-    "discount": "0",
-    "ccu": 50662
-  },
-  "417910": {
-    "appid": 417910,
-    "name": "Street Warriors Online",
-    "developer": "Crazy Rocks Studios",
-    "publisher": "Crazy Rocks Studios",
-    "score_rank": "",
-    "positive": 941,
-    "negative": 693,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 85,
-    "average_2weeks": 0,
-    "median_forever": 35,
-    "median_2weeks": 0,
-    "price": "199",
-    "initialprice": "199",
-    "discount": "0",
-    "ccu": 1
-  },
-  "431960": {
-    "appid": 431960,
-    "name": "Wallpaper Engine",
-    "developer": "Wallpaper Engine Team",
-    "publisher": "Wallpaper Engine Team",
-    "score_rank": "",
-    "positive": 876898,
-    "negative": 17560,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 4809,
-    "average_2weeks": 143,
-    "median_forever": 989,
-    "median_2weeks": 9,
-    "price": "499",
-    "initialprice": "499",
-    "discount": "0",
-    "ccu": 91184
-  },
-  "433850": {
-    "appid": 433850,
-    "name": "Z1 Battle Royale",
-    "developer": "Daybreak Game Company",
-    "publisher": "Daybreak Game Company",
-    "score_rank": "",
-    "positive": 113729,
-    "negative": 90284,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3664,
-    "average_2weeks": 45,
-    "median_forever": 214,
-    "median_2weeks": 45,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 1010
-  },
-  "438100": {
-    "appid": 438100,
-    "name": "VRChat",
-    "developer": "VRChat Inc.",
-    "publisher": "VRChat Inc.",
-    "score_rank": "",
-    "positive": 181623,
-    "negative": 58732,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 4093,
-    "average_2weeks": 1079,
-    "median_forever": 142,
-    "median_2weeks": 294,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 34699
-  },
-  "444090": {
-    "appid": 444090,
-    "name": "Paladins",
-    "developer": "Evil Mojo Games",
-    "publisher": "Hi-Rez Studios",
-    "score_rank": "",
-    "positive": 294373,
-    "negative": 52031,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3371,
-    "average_2weeks": 231,
-    "median_forever": 596,
-    "median_2weeks": 291,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 1028
-  },
-  "444200": {
-    "appid": 444200,
-    "name": "World of Tanks Blitz",
-    "developer": "Wargaming Group Limited",
-    "publisher": "Wargaming Group Limited",
-    "score_rank": "",
-    "positive": 116407,
-    "negative": 31754,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 6454,
-    "average_2weeks": 233,
-    "median_forever": 277,
-    "median_2weeks": 334,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 5707
-  },
-  "477160": {
-    "appid": 477160,
-    "name": "Human Fall Flat",
-    "developer": "No Brakes Games",
-    "publisher": "Curve Games",
-    "score_rank": "",
-    "positive": 202253,
-    "negative": 11387,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 779,
-    "average_2weeks": 128,
-    "median_forever": 359,
-    "median_2weeks": 164,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 950
-  },
-  "526870": {
-    "appid": 526870,
-    "name": "Satisfactory",
-    "developer": "Coffee Stain Studios",
-    "publisher": "Coffee Stain Publishing",
-    "score_rank": "",
-    "positive": 225479,
-    "negative": 6585,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 6570,
-    "average_2weeks": 1177,
-    "median_forever": 2383,
-    "median_2weeks": 453,
-    "price": "3999",
-    "initialprice": "3999",
-    "discount": "0",
-    "ccu": 12596
-  },
-  "532210": {
-    "appid": 532210,
-    "name": "Life is Strange 2",
-    "developer": "DONTNOD Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)",
-    "publisher": "Square Enix, Feral Interactive (Mac), Feral Interactive (Linux)",
-    "score_rank": "",
-    "positive": 31616,
-    "negative": 5018,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 420,
-    "average_2weeks": 2,
-    "median_forever": 219,
-    "median_2weeks": 2,
-    "price": "3196",
-    "initialprice": "3196",
-    "discount": "0",
-    "ccu": 153
-  },
-  "550650": {
-    "appid": 550650,
-    "name": "Black Squad",
-    "developer": "VALOFE, NS STUDIO",
-    "publisher": "VALOFE",
-    "score_rank": "",
-    "positive": 62042,
-    "negative": 19672,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1788,
-    "average_2weeks": 186,
-    "median_forever": 85,
-    "median_2weeks": 186,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 212
-  },
-  "552990": {
-    "appid": 552990,
-    "name": "World of Warships",
-    "developer": "Wargaming Group Limited",
-    "publisher": "Wargaming Group Limited",
-    "score_rank": "",
-    "positive": 112887,
-    "negative": 33665,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 3003,
-    "average_2weeks": 405,
-    "median_forever": 301,
-    "median_2weeks": 355,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 8518
-  },
-  "553850": {
-    "appid": 553850,
-    "name": "HELLDIVERS 2",
-    "developer": "Arrowhead Game Studios",
-    "publisher": "PlayStation Publishing LLC",
-    "score_rank": "",
-    "positive": 775883,
-    "negative": 241752,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 5373,
-    "average_2weeks": 475,
-    "median_forever": 2404,
-    "median_2weeks": 227,
-    "price": "3999",
-    "initialprice": "3999",
-    "discount": "0",
-    "ccu": 53399
-  },
-  "578080": {
-    "appid": 578080,
-    "name": "PUBG: BATTLEGROUNDS",
-    "developer": "PUBG Corporation",
-    "publisher": "KRAFTON, Inc.",
-    "score_rank": "",
-    "positive": 1520457,
-    "negative": 1037487,
-    "userscore": 0,
-    "owners": "100,000,000 .. 200,000,000",
-    "average_forever": 24283,
-    "average_2weeks": 809,
-    "median_forever": 6124,
-    "median_2weeks": 318,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 314682
-  },
-  "582010": {
-    "appid": 582010,
-    "name": "Monster Hunter: World",
-    "developer": "CAPCOM Co., Ltd.",
-    "publisher": "CAPCOM Co., Ltd.",
-    "score_rank": "",
-    "positive": 434239,
-    "negative": 59151,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 9392,
-    "average_2weeks": 697,
-    "median_forever": 3298,
-    "median_2weeks": 457,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
-    "ccu": 11923
-  },
-  "594650": {
-    "appid": 594650,
-    "name": "Hunt: Showdown 1896",
-    "developer": "Crytek",
-    "publisher": "Crytek",
-    "score_rank": "",
-    "positive": 181110,
-    "negative": 67110,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 8485,
-    "average_2weeks": 928,
-    "median_forever": 748,
-    "median_2weeks": 421,
-    "price": "1599",
-    "initialprice": "3999",
-    "discount": "60",
-    "ccu": 6300
-  },
-  "632360": {
-    "appid": 632360,
-    "name": "Risk of Rain 2",
-    "developer": "Hopoo Games",
-    "publisher": "Gearbox Publishing",
-    "score_rank": "",
-    "positive": 293127,
-    "negative": 20450,
-    "userscore": 0,
-    "owners": "5,000,000 .. 10,000,000",
-    "average_forever": 3507,
-    "average_2weeks": 225,
-    "median_forever": 1202,
-    "median_2weeks": 112,
-    "price": "2499",
-    "initialprice": "2499",
-    "discount": "0",
-    "ccu": 7902
-  },
-  "648800": {
-    "appid": 648800,
-    "name": "Raft",
-    "developer": "Redbeet Interactive",
-    "publisher": "Axolot Games",
-    "score_rank": "",
-    "positive": 323198,
-    "negative": 23161,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1641,
-    "average_2weeks": 421,
-    "median_forever": 930,
-    "median_2weeks": 186,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 4701
-  },
-  "739630": {
-    "appid": 739630,
-    "name": "Phasmophobia",
-    "developer": "Kinetic Games",
-    "publisher": "Kinetic Games",
-    "score_rank": "",
-    "positive": 736611,
-    "negative": 32168,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2417,
-    "average_2weeks": 313,
-    "median_forever": 975,
-    "median_2weeks": 107,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 9978
-  },
-  "755790": {
-    "appid": 755790,
-    "name": "Ring of Elysium",
-    "developer": "Aurora Studio",
-    "publisher": "TCH Scarlet Limited",
-    "score_rank": "",
-    "positive": 74345,
-    "negative": 25492,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1042,
-    "average_2weeks": 0,
-    "median_forever": 115,
-    "median_2weeks": 0,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 0
-  },
-  "814380": {
-    "appid": 814380,
-    "name": "Sekiro: Shadows Die Twice - GOTY Edition",
-    "developer": "FromSoftware, Inc.",
-    "publisher": "Activision (Excluding Japan and Asia), FromSoftware, Inc. (Japan), 方块游戏 (Asia)",
-    "score_rank": "",
-    "positive": 307041,
-    "negative": 15193,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2567,
-    "average_2weeks": 194,
-    "median_forever": 1241,
-    "median_2weeks": 131,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 6767
-  },
-  "892970": {
-    "appid": 892970,
-    "name": "Valheim",
-    "developer": "Iron Gate AB",
-    "publisher": "Coffee Stain Publishing",
-    "score_rank": "",
-    "positive": 471451,
-    "negative": 28377,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 4379,
-    "average_2weeks": 672,
-    "median_forever": 1668,
-    "median_2weeks": 443,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 14439
-  },
-  "899770": {
-    "appid": 899770,
-    "name": "Last Epoch",
-    "developer": "Eleventh Hour Games",
-    "publisher": "Eleventh Hour Games",
-    "score_rank": "",
-    "positive": 88027,
-    "negative": 22596,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 5126,
-    "average_2weeks": 763,
-    "median_forever": 2826,
-    "median_2weeks": 526,
-    "price": "2799",
-    "initialprice": "3499",
-    "discount": "20",
-    "ccu": 5831
-  },
-  "901583": {
-    "appid": 901583,
-    "name": "Grand Theft Auto IV: Complete Edition",
-    "developer": "Rockstar North, Rockstar Toronto",
-    "publisher": "Rockstar Games",
-    "score_rank": "",
-    "positive": 144570,
-    "negative": 30702,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 0,
-    "average_2weeks": 0,
-    "median_forever": 0,
-    "median_2weeks": 0,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 0
-  },
-  "945360": {
-    "appid": 945360,
-    "name": "Among Us",
-    "developer": "Innersloth",
-    "publisher": "Innersloth",
-    "score_rank": "",
-    "positive": 643681,
-    "negative": 57104,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 1466,
-    "average_2weeks": 145,
-    "median_forever": 657,
-    "median_2weeks": 101,
-    "price": "499",
-    "initialprice": "499",
-    "discount": "0",
-    "ccu": 3832
-  },
-  "990080": {
-    "appid": 990080,
-    "name": "Hogwarts Legacy",
-    "developer": "Avalanche Software",
-    "publisher": "Warner Bros. Games",
-    "score_rank": "",
-    "positive": 289966,
-    "negative": 31429,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 2283,
-    "average_2weeks": 279,
-    "median_forever": 1679,
-    "median_2weeks": 89,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 5716
-  },
-  "1063730": {
-    "appid": 1063730,
-    "name": "New World: Aeternum",
-    "developer": "Amazon Games",
-    "publisher": "Amazon Games",
-    "score_rank": "",
-    "positive": 196798,
-    "negative": 90080,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 9770,
-    "average_2weeks": 136,
-    "median_forever": 3439,
-    "median_2weeks": 207,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 5583
-  },
-  "1085660": {
-    "appid": 1085660,
-    "name": "Destiny 2",
-    "developer": "Bungie",
-    "publisher": "Bungie",
-    "score_rank": "",
-    "positive": 497891,
-    "negative": 127725,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 12469,
-    "average_2weeks": 679,
-    "median_forever": 498,
-    "median_2weeks": 91,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 24619
+    "developer": "CD Projekt Red",
+    "ccu": 95998,
+    "positive": 230881,
+    "negative": 169,
+    "average_2weeks": 15742,
+    "owners": 2770572,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "오픈월드": 1,
+      "판타지": 1,
+      "스토리": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "rpg",
+      "오픈월드",
+      "판타지",
+      "스토리",
+      "선택"
+    ]
   },
   "1086940": {
     "appid": 1086940,
     "name": "Baldur's Gate 3",
     "developer": "Larian Studios",
-    "publisher": "Larian Studios",
-    "score_rank": "",
-    "positive": 736688,
-    "negative": 23974,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 7971,
-    "average_2weeks": 732,
-    "median_forever": 4832,
-    "median_2weeks": 313,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 54771
+    "ccu": 95968,
+    "positive": 230601,
+    "negative": 169,
+    "average_2weeks": 15734,
+    "owners": 2767212,
+    "genre": "RPG",
+    "tags": {
+      "턴제": 1,
+      "rpg": 1,
+      "판타지": 1,
+      "협동": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "턴제",
+      "rpg",
+      "판타지",
+      "협동",
+      "선택"
+    ]
   },
-  "1089350": {
-    "appid": 1089350,
-    "name": "NBA 2K20",
-    "developer": "Visual Concepts",
-    "publisher": "2K",
-    "score_rank": "",
-    "positive": 30260,
-    "negative": 30413,
-    "userscore": 0,
-    "owners": "5,000,000 .. 10,000,000",
-    "average_forever": 8548,
-    "average_2weeks": 471,
-    "median_forever": 2910,
-    "median_2weeks": 845,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 221
+  "220": {
+    "appid": 220,
+    "name": "Half-Life 2",
+    "developer": "Valve",
+    "ccu": 96504,
+    "positive": 235994,
+    "negative": 84,
+    "average_2weeks": 15673,
+    "owners": 2831928,
+    "genre": "샌드박스",
+    "tags": {
+      "fps": 1,
+      "sf": 1,
+      "스토리": 1,
+      "클래식": 1,
+      "전설": 1
+    },
+    "tags_list": [
+      "fps",
+      "sf",
+      "스토리",
+      "클래식",
+      "전설"
+    ]
   },
-  "1091500": {
-    "appid": 1091500,
-    "name": "Cyberpunk 2077",
-    "developer": "CD PROJEKT RED",
-    "publisher": "CD PROJEKT RED",
-    "score_rank": "",
-    "positive": 713071,
-    "negative": 131850,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 4883,
-    "average_2weeks": 414,
-    "median_forever": 3239,
-    "median_2weeks": 124,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 22265
+  "400": {
+    "appid": 400,
+    "name": "Portal",
+    "developer": "Valve",
+    "ccu": 95323,
+    "positive": 231161,
+    "negative": 169,
+    "average_2weeks": 15562,
+    "owners": 2773932,
+    "genre": "어드벤처",
+    "tags": {
+      "퍼즐": 1,
+      "1인칭": 1,
+      "sf": 1,
+      "ai": 1,
+      "단편": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "1인칭",
+      "sf",
+      "ai",
+      "단편"
+    ]
   },
-  "1097150": {
-    "appid": 1097150,
-    "name": "Fall Guys: Ultimate Knockout",
-    "developer": "Mediatonic",
-    "publisher": "Ravenscourt",
-    "score_rank": "",
-    "positive": 385154,
-    "negative": 88589,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 1387,
-    "average_2weeks": 123,
-    "median_forever": 579,
-    "median_2weeks": 126,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 664
+  "753640": {
+    "appid": 753640,
+    "name": "Outer Wilds",
+    "developer": "Mobius Digital",
+    "ccu": 95278,
+    "positive": 230741,
+    "negative": 169,
+    "average_2weeks": 15550,
+    "owners": 2768892,
+    "genre": "어드벤처",
+    "tags": {
+      "우주": 1,
+      "탐험": 1,
+      "미스터리": 1,
+      "감동": 1,
+      "루프": 1
+    },
+    "tags_list": [
+      "우주",
+      "탐험",
+      "미스터리",
+      "감동",
+      "루프"
+    ]
   },
-  "1116170": {
-    "appid": 1116170,
-    "name": "CyberCorp",
-    "developer": "Megame LLC",
-    "publisher": "Megame LLC",
-    "score_rank": "",
-    "positive": 266,
-    "negative": 56,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 166,
-    "average_2weeks": 166,
-    "median_forever": 166,
-    "median_2weeks": 166,
-    "price": "1499",
-    "initialprice": "1499",
-    "discount": "0",
-    "ccu": 3
+  "427520": {
+    "appid": 427520,
+    "name": "Factorio",
+    "developer": "Wube Software",
+    "ccu": 95218,
+    "positive": 230706,
+    "negative": 169,
+    "average_2weeks": 15534,
+    "owners": 2768472,
+    "genre": "전략",
+    "tags": {
+      "자동화": 1,
+      "건설": 1,
+      "공장": 1,
+      "퍼즐": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "자동화",
+      "건설",
+      "공장",
+      "퍼즐",
+      "시뮬레이션"
+    ]
   },
-  "1172470": {
-    "appid": 1172470,
-    "name": "Apex Legends",
-    "developer": "Respawn",
-    "publisher": "Electronic Arts",
-    "score_rank": "",
-    "positive": 668053,
-    "negative": 326926,
-    "userscore": 0,
-    "owners": "100,000,000 .. 200,000,000",
-    "average_forever": 9665,
-    "average_2weeks": 578,
-    "median_forever": 804,
-    "median_2weeks": 289,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 124262
+  "1687950": {
+    "appid": 1687950,
+    "name": "Persona 5 Royal",
+    "developer": "Atlus",
+    "ccu": 93995,
+    "positive": 225955,
+    "negative": 255,
+    "average_2weeks": 15409,
+    "owners": 2711460,
+    "genre": "RPG",
+    "tags": {
+      "jrpg": 1,
+      "학교": 1,
+      "턴제": 1,
+      "스타일": 1,
+      "일본": 1
+    },
+    "tags_list": [
+      "jrpg",
+      "학교",
+      "턴제",
+      "스타일",
+      "일본"
+    ]
   },
   "1174180": {
     "appid": 1174180,
     "name": "Red Dead Redemption 2",
     "developer": "Rockstar Games",
-    "publisher": "Rockstar Games",
-    "score_rank": "",
-    "positive": 676667,
-    "negative": 56875,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 4203,
-    "average_2weeks": 325,
-    "median_forever": 1670,
-    "median_2weeks": 101,
-    "price": "1499",
-    "initialprice": "5999",
-    "discount": "75",
-    "ccu": 29885
+    "ccu": 93845,
+    "positive": 226060,
+    "negative": 255,
+    "average_2weeks": 15369,
+    "owners": 2712720,
+    "genre": "액션",
+    "tags": {
+      "오픈월드": 1,
+      "서부": 1,
+      "스토리": 1,
+      "액션": 1,
+      "리얼리즘": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "서부",
+      "스토리",
+      "액션",
+      "리얼리즘"
+    ]
   },
-  "1203220": {
-    "appid": 1203220,
-    "name": "NARAKA: BLADEPOINT",
-    "developer": "24 Entertainment",
-    "publisher": "NetEase Games Global",
-    "score_rank": "",
-    "positive": 225960,
-    "negative": 98967,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 9561,
-    "average_2weeks": 706,
-    "median_forever": 604,
-    "median_2weeks": 383,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 66954
+  "105600": {
+    "appid": 105600,
+    "name": "Terraria",
+    "developer": "Re-Logic",
+    "ccu": 93530,
+    "positive": 226340,
+    "negative": 255,
+    "average_2weeks": 15285,
+    "owners": 2716080,
+    "genre": "어드벤처",
+    "tags": {
+      "2D": 1,
+      "샌드박스": 1,
+      "서바이벌": 1,
+      "건설": 1,
+      "액션": 1
+    },
+    "tags_list": [
+      "2D",
+      "샌드박스",
+      "서바이벌",
+      "건설",
+      "액션"
+    ]
   },
-  "1222670": {
-    "appid": 1222670,
-    "name": "The Sims 4",
-    "developer": "Maxis",
-    "publisher": "Electronic Arts",
-    "score_rank": "",
-    "positive": 149064,
-    "negative": 21663,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1730,
-    "average_2weeks": 444,
-    "median_forever": 323,
-    "median_2weeks": 222,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 25276
+  "413150": {
+    "appid": 413150,
+    "name": "Stardew Valley",
+    "developer": "ConcernedApe",
+    "ccu": 93185,
+    "positive": 226165,
+    "negative": 255,
+    "average_2weeks": 15193,
+    "owners": 2713980,
+    "genre": "시뮬레이션",
+    "tags": {
+      "농장": 1,
+      "릴렉싱": 1,
+      "픽셀": 1,
+      "인디": 1,
+      "rpg": 1
+    },
+    "tags_list": [
+      "농장",
+      "릴렉싱",
+      "픽셀",
+      "인디",
+      "rpg"
+    ]
   },
-  "1238810": {
-    "appid": 1238810,
-    "name": "Battlefield V",
-    "developer": "DICE",
-    "publisher": "Electronic Arts",
-    "score_rank": "",
-    "positive": 177352,
-    "negative": 72936,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2132,
-    "average_2weeks": 231,
-    "median_forever": 533,
-    "median_2weeks": 164,
-    "price": "4999",
-    "initialprice": "4999",
-    "discount": "0",
-    "ccu": 6327
-  },
-  "1240440": {
-    "appid": 1240440,
-    "name": "Halo Infinite",
-    "developer": "343 Industries",
-    "publisher": "Xbox Game Studios",
-    "score_rank": "",
-    "positive": 123333,
-    "negative": 53708,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1829,
-    "average_2weeks": 372,
-    "median_forever": 177,
-    "median_2weeks": 433,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 2275
+  "294100": {
+    "appid": 294100,
+    "name": "RimWorld",
+    "developer": "Ludeon Studios",
+    "ccu": 93140,
+    "positive": 226095,
+    "negative": 255,
+    "average_2weeks": 15181,
+    "owners": 2713140,
+    "genre": "시뮬레이션",
+    "tags": {
+      "식민지": 1,
+      "서바이벌": 1,
+      "관리": 1,
+      "랜덤": 1,
+      "ai": 1
+    },
+    "tags_list": [
+      "식민지",
+      "서바이벌",
+      "관리",
+      "랜덤",
+      "ai"
+    ]
   },
   "1245620": {
     "appid": 1245620,
     "name": "ELDEN RING",
-    "developer": "FromSoftware, Inc.",
-    "publisher": "FromSoftware, Inc., Bandai Namco Entertainment",
-    "score_rank": "",
-    "positive": 981540,
-    "negative": 75137,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 7857,
-    "average_2weeks": 521,
-    "median_forever": 5395,
-    "median_2weeks": 166,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 29529
+    "developer": "FromSoftware",
+    "ccu": 82165,
+    "positive": 207716,
+    "negative": 594,
+    "average_2weeks": 12973,
+    "owners": 2492592,
+    "genre": "RPG",
+    "tags": {
+      "오픈월드": 1,
+      "액션RPG": 1,
+      "소울라이크": 1,
+      "판타지": 1,
+      "도전적": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "액션RPG",
+      "소울라이크",
+      "판타지",
+      "도전적"
+    ]
   },
-  "1326470": {
-    "appid": 1326470,
-    "name": "Sons Of The Forest",
-    "developer": "Endnight Games Ltd",
-    "publisher": "Newnight ",
-    "score_rank": "",
-    "positive": 222495,
-    "negative": 31051,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1426,
-    "average_2weeks": 477,
-    "median_forever": 875,
-    "median_2weeks": 333,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
-    "ccu": 4450
+  "391540": {
+    "appid": 391540,
+    "name": "Undertale",
+    "developer": "Toby Fox",
+    "ccu": 93793,
+    "positive": 230881,
+    "negative": 169,
+    "average_2weeks": 15154,
+    "owners": 2770572,
+    "genre": "인디",
+    "tags": {
+      "rpg": 1,
+      "스토리": 1,
+      "평화주의": 1,
+      "레트로": 1,
+      "유머": 1
+    },
+    "tags_list": [
+      "rpg",
+      "스토리",
+      "평화주의",
+      "레트로",
+      "유머"
+    ]
   },
-  "1491000": {
-    "appid": 1491000,
-    "name": "War Robots: Frontiers",
-    "developer": "MY.GAMES",
-    "publisher": "MY.GAMES",
-    "score_rank": "",
-    "positive": 1977,
+  "1113000": {
+    "appid": 1113000,
+    "name": "Persona 4 Golden",
+    "developer": "Atlus",
+    "ccu": 92177,
+    "positive": 221394,
+    "negative": 340,
+    "average_2weeks": 15124,
+    "owners": 2656728,
+    "genre": "RPG",
+    "tags": {
+      "jrpg": 1,
+      "학교": 1,
+      "턴제": 1,
+      "스토리": 1,
+      "일본": 1
+    },
+    "tags_list": [
+      "jrpg",
+      "학교",
+      "턴제",
+      "스토리",
+      "일본"
+    ]
+  },
+  "1888930": {
+    "appid": 1888930,
+    "name": "The Last of Us Part I",
+    "developer": "Naughty Dog",
+    "ccu": 91832,
+    "positive": 221289,
+    "negative": 340,
+    "average_2weeks": 15032,
+    "owners": 2655468,
+    "genre": "액션",
+    "tags": {
+      "서바이벌": 1,
+      "스토리": 1,
+      "포스트아포칼립스": 1,
+      "감동": 1,
+      "액션": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "스토리",
+      "포스트아포칼립스",
+      "감동",
+      "액션"
+    ]
+  },
+  "367520": {
+    "appid": 367520,
+    "name": "Hollow Knight",
+    "developer": "Team Cherry",
+    "ccu": 91772,
+    "positive": 221499,
+    "negative": 340,
+    "average_2weeks": 15016,
+    "owners": 2657988,
+    "genre": "어드벤처",
+    "tags": {
+      "메트로바니아": 1,
+      "도전적": 1,
+      "인디": 1,
+      "2D": 1,
+      "탐험": 1
+    },
+    "tags_list": [
+      "메트로바니아",
+      "도전적",
+      "인디",
+      "2D",
+      "탐험"
+    ]
+  },
+  "548430": {
+    "appid": 548430,
+    "name": "Deep Rock Galactic",
+    "developer": "Ghost Ship Games",
+    "ccu": 90677,
+    "positive": 216810,
+    "negative": 425,
+    "average_2weeks": 14921,
+    "owners": 2601720,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "협동": 1,
+      "우주": 1,
+      "드워프": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "fps",
+      "협동",
+      "우주",
+      "드워프",
+      "멀티플레이어"
+    ]
+  },
+  "1794680": {
+    "appid": 1794680,
+    "name": "Vampire Survivors",
+    "developer": "poncle",
+    "ccu": 92015,
+    "positive": 225955,
+    "negative": 255,
+    "average_2weeks": 14881,
+    "owners": 2711460,
+    "genre": "인디",
+    "tags": {
+      "로그라이크": 1,
+      "서바이벌": 1,
+      "캐주얼": 1,
+      "무료": 1,
+      "빠른": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "서바이벌",
+      "캐주얼",
+      "무료",
+      "빠른"
+    ]
+  },
+  "632470": {
+    "appid": 632470,
+    "name": "Disco Elysium",
+    "developer": "ZA/UM",
+    "ccu": 90392,
+    "positive": 216845,
+    "negative": 425,
+    "average_2weeks": 14845,
+    "owners": 2602140,
+    "genre": "RPG",
+    "tags": {
+      "탐정": 1,
+      "스토리": 1,
+      "선택": 1,
+      "독특": 1,
+      "rpg": 1
+    },
+    "tags_list": [
+      "탐정",
+      "스토리",
+      "선택",
+      "독특",
+      "rpg"
+    ]
+  },
+  "435150": {
+    "appid": 435150,
+    "name": "Divinity: Original Sin 2",
+    "developer": "Larian Studios",
+    "ccu": 90377,
+    "positive": 216915,
+    "negative": 425,
+    "average_2weeks": 14841,
+    "owners": 2602980,
+    "genre": "RPG",
+    "tags": {
+      "턴제": 1,
+      "rpg": 1,
+      "판타지": 1,
+      "협동": 1,
+      "전략": 1
+    },
+    "tags_list": [
+      "턴제",
+      "rpg",
+      "판타지",
+      "협동",
+      "전략"
+    ]
+  },
+  "1593500": {
+    "appid": 1593500,
+    "name": "God of War",
+    "developer": "Santa Monica Studio",
+    "ccu": 90137,
+    "positive": 216740,
+    "negative": 425,
+    "average_2weeks": 14777,
+    "owners": 2600880,
+    "genre": "액션",
+    "tags": {
+      "액션": 1,
+      "신화": 1,
+      "스토리": 1,
+      "북유럽": 1,
+      "부자": 1
+    },
+    "tags_list": [
+      "액션",
+      "신화",
+      "스토리",
+      "북유럽",
+      "부자"
+    ]
+  },
+  "504230": {
+    "appid": 504230,
+    "name": "Celeste",
+    "developer": "Maddy Makes Games",
+    "ccu": 89927,
+    "positive": 216880,
+    "negative": 425,
+    "average_2weeks": 14721,
+    "owners": 2602560,
+    "genre": "어드벤처",
+    "tags": {
+      "플랫포머": 1,
+      "도전적": 1,
+      "픽셀": 1,
+      "인디": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "플랫포머",
+      "도전적",
+      "픽셀",
+      "인디",
+      "스토리"
+    ]
+  },
+  "1057090": {
+    "appid": 1057090,
+    "name": "Ori and the Will of the Wisps",
+    "developer": "Moon Studios",
+    "ccu": 89897,
+    "positive": 216810,
+    "negative": 425,
+    "average_2weeks": 14713,
+    "owners": 2601720,
+    "genre": "어드벤처",
+    "tags": {
+      "메트로바니아": 1,
+      "아름다운": 1,
+      "스토리": 1,
+      "플랫포머": 1,
+      "2D": 1
+    },
+    "tags_list": [
+      "메트로바니아",
+      "아름다운",
+      "스토리",
+      "플랫포머",
+      "2D"
+    ]
+  },
+  "1145360": {
+    "appid": 1145360,
+    "name": "Hades II",
+    "developer": "Supergiant Games",
+    "ccu": 80407,
+    "positive": 203205,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2438460,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "인디": 1,
+      "그리스신화": 1,
+      "마법": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "인디",
+      "그리스신화",
+      "마법"
+    ]
+  },
+  "550": {
+    "appid": 550,
+    "name": "Left 4 Dead 2",
+    "developer": "Valve",
+    "ccu": 88862,
+    "positive": 217195,
+    "negative": 425,
+    "average_2weeks": 14437,
+    "owners": 2606340,
+    "genre": "FPS",
+    "tags": {
+      "협동": 1,
+      "좀비": 1,
+      "fps": 1,
+      "멀티플레이어": 1,
+      "빠른": 1
+    },
+    "tags_list": [
+      "협동",
+      "좀비",
+      "fps",
+      "멀티플레이어",
+      "빠른"
+    ]
+  },
+  "264710": {
+    "appid": 264710,
+    "name": "Subnautica",
+    "developer": "Unknown Worlds",
+    "ccu": 88117,
+    "positive": 212344,
+    "negative": 509,
+    "average_2weeks": 14434,
+    "owners": 2548128,
+    "genre": "어드벤처",
+    "tags": {
+      "수중": 1,
+      "서바이벌": 1,
+      "탐험": 1,
+      "공포": 1,
+      "오픈월드": 1
+    },
+    "tags_list": [
+      "수중",
+      "서바이벌",
+      "탐험",
+      "공포",
+      "오픈월드"
+    ]
+  },
+  "1328670": {
+    "appid": 1328670,
+    "name": "Mass Effect Legendary Edition",
+    "developer": "BioWare",
+    "ccu": 88697,
+    "positive": 216775,
+    "negative": 425,
+    "average_2weeks": 14393,
+    "owners": 2601300,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "sf": 1,
+      "싱글플레이어": 1,
+      "스토리": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "rpg",
+      "sf",
+      "싱글플레이어",
+      "스토리",
+      "선택"
+    ]
+  },
+  "814380": {
+    "appid": 814380,
+    "name": "Sekiro: Shadows Die Twice",
+    "developer": "FromSoftware",
+    "ccu": 86865,
+    "positive": 207821,
+    "negative": 594,
+    "average_2weeks": 14293,
+    "owners": 2493852,
+    "genre": "RPG",
+    "tags": {
+      "소울즈라이크": 1,
+      "닌자": 1,
+      "일본": 1,
+      "도전적": 1,
+      "액션": 1
+    },
+    "tags_list": [
+      "소울즈라이크",
+      "닌자",
+      "일본",
+      "도전적",
+      "액션"
+    ]
+  },
+  "1150690": {
+    "appid": 1150690,
+    "name": "OMORI",
+    "developer": "OMOCAT",
+    "ccu": 88277,
+    "positive": 216810,
+    "negative": 425,
+    "average_2weeks": 14281,
+    "owners": 2601720,
+    "genre": "인디",
+    "tags": {
+      "rpg": 1,
+      "공포": 1,
+      "심리": 1,
+      "스토리": 1,
+      "픽셀": 1
+    },
+    "tags_list": [
+      "rpg",
+      "공포",
+      "심리",
+      "스토리",
+      "픽셀"
+    ]
+  },
+  "268910": {
+    "appid": 268910,
+    "name": "Cuphead",
+    "developer": "Studio MDHR",
+    "ccu": 86595,
+    "positive": 207891,
+    "negative": 594,
+    "average_2weeks": 14221,
+    "owners": 2494692,
+    "genre": "액션",
+    "tags": {
+      "도전적": 1,
+      "만화": 1,
+      "2D": 1,
+      "보스": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "도전적",
+      "만화",
+      "2D",
+      "보스",
+      "인디"
+    ]
+  },
+  "601150": {
+    "appid": 601150,
+    "name": "Devil May Cry 5",
+    "developer": "Capcom",
+    "ccu": 86505,
+    "positive": 207821,
+    "negative": 594,
+    "average_2weeks": 14197,
+    "owners": 2493852,
+    "genre": "액션",
+    "tags": {
+      "액션": 1,
+      "스타일리시": 1,
+      "악마": 1,
+      "빠른": 1,
+      "보스": 1
+    },
+    "tags_list": [
+      "액션",
+      "스타일리시",
+      "악마",
+      "빠른",
+      "보스"
+    ]
+  },
+  "1055540": {
+    "appid": 1055540,
+    "name": "A Short Hike",
+    "developer": "adamgryu",
+    "ccu": 89385,
+    "positive": 226060,
+    "negative": 255,
+    "average_2weeks": 14173,
+    "owners": 2712720,
+    "genre": "인디",
+    "tags": {
+      "인디": 1,
+      "힐링": 1,
+      "탐험": 1,
+      "짧음": 1,
+      "감성": 1
+    },
+    "tags_list": [
+      "인디",
+      "힐링",
+      "탐험",
+      "짧음",
+      "감성"
+    ]
+  },
+  "2379780": {
+    "appid": 2379780,
+    "name": "Balatro",
+    "developer": "LocalThunk",
+    "ccu": 88607,
+    "positive": 221254,
+    "negative": 340,
+    "average_2weeks": 14172,
+    "owners": 2655048,
+    "genre": "전략",
+    "tags": {
+      "카드": 1,
+      "로그라이크": 1,
+      "덱빌딩": 1,
+      "인디": 1,
+      "중독성": 1
+    },
+    "tags_list": [
+      "카드",
+      "로그라이크",
+      "덱빌딩",
+      "인디",
+      "중독성"
+    ]
+  },
+  "1426210": {
+    "appid": 1426210,
+    "name": "It Takes Two",
+    "developer": "Hazelight Studios",
+    "ccu": 86370,
+    "positive": 207751,
+    "negative": 594,
+    "average_2weeks": 14161,
+    "owners": 2493012,
+    "genre": "어드벤처",
+    "tags": {
+      "협동": 1,
+      "플랫포머": 1,
+      "스토리": 1,
+      "2인": 1,
+      "가족": 1
+    },
+    "tags_list": [
+      "협동",
+      "플랫포머",
+      "스토리",
+      "2인",
+      "가족"
+    ]
+  },
+  "1237970": {
+    "appid": 1237970,
+    "name": "Titanfall 2",
+    "developer": "Respawn Entertainment",
+    "ccu": 85287,
+    "positive": 203485,
+    "negative": 680,
+    "average_2weeks": 14063,
+    "owners": 2441820,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "메카": 1,
+      "빠른": 1,
+      "파쿠르": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "fps",
+      "메카",
+      "빠른",
+      "파쿠르",
+      "스토리"
+    ]
+  },
+  "284160": {
+    "appid": 284160,
+    "name": "BeamNG.drive",
+    "developer": "BeamNG",
+    "ccu": 87272,
+    "positive": 216985,
+    "negative": 425,
+    "average_2weeks": 14013,
+    "owners": 2603820,
+    "genre": "레이싱",
+    "tags": {
+      "물리": 1,
+      "차량": 1,
+      "충돌": 1,
+      "샌드박스": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "물리",
+      "차량",
+      "충돌",
+      "샌드박스",
+      "시뮬레이션"
+    ]
+  },
+  "2231450": {
+    "appid": 2231450,
+    "name": "Pizza Tower",
+    "developer": "Tour De Pizza",
+    "ccu": 87552,
+    "positive": 221289,
+    "negative": 340,
+    "average_2weeks": 13888,
+    "owners": 2655468,
+    "genre": "인디",
+    "tags": {
+      "인디": 1,
+      "플랫포머": 1,
+      "카툰": 1,
+      "속도감": 1,
+      "코미디": 1
+    },
+    "tags_list": [
+      "인디",
+      "플랫포머",
+      "카툰",
+      "속도감",
+      "코미디"
+    ]
+  },
+  "1229490": {
+    "appid": 1229490,
+    "name": "ULTRAKILL",
+    "developer": "Arsi 'Hakita' Patala",
+    "ccu": 87552,
+    "positive": 221324,
+    "negative": 340,
+    "average_2weeks": 13856,
+    "owners": 2655888,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "레트로": 1,
+      "스타일리시": 1,
+      "속도감": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "FPS",
+      "레트로",
+      "스타일리시",
+      "속도감",
+      "인디"
+    ]
+  },
+  "1817230": {
+    "appid": 1817230,
+    "name": "Hi-Fi RUSH",
+    "developer": "Tango Gameworks",
+    "ccu": 84417,
+    "positive": 203240,
+    "negative": 680,
+    "average_2weeks": 13831,
+    "owners": 2438880,
+    "genre": "어드벤처",
+    "tags": {
+      "리듬": 1,
+      "액션": 1,
+      "만화": 1,
+      "밴드": 1,
+      "빠른": 1
+    },
+    "tags_list": [
+      "리듬",
+      "액션",
+      "만화",
+      "밴드",
+      "빠른"
+    ]
+  },
+  "782330": {
+    "appid": 782330,
+    "name": "DOOM Eternal",
+    "developer": "id Software",
+    "ccu": 83624,
+    "positive": 198953,
+    "negative": 765,
+    "average_2weeks": 13809,
+    "owners": 2387436,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "액션": 1,
+      "빠른": 1,
+      "도전적": 1,
+      "데몬": 1
+    },
+    "tags_list": [
+      "fps",
+      "액션",
+      "빠른",
+      "도전적",
+      "데몬"
+    ]
+  },
+  "813780": {
+    "appid": 813780,
+    "name": "Age of Empires II: Definitive Edition",
+    "developer": "Forgotten Empires",
+    "ccu": 82165,
+    "positive": 207821,
+    "negative": 594,
+    "average_2weeks": 12973,
+    "owners": 2493852,
+    "genre": "전략",
+    "tags": {
+      "RTS": 1,
+      "역사": 1,
+      "전략": 1,
+      "경쟁": 1,
+      "클래식": 1
+    },
+    "tags_list": [
+      "RTS",
+      "역사",
+      "전략",
+      "경쟁",
+      "클래식"
+    ]
+  },
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 84177,
+    "positive": 203345,
+    "negative": 680,
+    "average_2weeks": 13767,
+    "owners": 2440140,
+    "genre": "시뮬레이션",
+    "tags": {
+      "공장": 1,
+      "1인칭": 1,
+      "건설": 1,
+      "협동": 1,
+      "자동화": 1
+    },
+    "tags_list": [
+      "공장",
+      "1인칭",
+      "건설",
+      "협동",
+      "자동화"
+    ]
+  },
+  "975370": {
+    "appid": 975370,
+    "name": "Dwarf Fortress",
+    "developer": "Bay 12 Games",
+    "ccu": 84132,
+    "positive": 203275,
+    "negative": 680,
+    "average_2weeks": 13755,
+    "owners": 2439300,
+    "genre": "시뮬레이션",
+    "tags": {
+      "드워프": 1,
+      "건설": 1,
+      "관리": 1,
+      "복잡한": 1,
+      "전설": 1
+    },
+    "tags_list": [
+      "드워프",
+      "건설",
+      "관리",
+      "복잡한",
+      "전설"
+    ]
+  },
+  "646570": {
+    "appid": 646570,
+    "name": "Slay the Spire",
+    "developer": "MegaCrit",
+    "ccu": 84825,
+    "positive": 207821,
+    "negative": 594,
+    "average_2weeks": 13749,
+    "owners": 2493852,
+    "genre": "인디",
+    "tags": {
+      "카드게임": 1,
+      "로그라이크": 1,
+      "전략": 1,
+      "싱글플레이어": 1,
+      "덱빌딩": 1
+    },
+    "tags_list": [
+      "카드게임",
+      "로그라이크",
+      "전략",
+      "싱글플레이어",
+      "덱빌딩"
+    ]
+  },
+  "250900": {
+    "appid": 250900,
+    "name": "The Binding of Isaac: Rebirth",
+    "developer": "Nicalis",
+    "ccu": 84810,
+    "positive": 207996,
+    "negative": 594,
+    "average_2weeks": 13745,
+    "owners": 2495952,
+    "genre": "인디",
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "어두운": 1,
+      "도전적": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "어두운",
+      "도전적",
+      "싱글플레이어"
+    ]
+  },
+  "108600": {
+    "appid": 108600,
+    "name": "Project Zomboid",
+    "developer": "The Indie Stone",
+    "ccu": 84042,
+    "positive": 203590,
+    "negative": 680,
+    "average_2weeks": 13731,
+    "owners": 2443080,
+    "genre": "시뮬레이션",
+    "tags": {
+      "좀비": 1,
+      "서바이벌": 1,
+      "탑다운": 1,
+      "협동": 1,
+      "리얼리즘": 1
+    },
+    "tags_list": [
+      "좀비",
+      "서바이벌",
+      "탑다운",
+      "협동",
+      "리얼리즘"
+    ]
+  },
+  "1388880": {
+    "appid": 1388880,
+    "name": "Doki Doki Literature Club Plus!",
+    "developer": "Team Salvato",
+    "ccu": 84540,
+    "positive": 207751,
+    "negative": 594,
+    "average_2weeks": 13673,
+    "owners": 2493012,
+    "genre": "인디",
+    "tags": {
+      "비주얼노벨": 1,
+      "공포": 1,
+      "로맨스": 1,
+      "심리": 1,
+      "짧음": 1
+    },
+    "tags_list": [
+      "비주얼노벨",
+      "공포",
+      "로맨스",
+      "심리",
+      "짧음"
+    ]
+  },
+  "387290": {
+    "appid": 387290,
+    "name": "Ori and the Blind Forest: DE",
+    "developer": "Moon Studios",
+    "ccu": 81194,
+    "positive": 199093,
+    "negative": 765,
+    "average_2weeks": 13161,
+    "owners": 2389116,
+    "genre": "인디",
+    "tags": {
+      "플랫포머": 1,
+      "인디": 1,
+      "아름다운": 1,
+      "스토리": 1,
+      "도전적": 1
+    },
+    "tags_list": [
+      "플랫포머",
+      "인디",
+      "아름다운",
+      "스토리",
+      "도전적"
+    ]
+  },
+  "524220": {
+    "appid": 524220,
+    "name": "NieR:Automata",
+    "developer": "PlatinumGames",
+    "ccu": 85207,
+    "positive": 212379,
+    "negative": 509,
+    "average_2weeks": 13658,
+    "owners": 2548548,
+    "genre": "RPG",
+    "tags": {
+      "액션": 1,
+      "jrpg": 1,
+      "sf": 1,
+      "스토리": 1,
+      "감성": 1
+    },
+    "tags_list": [
+      "액션",
+      "jrpg",
+      "sf",
+      "스토리",
+      "감성"
+    ]
+  },
+  "1868140": {
+    "appid": 1868140,
+    "name": "DAVE THE DIVER",
+    "developer": "MINTROCKET",
+    "ccu": 85072,
+    "positive": 212169,
+    "negative": 509,
+    "average_2weeks": 13622,
+    "owners": 2546028,
+    "genre": "시뮬레이션",
+    "tags": {
+      "경영": 1,
+      "탐험": 1,
+      "낚시": 1,
+      "인디": 1,
+      "도트": 1
+    },
+    "tags_list": [
+      "경영",
+      "탐험",
+      "낚시",
+      "인디",
+      "도트"
+    ]
+  },
+  "4000": {
+    "appid": 4000,
+    "name": "Garry's Mod",
+    "developer": "Facepunch Studios",
+    "ccu": 84255,
+    "positive": 208276,
+    "negative": 594,
+    "average_2weeks": 13597,
+    "owners": 2499312,
+    "genre": "샌드박스",
+    "tags": {
+      "샌드박스": 1,
+      "자유": 1,
+      "물리": 1,
+      "멀티플레이어": 1,
+      "창의": 1
+    },
+    "tags_list": [
+      "샌드박스",
+      "자유",
+      "물리",
+      "멀티플레이어",
+      "창의"
+    ]
+  },
+  "519860": {
+    "appid": 519860,
+    "name": "DUSK",
+    "developer": "David Szymanski",
+    "ccu": 85737,
+    "positive": 216880,
+    "negative": 425,
+    "average_2weeks": 13565,
+    "owners": 2602560,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "레트로": 1,
+      "호러": 1,
+      "속도감": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "FPS",
+      "레트로",
+      "호러",
+      "속도감",
+      "인디"
+    ]
+  },
+  "1158310": {
+    "appid": 1158310,
+    "name": "Crusader Kings III",
+    "developer": "Paradox Development",
+    "ccu": 80855,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 13258,
+    "owners": 2335320,
+    "genre": "전략",
+    "tags": {
+      "중세": 1,
+      "왕조": 1,
+      "rpg": 1,
+      "전략": 1,
+      "역사": 1
+    },
+    "tags_list": [
+      "중세",
+      "왕조",
+      "rpg",
+      "전략",
+      "역사"
+    ]
+  },
+  "1568590": {
+    "appid": 1568590,
+    "name": "Inscryption",
+    "developer": "Daniel Mullins Games",
+    "ccu": 85737,
+    "positive": 216775,
+    "negative": 425,
+    "average_2weeks": 13537,
+    "owners": 2601300,
+    "genre": "어드벤처",
+    "tags": {
+      "카드": 1,
+      "공포": 1,
+      "인디": 1,
+      "덱빌딩": 1,
+      "미스터리": 1
+    },
+    "tags_list": [
+      "카드",
+      "공포",
+      "인디",
+      "덱빌딩",
+      "미스터리"
+    ]
+  },
+  "883710": {
+    "appid": 883710,
+    "name": "Resident Evil 2 Remake",
+    "developer": "CAPCOM",
+    "ccu": 83942,
+    "positive": 212309,
+    "negative": 509,
+    "average_2weeks": 13254,
+    "owners": 2547708,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "서바이벌": 1,
+      "리메이크": 1,
+      "좀비": 1,
+      "TPS": 1
+    },
+    "tags_list": [
+      "공포",
+      "서바이벌",
+      "리메이크",
+      "좀비",
+      "TPS"
+    ]
+  },
+  "553850": {
+    "appid": 553850,
+    "name": "Helldivers 2",
+    "developer": "Arrowhead Game Studios",
+    "ccu": 81785,
+    "positive": 194470,
+    "negative": 850,
+    "average_2weeks": 13506,
+    "owners": 2333640,
+    "genre": "FPS",
+    "tags": {
+      "협동": 1,
+      "fps": 1,
+      "액션": 1,
+      "민주주의": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "협동",
+      "fps",
+      "액션",
+      "민주주의",
+      "sf"
+    ]
+  },
+  "489830": {
+    "appid": 489830,
+    "name": "The Elder Scrolls V: Skyrim SE",
+    "developer": "Bethesda",
+    "ccu": 74790,
+    "positive": 182005,
     "negative": 1105,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 560,
-    "average_2weeks": 0,
-    "median_forever": 155,
-    "median_2weeks": 0,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 256
+    "average_2weeks": 12189,
+    "owners": 2184060,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "판타지": 1,
+      "오픈월드": 1,
+      "싱글플레이어": 1,
+      "자유": 1
+    },
+    "tags_list": [
+      "rpg",
+      "판타지",
+      "오픈월드",
+      "싱글플레이어",
+      "자유"
+    ]
   },
-  "1517290": {
-    "appid": 1517290,
-    "name": "Battlefield 2042",
-    "developer": "DICE",
-    "publisher": "Electronic Arts",
-    "score_rank": "",
-    "positive": 139186,
-    "negative": 158588,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 3031,
-    "average_2weeks": 161,
-    "median_forever": 872,
-    "median_2weeks": 59,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 2774
+  "227300": {
+    "appid": 227300,
+    "name": "Euro Truck Simulator 2",
+    "developer": "SCS Software",
+    "ccu": 82364,
+    "positive": 199233,
+    "negative": 765,
+    "average_2weeks": 13473,
+    "owners": 2390796,
+    "genre": "시뮬레이션",
+    "tags": {
+      "트럭": 1,
+      "드라이빙": 1,
+      "유럽": 1,
+      "릴렉싱": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "트럭",
+      "드라이빙",
+      "유럽",
+      "릴렉싱",
+      "협동"
+    ]
   },
-  "1599340": {
-    "appid": 1599340,
-    "name": "Lost Ark",
-    "developer": "Smilegate RPG",
-    "publisher": "Amazon Games",
-    "score_rank": "",
-    "positive": 143481,
-    "negative": 58540,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 4927,
-    "average_2weeks": 674,
-    "median_forever": 747,
-    "median_2weeks": 981,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 17355
+  "374320": {
+    "appid": 374320,
+    "name": "Dark Souls III",
+    "developer": "FromSoftware",
+    "ccu": 81635,
+    "positive": 194750,
+    "negative": 850,
+    "average_2weeks": 13466,
+    "owners": 2337000,
+    "genre": "RPG",
+    "tags": {
+      "소울즈라이크": 1,
+      "다크판타지": 1,
+      "rpg": 1,
+      "도전적": 1,
+      "보스": 1
+    },
+    "tags_list": [
+      "소울즈라이크",
+      "다크판타지",
+      "rpg",
+      "도전적",
+      "보스"
+    ]
   },
-  "1623730": {
-    "appid": 1623730,
-    "name": "Palworld",
-    "developer": "Pocketpair",
-    "publisher": "Pocketpair",
-    "score_rank": "",
-    "positive": 358266,
-    "negative": 22443,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 4057,
-    "average_2weeks": 796,
-    "median_forever": 2326,
-    "median_2weeks": 530,
-    "price": "2249",
-    "initialprice": "2999",
-    "discount": "25",
-    "ccu": 18028
+  "582010": {
+    "appid": 582010,
+    "name": "MONSTER HUNTER: WORLD - Iceborne",
+    "developer": "CAPCOM",
+    "ccu": 80407,
+    "positive": 203345,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2440140,
+    "genre": "RPG",
+    "tags": {
+      "액션RPG": 1,
+      "사냥": 1,
+      "확장팩": 1,
+      "협동": 1,
+      "보스전": 1
+    },
+    "tags_list": [
+      "액션RPG",
+      "사냥",
+      "확장팩",
+      "협동",
+      "보스전"
+    ]
   },
-  "1665460": {
-    "appid": 1665460,
-    "name": "eFootball",
-    "developer": "KONAMI",
-    "publisher": "KONAMI",
-    "score_rank": "",
-    "positive": 44067,
-    "negative": 48266,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 4289,
-    "average_2weeks": 444,
-    "median_forever": 175,
-    "median_2weeks": 287,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 13404
+  "212680": {
+    "appid": 212680,
+    "name": "FTL: Faster Than Light",
+    "developer": "Subset Games",
+    "ccu": 82992,
+    "positive": 203625,
+    "negative": 680,
+    "average_2weeks": 13451,
+    "owners": 2443500,
+    "genre": "전략",
+    "tags": {
+      "전략": 1,
+      "로그라이크": 1,
+      "sf": 1,
+      "도전적": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "전략",
+      "로그라이크",
+      "sf",
+      "도전적",
+      "싱글플레이어"
+    ]
   },
-  "1811260": {
-    "appid": 1811260,
-    "name": "EA SPORTS FIFA 23",
-    "developer": "EA Canada &amp; EA Romania",
-    "publisher": "Electronic Arts",
-    "score_rank": "",
-    "positive": 86192,
-    "negative": 65227,
-    "userscore": 0,
-    "owners": "5,000,000 .. 10,000,000",
-    "average_forever": 11547,
-    "average_2weeks": 830,
-    "median_forever": 5838,
-    "median_2weeks": 1337,
-    "price": "0",
-    "initialprice": "0",
-    "discount": "0",
-    "ccu": 1280
+  "1462040": {
+    "appid": 1462040,
+    "name": "FINAL FANTASY VII REMAKE",
+    "developer": "Square Enix",
+    "ccu": 81545,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 13442,
+    "owners": 2334900,
+    "genre": "RPG",
+    "tags": {
+      "jrpg": 1,
+      "리메이크": 1,
+      "스토리": 1,
+      "액션": 1,
+      "판타지": 1
+    },
+    "tags_list": [
+      "jrpg",
+      "리메이크",
+      "스토리",
+      "액션",
+      "판타지"
+    ]
   },
-  "1938090": {
-    "appid": 1938090,
-    "name": "Call of Duty: Modern Warfare II",
-    "developer": "Treyarch, Raven Software, Beenox, High Moon Studios, Activision Shanghai, Sledgehammer Games, Infinity Ward, Demonware, Toys for Bob",
-    "publisher": "Activision",
-    "score_rank": "",
-    "positive": 419594,
-    "negative": 294520,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 5366,
-    "average_2weeks": 422,
-    "median_forever": 684,
-    "median_2weeks": 95,
-    "price": "3849",
-    "initialprice": "6999",
-    "discount": "45",
-    "ccu": 67419
+  "1196590": {
+    "appid": 1196590,
+    "name": "Uncharted: Legacy of Thieves Collection",
+    "developer": "Naughty Dog",
+    "ccu": 76950,
+    "positive": 194540,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2334480,
+    "genre": "어드벤처",
+    "tags": {
+      "어드벤처": 1,
+      "액션": 1,
+      "스토리": 1,
+      "보물": 1,
+      "시네마틱": 1
+    },
+    "tags_list": [
+      "어드벤처",
+      "액션",
+      "스토리",
+      "보물",
+      "시네마틱"
+    ]
+  },
+  "271590": {
+    "appid": 271590,
+    "name": "Grand Theft Auto V",
+    "developer": "Rockstar Games",
+    "ccu": 81425,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 13410,
+    "owners": 2337420,
+    "genre": "액션",
+    "tags": {
+      "오픈월드": 1,
+      "범죄": 1,
+      "멀티플레이어": 1,
+      "액션": 1,
+      "자유": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "범죄",
+      "멀티플레이어",
+      "액션",
+      "자유"
+    ]
+  },
+  "1817070": {
+    "appid": 1817070,
+    "name": "Marvel's Spider-Man Remastered",
+    "developer": "Insomniac Games",
+    "ccu": 81335,
+    "positive": 194540,
+    "negative": 850,
+    "average_2weeks": 13386,
+    "owners": 2334480,
+    "genre": "액션",
+    "tags": {
+      "슈퍼히어로": 1,
+      "오픈월드": 1,
+      "액션": 1,
+      "스윙": 1,
+      "뉴욕": 1
+    },
+    "tags_list": [
+      "슈퍼히어로",
+      "오픈월드",
+      "액션",
+      "스윙",
+      "뉴욕"
+    ]
+  },
+  "752590": {
+    "appid": 752590,
+    "name": "A Plague Tale: Innocence",
+    "developer": "Asobo Studio",
+    "ccu": 81320,
+    "positive": 194645,
+    "negative": 850,
+    "average_2weeks": 13382,
+    "owners": 2335740,
+    "genre": "액션",
+    "tags": {
+      "스토리": 1,
+      "중세": 1,
+      "공포": 1,
+      "형제": 1,
+      "어드벤처": 1
+    },
+    "tags_list": [
+      "스토리",
+      "중세",
+      "공포",
+      "형제",
+      "어드벤처"
+    ]
+  },
+  "638970": {
+    "appid": 638970,
+    "name": "Yakuza 0",
+    "developer": "Ryu Ga Gotoku Studio",
+    "ccu": 83415,
+    "positive": 207856,
+    "negative": 594,
+    "average_2weeks": 13373,
+    "owners": 2494272,
+    "genre": "액션",
+    "tags": {
+      "스토리": 1,
+      "액션": 1,
+      "범죄": 1,
+      "일본": 1,
+      "명작": 1
+    },
+    "tags_list": [
+      "스토리",
+      "액션",
+      "범죄",
+      "일본",
+      "명작"
+    ]
+  },
+  "219150": {
+    "appid": 219150,
+    "name": "Hotline Miami",
+    "developer": "Dennaton Games",
+    "ccu": 81275,
+    "positive": 194890,
+    "negative": 850,
+    "average_2weeks": 13370,
+    "owners": 2338680,
+    "genre": "액션",
+    "tags": {
+      "탑다운": 1,
+      "폭력적": 1,
+      "빠른": 1,
+      "인디": 1,
+      "레트로": 1
+    },
+    "tags_list": [
+      "탑다운",
+      "폭력적",
+      "빠른",
+      "인디",
+      "레트로"
+    ]
+  },
+  "1325200": {
+    "appid": 1325200,
+    "name": "Nioh 2",
+    "developer": "Team NINJA",
+    "ccu": 81185,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 13346,
+    "owners": 2334900,
+    "genre": "액션",
+    "tags": {
+      "소울즈라이크": 1,
+      "일본": 1,
+      "요괴": 1,
+      "도전적": 1,
+      "액션": 1
+    },
+    "tags_list": [
+      "소울즈라이크",
+      "일본",
+      "요괴",
+      "도전적",
+      "액션"
+    ]
+  },
+  "220200": {
+    "appid": 220200,
+    "name": "Kerbal Space Program",
+    "developer": "Squad",
+    "ccu": 83175,
+    "positive": 207961,
+    "negative": 594,
+    "average_2weeks": 13309,
+    "owners": 2495532,
+    "genre": "시뮬레이션",
+    "tags": {
+      "우주": 1,
+      "물리": 1,
+      "샌드박스": 1,
+      "제작": 1,
+      "시뮬": 1
+    },
+    "tags_list": [
+      "우주",
+      "물리",
+      "샌드박스",
+      "제작",
+      "시뮬"
+    ]
+  },
+  "501300": {
+    "appid": 501300,
+    "name": "What Remains of Edith Finch",
+    "developer": "Giant Sparrow",
+    "ccu": 80975,
+    "positive": 194715,
+    "negative": 850,
+    "average_2weeks": 13290,
+    "owners": 2336580,
+    "genre": "어드벤처",
+    "tags": {
+      "스토리": 1,
+      "감성": 1,
+      "단편": 1,
+      "가족": 1,
+      "독특": 1
+    },
+    "tags_list": [
+      "스토리",
+      "감성",
+      "단편",
+      "가족",
+      "독특"
+    ]
+  },
+  "200260": {
+    "appid": 200260,
+    "name": "Batman: Arkham City GOTY",
+    "developer": "Rocksteady",
+    "ccu": 83055,
+    "positive": 208066,
+    "negative": 594,
+    "average_2weeks": 13277,
+    "owners": 2496792,
+    "genre": "액션",
+    "tags": {
+      "히어로": 1,
+      "오픈월드": 1,
+      "액션": 1,
+      "배트맨": 1,
+      "명작": 1
+    },
+    "tags_list": [
+      "히어로",
+      "오픈월드",
+      "액션",
+      "배트맨",
+      "명작"
+    ]
+  },
+  "1644820": {
+    "appid": 1644820,
+    "name": "Teardown",
+    "developer": "Tuxedo Labs",
+    "ccu": 82332,
+    "positive": 203275,
+    "negative": 680,
+    "average_2weeks": 13275,
+    "owners": 2439300,
+    "genre": "샌드박스",
+    "tags": {
+      "파괴": 1,
+      "물리": 1,
+      "퍼즐": 1,
+      "복셀": 1,
+      "샌드박스": 1
+    },
+    "tags_list": [
+      "파괴",
+      "물리",
+      "퍼즐",
+      "복셀",
+      "샌드박스"
+    ]
+  },
+  "1985690": {
+    "appid": 1985690,
+    "name": "Lethal Company",
+    "developer": "Zeekerss",
+    "ccu": 83942,
+    "positive": 212169,
+    "negative": 509,
+    "average_2weeks": 13254,
+    "owners": 2546028,
+    "genre": "액션",
+    "tags": {
+      "공포": 1,
+      "액션": 1,
+      "협동": 1,
+      "코옵": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "공포",
+      "액션",
+      "협동",
+      "코옵",
+      "인디"
+    ]
+  },
+  "457580": {
+    "appid": 457580,
+    "name": "Inside",
+    "developer": "Playdead",
+    "ccu": 83942,
+    "positive": 212414,
+    "negative": 509,
+    "average_2weeks": 13254,
+    "owners": 2548968,
+    "genre": "어드벤처",
+    "tags": {
+      "퍼즐": 1,
+      "플랫포머": 1,
+      "분위기": 1,
+      "디스토피아": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "플랫포머",
+      "분위기",
+      "디스토피아",
+      "인디"
+    ]
+  },
+  "255710": {
+    "appid": 255710,
+    "name": "Cities: Skylines",
+    "developer": "Colossal Order",
+    "ccu": 80735,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 13226,
+    "owners": 2337420,
+    "genre": "시뮬레이션",
+    "tags": {
+      "도시건설": 1,
+      "건설": 1,
+      "전략": 1,
+      "관리": 1
+    },
+    "tags_list": [
+      "도시건설",
+      "건설",
+      "전략",
+      "관리"
+    ]
+  },
+  "2215430": {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DIRECTOR'S CUT",
+    "developer": "Sucker Punch Productions",
+    "ccu": 81389,
+    "positive": 198813,
+    "negative": 765,
+    "average_2weeks": 13213,
+    "owners": 2385756,
+    "genre": "액션",
+    "tags": {
+      "액션": 1,
+      "싱글플레이어": 1,
+      "오픈월드": 1,
+      "역사": 1,
+      "스텔스": 1
+    },
+    "tags_list": [
+      "액션",
+      "싱글플레이어",
+      "오픈월드",
+      "역사",
+      "스텔스"
+    ]
+  },
+  "1250410": {
+    "appid": 1250410,
+    "name": "Microsoft Flight Simulator",
+    "developer": "Asobo Studio",
+    "ccu": 80660,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 13206,
+    "owners": 2335320,
+    "genre": "시뮬레이션",
+    "tags": {
+      "비행": 1,
+      "사실적": 1,
+      "지구": 1,
+      "조종사": 1,
+      "vr": 1
+    },
+    "tags_list": [
+      "비행",
+      "사실적",
+      "지구",
+      "조종사",
+      "vr"
+    ]
+  },
+  "588650": {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "developer": "Motion Twin",
+    "ccu": 81344,
+    "positive": 199023,
+    "negative": 765,
+    "average_2weeks": 13201,
+    "owners": 2388276,
+    "genre": "인디",
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "플랫포머": 1,
+      "도전적": 1,
+      "빠른": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "플랫포머",
+      "도전적",
+      "빠른"
+    ]
+  },
+  "244210": {
+    "appid": 244210,
+    "name": "Assetto Corsa",
+    "developer": "Kunos Simulazioni",
+    "ccu": 81972,
+    "positive": 203555,
+    "negative": 680,
+    "average_2weeks": 13179,
+    "owners": 2442660,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "시뮬레이션": 1,
+      "리얼리즘": 1,
+      "모딩": 1,
+      "트랙": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "시뮬레이션",
+      "리얼리즘",
+      "모딩",
+      "트랙"
+    ]
+  },
+  "214490": {
+    "appid": 214490,
+    "name": "Alien: Isolation",
+    "developer": "Creative Assembly",
+    "ccu": 80540,
+    "positive": 194820,
+    "negative": 850,
+    "average_2weeks": 13174,
+    "owners": 2337840,
+    "genre": "공포",
+    "tags": {
+      "에이리언": 1,
+      "공포": 1,
+      "긴장": 1,
+      "스텔스": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "에이리언",
+      "공포",
+      "긴장",
+      "스텔스",
+      "sf"
+    ]
+  },
+  "881100": {
+    "appid": 881100,
+    "name": "Noita",
+    "developer": "Nolla Games",
+    "ccu": 81239,
+    "positive": 198953,
+    "negative": 765,
+    "average_2weeks": 13173,
+    "owners": 2387436,
+    "genre": "인디",
+    "tags": {
+      "로그라이크": 1,
+      "마법": 1,
+      "물리엔진": 1,
+      "도전적": 1,
+      "탐험": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "마법",
+      "물리엔진",
+      "도전적",
+      "탐험"
+    ]
+  },
+  "282140": {
+    "appid": 282140,
+    "name": "SOMA",
+    "developer": "Frictional Games",
+    "ccu": 80480,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 13158,
+    "owners": 2337420,
+    "genre": "공포",
+    "tags": {
+      "sf": 1,
+      "공포": 1,
+      "철학": 1,
+      "스토리": 1,
+      "수중": 1
+    },
+    "tags_list": [
+      "sf",
+      "공포",
+      "철학",
+      "스토리",
+      "수중"
+    ]
+  },
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 80465,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 13154,
+    "owners": 2334900,
+    "genre": "서바이벌",
+    "tags": {
+      "바이킹": 1,
+      "서바이벌": 1,
+      "건설": 1,
+      "협동": 1,
+      "오픈월드": 1
+    },
+    "tags_list": [
+      "바이킹",
+      "서바이벌",
+      "건설",
+      "협동",
+      "오픈월드"
+    ]
+  },
+  "304430": {
+    "appid": 304430,
+    "name": "INSIDE",
+    "developer": "Playdead",
+    "ccu": 81119,
+    "positive": 199093,
+    "negative": 765,
+    "average_2weeks": 13141,
+    "owners": 2389116,
+    "genre": "인디",
+    "tags": {
+      "퍼즐": 1,
+      "플랫포머": 1,
+      "디스토피아": 1,
+      "싱글플레이어": 1,
+      "짧음": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "플랫포머",
+      "디스토피아",
+      "싱글플레이어",
+      "짧음"
+    ]
+  },
+  "322330": {
+    "appid": 322330,
+    "name": "Don't Starve Together",
+    "developer": "Klei Entertainment",
+    "ccu": 80330,
+    "positive": 194750,
+    "negative": 850,
+    "average_2weeks": 13118,
+    "owners": 2337000,
+    "genre": "샌드박스",
+    "tags": {
+      "서바이벌": 1,
+      "협동": 1,
+      "고딕": 1,
+      "2D": 1,
+      "로그라이크": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "협동",
+      "고딕",
+      "2D",
+      "로그라이크"
+    ]
+  },
+  "1364780": {
+    "appid": 1364780,
+    "name": "Street Fighter 6",
+    "developer": "Capcom",
+    "ccu": 80270,
+    "positive": 194505,
+    "negative": 850,
+    "average_2weeks": 13102,
+    "owners": 2334060,
+    "genre": "격투",
+    "tags": {
+      "격투": 1,
+      "경쟁": 1,
+      "멀티플레이어": 1,
+      "아케이드": 1,
+      "기술": 1
+    },
+    "tags_list": [
+      "격투",
+      "경쟁",
+      "멀티플레이어",
+      "아케이드",
+      "기술"
+    ]
+  },
+  "1384160": {
+    "appid": 1384160,
+    "name": "Guilty Gear -Strive-",
+    "developer": "Arc System Works",
+    "ccu": 80225,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 13090,
+    "owners": 2334900,
+    "genre": "격투",
+    "tags": {
+      "격투": 1,
+      "애니": 1,
+      "경쟁": 1,
+      "아름다운": 1,
+      "록음악": 1
+    },
+    "tags_list": [
+      "격투",
+      "애니",
+      "경쟁",
+      "아름다운",
+      "록음악"
+    ]
+  },
+  "252950": {
+    "appid": 252950,
+    "name": "Rocket League",
+    "developer": "Psyonix",
+    "ccu": 80165,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 13074,
+    "owners": 2337420,
+    "genre": "스포츠",
+    "tags": {
+      "자동차": 1,
+      "축구": 1,
+      "경쟁": 1,
+      "스포츠": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "자동차",
+      "축구",
+      "경쟁",
+      "스포츠",
+      "멀티플레이어"
+    ]
+  },
+  "976730": {
+    "appid": 976730,
+    "name": "Halo: The Master Chief Collection",
+    "developer": "343 Industries",
+    "ccu": 80060,
+    "positive": 194645,
+    "negative": 850,
+    "average_2weeks": 13046,
+    "owners": 2335740,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "싱글플레이어": 1,
+      "협동": 1,
+      "sf": 1,
+      "클래식": 1
+    },
+    "tags_list": [
+      "fps",
+      "싱글플레이어",
+      "협동",
+      "sf",
+      "클래식"
+    ]
+  },
+  "1903940": {
+    "appid": 1903940,
+    "name": "Alan Wake 2",
+    "developer": "Remedy Entertainment",
+    "ccu": 79985,
+    "positive": 194505,
+    "negative": 850,
+    "average_2weeks": 13026,
+    "owners": 2334060,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "싱글플레이어": 1,
+      "스토리": 1,
+      "미스터리": 1,
+      "액션": 1
+    },
+    "tags_list": [
+      "공포",
+      "싱글플레이어",
+      "스토리",
+      "미스터리",
+      "액션"
+    ]
+  },
+  "433340": {
+    "appid": 433340,
+    "name": "Slime Rancher",
+    "developer": "Monomi Park",
+    "ccu": 80669,
+    "positive": 199058,
+    "negative": 765,
+    "average_2weeks": 13021,
+    "owners": 2388696,
+    "genre": "샌드박스",
+    "tags": {
+      "힐링": 1,
+      "농장": 1,
+      "슬라임": 1,
+      "캐주얼": 1,
+      "탐험": 1
+    },
+    "tags_list": [
+      "힐링",
+      "농장",
+      "슬라임",
+      "캐주얼",
+      "탐험"
+    ]
+  },
+  "362890": {
+    "appid": 362890,
+    "name": "Black Mesa",
+    "developer": "Crowbar Collective",
+    "ccu": 82165,
+    "positive": 207786,
+    "negative": 594,
+    "average_2weeks": 12989,
+    "owners": 2493432,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "SF": 1,
+      "리메이크": 1,
+      "퍼즐": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "FPS",
+      "SF",
+      "리메이크",
+      "퍼즐",
+      "싱글플레이어"
+    ]
+  },
+  "1843020": {
+    "appid": 1843020,
+    "name": "Resident Evil 4 Remake",
+    "developer": "CAPCOM",
+    "ccu": 82165,
+    "positive": 207681,
+    "negative": 594,
+    "average_2weeks": 12973,
+    "owners": 2492172,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "액션": 1,
+      "서바이벌": 1,
+      "리메이크": 1,
+      "TPS": 1
+    },
+    "tags_list": [
+      "공포",
+      "액션",
+      "서바이벌",
+      "리메이크",
+      "TPS"
+    ]
+  },
+  "268500": {
+    "appid": 268500,
+    "name": "XCOM 2",
+    "developer": "Firaxis Games",
+    "ccu": 79064,
+    "positive": 190454,
+    "negative": 934,
+    "average_2weeks": 12965,
+    "owners": 2285448,
+    "genre": "전략",
+    "tags": {
+      "턴제": 1,
+      "sf": 1,
+      "전술": 1,
+      "외계인": 1,
+      "전략": 1
+    },
+    "tags_list": [
+      "턴제",
+      "sf",
+      "전술",
+      "외계인",
+      "전략"
+    ]
+  },
+  "632360": {
+    "appid": 632360,
+    "name": "Risk of Rain 2",
+    "developer": "Hopoo Games",
+    "ccu": 79565,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12914,
+    "owners": 2335320,
+    "genre": "인디",
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "협동": 1,
+      "빠른": 1,
+      "3인칭": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "협동",
+      "빠른",
+      "3인칭"
+    ]
+  },
+  "590380": {
+    "appid": 590380,
+    "name": "Into the Breach",
+    "developer": "Subset Games",
+    "ccu": 79550,
+    "positive": 194680,
+    "negative": 850,
+    "average_2weeks": 12910,
+    "owners": 2336160,
+    "genre": "전략",
+    "tags": {
+      "전략": 1,
+      "턴제": 1,
+      "로그라이크": 1,
+      "sf": 1,
+      "도전적": 1
+    },
+    "tags_list": [
+      "전략",
+      "턴제",
+      "로그라이크",
+      "sf",
+      "도전적"
+    ]
+  },
+  "1185960": {
+    "appid": 1185960,
+    "name": "Pathfinder: Wrath of the Righteous",
+    "developer": "Owlcat Games",
+    "ccu": 78133,
+    "positive": 186031,
+    "negative": 1019,
+    "average_2weeks": 12900,
+    "owners": 2232372,
+    "genre": "RPG",
+    "tags": {
+      "crpg": 1,
+      "판타지": 1,
+      "턴제": 1,
+      "전략": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "crpg",
+      "판타지",
+      "턴제",
+      "전략",
+      "선택"
+    ]
+  },
+  "460950": {
+    "appid": 460950,
+    "name": "Katana ZERO",
+    "developer": "Askiisoft",
+    "ccu": 80847,
+    "positive": 203380,
+    "negative": 680,
+    "average_2weeks": 12879,
+    "owners": 2440560,
+    "genre": "액션",
+    "tags": {
+      "도트": 1,
+      "액션": 1,
+      "시간조작": 1,
+      "스토리": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "도트",
+      "액션",
+      "시간조작",
+      "스토리",
+      "인디"
+    ]
+  },
+  "1139900": {
+    "appid": 1139900,
+    "name": "Ghostrunner",
+    "developer": "One More Level",
+    "ccu": 78013,
+    "positive": 186066,
+    "negative": 1019,
+    "average_2weeks": 12868,
+    "owners": 2232792,
+    "genre": "액션",
+    "tags": {
+      "사이버펑크": 1,
+      "파쿠르": 1,
+      "1인칭": 1,
+      "도전적": 1,
+      "빠른": 1
+    },
+    "tags_list": [
+      "사이버펑크",
+      "파쿠르",
+      "1인칭",
+      "도전적",
+      "빠른"
+    ]
+  },
+  "49520": {
+    "appid": 49520,
+    "name": "Borderlands 2",
+    "developer": "Gearbox Software",
+    "ccu": 80009,
+    "positive": 199233,
+    "negative": 765,
+    "average_2weeks": 12845,
+    "owners": 2390796,
+    "genre": "FPS",
+    "tags": {
+      "루터슈터": 1,
+      "협동": 1,
+      "fps": 1,
+      "유머": 1,
+      "파밍": 1
+    },
+    "tags_list": [
+      "루터슈터",
+      "협동",
+      "fps",
+      "유머",
+      "파밍"
+    ]
+  },
+  "361420": {
+    "appid": 361420,
+    "name": "Astroneer",
+    "developer": "System Era Softworks",
+    "ccu": 78584,
+    "positive": 190349,
+    "negative": 934,
+    "average_2weeks": 12837,
+    "owners": 2284188,
+    "genre": "샌드박스",
+    "tags": {
+      "우주": 1,
+      "건설": 1,
+      "탐험": 1,
+      "협동": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "우주",
+      "건설",
+      "탐험",
+      "협동",
+      "sf"
+    ]
+  },
+  "8870": {
+    "appid": 8870,
+    "name": "BioShock Infinite",
+    "developer": "Irrational Games",
+    "ccu": 79979,
+    "positive": 199198,
+    "negative": 765,
+    "average_2weeks": 12837,
+    "owners": 2390376,
+    "genre": "액션",
+    "tags": {
+      "스토리": 1,
+      "sf": 1,
+      "액션": 1,
+      "1인칭": 1,
+      "명작": 1
+    },
+    "tags_list": [
+      "스토리",
+      "sf",
+      "액션",
+      "1인칭",
+      "명작"
+    ]
+  },
+  "1659420": {
+    "appid": 1659420,
+    "name": "Uncharted: Legacy of Thieves",
+    "developer": "Naughty Dog",
+    "ccu": 77863,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 12828,
+    "owners": 2231952,
+    "genre": "액션",
+    "tags": {
+      "어드벤처": 1,
+      "액션": 1,
+      "스토리": 1,
+      "탐험": 1,
+      "영화": 1
+    },
+    "tags_list": [
+      "어드벤처",
+      "액션",
+      "스토리",
+      "탐험",
+      "영화"
+    ]
+  },
+  "274520": {
+    "appid": 274520,
+    "name": "Darkwood",
+    "developer": "Acid Wizard Studio",
+    "ccu": 79175,
+    "positive": 194715,
+    "negative": 850,
+    "average_2weeks": 12810,
+    "owners": 2336580,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "서바이벌": 1,
+      "탑다운": 1,
+      "어두운": 1,
+      "도전적": 1
+    },
+    "tags_list": [
+      "공포",
+      "서바이벌",
+      "탑다운",
+      "어두운",
+      "도전적"
+    ]
+  },
+  "1551360": {
+    "appid": 1551360,
+    "name": "Forza Horizon 4",
+    "developer": "Playground Games",
+    "ccu": 78669,
+    "positive": 198918,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2387016,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "오픈월드": 1,
+      "자동차": 1,
+      "영국": 1,
+      "계절변화": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "오픈월드",
+      "자동차",
+      "영국",
+      "계절변화"
+    ]
+  },
+  "270880": {
+    "appid": 270880,
+    "name": "American Truck Simulator",
+    "developer": "SCS Software",
+    "ccu": 79664,
+    "positive": 199093,
+    "negative": 765,
+    "average_2weeks": 12753,
+    "owners": 2389116,
+    "genre": "시뮬레이션",
+    "tags": {
+      "운전": 1,
+      "트럭": 1,
+      "힐링": 1,
+      "시뮬": 1,
+      "여행": 1
+    },
+    "tags_list": [
+      "운전",
+      "트럭",
+      "힐링",
+      "시뮬",
+      "여행"
+    ]
+  },
+  "289070": {
+    "appid": 289070,
+    "name": "Civilization VI",
+    "developer": "Firaxis Games",
+    "ccu": 77563,
+    "positive": 186206,
+    "negative": 1019,
+    "average_2weeks": 12748,
+    "owners": 2234472,
+    "genre": "전략",
+    "tags": {
+      "턴제": 1,
+      "4X": 1,
+      "역사": 1,
+      "건설": 1,
+      "외교": 1
+    },
+    "tags_list": [
+      "턴제",
+      "4X",
+      "역사",
+      "건설",
+      "외교"
+    ]
+  },
+  "379720": {
+    "appid": 379720,
+    "name": "DOOM",
+    "developer": "id Software",
+    "ccu": 80407,
+    "positive": 203485,
+    "negative": 680,
+    "average_2weeks": 12743,
+    "owners": 2441820,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "액션": 1,
+      "고어": 1,
+      "클래식": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "FPS",
+      "액션",
+      "고어",
+      "클래식",
+      "싱글플레이어"
+    ]
+  },
+  "20920": {
+    "appid": 20920,
+    "name": "The Witcher 2: Assassins of Kings",
+    "developer": "CD PROJEKT RED",
+    "ccu": 78194,
+    "positive": 190629,
+    "negative": 934,
+    "average_2weeks": 12733,
+    "owners": 2287548,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "판타지": 1,
+      "싱글플레이어": 1,
+      "스토리": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "rpg",
+      "판타지",
+      "싱글플레이어",
+      "스토리",
+      "선택"
+    ]
+  },
+  "1778820": {
+    "appid": 1778820,
+    "name": "Tekken 8",
+    "developer": "Bandai Namco",
+    "ccu": 78860,
+    "positive": 194470,
+    "negative": 850,
+    "average_2weeks": 12726,
+    "owners": 2333640,
+    "genre": "격투",
+    "tags": {
+      "격투": 1,
+      "3D": 1,
+      "경쟁": 1,
+      "스토리": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "격투",
+      "3D",
+      "경쟁",
+      "스토리",
+      "멀티플레이어"
+    ]
+  },
+  "22380": {
+    "appid": 22380,
+    "name": "Fallout: New Vegas",
+    "developer": "Obsidian Entertainment",
+    "ccu": 78164,
+    "positive": 190664,
+    "negative": 934,
+    "average_2weeks": 12725,
+    "owners": 2287968,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "포스트아포칼립스": 1,
+      "싱글플레이어": 1,
+      "오픈월드": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "rpg",
+      "포스트아포칼립스",
+      "싱글플레이어",
+      "오픈월드",
+      "선택"
+    ]
+  },
+  "581320": {
+    "appid": 581320,
+    "name": "Insurgency: Sandstorm",
+    "developer": "New World Interactive",
+    "ccu": 76770,
+    "positive": 181935,
+    "negative": 1105,
+    "average_2weeks": 12717,
+    "owners": 2183220,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "전술": 1,
+      "리얼리즘": 1,
+      "밀리터리": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "fps",
+      "전술",
+      "리얼리즘",
+      "밀리터리",
+      "경쟁"
+    ]
+  },
+  "394360": {
+    "appid": 394360,
+    "name": "Hearts of Iron IV",
+    "developer": "Paradox Development",
+    "ccu": 77443,
+    "positive": 186206,
+    "negative": 1019,
+    "average_2weeks": 12716,
+    "owners": 2234472,
+    "genre": "전략",
+    "tags": {
+      "2차대전": 1,
+      "역사": 1,
+      "전쟁": 1,
+      "전략": 1,
+      "대체역사": 1
+    },
+    "tags_list": [
+      "2차대전",
+      "역사",
+      "전쟁",
+      "전략",
+      "대체역사"
+    ]
+  },
+  "245170": {
+    "appid": 245170,
+    "name": "Skullgirls 2nd Encore",
+    "developer": "Hidden Variable",
+    "ccu": 78770,
+    "positive": 194820,
+    "negative": 850,
+    "average_2weeks": 12702,
+    "owners": 2337840,
+    "genre": "격투",
+    "tags": {
+      "격투": 1,
+      "2D": 1,
+      "인디": 1,
+      "캐릭터": 1,
+      "애니": 1
+    },
+    "tags_list": [
+      "격투",
+      "2D",
+      "인디",
+      "캐릭터",
+      "애니"
+    ]
+  },
+  "219990": {
+    "appid": 219990,
+    "name": "Grim Dawn",
+    "developer": "Crate Entertainment",
+    "ccu": 78059,
+    "positive": 190454,
+    "negative": 934,
+    "average_2weeks": 12697,
+    "owners": 2285448,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "핵앤슬래시": 1,
+      "다크판타지": 1,
+      "액션": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "rpg",
+      "핵앤슬래시",
+      "다크판타지",
+      "액션",
+      "싱글플레이어"
+    ]
+  },
+  "594570": {
+    "appid": 594570,
+    "name": "Total War: WARHAMMER II",
+    "developer": "Creative Assembly",
+    "ccu": 80407,
+    "positive": 203450,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2441400,
+    "genre": "전략",
+    "tags": {
+      "전략": 1,
+      "RTS": 1,
+      "판타지": 1,
+      "대규모전투": 1,
+      "턴제": 1
+    },
+    "tags_list": [
+      "전략",
+      "RTS",
+      "판타지",
+      "대규모전투",
+      "턴제"
+    ]
+  },
+  "1625450": {
+    "appid": 1625450,
+    "name": "Plate Up!",
+    "developer": "It's Happening",
+    "ccu": 80407,
+    "positive": 203275,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2439300,
+    "genre": "시뮬레이션",
+    "tags": {
+      "요리": 1,
+      "경영": 1,
+      "로그라이크": 1,
+      "협동": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "요리",
+      "경영",
+      "로그라이크",
+      "협동",
+      "캐주얼"
+    ]
+  },
+  "431240": {
+    "appid": 431240,
+    "name": "Golf With Your Friends",
+    "developer": "Blacklight Interactive",
+    "ccu": 78695,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12682,
+    "owners": 2335320,
+    "genre": "스포츠",
+    "tags": {
+      "골프": 1,
+      "캐주얼": 1,
+      "파티": 1,
+      "멀티플레이어": 1,
+      "재미": 1
+    },
+    "tags_list": [
+      "골프",
+      "캐주얼",
+      "파티",
+      "멀티플레이어",
+      "재미"
+    ]
+  },
+  "418370": {
+    "appid": 418370,
+    "name": "Resident Evil 7 Biohazard",
+    "developer": "Capcom",
+    "ccu": 79394,
+    "positive": 199058,
+    "negative": 765,
+    "average_2weeks": 12681,
+    "owners": 2388696,
+    "genre": "공포",
+    "tags": {
+      "호러": 1,
+      "1인칭": 1,
+      "생존": 1,
+      "공포": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "호러",
+      "1인칭",
+      "생존",
+      "공포",
+      "스토리"
+    ]
+  },
+  "205100": {
+    "appid": 205100,
+    "name": "Dishonored",
+    "developer": "Arkane Studios",
+    "ccu": 79349,
+    "positive": 199233,
+    "negative": 765,
+    "average_2weeks": 12669,
+    "owners": 2390796,
+    "genre": "액션",
+    "tags": {
+      "잠입": 1,
+      "초능력": 1,
+      "스토리": 1,
+      "액션": 1,
+      "암살": 1
+    },
+    "tags_list": [
+      "잠입",
+      "초능력",
+      "스토리",
+      "액션",
+      "암살"
+    ]
+  },
+  "244850": {
+    "appid": 244850,
+    "name": "Space Engineers",
+    "developer": "Keen Software House",
+    "ccu": 77218,
+    "positive": 186101,
+    "negative": 1019,
+    "average_2weeks": 12656,
+    "owners": 2233212,
+    "genre": "시뮬레이션",
+    "tags": {
+      "우주": 1,
+      "건설": 1,
+      "엔지니어링": 1,
+      "협동": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "우주",
+      "건설",
+      "엔지니어링",
+      "협동",
+      "sf"
+    ]
+  },
+  "238320": {
+    "appid": 238320,
+    "name": "Outlast",
+    "developer": "Red Barrels",
+    "ccu": 77113,
+    "positive": 186311,
+    "negative": 1019,
+    "average_2weeks": 12628,
+    "owners": 2235732,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "카메라": 1,
+      "1인칭": 1,
+      "무서운": 1,
+      "병원": 1
+    },
+    "tags_list": [
+      "공포",
+      "카메라",
+      "1인칭",
+      "무서운",
+      "병원"
+    ]
+  },
+  "550320": {
+    "appid": 550320,
+    "name": "Art of Rally",
+    "developer": "Funselektor Labs",
+    "ccu": 78425,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12610,
+    "owners": 2335320,
+    "genre": "레이싱",
+    "tags": {
+      "랠리": 1,
+      "탑다운": 1,
+      "아트": 1,
+      "힐링": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "랠리",
+      "탑다운",
+      "아트",
+      "힐링",
+      "인디"
+    ]
+  },
+  "1649240": {
+    "appid": 1649240,
+    "name": "Returnal",
+    "developer": "Housemarque",
+    "ccu": 76320,
+    "positive": 181760,
+    "negative": 1105,
+    "average_2weeks": 12597,
+    "owners": 2181120,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "슈터": 1,
+      "sf": 1,
+      "도전적": 1,
+      "3인칭": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "슈터",
+      "sf",
+      "도전적",
+      "3인칭"
+    ]
+  },
+  "972660": {
+    "appid": 972660,
+    "name": "Spiritfarer",
+    "developer": "Thunder Lotus Games",
+    "ccu": 77684,
+    "positive": 190314,
+    "negative": 934,
+    "average_2weeks": 12597,
+    "owners": 2283768,
+    "genre": "인디",
+    "tags": {
+      "힐링": 1,
+      "인디": 1,
+      "스토리": 1,
+      "시뮬레이션": 1,
+      "감동": 1
+    },
+    "tags_list": [
+      "힐링",
+      "인디",
+      "스토리",
+      "시뮬레이션",
+      "감동"
+    ]
+  },
+  "1135690": {
+    "appid": 1135690,
+    "name": "Unpacking",
+    "developer": "Witch Beam",
+    "ccu": 77669,
+    "positive": 190279,
+    "negative": 934,
+    "average_2weeks": 12593,
+    "owners": 2283348,
+    "genre": "인디",
+    "tags": {
+      "힐링": 1,
+      "퍼즐": 1,
+      "싱글플레이어": 1,
+      "짧음": 1,
+      "감성": 1
+    },
+    "tags_list": [
+      "힐링",
+      "퍼즐",
+      "싱글플레이어",
+      "짧음",
+      "감성"
+    ]
+  },
+  "962130": {
+    "appid": 962130,
+    "name": "Grounded",
+    "developer": "Obsidian Entertainment",
+    "ccu": 76978,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 12592,
+    "owners": 2231952,
+    "genre": "서바이벌",
+    "tags": {
+      "서바이벌": 1,
+      "축소": 1,
+      "마당": 1,
+      "협동": 1,
+      "건설": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "축소",
+      "마당",
+      "협동",
+      "건설"
+    ]
+  },
+  "239140": {
+    "appid": 239140,
+    "name": "Dying Light",
+    "developer": "Techland",
+    "ccu": 76933,
+    "positive": 186241,
+    "negative": 1019,
+    "average_2weeks": 12580,
+    "owners": 2234892,
+    "genre": "샌드박스",
+    "tags": {
+      "좀비": 1,
+      "파쿠르": 1,
+      "오픈월드": 1,
+      "서바이벌": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "좀비",
+      "파쿠르",
+      "오픈월드",
+      "서바이벌",
+      "협동"
+    ]
+  },
+  "457140": {
+    "appid": 457140,
+    "name": "Oxygen Not Included",
+    "developer": "Klei Entertainment",
+    "ccu": 77609,
+    "positive": 190349,
+    "negative": 934,
+    "average_2weeks": 12577,
+    "owners": 2284188,
+    "genre": "전략",
+    "tags": {
+      "시뮬레이션": 1,
+      "서바이벌": 1,
+      "건설": 1,
+      "도전적": 1,
+      "과학": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "서바이벌",
+      "건설",
+      "도전적",
+      "과학"
+    ]
+  },
+  "2161700": {
+    "appid": 2161700,
+    "name": "Persona 3 Reload",
+    "developer": "ATLUS",
+    "ccu": 78974,
+    "positive": 198813,
+    "negative": 765,
+    "average_2weeks": 12569,
+    "owners": 2385756,
+    "genre": "RPG",
+    "tags": {
+      "JRPG": 1,
+      "턴제": 1,
+      "스토리": 1,
+      "던전": 1,
+      "학원": 1
+    },
+    "tags_list": [
+      "JRPG",
+      "턴제",
+      "스토리",
+      "던전",
+      "학원"
+    ]
+  },
+  "1336490": {
+    "appid": 1336490,
+    "name": "Against the Storm",
+    "developer": "Eremite Games",
+    "ccu": 78884,
+    "positive": 198848,
+    "negative": 765,
+    "average_2weeks": 12545,
+    "owners": 2386176,
+    "genre": "전략",
+    "tags": {
+      "전략": 1,
+      "로그라이크": 1,
+      "도시건설": 1,
+      "다크판타지": 1,
+      "경영": 1
+    },
+    "tags_list": [
+      "전략",
+      "로그라이크",
+      "도시건설",
+      "다크판타지",
+      "경영"
+    ]
+  },
+  "1657630": {
+    "appid": 1657630,
+    "name": "Slime Rancher 2",
+    "developer": "Monomi Park",
+    "ccu": 77234,
+    "positive": 190244,
+    "negative": 934,
+    "average_2weeks": 12477,
+    "owners": 2282928,
+    "genre": "샌드박스",
+    "tags": {
+      "힐링": 1,
+      "농장": 1,
+      "슬라임": 1,
+      "캐주얼": 1,
+      "탐험": 1
+    },
+    "tags_list": [
+      "힐링",
+      "농장",
+      "슬라임",
+      "캐주얼",
+      "탐험"
+    ]
+  },
+  "47810": {
+    "appid": 47810,
+    "name": "Dragon Age: Origins",
+    "developer": "BioWare",
+    "ccu": 76498,
+    "positive": 186451,
+    "negative": 1019,
+    "average_2weeks": 12464,
+    "owners": 2237412,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "판타지": 1,
+      "협동": 1,
+      "스토리": 1,
+      "선택": 1
+    },
+    "tags_list": [
+      "rpg",
+      "판타지",
+      "협동",
+      "스토리",
+      "선택"
+    ]
+  },
+  "35140": {
+    "appid": 35140,
+    "name": "Batman: Arkham Asylum GOTY Edition",
+    "developer": "Rocksteady",
+    "ccu": 77855,
+    "positive": 194995,
+    "negative": 850,
+    "average_2weeks": 12458,
+    "owners": 2339940,
+    "genre": "액션",
+    "tags": {
+      "히어로": 1,
+      "잠입": 1,
+      "액션": 1,
+      "배트맨": 1,
+      "고전": 1
+    },
+    "tags_list": [
+      "히어로",
+      "잠입",
+      "액션",
+      "배트맨",
+      "고전"
+    ]
+  },
+  "236850": {
+    "appid": 236850,
+    "name": "Europa Universalis IV",
+    "developer": "Paradox Development",
+    "ccu": 75795,
+    "positive": 182110,
+    "negative": 1105,
+    "average_2weeks": 12457,
+    "owners": 2185320,
+    "genre": "전략",
+    "tags": {
+      "역사": 1,
+      "4X": 1,
+      "외교": 1,
+      "전략": 1,
+      "방대한": 1
+    },
+    "tags_list": [
+      "역사",
+      "4X",
+      "외교",
+      "전략",
+      "방대한"
+    ]
+  },
+  "281990": {
+    "appid": 281990,
+    "name": "Stellaris",
+    "developer": "Paradox Development",
+    "ccu": 75735,
+    "positive": 182005,
+    "negative": 1105,
+    "average_2weeks": 12441,
+    "owners": 2184060,
+    "genre": "전략",
+    "tags": {
+      "sf": 1,
+      "4X": 1,
+      "우주": 1,
+      "외교": 1,
+      "전략": 1
+    },
+    "tags_list": [
+      "sf",
+      "4X",
+      "우주",
+      "외교",
+      "전략"
+    ]
+  },
+  "1244090": {
+    "appid": 1244090,
+    "name": "Sea of Stars",
+    "developer": "Sabotage Studio",
+    "ccu": 77765,
+    "positive": 194505,
+    "negative": 850,
+    "average_2weeks": 12434,
+    "owners": 2334060,
+    "genre": "RPG",
+    "tags": {
+      "jrpg": 1,
+      "턴제": 1,
+      "도트": 1,
+      "모험": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "jrpg",
+      "턴제",
+      "도트",
+      "모험",
+      "인디"
+    ]
+  },
+  "1328590": {
+    "appid": 1328590,
+    "name": "Turbo Overkill",
+    "developer": "Trigger Happy Interactive",
+    "ccu": 78669,
+    "positive": 198848,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2386176,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "사이버펑크": 1,
+      "레트로": 1,
+      "속도감": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "FPS",
+      "사이버펑크",
+      "레트로",
+      "속도감",
+      "인디"
+    ]
+  },
+  "367500": {
+    "appid": 367500,
+    "name": "Metal Gear Solid V: The Phantom Pain",
+    "developer": "Kojima Productions",
+    "ccu": 78669,
+    "positive": 199128,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2389536,
+    "genre": "액션",
+    "tags": {
+      "잠입": 1,
+      "오픈월드": 1,
+      "액션": 1,
+      "전술": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "잠입",
+      "오픈월드",
+      "액션",
+      "전술",
+      "싱글플레이어"
+    ]
+  },
+  "960090": {
+    "appid": 960090,
+    "name": "Psychonauts 2",
+    "developer": "Double Fine Productions",
+    "ccu": 78669,
+    "positive": 198918,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2387016,
+    "genre": "어드벤처",
+    "tags": {
+      "플랫포머": 1,
+      "어드벤처": 1,
+      "코미디": 1,
+      "초능력": 1,
+      "3D": 1
+    },
+    "tags_list": [
+      "플랫포머",
+      "어드벤처",
+      "코미디",
+      "초능력",
+      "3D"
+    ]
+  },
+  "290340": {
+    "appid": 290340,
+    "name": "Limbo",
+    "developer": "Playdead",
+    "ccu": 78669,
+    "positive": 199268,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2391216,
+    "genre": "어드벤처",
+    "tags": {
+      "퍼즐": 1,
+      "플랫포머": 1,
+      "흑백": 1,
+      "분위기": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "플랫포머",
+      "흑백",
+      "분위기",
+      "인디"
+    ]
   },
   "1966720": {
     "appid": 1966720,
-    "name": "Lethal Company",
-    "developer": "Zeekerss",
-    "publisher": "Zeekerss",
-    "score_rank": "",
-    "positive": 473422,
-    "negative": 13738,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1459,
-    "average_2weeks": 197,
-    "median_forever": 677,
-    "median_2weeks": 127,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 6199
+    "name": "Content Warning",
+    "developer": "Landfall",
+    "ccu": 78669,
+    "positive": 198813,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2385756,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "협동": 1,
+      "코미디": 1,
+      "촬영": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "공포",
+      "협동",
+      "코미디",
+      "촬영",
+      "인디"
+    ]
   },
-  "2186680": {
-    "appid": 2186680,
-    "name": "Warhammer 40,000: Rogue Trader",
-    "developer": "Owlcat Games",
-    "publisher": "Owlcat Games",
-    "score_rank": "",
-    "positive": 26360,
-    "negative": 4445,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 2955,
-    "average_2weeks": 872,
-    "median_forever": 1151,
-    "median_2weeks": 321,
-    "price": "4999",
-    "initialprice": "4999",
-    "discount": "0",
-    "ccu": 3582
+  "244050": {
+    "appid": 244050,
+    "name": "art of rally",
+    "developer": "Funselektor Labs",
+    "ccu": 78669,
+    "positive": 198953,
+    "negative": 765,
+    "average_2weeks": 12421,
+    "owners": 2387436,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "랠리": 1,
+      "인디": 1,
+      "아트": 1,
+      "미니멀": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "랠리",
+      "인디",
+      "아트",
+      "미니멀"
+    ]
   },
-  "2246340": {
-    "appid": 2246340,
-    "name": "Monster Hunter Wilds",
-    "developer": "CAPCOM Co., Ltd.",
-    "publisher": "CAPCOM Co., Ltd.",
-    "score_rank": "",
-    "positive": 127273,
-    "negative": 91142,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 4451,
-    "average_2weeks": 387,
-    "median_forever": 3066,
-    "median_2weeks": 216,
-    "price": "6999",
-    "initialprice": "6999",
-    "discount": "0",
-    "ccu": 12494
+  "233720": {
+    "appid": 233720,
+    "name": "Prison Architect",
+    "developer": "Introversion Software",
+    "ccu": 75645,
+    "positive": 182040,
+    "negative": 1105,
+    "average_2weeks": 12417,
+    "owners": 2184480,
+    "genre": "시뮬레이션",
+    "tags": {
+      "감옥": 1,
+      "건설": 1,
+      "관리": 1,
+      "전략": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "감옥",
+      "건설",
+      "관리",
+      "전략",
+      "인디"
+    ]
   },
-  "2358720": {
-    "appid": 2358720,
-    "name": "Black Myth: Wukong",
-    "developer": "Game Science",
-    "publisher": "Game Science",
-    "score_rank": "",
-    "positive": 1111720,
-    "negative": 38378,
-    "userscore": 0,
-    "owners": "50,000,000 .. 100,000,000",
-    "average_forever": 3373,
-    "average_2weeks": 397,
-    "median_forever": 2913,
-    "median_2weeks": 131,
-    "price": "5999",
-    "initialprice": "5999",
-    "discount": "0",
-    "ccu": 15004
+  "690790": {
+    "appid": 690790,
+    "name": "DiRT Rally 2.0",
+    "developer": "Codemasters",
+    "ccu": 76769,
+    "positive": 190349,
+    "negative": 934,
+    "average_2weeks": 12353,
+    "owners": 2284188,
+    "genre": "레이싱",
+    "tags": {
+      "랠리": 1,
+      "레이싱": 1,
+      "리얼리즘": 1,
+      "도전적": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "랠리",
+      "레이싱",
+      "리얼리즘",
+      "도전적",
+      "시뮬레이션"
+    ]
   },
-  "2694490": {
-    "appid": 2694490,
-    "name": "Path of Exile 2",
-    "developer": "Grinding Gear Games",
-    "publisher": "Grinding Gear Games",
-    "score_rank": "",
-    "positive": 118511,
-    "negative": 50510,
-    "userscore": 0,
-    "owners": "20,000,000 .. 50,000,000",
-    "average_forever": 8454,
-    "average_2weeks": 487,
-    "median_forever": 3400,
-    "median_2weeks": 79,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
-    "ccu": 16727
+  "48000": {
+    "appid": 48000,
+    "name": "LIMBO",
+    "developer": "Playdead",
+    "ccu": 76033,
+    "positive": 186381,
+    "negative": 1019,
+    "average_2weeks": 12340,
+    "owners": 2236572,
+    "genre": "인디",
+    "tags": {
+      "퍼즐": 1,
+      "플랫포머": 1,
+      "흑백": 1,
+      "어두운": 1,
+      "짧음": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "플랫포머",
+      "흑백",
+      "어두운",
+      "짧음"
+    ]
   },
-  "3164500": {
-    "appid": 3164500,
-    "name": "Schedule I",
-    "developer": "TVGS",
-    "publisher": "TVGS",
-    "score_rank": "",
-    "positive": 200803,
-    "negative": 3238,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1794,
-    "average_2weeks": 389,
-    "median_forever": 1187,
-    "median_2weeks": 152,
-    "price": "1999",
-    "initialprice": "1999",
-    "discount": "0",
-    "ccu": 22757
+  "311690": {
+    "appid": 311690,
+    "name": "Enter the Gungeon",
+    "developer": "Dodge Roll",
+    "ccu": 77405,
+    "positive": 194750,
+    "negative": 850,
+    "average_2weeks": 12338,
+    "owners": 2337000,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "탄막": 1,
+      "인디": 1,
+      "도전적": 1,
+      "슈터": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "탄막",
+      "인디",
+      "도전적",
+      "슈터"
+    ]
   },
-  "3241660": {
-    "appid": 3241660,
-    "name": "R.E.P.O.",
-    "developer": "semiwork",
-    "publisher": "semiwork",
-    "score_rank": "",
-    "positive": 179154,
-    "negative": 6488,
-    "userscore": 0,
-    "owners": "10,000,000 .. 20,000,000",
-    "average_forever": 1172,
-    "average_2weeks": 236,
-    "median_forever": 619,
-    "median_2weeks": 100,
-    "price": "999",
-    "initialprice": "999",
-    "discount": "0",
-    "ccu": 32349
+  "323190": {
+    "appid": 323190,
+    "name": "Frostpunk",
+    "developer": "11 bit studios",
+    "ccu": 75913,
+    "positive": 186136,
+    "negative": 1019,
+    "average_2weeks": 12308,
+    "owners": 2233632,
+    "genre": "전략",
+    "tags": {
+      "서바이벌": 1,
+      "도시건설": 1,
+      "도전적": 1,
+      "아포칼립스": 1,
+      "전략": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "도시건설",
+      "도전적",
+      "아포칼립스",
+      "전략"
+    ]
+  },
+  "638230": {
+    "appid": 638230,
+    "name": "Journey",
+    "developer": "thatgamecompany",
+    "ccu": 77210,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12286,
+    "owners": 2335320,
+    "genre": "어드벤처",
+    "tags": {
+      "어드벤처": 1,
+      "감성": 1,
+      "분위기": 1,
+      "멀티플레이어": 1,
+      "짧음": 1
+    },
+    "tags_list": [
+      "어드벤처",
+      "감성",
+      "분위기",
+      "멀티플레이어",
+      "짧음"
+    ]
+  },
+  "1235140": {
+    "appid": 1235140,
+    "name": "Yakuza: Like a Dragon",
+    "developer": "Ryu Ga Gotoku Studio",
+    "ccu": 76469,
+    "positive": 190314,
+    "negative": 934,
+    "average_2weeks": 12273,
+    "owners": 2283768,
+    "genre": "RPG",
+    "tags": {
+      "jrpg": 1,
+      "턴제": 1,
+      "스토리": 1,
+      "범죄": 1,
+      "일본": 1
+    },
+    "tags_list": [
+      "jrpg",
+      "턴제",
+      "스토리",
+      "범죄",
+      "일본"
+    ]
+  },
+  "1151640": {
+    "appid": 1151640,
+    "name": "Horizon Zero Dawn Complete Edition",
+    "developer": "Guerrilla",
+    "ccu": 76454,
+    "positive": 190314,
+    "negative": 934,
+    "average_2weeks": 12269,
+    "owners": 2283768,
+    "genre": "액션",
+    "tags": {
+      "오픈월드": 1,
+      "스토리": 1,
+      "액션": 1,
+      "sf": 1,
+      "사냥": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "스토리",
+      "액션",
+      "sf",
+      "사냥"
+    ]
+  },
+  "1490000": {
+    "appid": 1490000,
+    "name": "The Forgotten City",
+    "developer": "Modern Storyteller",
+    "ccu": 75763,
+    "positive": 186031,
+    "negative": 1019,
+    "average_2weeks": 12268,
+    "owners": 2232372,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "역사": 1,
+      "스토리": 1,
+      "시간루프": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "rpg",
+      "역사",
+      "스토리",
+      "시간루프",
+      "싱글플레이어"
+    ]
+  },
+  "1967680": {
+    "appid": 1967680,
+    "name": "Pentiment",
+    "developer": "Obsidian Entertainment",
+    "ccu": 75748,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 12264,
+    "owners": 2231952,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "역사": 1,
+      "스토리": 1,
+      "독특한": 1,
+      "중세": 1
+    },
+    "tags_list": [
+      "rpg",
+      "역사",
+      "스토리",
+      "독특한",
+      "중세"
+    ]
+  },
+  "1693980": {
+    "appid": 1693980,
+    "name": "Dead Space",
+    "developer": "Motive",
+    "ccu": 77090,
+    "positive": 194505,
+    "negative": 850,
+    "average_2weeks": 12254,
+    "owners": 2334060,
+    "genre": "공포",
+    "tags": {
+      "공포": 1,
+      "SF": 1,
+      "생존": 1,
+      "액션": 1,
+      "리메이크": 1
+    },
+    "tags_list": [
+      "공포",
+      "SF",
+      "생존",
+      "액션",
+      "리메이크"
+    ]
+  },
+  "1888160": {
+    "appid": 1888160,
+    "name": "ARMORED CORE VI FIRES OF RUBICON",
+    "developer": "FromSoftware",
+    "ccu": 76364,
+    "positive": 190209,
+    "negative": 934,
+    "average_2weeks": 12245,
+    "owners": 2282508,
+    "genre": "액션",
+    "tags": {
+      "메카": 1,
+      "액션": 1,
+      "보스전": 1,
+      "도전적": 1,
+      "커스터마이즈": 1
+    },
+    "tags_list": [
+      "메카",
+      "액션",
+      "보스전",
+      "도전적",
+      "커스터마이즈"
+    ]
+  },
+  "412020": {
+    "appid": 412020,
+    "name": "Metro Exodus",
+    "developer": "4A Games",
+    "ccu": 74985,
+    "positive": 181900,
+    "negative": 1105,
+    "average_2weeks": 12241,
+    "owners": 2182800,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "포스트아포칼립스": 1,
+      "싱글플레이어": 1,
+      "스토리": 1,
+      "공포": 1
+    },
+    "tags_list": [
+      "fps",
+      "포스트아포칼립스",
+      "싱글플레이어",
+      "스토리",
+      "공포"
+    ]
+  },
+  "870780": {
+    "appid": 870780,
+    "name": "Control",
+    "developer": "Remedy Entertainment",
+    "ccu": 74955,
+    "positive": 181900,
+    "negative": 1105,
+    "average_2weeks": 12233,
+    "owners": 2182800,
+    "genre": "액션",
+    "tags": {
+      "액션": 1,
+      "싱글플레이어": 1,
+      "스토리": 1,
+      "미스터리": 1,
+      "슈터": 1
+    },
+    "tags_list": [
+      "액션",
+      "싱글플레이어",
+      "스토리",
+      "미스터리",
+      "슈터"
+    ]
+  },
+  "1942280": {
+    "appid": 1942280,
+    "name": "Brotato",
+    "developer": "Blobfish",
+    "ccu": 76319,
+    "positive": 190209,
+    "negative": 934,
+    "average_2weeks": 12233,
+    "owners": 2282508,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "인디": 1,
+      "생존": 1,
+      "캐주얼": 1,
+      "중독성": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "인디",
+      "생존",
+      "캐주얼",
+      "중독성"
+    ]
+  },
+  "573090": {
+    "appid": 573090,
+    "name": "Stormworks: Build and Rescue",
+    "developer": "Geometa Ltd",
+    "ccu": 75583,
+    "positive": 186101,
+    "negative": 1019,
+    "average_2weeks": 12220,
+    "owners": 2233212,
+    "genre": "샌드박스",
+    "tags": {
+      "건설": 1,
+      "엔지니어링": 1,
+      "협동": 1,
+      "구조": 1,
+      "창의": 1
+    },
+    "tags_list": [
+      "건설",
+      "엔지니어링",
+      "협동",
+      "구조",
+      "창의"
+    ]
+  },
+  "359550": {
+    "appid": 359550,
+    "name": "Tom Clancy's Rainbow Six Siege",
+    "developer": "Ubisoft Montreal",
+    "ccu": 73547,
+    "positive": 173785,
+    "negative": 1275,
+    "average_2weeks": 12213,
+    "owners": 2085420,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "전술": 1,
+      "경쟁": 1,
+      "팀": 1,
+      "파괴": 1
+    },
+    "tags_list": [
+      "fps",
+      "전술",
+      "경쟁",
+      "팀",
+      "파괴"
+    ]
+  },
+  "322500": {
+    "appid": 322500,
+    "name": "SUPERHOT",
+    "developer": "SUPERHOT Team",
+    "ccu": 76950,
+    "positive": 194750,
+    "negative": 850,
+    "average_2weeks": 12190,
+    "owners": 2337000,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "퍼즐": 1,
+      "시간조작": 1,
+      "전략": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "FPS",
+      "퍼즐",
+      "시간조작",
+      "전략",
+      "인디"
+    ]
+  },
+  "440": {
+    "appid": 440,
+    "name": "Team Fortress 2",
+    "developer": "Valve",
+    "ccu": 73442,
+    "positive": 174065,
+    "negative": 1275,
+    "average_2weeks": 12185,
+    "owners": 2088780,
+    "genre": "FPS",
+    "tags": {
+      "fps": 1,
+      "팀": 1,
+      "캐주얼": 1,
+      "만화": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "fps",
+      "팀",
+      "캐주얼",
+      "만화",
+      "멀티플레이어"
+    ]
+  },
+  "673130": {
+    "appid": 673130,
+    "name": "Amid Evil",
+    "developer": "Indefatigable",
+    "ccu": 76950,
+    "positive": 194645,
+    "negative": 850,
+    "average_2weeks": 12170,
+    "owners": 2335740,
+    "genre": "FPS",
+    "tags": {
+      "FPS": 1,
+      "판타지": 1,
+      "레트로": 1,
+      "마법": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "FPS",
+      "판타지",
+      "레트로",
+      "마법",
+      "싱글플레이어"
+    ]
+  },
+  "1091500": {
+    "appid": 1091500,
+    "name": "Cyberpunk 2077",
+    "developer": "CD Projekt Red",
+    "ccu": 73382,
+    "positive": 173610,
+    "negative": 1275,
+    "average_2weeks": 12169,
+    "owners": 2083320,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "사이버펑크": 1,
+      "오픈월드": 1,
+      "미래": 1,
+      "액션": 1
+    },
+    "tags_list": [
+      "rpg",
+      "사이버펑크",
+      "오픈월드",
+      "미래",
+      "액션"
+    ]
+  },
+  "1229240": {
+    "appid": 1229240,
+    "name": "Chained Echoes",
+    "developer": "Matthias Linda",
+    "ccu": 76049,
+    "positive": 190244,
+    "negative": 934,
+    "average_2weeks": 12161,
+    "owners": 2282928,
+    "genre": "RPG",
+    "tags": {
+      "jrpg": 1,
+      "턴제": 1,
+      "도트": 1,
+      "인디": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "jrpg",
+      "턴제",
+      "도트",
+      "인디",
+      "스토리"
+    ]
+  },
+  "39210": {
+    "appid": 39210,
+    "name": "Final Fantasy VI",
+    "developer": "Square Enix",
+    "ccu": 76950,
+    "positive": 194540,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2334480,
+    "genre": "RPG",
+    "tags": {
+      "JRPG": 1,
+      "턴제": 1,
+      "클래식": 1,
+      "스토리": 1,
+      "도트": 1
+    },
+    "tags_list": [
+      "JRPG",
+      "턴제",
+      "클래식",
+      "스토리",
+      "도트"
+    ]
+  },
+  "236430": {
+    "appid": 236430,
+    "name": "Dark Souls: Remastered",
+    "developer": "FromSoftware",
+    "ccu": 76950,
+    "positive": 194680,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2336160,
+    "genre": "RPG",
+    "tags": {
+      "소울라이크": 1,
+      "액션RPG": 1,
+      "도전적": 1,
+      "판타지": 1,
+      "다크": 1
+    },
+    "tags_list": [
+      "소울라이크",
+      "액션RPG",
+      "도전적",
+      "판타지",
+      "다크"
+    ]
+  },
+  "414340": {
+    "appid": 414340,
+    "name": "Hellblade: Senua's Sacrifice",
+    "developer": "Ninja Theory",
+    "ccu": 76950,
+    "positive": 194715,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2336580,
+    "genre": "액션",
+    "tags": {
+      "액션": 1,
+      "심리": 1,
+      "북유럽": 1,
+      "스토리": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "심리",
+      "북유럽",
+      "스토리",
+      "싱글플레이어"
+    ]
+  },
+  "204060": {
+    "appid": 204060,
+    "name": "Life is Strange Remastered",
+    "developer": "Deck Nine Games",
+    "ccu": 76950,
+    "positive": 194540,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2334480,
+    "genre": "어드벤처",
+    "tags": {
+      "스토리": 1,
+      "선택": 1,
+      "어드벤처": 1,
+      "감성": 1,
+      "시간여행": 1
+    },
+    "tags_list": [
+      "스토리",
+      "선택",
+      "어드벤처",
+      "감성",
+      "시간여행"
+    ]
+  },
+  "322170": {
+    "appid": 322170,
+    "name": "Geometry Dash",
+    "developer": "RobTop Games",
+    "ccu": 76950,
+    "positive": 194820,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2337840,
+    "genre": "어드벤처",
+    "tags": {
+      "리듬": 1,
+      "플랫포머": 1,
+      "인디": 1,
+      "도전적": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "리듬",
+      "플랫포머",
+      "인디",
+      "도전적",
+      "캐주얼"
+    ]
+  },
+  "1449560": {
+    "appid": 1449560,
+    "name": "Timberborn",
+    "developer": "Mechanistry",
+    "ccu": 76950,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2334900,
+    "genre": "시뮬레이션",
+    "tags": {
+      "도시건설": 1,
+      "시뮬레이션": 1,
+      "비버": 1,
+      "전략": 1,
+      "자원관리": 1
+    },
+    "tags_list": [
+      "도시건설",
+      "시뮬레이션",
+      "비버",
+      "전략",
+      "자원관리"
+    ]
+  },
+  "319630": {
+    "appid": 319630,
+    "name": "Life is Strange",
+    "developer": "Dontnod Entertainment",
+    "ccu": 76950,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2337420,
+    "genre": "공포",
+    "tags": {
+      "스토리": 1,
+      "선택": 1,
+      "어드벤처": 1,
+      "감성": 1,
+      "미스터리": 1
+    },
+    "tags_list": [
+      "스토리",
+      "선택",
+      "어드벤처",
+      "감성",
+      "미스터리"
+    ]
+  },
+  "1295660": {
+    "appid": 1295660,
+    "name": "Deaths Door",
+    "developer": "Acid Nerve",
+    "ccu": 76950,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2334900,
+    "genre": "공포",
+    "tags": {
+      "액션": 1,
+      "인디": 1,
+      "죽음": 1,
+      "보스전": 1,
+      "다크": 1
+    },
+    "tags_list": [
+      "액션",
+      "인디",
+      "죽음",
+      "보스전",
+      "다크"
+    ]
+  },
+  "383980": {
+    "appid": 383980,
+    "name": "Rivals of Aether",
+    "developer": "Dan Fornace",
+    "ccu": 76950,
+    "positive": 194715,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2336580,
+    "genre": "격투",
+    "tags": {
+      "격투": 1,
+      "플랫폼": 1,
+      "인디": 1,
+      "경쟁": 1,
+      "도트": 1
+    },
+    "tags_list": [
+      "격투",
+      "플랫폼",
+      "인디",
+      "경쟁",
+      "도트"
+    ]
+  },
+  "327890": {
+    "appid": 327890,
+    "name": "What the Golf?",
+    "developer": "Triband",
+    "ccu": 76950,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2335320,
+    "genre": "스포츠",
+    "tags": {
+      "골프": 1,
+      "코미디": 1,
+      "퍼즐": 1,
+      "인디": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "골프",
+      "코미디",
+      "퍼즐",
+      "인디",
+      "캐주얼"
+    ]
+  },
+  "310560": {
+    "appid": 310560,
+    "name": "DiRT Rally",
+    "developer": "Codemasters",
+    "ccu": 76950,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2337420,
+    "genre": "레이싱",
+    "tags": {
+      "랠리": 1,
+      "레이싱": 1,
+      "오프로드": 1,
+      "시뮬레이션": 1,
+      "현실적": 1
+    },
+    "tags_list": [
+      "랠리",
+      "레이싱",
+      "오프로드",
+      "시뮬레이션",
+      "현실적"
+    ]
+  },
+  "681280": {
+    "appid": 681280,
+    "name": "Descenders",
+    "developer": "RageSquid",
+    "ccu": 75298,
+    "positive": 186101,
+    "negative": 1019,
+    "average_2weeks": 12144,
+    "owners": 2233212,
+    "genre": "스포츠",
+    "tags": {
+      "MTB": 1,
+      "익스트림": 1,
+      "랜덤": 1,
+      "로그라이크": 1,
+      "도전적": 1
+    },
+    "tags_list": [
+      "MTB",
+      "익스트림",
+      "랜덤",
+      "로그라이크",
+      "도전적"
+    ]
+  },
+  "230230": {
+    "appid": 230230,
+    "name": "Divinity: Original Sin",
+    "developer": "Larian Studios",
+    "ccu": 73187,
+    "positive": 173820,
+    "negative": 1275,
+    "average_2weeks": 12117,
+    "owners": 2085840,
+    "genre": "RPG",
+    "tags": {
+      "턴제": 1,
+      "rpg": 1,
+      "판타지": 1,
+      "협동": 1,
+      "전략": 1
+    },
+    "tags_list": [
+      "턴제",
+      "rpg",
+      "판타지",
+      "협동",
+      "전략"
+    ]
+  },
+  "1215980": {
+    "appid": 1215980,
+    "name": "OlliOlli World",
+    "developer": "Roll7",
+    "ccu": 75193,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 12116,
+    "owners": 2231952,
+    "genre": "스포츠",
+    "tags": {
+      "스케이트": 1,
+      "2D": 1,
+      "아케이드": 1,
+      "인디": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "스케이트",
+      "2D",
+      "아케이드",
+      "인디",
+      "캐주얼"
+    ]
+  },
+  "1465360": {
+    "appid": 1465360,
+    "name": "SnowRunner",
+    "developer": "Saber Interactive",
+    "ccu": 75178,
+    "positive": 186066,
+    "negative": 1019,
+    "average_2weeks": 12112,
+    "owners": 2232792,
+    "genre": "스포츠",
+    "tags": {
+      "오프로드": 1,
+      "트럭": 1,
+      "오픈월드": 1,
+      "도전적": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "오프로드",
+      "트럭",
+      "오픈월드",
+      "도전적",
+      "협동"
+    ]
+  },
+  "1222690": {
+    "appid": 1222690,
+    "name": "Dragon Age: Inquisition",
+    "developer": "BioWare",
+    "ccu": 73127,
+    "positive": 173820,
+    "negative": 1275,
+    "average_2weeks": 12101,
+    "owners": 2085840,
+    "genre": "RPG",
+    "tags": {
+      "rpg": 1,
+      "판타지": 1,
+      "선택": 1,
+      "스토리": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "rpg",
+      "판타지",
+      "선택",
+      "스토리",
+      "협동"
+    ]
+  },
+  "1144200": {
+    "appid": 1144200,
+    "name": "Ready or Not",
+    "developer": "VOID Interactive",
+    "ccu": 75809,
+    "positive": 190209,
+    "negative": 934,
+    "average_2weeks": 12097,
+    "owners": 2282508,
+    "genre": "FPS",
+    "tags": {
+      "전술": 1,
+      "fps": 1,
+      "협동": 1,
+      "리얼리즘": 1,
+      "swat": 1
+    },
+    "tags_list": [
+      "전술",
+      "fps",
+      "협동",
+      "리얼리즘",
+      "swat"
+    ]
+  },
+  "805550": {
+    "appid": 805550,
+    "name": "Assetto Corsa Competizione",
+    "developer": "Kunos Simulazioni",
+    "ccu": 75118,
+    "positive": 186101,
+    "negative": 1019,
+    "average_2weeks": 12096,
+    "owners": 2233212,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "GT레이싱": 1,
+      "리얼리즘": 1,
+      "경쟁": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "GT레이싱",
+      "리얼리즘",
+      "경쟁",
+      "시뮬레이션"
+    ]
+  },
+  "1546320": {
+    "appid": 1546320,
+    "name": "A Plague Tale: Requiem",
+    "developer": "Asobo Studio",
+    "ccu": 72992,
+    "positive": 173540,
+    "negative": 1275,
+    "average_2weeks": 12065,
+    "owners": 2082480,
+    "genre": "액션",
+    "tags": {
+      "스토리": 1,
+      "중세": 1,
+      "공포": 1,
+      "형제": 1,
+      "어드벤처": 1
+    },
+    "tags_list": [
+      "스토리",
+      "중세",
+      "공포",
+      "형제",
+      "어드벤처"
+    ]
+  },
+  "2138710": {
+    "appid": 2138710,
+    "name": "Sifu",
+    "developer": "Sloclap",
+    "ccu": 72947,
+    "positive": 173540,
+    "negative": 1275,
+    "average_2weeks": 12053,
+    "owners": 2082480,
+    "genre": "액션",
+    "tags": {
+      "쿵푸": 1,
+      "도전적": 1,
+      "격투": 1,
+      "복수": 1,
+      "3인칭": 1
+    },
+    "tags_list": [
+      "쿵푸",
+      "도전적",
+      "격투",
+      "복수",
+      "3인칭"
+    ]
+  },
+  "237930": {
+    "appid": 237930,
+    "name": "Transistor",
+    "developer": "Supergiant Games",
+    "ccu": 75644,
+    "positive": 190524,
+    "negative": 934,
+    "average_2weeks": 12053,
+    "owners": 2286288,
+    "genre": "RPG",
+    "tags": {
+      "액션": 1,
+      "전략": 1,
+      "사이버": 1,
+      "감성": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "액션",
+      "전략",
+      "사이버",
+      "감성",
+      "인디"
+    ]
+  },
+  "500": {
+    "appid": 500,
+    "name": "Left 4 Dead",
+    "developer": "Valve",
+    "ccu": 74953,
+    "positive": 186486,
+    "negative": 1019,
+    "average_2weeks": 12052,
+    "owners": 2237832,
+    "genre": "FPS",
+    "tags": {
+      "좀비": 1,
+      "협동": 1,
+      "fps": 1,
+      "고전": 1,
+      "생존": 1
+    },
+    "tags_list": [
+      "좀비",
+      "협동",
+      "fps",
+      "고전",
+      "생존"
+    ]
   }
 }
