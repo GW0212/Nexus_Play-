@@ -39,6 +39,36 @@ jobs:
             return Array.isArray(ranks) ? ranks : [];
           }
 
+          async function getText(url, opts = {}) {
+            const res = await fetch(url, {
+              headers: {
+                'user-agent': 'Mozilla/5.0 (compatible; NexusPlayBot/1.0)',
+                'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+              },
+              ...opts
+            });
+            if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+            return await res.text();
+          }
+
+          function parseSteamChartsRows(html) {
+            const out = [];
+            const rowRe = /<tr[^>]*>[\s\S]*?<a[^>]+href=["']\/app\/(\d+)[^"']*["'][^>]*>([\s\S]*?)<\/a>[\s\S]*?<td[^>]*class=["'][^"']*num[^"']*["'][^>]*>([\d,]+)<\/td>/gi;
+            let m;
+            while ((m = rowRe.exec(html)) && out.length < 100) {
+              const appid = Number(m[1]);
+              const name = m[2].replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+              const ccu = Number(String(m[3] || '').replace(/,/g, ''));
+              if (appid > 0 && name && ccu > 0) out.push({ appid, name, ccu, rank: out.length + 1 });
+            }
+            return out;
+          }
+
+          function saveMostPlayed(data, note = '') {
+            fs.writeFileSync('data/mostplayed.json', JSON.stringify(data, null, 2));
+            console.log(`Saved data/mostplayed.json with ${data.length} items${note ? ' ' + note : ''}`);
+          }
+
           function toNum(...vals) {
             for (const v of vals) {
               const n = Number(v);
@@ -55,31 +85,45 @@ jobs:
 
           (async () => {
             let chart;
+            let ranks = [];
             try {
               chart = await getJson('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json');
+              ranks = extractRanks(chart).slice(0, 100)
+                .map((row, idx) => ({
+                  appid: Number(row.appid || row.app_id || row.id || row.appID),
+                  rank: Number(row.rank || row.position || idx + 1),
+                  ccu: toNum(
+                    row.concurrent_in_game,
+                    row.current_players,
+                    row.player_count,
+                    row.in_game,
+                    row.ccu
+                  )
+                }))
+                .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number.isFinite(r.ccu) && r.ccu > 0);
             } catch (e) {
               console.error('Most played endpoint failed:', e.message);
-              fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
-              process.exit(0);
             }
 
-            const ranks = extractRanks(chart).slice(0, 100)
-              .map((row, idx) => ({
-                appid: Number(row.appid || row.app_id || row.id || row.appID),
-                rank: Number(row.rank || row.position || idx + 1),
-                ccu: toNum(
-                  row.current_players,
-                  row.current_player_count,
-                  row.concurrent_in_game,
-                  row.current_in_game,
-                  row.players_right_now,
-                  row.player_count,
-                  row.players,
-                  row.in_game,
-                  row.ccu
-                )
-              }))
-              .filter(r => Number.isFinite(r.appid) && r.appid > 0 && Number.isFinite(r.ccu) && r.ccu > 0);
+            if (ranks.length < 20) {
+              try {
+                console.log('Falling back to steamcharts.com current players page...');
+                const html = await getText('https://steamcharts.com/');
+                const fallbackRows = parseSteamChartsRows(html);
+                if (fallbackRows.length) ranks = fallbackRows;
+                console.log(`Fallback rows: ${fallbackRows.length}`);
+              } catch (e) {
+                console.error('SteamCharts fallback failed:', e.message);
+              }
+            }
+
+            if (!ranks.length) {
+              console.error('No usable most played rows found. Preserving existing file if present.');
+              if (!fs.existsSync('data/mostplayed.json') || fs.statSync('data/mostplayed.json').size < 10) {
+                fs.writeFileSync('data/mostplayed.json', '[]');
+              }
+              process.exit(0);
+            }
 
             async function getAppDetails(appid) {
               try {
@@ -114,11 +158,19 @@ jobs:
               await new Promise(resolve => setTimeout(resolve, 80));
             }
 
-            fs.writeFileSync('data/mostplayed.json', JSON.stringify(merged, null, 2));
-            console.log(`Saved data/mostplayed.json with ${merged.length} items from Steam current players chart`);
+            if (!merged.length) {
+              console.error('Merged mostplayed list is empty after appdetails lookup. Preserving existing file if present.');
+              if (!fs.existsSync('data/mostplayed.json') || fs.statSync('data/mostplayed.json').size < 10) {
+                fs.writeFileSync('data/mostplayed.json', '[]');
+              }
+              process.exit(0);
+            }
+            saveMostPlayed(merged, 'from Steam current players chart');
           })().catch(err => {
             console.error(err);
-            fs.writeFileSync('data/mostplayed.json', JSON.stringify({_note:'fetch_failed'}, null, 2));
+            if (!fs.existsSync('data/mostplayed.json') || fs.statSync('data/mostplayed.json').size < 10) {
+              fs.writeFileSync('data/mostplayed.json', '[]');
+            }
             process.exit(0);
           });
           NODE
