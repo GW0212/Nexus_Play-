@@ -2262,6 +2262,42 @@ const POPULAR_GAME_IDS = new Set([
   3405690,3551340,3472040,2669320,2488620,2882430,1665460
 ]);
 
+const LEGACY_RECOMMENDATION_IDS = new Set([10,20,30,40,50,60,70,80,130,220,240,320,340,380,400,420,500,550,620,221,222,280,300,360,380,420,2400,3200,3400,4000]);
+const LEGACY_RECOMMENDATION_KEYWORDS = [
+  'counter-strike', 'team fortress classic', 'day of defeat', 'ricochet',
+  'half-life: opposing force', 'counter-strike: condition zero', 'condition zero deleted scenes',
+  'deathmatch classic', 'half-life', 'half-life 2: deathmatch'
+];
+const MODERN_PRIORITY_IDS = new Set([
+  730,570,578080,271590,1172470,252490,381210,1091500,1245620,1086940,553850,
+  1623730,1203620,2358720,2215430,2379780,1868140,1627720,1888160,2246340,
+  2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,
+  2054970,2161700,1687950,1593500,1817070,1817190,1551360,2440510,
+  3405690,3551340,3472040,2669320,2488620,2882430,1665460
+]);
+function getRecommendationYear(app) {
+  const appid = Number(app?.appid || app?.id);
+  return getGameById(appid)?.year || Number(app?.year || 0) || 0;
+}
+function isLegacyRecommendation(app) {
+  const appid = Number(app?.appid || app?.id);
+  if (LEGACY_RECOMMENDATION_IDS.has(appid)) return true;
+  const title = normalizeTitleKey(app?.name || app?.title || '');
+  return LEGACY_RECOMMENDATION_KEYWORDS.some(k => title.includes(k));
+}
+function isModernRecommendationCandidate(app) {
+  if (!app || !app.appid || !app.name) return false;
+  if (selectedIds.includes(Number(app.appid))) return false;
+  if (isLegacyRecommendation(app)) return false;
+  const year = getRecommendationYear(app);
+  const ccu = Number(app.ccu || 0);
+  const owners = Number(app.owners || 0);
+  const positive = Number(app.positive || 0);
+  if (year && year >= 2018) return true;
+  if (MODERN_PRIORITY_IDS.has(Number(app.appid))) return true;
+  return ccu >= 20000 || owners >= 2000000 || positive >= 20000;
+}
+
 function resolvePrimaryGenre(app) {
   if (!app) return '전체';
   const appid = Number(app.appid || app.id);
@@ -2564,8 +2600,29 @@ async function loadSteamRecommendations() {
   });
 
   const sorted = Object.values(map)
-    .filter(app => POPULAR_GAME_IDS.has(Number(app.appid)) || (app.ccu||0) >= 500 || (app.owners||0) >= 500000 || (app.positive||0) >= 3000)
-    .map(app => ({ ...app, _score: app._score + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 25 : 0) + Math.log1p(app.ccu||0) * 2.2 + Math.log1p(app.positive||0) * 0.4 + Math.log1p(app.owners||0) * 0.3 }))
+    .filter(app => isModernRecommendationCandidate(app) || POPULAR_GAME_IDS.has(Number(app.appid)))
+    .map(app => {
+      const year = getRecommendationYear(app);
+      const currentYear = new Date().getFullYear();
+      let modernBonus = 0;
+      if (MODERN_PRIORITY_IDS.has(Number(app.appid))) modernBonus += 30;
+      if (year) {
+        const age = currentYear - year;
+        if (age <= 1) modernBonus += 18;
+        else if (age <= 3) modernBonus += 12;
+        else if (age <= 6) modernBonus += 5;
+        else if (age >= 10) modernBonus -= 20;
+      }
+      return {
+        ...app,
+        _score: app._score
+          + (POPULAR_GAME_IDS.has(Number(app.appid)) ? 20 : 0)
+          + modernBonus
+          + Math.log1p(app.ccu||0) * 2.6
+          + Math.log1p(app.positive||0) * 0.55
+          + Math.log1p(app.owners||0) * 0.45
+      };
+    })
     .sort((a,b)=>b._score-a._score)
     .slice(0,120);
   if (!sorted.length) {
@@ -2745,11 +2802,10 @@ async function loadHotGames(silent = false) {
   }));
 
   if (!mostPlayedList.length) {
-    _hotRawData = buildHotFallback();
+    _hotRawData = { ccu: [], positive: [], average_2weeks: [] };
     if (!silent && statusEl) {
-      statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못해 내장 카탈로그 인기 순위로 표시합니다.';
+      statusEl.textContent = '⚠️ Steam 현재 플레이어 수 데이터를 가져오지 못했습니다. 잠시 후 다시 시도해주세요.';
       statusEl.className = 'hot-status';
-      setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 5000);
     }
   } else {
     _hotRawData = {
