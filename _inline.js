@@ -854,16 +854,7 @@ const THUMB_OVERRIDES = {
   "Marvel's Spider-Man Remastered": { appid:1817070 },
   "Marvel's Spider-Man: Miles Morales": { appid:1817190 },
   "Crimson Desert": { appid:3321460 },
-  "Escape from Tarkov": {
-    appid:3932890,
-    link:"https://www.escapefromtarkov.com/preorder-page",
-    image: makePosterThumbnail("Escape from Tarkov", "Battlestate Games", {
-      accent:'#d9a441',
-      accent2:'#6b4d1a',
-      silhouette:true,
-      kicker:'EXTRACTION SHOOTER'
-    })
-  }
+  "Escape from Tarkov": { appid:3932890 }
 };
 const EXACT_GENRE_OVERRIDES = {
   3405690: '스포츠',
@@ -975,6 +966,45 @@ function formatCCU(n) {
   if (n >= 1e6) return (n/1e6).toFixed(1)+'M';
   if (n >= 1e3) return (n/1e3).toFixed(1)+'K';
   return String(n);
+}
+
+function formatOwnersValue(value) {
+  if (value == null || value === '') return '데이터 없음';
+  if (typeof value === 'string' && value.trim()) return value;
+  const n = Number(value);
+  if (!Number.isFinite(n) || n <= 0) return '데이터 없음';
+  return new Intl.NumberFormat('ko-KR').format(Math.round(n)) + '명';
+}
+
+function formatPlaytimeMinutes(value) {
+  const minutes = Number(value || 0);
+  if (!Number.isFinite(minutes) || minutes <= 0) return '데이터 없음';
+  if (minutes >= 60) {
+    const hours = Math.round((minutes / 60) * 10) / 10;
+    return (Number.isInteger(hours) ? String(hours) : hours.toFixed(1)) + '시간';
+  }
+  return Math.round(minutes) + '분';
+}
+
+async function lookupLocalAppDetails(appid) {
+  const target = Number(appid || 0);
+  if (!target) return null;
+  const tagFiles = Object.values(TAG_FILE_MAP || {}).map(name => 'tags/' + name + '.json');
+  const sources = await Promise.all([
+    loadLocalData('mostplayed.json').catch(() => null),
+    loadLocalData('hot.json').catch(() => null),
+    loadLocalData('top100.json').catch(() => null),
+    loadLocalData('top100owned.json').catch(() => null),
+    ...tagFiles.map(path => loadLocalData(path).catch(() => null))
+  ]);
+  const merged = {};
+  for (const src of sources) {
+    if (!src) continue;
+    const items = Array.isArray(src) ? src : Object.values(src);
+    const found = items.find(item => Number(item?.appid || item?.id || 0) === target);
+    if (found) Object.assign(merged, found);
+  }
+  return Object.keys(merged).length ? merged : null;
 }
 
 function getScoreLabel(pos, neg) {
@@ -1534,7 +1564,7 @@ function openModal(id) {
   if(so){ so.className='modal-stat-value loading'; so.textContent=''; }
   if(sp){ sp.className='modal-stat-value loading'; sp.textContent=''; }
   document.getElementById('modal').classList.remove('hidden');
-  fetchSteamData(g.id);
+  fetchSteamData(getThumbAppId(g), g);
 }
 
 function closeModal(e) {
@@ -1546,19 +1576,28 @@ document.addEventListener('keydown', e => {
   if (e.key==='Escape') document.getElementById('modal').classList.add('hidden');
 });
 
-async function fetchSteamData(appid) {
+async function fetchSteamData(appid, game = null) {
+  const targetAppid = Number(getThumbAppId(game || appid, game?.title || ''));
+  const so = document.getElementById('stat-owners');
+  const sp = document.getElementById('stat-playtime');
   try {
-    const data = await steamspyFetch({request:'appdetails', appid});
-    if (!data) throw new Error('no data');
-    const so = document.getElementById('stat-owners');
-    const sp = document.getElementById('stat-playtime');
-    if (so) { so.className='modal-stat-value'; so.textContent=data.owners||'데이터 없음'; }
-    if (sp) { sp.className='modal-stat-value'; sp.textContent=data.average_forever?(Math.round(data.average_forever/60)+'시간'):'─'; }
+    let data = await steamspyFetch({request:'appdetails', appid: targetAppid});
+    if (!data || (!data.owners && !data.average_forever)) {
+      const localData = await lookupLocalAppDetails(targetAppid);
+      data = { ...(localData || {}), ...(data || {}) };
+    }
+    if (!data || (!data.owners && !data.average_forever && !data.average_2weeks)) throw new Error('no data');
+    if (so) {
+      so.className='modal-stat-value';
+      so.textContent = formatOwnersValue(data.owners);
+    }
+    if (sp) {
+      sp.className='modal-stat-value';
+      sp.textContent = formatPlaytimeMinutes(data.average_forever || data.average_2weeks);
+    }
   } catch {
-    const so=document.getElementById('stat-owners');
-    const sp=document.getElementById('stat-playtime');
-    if(so){ so.className='modal-stat-value'; so.textContent='─'; }
-    if(sp){ sp.className='modal-stat-value'; sp.textContent='─'; }
+    if (so) { so.className='modal-stat-value'; so.textContent='데이터 없음'; }
+    if (sp) { sp.className='modal-stat-value'; sp.textContent='데이터 없음'; }
   }
 }
 
