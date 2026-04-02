@@ -1,25 +1,25 @@
 {
-  "1091500": {
-    "appid": 1091500,
-    "name": "Cyberpunk 2077",
-    "developer": "CD PROJEKT RED",
-    "ccu": 48000,
-    "positive": 590000,
-    "negative": 110000,
-    "average_2weeks": 3200,
-    "owners": 18000000,
+  "620": {
+    "appid": 620,
+    "name": "Portal 2",
+    "developer": "Valve",
+    "ccu": 9000,
+    "positive": 480000,
+    "negative": 4000,
+    "average_2weeks": 700,
+    "owners": 20000000,
     "tags": {
-      "rpg": 1,
-      "오픈월드": 1,
-      "사이버펑크": 1,
-      "싱글플레이어": 1,
+      "퍼즐": 1,
+      "협동": 1,
+      "1인칭": 1,
+      "유머": 1,
       "sf": 1
     },
     "tags_list": [
-      "rpg",
-      "오픈월드",
-      "사이버펑크",
-      "싱글플레이어",
+      "퍼즐",
+      "협동",
+      "1인칭",
+      "유머",
       "sf"
     ],
     "_source": "steamspy"
@@ -49,6 +49,81 @@
     ],
     "_source": "steamspy"
   },
+  "753640": {
+    "appid": 753640,
+    "name": "Outer Wilds",
+    "developer": "Mobius Digital",
+    "ccu": 8000,
+    "positive": 110000,
+    "negative": 2000,
+    "average_2weeks": 600,
+    "owners": 2000000,
+    "tags": {
+      "탐험": 1,
+      "어드벤처": 1,
+      "우주": 1,
+      "미스터리": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "탐험",
+      "어드벤처",
+      "우주",
+      "미스터리",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1091500": {
+    "appid": 1091500,
+    "name": "Cyberpunk 2077",
+    "developer": "CD PROJEKT RED",
+    "ccu": 48000,
+    "positive": 590000,
+    "negative": 110000,
+    "average_2weeks": 3200,
+    "owners": 18000000,
+    "tags": {
+      "rpg": 1,
+      "오픈월드": 1,
+      "사이버펑크": 1,
+      "싱글플레이어": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "rpg",
+      "오픈월드",
+      "사이버펑크",
+      "싱글플레이어",
+      "sf"
+    ],
+    "_source": "steamspy"
+  },
+  "1145360": {
+    "appid": 1145360,
+    "name": "Hades",
+    "developer": "Supergiant Games",
+    "ccu": 40000,
+    "positive": 280000,
+    "negative": 5000,
+    "average_2weeks": 2400,
+    "owners": 5000000,
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "인디": 1,
+      "그리스신화": 1,
+      "핵앤슬래시": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "인디",
+      "그리스신화",
+      "핵앤슬래시"
+    ],
+    "_source": "steamspy"
+  },
   "1174180": {
     "appid": 1174180,
     "name": "Red Dead Redemption 2",
@@ -71,56 +146,6 @@
       "액션",
       "어드벤처",
       "스토리"
-    ],
-    "_source": "steamspy"
-  },
-  "2215430": {
-    "appid": 2215430,
-    "name": "Ghost of Tsushima DIRECTOR'S CUT",
-    "developer": "Sucker Punch Productions",
-    "ccu": 58000,
-    "positive": 290000,
-    "negative": 18000,
-    "average_2weeks": 4000,
-    "owners": 4500000,
-    "tags": {
-      "액션": 1,
-      "오픈월드": 1,
-      "일본": 1,
-      "스텔스": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "오픈월드",
-      "일본",
-      "스텔스",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "1888160": {
-    "appid": 1888160,
-    "name": "Hogwarts Legacy",
-    "developer": "Avalanche Software",
-    "ccu": 62000,
-    "positive": 420000,
-    "negative": 48000,
-    "average_2weeks": 4300,
-    "owners": 7200000,
-    "tags": {
-      "rpg": 1,
-      "오픈월드": 1,
-      "마법": 1,
-      "해리포터": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "rpg",
-      "오픈월드",
-      "마법",
-      "해리포터",
-      "싱글플레이어"
     ],
     "_source": "steamspy"
   },
@@ -174,78 +199,53 @@
     ],
     "_source": "steamspy"
   },
-  "753640": {
-    "appid": 753640,
-    "name": "Outer Wilds",
-    "developer": "Mobius Digital",
-    "ccu": 8000,
-    "positive": 110000,
-    "negative": 2000,
-    "average_2weeks": 600,
-    "owners": 2000000,
+  "1888160": {
+    "appid": 1888160,
+    "name": "Hogwarts Legacy",
+    "developer": "Avalanche Software",
+    "ccu": 62000,
+    "positive": 420000,
+    "negative": 48000,
+    "average_2weeks": 4300,
+    "owners": 7200000,
     "tags": {
-      "탐험": 1,
-      "어드벤처": 1,
-      "우주": 1,
-      "미스터리": 1,
+      "rpg": 1,
+      "오픈월드": 1,
+      "마법": 1,
+      "해리포터": 1,
       "싱글플레이어": 1
     },
     "tags_list": [
-      "탐험",
-      "어드벤처",
-      "우주",
-      "미스터리",
+      "rpg",
+      "오픈월드",
+      "마법",
+      "해리포터",
       "싱글플레이어"
     ],
     "_source": "steamspy"
   },
-  "1145360": {
-    "appid": 1145360,
-    "name": "Hades",
-    "developer": "Supergiant Games",
-    "ccu": 40000,
-    "positive": 280000,
-    "negative": 5000,
-    "average_2weeks": 2400,
-    "owners": 5000000,
+  "2215430": {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DIRECTOR'S CUT",
+    "developer": "Sucker Punch Productions",
+    "ccu": 58000,
+    "positive": 290000,
+    "negative": 18000,
+    "average_2weeks": 4000,
+    "owners": 4500000,
     "tags": {
-      "로그라이크": 1,
       "액션": 1,
-      "인디": 1,
-      "그리스신화": 1,
-      "핵앤슬래시": 1
+      "오픈월드": 1,
+      "일본": 1,
+      "스텔스": 1,
+      "싱글플레이어": 1
     },
     "tags_list": [
-      "로그라이크",
       "액션",
-      "인디",
-      "그리스신화",
-      "핵앤슬래시"
-    ],
-    "_source": "steamspy"
-  },
-  "620": {
-    "appid": 620,
-    "name": "Portal 2",
-    "developer": "Valve",
-    "ccu": 9000,
-    "positive": 480000,
-    "negative": 4000,
-    "average_2weeks": 700,
-    "owners": 20000000,
-    "tags": {
-      "퍼즐": 1,
-      "협동": 1,
-      "1인칭": 1,
-      "유머": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "협동",
-      "1인칭",
-      "유머",
-      "sf"
+      "오픈월드",
+      "일본",
+      "스텔스",
+      "싱글플레이어"
     ],
     "_source": "steamspy"
   }
