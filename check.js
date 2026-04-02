@@ -416,6 +416,7 @@ const EXTRA_CURATED_GAMES = [
   { id:601150, title:"Devil May Cry 5", genre:"액션", tags:["액션","콤보","핵앤슬래시","스타일리시","악마"], rating:9.3, year:2019, dev:"CAPCOM", desc:"스타일리시 액션 장르의 기준점 같은 작품." },
   { id:2215430, title:"Ghost of Tsushima DIRECTOR'S CUT", genre:"액션", tags:["오픈월드","사무라이","액션","스토리","잠입"], rating:9.3, year:2024, dev:"Sucker Punch Productions", desc:"사무라이 감성과 오픈월드 전투를 높은 완성도로 담아낸 작품." },
   { id:2358720, title:"Black Myth: Wukong", genre:"액션", tags:["액션","소울라이크","중국신화","보스전","싱글플레이어"], rating:8.8, year:2024, dev:"Game Science", desc:"손오공 신화를 현대적으로 재해석한 고퀄리티 액션 게임." },
+  { id:3321460, title:"Crimson Desert", genre:"액션", tags:["오픈월드","액션","어드벤처","판타지","싱글플레이어"], rating:8.8, year:2026, dev:"Pearl Abyss", desc:"광활한 판타지 대륙을 누비는 오픈월드 액션 어드벤처." },
 
   // 어드벤처
   { id:1222140, title:"Detroit: Become Human", genre:"어드벤처", tags:["스토리","선택","어드벤처","SF","드라마"], rating:8.9, year:2020, dev:"Quantic Dream", desc:"선택에 따라 큰 분기가 생기는 인터랙티브 어드벤처." },
@@ -832,10 +833,16 @@ const THUMB_OVERRIDES = {
   "Killer Instinct": { appid:577940 },
   "Marvel's Spider-Man Remastered": { appid:1817070 },
   "Marvel's Spider-Man: Miles Morales": { appid:1817190 },
+  "Crimson Desert": { appid:3321460 },
   "Escape from Tarkov": {
     appid:3932890,
-    link:"https://www.escapefromtarkov.com/purchase",
-    image: makeTextThumbnail("Escape from Tarkov", "Battlestate Games")
+    link:"https://www.escapefromtarkov.com/preorder-page",
+    image: makePosterThumbnail("Escape from Tarkov", "Battlestate Games", {
+      accent:'#d9a441',
+      accent2:'#6b4d1a',
+      silhouette:true,
+      kicker:'EXTRACTION SHOOTER'
+    })
   }
 };
 const EXACT_GENRE_OVERRIDES = {
@@ -860,12 +867,48 @@ const THUMB_OVERRIDES_NORMALIZED = Object.fromEntries(
 
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
 function getGameById(id)  { return GAMES_CLEAN.find(g => g.id === id); }
-function makeTextThumbnail(title, subtitle='') {
-  const safeTitle = String(title || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch] || ch));
-  const safeSubtitle = String(subtitle || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch] || ch));
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#111827"/></linearGradient></defs><rect width="920" height="430" rx="28" fill="url(#g)"/><rect x="18" y="18" width="884" height="394" rx="20" fill="none" stroke="#334155" stroke-width="2"/><text x="460" y="200" fill="#f8fafc" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">${safeTitle}</text><text x="460" y="258" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">${safeSubtitle}</text></svg>`;
+function makePosterThumbnail(title, subtitle='', opts = {}) {
+  const esc = (v) => String(v || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch] || ch));
+  const safeTitle = esc(title);
+  const safeSubtitle = esc(subtitle);
+  const accent = esc(opts.accent || '#22d3ee');
+  const accent2 = esc(opts.accent2 || '#0f766e');
+  const kicker = esc(opts.kicker || 'FEATURED GAME');
+  const silhouette = opts.silhouette ? `
+    <g opacity="0.32">
+      <path d="M635 315c16-38 37-73 73-103 23-20 41-32 65-41-2 17-10 38-23 59-17 29-47 58-85 85h-30Z" fill="#0b0f19"/>
+      <path d="M565 325c22-62 66-128 130-167 8 25 7 55-4 81-19 45-61 81-126 106Z" fill="#111827"/>
+      <circle cx="706" cy="119" r="26" fill="#111827"/>
+    </g>` : '';
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430">
+    <defs>
+      <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#0a0f16"/>
+        <stop offset="0.55" stop-color="#131c27"/>
+        <stop offset="1" stop-color="#0b1220"/>
+      </linearGradient>
+      <linearGradient id="flare" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="${accent}" stop-opacity="0.95"/>
+        <stop offset="1" stop-color="${accent2}" stop-opacity="0.2"/>
+      </linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+    </defs>
+    <rect width="920" height="430" rx="26" fill="url(#bg)"/>
+    <rect x="18" y="18" width="884" height="394" rx="20" fill="none" stroke="#223047" stroke-width="2"/>
+    <path d="M0 345L260 215l120 62 160-122 380-72v347H0Z" fill="#0f172a" opacity="0.88"/>
+    <rect x="46" y="54" width="150" height="24" rx="12" fill="${accent}" opacity="0.16"/>
+    <text x="60" y="71" fill="#cbd5e1" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="2">${kicker}</text>
+    <rect x="46" y="289" width="430" height="6" rx="3" fill="url(#flare)"/>
+    <circle cx="744" cy="114" r="78" fill="${accent}" opacity="0.18" filter="url(#glow)"/>
+    <path d="M615 0h85L455 430h-85L615 0Z" fill="#ffffff" opacity="0.035"/>
+    <path d="M715 0h50L520 430h-50L715 0Z" fill="#ffffff" opacity="0.02"/>
+    ${silhouette}
+    <text x="58" y="190" fill="#f8fafc" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="800">${safeTitle}</text>
+    <text x="60" y="233" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif">${safeSubtitle}</text>
+  </svg>`;
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
+function makeTextThumbnail(title, subtitle='') { return makePosterThumbnail(title, subtitle); }
 function getThumbOverride(gameOrId, title='') {
   const key = typeof gameOrId === 'object' && gameOrId ? gameOrId.title : title;
   return THUMB_OVERRIDES[key] || null;
@@ -914,7 +957,7 @@ function makeSteamCard(app, rank, options = {}) {
   const score = getScoreLabel(app.positive||0, app.negative||0);
   const showLive = options.showLive !== false;
   return `
-    <a class="steam-card" href="https://store.steampowered.com/app/${app.appid}" target="_blank" rel="noopener">
+    <a class="steam-card" href="${steamCardLink(app)}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${steamThumb(app, app.name)}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
              onerror="if(this.dataset.fallback==='1'){this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${resolveSteamThumbId(app, app.name)}/header.jpg';this.dataset.fallback='2';this.onerror=function(){this.remove()}}else{this.src='${steamThumbAlt(app, app.name)}';this.dataset.fallback='1'}">
@@ -1165,7 +1208,7 @@ async function loadSteamRecommendations() {
   }
 
   heroEl.innerHTML = sorted.slice(0,3).map((app,i)=>`
-    <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${app.appid}','_blank')" style="animation-delay:${i*0.08}s">
+    <div class="hero-card" onclick="window.open(steamCardLink(app),'_blank')" style="animation-delay:${i*0.08}s">
       <img src="${steamThumb(app, app.name)}" alt="${app.name}" onerror="this.src='${steamThumbAlt(app, app.name)}';this.onerror=null">
       <div class="hero-card-overlay">
         <div class="hero-rank">${i+1}</div>
@@ -1175,7 +1218,7 @@ async function loadSteamRecommendations() {
           <div class="hero-dev">${app.developer||''}</div>
         </div>
         <div class="hero-tags">${Object.keys(app.tags||{}).slice(0,3).map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
-        <a href="https://store.steampowered.com/app/${app.appid}" target="_blank" class="steam-link" onclick="event.stopPropagation()">Steam에서 보기</a>
+        <a href="${steamCardLink(app)}" target="_blank" class="steam-link" onclick="event.stopPropagation()">Steam에서 보기</a>
       </div>
     </div>`).join('');
 
@@ -1198,6 +1241,8 @@ function renderGenreTab() {
 function applyGenreGrid(list, genre) {
   const gridEl = document.getElementById('genre-grid');
   if (!gridEl) return;
+  _genreLastRenderedGenre = genre;
+  _genreLastRenderedList = Array.isArray(list) ? [...list] : [];
   const q = genreSearch.toLowerCase();
   const base = (list || []).filter(app => matchesGenreApp(app, genre));
   const filtered = q
