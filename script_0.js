@@ -74,10 +74,7 @@ const GAMES = [
   { id:620,title:"Portal 2",                      genre:"어드벤처", tags:["퍼즐","협동","1인칭","유머","sf"],                  rating:9.9, year:2011, dev:"Valve",                   desc:"역사상 가장 완벽한 퍼즐 게임. 웃음과 감동의 명작." },
   { id:400,   title:"Portal",                         genre:"어드벤처", tags:["퍼즐","1인칭","sf","ai","단편"],                   rating:9.8, year:2007, dev:"Valve",                   desc:"포탈 건 하나로 세상을 바꾸는 천재적 퍼즐." },
   { id:383870,title:"Firewatch",                     genre:"어드벤처", tags:["스토리","자연","1인칭","감성","미스터리"],           rating:8.5, year:2016, dev:"Campo Santo",             desc:"광활한 숲 속에서 펼쳐지는 감성적인 미스터리." },
-  { id:1240260, title:"DEATH STRANDING",               genre:"어드벤처", tags:["오픈월드","독특","배달","연결","코지마"],           rating:8.5, year:2021, dev:"Kojima Productions",      desc:"코지마 히데오의 독창적인 연결과 여행의 이야기." },
-  
-  
-  { id:753640, title:"Outer Wilds",                   genre:"어드벤처", tags:["우주","탐험","미스터리","감동","루프"],             rating:9.8, year:2019, dev:"Mobius Digital",          desc:"시간의 루프 속에서 우주의 비밀을 밝혀가는 명작." },
+{ id:753640, title:"Outer Wilds",                   genre:"어드벤처", tags:["우주","탐험","미스터리","감동","루프"],             rating:9.8, year:2019, dev:"Mobius Digital",          desc:"시간의 루프 속에서 우주의 비밀을 밝혀가는 명작." },
   { id:501300,title:"What Remains of Edith Finch",   genre:"어드벤처", tags:["스토리","감성","단편","가족","독특"],               rating:9.0, year:2017, dev:"Giant Sparrow",           desc:"한 가족의 비극적 이야기를 담은 감성 어드벤처." },
   { id:1817230,title:"Hi-Fi RUSH",                    genre:"어드벤처", tags:["리듬","액션","만화","밴드","빠른"],                 rating:9.2, year:2023, dev:"Tango Gameworks",         desc:"박자에 맞춰 싸우는 리듬 액션의 걸작." },
 
