@@ -774,6 +774,17 @@ function uniqueByAppId(list) {
   });
 }
 
+function sortGenreAppsByPopularity(list) {
+  return [...(list || [])].sort((a,b)=>
+    ((b.ccu||0)-(a.ccu||0)) ||
+    ((b.positive||0)-(a.positive||0)) ||
+    ((b.owners||0)-(a.owners||0)) ||
+    ((b.average_2weeks||0)-(a.average_2weeks||0)) ||
+    ((b.rating||0)-(a.rating||0)) ||
+    String(a.name||'').localeCompare(String(b.name||''))
+  );
+}
+
 async function prefetchCoreData() {
   if (_prefetchStarted) return;
   _prefetchStarted = true;
@@ -795,7 +806,9 @@ const THUMB_OVERRIDES = {
     appid:3932890,
     link:"https://www.escapefromtarkov.com/preorder-page",
     image:"./assets/thumbs/escape_from_tarkov.png"
-  }
+  },
+  "Goose Goose Duck": { appid:1568590 },
+  "Bloons TD 6": { appid:960090 }
 };
 
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
