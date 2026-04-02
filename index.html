@@ -3161,7 +3161,7 @@ async function loadSteamRecommendations() {
     .filter(app => app._eligible)
     .filter(app => (app.ccu||0) >= 1000 || (app.owners||0) >= 750000 || (app.positive||0) >= 5000 || POPULAR_GAME_IDS.has(Number(app.appid)))
     .sort((a,b)=>b._score-a._score)
-    .slice(0,120));
+    .slice(0,120);
   if (!sorted.length) {
     if (requestToken !== window.__steamRecRequestToken || selectionKey !== window.__steamRecSelectionKey) return;
     // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
