@@ -1225,9 +1225,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 
   <div class="ob-footer">
     <div>
-      <button class="ob-start-btn" id="ob-start-btn" onclick="startApp()">추천 시작하기 →</button>
+      <button type="button" class="ob-start-btn" id="ob-start-btn" onclick="return startApp()">추천 시작하기 →</button>
       <p class="ob-hint" id="ob-hint">10개를 선택하면 활성화돼요</p>
-      <button onclick="(function(){selectedIds=[];document.querySelectorAll('.ob-card.selected').forEach(c=>c.classList.remove('selected'));var el=document.getElementById('ob-count');if(el)el.textContent='0';var btn=document.getElementById('ob-start-btn');if(btn){btn.disabled=true;btn.classList.remove('active');}var p=document.getElementById('ob-progress');if(p)p.style.width='0%';})()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
+      <button type="button" onclick="return resetOnboardingSelection()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
     </div>
   </div>
 </div>
@@ -3053,6 +3053,7 @@ function updateObUI() {
   if (countEl) countEl.textContent = n;
   if (progressEl) progressEl.style.width = (n*10)+'%';
   if (btn && hint) {
+    btn.disabled = n !== 10;
     if (n === 10) {
       btn.classList.add('ready'); hint.textContent = '✨ 준비 완료!'; hint.style.color = 'var(--accent)';
     } else {
@@ -3567,12 +3568,29 @@ async function renderApp() {
 }
 
 function startApp() {
-  if (selectedIds.length!==10) return;
+  if (selectedIds.length!==10) return false;
   persistSelection(true);
-  document.getElementById('onboarding').classList.remove('active');
-  document.getElementById('app').classList.add('active');
+  const onboarding = document.getElementById('onboarding');
+  const app = document.getElementById('app');
+  if (onboarding) onboarding.classList.remove('active');
+  if (app) app.classList.add('active');
   renderApp();
   prefetchCoreData();
+  return false;
+}
+
+function resetOnboardingSelection() {
+  selectedIds = [];
+  document.querySelectorAll('.ob-card.selected').forEach(c => c.classList.remove('selected'));
+  const si = document.getElementById('ob-search');
+  if (si) si.value = '';
+  obSearch = '';
+  currentObFilter = '전체';
+  renderObFilter();
+  renderObGrid();
+  updateObUI();
+  persistSelection(false);
+  return false;
 }
 
 
@@ -3716,3 +3734,18 @@ window.addEventListener('focus', () => maybeRefreshLiveData(false));
 
 </body>
 </html>
+
+window.addEventListener('DOMContentLoaded', () => {
+  const startBtn = document.getElementById('ob-start-btn');
+  if (startBtn) {
+    startBtn.type = 'button';
+    startBtn.disabled = selectedIds.length !== 10;
+    startBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      startApp();
+    });
+  }
+  const onboardingResetBtn = document.querySelector('.ob-footer button[onclick*="resetOnboardingSelection"]');
+  if (onboardingResetBtn) onboardingResetBtn.type = 'button';
+  updateObUI();
+});

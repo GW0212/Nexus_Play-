@@ -1011,6 +1011,7 @@ function updateObUI() {
   if (countEl) countEl.textContent = n;
   if (progressEl) progressEl.style.width = (n*10)+'%';
   if (btn && hint) {
+    btn.disabled = n !== 10;
     if (n === 10) {
       btn.classList.add('ready'); hint.textContent = '✨ 준비 완료!'; hint.style.color = 'var(--accent)';
     } else {
@@ -1383,12 +1384,29 @@ async function renderApp() {
 }
 
 function startApp() {
-  if (selectedIds.length!==10) return;
+  if (selectedIds.length!==10) return false;
   persistSelection(true);
-  document.getElementById('onboarding').classList.remove('active');
-  document.getElementById('app').classList.add('active');
+  const onboarding = document.getElementById('onboarding');
+  const app = document.getElementById('app');
+  if (onboarding) onboarding.classList.remove('active');
+  if (app) app.classList.add('active');
   renderApp();
   prefetchCoreData();
+  return false;
+}
+
+function resetOnboardingSelection() {
+  selectedIds = [];
+  document.querySelectorAll('.ob-card.selected').forEach(c => c.classList.remove('selected'));
+  const si = document.getElementById('ob-search');
+  if (si) si.value = '';
+  obSearch = '';
+  currentObFilter = '전체';
+  renderObFilter();
+  renderObGrid();
+  updateObUI();
+  persistSelection(false);
+  return false;
 }
 
 
