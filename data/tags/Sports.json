@@ -124,31 +124,6 @@
     ],
     "_source": "steamspy"
   },
-  "2882430": {
-    "appid": 2882430,
-    "name": "WWE 2K25",
-    "developer": "Visual Concepts",
-    "ccu": 14000,
-    "positive": 85000,
-    "negative": 22000,
-    "average_2weeks": 1200,
-    "owners": 1200000,
-    "tags": {
-      "스포츠": 1,
-      "레슬링": 1,
-      "멀티플레이어": 1,
-      "캐릭터": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "스포츠",
-      "레슬링",
-      "멀티플레이어",
-      "캐릭터",
-      "스토리"
-    ],
-    "_source": "steamspy"
-  },
   "2698940": {
     "appid": 2698940,
     "name": "The Crew Motorfest",

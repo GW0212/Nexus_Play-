@@ -127,7 +127,6 @@ const GAMES = [
   { id:513710, title:"SCUM",                          genre:"서바이벌", tags:["서바이벌","리얼리즘","오픈월드","멀티플레이어","군사"],rating:7.5,year:2018, dev:"Gamepires",               desc:"극도의 현실적인 생존 메카닉의 서바이벌 게임." },
   { id:848450,title:"Subnautica: Below Zero",        genre:"서바이벌", tags:["수중","서바이벌","탐험","추위","오픈월드"],          rating:8.3, year:2021, dev:"Unknown Worlds",          desc:"수나우티카의 속편. 얼음 행성 속 수중 생존." },
   { id:815370, title:"Green Hell",                    genre:"서바이벌", tags:["정글","서바이벌","1인칭","리얼리즘","협동"],         rating:8.0, year:2019, dev:"Creepy Jar",              desc:"아마존 밀림에서 살아남는 극도의 리얼 서바이벌." },
-  { id:1632360, title:"Smalland: Survive the Wilds",   genre:"서바이벌", tags:["서바이벌","소인","자연","협동","건설"],             rating:7.8, year:2023, dev:"Merge Games",             desc:"작은 존재가 되어 거대한 자연에서 살아남아라." },
   { id:962130,title:"Grounded",                      genre:"서바이벌", tags:["서바이벌","축소","마당","협동","건설"],             rating:8.8, year:2022, dev:"Obsidian Entertainment",  desc:"개미 크기로 줄어든 아이들의 뒷마당 서바이벌." },
 
   // ── 샌드박스 ──────────────────────────────────────────────────────────────  { id:220,     title:"Half-Life 2",                   genre:"샌드박스", tags:["fps","sf","스토리","클래식","전설"],                rating:9.9, year:2004, dev:"Valve",                   desc:"FPS의 역사를 바꾼 전설적인 마스터피스." },
@@ -159,7 +158,6 @@ const GAMES = [
   { id:412020,  title:"Metro Exodus",                 genre:"FPS",       tags:["fps","포스트아포칼립스","싱글플레이어","스토리","공포"],rating:8.7,year:2019, dev:"4A Games",                 desc:"지하철 세계를 탈출해 황무지를 횡단하는 FPS." },
   { id:1643320, title:"S.T.A.L.K.E.R. 2: Heart of Chornobyl", genre:"FPS", tags:["fps","오픈월드","공포","서바이벌","싱글플레이어"], rating:7.5, year:2024, dev:"GSC Game World",          desc:"체르노빌 지역을 배경으로 한 공포 FPS." },
   { id:870780,  title:"Control",                      genre:"액션",       tags:["액션","싱글플레이어","스토리","미스터리","슈터"],      rating:8.7, year:2019, dev:"Remedy Entertainment",    desc:"초자연적 현상에 맞서는 신비로운 액션 어드벤처." },
-  { id:1903940, title:"Alan Wake 2",                  genre:"공포",       tags:["공포","싱글플레이어","스토리","미스터리","액션"],      rating:9.0, year:2023, dev:"Remedy Entertainment",    desc:"심리 공포 소설로 진입하는 독창적인 속편." },
   { id:612880,  title:"Wolfenstein II: The New Colossus", genre:"FPS",   tags:["fps","싱글플레이어","스토리","액션","나치"],          rating:8.5, year:2017, dev:"MachineGames",             desc:"대체 역사 세계에서 나치에 맞서 싸우는 FPS." },
   { id:1252330, title:"DEATHLOOP",                    genre:"FPS",       tags:["fps","싱글플레이어","시간루프","액션","스텔스"],       rating:8.1, year:2021, dev:"Arkane Studios",           desc:"타임루프를 이용해 암살 목표를 처치하는 FPS." },
   { id:480490,  title:"Prey",                         genre:"FPS",       tags:["fps","sf","싱글플레이어","공포","탐험"],              rating:8.5, year:2017, dev:"Arkane Studios",           desc:"우주정거장에서 외계 생명체에 맞서는 임몰시브 심." },
@@ -255,7 +253,6 @@ const GAMES = [
   { id:349040,  title:"NARUTO Shippuden: Ultimate Ninja STORM 4", genre:"격투", tags:["격투","나루토","애니","스토리","멀티플레이어"], rating:8.7, year:2016, dev:"CyberConnect2",          desc:"나루토 시리즈를 완벽 재현한 최고의 애니 격투 게임." },
   { id:544750,  title:"SOULCALIBUR VI",               genre:"격투",     tags:["격투","3D","무기","역사","경쟁"],                     rating:8.3, year:2018, dev:"Bandai Namco",            desc:"무기 기반 화려한 3D 격투 게임의 정석." },
   { id:245170,  title:"Skullgirls 2nd Encore",        genre:"격투",     tags:["격투","2D","인디","캐릭터","애니"],                   rating:9.0, year:2014, dev:"Hidden Variable",         desc:"아름다운 수제 애니메이션으로 만든 인디 격투 게임." },
-  { id:1166990, title:"Granblue Fantasy Versus",      genre:"격투",     tags:["격투","애니","경쟁","스토리","rpg요소"],              rating:8.2, year:2020, dev:"Arc System Works",         desc:"인기 모바일 RPG 그랜블루를 화려한 격투 게임으로." },
   { id:1498570, title:"THE KING OF FIGHTERS XV",      genre:"격투",     tags:["격투","팀","경쟁","클래식","멀티플레이어"],           rating:8.0, year:2022, dev:"SNK",                     desc:"KOF 시리즈의 30주년 기념작. 팀 배틀 격투의 전통." },
   { id:577940,  title:"Killer Instinct",              genre:"격투",     tags:["격투","무료","경쟁","콤보","Xbox"],                   rating:8.5, year:2013, dev:"Iron Galaxy",             desc:"화려한 콤보와 개성 강한 캐릭터의 무료 격투 게임." },
   { id:1372280, title:"Melty Blood: Type Lumina",     genre:"격투",     tags:["격투","비주얼노벨","애니","2D","경쟁"],               rating:8.6, year:2021, dev:"French Bread",            desc:"달의 노래 세계관의 정교한 2D 격투 게임." },
@@ -266,7 +263,6 @@ const GAMES = [
   { id:962730,  title:"Skater XL",                    genre:"스포츠",   tags:["스케이트보드","리얼리즘","트릭","캐주얼","물리"],     rating:7.8, year:2020, dev:"Easy Day Studios",       desc:"실제 스케이트보드를 재현한 물리 기반 스케이팅." },
   { id:2108330,  title:"F1 23",                        genre:"스포츠",   tags:["F1","레이싱","리얼리즘","경쟁","스포츠"],             rating:8.0, year:2023, dev:"Codemasters",            desc:"F1 공식 라이선스의 가장 현실적인 포뮬러 레이싱." },
   { id:2252570, title:"Football Manager 2024",        genre:"스포츠",   tags:["축구","경영","전술","시뮬레이션","중독성"],           rating:8.5, year:2023, dev:"Sports Interactive",      desc:"세계 최고의 축구 감독 시뮬레이션. 끝없는 중독." },
-  { id:2225040, title:"Trackmania",                   genre:"스포츠",   tags:["레이싱","아케이드","트랙빌더","경쟁","무료"],         rating:8.7, year:2020, dev:"Nadeo",                   desc:"초고속 아케이드 레이싱과 트랙 제작의 무료 게임." },
   { id:2348190, title:"NBA 2K24",                     genre:"스포츠",   tags:["농구","NBA","리얼리즘","스포츠","경쟁"],             rating:7.5, year:2023, dev:"Visual Concepts",         desc:"NBA의 모든 것을 담은 최신 농구 시뮬레이션." },
   { id:460580,  title:"Steep",                        genre:"스포츠",   tags:["익스트림","오픈월드","스키","스노보드","협동"],       rating:8.0, year:2016, dev:"Ubisoft Annecy",          desc:"알프스를 무대로 한 멀티 익스트림 스포츠 어드벤처." },
   { id:1215980, title:"OlliOlli World",               genre:"스포츠",   tags:["스케이트","2D","아케이드","인디","캐주얼"],           rating:8.8, year:2022, dev:"Roll7",                   desc:"생동감 넘치는 2D 스케이트보딩 아케이드 게임." },
@@ -316,7 +312,6 @@ const EXTRA_GAMES = [
     { id:1817070, title:"Marvel's Spider-Man Remastered", genre:"액션", tags:["히어로","오픈월드","액션","스토리","마블"], rating:9.1, year:2022, dev:"Insomniac Games", desc:"도심을 질주하는 손맛이 탁월한 히어로 액션." },
     { id:1817190, title:"Marvel's Spider-Man: Miles Morales", genre:"액션", tags:["히어로","오픈월드","액션","스토리","마블"], rating:8.7, year:2022, dev:"Insomniac Games", desc:"더 감각적인 전투와 성장 서사가 특징인 후속작." },
     { id:1259420, title:"Days Gone", genre:"액션", tags:["좀비","오픈월드","바이크","생존","스토리"], rating:8.4, year:2021, dev:"Bend Studio", desc:"바이크와 좀비 떼가 인상적인 오픈월드 액션." },
-    { id:1850570, title:"DEATH STRANDING DIRECTOR'S CUT", genre:"어드벤처", tags:["스토리","배달","오픈월드","sf","독특"], rating:8.8, year:2022, dev:"KOJIMA PRODUCTIONS", desc:"연결을 주제로 한 독창적인 오픈월드 어드벤처." },
     { id:870780, title:"Control Ultimate Edition", genre:"액션", tags:["초능력","액션","스토리","sf","분위기"], rating:8.8, year:2021, dev:"Remedy Entertainment", desc:"초능력 전투와 미스터리한 분위기가 강한 액션." },
     { id:753640, title:"Outer Wilds", genre:"어드벤처", tags:["탐험","우주","퍼즐","스토리","명작"], rating:9.6, year:2019, dev:"Mobius Digital", desc:"탐험의 즐거움 자체를 완성형으로 보여주는 우주 게임." },
     { id:646570, title:"Slay the Spire", genre:"전략", tags:["덱빌딩","로그라이크","전략","인디","턴제"], rating:9.5, year:2019, dev:"Mega Crit", desc:"덱빌딩 로그라이크 장르를 대표하는 작품." },
@@ -585,7 +580,6 @@ const EXTRA_CURATED_GAMES = [
   { id:573090, title:"Oxygen Not Included", genre:"전략", tags:["시뮬레이션","전략","기지건설","과학","생존"], rating:9.4, year:2019, dev:"Klei Entertainment", desc:"우주 기지에서 자원과 산소를 관리하는 전략 시뮬레이션." },
   { id:1466860, title:"Age of Empires IV", genre:"전략", tags:["RTS","역사","전략","중세","멀티플레이어"], rating:8.3, year:2021, dev:"Relic Entertainment", desc:"에이지 오브 엠파이어 시리즈의 정통 후속작." },
   { id:813780, title:"Age of Empires II: Definitive Edition", genre:"전략", tags:["RTS","역사","전략","경쟁","클래식"], rating:9.3, year:2019, dev:"Forgotten Empires", desc:"RTS 장르의 교과서를 리마스터한 명작." },
-  { id:1401590, title:"Manor Lords", genre:"전략", tags:["중세","도시건설","전략","전투","리얼타임"], rating:8.3, year:2024, dev:"Slavic Magic", desc:"중세 영지를 경영하고 전투를 지휘하는 전략 게임." },
   { id:529340, title:"Frostpunk", genre:"전략", tags:["도시건설","서바이벌","전략","디스토피아","선택"], rating:9.2, year:2018, dev:"11 bit studios", desc:"극한의 추위 속에서 문명을 유지하는 도시 건설 전략." },
   { id:1307410, title:"Anno 1800", genre:"전략", tags:["도시건설","전략","19세기","무역","경영"], rating:8.8, year:2023, dev:"Ubisoft Blue Byte", desc:"산업혁명 시대의 도시와 무역을 건설하는 전략 게임." },
   { id:322330, title:"Don't Starve Together", genre:"전략", tags:["서바이벌","협동","전략","크래프팅","고딕"], rating:9.2, year:2016, dev:"Klei Entertainment", desc:"자원 관리와 생존 전략이 핵심인 협동 게임." },
@@ -672,10 +666,8 @@ const EXTRA_CURATED_GAMES = [
   { id:2456460, title:"Dragon Ball: Sparking! ZERO", genre:"격투", tags:["격투","애니","드래곤볼","3D","대전"], rating:8.8, year:2024, dev:"Spike Chunsoft", desc:"드래곤볼 버스트리밋의 최신 3D 대전 격투." },
   { id:544750, title:"Brawlhalla", genre:"격투", tags:["격투","무료","플랫폼","멀티플레이어","인디"], rating:8.5, year:2017, dev:"Blue Mammoth Games", desc:"스매시브라더스 스타일의 무료 플랫폼 격투 게임." },
   { id:678950, title:"Dragon Ball Xenoverse 2", genre:"격투", tags:["격투","드래곤볼","RPG","애니","커스터마이즈"], rating:8.3, year:2016, dev:"Dimps", desc:"나만의 캐릭터로 드래곤볼 세계에서 싸우는 RPG 격투." },
-  { id:874170, title:"Granblue Fantasy Versus", genre:"격투", tags:["격투","애니","RPG모드","2D","판타지"], rating:8.3, year:2020, dev:"Arc System Works", desc:"그랑블루 판타지의 아름다운 2D 격투 게임." },
   { id:228440, title:"Mortal Kombat X", genre:"격투", tags:["격투","고어","경쟁","스토리","멀티플레이어"], rating:8.4, year:2015, dev:"NetherRealm Studios", desc:"세대교체 캐릭터가 등장하는 모탈 컴뱃 시리즈." },
   { id:242860, title:"Injustice: Gods Among Us Ultimate Edition", genre:"격투", tags:["격투","DC코믹스","슈퍼히어로","스토리","2D"], rating:8.3, year:2013, dev:"NetherRealm Studios", desc:"DC 히어로들이 맞붙는 격투 게임." },
-  { id:627270, title:"Absolver", genre:"격투", tags:["격투","무술","온라인","커스터마이즈","인디"], rating:7.8, year:2017, dev:"Sloclap", desc:"무술 모션을 조합해 자신만의 스타일을 만드는 격투." },
   { id:412680, title:"Rivals of Aether", genre:"격투", tags:["격투","플랫폼","인디","경쟁","도트"], rating:9.0, year:2017, dev:"Dan Fornace", desc:"원소 능력 기반의 인디 플랫폼 격투 게임." },
   { id:1634040, title:"Under Night In-Birth II Sys:Celes", genre:"격투", tags:["격투","애니","2D","경쟁","인디"], rating:8.5, year:2024, dev:"French-Bread", desc:"독자적 시스템이 깊은 2D 애니 격투 게임." },
   { id:1240260, title:"DNF Duel", genre:"격투", tags:["격투","2D","던파","애니","경쟁"], rating:7.8, year:2022, dev:"Eighting", desc:"던전앤파이터 캐릭터들의 화려한 2D 격투." },
@@ -724,7 +716,6 @@ const EXTRA_CURATED_GAMES = [
   { id:211820, title:"Starbound", genre:"샌드박스", tags:["우주","2D","샌드박스","탐험","크래프팅"], rating:8.7, year:2016, dev:"Chucklefish", desc:"우주를 횡단하며 행성을 탐험하는 2D 샌드박스." },
   { id:1621690, title:"Core Keeper", genre:"샌드박스", tags:["지하","샌드박스","크래프팅","협동","탐험"], rating:8.8, year:2024, dev:"Pugstorm", desc:"거대한 지하 동굴의 자유로운 탐험과 건설." },
   { id:2016590, title:"Enshrouded", genre:"샌드박스", tags:["판타지","샌드박스","건설","RPG","서바이벌"], rating:8.3, year:2024, dev:"Keen Games", desc:"안개 낀 판타지 세계의 자유도 높은 샌드박스 RPG." },
-  { id:1401590, title:"Manor Lords", genre:"샌드박스", tags:["중세","샌드박스","도시건설","전략","전투"], rating:8.3, year:2024, dev:"Slavic Magic", desc:"중세 영지를 자유롭게 건설하고 관리하는 샌드박스." },
   { id:304050, title:"House Flipper", genre:"샌드박스", tags:["시뮬레이션","인테리어","샌드박스","경영","1인칭"], rating:8.6, year:2018, dev:"Empyrean", desc:"집을 자유롭게 리모델링하는 인테리어 샌드박스." },
   { id:1066780, title:"PowerWash Simulator", genre:"샌드박스", tags:["시뮬레이션","청소","샌드박스","힐링","협동"], rating:9.2, year:2022, dev:"FuturLab", desc:"고압 세척기로 무엇이든 깨끗이 씻는 힐링 샌드박스." },
   { id:427520, title:"Factorio", genre:"샌드박스", tags:["자동화","공장","샌드박스","전략","중독성"], rating:9.7, year:2020, dev:"Wube Software", desc:"공장 자동화의 끝없는 최적화 샌드박스." },
@@ -1272,7 +1263,6 @@ const THUMB_OVERRIDES = {
   "PGA TOUR 2K25": { appid:2813220 },
   "PGA TOUR 2K23": { appid:1588010 },
   "TopSpin 2K25": { appid:1785650 },
-  "WWE 2K25": { appid:2882430 },
   "WWE 2K24": { appid:2315690 },
   "EA SPORTS FC 24": { appid:2195250 },
   "EA SPORTS FC™ 24": { appid:2195250 },
@@ -1318,7 +1308,6 @@ const THUMB_OVERRIDES = {
   "Forza Horizon 5": { appid:1551360 },
   "Microsoft Flight Simulator 2024": { appid:2537590 },
   "Microsoft Flight Simulator": { appid:1250410 },
-  "Granblue Fantasy Versus": { appid:1090630 },
   "Dragon Ball FighterZ": { appid:678950 },
   "Mortal Kombat X": { appid:307780 },
   "Injustice: Gods Among Us Ultimate Edition": { appid:242700 },
@@ -1374,7 +1363,6 @@ const EXACT_GENRE_OVERRIDES = {
   1588010: '스포츠',   // PGA TOUR 2K23
   1785650: '스포츠',   // TopSpin 2K25
   2813220: '스포츠',   // PGA TOUR 2K25
-  2882430: '스포츠',   // WWE 2K25
   2315690: '스포츠',   // WWE 2K24
   2195250: '스포츠',   // EA SPORTS FC 24
   1919590: '스포츠',   // NBA 2K23
