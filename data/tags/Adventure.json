@@ -1,39 +1,238 @@
 {
-  "400": {
-    "appid": 400,
-    "name": "Portal",
-    "developer": "Valve",
-    "ccu": 95323,
-    "positive": 231161,
-    "negative": 169,
-    "average_2weeks": 15562,
-    "owners": 2773932,
-    "genre": "어드벤처",
+  "1091500": {
+    "appid": 1091500,
+    "name": "Cyberpunk 2077",
+    "developer": "CD PROJEKT RED",
+    "ccu": 48000,
+    "positive": 590000,
+    "negative": 110000,
+    "average_2weeks": 3200,
+    "owners": 18000000,
     "tags": {
-      "퍼즐": 1,
-      "1인칭": 1,
-      "sf": 1,
-      "ai": 1,
-      "단편": 1
+      "rpg": 1,
+      "오픈월드": 1,
+      "사이버펑크": 1,
+      "싱글플레이어": 1,
+      "sf": 1
     },
     "tags_list": [
-      "퍼즐",
-      "1인칭",
-      "sf",
-      "ai",
-      "단편"
-    ]
+      "rpg",
+      "오픈월드",
+      "사이버펑크",
+      "싱글플레이어",
+      "sf"
+    ],
+    "_source": "steamspy"
+  },
+  "292030": {
+    "appid": 292030,
+    "name": "The Witcher 3: Wild Hunt",
+    "developer": "CD PROJEKT RED",
+    "ccu": 44000,
+    "positive": 680000,
+    "negative": 22000,
+    "average_2weeks": 2800,
+    "owners": 22000000,
+    "tags": {
+      "rpg": 1,
+      "오픈월드": 1,
+      "판타지": 1,
+      "스토리": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "rpg",
+      "오픈월드",
+      "판타지",
+      "스토리",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1174180": {
+    "appid": 1174180,
+    "name": "Red Dead Redemption 2",
+    "developer": "Rockstar Games",
+    "ccu": 65000,
+    "positive": 560000,
+    "negative": 42000,
+    "average_2weeks": 4600,
+    "owners": 14000000,
+    "tags": {
+      "오픈월드": 1,
+      "서부": 1,
+      "액션": 1,
+      "어드벤처": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "서부",
+      "액션",
+      "어드벤처",
+      "스토리"
+    ],
+    "_source": "steamspy"
+  },
+  "2215430": {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DIRECTOR'S CUT",
+    "developer": "Sucker Punch Productions",
+    "ccu": 58000,
+    "positive": 290000,
+    "negative": 18000,
+    "average_2weeks": 4000,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "오픈월드": 1,
+      "일본": 1,
+      "스텔스": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "오픈월드",
+      "일본",
+      "스텔스",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1888160": {
+    "appid": 1888160,
+    "name": "Hogwarts Legacy",
+    "developer": "Avalanche Software",
+    "ccu": 62000,
+    "positive": 420000,
+    "negative": 48000,
+    "average_2weeks": 4300,
+    "owners": 7200000,
+    "tags": {
+      "rpg": 1,
+      "오픈월드": 1,
+      "마법": 1,
+      "해리포터": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "rpg",
+      "오픈월드",
+      "마법",
+      "해리포터",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1282100": {
+    "appid": 1282100,
+    "name": "The Last of Us Part I",
+    "developer": "Naughty Dog",
+    "ccu": 22000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 3400,
+    "owners": 2800000,
+    "tags": {
+      "액션": 1,
+      "어드벤처": 1,
+      "스토리": 1,
+      "좀비": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "어드벤처",
+      "스토리",
+      "좀비",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1817070": {
+    "appid": 1817070,
+    "name": "Marvel's Spider-Man Remastered",
+    "developer": "Insomniac Games",
+    "ccu": 32000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 2400,
+    "owners": 3800000,
+    "tags": {
+      "액션": 1,
+      "어드벤처": 1,
+      "슈퍼히어로": 1,
+      "오픈월드": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "어드벤처",
+      "슈퍼히어로",
+      "오픈월드",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "753640": {
+    "appid": 753640,
+    "name": "Outer Wilds",
+    "developer": "Mobius Digital",
+    "ccu": 8000,
+    "positive": 110000,
+    "negative": 2000,
+    "average_2weeks": 600,
+    "owners": 2000000,
+    "tags": {
+      "탐험": 1,
+      "어드벤처": 1,
+      "우주": 1,
+      "미스터리": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "탐험",
+      "어드벤처",
+      "우주",
+      "미스터리",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1145360": {
+    "appid": 1145360,
+    "name": "Hades",
+    "developer": "Supergiant Games",
+    "ccu": 40000,
+    "positive": 280000,
+    "negative": 5000,
+    "average_2weeks": 2400,
+    "owners": 5000000,
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "인디": 1,
+      "그리스신화": 1,
+      "핵앤슬래시": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "인디",
+      "그리스신화",
+      "핵앤슬래시"
+    ],
+    "_source": "steamspy"
   },
   "620": {
     "appid": 620,
     "name": "Portal 2",
     "developer": "Valve",
-    "ccu": 97209,
-    "positive": 235749,
-    "negative": 84,
-    "average_2weeks": 15861,
-    "owners": 2828988,
-    "genre": "어드벤처",
+    "ccu": 9000,
+    "positive": 480000,
+    "negative": 4000,
+    "average_2weeks": 700,
+    "owners": 20000000,
     "tags": {
       "퍼즐": 1,
       "협동": 1,
@@ -47,981 +246,7 @@
       "1인칭",
       "유머",
       "sf"
-    ]
-  },
-  "105600": {
-    "appid": 105600,
-    "name": "Terraria",
-    "developer": "Re-Logic",
-    "ccu": 93530,
-    "positive": 226340,
-    "negative": 255,
-    "average_2weeks": 15285,
-    "owners": 2716080,
-    "genre": "어드벤처",
-    "tags": {
-      "2D": 1,
-      "샌드박스": 1,
-      "서바이벌": 1,
-      "건설": 1,
-      "액션": 1
-    },
-    "tags_list": [
-      "2D",
-      "샌드박스",
-      "서바이벌",
-      "건설",
-      "액션"
-    ]
-  },
-  "204060": {
-    "appid": 204060,
-    "name": "Life is Strange Remastered",
-    "developer": "Deck Nine Games",
-    "ccu": 76950,
-    "positive": 194540,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2334480,
-    "genre": "어드벤처",
-    "tags": {
-      "스토리": 1,
-      "선택": 1,
-      "어드벤처": 1,
-      "감성": 1,
-      "시간여행": 1
-    },
-    "tags_list": [
-      "스토리",
-      "선택",
-      "어드벤처",
-      "감성",
-      "시간여행"
-    ]
-  },
-  "230410": {
-    "appid": 230410,
-    "name": "Warframe",
-    "developer": "Digital Extremes",
-    "ccu": 72752,
-    "positive": 173855,
-    "negative": 1275,
-    "average_2weeks": 12001,
-    "owners": 2086260,
-    "genre": "어드벤처",
-    "tags": {
-      "루터슈터": 1,
-      "sf": 1,
-      "협동": 1,
-      "무료": 1,
-      "닌자": 1
-    },
-    "tags_list": [
-      "루터슈터",
-      "sf",
-      "협동",
-      "무료",
-      "닌자"
-    ]
-  },
-  "257850": {
-    "appid": 257850,
-    "name": "Hyper Light Drifter",
-    "developer": "Heart Machine",
-    "ccu": 73993,
-    "positive": 186206,
-    "negative": 1019,
-    "average_2weeks": 11796,
-    "owners": 2234472,
-    "genre": "어드벤처",
-    "tags": {
-      "액션": 1,
-      "탐험": 1,
-      "픽셀아트": 1,
-      "인디": 1,
-      "분위기": 1
-    },
-    "tags_list": [
-      "액션",
-      "탐험",
-      "픽셀아트",
-      "인디",
-      "분위기"
-    ]
-  },
-  "264710": {
-    "appid": 264710,
-    "name": "Subnautica",
-    "developer": "Unknown Worlds",
-    "ccu": 88117,
-    "positive": 212344,
-    "negative": 509,
-    "average_2weeks": 14434,
-    "owners": 2548128,
-    "genre": "어드벤처",
-    "tags": {
-      "수중": 1,
-      "서바이벌": 1,
-      "탐험": 1,
-      "공포": 1,
-      "오픈월드": 1
-    },
-    "tags_list": [
-      "수중",
-      "서바이벌",
-      "탐험",
-      "공포",
-      "오픈월드"
-    ]
-  },
-  "275850": {
-    "appid": 275850,
-    "name": "No Man's Sky",
-    "developer": "Hello Games",
-    "ccu": 72767,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 12005,
-    "owners": 2085000,
-    "genre": "어드벤처",
-    "tags": {
-      "우주": 1,
-      "탐험": 1,
-      "서바이벌": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "우주",
-      "탐험",
-      "서바이벌",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "290340": {
-    "appid": 290340,
-    "name": "Limbo",
-    "developer": "Playdead",
-    "ccu": 78669,
-    "positive": 199268,
-    "negative": 765,
-    "average_2weeks": 12421,
-    "owners": 2391216,
-    "genre": "어드벤처",
-    "tags": {
-      "퍼즐": 1,
-      "플랫포머": 1,
-      "흑백": 1,
-      "분위기": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "플랫포머",
-      "흑백",
-      "분위기",
-      "인디"
-    ]
-  },
-  "319630": {
-    "appid": 319630,
-    "name": "Life is Strange",
-    "developer": "Dontnod Entertainment",
-    "ccu": 76950,
-    "positive": 194785,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2337420,
-    "genre": "공포",
-    "tags": {
-      "스토리": 1,
-      "선택": 1,
-      "어드벤처": 1,
-      "감성": 1,
-      "미스터리": 1
-    },
-    "tags_list": [
-      "스토리",
-      "선택",
-      "어드벤처",
-      "감성",
-      "미스터리"
-    ]
-  },
-  "322170": {
-    "appid": 322170,
-    "name": "Geometry Dash",
-    "developer": "RobTop Games",
-    "ccu": 76950,
-    "positive": 194820,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2337840,
-    "genre": "어드벤처",
-    "tags": {
-      "리듬": 1,
-      "플랫포머": 1,
-      "인디": 1,
-      "도전적": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "리듬",
-      "플랫포머",
-      "인디",
-      "도전적",
-      "캐주얼"
-    ]
-  },
-  "367520": {
-    "appid": 367520,
-    "name": "Hollow Knight",
-    "developer": "Team Cherry",
-    "ccu": 91772,
-    "positive": 221499,
-    "negative": 340,
-    "average_2weeks": 15016,
-    "owners": 2657988,
-    "genre": "어드벤처",
-    "tags": {
-      "메트로바니아": 1,
-      "도전적": 1,
-      "인디": 1,
-      "2D": 1,
-      "탐험": 1
-    },
-    "tags_list": [
-      "메트로바니아",
-      "도전적",
-      "인디",
-      "2D",
-      "탐험"
-    ]
-  },
-  "383870": {
-    "appid": 383870,
-    "name": "Firewatch",
-    "developer": "Campo Santo",
-    "ccu": 72707,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 11989,
-    "owners": 2085000,
-    "genre": "어드벤처",
-    "tags": {
-      "스토리": 1,
-      "자연": 1,
-      "1인칭": 1,
-      "감성": 1,
-      "미스터리": 1
-    },
-    "tags_list": [
-      "스토리",
-      "자연",
-      "1인칭",
-      "감성",
-      "미스터리"
-    ]
-  },
-  "387290": {
-    "appid": 387290,
-    "name": "Ori and the Blind Forest: Definitive Edition",
-    "developer": "Moon Studios",
-    "ccu": 85222,
-    "positive": 212414,
-    "negative": 509,
-    "average_2weeks": 13662,
-    "owners": 2548968,
-    "genre": "어드벤처",
-    "tags": {
-      "메트로배니아": 1,
-      "감성": 1,
-      "플랫포머": 1,
-      "액션": 1,
-      "명작": 1
-    },
-    "tags_list": [
-      "메트로배니아",
-      "감성",
-      "플랫포머",
-      "액션",
-      "명작"
-    ]
-  },
-  "418370": {
-    "appid": 418370,
-    "name": "Rise of the Tomb Raider",
-    "developer": "Crystal Dynamics",
-    "ccu": 75249,
-    "positive": 190454,
-    "negative": 934,
-    "average_2weeks": 11881,
-    "owners": 2285448,
-    "genre": "액션",
-    "tags": {
-      "액션": 1,
-      "어드벤처": 1,
-      "탐험": 1,
-      "퍼즐": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "어드벤처",
-      "탐험",
-      "퍼즐",
-      "싱글플레이어"
-    ]
-  },
-  "457580": {
-    "appid": 457580,
-    "name": "Inside",
-    "developer": "Playdead",
-    "ccu": 83942,
-    "positive": 212414,
-    "negative": 509,
-    "average_2weeks": 13254,
-    "owners": 2548968,
-    "genre": "어드벤처",
-    "tags": {
-      "퍼즐": 1,
-      "플랫포머": 1,
-      "분위기": 1,
-      "디스토피아": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "플랫포머",
-      "분위기",
-      "디스토피아",
-      "인디"
-    ]
-  },
-  "477160": {
-    "appid": 477160,
-    "name": "Human Fall Flat",
-    "developer": "No Brakes Games",
-    "ccu": 72390,
-    "positive": 182005,
-    "negative": 1105,
-    "average_2weeks": 11549,
-    "owners": 2184060,
-    "genre": "어드벤처",
-    "tags": {
-      "퍼즐": 1,
-      "협동": 1,
-      "물리": 1,
-      "유머": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "협동",
-      "물리",
-      "유머",
-      "캐주얼"
-    ]
-  },
-  "501300": {
-    "appid": 501300,
-    "name": "What Remains of Edith Finch",
-    "developer": "Giant Sparrow",
-    "ccu": 80975,
-    "positive": 194715,
-    "negative": 850,
-    "average_2weeks": 13290,
-    "owners": 2336580,
-    "genre": "어드벤처",
-    "tags": {
-      "스토리": 1,
-      "감성": 1,
-      "단편": 1,
-      "가족": 1,
-      "독특": 1
-    },
-    "tags_list": [
-      "스토리",
-      "감성",
-      "단편",
-      "가족",
-      "독특"
-    ]
-  },
-  "504230": {
-    "appid": 504230,
-    "name": "Celeste",
-    "developer": "Maddy Makes Games",
-    "ccu": 89927,
-    "positive": 216880,
-    "negative": 425,
-    "average_2weeks": 14721,
-    "owners": 2602560,
-    "genre": "어드벤처",
-    "tags": {
-      "플랫포머": 1,
-      "도전적": 1,
-      "픽셀": 1,
-      "인디": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "플랫포머",
-      "도전적",
-      "픽셀",
-      "인디",
-      "스토리"
-    ]
-  },
-  "638230": {
-    "appid": 638230,
-    "name": "Journey",
-    "developer": "thatgamecompany",
-    "ccu": 77210,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 12286,
-    "owners": 2335320,
-    "genre": "어드벤처",
-    "tags": {
-      "어드벤처": 1,
-      "감성": 1,
-      "분위기": 1,
-      "멀티플레이어": 1,
-      "짧음": 1
-    },
-    "tags_list": [
-      "어드벤처",
-      "감성",
-      "분위기",
-      "멀티플레이어",
-      "짧음"
-    ]
-  },
-  "750920": {
-    "appid": 750920,
-    "name": "Shadow of the Tomb Raider",
-    "developer": "Eidos-Montréal",
-    "ccu": 70262,
-    "positive": 177783,
-    "negative": 1190,
-    "average_2weeks": 11093,
-    "owners": 2133396,
-    "genre": "액션",
-    "tags": {
-      "액션": 1,
-      "어드벤처": 1,
-      "잠입": 1,
-      "퍼즐": 1,
-      "정글": 1
-    },
-    "tags_list": [
-      "액션",
-      "어드벤처",
-      "잠입",
-      "퍼즐",
-      "정글"
-    ]
-  },
-  "752590": {
-    "appid": 752590,
-    "name": "A Plague Tale: Innocence",
-    "developer": "Asobo Studio",
-    "ccu": 81320,
-    "positive": 194645,
-    "negative": 850,
-    "average_2weeks": 13382,
-    "owners": 2335740,
-    "genre": "액션",
-    "tags": {
-      "스토리": 1,
-      "중세": 1,
-      "공포": 1,
-      "형제": 1,
-      "어드벤처": 1
-    },
-    "tags_list": [
-      "스토리",
-      "중세",
-      "공포",
-      "형제",
-      "어드벤처"
-    ]
-  },
-  "753640": {
-    "appid": 753640,
-    "name": "Outer Wilds",
-    "developer": "Mobius Digital",
-    "ccu": 95278,
-    "positive": 230741,
-    "negative": 169,
-    "average_2weeks": 15550,
-    "owners": 2768892,
-    "genre": "어드벤처",
-    "tags": {
-      "우주": 1,
-      "탐험": 1,
-      "미스터리": 1,
-      "감동": 1,
-      "루프": 1
-    },
-    "tags_list": [
-      "우주",
-      "탐험",
-      "미스터리",
-      "감동",
-      "루프"
-    ]
-  },
-  "960090": {
-    "appid": 960090,
-    "name": "Psychonauts 2",
-    "developer": "Double Fine Productions",
-    "ccu": 78669,
-    "positive": 198918,
-    "negative": 765,
-    "average_2weeks": 12421,
-    "owners": 2387016,
-    "genre": "어드벤처",
-    "tags": {
-      "플랫포머": 1,
-      "어드벤처": 1,
-      "코미디": 1,
-      "초능력": 1,
-      "3D": 1
-    },
-    "tags_list": [
-      "플랫포머",
-      "어드벤처",
-      "코미디",
-      "초능력",
-      "3D"
-    ]
-  },
-  "1057090": {
-    "appid": 1057090,
-    "name": "Ori and the Will of the Wisps",
-    "developer": "Moon Studios",
-    "ccu": 89897,
-    "positive": 216810,
-    "negative": 425,
-    "average_2weeks": 14713,
-    "owners": 2601720,
-    "genre": "어드벤처",
-    "tags": {
-      "메트로바니아": 1,
-      "아름다운": 1,
-      "스토리": 1,
-      "플랫포머": 1,
-      "2D": 1
-    },
-    "tags_list": [
-      "메트로바니아",
-      "아름다운",
-      "스토리",
-      "플랫포머",
-      "2D"
-    ]
-  },
-  "1113560": {
-    "appid": 1113560,
-    "name": "NieR Replicant ver.1.22474487139...",
-    "developer": "Toylogic",
-    "ccu": 73568,
-    "positive": 186031,
-    "negative": 1019,
-    "average_2weeks": 11616,
-    "owners": 2232372,
-    "genre": "어드벤처",
-    "tags": {
-      "액션": 1,
-      "스토리": 1,
-      "JRPG": 1,
-      "감성": 1,
-      "리마스터": 1
-    },
-    "tags_list": [
-      "액션",
-      "스토리",
-      "JRPG",
-      "감성",
-      "리마스터"
-    ]
-  },
-  "1151640": {
-    "appid": 1151640,
-    "name": "Horizon Zero Dawn",
-    "developer": "Guerrilla Games",
-    "ccu": 73568,
-    "positive": 186066,
-    "negative": 1019,
-    "average_2weeks": 11616,
-    "owners": 2232792,
-    "genre": "어드벤처",
-    "tags": {
-      "오픈월드": 1,
-      "액션": 1,
-      "SF": 1,
-      "포스트아포칼립스": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "오픈월드",
-      "액션",
-      "SF",
-      "포스트아포칼립스",
-      "스토리"
-    ]
-  },
-  "1158310": {
-    "appid": 1158310,
-    "name": "Disco Elysium - The Final Cut",
-    "developer": "ZA/UM",
-    "ccu": 85737,
-    "positive": 216775,
-    "negative": 425,
-    "average_2weeks": 13537,
-    "owners": 2601300,
-    "genre": "어드벤처",
-    "tags": {
-      "RPG": 1,
-      "스토리": 1,
-      "대화": 1,
-      "탐정": 1,
-      "독창적": 1
-    },
-    "tags_list": [
-      "RPG",
-      "스토리",
-      "대화",
-      "탐정",
-      "독창적"
-    ]
-  },
-  "1172620": {
-    "appid": 1172620,
-    "name": "Sea of Thieves",
-    "developer": "Rare",
-    "ccu": 74413,
-    "positive": 186066,
-    "negative": 1019,
-    "average_2weeks": 11908,
-    "owners": 2232792,
-    "genre": "어드벤처",
-    "tags": {
-      "해적": 1,
-      "협동": 1,
-      "오픈월드": 1,
-      "항해": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "해적",
-      "협동",
-      "오픈월드",
-      "항해",
-      "멀티플레이어"
-    ]
-  },
-  "1196590": {
-    "appid": 1196590,
-    "name": "Uncharted: Legacy of Thieves Collection",
-    "developer": "Naughty Dog",
-    "ccu": 76950,
-    "positive": 194540,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2334480,
-    "genre": "어드벤처",
-    "tags": {
-      "어드벤처": 1,
-      "액션": 1,
-      "스토리": 1,
-      "보물": 1,
-      "시네마틱": 1
-    },
-    "tags_list": [
-      "어드벤처",
-      "액션",
-      "스토리",
-      "보물",
-      "시네마틱"
-    ]
-  },
-  "1222140": {
-    "appid": 1222140,
-    "name": "Detroit: Become Human",
-    "developer": "Quantic Dream",
-    "ccu": 75524,
-    "positive": 190314,
-    "negative": 934,
-    "average_2weeks": 12021,
-    "owners": 2283768,
-    "genre": "어드벤처",
-    "tags": {
-      "스토리": 1,
-      "선택": 1,
-      "어드벤처": 1,
-      "SF": 1,
-      "드라마": 1
-    },
-    "tags_list": [
-      "스토리",
-      "선택",
-      "어드벤처",
-      "SF",
-      "드라마"
-    ]
-  },
-  "1222700": {
-    "appid": 1222700,
-    "name": "A Way Out",
-    "developer": "Hazelight",
-    "ccu": 69107,
-    "positive": 173680,
-    "negative": 1275,
-    "average_2weeks": 11029,
-    "owners": 2084160,
-    "genre": "어드벤처",
-    "tags": {
-      "협동": 1,
-      "스토리": 1,
-      "탈출": 1,
-      "액션": 1,
-      "2인": 1
-    },
-    "tags_list": [
-      "협동",
-      "스토리",
-      "탈출",
-      "액션",
-      "2인"
-    ]
-  },
-  "1240260": {
-    "appid": 1240260,
-    "name": "DEATH STRANDING",
-    "developer": "Kojima Productions",
-    "ccu": 72692,
-    "positive": 173575,
-    "negative": 1275,
-    "average_2weeks": 11985,
-    "owners": 2082900,
-    "genre": "어드벤처",
-    "tags": {
-      "오픈월드": 1,
-      "독특": 1,
-      "배달": 1,
-      "연결": 1,
-      "코지마": 1
-    },
-    "tags_list": [
-      "오픈월드",
-      "독특",
-      "배달",
-      "연결",
-      "코지마"
-    ]
-  },
-  "1332010": {
-    "appid": 1332010,
-    "name": "Stray",
-    "developer": "BlueTwelve Studio",
-    "ccu": 71147,
-    "positive": 173540,
-    "negative": 1275,
-    "average_2weeks": 11573,
-    "owners": 2082480,
-    "genre": "인디",
-    "tags": {
-      "어드벤처": 1,
-      "고양이": 1,
-      "sf": 1,
-      "스토리": 1,
-      "힐링": 1
-    },
-    "tags_list": [
-      "어드벤처",
-      "고양이",
-      "sf",
-      "스토리",
-      "힐링"
-    ]
-  },
-  "1426210": {
-    "appid": 1426210,
-    "name": "It Takes Two",
-    "developer": "Hazelight Studios",
-    "ccu": 86370,
-    "positive": 207751,
-    "negative": 594,
-    "average_2weeks": 14161,
-    "owners": 2493012,
-    "genre": "어드벤처",
-    "tags": {
-      "협동": 1,
-      "플랫포머": 1,
-      "스토리": 1,
-      "2인": 1,
-      "가족": 1
-    },
-    "tags_list": [
-      "협동",
-      "플랫포머",
-      "스토리",
-      "2인",
-      "가족"
-    ]
-  },
-  "1546320": {
-    "appid": 1546320,
-    "name": "A Plague Tale: Requiem",
-    "developer": "Asobo Studio",
-    "ccu": 72992,
-    "positive": 173540,
-    "negative": 1275,
-    "average_2weeks": 12065,
-    "owners": 2082480,
-    "genre": "액션",
-    "tags": {
-      "스토리": 1,
-      "중세": 1,
-      "공포": 1,
-      "형제": 1,
-      "어드벤처": 1
-    },
-    "tags_list": [
-      "스토리",
-      "중세",
-      "공포",
-      "형제",
-      "어드벤처"
-    ]
-  },
-  "1562430": {
-    "appid": 1562430,
-    "name": "DREDGE",
-    "developer": "Black Salt Games",
-    "ccu": 67850,
-    "positive": 165441,
-    "negative": 1444,
-    "average_2weeks": 11041,
-    "owners": 1985292,
-    "genre": "인디",
-    "tags": {
-      "낚시": 1,
-      "공포": 1,
-      "어드벤처": 1,
-      "힐링": 1,
-      "미스터리": 1
-    },
-    "tags_list": [
-      "낚시",
-      "공포",
-      "어드벤처",
-      "힐링",
-      "미스터리"
-    ]
-  },
-  "1568590": {
-    "appid": 1568590,
-    "name": "Inscryption",
-    "developer": "Daniel Mullins Games",
-    "ccu": 85737,
-    "positive": 216775,
-    "negative": 425,
-    "average_2weeks": 13537,
-    "owners": 2601300,
-    "genre": "어드벤처",
-    "tags": {
-      "카드": 1,
-      "공포": 1,
-      "인디": 1,
-      "덱빌딩": 1,
-      "미스터리": 1
-    },
-    "tags_list": [
-      "카드",
-      "공포",
-      "인디",
-      "덱빌딩",
-      "미스터리"
-    ]
-  },
-  "1659420": {
-    "appid": 1659420,
-    "name": "Uncharted: Legacy of Thieves",
-    "developer": "Naughty Dog",
-    "ccu": 77863,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 12828,
-    "owners": 2231952,
-    "genre": "액션",
-    "tags": {
-      "어드벤처": 1,
-      "액션": 1,
-      "스토리": 1,
-      "탐험": 1,
-      "영화": 1
-    },
-    "tags_list": [
-      "어드벤처",
-      "액션",
-      "스토리",
-      "탐험",
-      "영화"
-    ]
-  },
-  "1817230": {
-    "appid": 1817230,
-    "name": "Hi-Fi RUSH",
-    "developer": "Tango Gameworks",
-    "ccu": 84417,
-    "positive": 203240,
-    "negative": 680,
-    "average_2weeks": 13831,
-    "owners": 2438880,
-    "genre": "어드벤처",
-    "tags": {
-      "리듬": 1,
-      "액션": 1,
-      "만화": 1,
-      "밴드": 1,
-      "빠른": 1
-    },
-    "tags_list": [
-      "리듬",
-      "액션",
-      "만화",
-      "밴드",
-      "빠른"
-    ]
-  },
-  "1850570": {
-    "appid": 1850570,
-    "name": "DEATH STRANDING DIRECTOR'S CUT",
-    "developer": "KOJIMA PRODUCTIONS",
-    "ccu": 74728,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 11992,
-    "owners": 2231952,
-    "genre": "어드벤처",
-    "tags": {
-      "스토리": 1,
-      "배달": 1,
-      "오픈월드": 1,
-      "sf": 1,
-      "독특": 1
-    },
-    "tags_list": [
-      "스토리",
-      "배달",
-      "오픈월드",
-      "sf",
-      "독특"
-    ]
+    ],
+    "_source": "steamspy"
   }
 }

@@ -1,802 +1,127 @@
 {
-  "242700": {
-    "appid": 242700,
-    "name": "Injustice: Gods Among Us Ultimate Edition",
+  "1778820": {
+    "appid": 1778820,
+    "name": "Mortal Kombat 1",
     "developer": "NetherRealm Studios",
-    "ccu": 65445,
-    "positive": 165791,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1989492,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "DC코믹스": 1,
-      "슈퍼히어로": 1,
-      "스토리": 1,
-      "2D": 1
-    },
-    "tags_list": [
-      "격투",
-      "DC코믹스",
-      "슈퍼히어로",
-      "스토리",
-      "2D"
-    ]
-  },
-  "245170": {
-    "appid": 245170,
-    "name": "Skullgirls 2nd Encore",
-    "developer": "Hidden Variable",
-    "ccu": 78770,
-    "positive": 194820,
-    "negative": 850,
-    "average_2weeks": 12702,
-    "owners": 2337840,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "2D": 1,
-      "인디": 1,
-      "캐릭터": 1,
-      "애니": 1
-    },
-    "tags_list": [
-      "격투",
-      "2D",
-      "인디",
-      "캐릭터",
-      "애니"
-    ]
-  },
-  "291550": {
-    "appid": 291550,
-    "name": "Brawlhalla",
-    "developer": "Blue Mammoth Games",
-    "ccu": 64045,
-    "positive": 153915,
-    "negative": 1700,
-    "average_2weeks": 10532,
-    "owners": 1846980,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "캐주얼": 1,
-      "플랫포머": 1,
-      "무료": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "캐주얼",
-      "플랫포머",
-      "무료",
-      "멀티플레이어"
-    ]
-  },
-  "307690": {
-    "appid": 307690,
-    "name": "Sleeping Dogs: Definitive Edition",
-    "developer": "United Front Games",
-    "ccu": 74518,
-    "positive": 186276,
-    "negative": 1019,
-    "average_2weeks": 11936,
-    "owners": 2235312,
-    "genre": "액션",
-    "tags": {
-      "오픈월드": 1,
-      "격투": 1,
-      "범죄": 1,
-      "스토리": 1,
-      "홍콩": 1
-    },
-    "tags_list": [
-      "오픈월드",
-      "격투",
-      "범죄",
-      "스토리",
-      "홍콩"
-    ]
-  },
-  "307780": {
-    "appid": 307780,
-    "name": "Mortal Kombat X",
-    "developer": "NetherRealm Studios",
-    "ccu": 67032,
-    "positive": 169729,
-    "negative": 1359,
-    "average_2weeks": 10584,
-    "owners": 2036748,
-    "genre": "격투",
+    "ccu": 20000,
+    "positive": 160000,
+    "negative": 48000,
+    "average_2weeks": 1600,
+    "owners": 2500000,
     "tags": {
       "격투": 1,
       "고어": 1,
-      "경쟁": 1,
       "스토리": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "고어",
-      "경쟁",
-      "스토리",
-      "멀티플레이어"
-    ]
-  },
-  "310950": {
-    "appid": 310950,
-    "name": "Street Fighter V",
-    "developer": "Capcom",
-    "ccu": 59678,
-    "positive": 146366,
-    "negative": 1870,
-    "average_2weeks": 9694,
-    "owners": 1756392,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "2D": 1,
-      "경쟁": 1,
-      "아케이드": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "2D",
-      "경쟁",
-      "아케이드",
-      "멀티플레이어"
-    ]
-  },
-  "349040": {
-    "appid": 349040,
-    "name": "NARUTO Shippuden: Ultimate Ninja STORM 4",
-    "developer": "CyberConnect2",
-    "ccu": 73755,
-    "positive": 182005,
-    "negative": 1105,
-    "average_2weeks": 11913,
-    "owners": 2184060,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "나루토": 1,
-      "애니": 1,
-      "스토리": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "나루토",
-      "애니",
-      "스토리",
-      "멀티플레이어"
-    ]
-  },
-  "383980": {
-    "appid": 383980,
-    "name": "Rivals of Aether",
-    "developer": "Dan Fornace",
-    "ccu": 76950,
-    "positive": 194715,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2336580,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "플랫폼": 1,
-      "인디": 1,
-      "경쟁": 1,
-      "도트": 1
-    },
-    "tags_list": [
-      "격투",
-      "플랫폼",
-      "인디",
-      "경쟁",
-      "도트"
-    ]
-  },
-  "389730": {
-    "appid": 389730,
-    "name": "Tekken 7",
-    "developer": "Bandai Namco",
-    "ccu": 71942,
-    "positive": 173715,
-    "negative": 1275,
-    "average_2weeks": 11785,
-    "owners": 2084580,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "3D": 1,
-      "경쟁": 1,
       "멀티플레이어": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "격투",
-      "3D",
-      "경쟁",
-      "멀티플레이어",
-      "스토리"
-    ]
-  },
-  "544750": {
-    "appid": 544750,
-    "name": "SOULCALIBUR VI",
-    "developer": "Bandai Namco",
-    "ccu": 67280,
-    "positive": 165616,
-    "negative": 1444,
-    "average_2weeks": 10889,
-    "owners": 1987392,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "3D": 1,
-      "무기": 1,
-      "역사": 1,
       "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "3D",
-      "무기",
-      "역사",
-      "경쟁"
-    ]
-  },
-  "565170": {
-    "appid": 565170,
-    "name": "Blade Strangers",
-    "developer": "Studio Saizensen",
-    "ccu": 53437,
-    "positive": 135280,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1623360,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "크로스오버": 1,
-      "인디": 1,
-      "2D": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "격투",
-      "크로스오버",
-      "인디",
-      "2D",
-      "캐주얼"
-    ]
-  },
-  "574980": {
-    "appid": 574980,
-    "name": "Them's Fightin' Herds",
-    "developer": "Mane6",
-    "ccu": 63877,
-    "positive": 161516,
-    "negative": 1530,
-    "average_2weeks": 10086,
-    "owners": 1938192,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "2D": 1,
-      "인디": 1,
-      "동물": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "2D",
-      "인디",
-      "동물",
-      "경쟁"
-    ]
-  },
-  "577940": {
-    "appid": 577940,
-    "name": "Killer Instinct",
-    "developer": "Iron Galaxy",
-    "ccu": 70412,
-    "positive": 173855,
-    "negative": 1275,
-    "average_2weeks": 11377,
-    "owners": 2086260,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "무료": 1,
-      "경쟁": 1,
-      "콤보": 1,
-      "Xbox": 1
-    },
-    "tags_list": [
-      "격투",
-      "무료",
-      "경쟁",
-      "콤보",
-      "Xbox"
-    ]
-  },
-  "586140": {
-    "appid": 586140,
-    "name": "BlazBlue Centralfiction",
-    "developer": "Arc System Works",
-    "ccu": 71985,
-    "positive": 181970,
-    "negative": 1105,
-    "average_2weeks": 11441,
-    "owners": 2183640,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "애니": 1,
-      "2D": 1,
-      "스토리": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "애니",
-      "2D",
-      "스토리",
-      "경쟁"
-    ]
-  },
-  "627270": {
-    "appid": 627270,
-    "name": "Absolver",
-    "developer": "Sloclap",
-    "ccu": 57798,
-    "positive": 146331,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1755972,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "무술": 1,
-      "온라인": 1,
-      "커스터마이즈": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "격투",
-      "무술",
-      "온라인",
-      "커스터마이즈",
-      "인디"
-    ]
-  },
-  "627690": {
-    "appid": 627690,
-    "name": "Injustice 2",
-    "developer": "NetherRealm Studios",
-    "ccu": 70502,
-    "positive": 173715,
-    "negative": 1275,
-    "average_2weeks": 11401,
-    "owners": 2084580,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "DC": 1,
-      "슈퍼히어로": 1,
-      "스토리": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "DC",
-      "슈퍼히어로",
-      "스토리",
-      "경쟁"
-    ]
-  },
-  "678950": {
-    "appid": 678950,
-    "name": "Dragon Ball Xenoverse 2",
-    "developer": "Dimps",
-    "ccu": 65445,
-    "positive": 165686,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1988232,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "드래곤볼": 1,
-      "RPG": 1,
-      "애니": 1,
-      "커스터마이즈": 1
-    },
-    "tags_list": [
-      "격투",
-      "드래곤볼",
-      "RPG",
-      "애니",
-      "커스터마이즈"
-    ]
-  },
-  "976310": {
-    "appid": 976310,
-    "name": "Mortal Kombat 11",
-    "developer": "NetherRealm Studios",
-    "ccu": 68735,
-    "positive": 165581,
-    "negative": 1444,
-    "average_2weeks": 11277,
-    "owners": 1986972,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "고어": 1,
-      "스토리": 1,
-      "경쟁": 1,
-      "멀티플레이어": 1
     },
     "tags_list": [
       "격투",
       "고어",
       "스토리",
-      "경쟁",
-      "멀티플레이어"
-    ]
-  },
-  "1090630": {
-    "appid": 1090630,
-    "name": "Granblue Fantasy Versus",
-    "developer": "Arc System Works",
-    "ccu": 65683,
-    "positive": 161586,
-    "negative": 1530,
-    "average_2weeks": 10634,
-    "owners": 1939032,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "애니": 1,
-      "경쟁": 1,
-      "스토리": 1,
-      "rpg요소": 1
-    },
-    "tags_list": [
-      "격투",
-      "애니",
-      "경쟁",
-      "스토리",
-      "rpg요소"
-    ]
-  },
-  "1110100": {
-    "appid": 1110100,
-    "name": "Power Rangers: Battle for the Grid",
-    "developer": "nWay",
-    "ccu": 60800,
-    "positive": 153845,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1846140,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "파워레인저": 1,
-      "팀전": 1,
-      "2.5D": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "파워레인저",
-      "팀전",
-      "2.5D",
-      "멀티플레이어"
-    ]
-  },
-  "1240260": {
-    "appid": 1240260,
-    "name": "DNF Duel",
-    "developer": "Eighting",
-    "ccu": 57798,
-    "positive": 146156,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1753872,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "2D": 1,
-      "던파": 1,
-      "애니": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "2D",
-      "던파",
-      "애니",
+      "멀티플레이어",
       "경쟁"
-    ]
+    ],
+    "_source": "steamspy"
+  },
+  "1790600": {
+    "appid": 1790600,
+    "name": "Dragon Ball: Sparking! ZERO",
+    "developer": "Bandai Namco",
+    "ccu": 52000,
+    "positive": 190000,
+    "negative": 42000,
+    "average_2weeks": 3600,
+    "owners": 3500000,
+    "tags": {
+      "격투": 1,
+      "애니메이션": 1,
+      "드래곤볼": 1,
+      "멀티플레이어": 1,
+      "3d": 1
+    },
+    "tags_list": [
+      "격투",
+      "애니메이션",
+      "드래곤볼",
+      "멀티플레이어",
+      "3d"
+    ],
+    "_source": "steamspy"
   },
   "1364780": {
     "appid": 1364780,
     "name": "Street Fighter 6",
     "developer": "Capcom",
-    "ccu": 80270,
-    "positive": 194505,
-    "negative": 850,
-    "average_2weeks": 13102,
-    "owners": 2334060,
-    "genre": "격투",
+    "ccu": 26000,
+    "positive": 210000,
+    "negative": 18000,
+    "average_2weeks": 4200,
+    "owners": 3800000,
     "tags": {
       "격투": 1,
       "경쟁": 1,
+      "2d": 1,
       "멀티플레이어": 1,
-      "아케이드": 1,
-      "기술": 1
+      "카운터": 1
     },
     "tags_list": [
       "격투",
       "경쟁",
+      "2d",
       "멀티플레이어",
-      "아케이드",
-      "기술"
-    ]
+      "카운터"
+    ],
+    "_source": "steamspy"
   },
-  "1372280": {
-    "appid": 1372280,
-    "name": "MELTY BLOOD: TYPE LUMINA",
-    "developer": "French-Bread",
-    "ccu": 70327,
-    "positive": 177678,
-    "negative": 1190,
-    "average_2weeks": 11177,
-    "owners": 2132136,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "애니": 1,
-      "2D": 1,
-      "비주얼노벨": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "애니",
-      "2D",
-      "비주얼노벨",
-      "경쟁"
-    ]
-  },
-  "1384160": {
-    "appid": 1384160,
-    "name": "GUILTY GEAR -STRIVE-",
+  "678950": {
+    "appid": 678950,
+    "name": "Dragon Ball FighterZ",
     "developer": "Arc System Works",
-    "ccu": 73663,
-    "positive": 186031,
-    "negative": 1019,
-    "average_2weeks": 11708,
-    "owners": 2232372,
-    "genre": "격투",
+    "ccu": 18000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 1400,
+    "owners": 3500000,
     "tags": {
       "격투": 1,
-      "애니": 1,
-      "2D": 1,
-      "록사운드": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "격투",
-      "애니",
-      "2D",
-      "록사운드",
-      "경쟁"
-    ]
-  },
-  "1449850": {
-    "appid": 1449850,
-    "name": "WWE 2K22",
-    "developer": "Visual Concepts",
-    "ccu": 60800,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1844880,
-    "genre": "스포츠",
-    "tags": {
-      "프로레슬링": 1,
-      "스포츠": 1,
-      "액션": 1,
-      "멀티플레이어": 1,
-      "격투": 1
-    },
-    "tags_list": [
-      "프로레슬링",
-      "스포츠",
-      "액션",
-      "멀티플레이어",
-      "격투"
-    ]
-  },
-  "1498570": {
-    "appid": 1498570,
-    "name": "THE KING OF FIGHTERS XV",
-    "developer": "SNK",
-    "ccu": 62590,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 10144,
-    "owners": 1844880,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "팀": 1,
-      "경쟁": 1,
-      "클래식": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "팀",
-      "경쟁",
-      "클래식",
-      "멀티플레이어"
-    ]
-  },
-  "1778820": {
-    "appid": 1778820,
-    "name": "TEKKEN 8",
-    "developer": "Bandai Namco",
-    "ccu": 71905,
-    "positive": 181725,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2180700,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "3D": 1,
-      "경쟁": 1,
-      "철권": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "3D",
-      "경쟁",
-      "철권",
-      "멀티플레이어"
-    ]
-  },
-  "1790600": {
-    "appid": 1790600,
-    "name": "Dragon Ball: Sparking! ZERO",
-    "developer": "Spike Chunsoft",
-    "ccu": 73568,
-    "positive": 185926,
-    "negative": 1019,
-    "average_2weeks": 11616,
-    "owners": 2231112,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "애니": 1,
+      "2d": 1,
+      "애니메이션": 1,
       "드래곤볼": 1,
-      "3D": 1,
-      "대전": 1
-    },
-    "tags_list": [
-      "격투",
-      "애니",
-      "드래곤볼",
-      "3D",
-      "대전"
-    ]
-  },
-  "1818750": {
-    "appid": 1818750,
-    "name": "MultiVersus",
-    "developer": "Player First Games",
-    "ccu": 53437,
-    "positive": 135070,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1620840,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "플랫폼": 1,
-      "무료": 1,
-      "크로스오버": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "격투",
-      "플랫폼",
-      "무료",
-      "크로스오버",
-      "멀티플레이어"
-    ]
-  },
-  "1971870": {
-    "appid": 1971870,
-    "name": "Mortal Kombat 1",
-    "developer": "NetherRealm Studios",
-    "ccu": 62695,
-    "positive": 153705,
-    "negative": 1700,
-    "average_2weeks": 10172,
-    "owners": 1844460,
-    "genre": "격투",
-    "tags": {
-      "격투": 1,
-      "고어": 1,
-      "스토리": 1,
-      "리부트": 1,
       "경쟁": 1
     },
     "tags_list": [
       "격투",
-      "고어",
-      "스토리",
-      "리부트",
+      "2d",
+      "애니메이션",
+      "드래곤볼",
       "경쟁"
-    ]
+    ],
+    "_source": "steamspy"
   },
-  "2076010": {
-    "appid": 2076010,
-    "name": "Under Night In-Birth II Sys:Celes",
-    "developer": "French-Bread",
-    "ccu": 68637,
-    "positive": 173470,
-    "negative": 1275,
-    "average_2weeks": 10837,
-    "owners": 2081640,
-    "genre": "격투",
+  "291550": {
+    "appid": 291550,
+    "name": "Brawlhalla",
+    "developer": "Blue Mammoth Games",
+    "ccu": 22000,
+    "positive": 280000,
+    "negative": 45000,
+    "average_2weeks": 1800,
+    "owners": 18000000,
     "tags": {
       "격투": 1,
-      "애니": 1,
-      "2D": 1,
-      "경쟁": 1,
-      "인디": 1
+      "플랫포머": 1,
+      "무료": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1
     },
     "tags_list": [
       "격투",
-      "애니",
-      "2D",
-      "경쟁",
-      "인디"
-    ]
-  },
-  "2138710": {
-    "appid": 2138710,
-    "name": "Sifu",
-    "developer": "Sloclap",
-    "ccu": 72947,
-    "positive": 173540,
-    "negative": 1275,
-    "average_2weeks": 12053,
-    "owners": 2082480,
-    "genre": "액션",
-    "tags": {
-      "쿵푸": 1,
-      "도전적": 1,
-      "격투": 1,
-      "복수": 1,
-      "3인칭": 1
-    },
-    "tags_list": [
-      "쿵푸",
-      "도전적",
-      "격투",
-      "복수",
-      "3인칭"
-    ]
+      "플랫포머",
+      "무료",
+      "멀티플레이어",
+      "경쟁"
+    ],
+    "_source": "steamspy"
   }
 }

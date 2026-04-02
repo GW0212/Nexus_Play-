@@ -1,1402 +1,377 @@
 {
-  "440": {
-    "appid": 440,
-    "name": "Team Fortress 2",
-    "developer": "Valve",
-    "ccu": 73442,
-    "positive": 174065,
-    "negative": 1275,
-    "average_2weeks": 12185,
-    "owners": 2088780,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "팀": 1,
-      "캐주얼": 1,
-      "만화": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "팀",
-      "캐주얼",
-      "만화",
-      "멀티플레이어"
-    ]
-  },
-  "500": {
-    "appid": 500,
-    "name": "Left 4 Dead",
-    "developer": "Valve",
-    "ccu": 74953,
-    "positive": 186486,
-    "negative": 1019,
-    "average_2weeks": 12052,
-    "owners": 2237832,
-    "genre": "FPS",
-    "tags": {
-      "좀비": 1,
-      "협동": 1,
-      "fps": 1,
-      "고전": 1,
-      "생존": 1
-    },
-    "tags_list": [
-      "좀비",
-      "협동",
-      "fps",
-      "고전",
-      "생존"
-    ]
-  },
-  "550": {
-    "appid": 550,
-    "name": "Left 4 Dead 2",
-    "developer": "Valve",
-    "ccu": 88862,
-    "positive": 217195,
-    "negative": 425,
-    "average_2weeks": 14437,
-    "owners": 2606340,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "좀비": 1,
-      "fps": 1,
-      "멀티플레이어": 1,
-      "빠른": 1
-    },
-    "tags_list": [
-      "협동",
-      "좀비",
-      "fps",
-      "멀티플레이어",
-      "빠른"
-    ]
-  },
   "730": {
     "appid": 730,
     "name": "Counter-Strike 2",
     "developer": "Valve",
-    "ccu": 65800,
-    "positive": 153705,
-    "negative": 1700,
-    "average_2weeks": 11000,
-    "owners": 1844460,
-    "genre": "FPS",
+    "ccu": 985234,
+    "positive": 1245000,
+    "negative": 320000,
+    "average_2weeks": 28500,
+    "owners": 35000000,
     "tags": {
       "fps": 1,
       "경쟁": 1,
       "전술": 1,
       "멀티플레이어": 1,
-      "슈터": 1
+      "무료": 1
     },
     "tags_list": [
       "fps",
       "경쟁",
       "전술",
       "멀티플레이어",
-      "슈터"
-    ]
-  },
-  "49520": {
-    "appid": 49520,
-    "name": "Borderlands 2",
-    "developer": "Gearbox Software",
-    "ccu": 80009,
-    "positive": 199233,
-    "negative": 765,
-    "average_2weeks": 12845,
-    "owners": 2390796,
-    "genre": "FPS",
-    "tags": {
-      "루터슈터": 1,
-      "협동": 1,
-      "fps": 1,
-      "유머": 1,
-      "파밍": 1
-    },
-    "tags_list": [
-      "루터슈터",
-      "협동",
-      "fps",
-      "유머",
-      "파밍"
-    ]
-  },
-  "107410": {
-    "appid": 107410,
-    "name": "Arma 3",
-    "developer": "Bohemia Interactive",
-    "ccu": 71905,
-    "positive": 182110,
-    "negative": 1105,
-    "average_2weeks": 11405,
-    "owners": 2185320,
-    "genre": "FPS",
-    "tags": {
-      "밀리터리": 1,
-      "FPS": 1,
-      "샌드박스": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "밀리터리",
-      "FPS",
-      "샌드박스",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "201810": {
-    "appid": 201810,
-    "name": "Wolfenstein: The New Order",
-    "developer": "MachineGames",
-    "ccu": 75249,
-    "positive": 190524,
-    "negative": 934,
-    "average_2weeks": 11925,
-    "owners": 2286288,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "스토리": 1,
-      "싱글플레이어": 1,
-      "액션": 1,
-      "2차대전": 1
-    },
-    "tags_list": [
-      "FPS",
-      "스토리",
-      "싱글플레이어",
-      "액션",
-      "2차대전"
-    ]
-  },
-  "218620": {
-    "appid": 218620,
-    "name": "PAYDAY 2",
-    "developer": "OVERKILL",
-    "ccu": 73260,
-    "positive": 182110,
-    "negative": 1105,
-    "average_2weeks": 11781,
-    "owners": 2185320,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "강도": 1,
-      "fps": 1,
-      "멀티플레이어": 1,
-      "전술": 1
-    },
-    "tags_list": [
-      "협동",
-      "강도",
-      "fps",
-      "멀티플레이어",
-      "전술"
-    ]
-  },
-  "232090": {
-    "appid": 232090,
-    "name": "Killing Floor 2",
-    "developer": "Tripwire Interactive",
-    "ccu": 68637,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 10873,
-    "owners": 2085000,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "협동": 1,
-      "좀비": 1,
-      "웨이브": 1,
-      "고어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "협동",
-      "좀비",
-      "웨이브",
-      "고어"
-    ]
-  },
-  "252490": {
-    "appid": 252490,
-    "name": "Rust",
-    "developer": "Facepunch Studios",
-    "ccu": 62618,
-    "positive": 146296,
-    "negative": 1870,
-    "average_2weeks": 10478,
-    "owners": 1755552,
-    "genre": "FPS",
-    "tags": {
-      "서바이벌": 1,
-      "fps": 1,
-      "멀티플레이어": 1,
-      "크래프팅": 1,
-      "냉혹": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "fps",
-      "멀티플레이어",
-      "크래프팅",
-      "냉혹"
-    ]
-  },
-  "286690": {
-    "appid": 286690,
-    "name": "Metro 2033 Redux",
-    "developer": "4A Games",
-    "ccu": 69347,
-    "positive": 173820,
-    "negative": 1275,
-    "average_2weeks": 11093,
-    "owners": 2085840,
-    "genre": "FPS",
-    "tags": {
-      "스토리": 1,
-      "포스트아포칼립스": 1,
-      "fps": 1,
-      "생존": 1,
-      "리마스터": 1
-    },
-    "tags_list": [
-      "스토리",
-      "포스트아포칼립스",
-      "fps",
-      "생존",
-      "리마스터"
-    ]
-  },
-  "287390": {
-    "appid": 287390,
-    "name": "Metro: Last Light Redux",
-    "developer": "4A Games",
-    "ccu": 70957,
-    "positive": 177923,
-    "negative": 1190,
-    "average_2weeks": 11345,
-    "owners": 2135076,
-    "genre": "FPS",
-    "tags": {
-      "스토리": 1,
-      "포스트아포칼립스": 1,
-      "fps": 1,
-      "생존": 1,
-      "리마스터": 1
-    },
-    "tags_list": [
-      "스토리",
-      "포스트아포칼립스",
-      "fps",
-      "생존",
-      "리마스터"
-    ]
-  },
-  "322500": {
-    "appid": 322500,
-    "name": "SUPERHOT",
-    "developer": "SUPERHOT Team",
-    "ccu": 76950,
-    "positive": 194750,
-    "negative": 850,
-    "average_2weeks": 12190,
-    "owners": 2337000,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "퍼즐": 1,
-      "시간조작": 1,
-      "전략": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "FPS",
-      "퍼즐",
-      "시간조작",
-      "전략",
-      "인디"
-    ]
-  },
-  "324800": {
-    "appid": 324800,
-    "name": "Shadow Warrior 2",
-    "developer": "Flying Wild Hog",
-    "ccu": 65445,
-    "positive": 165686,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1988232,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "핵앤슬래시": 1,
-      "협동": 1,
-      "루팅": 1,
-      "액션": 1
-    },
-    "tags_list": [
-      "FPS",
-      "핵앤슬래시",
-      "협동",
-      "루팅",
-      "액션"
-    ]
-  },
-  "359550": {
-    "appid": 359550,
-    "name": "Tom Clancy's Rainbow Six Siege",
-    "developer": "Ubisoft Montreal",
-    "ccu": 73547,
-    "positive": 173785,
-    "negative": 1275,
-    "average_2weeks": 12213,
-    "owners": 2085420,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "전술": 1,
-      "경쟁": 1,
-      "팀": 1,
-      "파괴": 1
-    },
-    "tags_list": [
-      "fps",
-      "전술",
-      "경쟁",
-      "팀",
-      "파괴"
-    ]
-  },
-  "362890": {
-    "appid": 362890,
-    "name": "Black Mesa",
-    "developer": "Crowbar Collective",
-    "ccu": 82165,
-    "positive": 207786,
-    "negative": 594,
-    "average_2weeks": 12989,
-    "owners": 2493432,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "SF": 1,
-      "리메이크": 1,
-      "퍼즐": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "SF",
-      "리메이크",
-      "퍼즐",
-      "싱글플레이어"
-    ]
-  },
-  "379720": {
-    "appid": 379720,
-    "name": "DOOM",
-    "developer": "id Software",
-    "ccu": 80407,
-    "positive": 203485,
-    "negative": 680,
-    "average_2weeks": 12743,
-    "owners": 2441820,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "액션": 1,
-      "고어": 1,
-      "클래식": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "액션",
-      "고어",
-      "클래식",
-      "싱글플레이어"
-    ]
-  },
-  "393380": {
-    "appid": 393380,
-    "name": "Squad",
-    "developer": "Offworld",
-    "ccu": 70792,
-    "positive": 177713,
-    "negative": 1190,
-    "average_2weeks": 11301,
-    "owners": 2132556,
-    "genre": "FPS",
-    "tags": {
-      "전술": 1,
-      "fps": 1,
-      "리얼리즘": 1,
-      "팀플레이": 1,
-      "전쟁": 1
-    },
-    "tags_list": [
-      "전술",
-      "fps",
-      "리얼리즘",
-      "팀플레이",
-      "전쟁"
-    ]
-  },
-  "397540": {
-    "appid": 397540,
-    "name": "Borderlands 3",
-    "developer": "Gearbox Software",
-    "ccu": 65202,
-    "positive": 161586,
-    "negative": 1530,
-    "average_2weeks": 10506,
-    "owners": 1939032,
-    "genre": "FPS",
-    "tags": {
-      "루터슈터": 1,
-      "협동": 1,
-      "fps": 1,
-      "파밍": 1,
-      "액션": 1
-    },
-    "tags_list": [
-      "루터슈터",
-      "협동",
-      "fps",
-      "파밍",
-      "액션"
-    ]
-  },
-  "412020": {
-    "appid": 412020,
-    "name": "Metro Exodus",
-    "developer": "4A Games",
-    "ccu": 74985,
-    "positive": 181900,
-    "negative": 1105,
-    "average_2weeks": 12241,
-    "owners": 2182800,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "포스트아포칼립스": 1,
-      "싱글플레이어": 1,
-      "스토리": 1,
-      "공포": 1
-    },
-    "tags_list": [
-      "fps",
-      "포스트아포칼립스",
-      "싱글플레이어",
-      "스토리",
-      "공포"
-    ]
-  },
-  "480490": {
-    "appid": 480490,
-    "name": "Prey",
-    "developer": "Arkane Studios",
-    "ccu": 71627,
-    "positive": 173715,
-    "negative": 1275,
-    "average_2weeks": 11701,
-    "owners": 2084580,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "sf": 1,
-      "싱글플레이어": 1,
-      "공포": 1,
-      "탐험": 1
-    },
-    "tags_list": [
-      "fps",
-      "sf",
-      "싱글플레이어",
-      "공포",
-      "탐험"
-    ]
-  },
-  "493520": {
-    "appid": 493520,
-    "name": "GTFO",
-    "developer": "10 Chambers",
-    "ccu": 70262,
-    "positive": 177678,
-    "negative": 1190,
-    "average_2weeks": 11093,
-    "owners": 2132136,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "협동": 1,
-      "공포": 1,
-      "하드코어": 1,
-      "잠입": 1
-    },
-    "tags_list": [
-      "FPS",
-      "협동",
-      "공포",
-      "하드코어",
-      "잠입"
-    ]
-  },
-  "501590": {
-    "appid": 501590,
-    "name": "Bulletstorm: Full Clip Edition",
-    "developer": "People Can Fly",
-    "ccu": 63877,
-    "positive": 161691,
-    "negative": 1530,
-    "average_2weeks": 10086,
-    "owners": 1940292,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "스킬샷": 1,
-      "액션": 1,
-      "SF": 1,
-      "코미디": 1
-    },
-    "tags_list": [
-      "FPS",
-      "스킬샷",
-      "액션",
-      "SF",
-      "코미디"
-    ]
-  },
-  "519860": {
-    "appid": 519860,
-    "name": "DUSK",
-    "developer": "David Szymanski",
-    "ccu": 85737,
-    "positive": 216880,
-    "negative": 425,
-    "average_2weeks": 13565,
-    "owners": 2602560,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "레트로": 1,
-      "호러": 1,
-      "속도감": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "FPS",
-      "레트로",
-      "호러",
-      "속도감",
-      "인디"
-    ]
-  },
-  "546560": {
-    "appid": 546560,
-    "name": "Half-Life: Alyx",
-    "developer": "Valve",
-    "ccu": 96163,
-    "positive": 230706,
-    "negative": 169,
-    "average_2weeks": 15786,
-    "owners": 2768472,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "vr": 1,
-      "스토리": 1,
-      "공포": 1,
-      "퍼즐": 1
-    },
-    "tags_list": [
-      "fps",
-      "vr",
-      "스토리",
-      "공포",
-      "퍼즐"
-    ]
-  },
-  "548430": {
-    "appid": 548430,
-    "name": "Deep Rock Galactic",
-    "developer": "Ghost Ship Games",
-    "ccu": 90677,
-    "positive": 216810,
-    "negative": 425,
-    "average_2weeks": 14921,
-    "owners": 2601720,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "협동": 1,
-      "우주": 1,
-      "드워프": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "협동",
-      "우주",
-      "드워프",
-      "멀티플레이어"
-    ]
-  },
-  "552520": {
-    "appid": 552520,
-    "name": "Far Cry 5",
-    "developer": "Ubisoft Montreal",
-    "ccu": 65445,
-    "positive": 165616,
-    "negative": 1444,
-    "average_2weeks": 10345,
-    "owners": 1987392,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "오픈월드": 1,
-      "액션": 1,
-      "협동": 1,
-      "미국": 1
-    },
-    "tags_list": [
-      "FPS",
-      "오픈월드",
-      "액션",
-      "협동",
-      "미국"
-    ]
-  },
-  "553850": {
-    "appid": 553850,
-    "name": "Helldivers 2",
-    "developer": "Arrowhead Game Studios",
-    "ccu": 81785,
-    "positive": 194470,
-    "negative": 850,
-    "average_2weeks": 13506,
-    "owners": 2333640,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "fps": 1,
-      "액션": 1,
-      "민주주의": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "협동",
-      "fps",
-      "액션",
-      "민주주의",
-      "sf"
-    ]
-  },
-  "562860": {
-    "appid": 562860,
-    "name": "Ion Fury",
-    "developer": "Voidpoint",
-    "ccu": 73568,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 11640,
-    "owners": 2233212,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "레트로": 1,
-      "빌드엔진": 1,
-      "사이버펑크": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "레트로",
-      "빌드엔진",
-      "사이버펑크",
-      "싱글플레이어"
-    ]
+      "무료"
+    ],
+    "_source": "steamspy"
   },
   "578080": {
     "appid": 578080,
-    "name": "PUBG: Battlegrounds",
-    "developer": "PUBG Corp",
-    "ccu": 58422,
-    "positive": 135315,
-    "negative": 2125,
-    "average_2weeks": 9833,
-    "owners": 1623780,
-    "genre": "FPS",
+    "name": "PUBG: BATTLEGROUNDS",
+    "developer": "KRAFTON",
+    "ccu": 198500,
+    "positive": 620000,
+    "negative": 410000,
+    "average_2weeks": 14200,
+    "owners": 25000000,
     "tags": {
       "배틀로얄": 1,
       "fps": 1,
-      "서바이벌": 1,
-      "전술": 1,
+      "생존": 1,
+      "멀티플레이어": 1,
       "경쟁": 1
     },
     "tags_list": [
       "배틀로얄",
       "fps",
-      "서바이벌",
-      "전술",
-      "경쟁"
-    ]
-  },
-  "581320": {
-    "appid": 581320,
-    "name": "Insurgency: Sandstorm",
-    "developer": "New World Interactive",
-    "ccu": 76770,
-    "positive": 181935,
-    "negative": 1105,
-    "average_2weeks": 12717,
-    "owners": 2183220,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "전술": 1,
-      "리얼리즘": 1,
-      "밀리터리": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "fps",
-      "전술",
-      "리얼리즘",
-      "밀리터리",
-      "경쟁"
-    ]
-  },
-  "594650": {
-    "appid": 594650,
-    "name": "Hunt: Showdown 1896",
-    "developer": "Crytek",
-    "ccu": 71905,
-    "positive": 181900,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2182800,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "공포": 1,
-      "PvPvE": 1,
-      "서부": 1,
-      "바운티": 1
-    },
-    "tags_list": [
-      "FPS",
-      "공포",
-      "PvPvE",
-      "서부",
-      "바운티"
-    ]
-  },
-  "612880": {
-    "appid": 612880,
-    "name": "Wolfenstein II: The New Colossus",
-    "developer": "MachineGames",
-    "ccu": 71657,
-    "positive": 173715,
-    "negative": 1275,
-    "average_2weeks": 11709,
-    "owners": 2084580,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "싱글플레이어": 1,
-      "스토리": 1,
-      "액션": 1,
-      "나치": 1
-    },
-    "tags_list": [
-      "fps",
-      "싱글플레이어",
-      "스토리",
-      "액션",
-      "나치"
-    ]
-  },
-  "671860": {
-    "appid": 671860,
-    "name": "BattleBit Remastered",
-    "developer": "BattleBit Dev Team",
-    "ccu": 72450,
-    "positive": 181760,
-    "negative": 1105,
-    "average_2weeks": 11565,
-    "owners": 2181120,
-    "genre": "FPS",
-    "tags": {
-      "대규모전투": 1,
-      "fps": 1,
-      "멀티플레이어": 1,
-      "전장": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "대규모전투",
-      "fps",
+      "생존",
       "멀티플레이어",
-      "전장",
-      "인디"
-    ]
-  },
-  "673130": {
-    "appid": 673130,
-    "name": "Amid Evil",
-    "developer": "Indefatigable",
-    "ccu": 76950,
-    "positive": 194645,
-    "negative": 850,
-    "average_2weeks": 12170,
-    "owners": 2335740,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "판타지": 1,
-      "레트로": 1,
-      "마법": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "판타지",
-      "레트로",
-      "마법",
-      "싱글플레이어"
-    ]
-  },
-  "686810": {
-    "appid": 686810,
-    "name": "Hell Let Loose",
-    "developer": "Team17",
-    "ccu": 67547,
-    "positive": 169519,
-    "negative": 1359,
-    "average_2weeks": 10788,
-    "owners": 2034228,
-    "genre": "FPS",
-    "tags": {
-      "전쟁": 1,
-      "fps": 1,
-      "대규모": 1,
-      "팀플레이": 1,
-      "리얼리즘": 1
-    },
-    "tags_list": [
-      "전쟁",
-      "fps",
-      "대규모",
-      "팀플레이",
-      "리얼리즘"
-    ]
-  },
-  "782330": {
-    "appid": 782330,
-    "name": "DOOM Eternal",
-    "developer": "id Software",
-    "ccu": 83624,
-    "positive": 198953,
-    "negative": 765,
-    "average_2weeks": 13809,
-    "owners": 2387436,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "액션": 1,
-      "빠른": 1,
-      "도전적": 1,
-      "데몬": 1
-    },
-    "tags_list": [
-      "fps",
-      "액션",
-      "빠른",
-      "도전적",
-      "데몬"
-    ]
-  },
-  "924970": {
-    "appid": 924970,
-    "name": "Back 4 Blood",
-    "developer": "Turtle Rock Studios",
-    "ccu": 53437,
-    "positive": 135175,
-    "negative": 2125,
-    "average_2weeks": 8441,
-    "owners": 1622100,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "협동": 1,
-      "좀비": 1,
-      "카드": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "협동",
-      "좀비",
-      "카드",
-      "멀티플레이어"
-    ]
-  },
-  "964800": {
-    "appid": 964800,
-    "name": "Prodeus",
-    "developer": "Bounding Box Software",
-    "ccu": 73568,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 11624,
-    "owners": 2231952,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "레트로": 1,
-      "고어": 1,
-      "맵에디터": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "FPS",
-      "레트로",
-      "고어",
-      "맵에디터",
-      "인디"
-    ]
-  },
-  "976730": {
-    "appid": 976730,
-    "name": "Halo: The Master Chief Collection",
-    "developer": "343 Industries",
-    "ccu": 80060,
-    "positive": 194645,
-    "negative": 850,
-    "average_2weeks": 13046,
-    "owners": 2335740,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "싱글플레이어": 1,
-      "협동": 1,
-      "sf": 1,
-      "클래식": 1
-    },
-    "tags_list": [
-      "fps",
-      "싱글플레이어",
-      "협동",
-      "sf",
-      "클래식"
-    ]
-  },
-  "1029690": {
-    "appid": 1029690,
-    "name": "Sniper Elite 5",
-    "developer": "Rebellion",
-    "ccu": 60800,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1844880,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "저격": 1,
-      "잠입": 1,
-      "2차대전": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "FPS",
-      "저격",
-      "잠입",
-      "2차대전",
-      "협동"
-    ]
-  },
-  "1085660": {
-    "appid": 1085660,
-    "name": "Destiny 2",
-    "developer": "Bungie",
-    "ccu": 62648,
-    "positive": 146261,
-    "negative": 1870,
-    "average_2weeks": 10486,
-    "owners": 1755132,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "rpg": 1,
-      "루터슈터": 1,
-      "협동": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "fps",
-      "rpg",
-      "루터슈터",
-      "협동",
-      "sf"
-    ]
-  },
-  "1144200": {
-    "appid": 1144200,
-    "name": "Ready or Not",
-    "developer": "VOID Interactive",
-    "ccu": 75809,
-    "positive": 190209,
-    "negative": 934,
-    "average_2weeks": 12097,
-    "owners": 2282508,
-    "genre": "FPS",
-    "tags": {
-      "전술": 1,
-      "fps": 1,
-      "협동": 1,
-      "리얼리즘": 1,
-      "swat": 1
-    },
-    "tags_list": [
-      "전술",
-      "fps",
-      "협동",
-      "리얼리즘",
-      "swat"
-    ]
+      "경쟁"
+    ],
+    "_source": "steamspy"
   },
   "1172470": {
     "appid": 1172470,
     "name": "Apex Legends",
     "developer": "Respawn Entertainment",
-    "ccu": 70415,
-    "positive": 165581,
-    "negative": 1444,
-    "average_2weeks": 11725,
-    "owners": 1986972,
-    "genre": "FPS",
+    "ccu": 155000,
+    "positive": 840000,
+    "negative": 280000,
+    "average_2weeks": 12400,
+    "owners": 30000000,
     "tags": {
       "배틀로얄": 1,
       "fps": 1,
-      "히어로": 1,
+      "무료": 1,
       "멀티플레이어": 1,
-      "빠른": 1
+      "경쟁": 1
     },
     "tags_list": [
       "배틀로얄",
       "fps",
-      "히어로",
+      "무료",
       "멀티플레이어",
-      "빠른"
-    ]
+      "경쟁"
+    ],
+    "_source": "steamspy"
   },
-  "1229490": {
-    "appid": 1229490,
-    "name": "ULTRAKILL",
-    "developer": "Arsi 'Hakita' Patala",
-    "ccu": 87552,
-    "positive": 221324,
-    "negative": 340,
-    "average_2weeks": 13856,
-    "owners": 2655888,
-    "genre": "FPS",
+  "3240220": {
+    "appid": 3240220,
+    "name": "Marvel Rivals",
+    "developer": "NetEase Games",
+    "ccu": 148000,
+    "positive": 520000,
+    "negative": 95000,
+    "average_2weeks": 13800,
+    "owners": 12000000,
     "tags": {
-      "FPS": 1,
-      "레트로": 1,
-      "스타일리시": 1,
-      "속도감": 1,
-      "인디": 1
+      "fps": 1,
+      "슈퍼히어로": 1,
+      "팀기반": 1,
+      "무료": 1,
+      "멀티플레이어": 1
     },
     "tags_list": [
-      "FPS",
-      "레트로",
-      "스타일리시",
-      "속도감",
-      "인디"
-    ]
+      "fps",
+      "슈퍼히어로",
+      "팀기반",
+      "무료",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "553850": {
+    "appid": 553850,
+    "name": "Helldivers 2",
+    "developer": "Arrowhead Game Studios",
+    "ccu": 98000,
+    "positive": 420000,
+    "negative": 85000,
+    "average_2weeks": 7200,
+    "owners": 8000000,
+    "tags": {
+      "fps": 1,
+      "협동": 1,
+      "슈터": 1,
+      "sf": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "fps",
+      "협동",
+      "슈터",
+      "sf",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "2612830": {
+    "appid": 2612830,
+    "name": "Delta Force",
+    "developer": "TiMi Studio Group",
+    "ccu": 68000,
+    "positive": 240000,
+    "negative": 82000,
+    "average_2weeks": 4900,
+    "owners": 5000000,
+    "tags": {
+      "fps": 1,
+      "배틀로얄": 1,
+      "멀티플레이어": 1,
+      "무료": 1,
+      "전술": 1
+    },
+    "tags_list": [
+      "fps",
+      "배틀로얄",
+      "멀티플레이어",
+      "무료",
+      "전술"
+    ],
+    "_source": "steamspy"
+  },
+  "440": {
+    "appid": 440,
+    "name": "Team Fortress 2",
+    "developer": "Valve",
+    "ccu": 76000,
+    "positive": 720000,
+    "negative": 95000,
+    "average_2weeks": 5600,
+    "owners": 28000000,
+    "tags": {
+      "fps": 1,
+      "팀기반": 1,
+      "무료": 1,
+      "클래식": 1,
+      "캐릭터": 1
+    },
+    "tags_list": [
+      "fps",
+      "팀기반",
+      "무료",
+      "클래식",
+      "캐릭터"
+    ],
+    "_source": "steamspy"
+  },
+  "236390": {
+    "appid": 236390,
+    "name": "War Thunder",
+    "developer": "Gaijin Entertainment",
+    "ccu": 50000,
+    "positive": 380000,
+    "negative": 280000,
+    "average_2weeks": 3400,
+    "owners": 25000000,
+    "tags": {
+      "전쟁": 1,
+      "멀티플레이어": 1,
+      "무료": 1,
+      "전투기": 1,
+      "탱크": 1
+    },
+    "tags_list": [
+      "전쟁",
+      "멀티플레이어",
+      "무료",
+      "전투기",
+      "탱크"
+    ],
+    "_source": "steamspy"
+  },
+  "782330": {
+    "appid": 782330,
+    "name": "DOOM Eternal",
+    "developer": "id Software",
+    "ccu": 16000,
+    "positive": 260000,
+    "negative": 12000,
+    "average_2weeks": 2400,
+    "owners": 4200000,
+    "tags": {
+      "fps": 1,
+      "액션": 1,
+      "악마": 1,
+      "싱글플레이어": 1,
+      "빠른속도": 1
+    },
+    "tags_list": [
+      "fps",
+      "액션",
+      "악마",
+      "싱글플레이어",
+      "빠른속도"
+    ],
+    "_source": "steamspy"
   },
   "1237970": {
     "appid": 1237970,
     "name": "Titanfall 2",
     "developer": "Respawn Entertainment",
-    "ccu": 85287,
-    "positive": 203485,
-    "negative": 680,
-    "average_2weeks": 14063,
-    "owners": 2441820,
-    "genre": "FPS",
+    "ccu": 28000,
+    "positive": 310000,
+    "negative": 14000,
+    "average_2weeks": 2200,
+    "owners": 6000000,
     "tags": {
       "fps": 1,
-      "메카": 1,
-      "빠른": 1,
-      "파쿠르": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "fps",
-      "메카",
-      "빠른",
-      "파쿠르",
-      "스토리"
-    ]
-  },
-  "1238840": {
-    "appid": 1238840,
-    "name": "Battlefield 1",
-    "developer": "DICE",
-    "ccu": 72255,
-    "positive": 181865,
-    "negative": 1105,
-    "average_2weeks": 11513,
-    "owners": 2182380,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "전쟁": 1,
+      "이동성": 1,
+      "싱글플레이어": 1,
       "멀티플레이어": 1,
-      "대규모전투": 1,
-      "현실적": 1
+      "sf": 1
     },
     "tags_list": [
-      "FPS",
-      "전쟁",
+      "fps",
+      "이동성",
+      "싱글플레이어",
       "멀티플레이어",
-      "대규모전투",
-      "현실적"
-    ]
+      "sf"
+    ],
+    "_source": "steamspy"
   },
-  "1240440": {
-    "appid": 1240440,
-    "name": "Halo Infinite",
-    "developer": "343 Industries",
-    "ccu": 60893,
-    "positive": 146191,
-    "negative": 1870,
-    "average_2weeks": 10018,
-    "owners": 1754292,
-    "genre": "FPS",
+  "1085660": {
+    "appid": 1085660,
+    "name": "Destiny 2",
+    "developer": "Bungie",
+    "ccu": 45000,
+    "positive": 480000,
+    "negative": 320000,
+    "average_2weeks": 3800,
+    "owners": 18000000,
     "tags": {
       "fps": 1,
-      "싱글플레이어": 1,
-      "sf": 1,
-      "오픈월드": 1,
-      "멀티플레이어": 1
+      "mmo": 1,
+      "무료": 1,
+      "협동": 1,
+      "sf": 1
     },
     "tags_list": [
       "fps",
-      "싱글플레이어",
-      "sf",
-      "오픈월드",
-      "멀티플레이어"
-    ]
+      "mmo",
+      "무료",
+      "협동",
+      "sf"
+    ],
+    "_source": "steamspy"
   },
-  "1252330": {
-    "appid": 1252330,
-    "name": "DEATHLOOP",
-    "developer": "Arkane Studios",
-    "ccu": 65334,
-    "positive": 157639,
-    "negative": 1615,
-    "average_2weeks": 10709,
-    "owners": 1891668,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "싱글플레이어": 1,
-      "시간루프": 1,
-      "액션": 1,
-      "스텔스": 1
-    },
-    "tags_list": [
-      "fps",
-      "싱글플레이어",
-      "시간루프",
-      "액션",
-      "스텔스"
-    ]
-  },
-  "1328590": {
-    "appid": 1328590,
-    "name": "Turbo Overkill",
-    "developer": "Trigger Happy Interactive",
-    "ccu": 78669,
-    "positive": 198848,
-    "negative": 765,
-    "average_2weeks": 12421,
-    "owners": 2386176,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "사이버펑크": 1,
-      "레트로": 1,
-      "속도감": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "FPS",
-      "사이버펑크",
-      "레트로",
-      "속도감",
-      "인디"
-    ]
-  },
-  "1361210": {
-    "appid": 1361210,
-    "name": "Warhammer 40,000: Darktide",
-    "developer": "Fatshark",
-    "ccu": 63414,
-    "positive": 157604,
-    "negative": 1615,
-    "average_2weeks": 10197,
-    "owners": 1891248,
-    "genre": "FPS",
+  "550": {
+    "appid": 550,
+    "name": "Left 4 Dead 2",
+    "developer": "Valve",
+    "ccu": 34000,
+    "positive": 420000,
+    "negative": 15000,
+    "average_2weeks": 1800,
+    "owners": 25000000,
     "tags": {
       "협동": 1,
+      "공포": 1,
+      "좀비": 1,
       "fps": 1,
-      "근접전": 1,
-      "sf": 1,
-      "워해머": 1
+      "멀티플레이어": 1
     },
     "tags_list": [
       "협동",
-      "fps",
-      "근접전",
-      "sf",
-      "워해머"
-    ]
-  },
-  "1643320": {
-    "appid": 1643320,
-    "name": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
-    "developer": "GSC Game World",
-    "ccu": 56502,
-    "positive": 135070,
-    "negative": 2125,
-    "average_2weeks": 9321,
-    "owners": 1620840,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "오픈월드": 1,
-      "공포": 1,
-      "서바이벌": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "오픈월드",
       "공포",
-      "서바이벌",
-      "싱글플레이어"
-    ]
-  },
-  "1715130": {
-    "appid": 1715130,
-    "name": "Crysis Remastered",
-    "developer": "Crytek",
-    "ccu": 57798,
-    "positive": 146191,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1754292,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "SF": 1,
-      "그래픽": 1,
-      "나노수트": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "SF",
-      "그래픽",
-      "나노수트",
-      "싱글플레이어"
-    ]
-  },
-  "1938090": {
-    "appid": 1938090,
-    "name": "Call of Duty: Modern Warfare III",
-    "developer": "Sledgehammer Games",
-    "ccu": 51340,
-    "positive": 117705,
-    "negative": 2550,
-    "average_2weeks": 8694,
-    "owners": 1412460,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "밀리터리": 1,
-      "멀티플레이어": 1,
-      "액션": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
+      "좀비",
       "fps",
-      "밀리터리",
-      "멀티플레이어",
-      "액션",
-      "경쟁"
-    ]
-  },
-  "2138710": {
-    "appid": 2138710,
-    "name": "Resident Evil Village Gold Edition",
-    "developer": "CAPCOM",
-    "ccu": 73568,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 11616,
-    "owners": 2231952,
-    "genre": "공포",
-    "tags": {
-      "공포": 1,
-      "액션": 1,
-      "FPS": 1,
-      "뱀파이어": 1,
-      "서바이벌": 1
-    },
-    "tags_list": [
-      "공포",
-      "액션",
-      "FPS",
-      "뱀파이어",
-      "서바이벌"
-    ]
-  },
-  "2357570": {
-    "appid": 2357570,
-    "name": "Overwatch 2",
-    "developer": "Blizzard Entertainment",
-    "ccu": 51445,
-    "positive": 117740,
-    "negative": 2550,
-    "average_2weeks": 8722,
-    "owners": 1412880,
-    "genre": "FPS",
-    "tags": {
-      "히어로": 1,
-      "fps": 1,
-      "팀": 1,
-      "경쟁": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "히어로",
-      "fps",
-      "팀",
-      "경쟁",
       "멀티플레이어"
-    ]
+    ],
+    "_source": "steamspy"
+  },
+  "107410": {
+    "appid": 107410,
+    "name": "Arma 3",
+    "developer": "Bohemia Interactive",
+    "ccu": 22000,
+    "positive": 230000,
+    "negative": 18000,
+    "average_2weeks": 1600,
+    "owners": 8000000,
+    "tags": {
+      "군사": 1,
+      "시뮬레이션": 1,
+      "fps": 1,
+      "협동": 1,
+      "모딩": 1
+    },
+    "tags_list": [
+      "군사",
+      "시뮬레이션",
+      "fps",
+      "협동",
+      "모딩"
+    ],
+    "_source": "steamspy"
+  },
+  "1144200": {
+    "appid": 1144200,
+    "name": "Ready or Not",
+    "developer": "VOID Interactive",
+    "ccu": 35000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 2600,
+    "owners": 3200000,
+    "tags": {
+      "fps": 1,
+      "전술": 1,
+      "경찰": 1,
+      "협동": 1,
+      "singlplayer": 1
+    },
+    "tags_list": [
+      "fps",
+      "전술",
+      "경찰",
+      "협동",
+      "singlplayer"
+    ],
+    "_source": "steamspy"
+  },
+  "2183900": {
+    "appid": 2183900,
+    "name": "Warhammer 40,000: Space Marine 2",
+    "developer": "Saber Interactive",
+    "ccu": 80000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 5900,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "협동": 1,
+      "sf": 1,
+      "슈터": 1,
+      "전쟁": 1
+    },
+    "tags_list": [
+      "액션",
+      "협동",
+      "sf",
+      "슈터",
+      "전쟁"
+    ],
+    "_source": "steamspy"
   }
 }

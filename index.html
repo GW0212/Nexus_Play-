@@ -554,9 +554,9 @@ body {
   margin-bottom:5px;
 }
 
-.hero-meta { display:flex; gap:10px; align-items:center; margin-bottom:6px; }
-.hero-rating { font-family:'Space Mono', monospace; font-size:0.7rem; color:var(--accent3); }
-.hero-dev { font-size:0.7rem; color:var(--text-muted); }
+.hero-meta { display:flex; gap:0; align-items:center; margin-bottom:6px; flex-wrap:wrap; }
+.hero-rating { font-family:'Space Mono', monospace; font-size:0.72rem; font-weight:700; color:#1a1a2e; background:var(--accent3); padding:2px 7px; border-radius:6px 0 0 6px; letter-spacing:0.02em; }
+.hero-dev { font-size:0.68rem; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.12); padding:2px 8px; border-radius:0 6px 6px 0; backdrop-filter:blur(4px); border-left:1px solid rgba(255,255,255,0.2); }
 
 .hero-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:8px; }
 
@@ -1139,8 +1139,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 :root[data-theme="light"] .hero-card-overlay{background:linear-gradient(to top, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.35) 45%, transparent 100%)}
 :root[data-theme="light"] .hero-title{color:#0f172a!important;text-shadow:none}
 :root[data-theme="light"] .hero-genre-badge{background:rgba(15,23,42,0.08);color:#334155}
-:root[data-theme="light"] .hero-rating{color:#d97706}
-:root[data-theme="light"] .hero-dev{color:#475569}
+::root[data-theme="light"] .hero-rating{color:#1a1a2e;background:#d97706}
+::root[data-theme="light"] .hero-dev{color:#334155!important;background:rgba(15,23,42,0.08);border-left-color:rgba(15,23,42,0.2)}
 :root[data-theme="light"] .ob-footer{background:linear-gradient(to top, rgba(238,243,251,0.98) 70%, transparent)}
 :root[data-theme="light"] .ob-header{color:#0f172a}
 :root[data-theme="light"] .ob-title{background:linear-gradient(135deg, #0f172a 20%, #0f766e 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -2322,6 +2322,37 @@ function buildSteamDetailMap(...sources) {
   return map;
 }
 async function fetchMostPlayedLive(forceRemote = false) {
+  // Steam 공식 인기 게임 appid→이름 매핑 (API에서 이름이 누락될 경우 사용)
+  const KNOWN_APPIDS = {
+    730: 'Counter-Strike 2', 570: 'Dota 2', 578080: 'PUBG: BATTLEGROUNDS',
+    1172470: 'Apex Legends', 1245620: 'Elden Ring', 1086940: 'Baldur\'s Gate 3',
+    271590: 'Grand Theft Auto V', 1174180: 'Red Dead Redemption 2',
+    381210: 'Dead by Daylight', 440: 'Team Fortress 2', 252490: 'Rust',
+    550: 'Left 4 Dead 2', 4000: 'Garry\'s Mod', 289070: 'Sid Meier\'s Civilization VI',
+    620: 'Portal 2', 582010: 'Monster Hunter: World', 292030: 'The Witcher 3: Wild Hunt',
+    1091500: 'Cyberpunk 2077', 367520: 'Hollow Knight', 553850: 'Helldivers 2',
+    107410: 'Arma 3', 431960: 'Wallpaper Engine', 3240220: 'Marvel Rivals',
+    236390: 'War Thunder', 1144200: 'Ready or Not', 1085660: 'Destiny 2',
+    105600: 'Terraria', 2357570: 'Enshrouded', 227300: 'Euro Truck Simulator 2',
+    1623730: 'Palworld', 2358720: 'Black Myth: Wukong', 2215430: 'Ghost of Tsushima DIRECTOR\'S CUT',
+    1817070: 'Marvel\'s Spider-Man Remastered', 892970: 'Valheim',
+    526870: 'Satisfactory', 2246340: 'Monster Hunter Wilds',
+    2767030: 'Marvel Rivals', 2612830: 'Delta Force',
+    2694490: 'Path of Exile 2', 2183900: 'Warhammer 40,000: Space Marine 2',
+    1295660: 'Sid Meier\'s Civilization VII', 1364780: 'Street Fighter 6',
+    1778820: 'TEKKEN 8', 1790600: 'Dragon Ball: Sparking! ZERO',
+    1551360: 'Forza Horizon 5', 2440510: 'Forza Motorsport',
+    374320: 'Dark Souls III', 1145360: 'Hades', 632470: 'Stardew Valley',
+    1627720: 'Dave the Diver', 1888160: 'Hogwarts Legacy',
+    814380: 'Sekiro: Shadows Die Twice', 1237970: 'Titanfall 2',
+    2685760: 'Wuthering Waves', 2074920: 'The First Descendant',
+    2139460: 'Once Human', 1203620: 'Enshrouded',
+    3321460: 'Crimson Desert',  // 붉은사막
+    2379780: 'Hogwarts Legacy', 1868140: 'Lies of P',
+    1794680: 'Mortal Kombat 1', 1942280: 'Starfield',
+    1282100: 'The Last of Us Part I', 1687950: 'Forspoken',
+    1462040: 'Trek to Yomi', 782330: 'DOOM Eternal',
+  };
   const chart = await fetchJsonViaAnyProxy('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json', 8000, forceRemote);
   const ranks = (chart?.response?.ranks || chart?.response?.items || chart?.ranks || chart?.items || [])
     .map((row, idx) => ({
@@ -2344,7 +2375,8 @@ async function fetchMostPlayedLive(forceRemote = false) {
   return ranks.map((row, idx) => {
     const detail = detailMap.get(row.appid);
     const local = getGameById(row.appid);
-    const title = detail?.name || local?.title || `App ${row.appid}`;
+    // KNOWN_APPIDS → detail → local → fallback 순으로 이름 결정
+    const title = detail?.name || local?.title || KNOWN_APPIDS[row.appid] || `App ${row.appid}`;
     const dev = detail?.developer || local?.dev || '';
     const tagsObj = detail?.tags || Object.fromEntries((local?.tags || []).map(t => [t, 1]));
     return {
@@ -2366,10 +2398,16 @@ async function fetchMostPlayedLive(forceRemote = false) {
 async function steamspyFetch(params) {
   const {request, tag, appid, forceRemote = false} = params;
 
+  // mostplayed는 항상 라이브 Steam Charts API를 먼저 시도해야 실시간 인기 리스트가 정확히 표시됨
+  if (request === 'mostplayed') {
+    const liveMostPlayed = await fetchMostPlayedLive(forceRemote);
+    if (liveMostPlayed?.length) return liveMostPlayed;
+    // 라이브 실패 시 로컬 fallback
+    const d = await loadLocalData('mostplayed.json');
+    if (d) return d;
+  }
+
   if (!forceRemote) {
-    if (request === 'mostplayed') {
-      const d = await loadLocalData('mostplayed.json'); if (d) return d;
-    }
     if (request === 'top100in2weeks') {
       const d = await loadLocalData('hot.json'); if (d) return d;
     }
@@ -2383,11 +2421,6 @@ async function steamspyFetch(params) {
       const f = TAG_FILE_MAP[tag];
       if (f) { const d = await loadLocalData('tags/' + f + '.json'); if (d) return d; }
     }
-  }
-
-  if (request === 'mostplayed') {
-    const liveMostPlayed = await fetchMostPlayedLive(forceRemote);
-    if (liveMostPlayed?.length) return liveMostPlayed;
   }
 
   const PROXIES = [
@@ -2837,15 +2870,20 @@ function sanitizeTrustedSteamApp(app) {
 }
 
 function makeSteamCard(app, rank, options = {}) {
-  const safeApp = sanitizeTrustedSteamApp(app);
-  if (options.safeOnly && !safeApp) return '';
+  const safeApp = options.useLiveAppid ? null : sanitizeTrustedSteamApp(app);
+  if (!options.useLiveAppid && options.safeOnly && !safeApp) return '';
   app = safeApp || app;
   const tags = Object.keys(app.tags || {}).slice(0, 4);
   const ccu  = formatCCU(app.ccu);
   const score = getScoreLabel(app.positive||0, app.negative||0);
   const showLive = options.showLive === true;
-  const thumbId = resolveSteamThumbId(app, app.name);
-  const imgSrc = steamThumb(app, app.name);
+  // useLiveAppid: Steam 라이브 데이터는 appid가 이미 정식 ID - THUMB_OVERRIDES 우선순위 낮춤
+  const thumbId = options.useLiveAppid
+    ? Number(app.appid || app.id || 0)
+    : resolveSteamThumbId(app, app.name);
+  if (!thumbId) return '';
+  const displayName = app.name || app.title || '';
+  const imgSrc = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/header.jpg`;
   const fallback1 = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
   const fallback2 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg`;
   const fallback3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
@@ -2853,12 +2891,12 @@ function makeSteamCard(app, rank, options = {}) {
   return `
     <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
-        <img class="steam-card-img" src="${imgSrc}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
+        <img class="steam-card-img" src="${imgSrc}" alt="${displayName.replace(/"/g,'')}" loading="lazy"
              onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${fallback1}'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='${fallback2}'}else if(this.dataset.fb==='2'){this.dataset.fb='3';this.src='${fallback3}'}else if(this.dataset.fb==='3'){this.dataset.fb='4';this.src='${fallback4}'}else{this.style.display='none'}">
         ${rank ? `<div class="steam-card-rank">${rank}</div>` : ''}
       </div>
       <div class="steam-card-body">
-        <div class="steam-card-title">${app.name||''}</div>
+        <div class="steam-card-title">${displayName}</div>
         <div class="steam-card-stats">
           ${showLive && ccu ? `<div class="steam-stat steam-stat-live"><span class="steam-stat-dot"></span>${ccu} 플레이 중</div>` : ''}
           ${score ? `<div class="steam-stat" style="color:${score.color}">${score.text}</div>` : ''}
@@ -3404,9 +3442,10 @@ function renderHotGrid() {
   let list = [...(_hotRawData[hotSortBy] || [])];
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
   if (statusEl && list.length) statusEl.className = 'hot-status hidden';
-  const safeList = filterTrustedThumbnailGames(list);
+  // Steam 라이브 데이터는 appid가 이미 Steam의 정식 ID이므로 filterTrustedThumbnailGames를 건너뜀
+  const safeList = list.filter(app => Number(app.appid || app.id) > 0);
   gridEl.innerHTML = safeList.length
-    ? safeList.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true, safeOnly:true })).join('')
+    ? safeList.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true, useLiveAppid:true })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 데이터 연결이 지연되어 대체 인기 리스트를 표시하지 못했습니다. 새로고침 후 다시 확인해주세요.'}</div>`;
 }
 

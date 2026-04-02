@@ -1,652 +1,152 @@
 {
-  "228380": {
-    "appid": 228380,
-    "name": "Project CARS",
-    "developer": "Slightly Mad Studios",
-    "ccu": 60800,
-    "positive": 153985,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1847820,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "시뮬레이션": 1,
-      "자동차": 1,
-      "멀티플레이어": 1,
-      "현실적": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "시뮬레이션",
-      "자동차",
-      "멀티플레이어",
-      "현실적"
-    ]
-  },
-  "244050": {
-    "appid": 244050,
-    "name": "art of rally",
-    "developer": "Funselektor Labs",
-    "ccu": 78669,
-    "positive": 198953,
-    "negative": 765,
-    "average_2weeks": 12421,
-    "owners": 2387436,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "랠리": 1,
-      "인디": 1,
-      "아트": 1,
-      "미니멀": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "랠리",
-      "인디",
-      "아트",
-      "미니멀"
-    ]
-  },
-  "244210": {
-    "appid": 244210,
-    "name": "Assetto Corsa",
-    "developer": "Kunos Simulazioni",
-    "ccu": 81972,
-    "positive": 203555,
-    "negative": 680,
-    "average_2weeks": 13179,
-    "owners": 2442660,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "시뮬레이션": 1,
-      "리얼리즘": 1,
-      "모딩": 1,
-      "트랙": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "시뮬레이션",
-      "리얼리즘",
-      "모딩",
-      "트랙"
-    ]
-  },
-  "284160": {
-    "appid": 284160,
-    "name": "BeamNG.drive",
-    "developer": "BeamNG",
-    "ccu": 87272,
-    "positive": 216985,
-    "negative": 425,
-    "average_2weeks": 14013,
-    "owners": 2603820,
-    "genre": "레이싱",
-    "tags": {
-      "물리": 1,
-      "차량": 1,
-      "충돌": 1,
-      "샌드박스": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "물리",
-      "차량",
-      "충돌",
-      "샌드박스",
-      "시뮬레이션"
-    ]
-  },
-  "310560": {
-    "appid": 310560,
-    "name": "DiRT Rally",
-    "developer": "Codemasters",
-    "ccu": 76950,
-    "positive": 194785,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2337420,
-    "genre": "레이싱",
-    "tags": {
-      "랠리": 1,
-      "레이싱": 1,
-      "오프로드": 1,
-      "시뮬레이션": 1,
-      "현실적": 1
-    },
-    "tags_list": [
-      "랠리",
-      "레이싱",
-      "오프로드",
-      "시뮬레이션",
-      "현실적"
-    ]
-  },
-  "352170": {
-    "appid": 352170,
-    "name": "TrackMania Turbo",
-    "developer": "Nadeo",
-    "ccu": 68637,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 10837,
-    "owners": 2085000,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "아케이드": 1,
-      "스턴트": 1,
-      "속도감": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "아케이드",
-      "스턴트",
-      "속도감",
-      "멀티플레이어"
-    ]
-  },
-  "378860": {
-    "appid": 378860,
-    "name": "Project CARS 2",
-    "developer": "Slightly Mad Studios",
-    "ccu": 65445,
-    "positive": 165651,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1987812,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "시뮬레이션": 1,
-      "기상변화": 1,
-      "현실적": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "시뮬레이션",
-      "기상변화",
-      "현실적",
-      "멀티플레이어"
-    ]
-  },
-  "550320": {
-    "appid": 550320,
-    "name": "Art of Rally",
-    "developer": "Funselektor Labs",
-    "ccu": 78425,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 12610,
-    "owners": 2335320,
-    "genre": "레이싱",
-    "tags": {
-      "랠리": 1,
-      "탑다운": 1,
-      "아트": 1,
-      "힐링": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "랠리",
-      "탑다운",
-      "아트",
-      "힐링",
-      "인디"
-    ]
-  },
-  "569480": {
-    "appid": 569480,
-    "name": "Drag",
-    "developer": "Oronaan",
-    "ccu": 53437,
-    "positive": 135280,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1623360,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "드래그": 1,
-      "자동차": 1,
-      "튜닝": 1,
-      "아케이드": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "드래그",
-      "자동차",
-      "튜닝",
-      "아케이드"
-    ]
-  },
-  "675010": {
-    "appid": 675010,
-    "name": "MudRunner",
-    "developer": "Saber Interactive",
-    "ccu": 70067,
-    "positive": 173715,
-    "negative": 1275,
-    "average_2weeks": 11285,
-    "owners": 2084580,
-    "genre": "레이싱",
-    "tags": {
-      "오프로드": 1,
-      "트럭": 1,
-      "진흙": 1,
-      "협동": 1,
-      "도전적": 1
-    },
-    "tags_list": [
-      "오프로드",
-      "트럭",
-      "진흙",
-      "협동",
-      "도전적"
-    ]
-  },
-  "690790": {
-    "appid": 690790,
-    "name": "DiRT Rally 2.0",
-    "developer": "Codemasters",
-    "ccu": 76769,
-    "positive": 190349,
-    "negative": 934,
-    "average_2weeks": 12353,
-    "owners": 2284188,
-    "genre": "레이싱",
-    "tags": {
-      "랠리": 1,
-      "레이싱": 1,
-      "리얼리즘": 1,
-      "도전적": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "랠리",
-      "레이싱",
-      "리얼리즘",
-      "도전적",
-      "시뮬레이션"
-    ]
-  },
-  "805550": {
-    "appid": 805550,
-    "name": "Assetto Corsa Competizione",
-    "developer": "Kunos Simulazioni",
-    "ccu": 75118,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 12096,
-    "owners": 2233212,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "GT레이싱": 1,
-      "리얼리즘": 1,
-      "경쟁": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "GT레이싱",
-      "리얼리즘",
-      "경쟁",
-      "시뮬레이션"
-    ]
-  },
-  "1085510": {
-    "appid": 1085510,
-    "name": "MotoGP 21",
-    "developer": "Milestone S.r.l.",
-    "ccu": 53437,
-    "positive": 135175,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1622100,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "모터사이클": 1,
-      "시뮬레이션": 1,
-      "MotoGP": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "모터사이클",
-      "시뮬레이션",
-      "MotoGP",
-      "멀티플레이어"
-    ]
-  },
-  "1222680": {
-    "appid": 1222680,
-    "name": "Need for Speed Heat",
-    "developer": "Ghost Games",
-    "ccu": 65382,
-    "positive": 161621,
-    "negative": 1530,
-    "average_2weeks": 10554,
-    "owners": 1939452,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "오픈월드": 1,
-      "경찰": 1,
-      "튜닝": 1,
-      "야간": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "오픈월드",
-      "경찰",
-      "튜닝",
-      "야간"
-    ]
-  },
-  "1238080": {
-    "appid": 1238080,
-    "name": "Burnout Paradise Remastered",
-    "developer": "Criterion Games",
-    "ccu": 73350,
-    "positive": 181935,
-    "negative": 1105,
-    "average_2weeks": 11805,
-    "owners": 2183220,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "아케이드": 1,
-      "파괴": 1,
-      "오픈월드": 1,
-      "속도": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "아케이드",
-      "파괴",
-      "오픈월드",
-      "속도"
-    ]
-  },
-  "1271700": {
-    "appid": 1271700,
-    "name": "HOT WHEELS UNLEASHED",
-    "developer": "Milestone S.r.l.",
-    "ccu": 67032,
-    "positive": 169519,
-    "negative": 1359,
-    "average_2weeks": 10640,
-    "owners": 2034228,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "아케이드": 1,
-      "장난감": 1,
-      "멀티플레이어": 1,
-      "가족": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "아케이드",
-      "장난감",
-      "멀티플레이어",
-      "가족"
-    ]
-  },
-  "1293830": {
-    "appid": 1293830,
-    "name": "F1 2021",
-    "developer": "Codemasters",
-    "ccu": 65445,
-    "positive": 165511,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1986132,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "F1": 1,
-      "시뮬레이션": 1,
-      "스토리": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "F1",
-      "시뮬레이션",
-      "스토리",
-      "멀티플레이어"
-    ]
-  },
-  "1307410": {
-    "appid": 1307410,
-    "name": "GRID Legends",
-    "developer": "Codemasters",
-    "ccu": 59213,
-    "positive": 146156,
-    "negative": 1870,
-    "average_2weeks": 9570,
-    "owners": 1753872,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "멀티플레이어": 1,
-      "스토리": 1,
-      "다양한차종": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "멀티플레이어",
-      "스토리",
-      "다양한차종",
-      "경쟁"
-    ]
-  },
-  "1507390": {
-    "appid": 1507390,
-    "name": "WRC Generations",
-    "developer": "KT Racing",
-    "ccu": 60800,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1844880,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "랠리": 1,
-      "WRC": 1,
-      "시뮬레이션": 1,
-      "하이브리드": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "랠리",
-      "WRC",
-      "시뮬레이션",
-      "하이브리드"
-    ]
-  },
   "1551360": {
     "appid": 1551360,
-    "name": "Forza Horizon 4",
+    "name": "Forza Horizon 5",
     "developer": "Playground Games",
-    "ccu": 78669,
-    "positive": 198918,
-    "negative": 765,
-    "average_2weeks": 12421,
-    "owners": 2387016,
-    "genre": "레이싱",
+    "ccu": 42000,
+    "positive": 320000,
+    "negative": 28000,
+    "average_2weeks": 2600,
+    "owners": 8000000,
     "tags": {
       "레이싱": 1,
       "오픈월드": 1,
       "자동차": 1,
-      "영국": 1,
-      "계절변화": 1
+      "멀티플레이어": 1,
+      "멕시코": 1
     },
     "tags_list": [
       "레이싱",
       "오픈월드",
       "자동차",
-      "영국",
-      "계절변화"
-    ]
-  },
-  "1843760": {
-    "appid": 1843760,
-    "name": "The Crew Motorfest",
-    "developer": "Ubisoft Ivory Tower",
-    "ccu": 57798,
-    "positive": 146121,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1753452,
-    "genre": "스포츠",
-    "tags": {
-      "레이싱": 1,
-      "오픈월드": 1,
-      "스포츠": 1,
-      "멀티플레이어": 1,
-      "축제": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "오픈월드",
-      "스포츠",
       "멀티플레이어",
-      "축제"
-    ]
-  },
-  "1846380": {
-    "appid": 1846380,
-    "name": "Need for Speed Unbound",
-    "developer": "Criterion Games",
-    "ccu": 62290,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 10064,
-    "owners": 1844880,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "오픈월드": 1,
-      "경찰": 1,
-      "아트스타일": 1,
-      "튜닝": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "오픈월드",
-      "경찰",
-      "아트스타일",
-      "튜닝"
-    ]
-  },
-  "1880510": {
-    "appid": 1880510,
-    "name": "Circuit Superstars",
-    "developer": "Original Fire Games",
-    "ccu": 63877,
-    "positive": 161516,
-    "negative": 1530,
-    "average_2weeks": 10086,
-    "owners": 1938192,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "탑뷰": 1,
-      "인디": 1,
-      "아케이드": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "탑뷰",
-      "인디",
-      "아케이드",
-      "멀티플레이어"
-    ]
-  },
-  "2108330": {
-    "appid": 2108330,
-    "name": "F1 23",
-    "developer": "Codemasters",
-    "ccu": 62500,
-    "positive": 153705,
-    "negative": 1700,
-    "average_2weeks": 10120,
-    "owners": 1844460,
-    "genre": "스포츠",
-    "tags": {
-      "F1": 1,
-      "레이싱": 1,
-      "리얼리즘": 1,
-      "경쟁": 1,
-      "스포츠": 1
-    },
-    "tags_list": [
-      "F1",
-      "레이싱",
-      "리얼리즘",
-      "경쟁",
-      "스포츠"
-    ]
-  },
-  "2225040": {
-    "appid": 2225040,
-    "name": "Trackmania",
-    "developer": "Nadeo",
-    "ccu": 73575,
-    "positive": 181865,
-    "negative": 1105,
-    "average_2weeks": 11865,
-    "owners": 2182380,
-    "genre": "스포츠",
-    "tags": {
-      "레이싱": 1,
-      "아케이드": 1,
-      "트랙빌더": 1,
-      "경쟁": 1,
-      "무료": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "아케이드",
-      "트랙빌더",
-      "경쟁",
-      "무료"
-    ]
+      "멕시코"
+    ],
+    "_source": "steamspy"
   },
   "2440510": {
     "appid": 2440510,
     "name": "Forza Motorsport",
     "developer": "Turn 10 Studios",
-    "ccu": 62200,
-    "positive": 153705,
-    "negative": 1700,
-    "average_2weeks": 10040,
-    "owners": 1844460,
-    "genre": "레이싱",
+    "ccu": 20000,
+    "positive": 140000,
+    "negative": 32000,
+    "average_2weeks": 1600,
+    "owners": 3000000,
     "tags": {
       "레이싱": 1,
       "시뮬레이션": 1,
       "자동차": 1,
       "경쟁": 1,
-      "리얼리즘": 1
+      "멀티플레이어": 1
     },
     "tags_list": [
       "레이싱",
       "시뮬레이션",
       "자동차",
       "경쟁",
-      "리얼리즘"
-    ]
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "252950": {
+    "appid": 252950,
+    "name": "Rocket League",
+    "developer": "Psyonix",
+    "ccu": 45000,
+    "positive": 520000,
+    "negative": 95000,
+    "average_2weeks": 3200,
+    "owners": 30000000,
+    "tags": {
+      "스포츠": 1,
+      "레이싱": 1,
+      "축구": 1,
+      "멀티플레이어": 1,
+      "무료": 1
+    },
+    "tags_list": [
+      "스포츠",
+      "레이싱",
+      "축구",
+      "멀티플레이어",
+      "무료"
+    ],
+    "_source": "steamspy"
+  },
+  "2698940": {
+    "appid": 2698940,
+    "name": "The Crew Motorfest",
+    "developer": "Ubisoft",
+    "ccu": 12000,
+    "positive": 80000,
+    "negative": 35000,
+    "average_2weeks": 900,
+    "owners": 1500000,
+    "tags": {
+      "레이싱": 1,
+      "오픈월드": 1,
+      "자동차": 1,
+      "멀티플레이어": 1,
+      "하와이": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "오픈월드",
+      "자동차",
+      "멀티플레이어",
+      "하와이"
+    ],
+    "_source": "steamspy"
+  },
+  "227300": {
+    "appid": 227300,
+    "name": "Euro Truck Simulator 2",
+    "developer": "SCS Software",
+    "ccu": 46000,
+    "positive": 450000,
+    "negative": 18000,
+    "average_2weeks": 3000,
+    "owners": 20000000,
+    "tags": {
+      "운전": 1,
+      "시뮬레이션": 1,
+      "트럭": 1,
+      "유럽": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "운전",
+      "시뮬레이션",
+      "트럭",
+      "유럽",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "431240": {
+    "appid": 431240,
+    "name": "Golf With Your Friends",
+    "developer": "Blacklight Interactive",
+    "ccu": 6000,
+    "positive": 80000,
+    "negative": 4000,
+    "average_2weeks": 400,
+    "owners": 3500000,
+    "tags": {
+      "스포츠": 1,
+      "골프": 1,
+      "협동": 1,
+      "멀티플레이어": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "스포츠",
+      "골프",
+      "협동",
+      "멀티플레이어",
+      "캐주얼"
+    ],
+    "_source": "steamspy"
   }
 }

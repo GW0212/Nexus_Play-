@@ -1,1827 +1,227 @@
 {
-  "500": {
-    "appid": 500,
-    "name": "Left 4 Dead",
-    "developer": "Valve",
-    "ccu": 74953,
-    "positive": 186486,
-    "negative": 1019,
-    "average_2weeks": 12052,
-    "owners": 2237832,
-    "genre": "FPS",
-    "tags": {
-      "좀비": 1,
-      "협동": 1,
-      "fps": 1,
-      "고전": 1,
-      "생존": 1
-    },
-    "tags_list": [
-      "좀비",
-      "협동",
-      "fps",
-      "고전",
-      "생존"
-    ]
-  },
-  "550": {
-    "appid": 550,
-    "name": "Left 4 Dead 2",
-    "developer": "Valve",
-    "ccu": 88862,
-    "positive": 217195,
-    "negative": 425,
-    "average_2weeks": 14437,
-    "owners": 2606340,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "좀비": 1,
-      "fps": 1,
-      "멀티플레이어": 1,
-      "빠른": 1
-    },
-    "tags_list": [
-      "협동",
-      "좀비",
-      "fps",
-      "멀티플레이어",
-      "빠른"
-    ]
-  },
-  "620": {
-    "appid": 620,
-    "name": "Portal 2",
-    "developer": "Valve",
-    "ccu": 97209,
-    "positive": 235749,
-    "negative": 84,
-    "average_2weeks": 15861,
-    "owners": 2828988,
-    "genre": "어드벤처",
-    "tags": {
-      "퍼즐": 1,
-      "협동": 1,
-      "1인칭": 1,
-      "유머": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "협동",
-      "1인칭",
-      "유머",
-      "sf"
-    ]
-  },
-  "47810": {
-    "appid": 47810,
-    "name": "Dragon Age: Origins",
-    "developer": "BioWare",
-    "ccu": 76498,
-    "positive": 186451,
-    "negative": 1019,
-    "average_2weeks": 12464,
-    "owners": 2237412,
-    "genre": "RPG",
-    "tags": {
-      "rpg": 1,
-      "판타지": 1,
-      "협동": 1,
-      "스토리": 1,
-      "선택": 1
-    },
-    "tags_list": [
-      "rpg",
-      "판타지",
-      "협동",
-      "스토리",
-      "선택"
-    ]
-  },
-  "49520": {
-    "appid": 49520,
-    "name": "Borderlands 2",
-    "developer": "Gearbox Software",
-    "ccu": 80009,
-    "positive": 199233,
-    "negative": 765,
-    "average_2weeks": 12845,
-    "owners": 2390796,
-    "genre": "FPS",
-    "tags": {
-      "루터슈터": 1,
-      "협동": 1,
-      "fps": 1,
-      "유머": 1,
-      "파밍": 1
-    },
-    "tags_list": [
-      "루터슈터",
-      "협동",
-      "fps",
-      "유머",
-      "파밍"
-    ]
-  },
-  "107410": {
-    "appid": 107410,
-    "name": "Arma 3",
-    "developer": "Bohemia Interactive",
-    "ccu": 71905,
-    "positive": 182110,
-    "negative": 1105,
-    "average_2weeks": 11405,
-    "owners": 2185320,
-    "genre": "FPS",
-    "tags": {
-      "밀리터리": 1,
-      "FPS": 1,
-      "샌드박스": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "밀리터리",
-      "FPS",
-      "샌드박스",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "108600": {
-    "appid": 108600,
-    "name": "Project Zomboid",
-    "developer": "The Indie Stone",
-    "ccu": 84042,
-    "positive": 203590,
-    "negative": 680,
-    "average_2weeks": 13731,
-    "owners": 2443080,
-    "genre": "시뮬레이션",
-    "tags": {
-      "좀비": 1,
-      "서바이벌": 1,
-      "탑다운": 1,
-      "협동": 1,
-      "리얼리즘": 1
-    },
-    "tags_list": [
-      "좀비",
-      "서바이벌",
-      "탑다운",
-      "협동",
-      "리얼리즘"
-    ]
-  },
-  "218620": {
-    "appid": 218620,
-    "name": "PAYDAY 2",
-    "developer": "OVERKILL",
-    "ccu": 73260,
-    "positive": 182110,
-    "negative": 1105,
-    "average_2weeks": 11781,
-    "owners": 2185320,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "강도": 1,
-      "fps": 1,
-      "멀티플레이어": 1,
-      "전술": 1
-    },
-    "tags_list": [
-      "협동",
-      "강도",
-      "fps",
-      "멀티플레이어",
-      "전술"
-    ]
-  },
-  "227300": {
-    "appid": 227300,
-    "name": "Euro Truck Simulator 2",
-    "developer": "SCS Software",
-    "ccu": 82364,
-    "positive": 199233,
-    "negative": 765,
-    "average_2weeks": 13473,
-    "owners": 2390796,
-    "genre": "시뮬레이션",
-    "tags": {
-      "트럭": 1,
-      "드라이빙": 1,
-      "유럽": 1,
-      "릴렉싱": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "트럭",
-      "드라이빙",
-      "유럽",
-      "릴렉싱",
-      "협동"
-    ]
-  },
-  "230230": {
-    "appid": 230230,
-    "name": "Divinity: Original Sin",
-    "developer": "Larian Studios",
-    "ccu": 73187,
-    "positive": 173820,
-    "negative": 1275,
-    "average_2weeks": 12117,
-    "owners": 2085840,
-    "genre": "RPG",
-    "tags": {
-      "턴제": 1,
-      "rpg": 1,
-      "판타지": 1,
-      "협동": 1,
-      "전략": 1
-    },
-    "tags_list": [
-      "턴제",
-      "rpg",
-      "판타지",
-      "협동",
-      "전략"
-    ]
-  },
-  "230410": {
-    "appid": 230410,
-    "name": "Warframe",
-    "developer": "Digital Extremes",
-    "ccu": 72752,
-    "positive": 173855,
-    "negative": 1275,
-    "average_2weeks": 12001,
-    "owners": 2086260,
-    "genre": "어드벤처",
-    "tags": {
-      "루터슈터": 1,
-      "sf": 1,
-      "협동": 1,
-      "무료": 1,
-      "닌자": 1
-    },
-    "tags_list": [
-      "루터슈터",
-      "sf",
-      "협동",
-      "무료",
-      "닌자"
-    ]
-  },
-  "232090": {
-    "appid": 232090,
-    "name": "Killing Floor 2",
-    "developer": "Tripwire Interactive",
-    "ccu": 68637,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 10873,
-    "owners": 2085000,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "협동": 1,
-      "좀비": 1,
-      "웨이브": 1,
-      "고어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "협동",
-      "좀비",
-      "웨이브",
-      "고어"
-    ]
-  },
-  "239140": {
-    "appid": 239140,
-    "name": "Dying Light",
-    "developer": "Techland",
-    "ccu": 76933,
-    "positive": 186241,
-    "negative": 1019,
-    "average_2weeks": 12580,
-    "owners": 2234892,
-    "genre": "샌드박스",
-    "tags": {
-      "좀비": 1,
-      "파쿠르": 1,
-      "오픈월드": 1,
-      "서바이벌": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "좀비",
-      "파쿠르",
-      "오픈월드",
-      "서바이벌",
-      "협동"
-    ]
-  },
-  "242760": {
-    "appid": 242760,
-    "name": "The Forest",
-    "developer": "Endnight Games",
-    "ccu": 73965,
-    "positive": 181935,
-    "negative": 1105,
-    "average_2weeks": 11969,
-    "owners": 2183220,
-    "genre": "샌드박스",
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 105000,
+    "positive": 390000,
+    "negative": 18000,
+    "average_2weeks": 7800,
+    "owners": 8000000,
     "tags": {
       "서바이벌": 1,
-      "공포": 1,
-      "건설": 1,
       "오픈월드": 1,
-      "협동": 1
+      "협동": 1,
+      "크래프팅": 1,
+      "바이킹": 1
     },
     "tags_list": [
       "서바이벌",
-      "공포",
-      "건설",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "244850": {
-    "appid": 244850,
-    "name": "Space Engineers",
-    "developer": "Keen Software House",
-    "ccu": 77218,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 12656,
-    "owners": 2233212,
-    "genre": "시뮬레이션",
-    "tags": {
-      "우주": 1,
-      "건설": 1,
-      "엔지니어링": 1,
-      "협동": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "우주",
-      "건설",
-      "엔지니어링",
-      "협동",
-      "sf"
-    ]
-  },
-  "275850": {
-    "appid": 275850,
-    "name": "No Man's Sky",
-    "developer": "Hello Games",
-    "ccu": 72767,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 12005,
-    "owners": 2085000,
-    "genre": "어드벤처",
-    "tags": {
-      "우주": 1,
-      "탐험": 1,
-      "서바이벌": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "우주",
-      "탐험",
-      "서바이벌",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "306130": {
-    "appid": 306130,
-    "name": "The Elder Scrolls Online",
-    "developer": "ZeniMax Online Studios",
-    "ccu": 66065,
-    "positive": 165756,
-    "negative": 1444,
-    "average_2weeks": 10565,
-    "owners": 1989072,
-    "genre": "RPG",
-    "tags": {
-      "mmorpg": 1,
-      "판타지": 1,
-      "온라인": 1,
-      "탐험": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "mmorpg",
-      "판타지",
-      "온라인",
-      "탐험",
-      "협동"
-    ]
-  },
-  "322330": {
-    "appid": 322330,
-    "name": "Don't Starve Together",
-    "developer": "Klei Entertainment",
-    "ccu": 80330,
-    "positive": 194750,
-    "negative": 850,
-    "average_2weeks": 13118,
-    "owners": 2337000,
-    "genre": "샌드박스",
-    "tags": {
-      "서바이벌": 1,
-      "협동": 1,
-      "고딕": 1,
-      "2D": 1,
-      "로그라이크": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "협동",
-      "고딕",
-      "2D",
-      "로그라이크"
-    ]
-  },
-  "324800": {
-    "appid": 324800,
-    "name": "Shadow Warrior 2",
-    "developer": "Flying Wild Hog",
-    "ccu": 65445,
-    "positive": 165686,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1988232,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "핵앤슬래시": 1,
-      "협동": 1,
-      "루팅": 1,
-      "액션": 1
-    },
-    "tags_list": [
-      "FPS",
-      "핵앤슬래시",
-      "협동",
-      "루팅",
-      "액션"
-    ]
-  },
-  "346110": {
-    "appid": 346110,
-    "name": "ARK: Survival Evolved",
-    "developer": "Studio Wildcard",
-    "ccu": 56937,
-    "positive": 135315,
-    "negative": 2125,
-    "average_2weeks": 9437,
-    "owners": 1623780,
-    "genre": "서바이벌",
-    "tags": {
-      "공룡": 1,
-      "서바이벌": 1,
-      "오픈월드": 1,
-      "협동": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "공룡",
-      "서바이벌",
       "오픈월드",
       "협동",
-      "건설"
-    ]
-  },
-  "361420": {
-    "appid": 361420,
-    "name": "ASTRONEER",
-    "developer": "System Era Softworks",
-    "ccu": 75254,
-    "positive": 190349,
-    "negative": 934,
-    "average_2weeks": 11949,
-    "owners": 2284188,
-    "genre": "샌드박스",
-    "tags": {
-      "우주": 1,
-      "탐험": 1,
-      "건설": 1,
-      "협동": 1,
-      "힐링": 1
-    },
-    "tags_list": [
-      "우주",
-      "탐험",
-      "건설",
-      "협동",
-      "힐링"
-    ]
-  },
-  "387990": {
-    "appid": 387990,
-    "name": "Scrap Mechanic",
-    "developer": "Axolot Games",
-    "ccu": 70682,
-    "positive": 173750,
-    "negative": 1275,
-    "average_2weeks": 11449,
-    "owners": 2085000,
-    "genre": "샌드박스",
-    "tags": {
-      "건설": 1,
-      "기계": 1,
-      "협동": 1,
-      "창의": 1,
-      "물리": 1
-    },
-    "tags_list": [
-      "건설",
-      "기계",
-      "협동",
-      "창의",
-      "물리"
-    ]
-  },
-  "397540": {
-    "appid": 397540,
-    "name": "Borderlands 3",
-    "developer": "Gearbox Software",
-    "ccu": 65202,
-    "positive": 161586,
-    "negative": 1530,
-    "average_2weeks": 10506,
-    "owners": 1939032,
-    "genre": "FPS",
-    "tags": {
-      "루터슈터": 1,
-      "협동": 1,
-      "fps": 1,
-      "파밍": 1,
-      "액션": 1
-    },
-    "tags_list": [
-      "루터슈터",
-      "협동",
-      "fps",
-      "파밍",
-      "액션"
-    ]
-  },
-  "435150": {
-    "appid": 435150,
-    "name": "Divinity: Original Sin 2",
-    "developer": "Larian Studios",
-    "ccu": 90377,
-    "positive": 216915,
-    "negative": 425,
-    "average_2weeks": 14841,
-    "owners": 2602980,
-    "genre": "RPG",
-    "tags": {
-      "턴제": 1,
-      "rpg": 1,
-      "판타지": 1,
-      "협동": 1,
-      "전략": 1
-    },
-    "tags_list": [
-      "턴제",
-      "rpg",
-      "판타지",
-      "협동",
-      "전략"
-    ]
-  },
-  "460580": {
-    "appid": 460580,
-    "name": "Steep",
-    "developer": "Ubisoft Annecy",
-    "ccu": 62440,
-    "positive": 153950,
-    "negative": 1700,
-    "average_2weeks": 10104,
-    "owners": 1847400,
-    "genre": "스포츠",
-    "tags": {
-      "익스트림": 1,
-      "오픈월드": 1,
-      "스키": 1,
-      "스노보드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "익스트림",
-      "오픈월드",
-      "스키",
-      "스노보드",
-      "협동"
-    ]
-  },
-  "477160": {
-    "appid": 477160,
-    "name": "Human Fall Flat",
-    "developer": "No Brakes Games",
-    "ccu": 72390,
-    "positive": 182005,
-    "negative": 1105,
-    "average_2weeks": 11549,
-    "owners": 2184060,
-    "genre": "어드벤처",
-    "tags": {
-      "퍼즐": 1,
-      "협동": 1,
-      "물리": 1,
-      "유머": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "협동",
-      "물리",
-      "유머",
-      "캐주얼"
-    ]
-  },
-  "493520": {
-    "appid": 493520,
-    "name": "GTFO",
-    "developer": "10 Chambers",
-    "ccu": 70262,
-    "positive": 177678,
-    "negative": 1190,
-    "average_2weeks": 11093,
-    "owners": 2132136,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "협동": 1,
-      "공포": 1,
-      "하드코어": 1,
-      "잠입": 1
-    },
-    "tags_list": [
-      "FPS",
-      "협동",
-      "공포",
-      "하드코어",
-      "잠입"
-    ]
-  },
-  "526870": {
-    "appid": 526870,
-    "name": "Satisfactory",
-    "developer": "Coffee Stain Studios",
-    "ccu": 84177,
-    "positive": 203345,
-    "negative": 680,
-    "average_2weeks": 13767,
-    "owners": 2440140,
-    "genre": "시뮬레이션",
-    "tags": {
-      "공장": 1,
-      "1인칭": 1,
-      "건설": 1,
-      "협동": 1,
-      "자동화": 1
-    },
-    "tags_list": [
-      "공장",
-      "1인칭",
-      "건설",
-      "협동",
-      "자동화"
-    ]
-  },
-  "534380": {
-    "appid": 534380,
-    "name": "Dying Light 2",
-    "developer": "Techland",
-    "ccu": 64150,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 10560,
-    "owners": 1844880,
-    "genre": "샌드박스",
-    "tags": {
-      "좀비": 1,
-      "파쿠르": 1,
-      "오픈월드": 1,
-      "서바이벌": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "좀비",
-      "파쿠르",
-      "오픈월드",
-      "서바이벌",
-      "협동"
-    ]
-  },
-  "548430": {
-    "appid": 548430,
-    "name": "Deep Rock Galactic",
-    "developer": "Ghost Ship Games",
-    "ccu": 90677,
-    "positive": 216810,
-    "negative": 425,
-    "average_2weeks": 14921,
-    "owners": 2601720,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "협동": 1,
-      "우주": 1,
-      "드워프": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "협동",
-      "우주",
-      "드워프",
-      "멀티플레이어"
-    ]
-  },
-  "552520": {
-    "appid": 552520,
-    "name": "Far Cry 5",
-    "developer": "Ubisoft Montreal",
-    "ccu": 65445,
-    "positive": 165616,
-    "negative": 1444,
-    "average_2weeks": 10345,
-    "owners": 1987392,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "오픈월드": 1,
-      "액션": 1,
-      "협동": 1,
-      "미국": 1
-    },
-    "tags_list": [
-      "FPS",
-      "오픈월드",
-      "액션",
-      "협동",
-      "미국"
-    ]
+      "크래프팅",
+      "바이킹"
+    ],
+    "_source": "steamspy"
   },
   "553850": {
     "appid": 553850,
     "name": "Helldivers 2",
     "developer": "Arrowhead Game Studios",
-    "ccu": 81785,
-    "positive": 194470,
-    "negative": 850,
-    "average_2weeks": 13506,
-    "owners": 2333640,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "fps": 1,
-      "액션": 1,
-      "민주주의": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "협동",
-      "fps",
-      "액션",
-      "민주주의",
-      "sf"
-    ]
-  },
-  "573090": {
-    "appid": 573090,
-    "name": "Stormworks: Build and Rescue",
-    "developer": "Geometa Ltd",
-    "ccu": 75583,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 12220,
-    "owners": 2233212,
-    "genre": "샌드박스",
-    "tags": {
-      "건설": 1,
-      "엔지니어링": 1,
-      "협동": 1,
-      "구조": 1,
-      "창의": 1
-    },
-    "tags_list": [
-      "건설",
-      "엔지니어링",
-      "협동",
-      "구조",
-      "창의"
-    ]
-  },
-  "582010": {
-    "appid": 582010,
-    "name": "MONSTER HUNTER: WORLD - Iceborne",
-    "developer": "CAPCOM",
-    "ccu": 80407,
-    "positive": 203345,
-    "negative": 680,
-    "average_2weeks": 12695,
-    "owners": 2440140,
-    "genre": "RPG",
-    "tags": {
-      "액션RPG": 1,
-      "사냥": 1,
-      "확장팩": 1,
-      "협동": 1,
-      "보스전": 1
-    },
-    "tags_list": [
-      "액션RPG",
-      "사냥",
-      "확장팩",
-      "협동",
-      "보스전"
-    ]
-  },
-  "632360": {
-    "appid": 632360,
-    "name": "Risk of Rain 2",
-    "developer": "Hopoo Games",
-    "ccu": 79565,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 12914,
-    "owners": 2335320,
-    "genre": "인디",
-    "tags": {
-      "로그라이크": 1,
-      "액션": 1,
-      "협동": 1,
-      "빠른": 1,
-      "3인칭": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "액션",
-      "협동",
-      "빠른",
-      "3인칭"
-    ]
-  },
-  "648800": {
-    "appid": 648800,
-    "name": "Raft",
-    "developer": "Redbeet Interactive",
-    "ccu": 70762,
-    "positive": 177643,
-    "negative": 1190,
-    "average_2weeks": 11293,
-    "owners": 2131716,
-    "genre": "서바이벌",
-    "tags": {
-      "바다": 1,
-      "협동": 1,
-      "생존": 1,
-      "크래프팅": 1,
-      "탐험": 1
-    },
-    "tags_list": [
-      "바다",
-      "협동",
-      "생존",
-      "크래프팅",
-      "탐험"
-    ]
-  },
-  "675010": {
-    "appid": 675010,
-    "name": "MudRunner",
-    "developer": "Saber Interactive",
-    "ccu": 70067,
-    "positive": 173715,
-    "negative": 1275,
-    "average_2weeks": 11285,
-    "owners": 2084580,
-    "genre": "레이싱",
-    "tags": {
-      "오프로드": 1,
-      "트럭": 1,
-      "진흙": 1,
-      "협동": 1,
-      "도전적": 1
-    },
-    "tags_list": [
-      "오프로드",
-      "트럭",
-      "진흙",
-      "협동",
-      "도전적"
-    ]
-  },
-  "739630": {
-    "appid": 739630,
-    "name": "Phasmophobia",
-    "developer": "Kinetic Games",
-    "ccu": 72257,
-    "positive": 173610,
-    "negative": 1275,
-    "average_2weeks": 11869,
-    "owners": 2083320,
-    "genre": "공포",
-    "tags": {
-      "공포": 1,
-      "협동": 1,
-      "호러": 1,
-      "vr": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "공포",
-      "협동",
-      "호러",
-      "vr",
-      "멀티플레이어"
-    ]
-  },
-  "815370": {
-    "appid": 815370,
-    "name": "Green Hell",
-    "developer": "Creepy Jar",
-    "ccu": 64240,
-    "positive": 153845,
-    "negative": 1700,
-    "average_2weeks": 10584,
-    "owners": 1846140,
-    "genre": "서바이벌",
-    "tags": {
-      "정글": 1,
-      "서바이벌": 1,
-      "1인칭": 1,
-      "리얼리즘": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "정글",
-      "서바이벌",
-      "1인칭",
-      "리얼리즘",
-      "협동"
-    ]
-  },
-  "892970": {
-    "appid": 892970,
-    "name": "Valheim",
-    "developer": "Iron Gate AB",
-    "ccu": 80465,
-    "positive": 194575,
-    "negative": 850,
-    "average_2weeks": 13154,
-    "owners": 2334900,
-    "genre": "서바이벌",
-    "tags": {
-      "바이킹": 1,
-      "서바이벌": 1,
-      "건설": 1,
-      "협동": 1,
-      "오픈월드": 1
-    },
-    "tags_list": [
-      "바이킹",
-      "서바이벌",
-      "건설",
-      "협동",
-      "오픈월드"
-    ]
-  },
-  "924970": {
-    "appid": 924970,
-    "name": "Back 4 Blood",
-    "developer": "Turtle Rock Studios",
-    "ccu": 53437,
-    "positive": 135175,
-    "negative": 2125,
-    "average_2weeks": 8441,
-    "owners": 1622100,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "협동": 1,
-      "좀비": 1,
-      "카드": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "FPS",
-      "협동",
-      "좀비",
-      "카드",
-      "멀티플레이어"
-    ]
-  },
-  "945360": {
-    "appid": 945360,
-    "name": "Among Us",
-    "developer": "Innersloth",
-    "ccu": 64750,
-    "positive": 153880,
-    "negative": 1700,
-    "average_2weeks": 10720,
-    "owners": 1846560,
-    "genre": "전략",
-    "tags": {
-      "파티": 1,
-      "마피아": 1,
-      "협동": 1,
-      "캐주얼": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "파티",
-      "마피아",
-      "협동",
-      "캐주얼",
-      "멀티플레이어"
-    ]
-  },
-  "962130": {
-    "appid": 962130,
-    "name": "Grounded",
-    "developer": "Obsidian Entertainment",
-    "ccu": 76978,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 12592,
-    "owners": 2231952,
-    "genre": "서바이벌",
-    "tags": {
-      "서바이벌": 1,
-      "축소": 1,
-      "마당": 1,
-      "협동": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "축소",
-      "마당",
-      "협동",
-      "건설"
-    ]
-  },
-  "976730": {
-    "appid": 976730,
-    "name": "Halo: The Master Chief Collection",
-    "developer": "343 Industries",
-    "ccu": 80060,
-    "positive": 194645,
-    "negative": 850,
-    "average_2weeks": 13046,
-    "owners": 2335740,
-    "genre": "FPS",
+    "ccu": 98000,
+    "positive": 420000,
+    "negative": 85000,
+    "average_2weeks": 7200,
+    "owners": 8000000,
     "tags": {
       "fps": 1,
-      "싱글플레이어": 1,
       "협동": 1,
+      "슈터": 1,
       "sf": 1,
-      "클래식": 1
+      "멀티플레이어": 1
     },
     "tags_list": [
       "fps",
-      "싱글플레이어",
       "협동",
+      "슈터",
       "sf",
-      "클래식"
-    ]
-  },
-  "1029690": {
-    "appid": 1029690,
-    "name": "Sniper Elite 5",
-    "developer": "Rebellion",
-    "ccu": 60800,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1844880,
-    "genre": "FPS",
-    "tags": {
-      "FPS": 1,
-      "저격": 1,
-      "잠입": 1,
-      "2차대전": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "FPS",
-      "저격",
-      "잠입",
-      "2차대전",
-      "협동"
-    ]
-  },
-  "1042550": {
-    "appid": 1042550,
-    "name": "Snowrunner",
-    "developer": "Saber Interactive",
-    "ccu": 71905,
-    "positive": 181830,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2181960,
-    "genre": "시뮬레이션",
-    "tags": {
-      "트럭": 1,
-      "오프로드": 1,
-      "시뮬레이션": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "트럭",
-      "오프로드",
-      "시뮬레이션",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "1085660": {
-    "appid": 1085660,
-    "name": "Destiny 2",
-    "developer": "Bungie",
-    "ccu": 62648,
-    "positive": 146261,
-    "negative": 1870,
-    "average_2weeks": 10486,
-    "owners": 1755132,
-    "genre": "FPS",
-    "tags": {
-      "fps": 1,
-      "rpg": 1,
-      "루터슈터": 1,
-      "협동": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "fps",
-      "rpg",
-      "루터슈터",
-      "협동",
-      "sf"
-    ]
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
   },
   "1086940": {
     "appid": 1086940,
     "name": "Baldur's Gate 3",
     "developer": "Larian Studios",
-    "ccu": 95968,
-    "positive": 230601,
-    "negative": 169,
-    "average_2weeks": 15734,
-    "owners": 2767212,
-    "genre": "RPG",
+    "ccu": 142000,
+    "positive": 680000,
+    "negative": 28000,
+    "average_2weeks": 11200,
+    "owners": 8000000,
     "tags": {
+      "rpg": 1,
       "턴제": 1,
-      "rpg": 1,
-      "판타지": 1,
       "협동": 1,
-      "선택": 1
+      "판타지": 1,
+      "스토리": 1
     },
     "tags_list": [
+      "rpg",
       "턴제",
-      "rpg",
+      "협동",
       "판타지",
-      "협동",
-      "선택"
-    ]
-  },
-  "1100600": {
-    "appid": 1100600,
-    "name": "Demonologist",
-    "developer": "Clock Wizard Games",
-    "ccu": 53437,
-    "positive": 135105,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1621260,
-    "genre": "공포",
-    "tags": {
-      "공포": 1,
-      "유령": 1,
-      "협동": 1,
-      "조사": 1,
-      "1인칭": 1
-    },
-    "tags_list": [
-      "공포",
-      "유령",
-      "협동",
-      "조사",
-      "1인칭"
-    ]
-  },
-  "1113000": {
-    "appid": 1113000,
-    "name": "Persona 5 Strikers",
-    "developer": "Omega Force",
-    "ccu": 71905,
-    "positive": 181830,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2181960,
-    "genre": "액션",
-    "tags": {
-      "액션": 1,
-      "JRPG": 1,
-      "핵앤슬래시": 1,
-      "페르소나": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "액션",
-      "JRPG",
-      "핵앤슬래시",
-      "페르소나",
-      "협동"
-    ]
-  },
-  "1144200": {
-    "appid": 1144200,
-    "name": "Ready or Not",
-    "developer": "VOID Interactive",
-    "ccu": 75809,
-    "positive": 190209,
-    "negative": 934,
-    "average_2weeks": 12097,
-    "owners": 2282508,
-    "genre": "FPS",
-    "tags": {
-      "전술": 1,
-      "fps": 1,
-      "협동": 1,
-      "리얼리즘": 1,
-      "swat": 1
-    },
-    "tags_list": [
-      "전술",
-      "fps",
-      "협동",
-      "리얼리즘",
-      "swat"
-    ]
-  },
-  "1149460": {
-    "appid": 1149460,
-    "name": "Icarus",
-    "developer": "RocketWerkz",
-    "ccu": 53437,
-    "positive": 135175,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1622100,
-    "genre": "서바이벌",
-    "tags": {
-      "서바이벌": 1,
-      "SF": 1,
-      "건설": 1,
-      "크래프팅": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "SF",
-      "건설",
-      "크래프팅",
-      "협동"
-    ]
-  },
-  "1172620": {
-    "appid": 1172620,
-    "name": "Sea of Thieves",
-    "developer": "Rare",
-    "ccu": 74413,
-    "positive": 186066,
-    "negative": 1019,
-    "average_2weeks": 11908,
-    "owners": 2232792,
-    "genre": "어드벤처",
-    "tags": {
-      "해적": 1,
-      "협동": 1,
-      "오픈월드": 1,
-      "항해": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "해적",
-      "협동",
-      "오픈월드",
-      "항해",
-      "멀티플레이어"
-    ]
-  },
-  "1203620": {
-    "appid": 1203620,
-    "name": "The Dark Pictures Anthology: Little Hope",
-    "developer": "Supermassive Games",
-    "ccu": 57798,
-    "positive": 146226,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1754712,
-    "genre": "공포",
-    "tags": {
-      "공포": 1,
-      "스토리": 1,
-      "선택": 1,
-      "심리": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "공포",
-      "스토리",
-      "선택",
-      "심리",
-      "협동"
-    ]
-  },
-  "1222690": {
-    "appid": 1222690,
-    "name": "Dragon Age: Inquisition",
-    "developer": "BioWare",
-    "ccu": 73127,
-    "positive": 173820,
-    "negative": 1275,
-    "average_2weeks": 12101,
-    "owners": 2085840,
-    "genre": "RPG",
-    "tags": {
-      "rpg": 1,
-      "판타지": 1,
-      "선택": 1,
-      "스토리": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "rpg",
-      "판타지",
-      "선택",
-      "스토리",
-      "협동"
-    ]
-  },
-  "1222700": {
-    "appid": 1222700,
-    "name": "A Way Out",
-    "developer": "Hazelight",
-    "ccu": 69107,
-    "positive": 173680,
-    "negative": 1275,
-    "average_2weeks": 11029,
-    "owners": 2084160,
-    "genre": "어드벤처",
-    "tags": {
-      "협동": 1,
-      "스토리": 1,
-      "탈출": 1,
-      "액션": 1,
-      "2인": 1
-    },
-    "tags_list": [
-      "협동",
-      "스토리",
-      "탈출",
-      "액션",
-      "2인"
-    ]
-  },
-  "1230940": {
-    "appid": 1230940,
-    "name": "Riders Republic",
-    "developer": "Ubisoft Annecy",
-    "ccu": 63940,
-    "positive": 153775,
-    "negative": 1700,
-    "average_2weeks": 10504,
-    "owners": 1845300,
-    "genre": "스포츠",
-    "tags": {
-      "익스트림스포츠": 1,
-      "오픈월드": 1,
-      "스키": 1,
-      "자전거": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "익스트림스포츠",
-      "오픈월드",
-      "스키",
-      "자전거",
-      "협동"
-    ]
-  },
-  "1248130": {
-    "appid": 1248130,
-    "name": "Farming Simulator 22",
-    "developer": "Giants Software",
-    "ccu": 68837,
-    "positive": 173575,
-    "negative": 1275,
-    "average_2weeks": 10957,
-    "owners": 2082900,
-    "genre": "시뮬레이션",
-    "tags": {
-      "농장": 1,
-      "시뮬레이션": 1,
-      "트랙터": 1,
-      "경영": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "농장",
-      "시뮬레이션",
-      "트랙터",
-      "경영",
-      "협동"
-    ]
-  },
-  "1282100": {
-    "appid": 1282100,
-    "name": "Remnant II",
-    "developer": "Gunfire Games",
-    "ccu": 69737,
-    "positive": 173505,
-    "negative": 1275,
-    "average_2weeks": 11197,
-    "owners": 2082060,
-    "genre": "액션",
-    "tags": {
-      "협동": 1,
-      "슈팅": 1,
-      "소울즈라이크": 1,
-      "액션": 1,
-      "파밍": 1
-    },
-    "tags_list": [
-      "협동",
-      "슈팅",
-      "소울즈라이크",
-      "액션",
-      "파밍"
-    ]
-  },
-  "1290000": {
-    "appid": 1290000,
-    "name": "PowerWash Simulator",
-    "developer": "FuturLab",
-    "ccu": 72427,
-    "positive": 177643,
-    "negative": 1190,
-    "average_2weeks": 11737,
-    "owners": 2131716,
-    "genre": "시뮬레이션",
-    "tags": {
-      "힐링": 1,
-      "시뮬레이션": 1,
-      "캐주얼": 1,
-      "협동": 1,
-      "스트레스해소": 1
-    },
-    "tags_list": [
-      "힐링",
-      "시뮬레이션",
-      "캐주얼",
-      "협동",
-      "스트레스해소"
-    ]
-  },
-  "1326470": {
-    "appid": 1326470,
-    "name": "Sons Of The Forest",
-    "developer": "Endnight Games",
-    "ccu": 63877,
-    "positive": 161481,
-    "negative": 1530,
-    "average_2weeks": 10086,
-    "owners": 1937772,
-    "genre": "공포",
-    "tags": {
-      "공포": 1,
-      "서바이벌": 1,
-      "건설": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "공포",
-      "서바이벌",
-      "건설",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "1361210": {
-    "appid": 1361210,
-    "name": "Warhammer 40,000: Darktide",
-    "developer": "Fatshark",
-    "ccu": 63414,
-    "positive": 157604,
-    "negative": 1615,
-    "average_2weeks": 10197,
-    "owners": 1891248,
-    "genre": "FPS",
-    "tags": {
-      "협동": 1,
-      "fps": 1,
-      "근접전": 1,
-      "sf": 1,
-      "워해머": 1
-    },
-    "tags_list": [
-      "협동",
-      "fps",
-      "근접전",
-      "sf",
-      "워해머"
-    ]
-  },
-  "1426210": {
-    "appid": 1426210,
-    "name": "It Takes Two",
-    "developer": "Hazelight Studios",
-    "ccu": 86370,
-    "positive": 207751,
-    "negative": 594,
-    "average_2weeks": 14161,
-    "owners": 2493012,
-    "genre": "어드벤처",
-    "tags": {
-      "협동": 1,
-      "플랫포머": 1,
-      "스토리": 1,
-      "2인": 1,
-      "가족": 1
-    },
-    "tags_list": [
-      "협동",
-      "플랫포머",
-      "스토리",
-      "2인",
-      "가족"
-    ]
-  },
-  "1446780": {
-    "appid": 1446780,
-    "name": "Monster Hunter Rise",
-    "developer": "Capcom",
-    "ccu": 71327,
-    "positive": 173540,
-    "negative": 1275,
-    "average_2weeks": 11621,
-    "owners": 2082480,
-    "genre": "액션",
-    "tags": {
-      "액션": 1,
-      "협동": 1,
-      "rpg": 1,
-      "헌팅": 1,
-      "일본풍": 1
-    },
-    "tags_list": [
-      "액션",
-      "협동",
-      "rpg",
-      "헌팅",
-      "일본풍"
-    ]
-  },
-  "1465360": {
-    "appid": 1465360,
-    "name": "SnowRunner",
-    "developer": "Saber Interactive",
-    "ccu": 75178,
-    "positive": 186066,
-    "negative": 1019,
-    "average_2weeks": 12112,
-    "owners": 2232792,
-    "genre": "스포츠",
-    "tags": {
-      "오프로드": 1,
-      "트럭": 1,
-      "오픈월드": 1,
-      "도전적": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "오프로드",
-      "트럭",
-      "오픈월드",
-      "도전적",
-      "협동"
-    ]
-  },
-  "1621690": {
-    "appid": 1621690,
-    "name": "Core Keeper",
-    "developer": "Pugstorm",
-    "ccu": 73568,
-    "positive": 185926,
-    "negative": 1019,
-    "average_2weeks": 11616,
-    "owners": 2231112,
-    "genre": "서바이벌",
-    "tags": {
-      "서바이벌": 1,
-      "지하": 1,
-      "크래프팅": 1,
-      "협동": 1,
-      "도트": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "지하",
-      "크래프팅",
-      "협동",
-      "도트"
-    ]
+      "스토리"
+    ],
+    "_source": "steamspy"
   },
   "1623730": {
     "appid": 1623730,
     "name": "Palworld",
     "developer": "Pocketpair",
-    "ccu": 71302,
-    "positive": 177573,
-    "negative": 1190,
-    "average_2weeks": 11437,
-    "owners": 2130876,
-    "genre": "서바이벌",
+    "ccu": 92000,
+    "positive": 480000,
+    "negative": 72000,
+    "average_2weeks": 6800,
+    "owners": 10000000,
     "tags": {
+      "서바이벌": 1,
+      "몬스터": 1,
       "오픈월드": 1,
       "크래프팅": 1,
-      "생존": 1,
-      "몬스터": 1,
       "협동": 1
     },
     "tags_list": [
+      "서바이벌",
+      "몬스터",
       "오픈월드",
       "크래프팅",
-      "생존",
-      "몬스터",
       "협동"
-    ]
+    ],
+    "_source": "steamspy"
   },
-  "1625450": {
-    "appid": 1625450,
-    "name": "Plate Up!",
-    "developer": "It's Happening",
-    "ccu": 80407,
-    "positive": 203275,
-    "negative": 680,
-    "average_2weeks": 12695,
-    "owners": 2439300,
-    "genre": "시뮬레이션",
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 88000,
+    "positive": 320000,
+    "negative": 12000,
+    "average_2weeks": 6400,
+    "owners": 5000000,
     "tags": {
-      "요리": 1,
-      "경영": 1,
-      "로그라이크": 1,
-      "협동": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "요리",
-      "경영",
-      "로그라이크",
-      "협동",
-      "캐주얼"
-    ]
-  },
-  "1632360": {
-    "appid": 1632360,
-    "name": "Smalland: Survive the Wilds",
-    "developer": "Merge Games",
-    "ccu": 61223,
-    "positive": 146121,
-    "negative": 1870,
-    "average_2weeks": 10106,
-    "owners": 1753452,
-    "genre": "서바이벌",
-    "tags": {
-      "서바이벌": 1,
-      "소인": 1,
-      "자연": 1,
-      "협동": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "소인",
-      "자연",
-      "협동",
-      "건설"
-    ]
-  },
-  "1928980": {
-    "appid": 1928980,
-    "name": "Nightingale",
-    "developer": "Inflexion Games",
-    "ccu": 49248,
-    "positive": 124486,
-    "negative": 2380,
-    "average_2weeks": 7776,
-    "owners": 1493832,
-    "genre": "서바이벌",
-    "tags": {
-      "서바이벌": 1,
-      "빅토리안": 1,
-      "판타지": 1,
-      "건설": 1,
+      "공장": 1,
+      "시뮬레이션": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
       "협동": 1
     },
     "tags_list": [
-      "서바이벌",
-      "빅토리안",
-      "판타지",
-      "건설",
+      "공장",
+      "시뮬레이션",
+      "오픈월드",
+      "크래프팅",
       "협동"
-    ]
+    ],
+    "_source": "steamspy"
   },
-  "1966720": {
-    "appid": 1966720,
-    "name": "Content Warning",
-    "developer": "Landfall",
-    "ccu": 78669,
-    "positive": 198813,
-    "negative": 765,
-    "average_2weeks": 12421,
-    "owners": 2385756,
-    "genre": "공포",
+  "2183900": {
+    "appid": 2183900,
+    "name": "Warhammer 40,000: Space Marine 2",
+    "developer": "Saber Interactive",
+    "ccu": 80000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 5900,
+    "owners": 4500000,
     "tags": {
-      "공포": 1,
-      "협동": 1,
-      "코미디": 1,
-      "촬영": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "공포",
-      "협동",
-      "코미디",
-      "촬영",
-      "인디"
-    ]
-  },
-  "1985690": {
-    "appid": 1985690,
-    "name": "Lethal Company",
-    "developer": "Zeekerss",
-    "ccu": 83942,
-    "positive": 212169,
-    "negative": 509,
-    "average_2weeks": 13254,
-    "owners": 2546028,
-    "genre": "액션",
-    "tags": {
-      "공포": 1,
       "액션": 1,
       "협동": 1,
-      "코옵": 1,
-      "인디": 1
+      "sf": 1,
+      "슈터": 1,
+      "전쟁": 1
     },
     "tags_list": [
-      "공포",
       "액션",
       "협동",
-      "코옵",
-      "인디"
-    ]
+      "sf",
+      "슈터",
+      "전쟁"
+    ],
+    "_source": "steamspy"
   },
-  "2399830": {
-    "appid": 2399830,
-    "name": "ARK: Survival Ascended",
-    "developer": "Studio Wildcard",
-    "ccu": 50035,
-    "positive": 117705,
-    "negative": 2550,
-    "average_2weeks": 8346,
-    "owners": 1412460,
-    "genre": "서바이벌",
+  "2246340": {
+    "appid": 2246340,
+    "name": "Monster Hunter Wilds",
+    "developer": "Capcom",
+    "ccu": 248000,
+    "positive": 310000,
+    "negative": 42000,
+    "average_2weeks": 19800,
+    "owners": 6000000,
     "tags": {
-      "공룡": 1,
-      "서바이벌": 1,
-      "언리얼5": 1,
+      "액션": 1,
+      "rpg": 1,
+      "멀티플레이어": 1,
       "협동": 1,
-      "리마스터": 1
+      "오픈월드": 1
     },
     "tags_list": [
-      "공룡",
-      "서바이벌",
-      "언리얼5",
+      "액션",
+      "rpg",
+      "멀티플레이어",
       "협동",
-      "리마스터"
-    ]
+      "오픈월드"
+    ],
+    "_source": "steamspy"
+  },
+  "550": {
+    "appid": 550,
+    "name": "Left 4 Dead 2",
+    "developer": "Valve",
+    "ccu": 34000,
+    "positive": 420000,
+    "negative": 15000,
+    "average_2weeks": 1800,
+    "owners": 25000000,
+    "tags": {
+      "협동": 1,
+      "공호": 1,
+      "좀비": 1,
+      "fps": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "협동",
+      "공호",
+      "좀비",
+      "fps",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "620": {
+    "appid": 620,
+    "name": "Portal 2",
+    "developer": "Valve",
+    "ccu": 9000,
+    "positive": 480000,
+    "negative": 4000,
+    "average_2weeks": 700,
+    "owners": 20000000,
+    "tags": {
+      "퍼즐": 1,
+      "협동": 1,
+      "1인칭": 1,
+      "유머": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "협동",
+      "1인칭",
+      "유머",
+      "sf"
+    ],
+    "_source": "steamspy"
   }
 }
