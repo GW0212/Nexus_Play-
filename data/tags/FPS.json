@@ -74,31 +74,6 @@
     ],
     "_source": "steamspy"
   },
-  "3240220": {
-    "appid": 3240220,
-    "name": "Marvel Rivals",
-    "developer": "NetEase Games",
-    "ccu": 148000,
-    "positive": 520000,
-    "negative": 95000,
-    "average_2weeks": 13800,
-    "owners": 12000000,
-    "tags": {
-      "fps": 1,
-      "슈퍼히어로": 1,
-      "팀기반": 1,
-      "무료": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "슈퍼히어로",
-      "팀기반",
-      "무료",
-      "멀티플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "553850": {
     "appid": 553850,
     "name": "Helldivers 2",
@@ -121,31 +96,6 @@
       "슈터",
       "sf",
       "멀티플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "2612830": {
-    "appid": 2612830,
-    "name": "Delta Force",
-    "developer": "TiMi Studio Group",
-    "ccu": 68000,
-    "positive": 240000,
-    "negative": 82000,
-    "average_2weeks": 4900,
-    "owners": 5000000,
-    "tags": {
-      "fps": 1,
-      "배틀로얄": 1,
-      "멀티플레이어": 1,
-      "무료": 1,
-      "전술": 1
-    },
-    "tags_list": [
-      "fps",
-      "배틀로얄",
-      "멀티플레이어",
-      "무료",
-      "전술"
     ],
     "_source": "steamspy"
   },

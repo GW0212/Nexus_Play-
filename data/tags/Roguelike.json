@@ -123,30 +123,5 @@
       "싱글플레이어"
     ],
     "_source": "steamspy"
-  },
-  "860950": {
-    "appid": 860950,
-    "name": "Hades II",
-    "developer": "Supergiant Games",
-    "ccu": 28000,
-    "positive": 120000,
-    "negative": 4000,
-    "average_2weeks": 2200,
-    "owners": 2000000,
-    "tags": {
-      "로그라이크": 1,
-      "액션": 1,
-      "인디": 1,
-      "그리스신화": 1,
-      "얼리엑세스": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "액션",
-      "인디",
-      "그리스신화",
-      "얼리엑세스"
-    ],
-    "_source": "steamspy"
   }
 }
