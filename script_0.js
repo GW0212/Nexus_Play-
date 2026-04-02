@@ -51,7 +51,6 @@ const GAMES = [
   { id:1593500,title:"God of War",                    genre:"액션",     tags:["액션","신화","스토리","북유럽","부자"],              rating:9.5, year:2022, dev:"Santa Monica Studio",     desc:"크레토스와 아트레우스의 북유럽 신화 대서사시." },
   { id:1817070,title:"Marvel's Spider-Man Remastered",genre:"액션",     tags:["슈퍼히어로","오픈월드","액션","스윙","뉴욕"],        rating:9.0, year:2022, dev:"Insomniac Games",         desc:"뉴욕을 자유롭게 누비는 스파이더맨이 되어라." },
   { id:752590,title:"A Plague Tale: Innocence",      genre:"액션",     tags:["스토리","중세","공포","형제","어드벤처"],           rating:9.0, year:2019, dev:"Asobo Studio",            desc:"중세 프랑스의 흑사병 속 남매의 생존기." },
-  { id:1546320,title:"A Plague Tale: Requiem",        genre:"액션",     tags:["스토리","중세","공포","형제","어드벤처"],           rating:8.5, year:2022, dev:"Asobo Studio",            desc:"이노센스의 감동을 이어받은 압도적인 후속작." },
   { id:601150, title:"Devil May Cry 5",               genre:"액션",     tags:["액션","스타일리시","악마","빠른","보스"],            rating:9.3, year:2019, dev:"Capcom",                  desc:"스타일리시 액션의 정점. DMC 시리즈의 화려한 귀환." },
   { id:219150, title:"Hotline Miami",                 genre:"액션",     tags:["탑다운","폭력적","빠른","인디","레트로"],           rating:9.0, year:2012, dev:"Dennaton Games",          desc:"폭발적인 속도감과 강렬한 음악의 탑다운 액션." },
   { id:2138710,title:"Sifu",                          genre:"액션",     tags:["쿵푸","도전적","격투","복수","3인칭"],              rating:8.5, year:2022, dev:"Sloclap",                 desc:"나이를 먹으며 복수하는 쿵푸 액션 게임." },
@@ -135,7 +134,6 @@ const GAMES = [
   { id:1364780,title:"Street Fighter 6",              genre:"격투",     tags:["격투","경쟁","멀티플레이어","아케이드","기술"],      rating:9.0, year:2023, dev:"Capcom",                  desc:"격투 게임의 새로운 황금기를 연 시리즈 최신작." },
   { id:389730, title:"Tekken 7",                      genre:"격투",     tags:["격투","3D","경쟁","멀티플레이어","스토리"],          rating:8.5, year:2017, dev:"Bandai Namco",            desc:"3D 격투 게임의 왕. 미시마 가문의 최후 결전." },
   { id:976310, title:"Mortal Kombat 11",              genre:"격투",     tags:["격투","고어","스토리","경쟁","멀티플레이어"],        rating:8.3, year:2019, dev:"NetherRealm Studios",     desc:"잔인하고 화려한 피날레가 압권인 격투 게임." },
-  { id:1384160,title:"Guilty Gear -Strive-",          genre:"격투",     tags:["격투","애니","경쟁","아름다운","록음악"],            rating:9.0, year:2021, dev:"Arc System Works",        desc:"압도적인 비주얼과 개성 넘치는 캐릭터의 격투 게임." },
   { id:678950, title:"Dragon Ball FighterZ",          genre:"격투",     tags:["격투","드래곤볼","애니","2.5D","경쟁"],              rating:8.5, year:2018, dev:"Arc System Works",        desc:"드래곤볼 애니메이션을 그대로 구현한 격투." },
   { id:291550, title:"Brawlhalla",                    genre:"격투",     tags:["격투","캐주얼","플랫포머","무료","멀티플레이어"],    rating:8.0, year:2017, dev:"Blue Mammoth Games",      desc:"무료로 즐기는 플랫폼 기반 난투형 격투 게임." },
   { id:1818750,title:"Multiversus",                   genre:"격투",     tags:["격투","플랫폼","무료","파티","캐릭터"],             rating:7.5, year:2022, dev:"Player First Games",      desc:"Warner Bros 캐릭터가 등장하는 난투형 격투." },
@@ -457,7 +455,6 @@ const EXTRA_CURATED_GAMES = [
   // 격투
   { id:1364780, title:"Street Fighter 6", genre:"격투", tags:["격투","2D","경쟁","온라인","입문친화"], rating:9.1, year:2023, dev:"CAPCOM", desc:"입문과 경쟁 둘 다 잡은 현대 격투 게임의 대표작." },
   { id:389730, title:"TEKKEN 7", genre:"격투", tags:["격투","3D","경쟁","철권","멀티플레이어"], rating:8.9, year:2017, dev:"Bandai Namco", desc:"철권 시리즈의 정수를 담은 3D 격투 게임." },
-  { id:1384160, title:"GUILTY GEAR -STRIVE-", genre:"격투", tags:["격투","애니","2D","록사운드","경쟁"], rating:8.8, year:2021, dev:"Arc System Works", desc:"압도적인 비주얼과 손맛이 뛰어난 애니 격투 게임." },
   { id:586140, title:"BlazBlue Centralfiction", genre:"격투", tags:["격투","애니","2D","스토리","경쟁"], rating:8.7, year:2017, dev:"Arc System Works", desc:"풍부한 시스템과 캐릭터성을 자랑하는 2D 격투 게임." },
   { id:1372280, title:"MELTY BLOOD: TYPE LUMINA", genre:"격투", tags:["격투","애니","2D","비주얼노벨","경쟁"], rating:8.6, year:2021, dev:"French-Bread", desc:"빠른 공중전과 섬세한 운영이 매력적인 2D 격투 게임." },
 
@@ -1223,134 +1220,13 @@ async function prefetchCoreData() {
 const THUMB_OVERRIDES = {
   "Coral Island": { appid:1158160 },
   "Killer Instinct": { appid:577940 },
-  "Sons of the Forest": { appid:1326470 },
   "Marvel's Spider-Man Remastered": { appid:1817070 },
   "Marvel's Spider-Man: Miles Morales": { appid:1817190 },
-  "EA SPORTS FC 26": { appid:3405690 },
-  "EA SPORTS FC™ 26": { appid:3405690 },
-  "EA SPORTS FC 25": { appid:2669320 },
-  "EA SPORTS FC™ 25": { appid:2669320 },
-  "Football Manager 26": { appid:3551340 },
-  "Football Manager 2026": { appid:3551340 },
-  "Football Manager 2025": { appid:2252570 },
-  "Football Manager 2024": { appid:2252570 },
-  "NBA 2K26": { appid:3472040 },
-  "NBA 2K25": { appid:2688840 },
-  "NBA 2K24": { appid:2338770 },
-  "Heartopia": { appid:4025700 },
-  "블루 아카이브": { appid:3557620 },
-  "Blue Archive": { appid:3557620 },
-  "연운": { appid:3564740 },
-  "Where Winds Meet": { appid:3564740 },
-  "두근두근 타운": { appid:4025700 },
-  "두근두근타운": { appid:4025700 },
-  "붉은 사막": { appid:3321460 },
-  "Planet Coaster 2": { appid:2688950 },
-  "The Seven Deadly Sins: Origin": { appid:3679080 },
-  "〈The Seven Deadly Sins: Origin〉": { appid:3679080 },
-  "Battlefield 6": { appid:2622380 },
-  "Battlefield™ 6": { appid:2622380 },
-  "Battlefield V": { appid:1238810 },
-  "Battlefield™ V": { appid:1238810 },
-  "Battlefield 1": { appid:1238840 },
-  "Battlefield™ 1": { appid:1238840 },
-  "F1 24": { appid:2488620 },
-  "F1® 24": { appid:2488620 },
-  "F1 23": { appid:2108330 },
-  "F1® 23": { appid:2108330 },
-  "Madden NFL 26": { appid:3414400 },
-  "Madden NFL 25": { appid:2583180 },
-  "NHL 25": { appid:2769170 },
-  "NHL™ 25": { appid:2769170 },
-  "PGA TOUR 2K25": { appid:2813220 },
-  "PGA TOUR 2K23": { appid:1588010 },
-  "TopSpin 2K25": { appid:1785650 },
-  "WWE 2K24": { appid:2315690 },
-  "EA SPORTS FC 24": { appid:2195250 },
-  "EA SPORTS FC™ 24": { appid:2195250 },
-  "NBA 2K23": { appid:1919590 },
-  "Premium Bowling": { appid:898580 },
-  "Circuit Superstars": { appid:1097130 },
-  "The Crew Motorfest": { appid:2698940 },
-  "eFootball 2025": { appid:1665460 },
-  "eFootball™ 2025": { appid:1665460 },
-  "eFootball 2024": { appid:1665460 },
-  "eFootball™ 2024": { appid:1665460 },
-  "TEKKEN 8": { appid:1778820 },
-  "Tekken 8": { appid:1778820 },
-  "Street Fighter 6": { appid:1364780 },
-  "Street Fighter™ 6": { appid:1364780 },
-  "Need for Speed Unbound": { appid:1846380 },
-  "Need for Speed™ Unbound": { appid:1846380 },
-  "STAR WARS Jedi: Survivor": { appid:1774580 },
-  "STAR WARS Jedi: Survivor™": { appid:1774580 },
-  "Star Wars Outlaws": { appid:2842070 },
-  "Dragon Ball: Sparking! ZERO": { appid:1790600 },
-  "DRAGON BALL: Sparking! ZERO": { appid:1790600 },
-  "Monster Hunter Wilds": { appid:2246340 },
-  "MONSTER HUNTER WILDS": { appid:2246340 },
-  "Satisfactory": { appid:526870 },
-  "Path of Exile 2": { appid:2694490 },
-  "Warhammer 40,000: Space Marine 2": { appid:2183900 },
-  "Black Myth: Wukong": { appid:2358720 },
-  "Ghost of Tsushima DIRECTOR'S CUT": { appid:2215430 },
-  "Civilization VII": { appid:1295660 },
-  "Sid Meier's Civilization VII": { appid:1295660 },
-  "Sid Meier's Civilization® VII": { appid:1295660 },
-  "Marvel Rivals": { appid:2767030 },
-  "Delta Force": { appid:2612830 },
-  "Palworld": { appid:1623730 },
-  "Enshrouded": { appid:1203620 },
-  "Helldivers 2": { appid:553850 },
-  "HELLDIVERS™ 2": { appid:553850 },
-  "The First Descendant": { appid:2074920 },
-  "Once Human": { appid:2139460 },
-  "Forza Motorsport": { appid:2440510 },
-  "Forza Horizon 5": { appid:1551360 },
-  "Microsoft Flight Simulator 2024": { appid:2537590 },
-  "Microsoft Flight Simulator": { appid:1250410 },
-  "Dragon Ball FighterZ": { appid:678950 },
-  "Mortal Kombat X": { appid:307780 },
-  "Injustice: Gods Among Us Ultimate Edition": { appid:242700 },
-  "Under Night In-Birth II Sys:Celes": { appid:2076010 },
-  "UNDER NIGHT IN-BIRTH II Sys:Celes": { appid:2076010 },
-  "Blade Strangers": { appid:565170 },
-  "Power Rangers: Battle for the Grid": { appid:1110100 },
-  "Them's Fightin' Herds": { appid:574980 },
-  "Rivals of Aether": { appid:383980 },
-  "Skullgirls 2nd Encore": { appid:245170 },
-  "MultiVersus": { appid:1818750 },
-  "Multiversus": { appid:1818750 },
-  "TEKKEN 8": { appid:1778820 },
-  "Brawlhalla": { appid:291550 },
-  "Cuphead": { appid:268910 },
-  "Enshrouded": { appid:1203620 },
-  "Frostpunk": { appid:323190 },
-  "Frostpunk 2": { appid:1601580 },
-  "Garry's Mod": { appid:4000 },
-  "Golf With Your Friends": { appid:431240 },
-  "Hades": { appid:1145360 },
-  "House Flipper": { appid:613100 },
-  "Into the Breach": { appid:590380 },
-  "Monster Hunter: World": { appid:582010 },
-  "Outer Wilds": { appid:753640 },
-  "Oxygen Not Included": { appid:457140 },
-  "Persona 4 Golden": { appid:1113000 },
-  "Pillars of Eternity II: Deadfire": { appid:560130 },
-  "Planet Coaster": { appid:493340 },
-  "Planet Zoo": { appid:703080 },
-  "PowerWash Simulator": { appid:1290000 },
-  "Rocket League": { appid:252950 },
-  "Sifu": { appid:2138710 },
-  "Skater XL": { appid:962730 },
-  "Slay the Spire": { appid:646570 },
-  "Sleeping Dogs: Definitive Edition": { appid:307690 },
-  "Spiritfarer": { appid:972660 },
-  "The Outer Worlds": { appid:578650 },
-  "Two Point Campus": { appid:1649080 },
-  "Two Point Hospital": { appid:535930 },
-  "Victoria 3": { appid:529340 },
-  "Wreckfest": { appid:228380 },
+  "Escape from Tarkov": {
+    appid:3932890,
+    link:"https://www.escapefromtarkov.com/purchase",
+    image: makeTextThumbnail("Escape from Tarkov", "Battlestate Games")
+  }
 };
 const EXACT_GENRE_OVERRIDES = {
   3405690: '스포츠',   // EA SPORTS FC 26
@@ -1469,12 +1345,26 @@ function resolveCanonicalAppId(gameOrId, title='') {
   const titleKey = normalizeTitleKey(title);
   return Number((THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || gameOrId || 0);
 }
-function getThumbAppId(gameOrId, title='') {
-  return resolveCanonicalAppId(gameOrId, title);
+function makeTextThumbnail(title, subtitle='') {
+  const safeTitle = String(title || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch] || ch));
+  const safeSubtitle = String(subtitle || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch] || ch));
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#111827"/></linearGradient></defs><rect width="920" height="430" rx="28" fill="url(#g)"/><rect x="18" y="18" width="884" height="394" rx="20" fill="none" stroke="#334155" stroke-width="2"/><text x="460" y="200" fill="#f8fafc" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">${safeTitle}</text><text x="460" y="258" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">${safeSubtitle}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
-function imgUrl(gameOrId, title='')       { const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
-function imgUrlAlt(gameOrId, title='')    { const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`; }
-function storeUrl(gameOrId, title='')     { const id=getThumbAppId(gameOrId,title); return `https://store.steampowered.com/app/${id}`; }
+function getThumbOverride(gameOrId, title='') {
+  const key = typeof gameOrId === 'object' && gameOrId ? gameOrId.title : title;
+  return THUMB_OVERRIDES[key] || null;
+}
+function getThumbAppId(gameOrId, title='') {
+  const override = getThumbOverride(gameOrId, title);
+  if (typeof gameOrId === 'object' && gameOrId) {
+    return (override?.appid) || gameOrId.id;
+  }
+  return (override?.appid) || gameOrId;
+}
+function imgUrl(gameOrId, title='')       { const override = getThumbOverride(gameOrId,title); if (override?.image) return override.image; const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
+function imgUrlAlt(gameOrId, title='')    { const override = getThumbOverride(gameOrId,title); if (override?.image) return override.image; const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`; }
+function storeUrl(gameOrId, title='')     { const override = getThumbOverride(gameOrId,title); if (override?.link) return override.link; const id=getThumbAppId(gameOrId,title); return `https://store.steampowered.com/app/${id}`; }
 
 function filterBySearch(g, q) {
   if (!q) return true;
@@ -1641,7 +1531,7 @@ function makeGameCard(g, delay) {
   return `
     <div class="game-card" onclick="openModal(${g.id})" style="animation-delay:${delay||0}s">
       <img class="game-card-img" src="${imgUrl(g)}" alt="${g.title}" loading="lazy"
-           onerror="this.src='${imgUrlAlt(g)}';this.onerror=function(){this.style.background='var(--surface3)'}">
+           onerror="handleSteamImgError(this, ${g.id}, ['${imgUrlAlt(g)}'])">
       <div class="game-card-body">
         <div class="game-card-title">${g.title}</div>
         <div class="game-card-meta">
