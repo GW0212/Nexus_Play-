@@ -2263,9 +2263,11 @@ function normalizeGenreItem(item, genre) {
     return normalized;
   }
   if (!(item.id && item.title)) return null;
-  const canonicalAppid = resolveCanonicalAppId(item.id, item.title);
+  // GAMES_CLEAN 로컬 데이터는 item.id가 이미 정식 appid — THUMB_OVERRIDES로 덮어쓰지 않음
+  const canonicalAppid = Number(item.id);
   return {
     appid: canonicalAppid,
+    id: canonicalAppid,
     name: item.title,
     developer: item.dev || '',
     ccu: item.ccu ?? Math.round((item.rating || 7) * 3200),
@@ -3228,9 +3230,11 @@ function applyGenreGrid(list, genre) {
   const filtered = q
     ? base.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
     : base;
-  const safeFiltered = filterTrustedThumbnailGames(filtered);
-  gridEl.innerHTML = safeFiltered.length
-    ? safeFiltered.map(app=>makeSteamCard(app,null,{ showLive:false, useLiveAppid:true })).join('')
+  // filterTrustedThumbnailGames 제거 — sanitizeTrustedSteamApp이 appid를 덮어쓰기 때문
+  // appid가 유효한 항목만 필터링하고 useLiveAppid:true로 렌더링
+  const validList = filtered.filter(app => Number(app.appid || app.id) > 0);
+  gridEl.innerHTML = validList.length
+    ? validList.map(app=>makeSteamCard(app,null,{ showLive:false, useLiveAppid:true })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${genre === '전체' ? '조건에 맞는 게임이 없습니다.' : `${genre} 장르 검색 결과 없음`}</div>`;
 }
 
