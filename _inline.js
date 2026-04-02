@@ -930,12 +930,26 @@ function resolvePrimaryGenre(app) {
 const _localStatsCache = new Map();
 let _localStatsPromise = null;
 
+function isUsableRenderedThumb(node) {
+  if (!node || node.id === 'modal-img') return false;
+  const src = node.currentSrc || node.src || '';
+  if (!src || /undefined|null/i.test(src)) return false;
+  if (node.complete && Number(node.naturalWidth || 0) > 8) return true;
+  return false;
+}
+
 function findRenderedThumbByAppId(appid) {
-  const nodes = Array.from(document.querySelectorAll(`img[data-appid="${appid}"]`));
-  for (const node of nodes) {
-    if (!node || node.id === 'modal-img') continue;
-    const src = node.currentSrc || node.src || '';
-    if (src && !/undefined|null/i.test(src)) return src;
+  const selectors = [
+    `.game-card img[data-appid="${appid}"]`,
+    `.hero-card img[data-appid="${appid}"]`,
+    `img[data-appid="${appid}"]`
+  ];
+  for (const selector of selectors) {
+    const nodes = Array.from(document.querySelectorAll(selector));
+    for (const node of nodes) {
+      if (!isUsableRenderedThumb(node)) continue;
+      return node.currentSrc || node.src || '';
+    }
   }
   return '';
 }
@@ -1639,11 +1653,21 @@ function loadSelection() {
 function openModal(id) {
   const g = getGameById(id); if (!g) return;
   const img = document.getElementById('modal-img');
-  const preferredThumb = findRenderedThumbByAppId(g.id) || imgUrl(g);
-  const fallbackQueue = [imgUrl(g), imgUrlAlt(g), makeTextThumbnail(g.title, g.dev || g.genre)].filter(Boolean);
-  let fallbackIndex = 0;
+  const renderedThumb = findRenderedThumbByAppId(g.id);
+  const uniqueThumbs = Array.from(new Set([
+    renderedThumb,
+    imgUrl(g),
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg`,
+    imgUrlAlt(g),
+    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg`,
+    makeTextThumbnail(g.title, g.dev || g.genre)
+  ].filter(Boolean)));
+  let fallbackIndex = 1;
+  img.referrerPolicy = 'no-referrer';
+  img.decoding = 'async';
+  img.loading = 'eager';
   img.onerror = function(){
-    const next = fallbackQueue[fallbackIndex++];
+    const next = uniqueThumbs[fallbackIndex++];
     if (next && this.src !== next) {
       this.src = next;
       return;
@@ -1653,7 +1677,7 @@ function openModal(id) {
   };
   img.removeAttribute('src');
   img.alt = g.title;
-  img.src = preferredThumb;
+  img.src = uniqueThumbs[0] || makeTextThumbnail(g.title, g.dev || g.genre);
   document.getElementById('modal-genre-badge').className = 'modal-genre '+genreClass(g.genre);
   document.getElementById('modal-genre-badge').textContent = g.genre;
   document.getElementById('modal-title').textContent = g.title;
