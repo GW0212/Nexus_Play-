@@ -1,179 +1,4 @@
 {
-  "427520": {
-    "appid": 427520,
-    "name": "Factorio",
-    "developer": "Wube Software",
-    "ccu": 95218,
-    "positive": 230706,
-    "negative": 169,
-    "average_2weeks": 15534,
-    "owners": 2768472,
-    "genre": "전략",
-    "tags": {
-      "자동화": 1,
-      "건설": 1,
-      "공장": 1,
-      "퍼즐": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "자동화",
-      "건설",
-      "공장",
-      "퍼즐",
-      "시뮬레이션"
-    ]
-  },
-  "413150": {
-    "appid": 413150,
-    "name": "Stardew Valley",
-    "developer": "ConcernedApe",
-    "ccu": 93185,
-    "positive": 226165,
-    "negative": 255,
-    "average_2weeks": 15193,
-    "owners": 2713980,
-    "genre": "시뮬레이션",
-    "tags": {
-      "농장": 1,
-      "릴렉싱": 1,
-      "픽셀": 1,
-      "인디": 1,
-      "rpg": 1
-    },
-    "tags_list": [
-      "농장",
-      "릴렉싱",
-      "픽셀",
-      "인디",
-      "rpg"
-    ]
-  },
-  "294100": {
-    "appid": 294100,
-    "name": "RimWorld",
-    "developer": "Ludeon Studios",
-    "ccu": 93140,
-    "positive": 226095,
-    "negative": 255,
-    "average_2weeks": 15181,
-    "owners": 2713140,
-    "genre": "시뮬레이션",
-    "tags": {
-      "식민지": 1,
-      "서바이벌": 1,
-      "관리": 1,
-      "랜덤": 1,
-      "ai": 1
-    },
-    "tags_list": [
-      "식민지",
-      "서바이벌",
-      "관리",
-      "랜덤",
-      "ai"
-    ]
-  },
-  "284160": {
-    "appid": 284160,
-    "name": "BeamNG.drive",
-    "developer": "BeamNG",
-    "ccu": 87272,
-    "positive": 216985,
-    "negative": 425,
-    "average_2weeks": 14013,
-    "owners": 2603820,
-    "genre": "레이싱",
-    "tags": {
-      "물리": 1,
-      "차량": 1,
-      "충돌": 1,
-      "샌드박스": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "물리",
-      "차량",
-      "충돌",
-      "샌드박스",
-      "시뮬레이션"
-    ]
-  },
-  "1868140": {
-    "appid": 1868140,
-    "name": "DAVE THE DIVER",
-    "developer": "MINTROCKET",
-    "ccu": 85072,
-    "positive": 212169,
-    "negative": 509,
-    "average_2weeks": 13622,
-    "owners": 2546028,
-    "genre": "시뮬레이션",
-    "tags": {
-      "경영": 1,
-      "탐험": 1,
-      "낚시": 1,
-      "인디": 1,
-      "도트": 1
-    },
-    "tags_list": [
-      "경영",
-      "탐험",
-      "낚시",
-      "인디",
-      "도트"
-    ]
-  },
-  "526870": {
-    "appid": 526870,
-    "name": "Satisfactory",
-    "developer": "Coffee Stain Studios",
-    "ccu": 84177,
-    "positive": 203345,
-    "negative": 680,
-    "average_2weeks": 13767,
-    "owners": 2440140,
-    "genre": "시뮬레이션",
-    "tags": {
-      "공장": 1,
-      "1인칭": 1,
-      "건설": 1,
-      "협동": 1,
-      "자동화": 1
-    },
-    "tags_list": [
-      "공장",
-      "1인칭",
-      "건설",
-      "협동",
-      "자동화"
-    ]
-  },
-  "975370": {
-    "appid": 975370,
-    "name": "Dwarf Fortress",
-    "developer": "Bay 12 Games",
-    "ccu": 84132,
-    "positive": 203275,
-    "negative": 680,
-    "average_2weeks": 13755,
-    "owners": 2439300,
-    "genre": "시뮬레이션",
-    "tags": {
-      "드워프": 1,
-      "건설": 1,
-      "관리": 1,
-      "복잡한": 1,
-      "전설": 1
-    },
-    "tags_list": [
-      "드워프",
-      "건설",
-      "관리",
-      "복잡한",
-      "전설"
-    ]
-  },
   "108600": {
     "appid": 108600,
     "name": "Project Zomboid",
@@ -249,277 +74,54 @@
       "협동"
     ]
   },
-  "244210": {
-    "appid": 244210,
-    "name": "Assetto Corsa",
-    "developer": "Kunos Simulazioni",
-    "ccu": 81972,
-    "positive": 203555,
-    "negative": 680,
-    "average_2weeks": 13179,
-    "owners": 2442660,
+  "228380": {
+    "appid": 228380,
+    "name": "Project CARS",
+    "developer": "Slightly Mad Studios",
+    "ccu": 60800,
+    "positive": 153985,
+    "negative": 1700,
+    "average_2weeks": 9600,
+    "owners": 1847820,
     "genre": "레이싱",
     "tags": {
       "레이싱": 1,
       "시뮬레이션": 1,
-      "리얼리즘": 1,
-      "모딩": 1,
-      "트랙": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "시뮬레이션",
-      "리얼리즘",
-      "모딩",
-      "트랙"
-    ]
-  },
-  "255710": {
-    "appid": 255710,
-    "name": "Cities: Skylines",
-    "developer": "Colossal Order",
-    "ccu": 80735,
-    "positive": 194785,
-    "negative": 850,
-    "average_2weeks": 13226,
-    "owners": 2337420,
-    "genre": "시뮬레이션",
-    "tags": {
-      "도시건설": 1,
-      "건설": 1,
-      "전략": 1,
-      "관리": 1
-    },
-    "tags_list": [
-      "도시건설",
-      "건설",
-      "전략",
-      "관리"
-    ]
-  },
-  "1250410": {
-    "appid": 1250410,
-    "name": "Microsoft Flight Simulator",
-    "developer": "Asobo Studio",
-    "ccu": 80660,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 13206,
-    "owners": 2335320,
-    "genre": "시뮬레이션",
-    "tags": {
-      "비행": 1,
-      "사실적": 1,
-      "지구": 1,
-      "조종사": 1,
-      "vr": 1
-    },
-    "tags_list": [
-      "비행",
-      "사실적",
-      "지구",
-      "조종사",
-      "vr"
-    ]
-  },
-  "1625450": {
-    "appid": 1625450,
-    "name": "Plate Up!",
-    "developer": "It's Happening",
-    "ccu": 80407,
-    "positive": 203275,
-    "negative": 680,
-    "average_2weeks": 12695,
-    "owners": 2439300,
-    "genre": "시뮬레이션",
-    "tags": {
-      "요리": 1,
-      "경영": 1,
-      "로그라이크": 1,
-      "협동": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "요리",
-      "경영",
-      "로그라이크",
-      "협동",
-      "캐주얼"
-    ]
-  },
-  "270880": {
-    "appid": 270880,
-    "name": "American Truck Simulator",
-    "developer": "SCS Software",
-    "ccu": 79664,
-    "positive": 199093,
-    "negative": 765,
-    "average_2weeks": 12753,
-    "owners": 2389116,
-    "genre": "시뮬레이션",
-    "tags": {
-      "운전": 1,
-      "트럭": 1,
-      "힐링": 1,
-      "시뮬": 1,
-      "여행": 1
-    },
-    "tags_list": [
-      "운전",
-      "트럭",
-      "힐링",
-      "시뮬",
-      "여행"
-    ]
-  },
-  "972660": {
-    "appid": 972660,
-    "name": "Spiritfarer",
-    "developer": "Thunder Lotus Games",
-    "ccu": 77684,
-    "positive": 190314,
-    "negative": 934,
-    "average_2weeks": 12597,
-    "owners": 2283768,
-    "genre": "인디",
-    "tags": {
-      "힐링": 1,
-      "인디": 1,
-      "스토리": 1,
-      "시뮬레이션": 1,
-      "감동": 1
-    },
-    "tags_list": [
-      "힐링",
-      "인디",
-      "스토리",
-      "시뮬레이션",
-      "감동"
-    ]
-  },
-  "457140": {
-    "appid": 457140,
-    "name": "Oxygen Not Included",
-    "developer": "Klei Entertainment",
-    "ccu": 77609,
-    "positive": 190349,
-    "negative": 934,
-    "average_2weeks": 12577,
-    "owners": 2284188,
-    "genre": "전략",
-    "tags": {
-      "시뮬레이션": 1,
-      "서바이벌": 1,
-      "건설": 1,
-      "도전적": 1,
-      "과학": 1
-    },
-    "tags_list": [
-      "시뮬레이션",
-      "서바이벌",
-      "건설",
-      "도전적",
-      "과학"
-    ]
-  },
-  "244850": {
-    "appid": 244850,
-    "name": "Space Engineers",
-    "developer": "Keen Software House",
-    "ccu": 77218,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 12656,
-    "owners": 2233212,
-    "genre": "시뮬레이션",
-    "tags": {
-      "우주": 1,
-      "건설": 1,
-      "엔지니어링": 1,
-      "협동": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "우주",
-      "건설",
-      "엔지니어링",
-      "협동",
-      "sf"
-    ]
-  },
-  "310560": {
-    "appid": 310560,
-    "name": "DiRT Rally",
-    "developer": "Codemasters",
-    "ccu": 76950,
-    "positive": 194785,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2337420,
-    "genre": "레이싱",
-    "tags": {
-      "랠리": 1,
-      "레이싱": 1,
-      "오프로드": 1,
-      "시뮬레이션": 1,
+      "자동차": 1,
+      "멀티플레이어": 1,
       "현실적": 1
     },
     "tags_list": [
-      "랠리",
       "레이싱",
-      "오프로드",
       "시뮬레이션",
+      "자동차",
+      "멀티플레이어",
       "현실적"
     ]
   },
-  "1449560": {
-    "appid": 1449560,
-    "name": "Timberborn",
-    "developer": "Mechanistry",
-    "ccu": 76950,
-    "positive": 194575,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2334900,
-    "genre": "시뮬레이션",
+  "233270": {
+    "appid": 233270,
+    "name": "Football Manager 2014",
+    "developer": "Sports Interactive",
+    "ccu": 68637,
+    "positive": 173855,
+    "negative": 1275,
+    "average_2weeks": 10837,
+    "owners": 2086260,
+    "genre": "스포츠",
     "tags": {
-      "도시건설": 1,
+      "축구": 1,
+      "감독": 1,
       "시뮬레이션": 1,
-      "비버": 1,
       "전략": 1,
-      "자원관리": 1
+      "데이터": 1
     },
     "tags_list": [
-      "도시건설",
+      "축구",
+      "감독",
       "시뮬레이션",
-      "비버",
       "전략",
-      "자원관리"
-    ]
-  },
-  "690790": {
-    "appid": 690790,
-    "name": "DiRT Rally 2.0",
-    "developer": "Codemasters",
-    "ccu": 76769,
-    "positive": 190349,
-    "negative": 934,
-    "average_2weeks": 12353,
-    "owners": 2284188,
-    "genre": "레이싱",
-    "tags": {
-      "랠리": 1,
-      "레이싱": 1,
-      "리얼리즘": 1,
-      "도전적": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "랠리",
-      "레이싱",
-      "리얼리즘",
-      "도전적",
-      "시뮬레이션"
+      "데이터"
     ]
   },
   "233720": {
@@ -547,28 +149,501 @@
       "인디"
     ]
   },
-  "805550": {
-    "appid": 805550,
-    "name": "Assetto Corsa Competizione",
+  "244210": {
+    "appid": 244210,
+    "name": "Assetto Corsa",
     "developer": "Kunos Simulazioni",
-    "ccu": 75118,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 12096,
-    "owners": 2233212,
+    "ccu": 81972,
+    "positive": 203555,
+    "negative": 680,
+    "average_2weeks": 13179,
+    "owners": 2442660,
     "genre": "레이싱",
     "tags": {
       "레이싱": 1,
-      "GT레이싱": 1,
+      "시뮬레이션": 1,
       "리얼리즘": 1,
-      "경쟁": 1,
-      "시뮬레이션": 1
+      "모딩": 1,
+      "트랙": 1
     },
     "tags_list": [
       "레이싱",
-      "GT레이싱",
+      "시뮬레이션",
       "리얼리즘",
-      "경쟁",
+      "모딩",
+      "트랙"
+    ]
+  },
+  "244850": {
+    "appid": 244850,
+    "name": "Space Engineers",
+    "developer": "Keen Software House",
+    "ccu": 77218,
+    "positive": 186101,
+    "negative": 1019,
+    "average_2weeks": 12656,
+    "owners": 2233212,
+    "genre": "시뮬레이션",
+    "tags": {
+      "우주": 1,
+      "건설": 1,
+      "엔지니어링": 1,
+      "협동": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "우주",
+      "건설",
+      "엔지니어링",
+      "협동",
+      "sf"
+    ]
+  },
+  "255710": {
+    "appid": 255710,
+    "name": "Cities: Skylines",
+    "developer": "Colossal Order",
+    "ccu": 80735,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 13226,
+    "owners": 2337420,
+    "genre": "시뮬레이션",
+    "tags": {
+      "도시건설": 1,
+      "건설": 1,
+      "전략": 1,
+      "관리": 1
+    },
+    "tags_list": [
+      "도시건설",
+      "건설",
+      "전략",
+      "관리"
+    ]
+  },
+  "270880": {
+    "appid": 270880,
+    "name": "American Truck Simulator",
+    "developer": "SCS Software",
+    "ccu": 79664,
+    "positive": 199093,
+    "negative": 765,
+    "average_2weeks": 12753,
+    "owners": 2389116,
+    "genre": "시뮬레이션",
+    "tags": {
+      "운전": 1,
+      "트럭": 1,
+      "힐링": 1,
+      "시뮬": 1,
+      "여행": 1
+    },
+    "tags_list": [
+      "운전",
+      "트럭",
+      "힐링",
+      "시뮬",
+      "여행"
+    ]
+  },
+  "284160": {
+    "appid": 284160,
+    "name": "BeamNG.drive",
+    "developer": "BeamNG",
+    "ccu": 87272,
+    "positive": 216985,
+    "negative": 425,
+    "average_2weeks": 14013,
+    "owners": 2603820,
+    "genre": "레이싱",
+    "tags": {
+      "물리": 1,
+      "차량": 1,
+      "충돌": 1,
+      "샌드박스": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "물리",
+      "차량",
+      "충돌",
+      "샌드박스",
+      "시뮬레이션"
+    ]
+  },
+  "294100": {
+    "appid": 294100,
+    "name": "RimWorld",
+    "developer": "Ludeon Studios",
+    "ccu": 93140,
+    "positive": 226095,
+    "negative": 255,
+    "average_2weeks": 15181,
+    "owners": 2713140,
+    "genre": "시뮬레이션",
+    "tags": {
+      "식민지": 1,
+      "서바이벌": 1,
+      "관리": 1,
+      "랜덤": 1,
+      "ai": 1
+    },
+    "tags_list": [
+      "식민지",
+      "서바이벌",
+      "관리",
+      "랜덤",
+      "ai"
+    ]
+  },
+  "310560": {
+    "appid": 310560,
+    "name": "DiRT Rally",
+    "developer": "Codemasters",
+    "ccu": 76950,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2337420,
+    "genre": "레이싱",
+    "tags": {
+      "랠리": 1,
+      "레이싱": 1,
+      "오프로드": 1,
+      "시뮬레이션": 1,
+      "현실적": 1
+    },
+    "tags_list": [
+      "랠리",
+      "레이싱",
+      "오프로드",
+      "시뮬레이션",
+      "현실적"
+    ]
+  },
+  "378860": {
+    "appid": 378860,
+    "name": "Project CARS 2",
+    "developer": "Slightly Mad Studios",
+    "ccu": 65445,
+    "positive": 165651,
+    "negative": 1444,
+    "average_2weeks": 10333,
+    "owners": 1987812,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "시뮬레이션": 1,
+      "기상변화": 1,
+      "현실적": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "시뮬레이션",
+      "기상변화",
+      "현실적",
+      "멀티플레이어"
+    ]
+  },
+  "386070": {
+    "appid": 386070,
+    "name": "Pool Nation FX",
+    "developer": "Cherry Pop Games",
+    "ccu": 53437,
+    "positive": 135385,
+    "negative": 2125,
+    "average_2weeks": 8437,
+    "owners": 1624620,
+    "genre": "스포츠",
+    "tags": {
+      "당구": 1,
+      "시뮬레이션": 1,
+      "스포츠": 1,
+      "멀티플레이어": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "당구",
+      "시뮬레이션",
+      "스포츠",
+      "멀티플레이어",
+      "캐주얼"
+    ]
+  },
+  "413150": {
+    "appid": 413150,
+    "name": "Stardew Valley",
+    "developer": "ConcernedApe",
+    "ccu": 93185,
+    "positive": 226165,
+    "negative": 255,
+    "average_2weeks": 15193,
+    "owners": 2713980,
+    "genre": "시뮬레이션",
+    "tags": {
+      "농장": 1,
+      "릴렉싱": 1,
+      "픽셀": 1,
+      "인디": 1,
+      "rpg": 1
+    },
+    "tags_list": [
+      "농장",
+      "릴렉싱",
+      "픽셀",
+      "인디",
+      "rpg"
+    ]
+  },
+  "427520": {
+    "appid": 427520,
+    "name": "Factorio",
+    "developer": "Wube Software",
+    "ccu": 95218,
+    "positive": 230706,
+    "negative": 169,
+    "average_2weeks": 15534,
+    "owners": 2768472,
+    "genre": "전략",
+    "tags": {
+      "자동화": 1,
+      "건설": 1,
+      "공장": 1,
+      "퍼즐": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "자동화",
+      "건설",
+      "공장",
+      "퍼즐",
+      "시뮬레이션"
+    ]
+  },
+  "457140": {
+    "appid": 457140,
+    "name": "Oxygen Not Included",
+    "developer": "Klei Entertainment",
+    "ccu": 77609,
+    "positive": 190349,
+    "negative": 934,
+    "average_2weeks": 12577,
+    "owners": 2284188,
+    "genre": "전략",
+    "tags": {
+      "시뮬레이션": 1,
+      "서바이벌": 1,
+      "건설": 1,
+      "도전적": 1,
+      "과학": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "서바이벌",
+      "건설",
+      "도전적",
+      "과학"
+    ]
+  },
+  "464920": {
+    "appid": 464920,
+    "name": "Surviving Mars",
+    "developer": "Haemimont Games",
+    "ccu": 63877,
+    "positive": 161656,
+    "negative": 1530,
+    "average_2weeks": 10086,
+    "owners": 1939872,
+    "genre": "전략",
+    "tags": {
+      "도시건설": 1,
+      "화성": 1,
+      "SF": 1,
+      "전략": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "도시건설",
+      "화성",
+      "SF",
+      "전략",
+      "시뮬레이션"
+    ]
+  },
+  "493340": {
+    "appid": 493340,
+    "name": "Planet Coaster",
+    "developer": "Frontier Developments",
+    "ccu": 69287,
+    "positive": 169694,
+    "negative": 1359,
+    "average_2weeks": 11252,
+    "owners": 2036328,
+    "genre": "전략",
+    "tags": {
+      "시뮬레이션": 1,
+      "테마파크": 1,
+      "건설": 1,
+      "캐주얼": 1,
+      "창의": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "테마파크",
+      "건설",
+      "캐주얼",
+      "창의"
+    ]
+  },
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 84177,
+    "positive": 203345,
+    "negative": 680,
+    "average_2weeks": 13767,
+    "owners": 2440140,
+    "genre": "시뮬레이션",
+    "tags": {
+      "공장": 1,
+      "1인칭": 1,
+      "건설": 1,
+      "협동": 1,
+      "자동화": 1
+    },
+    "tags_list": [
+      "공장",
+      "1인칭",
+      "건설",
+      "협동",
+      "자동화"
+    ]
+  },
+  "535930": {
+    "appid": 535930,
+    "name": "Two Point Hospital",
+    "developer": "Two Point Studios",
+    "ccu": 67745,
+    "positive": 165616,
+    "negative": 1444,
+    "average_2weeks": 11013,
+    "owners": 1987392,
+    "genre": "전략",
+    "tags": {
+      "시뮬레이션": 1,
+      "병원": 1,
+      "유머": 1,
+      "캐주얼": 1,
+      "건설": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "병원",
+      "유머",
+      "캐주얼",
+      "건설"
+    ]
+  },
+  "613100": {
+    "appid": 613100,
+    "name": "House Flipper",
+    "developer": "Empyrean",
+    "ccu": 62950,
+    "positive": 153880,
+    "negative": 1700,
+    "average_2weeks": 10240,
+    "owners": 1846560,
+    "genre": "시뮬레이션",
+    "tags": {
+      "시뮬레이션": 1,
+      "힐링": 1,
+      "건설": 1,
+      "캐주얼": 1,
+      "인테리어": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "힐링",
+      "건설",
+      "캐주얼",
+      "인테리어"
+    ]
+  },
+  "621060": {
+    "appid": 621060,
+    "name": "PC Building Simulator",
+    "developer": "Claudiu Kiss / The Irregular Corporation",
+    "ccu": 70447,
+    "positive": 177748,
+    "negative": 1190,
+    "average_2weeks": 11209,
+    "owners": 2132976,
+    "genre": "시뮬레이션",
+    "tags": {
+      "시뮬레이션": 1,
+      "PC": 1,
+      "조립": 1,
+      "경영": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "PC",
+      "조립",
+      "경영",
+      "캐주얼"
+    ]
+  },
+  "685260": {
+    "appid": 685260,
+    "name": "Premium Bowling",
+    "developer": "VISION3 Games",
+    "ccu": 57798,
+    "positive": 146261,
+    "negative": 1870,
+    "average_2weeks": 9126,
+    "owners": 1755132,
+    "genre": "스포츠",
+    "tags": {
+      "볼링": 1,
+      "스포츠": 1,
+      "시뮬레이션": 1,
+      "VR": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "볼링",
+      "스포츠",
+      "시뮬레이션",
+      "VR",
+      "캐주얼"
+    ]
+  },
+  "690790": {
+    "appid": 690790,
+    "name": "DiRT Rally 2.0",
+    "developer": "Codemasters",
+    "ccu": 76769,
+    "positive": 190349,
+    "negative": 934,
+    "average_2weeks": 12353,
+    "owners": 2284188,
+    "genre": "레이싱",
+    "tags": {
+      "랠리": 1,
+      "레이싱": 1,
+      "리얼리즘": 1,
+      "도전적": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "랠리",
+      "레이싱",
+      "리얼리즘",
+      "도전적",
       "시뮬레이션"
     ]
   },
@@ -597,704 +672,54 @@
       "창의"
     ]
   },
-  "1313140": {
-    "appid": 1313140,
-    "name": "Cult of the Lamb",
-    "developer": "Massive Monster",
-    "ccu": 74173,
-    "positive": 185996,
+  "805550": {
+    "appid": 805550,
+    "name": "Assetto Corsa Competizione",
+    "developer": "Kunos Simulazioni",
+    "ccu": 75118,
+    "positive": 186101,
     "negative": 1019,
-    "average_2weeks": 11844,
-    "owners": 2231952,
-    "genre": "시뮬레이션",
-    "tags": {
-      "경영": 1,
-      "로그라이크": 1,
-      "귀여움": 1,
-      "사교": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "경영",
-      "로그라이크",
-      "귀여움",
-      "사교",
-      "인디"
-    ]
-  },
-  "1290000": {
-    "appid": 1290000,
-    "name": "PowerWash Simulator",
-    "developer": "FuturLab",
-    "ccu": 72427,
-    "positive": 177643,
-    "negative": 1190,
-    "average_2weeks": 11737,
-    "owners": 2131716,
-    "genre": "시뮬레이션",
-    "tags": {
-      "힐링": 1,
-      "시뮬레이션": 1,
-      "캐주얼": 1,
-      "협동": 1,
-      "스트레스해소": 1
-    },
-    "tags_list": [
-      "힐링",
-      "시뮬레이션",
-      "캐주얼",
-      "협동",
-      "스트레스해소"
-    ]
-  },
-  "1430690": {
-    "appid": 1430690,
-    "name": "Hardspace: Shipbreaker",
-    "developer": "Blackbird Interactive",
-    "ccu": 72317,
-    "positive": 173540,
-    "negative": 1275,
-    "average_2weeks": 11885,
-    "owners": 2082480,
-    "genre": "시뮬레이션",
-    "tags": {
-      "우주선해체": 1,
-      "sf": 1,
-      "릴렉싱": 1,
-      "독특": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "우주선해체",
-      "sf",
-      "릴렉싱",
-      "독특",
-      "건설"
-    ]
-  },
-  "1190000": {
-    "appid": 1190000,
-    "name": "Car Mechanic Simulator 2021",
-    "developer": "Red Dot Games",
-    "ccu": 72075,
-    "positive": 181830,
-    "negative": 1105,
-    "average_2weeks": 11465,
-    "owners": 2181960,
-    "genre": "시뮬레이션",
-    "tags": {
-      "자동차": 1,
-      "정비": 1,
-      "시뮬레이션": 1,
-      "현실적": 1,
-      "경영": 1
-    },
-    "tags_list": [
-      "자동차",
-      "정비",
-      "시뮬레이션",
-      "현실적",
-      "경영"
-    ]
-  },
-  "1042550": {
-    "appid": 1042550,
-    "name": "Snowrunner",
-    "developer": "Saber Interactive",
-    "ccu": 71905,
-    "positive": 181830,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2181960,
-    "genre": "시뮬레이션",
-    "tags": {
-      "트럭": 1,
-      "오프로드": 1,
-      "시뮬레이션": 1,
-      "오픈월드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "트럭",
-      "오프로드",
-      "시뮬레이션",
-      "오픈월드",
-      "협동"
-    ]
-  },
-  "1455840": {
-    "appid": 1455840,
-    "name": "Wylde Flowers",
-    "developer": "Studio Drydock",
-    "ccu": 71905,
-    "positive": 181760,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2181120,
-    "genre": "시뮬레이션",
-    "tags": {
-      "농장": 1,
-      "마법": 1,
-      "시뮬레이션": 1,
-      "힐링": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "농장",
-      "마법",
-      "시뮬레이션",
-      "힐링",
-      "스토리"
-    ]
-  },
-  "621060": {
-    "appid": 621060,
-    "name": "PC Building Simulator",
-    "developer": "Claudiu Kiss / The Irregular Corporation",
-    "ccu": 70447,
-    "positive": 177748,
-    "negative": 1190,
-    "average_2weeks": 11209,
-    "owners": 2132976,
-    "genre": "시뮬레이션",
-    "tags": {
-      "시뮬레이션": 1,
-      "PC": 1,
-      "조립": 1,
-      "경영": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "시뮬레이션",
-      "PC",
-      "조립",
-      "경영",
-      "캐주얼"
-    ]
-  },
-  "2252570": {
-    "appid": 2252570,
-    "name": "Football Manager 2024",
-    "developer": "Sports Interactive",
-    "ccu": 70322,
-    "positive": 173505,
-    "negative": 1275,
-    "average_2weeks": 11353,
-    "owners": 2082060,
-    "genre": "스포츠",
-    "tags": {
-      "축구": 1,
-      "경영": 1,
-      "전술": 1,
-      "시뮬레이션": 1,
-      "중독성": 1
-    },
-    "tags_list": [
-      "축구",
-      "경영",
-      "전술",
-      "시뮬레이션",
-      "중독성"
-    ]
-  },
-  "493340": {
-    "appid": 493340,
-    "name": "Planet Coaster",
-    "developer": "Frontier Developments",
-    "ccu": 69287,
-    "positive": 169694,
-    "negative": 1359,
-    "average_2weeks": 11252,
-    "owners": 2036328,
-    "genre": "전략",
-    "tags": {
-      "시뮬레이션": 1,
-      "테마파크": 1,
-      "건설": 1,
-      "캐주얼": 1,
-      "창의": 1
-    },
-    "tags_list": [
-      "시뮬레이션",
-      "테마파크",
-      "건설",
-      "캐주얼",
-      "창의"
-    ]
-  },
-  "1248130": {
-    "appid": 1248130,
-    "name": "Farming Simulator 22",
-    "developer": "Giants Software",
-    "ccu": 68837,
-    "positive": 173575,
-    "negative": 1275,
-    "average_2weeks": 10957,
-    "owners": 2082900,
-    "genre": "시뮬레이션",
-    "tags": {
-      "농장": 1,
-      "시뮬레이션": 1,
-      "트랙터": 1,
-      "경영": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "농장",
-      "시뮬레이션",
-      "트랙터",
-      "경영",
-      "협동"
-    ]
-  },
-  "233270": {
-    "appid": 233270,
-    "name": "Football Manager 2014",
-    "developer": "Sports Interactive",
-    "ccu": 68637,
-    "positive": 173855,
-    "negative": 1275,
-    "average_2weeks": 10837,
-    "owners": 2086260,
-    "genre": "스포츠",
-    "tags": {
-      "축구": 1,
-      "감독": 1,
-      "시뮬레이션": 1,
-      "전략": 1,
-      "데이터": 1
-    },
-    "tags_list": [
-      "축구",
-      "감독",
-      "시뮬레이션",
-      "전략",
-      "데이터"
-    ]
-  },
-  "1044720": {
-    "appid": 1044720,
-    "name": "Cooking Simulator",
-    "developer": "Big Cheese Studio",
-    "ccu": 68637,
-    "positive": 173645,
-    "negative": 1275,
-    "average_2weeks": 10837,
-    "owners": 2083740,
-    "genre": "시뮬레이션",
-    "tags": {
-      "요리": 1,
-      "시뮬레이션": 1,
-      "물리": 1,
-      "캐주얼": 1,
-      "유머": 1
-    },
-    "tags_list": [
-      "요리",
-      "시뮬레이션",
-      "물리",
-      "캐주얼",
-      "유머"
-    ]
-  },
-  "535930": {
-    "appid": 535930,
-    "name": "Two Point Hospital",
-    "developer": "Two Point Studios",
-    "ccu": 67745,
-    "positive": 165616,
-    "negative": 1444,
-    "average_2weeks": 11013,
-    "owners": 1987392,
-    "genre": "전략",
-    "tags": {
-      "시뮬레이션": 1,
-      "병원": 1,
-      "유머": 1,
-      "캐주얼": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "시뮬레이션",
-      "병원",
-      "유머",
-      "캐주얼",
-      "건설"
-    ]
-  },
-  "378860": {
-    "appid": 378860,
-    "name": "Project CARS 2",
-    "developer": "Slightly Mad Studios",
-    "ccu": 65445,
-    "positive": 165651,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1987812,
+    "average_2weeks": 12096,
+    "owners": 2233212,
     "genre": "레이싱",
     "tags": {
       "레이싱": 1,
-      "시뮬레이션": 1,
-      "기상변화": 1,
-      "현실적": 1,
-      "멀티플레이어": 1
+      "GT레이싱": 1,
+      "리얼리즘": 1,
+      "경쟁": 1,
+      "시뮬레이션": 1
     },
     "tags_list": [
       "레이싱",
-      "시뮬레이션",
-      "기상변화",
-      "현실적",
-      "멀티플레이어"
+      "GT레이싱",
+      "리얼리즘",
+      "경쟁",
+      "시뮬레이션"
     ]
   },
-  "1293830": {
-    "appid": 1293830,
-    "name": "F1 2021",
-    "developer": "Codemasters",
-    "ccu": 65445,
-    "positive": 165511,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1986132,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "F1": 1,
-      "시뮬레이션": 1,
-      "스토리": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "F1",
-      "시뮬레이션",
-      "스토리",
-      "멀티플레이어"
-    ]
-  },
-  "464920": {
-    "appid": 464920,
-    "name": "Surviving Mars",
-    "developer": "Haemimont Games",
-    "ccu": 63877,
-    "positive": 161656,
-    "negative": 1530,
-    "average_2weeks": 10086,
-    "owners": 1939872,
+  "949230": {
+    "appid": 949230,
+    "name": "Cities: Skylines II",
+    "developer": "Colossal Order Ltd.",
+    "ccu": 48119,
+    "positive": 121088,
+    "negative": 2465,
+    "average_2weeks": 7689,
+    "owners": 1453056,
     "genre": "전략",
     "tags": {
       "도시건설": 1,
-      "화성": 1,
-      "SF": 1,
+      "시뮬레이션": 1,
       "전략": 1,
-      "시뮬레이션": 1
+      "경영": 1,
+      "현대": 1
     },
     "tags_list": [
       "도시건설",
-      "화성",
-      "SF",
+      "시뮬레이션",
       "전략",
-      "시뮬레이션"
-    ]
-  },
-  "613100": {
-    "appid": 613100,
-    "name": "House Flipper",
-    "developer": "Empyrean",
-    "ccu": 62950,
-    "positive": 153880,
-    "negative": 1700,
-    "average_2weeks": 10240,
-    "owners": 1846560,
-    "genre": "시뮬레이션",
-    "tags": {
-      "시뮬레이션": 1,
-      "힐링": 1,
-      "건설": 1,
-      "캐주얼": 1,
-      "인테리어": 1
-    },
-    "tags_list": [
-      "시뮬레이션",
-      "힐링",
-      "건설",
-      "캐주얼",
-      "인테리어"
-    ]
-  },
-  "2440510": {
-    "appid": 2440510,
-    "name": "Forza Motorsport",
-    "developer": "Turn 10 Studios",
-    "ccu": 62200,
-    "positive": 153705,
-    "negative": 1700,
-    "average_2weeks": 10040,
-    "owners": 1844460,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "시뮬레이션": 1,
-      "자동차": 1,
-      "경쟁": 1,
-      "리얼리즘": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "시뮬레이션",
-      "자동차",
-      "경쟁",
-      "리얼리즘"
-    ]
-  },
-  "1649080": {
-    "appid": 1649080,
-    "name": "Two Point Campus",
-    "developer": "Two Point Studios",
-    "ccu": 61574,
-    "positive": 149924,
-    "negative": 1784,
-    "average_2weeks": 10037,
-    "owners": 1799088,
-    "genre": "전략",
-    "tags": {
-      "시뮬레이션": 1,
-      "캠퍼스": 1,
-      "유머": 1,
-      "캐주얼": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "시뮬레이션",
-      "캠퍼스",
-      "유머",
-      "캐주얼",
-      "건설"
-    ]
-  },
-  "1588010": {
-    "appid": 1588010,
-    "name": "PGA TOUR 2K23",
-    "developer": "HB Studios",
-    "ccu": 60835,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9676,
-    "owners": 1844880,
-    "genre": "스포츠",
-    "tags": {
-      "골프": 1,
-      "스포츠": 1,
-      "시뮬레이션": 1,
-      "멀티플레이어": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "골프",
-      "스포츠",
-      "시뮬레이션",
-      "멀티플레이어",
-      "캐주얼"
-    ]
-  },
-  "228380": {
-    "appid": 228380,
-    "name": "Project CARS",
-    "developer": "Slightly Mad Studios",
-    "ccu": 60800,
-    "positive": 153985,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1847820,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "시뮬레이션": 1,
-      "자동차": 1,
-      "멀티플레이어": 1,
-      "현실적": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "시뮬레이션",
-      "자동차",
-      "멀티플레이어",
-      "현실적"
-    ]
-  },
-  "1507390": {
-    "appid": 1507390,
-    "name": "WRC Generations",
-    "developer": "KT Racing",
-    "ccu": 60800,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9600,
-    "owners": 1844880,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "랠리": 1,
-      "WRC": 1,
-      "시뮬레이션": 1,
-      "하이브리드": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "랠리",
-      "WRC",
-      "시뮬레이션",
-      "하이브리드"
-    ]
-  },
-  "685260": {
-    "appid": 685260,
-    "name": "Premium Bowling",
-    "developer": "VISION3 Games",
-    "ccu": 57798,
-    "positive": 146261,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1755132,
-    "genre": "스포츠",
-    "tags": {
-      "볼링": 1,
-      "스포츠": 1,
-      "시뮬레이션": 1,
-      "VR": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "볼링",
-      "스포츠",
-      "시뮬레이션",
-      "VR",
-      "캐주얼"
-    ]
-  },
-  "1218210": {
-    "appid": 1218210,
-    "name": "Train Sim World 3",
-    "developer": "Dovetail Games",
-    "ccu": 57798,
-    "positive": 146156,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1753872,
-    "genre": "시뮬레이션",
-    "tags": {
-      "기차": 1,
-      "시뮬레이션": 1,
-      "운전": 1,
-      "현실적": 1,
-      "힐링": 1
-    },
-    "tags_list": [
-      "기차",
-      "시뮬레이션",
-      "운전",
-      "현실적",
-      "힐링"
-    ]
-  },
-  "3243440": {
-    "appid": 3243440,
-    "name": "Planet Coaster 2",
-    "developer": "Frontier Developments",
-    "ccu": 57798,
-    "positive": 146086,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1753032,
-    "genre": "시뮬레이션",
-    "tags": {
-      "놀이공원": 1,
-      "워터파크": 1,
-      "시뮬레이션": 1,
-      "경영": 1,
-      "건설": 1
-    },
-    "tags_list": [
-      "놀이공원",
-      "워터파크",
-      "시뮬레이션",
       "경영",
-      "건설"
-    ]
-  },
-  "386070": {
-    "appid": 386070,
-    "name": "Pool Nation FX",
-    "developer": "Cherry Pop Games",
-    "ccu": 53437,
-    "positive": 135385,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1624620,
-    "genre": "스포츠",
-    "tags": {
-      "당구": 1,
-      "시뮬레이션": 1,
-      "스포츠": 1,
-      "멀티플레이어": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "당구",
-      "시뮬레이션",
-      "스포츠",
-      "멀티플레이어",
-      "캐주얼"
-    ]
-  },
-  "1085510": {
-    "appid": 1085510,
-    "name": "MotoGP 21",
-    "developer": "Milestone S.r.l.",
-    "ccu": 53437,
-    "positive": 135175,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1622100,
-    "genre": "레이싱",
-    "tags": {
-      "레이싱": 1,
-      "모터사이클": 1,
-      "시뮬레이션": 1,
-      "MotoGP": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "모터사이클",
-      "시뮬레이션",
-      "MotoGP",
-      "멀티플레이어"
-    ]
-  },
-  "2161340": {
-    "appid": 2161340,
-    "name": "EA SPORTS FC 24",
-    "developer": "EA Vancouver",
-    "ccu": 53437,
-    "positive": 135105,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1621260,
-    "genre": "스포츠",
-    "tags": {
-      "축구": 1,
-      "스포츠": 1,
-      "멀티플레이어": 1,
-      "경쟁": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "축구",
-      "스포츠",
-      "멀티플레이어",
-      "경쟁",
-      "시뮬레이션"
+      "현대"
     ]
   },
   "954850": {
@@ -1322,29 +747,604 @@
       "건설"
     ]
   },
-  "949230": {
-    "appid": 949230,
-    "name": "Cities: Skylines II",
-    "developer": "Colossal Order Ltd.",
-    "ccu": 48119,
-    "positive": 121088,
-    "negative": 2465,
-    "average_2weeks": 7689,
-    "owners": 1453056,
-    "genre": "전략",
+  "972660": {
+    "appid": 972660,
+    "name": "Spiritfarer",
+    "developer": "Thunder Lotus Games",
+    "ccu": 77684,
+    "positive": 190314,
+    "negative": 934,
+    "average_2weeks": 12597,
+    "owners": 2283768,
+    "genre": "인디",
+    "tags": {
+      "힐링": 1,
+      "인디": 1,
+      "스토리": 1,
+      "시뮬레이션": 1,
+      "감동": 1
+    },
+    "tags_list": [
+      "힐링",
+      "인디",
+      "스토리",
+      "시뮬레이션",
+      "감동"
+    ]
+  },
+  "975370": {
+    "appid": 975370,
+    "name": "Dwarf Fortress",
+    "developer": "Bay 12 Games",
+    "ccu": 84132,
+    "positive": 203275,
+    "negative": 680,
+    "average_2weeks": 13755,
+    "owners": 2439300,
+    "genre": "시뮬레이션",
+    "tags": {
+      "드워프": 1,
+      "건설": 1,
+      "관리": 1,
+      "복잡한": 1,
+      "전설": 1
+    },
+    "tags_list": [
+      "드워프",
+      "건설",
+      "관리",
+      "복잡한",
+      "전설"
+    ]
+  },
+  "1042550": {
+    "appid": 1042550,
+    "name": "Snowrunner",
+    "developer": "Saber Interactive",
+    "ccu": 71905,
+    "positive": 181830,
+    "negative": 1105,
+    "average_2weeks": 11353,
+    "owners": 2181960,
+    "genre": "시뮬레이션",
+    "tags": {
+      "트럭": 1,
+      "오프로드": 1,
+      "시뮬레이션": 1,
+      "오픈월드": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "트럭",
+      "오프로드",
+      "시뮬레이션",
+      "오픈월드",
+      "협동"
+    ]
+  },
+  "1044720": {
+    "appid": 1044720,
+    "name": "Cooking Simulator",
+    "developer": "Big Cheese Studio",
+    "ccu": 68637,
+    "positive": 173645,
+    "negative": 1275,
+    "average_2weeks": 10837,
+    "owners": 2083740,
+    "genre": "시뮬레이션",
+    "tags": {
+      "요리": 1,
+      "시뮬레이션": 1,
+      "물리": 1,
+      "캐주얼": 1,
+      "유머": 1
+    },
+    "tags_list": [
+      "요리",
+      "시뮬레이션",
+      "물리",
+      "캐주얼",
+      "유머"
+    ]
+  },
+  "1085510": {
+    "appid": 1085510,
+    "name": "MotoGP 21",
+    "developer": "Milestone S.r.l.",
+    "ccu": 53437,
+    "positive": 135175,
+    "negative": 2125,
+    "average_2weeks": 8437,
+    "owners": 1622100,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "모터사이클": 1,
+      "시뮬레이션": 1,
+      "MotoGP": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "모터사이클",
+      "시뮬레이션",
+      "MotoGP",
+      "멀티플레이어"
+    ]
+  },
+  "1190000": {
+    "appid": 1190000,
+    "name": "Car Mechanic Simulator 2021",
+    "developer": "Red Dot Games",
+    "ccu": 72075,
+    "positive": 181830,
+    "negative": 1105,
+    "average_2weeks": 11465,
+    "owners": 2181960,
+    "genre": "시뮬레이션",
+    "tags": {
+      "자동차": 1,
+      "정비": 1,
+      "시뮬레이션": 1,
+      "현실적": 1,
+      "경영": 1
+    },
+    "tags_list": [
+      "자동차",
+      "정비",
+      "시뮬레이션",
+      "현실적",
+      "경영"
+    ]
+  },
+  "1218210": {
+    "appid": 1218210,
+    "name": "Train Sim World 3",
+    "developer": "Dovetail Games",
+    "ccu": 57798,
+    "positive": 146156,
+    "negative": 1870,
+    "average_2weeks": 9126,
+    "owners": 1753872,
+    "genre": "시뮬레이션",
+    "tags": {
+      "기차": 1,
+      "시뮬레이션": 1,
+      "운전": 1,
+      "현실적": 1,
+      "힐링": 1
+    },
+    "tags_list": [
+      "기차",
+      "시뮬레이션",
+      "운전",
+      "현실적",
+      "힐링"
+    ]
+  },
+  "1248130": {
+    "appid": 1248130,
+    "name": "Farming Simulator 22",
+    "developer": "Giants Software",
+    "ccu": 68837,
+    "positive": 173575,
+    "negative": 1275,
+    "average_2weeks": 10957,
+    "owners": 2082900,
+    "genre": "시뮬레이션",
+    "tags": {
+      "농장": 1,
+      "시뮬레이션": 1,
+      "트랙터": 1,
+      "경영": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "농장",
+      "시뮬레이션",
+      "트랙터",
+      "경영",
+      "협동"
+    ]
+  },
+  "1250410": {
+    "appid": 1250410,
+    "name": "Microsoft Flight Simulator",
+    "developer": "Asobo Studio",
+    "ccu": 80660,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 13206,
+    "owners": 2335320,
+    "genre": "시뮬레이션",
+    "tags": {
+      "비행": 1,
+      "사실적": 1,
+      "지구": 1,
+      "조종사": 1,
+      "vr": 1
+    },
+    "tags_list": [
+      "비행",
+      "사실적",
+      "지구",
+      "조종사",
+      "vr"
+    ]
+  },
+  "1290000": {
+    "appid": 1290000,
+    "name": "PowerWash Simulator",
+    "developer": "FuturLab",
+    "ccu": 72427,
+    "positive": 177643,
+    "negative": 1190,
+    "average_2weeks": 11737,
+    "owners": 2131716,
+    "genre": "시뮬레이션",
+    "tags": {
+      "힐링": 1,
+      "시뮬레이션": 1,
+      "캐주얼": 1,
+      "협동": 1,
+      "스트레스해소": 1
+    },
+    "tags_list": [
+      "힐링",
+      "시뮬레이션",
+      "캐주얼",
+      "협동",
+      "스트레스해소"
+    ]
+  },
+  "1293830": {
+    "appid": 1293830,
+    "name": "F1 2021",
+    "developer": "Codemasters",
+    "ccu": 65445,
+    "positive": 165511,
+    "negative": 1444,
+    "average_2weeks": 10333,
+    "owners": 1986132,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "F1": 1,
+      "시뮬레이션": 1,
+      "스토리": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "F1",
+      "시뮬레이션",
+      "스토리",
+      "멀티플레이어"
+    ]
+  },
+  "1313140": {
+    "appid": 1313140,
+    "name": "Cult of the Lamb",
+    "developer": "Massive Monster",
+    "ccu": 74173,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 11844,
+    "owners": 2231952,
+    "genre": "시뮬레이션",
+    "tags": {
+      "경영": 1,
+      "로그라이크": 1,
+      "귀여움": 1,
+      "사교": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "경영",
+      "로그라이크",
+      "귀여움",
+      "사교",
+      "인디"
+    ]
+  },
+  "1430690": {
+    "appid": 1430690,
+    "name": "Hardspace: Shipbreaker",
+    "developer": "Blackbird Interactive",
+    "ccu": 72317,
+    "positive": 173540,
+    "negative": 1275,
+    "average_2weeks": 11885,
+    "owners": 2082480,
+    "genre": "시뮬레이션",
+    "tags": {
+      "우주선해체": 1,
+      "sf": 1,
+      "릴렉싱": 1,
+      "독특": 1,
+      "건설": 1
+    },
+    "tags_list": [
+      "우주선해체",
+      "sf",
+      "릴렉싱",
+      "독특",
+      "건설"
+    ]
+  },
+  "1449560": {
+    "appid": 1449560,
+    "name": "Timberborn",
+    "developer": "Mechanistry",
+    "ccu": 76950,
+    "positive": 194575,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2334900,
+    "genre": "시뮬레이션",
     "tags": {
       "도시건설": 1,
       "시뮬레이션": 1,
+      "비버": 1,
       "전략": 1,
-      "경영": 1,
-      "현대": 1
+      "자원관리": 1
     },
     "tags_list": [
       "도시건설",
       "시뮬레이션",
+      "비버",
       "전략",
+      "자원관리"
+    ]
+  },
+  "1455840": {
+    "appid": 1455840,
+    "name": "Wylde Flowers",
+    "developer": "Studio Drydock",
+    "ccu": 71905,
+    "positive": 181760,
+    "negative": 1105,
+    "average_2weeks": 11353,
+    "owners": 2181120,
+    "genre": "시뮬레이션",
+    "tags": {
+      "농장": 1,
+      "마법": 1,
+      "시뮬레이션": 1,
+      "힐링": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "농장",
+      "마법",
+      "시뮬레이션",
+      "힐링",
+      "스토리"
+    ]
+  },
+  "1507390": {
+    "appid": 1507390,
+    "name": "WRC Generations",
+    "developer": "KT Racing",
+    "ccu": 60800,
+    "positive": 153740,
+    "negative": 1700,
+    "average_2weeks": 9600,
+    "owners": 1844880,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "랠리": 1,
+      "WRC": 1,
+      "시뮬레이션": 1,
+      "하이브리드": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "랠리",
+      "WRC",
+      "시뮬레이션",
+      "하이브리드"
+    ]
+  },
+  "1588010": {
+    "appid": 1588010,
+    "name": "PGA TOUR 2K23",
+    "developer": "HB Studios",
+    "ccu": 60835,
+    "positive": 153740,
+    "negative": 1700,
+    "average_2weeks": 9676,
+    "owners": 1844880,
+    "genre": "스포츠",
+    "tags": {
+      "골프": 1,
+      "스포츠": 1,
+      "시뮬레이션": 1,
+      "멀티플레이어": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "골프",
+      "스포츠",
+      "시뮬레이션",
+      "멀티플레이어",
+      "캐주얼"
+    ]
+  },
+  "1625450": {
+    "appid": 1625450,
+    "name": "Plate Up!",
+    "developer": "It's Happening",
+    "ccu": 80407,
+    "positive": 203275,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2439300,
+    "genre": "시뮬레이션",
+    "tags": {
+      "요리": 1,
+      "경영": 1,
+      "로그라이크": 1,
+      "협동": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "요리",
       "경영",
-      "현대"
+      "로그라이크",
+      "협동",
+      "캐주얼"
+    ]
+  },
+  "1649080": {
+    "appid": 1649080,
+    "name": "Two Point Campus",
+    "developer": "Two Point Studios",
+    "ccu": 61574,
+    "positive": 149924,
+    "negative": 1784,
+    "average_2weeks": 10037,
+    "owners": 1799088,
+    "genre": "전략",
+    "tags": {
+      "시뮬레이션": 1,
+      "캠퍼스": 1,
+      "유머": 1,
+      "캐주얼": 1,
+      "건설": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "캠퍼스",
+      "유머",
+      "캐주얼",
+      "건설"
+    ]
+  },
+  "1868140": {
+    "appid": 1868140,
+    "name": "DAVE THE DIVER",
+    "developer": "MINTROCKET",
+    "ccu": 85072,
+    "positive": 212169,
+    "negative": 509,
+    "average_2weeks": 13622,
+    "owners": 2546028,
+    "genre": "시뮬레이션",
+    "tags": {
+      "경영": 1,
+      "탐험": 1,
+      "낚시": 1,
+      "인디": 1,
+      "도트": 1
+    },
+    "tags_list": [
+      "경영",
+      "탐험",
+      "낚시",
+      "인디",
+      "도트"
+    ]
+  },
+  "2161340": {
+    "appid": 2161340,
+    "name": "EA SPORTS FC 24",
+    "developer": "EA Vancouver",
+    "ccu": 53437,
+    "positive": 135105,
+    "negative": 2125,
+    "average_2weeks": 8437,
+    "owners": 1621260,
+    "genre": "스포츠",
+    "tags": {
+      "축구": 1,
+      "스포츠": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "축구",
+      "스포츠",
+      "멀티플레이어",
+      "경쟁",
+      "시뮬레이션"
+    ]
+  },
+  "2252570": {
+    "appid": 2252570,
+    "name": "Football Manager 2024",
+    "developer": "Sports Interactive",
+    "ccu": 70322,
+    "positive": 173505,
+    "negative": 1275,
+    "average_2weeks": 11353,
+    "owners": 2082060,
+    "genre": "스포츠",
+    "tags": {
+      "축구": 1,
+      "경영": 1,
+      "전술": 1,
+      "시뮬레이션": 1,
+      "중독성": 1
+    },
+    "tags_list": [
+      "축구",
+      "경영",
+      "전술",
+      "시뮬레이션",
+      "중독성"
+    ]
+  },
+  "2440510": {
+    "appid": 2440510,
+    "name": "Forza Motorsport",
+    "developer": "Turn 10 Studios",
+    "ccu": 62200,
+    "positive": 153705,
+    "negative": 1700,
+    "average_2weeks": 10040,
+    "owners": 1844460,
+    "genre": "레이싱",
+    "tags": {
+      "레이싱": 1,
+      "시뮬레이션": 1,
+      "자동차": 1,
+      "경쟁": 1,
+      "리얼리즘": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "시뮬레이션",
+      "자동차",
+      "경쟁",
+      "리얼리즘"
+    ]
+  },
+  "3243440": {
+    "appid": 3243440,
+    "name": "Planet Coaster 2",
+    "developer": "Frontier Developments",
+    "ccu": 57798,
+    "positive": 146086,
+    "negative": 1870,
+    "average_2weeks": 9126,
+    "owners": 1753032,
+    "genre": "시뮬레이션",
+    "tags": {
+      "놀이공원": 1,
+      "워터파크": 1,
+      "시뮬레이션": 1,
+      "경영": 1,
+      "건설": 1
+    },
+    "tags_list": [
+      "놀이공원",
+      "워터파크",
+      "시뮬레이션",
+      "경영",
+      "건설"
     ]
   }
 }

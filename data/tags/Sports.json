@@ -1,229 +1,4 @@
 {
-  "252950": {
-    "appid": 252950,
-    "name": "Rocket League",
-    "developer": "Psyonix",
-    "ccu": 80165,
-    "positive": 194785,
-    "negative": 850,
-    "average_2weeks": 13074,
-    "owners": 2337420,
-    "genre": "스포츠",
-    "tags": {
-      "자동차": 1,
-      "축구": 1,
-      "경쟁": 1,
-      "스포츠": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "자동차",
-      "축구",
-      "경쟁",
-      "스포츠",
-      "멀티플레이어"
-    ]
-  },
-  "431240": {
-    "appid": 431240,
-    "name": "Golf With Your Friends",
-    "developer": "Blacklight Interactive",
-    "ccu": 78695,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 12682,
-    "owners": 2335320,
-    "genre": "스포츠",
-    "tags": {
-      "골프": 1,
-      "캐주얼": 1,
-      "파티": 1,
-      "멀티플레이어": 1,
-      "재미": 1
-    },
-    "tags_list": [
-      "골프",
-      "캐주얼",
-      "파티",
-      "멀티플레이어",
-      "재미"
-    ]
-  },
-  "327890": {
-    "appid": 327890,
-    "name": "What the Golf?",
-    "developer": "Triband",
-    "ccu": 76950,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 12150,
-    "owners": 2335320,
-    "genre": "스포츠",
-    "tags": {
-      "골프": 1,
-      "코미디": 1,
-      "퍼즐": 1,
-      "인디": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "골프",
-      "코미디",
-      "퍼즐",
-      "인디",
-      "캐주얼"
-    ]
-  },
-  "681280": {
-    "appid": 681280,
-    "name": "Descenders",
-    "developer": "RageSquid",
-    "ccu": 75298,
-    "positive": 186101,
-    "negative": 1019,
-    "average_2weeks": 12144,
-    "owners": 2233212,
-    "genre": "스포츠",
-    "tags": {
-      "MTB": 1,
-      "익스트림": 1,
-      "랜덤": 1,
-      "로그라이크": 1,
-      "도전적": 1
-    },
-    "tags_list": [
-      "MTB",
-      "익스트림",
-      "랜덤",
-      "로그라이크",
-      "도전적"
-    ]
-  },
-  "1215980": {
-    "appid": 1215980,
-    "name": "OlliOlli World",
-    "developer": "Roll7",
-    "ccu": 75193,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 12116,
-    "owners": 2231952,
-    "genre": "스포츠",
-    "tags": {
-      "스케이트": 1,
-      "2D": 1,
-      "아케이드": 1,
-      "인디": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "스케이트",
-      "2D",
-      "아케이드",
-      "인디",
-      "캐주얼"
-    ]
-  },
-  "1465360": {
-    "appid": 1465360,
-    "name": "SnowRunner",
-    "developer": "Saber Interactive",
-    "ccu": 75178,
-    "positive": 186066,
-    "negative": 1019,
-    "average_2weeks": 12112,
-    "owners": 2232792,
-    "genre": "스포츠",
-    "tags": {
-      "오프로드": 1,
-      "트럭": 1,
-      "오픈월드": 1,
-      "도전적": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "오프로드",
-      "트럭",
-      "오픈월드",
-      "도전적",
-      "협동"
-    ]
-  },
-  "2225040": {
-    "appid": 2225040,
-    "name": "Trackmania",
-    "developer": "Nadeo",
-    "ccu": 73575,
-    "positive": 181865,
-    "negative": 1105,
-    "average_2weeks": 11865,
-    "owners": 2182380,
-    "genre": "스포츠",
-    "tags": {
-      "레이싱": 1,
-      "아케이드": 1,
-      "트랙빌더": 1,
-      "경쟁": 1,
-      "무료": 1
-    },
-    "tags_list": [
-      "레이싱",
-      "아케이드",
-      "트랙빌더",
-      "경쟁",
-      "무료"
-    ]
-  },
-  "751780": {
-    "appid": 751780,
-    "name": "Ace Combat 7: Skies Unknown",
-    "developer": "Bandai Namco",
-    "ccu": 71905,
-    "positive": 181900,
-    "negative": 1105,
-    "average_2weeks": 11353,
-    "owners": 2182800,
-    "genre": "스포츠",
-    "tags": {
-      "비행": 1,
-      "전투기": 1,
-      "액션": 1,
-      "밀리터리": 1,
-      "VR": 1
-    },
-    "tags_list": [
-      "비행",
-      "전투기",
-      "액션",
-      "밀리터리",
-      "VR"
-    ]
-  },
-  "2252570": {
-    "appid": 2252570,
-    "name": "Football Manager 2024",
-    "developer": "Sports Interactive",
-    "ccu": 70322,
-    "positive": 173505,
-    "negative": 1275,
-    "average_2weeks": 11353,
-    "owners": 2082060,
-    "genre": "스포츠",
-    "tags": {
-      "축구": 1,
-      "경영": 1,
-      "전술": 1,
-      "시뮬레이션": 1,
-      "중독성": 1
-    },
-    "tags_list": [
-      "축구",
-      "경영",
-      "전술",
-      "시뮬레이션",
-      "중독성"
-    ]
-  },
   "227200": {
     "appid": 227200,
     "name": "Worms W.M.D",
@@ -274,29 +49,254 @@
       "데이터"
     ]
   },
-  "1517290": {
-    "appid": 1517290,
-    "name": "Windjammers 2",
-    "developer": "Dotemu",
-    "ccu": 65445,
-    "positive": 165476,
-    "negative": 1444,
-    "average_2weeks": 10333,
-    "owners": 1985712,
+  "252950": {
+    "appid": 252950,
+    "name": "Rocket League",
+    "developer": "Psyonix",
+    "ccu": 80165,
+    "positive": 194785,
+    "negative": 850,
+    "average_2weeks": 13074,
+    "owners": 2337420,
     "genre": "스포츠",
     "tags": {
+      "자동차": 1,
+      "축구": 1,
+      "경쟁": 1,
       "스포츠": 1,
-      "아케이드": 1,
-      "디스크": 1,
-      "2D": 1,
       "멀티플레이어": 1
     },
     "tags_list": [
+      "자동차",
+      "축구",
+      "경쟁",
       "스포츠",
-      "아케이드",
-      "디스크",
-      "2D",
       "멀티플레이어"
+    ]
+  },
+  "327890": {
+    "appid": 327890,
+    "name": "What the Golf?",
+    "developer": "Triband",
+    "ccu": 76950,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12150,
+    "owners": 2335320,
+    "genre": "스포츠",
+    "tags": {
+      "골프": 1,
+      "코미디": 1,
+      "퍼즐": 1,
+      "인디": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "골프",
+      "코미디",
+      "퍼즐",
+      "인디",
+      "캐주얼"
+    ]
+  },
+  "386070": {
+    "appid": 386070,
+    "name": "Pool Nation FX",
+    "developer": "Cherry Pop Games",
+    "ccu": 53437,
+    "positive": 135385,
+    "negative": 2125,
+    "average_2weeks": 8437,
+    "owners": 1624620,
+    "genre": "스포츠",
+    "tags": {
+      "당구": 1,
+      "시뮬레이션": 1,
+      "스포츠": 1,
+      "멀티플레이어": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "당구",
+      "시뮬레이션",
+      "스포츠",
+      "멀티플레이어",
+      "캐주얼"
+    ]
+  },
+  "431240": {
+    "appid": 431240,
+    "name": "Golf With Your Friends",
+    "developer": "Blacklight Interactive",
+    "ccu": 78695,
+    "positive": 194610,
+    "negative": 850,
+    "average_2weeks": 12682,
+    "owners": 2335320,
+    "genre": "스포츠",
+    "tags": {
+      "골프": 1,
+      "캐주얼": 1,
+      "파티": 1,
+      "멀티플레이어": 1,
+      "재미": 1
+    },
+    "tags_list": [
+      "골프",
+      "캐주얼",
+      "파티",
+      "멀티플레이어",
+      "재미"
+    ]
+  },
+  "460580": {
+    "appid": 460580,
+    "name": "Steep",
+    "developer": "Ubisoft Annecy",
+    "ccu": 62440,
+    "positive": 153950,
+    "negative": 1700,
+    "average_2weeks": 10104,
+    "owners": 1847400,
+    "genre": "스포츠",
+    "tags": {
+      "익스트림": 1,
+      "오픈월드": 1,
+      "스키": 1,
+      "스노보드": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "익스트림",
+      "오픈월드",
+      "스키",
+      "스노보드",
+      "협동"
+    ]
+  },
+  "681280": {
+    "appid": 681280,
+    "name": "Descenders",
+    "developer": "RageSquid",
+    "ccu": 75298,
+    "positive": 186101,
+    "negative": 1019,
+    "average_2weeks": 12144,
+    "owners": 2233212,
+    "genre": "스포츠",
+    "tags": {
+      "MTB": 1,
+      "익스트림": 1,
+      "랜덤": 1,
+      "로그라이크": 1,
+      "도전적": 1
+    },
+    "tags_list": [
+      "MTB",
+      "익스트림",
+      "랜덤",
+      "로그라이크",
+      "도전적"
+    ]
+  },
+  "685260": {
+    "appid": 685260,
+    "name": "Premium Bowling",
+    "developer": "VISION3 Games",
+    "ccu": 57798,
+    "positive": 146261,
+    "negative": 1870,
+    "average_2weeks": 9126,
+    "owners": 1755132,
+    "genre": "스포츠",
+    "tags": {
+      "볼링": 1,
+      "스포츠": 1,
+      "시뮬레이션": 1,
+      "VR": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "볼링",
+      "스포츠",
+      "시뮬레이션",
+      "VR",
+      "캐주얼"
+    ]
+  },
+  "751780": {
+    "appid": 751780,
+    "name": "Ace Combat 7: Skies Unknown",
+    "developer": "Bandai Namco",
+    "ccu": 71905,
+    "positive": 181900,
+    "negative": 1105,
+    "average_2weeks": 11353,
+    "owners": 2182800,
+    "genre": "스포츠",
+    "tags": {
+      "비행": 1,
+      "전투기": 1,
+      "액션": 1,
+      "밀리터리": 1,
+      "VR": 1
+    },
+    "tags_list": [
+      "비행",
+      "전투기",
+      "액션",
+      "밀리터리",
+      "VR"
+    ]
+  },
+  "861650": {
+    "appid": 861650,
+    "name": "Session: Skate Sim",
+    "developer": "crea-ture Studios",
+    "ccu": 60869,
+    "positive": 149924,
+    "negative": 1784,
+    "average_2weeks": 9849,
+    "owners": 1799088,
+    "genre": "스포츠",
+    "tags": {
+      "스케이트": 1,
+      "리얼리즘": 1,
+      "물리": 1,
+      "도전적": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "스케이트",
+      "리얼리즘",
+      "물리",
+      "도전적",
+      "인디"
+    ]
+  },
+  "962730": {
+    "appid": 962730,
+    "name": "Skater XL",
+    "developer": "Easy Day Studios",
+    "ccu": 59513,
+    "positive": 146226,
+    "negative": 1870,
+    "average_2weeks": 9650,
+    "owners": 1754712,
+    "genre": "스포츠",
+    "tags": {
+      "스케이트보드": 1,
+      "리얼리즘": 1,
+      "트릭": 1,
+      "캐주얼": 1,
+      "물리": 1
+    },
+    "tags_list": [
+      "스케이트보드",
+      "리얼리즘",
+      "트릭",
+      "캐주얼",
+      "물리"
     ]
   },
   "1097150": {
@@ -321,6 +321,31 @@
       "파티",
       "귀여운",
       "멀티플레이어",
+      "캐주얼"
+    ]
+  },
+  "1215980": {
+    "appid": 1215980,
+    "name": "OlliOlli World",
+    "developer": "Roll7",
+    "ccu": 75193,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 12116,
+    "owners": 2231952,
+    "genre": "스포츠",
+    "tags": {
+      "스케이트": 1,
+      "2D": 1,
+      "아케이드": 1,
+      "인디": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "스케이트",
+      "2D",
+      "아케이드",
+      "인디",
       "캐주얼"
     ]
   },
@@ -349,65 +374,15 @@
       "협동"
     ]
   },
-  "2108330": {
-    "appid": 2108330,
-    "name": "F1 23",
-    "developer": "Codemasters",
-    "ccu": 62500,
-    "positive": 153705,
-    "negative": 1700,
-    "average_2weeks": 10120,
-    "owners": 1844460,
-    "genre": "스포츠",
-    "tags": {
-      "F1": 1,
-      "레이싱": 1,
-      "리얼리즘": 1,
-      "경쟁": 1,
-      "스포츠": 1
-    },
-    "tags_list": [
-      "F1",
-      "레이싱",
-      "리얼리즘",
-      "경쟁",
-      "스포츠"
-    ]
-  },
-  "460580": {
-    "appid": 460580,
-    "name": "Steep",
-    "developer": "Ubisoft Annecy",
-    "ccu": 62440,
-    "positive": 153950,
-    "negative": 1700,
-    "average_2weeks": 10104,
-    "owners": 1847400,
-    "genre": "스포츠",
-    "tags": {
-      "익스트림": 1,
-      "오픈월드": 1,
-      "스키": 1,
-      "스노보드": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "익스트림",
-      "오픈월드",
-      "스키",
-      "스노보드",
-      "협동"
-    ]
-  },
-  "2195250": {
-    "appid": 2195250,
-    "name": "EA FC 25",
+  "1313860": {
+    "appid": 1313860,
+    "name": "FIFA 23",
     "developer": "EA Sports",
-    "ccu": 60968,
-    "positive": 146086,
-    "negative": 1870,
-    "average_2weeks": 10038,
-    "owners": 1753032,
+    "ccu": 56622,
+    "positive": 135140,
+    "negative": 2125,
+    "average_2weeks": 9353,
+    "owners": 1621680,
     "genre": "스포츠",
     "tags": {
       "축구": 1,
@@ -424,54 +399,29 @@
       "리얼리즘"
     ]
   },
-  "861650": {
-    "appid": 861650,
-    "name": "Session: Skate Sim",
-    "developer": "crea-ture Studios",
-    "ccu": 60869,
-    "positive": 149924,
-    "negative": 1784,
-    "average_2weeks": 9849,
-    "owners": 1799088,
+  "1437220": {
+    "appid": 1437220,
+    "name": "Sports Story",
+    "developer": "Sidebar Games",
+    "ccu": 46550,
+    "positive": 117740,
+    "negative": 2550,
+    "average_2weeks": 7350,
+    "owners": 1412880,
     "genre": "스포츠",
     "tags": {
-      "스케이트": 1,
-      "리얼리즘": 1,
-      "물리": 1,
-      "도전적": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "스케이트",
-      "리얼리즘",
-      "물리",
-      "도전적",
-      "인디"
-    ]
-  },
-  "1588010": {
-    "appid": 1588010,
-    "name": "PGA TOUR 2K23",
-    "developer": "HB Studios",
-    "ccu": 60835,
-    "positive": 153740,
-    "negative": 1700,
-    "average_2weeks": 9676,
-    "owners": 1844880,
-    "genre": "스포츠",
-    "tags": {
-      "골프": 1,
       "스포츠": 1,
-      "시뮬레이션": 1,
-      "멀티플레이어": 1,
-      "캐주얼": 1
+      "인디": 1,
+      "골프": 1,
+      "RPG": 1,
+      "도트": 1
     },
     "tags_list": [
-      "골프",
       "스포츠",
-      "시뮬레이션",
-      "멀티플레이어",
-      "캐주얼"
+      "인디",
+      "골프",
+      "RPG",
+      "도트"
     ]
   },
   "1449850": {
@@ -499,229 +449,79 @@
       "격투"
     ]
   },
-  "962730": {
-    "appid": 962730,
-    "name": "Skater XL",
-    "developer": "Easy Day Studios",
-    "ccu": 59513,
-    "positive": 146226,
-    "negative": 1870,
-    "average_2weeks": 9650,
-    "owners": 1754712,
+  "1465360": {
+    "appid": 1465360,
+    "name": "SnowRunner",
+    "developer": "Saber Interactive",
+    "ccu": 75178,
+    "positive": 186066,
+    "negative": 1019,
+    "average_2weeks": 12112,
+    "owners": 2232792,
     "genre": "스포츠",
     "tags": {
-      "스케이트보드": 1,
-      "리얼리즘": 1,
-      "트릭": 1,
-      "캐주얼": 1,
-      "물리": 1
-    },
-    "tags_list": [
-      "스케이트보드",
-      "리얼리즘",
-      "트릭",
-      "캐주얼",
-      "물리"
-    ]
-  },
-  "1785650": {
-    "appid": 1785650,
-    "name": "TopSpin 2K25",
-    "developer": "Hangar 13",
-    "ccu": 59393,
-    "positive": 146086,
-    "negative": 1870,
-    "average_2weeks": 9618,
-    "owners": 1753032,
-    "genre": "스포츠",
-    "tags": {
-      "테니스": 1,
-      "스포츠": 1,
-      "리얼리즘": 1,
-      "경쟁": 1,
-      "캐릭터": 1
-    },
-    "tags_list": [
-      "테니스",
-      "스포츠",
-      "리얼리즘",
-      "경쟁",
-      "캐릭터"
-    ]
-  },
-  "685260": {
-    "appid": 685260,
-    "name": "Premium Bowling",
-    "developer": "VISION3 Games",
-    "ccu": 57798,
-    "positive": 146261,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1755132,
-    "genre": "스포츠",
-    "tags": {
-      "볼링": 1,
-      "스포츠": 1,
-      "시뮬레이션": 1,
-      "VR": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "볼링",
-      "스포츠",
-      "시뮬레이션",
-      "VR",
-      "캐주얼"
-    ]
-  },
-  "1843760": {
-    "appid": 1843760,
-    "name": "The Crew Motorfest",
-    "developer": "Ubisoft Ivory Tower",
-    "ccu": 57798,
-    "positive": 146121,
-    "negative": 1870,
-    "average_2weeks": 9126,
-    "owners": 1753452,
-    "genre": "스포츠",
-    "tags": {
-      "레이싱": 1,
+      "오프로드": 1,
+      "트럭": 1,
       "오픈월드": 1,
-      "스포츠": 1,
-      "멀티플레이어": 1,
-      "축제": 1
+      "도전적": 1,
+      "협동": 1
     },
     "tags_list": [
-      "레이싱",
+      "오프로드",
+      "트럭",
       "오픈월드",
-      "스포츠",
-      "멀티플레이어",
-      "축제"
+      "도전적",
+      "협동"
     ]
   },
-  "1313860": {
-    "appid": 1313860,
-    "name": "FIFA 23",
-    "developer": "EA Sports",
-    "ccu": 56622,
-    "positive": 135140,
-    "negative": 2125,
-    "average_2weeks": 9353,
-    "owners": 1621680,
+  "1517290": {
+    "appid": 1517290,
+    "name": "Windjammers 2",
+    "developer": "Dotemu",
+    "ccu": 65445,
+    "positive": 165476,
+    "negative": 1444,
+    "average_2weeks": 10333,
+    "owners": 1985712,
     "genre": "스포츠",
     "tags": {
-      "축구": 1,
       "스포츠": 1,
-      "경쟁": 1,
-      "멀티플레이어": 1,
-      "리얼리즘": 1
+      "아케이드": 1,
+      "디스크": 1,
+      "2D": 1,
+      "멀티플레이어": 1
     },
     "tags_list": [
-      "축구",
       "스포츠",
-      "경쟁",
-      "멀티플레이어",
-      "리얼리즘"
+      "아케이드",
+      "디스크",
+      "2D",
+      "멀티플레이어"
     ]
   },
-  "2143540": {
-    "appid": 2143540,
-    "name": "NBA 2K23",
-    "developer": "Visual Concepts",
-    "ccu": 56592,
-    "positive": 135140,
-    "negative": 2125,
-    "average_2weeks": 9345,
-    "owners": 1621680,
+  "1588010": {
+    "appid": 1588010,
+    "name": "PGA TOUR 2K23",
+    "developer": "HB Studios",
+    "ccu": 60835,
+    "positive": 153740,
+    "negative": 1700,
+    "average_2weeks": 9676,
+    "owners": 1844880,
     "genre": "스포츠",
     "tags": {
-      "농구": 1,
+      "골프": 1,
       "스포츠": 1,
-      "경쟁": 1,
-      "NBA": 1,
-      "리얼리즘": 1
-    },
-    "tags_list": [
-      "농구",
-      "스포츠",
-      "경쟁",
-      "NBA",
-      "리얼리즘"
-    ]
-  },
-  "2338770": {
-    "appid": 2338770,
-    "name": "NBA 2K24",
-    "developer": "Visual Concepts",
-    "ccu": 55092,
-    "positive": 135105,
-    "negative": 2125,
-    "average_2weeks": 8945,
-    "owners": 1621260,
-    "genre": "스포츠",
-    "tags": {
-      "농구": 1,
-      "NBA": 1,
-      "리얼리즘": 1,
-      "스포츠": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "농구",
-      "NBA",
-      "리얼리즘",
-      "스포츠",
-      "경쟁"
-    ]
-  },
-  "386070": {
-    "appid": 386070,
-    "name": "Pool Nation FX",
-    "developer": "Cherry Pop Games",
-    "ccu": 53437,
-    "positive": 135385,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1624620,
-    "genre": "스포츠",
-    "tags": {
-      "당구": 1,
       "시뮬레이션": 1,
-      "스포츠": 1,
       "멀티플레이어": 1,
       "캐주얼": 1
     },
     "tags_list": [
-      "당구",
-      "시뮬레이션",
+      "골프",
       "스포츠",
+      "시뮬레이션",
       "멀티플레이어",
       "캐주얼"
-    ]
-  },
-  "2161340": {
-    "appid": 2161340,
-    "name": "EA SPORTS FC 24",
-    "developer": "EA Vancouver",
-    "ccu": 53437,
-    "positive": 135105,
-    "negative": 2125,
-    "average_2weeks": 8437,
-    "owners": 1621260,
-    "genre": "스포츠",
-    "tags": {
-      "축구": 1,
-      "스포츠": 1,
-      "멀티플레이어": 1,
-      "경쟁": 1,
-      "시뮬레이션": 1
-    },
-    "tags_list": [
-      "축구",
-      "스포츠",
-      "멀티플레이어",
-      "경쟁",
-      "시뮬레이션"
     ]
   },
   "1665460": {
@@ -749,29 +549,229 @@
       "경쟁"
     ]
   },
-  "1437220": {
-    "appid": 1437220,
-    "name": "Sports Story",
-    "developer": "Sidebar Games",
-    "ccu": 46550,
-    "positive": 117740,
-    "negative": 2550,
-    "average_2weeks": 7350,
-    "owners": 1412880,
+  "1785650": {
+    "appid": 1785650,
+    "name": "TopSpin 2K25",
+    "developer": "Hangar 13",
+    "ccu": 59393,
+    "positive": 146086,
+    "negative": 1870,
+    "average_2weeks": 9618,
+    "owners": 1753032,
     "genre": "스포츠",
     "tags": {
+      "테니스": 1,
       "스포츠": 1,
-      "인디": 1,
-      "골프": 1,
-      "RPG": 1,
-      "도트": 1
+      "리얼리즘": 1,
+      "경쟁": 1,
+      "캐릭터": 1
     },
     "tags_list": [
+      "테니스",
       "스포츠",
-      "인디",
-      "골프",
-      "RPG",
-      "도트"
+      "리얼리즘",
+      "경쟁",
+      "캐릭터"
+    ]
+  },
+  "1843760": {
+    "appid": 1843760,
+    "name": "The Crew Motorfest",
+    "developer": "Ubisoft Ivory Tower",
+    "ccu": 57798,
+    "positive": 146121,
+    "negative": 1870,
+    "average_2weeks": 9126,
+    "owners": 1753452,
+    "genre": "스포츠",
+    "tags": {
+      "레이싱": 1,
+      "오픈월드": 1,
+      "스포츠": 1,
+      "멀티플레이어": 1,
+      "축제": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "오픈월드",
+      "스포츠",
+      "멀티플레이어",
+      "축제"
+    ]
+  },
+  "2108330": {
+    "appid": 2108330,
+    "name": "F1 23",
+    "developer": "Codemasters",
+    "ccu": 62500,
+    "positive": 153705,
+    "negative": 1700,
+    "average_2weeks": 10120,
+    "owners": 1844460,
+    "genre": "스포츠",
+    "tags": {
+      "F1": 1,
+      "레이싱": 1,
+      "리얼리즘": 1,
+      "경쟁": 1,
+      "스포츠": 1
+    },
+    "tags_list": [
+      "F1",
+      "레이싱",
+      "리얼리즘",
+      "경쟁",
+      "스포츠"
+    ]
+  },
+  "2143540": {
+    "appid": 2143540,
+    "name": "NBA 2K23",
+    "developer": "Visual Concepts",
+    "ccu": 56592,
+    "positive": 135140,
+    "negative": 2125,
+    "average_2weeks": 9345,
+    "owners": 1621680,
+    "genre": "스포츠",
+    "tags": {
+      "농구": 1,
+      "스포츠": 1,
+      "경쟁": 1,
+      "NBA": 1,
+      "리얼리즘": 1
+    },
+    "tags_list": [
+      "농구",
+      "스포츠",
+      "경쟁",
+      "NBA",
+      "리얼리즘"
+    ]
+  },
+  "2161340": {
+    "appid": 2161340,
+    "name": "EA SPORTS FC 24",
+    "developer": "EA Vancouver",
+    "ccu": 53437,
+    "positive": 135105,
+    "negative": 2125,
+    "average_2weeks": 8437,
+    "owners": 1621260,
+    "genre": "스포츠",
+    "tags": {
+      "축구": 1,
+      "스포츠": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1,
+      "시뮬레이션": 1
+    },
+    "tags_list": [
+      "축구",
+      "스포츠",
+      "멀티플레이어",
+      "경쟁",
+      "시뮬레이션"
+    ]
+  },
+  "2195250": {
+    "appid": 2195250,
+    "name": "EA FC 25",
+    "developer": "EA Sports",
+    "ccu": 60968,
+    "positive": 146086,
+    "negative": 1870,
+    "average_2weeks": 10038,
+    "owners": 1753032,
+    "genre": "스포츠",
+    "tags": {
+      "축구": 1,
+      "스포츠": 1,
+      "경쟁": 1,
+      "멀티플레이어": 1,
+      "리얼리즘": 1
+    },
+    "tags_list": [
+      "축구",
+      "스포츠",
+      "경쟁",
+      "멀티플레이어",
+      "리얼리즘"
+    ]
+  },
+  "2225040": {
+    "appid": 2225040,
+    "name": "Trackmania",
+    "developer": "Nadeo",
+    "ccu": 73575,
+    "positive": 181865,
+    "negative": 1105,
+    "average_2weeks": 11865,
+    "owners": 2182380,
+    "genre": "스포츠",
+    "tags": {
+      "레이싱": 1,
+      "아케이드": 1,
+      "트랙빌더": 1,
+      "경쟁": 1,
+      "무료": 1
+    },
+    "tags_list": [
+      "레이싱",
+      "아케이드",
+      "트랙빌더",
+      "경쟁",
+      "무료"
+    ]
+  },
+  "2252570": {
+    "appid": 2252570,
+    "name": "Football Manager 2024",
+    "developer": "Sports Interactive",
+    "ccu": 70322,
+    "positive": 173505,
+    "negative": 1275,
+    "average_2weeks": 11353,
+    "owners": 2082060,
+    "genre": "스포츠",
+    "tags": {
+      "축구": 1,
+      "경영": 1,
+      "전술": 1,
+      "시뮬레이션": 1,
+      "중독성": 1
+    },
+    "tags_list": [
+      "축구",
+      "경영",
+      "전술",
+      "시뮬레이션",
+      "중독성"
+    ]
+  },
+  "2338770": {
+    "appid": 2338770,
+    "name": "NBA 2K24",
+    "developer": "Visual Concepts",
+    "ccu": 55092,
+    "positive": 135105,
+    "negative": 2125,
+    "average_2weeks": 8945,
+    "owners": 1621260,
+    "genre": "스포츠",
+    "tags": {
+      "농구": 1,
+      "NBA": 1,
+      "리얼리즘": 1,
+      "스포츠": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "농구",
+      "NBA",
+      "리얼리즘",
+      "스포츠",
+      "경쟁"
     ]
   },
   "2669320": {

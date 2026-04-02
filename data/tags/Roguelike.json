@@ -1,102 +1,27 @@
 {
-  "1794680": {
-    "appid": 1794680,
-    "name": "Vampire Survivors",
-    "developer": "poncle",
-    "ccu": 92015,
-    "positive": 225955,
-    "negative": 255,
-    "average_2weeks": 14881,
-    "owners": 2711460,
-    "genre": "인디",
-    "tags": {
-      "로그라이크": 1,
-      "서바이벌": 1,
-      "캐주얼": 1,
-      "무료": 1,
-      "빠른": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "서바이벌",
-      "캐주얼",
-      "무료",
-      "빠른"
-    ]
-  },
-  "1145360": {
-    "appid": 1145360,
-    "name": "Hades II",
-    "developer": "Supergiant Games",
-    "ccu": 80407,
-    "positive": 203205,
+  "212680": {
+    "appid": 212680,
+    "name": "FTL: Faster Than Light",
+    "developer": "Subset Games",
+    "ccu": 82992,
+    "positive": 203625,
     "negative": 680,
-    "average_2weeks": 12695,
-    "owners": 2438460,
-    "genre": "액션",
-    "tags": {
-      "로그라이크": 1,
-      "액션": 1,
-      "인디": 1,
-      "그리스신화": 1,
-      "마법": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "액션",
-      "인디",
-      "그리스신화",
-      "마법"
-    ]
-  },
-  "2379780": {
-    "appid": 2379780,
-    "name": "Balatro",
-    "developer": "LocalThunk",
-    "ccu": 88607,
-    "positive": 221254,
-    "negative": 340,
-    "average_2weeks": 14172,
-    "owners": 2655048,
+    "average_2weeks": 13451,
+    "owners": 2443500,
     "genre": "전략",
     "tags": {
-      "카드": 1,
-      "로그라이크": 1,
-      "덱빌딩": 1,
-      "인디": 1,
-      "중독성": 1
-    },
-    "tags_list": [
-      "카드",
-      "로그라이크",
-      "덱빌딩",
-      "인디",
-      "중독성"
-    ]
-  },
-  "646570": {
-    "appid": 646570,
-    "name": "Slay the Spire",
-    "developer": "MegaCrit",
-    "ccu": 84825,
-    "positive": 207821,
-    "negative": 594,
-    "average_2weeks": 13749,
-    "owners": 2493852,
-    "genre": "인디",
-    "tags": {
-      "카드게임": 1,
-      "로그라이크": 1,
       "전략": 1,
-      "싱글플레이어": 1,
-      "덱빌딩": 1
+      "로그라이크": 1,
+      "sf": 1,
+      "도전적": 1,
+      "싱글플레이어": 1
     },
     "tags_list": [
-      "카드게임",
-      "로그라이크",
       "전략",
-      "싱글플레이어",
-      "덱빌딩"
+      "로그라이크",
+      "sf",
+      "도전적",
+      "싱글플레이어"
     ]
   },
   "250900": {
@@ -124,104 +49,29 @@
       "싱글플레이어"
     ]
   },
-  "212680": {
-    "appid": 212680,
-    "name": "FTL: Faster Than Light",
-    "developer": "Subset Games",
-    "ccu": 82992,
-    "positive": 203625,
-    "negative": 680,
-    "average_2weeks": 13451,
-    "owners": 2443500,
-    "genre": "전략",
+  "311690": {
+    "appid": 311690,
+    "name": "Enter the Gungeon",
+    "developer": "Dodge Roll",
+    "ccu": 77405,
+    "positive": 194750,
+    "negative": 850,
+    "average_2weeks": 12338,
+    "owners": 2337000,
+    "genre": "액션",
     "tags": {
-      "전략": 1,
       "로그라이크": 1,
-      "sf": 1,
+      "탄막": 1,
+      "인디": 1,
       "도전적": 1,
-      "싱글플레이어": 1
+      "슈터": 1
     },
     "tags_list": [
-      "전략",
       "로그라이크",
-      "sf",
+      "탄막",
+      "인디",
       "도전적",
-      "싱글플레이어"
-    ]
-  },
-  "588650": {
-    "appid": 588650,
-    "name": "Dead Cells",
-    "developer": "Motion Twin",
-    "ccu": 81344,
-    "positive": 199023,
-    "negative": 765,
-    "average_2weeks": 13201,
-    "owners": 2388276,
-    "genre": "인디",
-    "tags": {
-      "로그라이크": 1,
-      "액션": 1,
-      "플랫포머": 1,
-      "도전적": 1,
-      "빠른": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "액션",
-      "플랫포머",
-      "도전적",
-      "빠른"
-    ]
-  },
-  "881100": {
-    "appid": 881100,
-    "name": "Noita",
-    "developer": "Nolla Games",
-    "ccu": 81239,
-    "positive": 198953,
-    "negative": 765,
-    "average_2weeks": 13173,
-    "owners": 2387436,
-    "genre": "인디",
-    "tags": {
-      "로그라이크": 1,
-      "마법": 1,
-      "물리엔진": 1,
-      "도전적": 1,
-      "탐험": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "마법",
-      "물리엔진",
-      "도전적",
-      "탐험"
-    ]
-  },
-  "1625450": {
-    "appid": 1625450,
-    "name": "Plate Up!",
-    "developer": "It's Happening",
-    "ccu": 80407,
-    "positive": 203275,
-    "negative": 680,
-    "average_2weeks": 12695,
-    "owners": 2439300,
-    "genre": "시뮬레이션",
-    "tags": {
-      "요리": 1,
-      "경영": 1,
-      "로그라이크": 1,
-      "협동": 1,
-      "캐주얼": 1
-    },
-    "tags_list": [
-      "요리",
-      "경영",
-      "로그라이크",
-      "협동",
-      "캐주얼"
+      "슈터"
     ]
   },
   "322330": {
@@ -249,29 +99,29 @@
       "로그라이크"
     ]
   },
-  "632360": {
-    "appid": 632360,
-    "name": "Risk of Rain 2",
-    "developer": "Hopoo Games",
-    "ccu": 79565,
-    "positive": 194610,
-    "negative": 850,
-    "average_2weeks": 12914,
-    "owners": 2335320,
+  "588650": {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "developer": "Motion Twin",
+    "ccu": 81344,
+    "positive": 199023,
+    "negative": 765,
+    "average_2weeks": 13201,
+    "owners": 2388276,
     "genre": "인디",
     "tags": {
       "로그라이크": 1,
       "액션": 1,
-      "협동": 1,
-      "빠른": 1,
-      "3인칭": 1
+      "플랫포머": 1,
+      "도전적": 1,
+      "빠른": 1
     },
     "tags_list": [
       "로그라이크",
       "액션",
-      "협동",
-      "빠른",
-      "3인칭"
+      "플랫포머",
+      "도전적",
+      "빠른"
     ]
   },
   "590380": {
@@ -299,104 +149,54 @@
       "도전적"
     ]
   },
-  "1336490": {
-    "appid": 1336490,
-    "name": "Against the Storm",
-    "developer": "Eremite Games",
-    "ccu": 78884,
-    "positive": 198848,
-    "negative": 765,
-    "average_2weeks": 12545,
-    "owners": 2386176,
-    "genre": "전략",
-    "tags": {
-      "전략": 1,
-      "로그라이크": 1,
-      "도시건설": 1,
-      "다크판타지": 1,
-      "경영": 1
-    },
-    "tags_list": [
-      "전략",
-      "로그라이크",
-      "도시건설",
-      "다크판타지",
-      "경영"
-    ]
-  },
-  "311690": {
-    "appid": 311690,
-    "name": "Enter the Gungeon",
-    "developer": "Dodge Roll",
-    "ccu": 77405,
-    "positive": 194750,
+  "632360": {
+    "appid": 632360,
+    "name": "Risk of Rain 2",
+    "developer": "Hopoo Games",
+    "ccu": 79565,
+    "positive": 194610,
     "negative": 850,
-    "average_2weeks": 12338,
-    "owners": 2337000,
-    "genre": "액션",
+    "average_2weeks": 12914,
+    "owners": 2335320,
+    "genre": "인디",
     "tags": {
       "로그라이크": 1,
-      "탄막": 1,
-      "인디": 1,
-      "도전적": 1,
-      "슈터": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "탄막",
-      "인디",
-      "도전적",
-      "슈터"
-    ]
-  },
-  "1649240": {
-    "appid": 1649240,
-    "name": "Returnal",
-    "developer": "Housemarque",
-    "ccu": 76320,
-    "positive": 181760,
-    "negative": 1105,
-    "average_2weeks": 12597,
-    "owners": 2181120,
-    "genre": "액션",
-    "tags": {
-      "로그라이크": 1,
-      "슈터": 1,
-      "sf": 1,
-      "도전적": 1,
+      "액션": 1,
+      "협동": 1,
+      "빠른": 1,
       "3인칭": 1
     },
     "tags_list": [
       "로그라이크",
-      "슈터",
-      "sf",
-      "도전적",
+      "액션",
+      "협동",
+      "빠른",
       "3인칭"
     ]
   },
-  "1942280": {
-    "appid": 1942280,
-    "name": "Brotato",
-    "developer": "Blobfish",
-    "ccu": 76319,
-    "positive": 190209,
-    "negative": 934,
-    "average_2weeks": 12233,
-    "owners": 2282508,
-    "genre": "액션",
+  "646570": {
+    "appid": 646570,
+    "name": "Slay the Spire",
+    "developer": "MegaCrit",
+    "ccu": 84825,
+    "positive": 207821,
+    "negative": 594,
+    "average_2weeks": 13749,
+    "owners": 2493852,
+    "genre": "인디",
     "tags": {
+      "카드게임": 1,
       "로그라이크": 1,
-      "인디": 1,
-      "생존": 1,
-      "캐주얼": 1,
-      "중독성": 1
+      "전략": 1,
+      "싱글플레이어": 1,
+      "덱빌딩": 1
     },
     "tags_list": [
+      "카드게임",
       "로그라이크",
-      "인디",
-      "생존",
-      "캐주얼",
-      "중독성"
+      "전략",
+      "싱글플레이어",
+      "덱빌딩"
     ]
   },
   "681280": {
@@ -424,29 +224,54 @@
       "도전적"
     ]
   },
-  "1313140": {
-    "appid": 1313140,
-    "name": "Cult of the Lamb",
-    "developer": "Massive Monster",
-    "ccu": 74173,
-    "positive": 185996,
-    "negative": 1019,
-    "average_2weeks": 11844,
-    "owners": 2231952,
-    "genre": "시뮬레이션",
+  "881100": {
+    "appid": 881100,
+    "name": "Noita",
+    "developer": "Nolla Games",
+    "ccu": 81239,
+    "positive": 198953,
+    "negative": 765,
+    "average_2weeks": 13173,
+    "owners": 2387436,
+    "genre": "인디",
     "tags": {
-      "경영": 1,
       "로그라이크": 1,
-      "귀여움": 1,
-      "사교": 1,
-      "인디": 1
+      "마법": 1,
+      "물리엔진": 1,
+      "도전적": 1,
+      "탐험": 1
     },
     "tags_list": [
-      "경영",
       "로그라이크",
-      "귀여움",
-      "사교",
-      "인디"
+      "마법",
+      "물리엔진",
+      "도전적",
+      "탐험"
+    ]
+  },
+  "1145360": {
+    "appid": 1145360,
+    "name": "Hades II",
+    "developer": "Supergiant Games",
+    "ccu": 80407,
+    "positive": 203205,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2438460,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "액션": 1,
+      "인디": 1,
+      "그리스신화": 1,
+      "마법": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "액션",
+      "인디",
+      "그리스신화",
+      "마법"
     ]
   },
   "1282730": {
@@ -472,6 +297,181 @@
       "레트로",
       "자동전투",
       "덱빌딩"
+    ]
+  },
+  "1313140": {
+    "appid": 1313140,
+    "name": "Cult of the Lamb",
+    "developer": "Massive Monster",
+    "ccu": 74173,
+    "positive": 185996,
+    "negative": 1019,
+    "average_2weeks": 11844,
+    "owners": 2231952,
+    "genre": "시뮬레이션",
+    "tags": {
+      "경영": 1,
+      "로그라이크": 1,
+      "귀여움": 1,
+      "사교": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "경영",
+      "로그라이크",
+      "귀여움",
+      "사교",
+      "인디"
+    ]
+  },
+  "1336490": {
+    "appid": 1336490,
+    "name": "Against the Storm",
+    "developer": "Eremite Games",
+    "ccu": 78884,
+    "positive": 198848,
+    "negative": 765,
+    "average_2weeks": 12545,
+    "owners": 2386176,
+    "genre": "전략",
+    "tags": {
+      "전략": 1,
+      "로그라이크": 1,
+      "도시건설": 1,
+      "다크판타지": 1,
+      "경영": 1
+    },
+    "tags_list": [
+      "전략",
+      "로그라이크",
+      "도시건설",
+      "다크판타지",
+      "경영"
+    ]
+  },
+  "1625450": {
+    "appid": 1625450,
+    "name": "Plate Up!",
+    "developer": "It's Happening",
+    "ccu": 80407,
+    "positive": 203275,
+    "negative": 680,
+    "average_2weeks": 12695,
+    "owners": 2439300,
+    "genre": "시뮬레이션",
+    "tags": {
+      "요리": 1,
+      "경영": 1,
+      "로그라이크": 1,
+      "협동": 1,
+      "캐주얼": 1
+    },
+    "tags_list": [
+      "요리",
+      "경영",
+      "로그라이크",
+      "협동",
+      "캐주얼"
+    ]
+  },
+  "1649240": {
+    "appid": 1649240,
+    "name": "Returnal",
+    "developer": "Housemarque",
+    "ccu": 76320,
+    "positive": 181760,
+    "negative": 1105,
+    "average_2weeks": 12597,
+    "owners": 2181120,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "슈터": 1,
+      "sf": 1,
+      "도전적": 1,
+      "3인칭": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "슈터",
+      "sf",
+      "도전적",
+      "3인칭"
+    ]
+  },
+  "1794680": {
+    "appid": 1794680,
+    "name": "Vampire Survivors",
+    "developer": "poncle",
+    "ccu": 92015,
+    "positive": 225955,
+    "negative": 255,
+    "average_2weeks": 14881,
+    "owners": 2711460,
+    "genre": "인디",
+    "tags": {
+      "로그라이크": 1,
+      "서바이벌": 1,
+      "캐주얼": 1,
+      "무료": 1,
+      "빠른": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "서바이벌",
+      "캐주얼",
+      "무료",
+      "빠른"
+    ]
+  },
+  "1942280": {
+    "appid": 1942280,
+    "name": "Brotato",
+    "developer": "Blobfish",
+    "ccu": 76319,
+    "positive": 190209,
+    "negative": 934,
+    "average_2weeks": 12233,
+    "owners": 2282508,
+    "genre": "액션",
+    "tags": {
+      "로그라이크": 1,
+      "인디": 1,
+      "생존": 1,
+      "캐주얼": 1,
+      "중독성": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "인디",
+      "생존",
+      "캐주얼",
+      "중독성"
+    ]
+  },
+  "2379780": {
+    "appid": 2379780,
+    "name": "Balatro",
+    "developer": "LocalThunk",
+    "ccu": 88607,
+    "positive": 221254,
+    "negative": 340,
+    "average_2weeks": 14172,
+    "owners": 2655048,
+    "genre": "전략",
+    "tags": {
+      "카드": 1,
+      "로그라이크": 1,
+      "덱빌딩": 1,
+      "인디": 1,
+      "중독성": 1
+    },
+    "tags_list": [
+      "카드",
+      "로그라이크",
+      "덱빌딩",
+      "인디",
+      "중독성"
     ]
   }
 }
