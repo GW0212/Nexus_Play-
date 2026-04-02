@@ -392,12 +392,6 @@ const EXTRA_GAMES = [
   { id:379720,  title:"DOOM",                        genre:"FPS",      tags:["fps","악마","싱글플레이어","빠른","고전부활"],    rating:9.0, year:2016, dev:"id Software", desc:"현대적으로 부활한 DOOM의 하드코어 싱글 FPS." },
   { id:1721470, title:"Poppy Playtime",              genre:"공포",     tags:["공포","퍼즐","어드벤처","장난감","1인칭"],        rating:7.9, year:2021, dev:"Mob Entertainment", desc:"버려진 장난감 공장에서 퍼즐과 추격을 버티는 호러 어드벤처." },
   { id:3932890, title:"Escape from Tarkov",          genre:"FPS",      tags:["추출","하드코어","밀리터리","전술","파밍"],      rating:8.7, year:2025, dev:"Battlestate Games", desc:"탈출 슈터 장르를 대표하는 하드코어 전술 FPS." },
-  { id:1568590, title:"Goose Goose Duck",           genre:"인디",     tags:["마피아","파티","추리","멀티플레이어","무료"],     rating:8.6, year:2021, dev:"Gaggle Studios, Inc.", desc:"거위와 오리가 되어 정체를 숨기고 추리하는 파티형 소셜 디덕션 게임." },
-  { id:2073850, title:"THE FINALS",                genre:"FPS",      tags:["fps","파괴","팀","멀티플레이어","경쟁"],       rating:8.4, year:2023, dev:"Embark Studios", desc:"지형 파괴와 빠른 전투 템포가 강점인 팀 기반 아레나 FPS." },
-  { id:714010,  title:"Aimlabs",                   genre:"시뮬레이션", tags:["에임훈련","fps","연습","무료","도구"],         rating:8.7, year:2023, dev:"State Space Labs, Inc.", desc:"FPS 조준 감각과 반응 속도를 체계적으로 훈련할 수 있는 에임 트레이너." },
-  { id:1943950, title:"Escape the Backrooms",      genre:"공포",     tags:["공포","협동","백룸","탐험","퍼즐"],            rating:8.1, year:2022, dev:"Fancy Games", desc:"끝없이 이어지는 백룸을 탐험하며 탈출을 시도하는 협동 호러 게임." },
-  { id:960090,  title:"Bloons TD 6",               genre:"전략",     tags:["타워디펜스","전략","협동","캐주얼","원숭이"],    rating:9.1, year:2018, dev:"Ninja Kiwi", desc:"타워 디펜스 장르의 대표작으로 꼽히는 중독성 강한 전략 게임." },
-
   ];
 
 
@@ -774,17 +768,6 @@ function uniqueByAppId(list) {
   });
 }
 
-function sortGenreAppsByPopularity(list) {
-  return [...(list || [])].sort((a,b)=>
-    ((b.ccu||0)-(a.ccu||0)) ||
-    ((b.positive||0)-(a.positive||0)) ||
-    ((b.owners||0)-(a.owners||0)) ||
-    ((b.average_2weeks||0)-(a.average_2weeks||0)) ||
-    ((b.rating||0)-(a.rating||0)) ||
-    String(a.name||'').localeCompare(String(b.name||''))
-  );
-}
-
 async function prefetchCoreData() {
   if (_prefetchStarted) return;
   _prefetchStarted = true;
@@ -804,16 +787,13 @@ const THUMB_OVERRIDES = {
   "Crimson Desert": { appid:3321460 },
   "Escape from Tarkov": {
     appid:3932890,
-    link:"https://store.steampowered.com/app/3932890/Escape_from_Tarkov/",
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932890/header.jpg"
-  },
-  "Goose Goose Duck": {
-    appid:1568590,
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1568590/header.jpg"
-  },
-  "Bloons TD 6": {
-    appid:960090,
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg"
+    link:"https://www.escapefromtarkov.com/preorder-page",
+    image: makePosterThumbnail("Escape from Tarkov", "Battlestate Games", {
+      accent:'#d9a441',
+      accent2:'#6b4d1a',
+      silhouette:true,
+      kicker:'EXTRACTION SHOOTER'
+    })
   }
 };
 

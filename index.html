@@ -1765,12 +1765,6 @@ const EXTRA_GAMES = [
   { id:990080,  title:"Hogwarts Legacy",              genre:"액션",     tags:["오픈월드","마법","액션","스토리","판타지"],      rating:8.8, year:2023, dev:"Avalanche Software", desc:"호그와트와 마법 세계를 자유롭게 탐험하는 오픈월드 액션 RPG." },
   { id:1888930, title:"The Last of Us Part I",        genre:"액션",     tags:["스토리","액션","생존","포스트아포칼립스","명작"], rating:9.2, year:2023, dev:"Naughty Dog LLC, Iron Galaxy Studios", desc:"조엘과 엘리의 여정을 고퀄리티로 재구성한 포스트아포칼립스 액션 어드벤처." },
   { id:2531310, title:"The Last of Us Part II",       genre:"액션",     tags:["스토리","액션","생존","포스트아포칼립스","드라마"], rating:9.1, year:2025, dev:"Naughty Dog LLC, Nixxes Software, Iron Galaxy Studios", desc:"엘리와 애비의 이야기를 다룬 서사 중심 액션 어드벤처 후속작." },
-  { id:1568590, title:"Goose Goose Duck",           genre:"인디",     tags:["마피아","파티","추리","멀티플레이어","무료"],     rating:8.6, year:2021, dev:"Gaggle Studios, Inc.", desc:"거위와 오리가 되어 정체를 숨기고 추리하는 파티형 소셜 디덕션 게임." },
-  { id:2073850, title:"THE FINALS",                genre:"FPS",      tags:["fps","파괴","팀","멀티플레이어","경쟁"],       rating:8.4, year:2023, dev:"Embark Studios", desc:"지형 파괴와 빠른 전투 템포가 강점인 팀 기반 아레나 FPS." },
-  { id:714010,  title:"Aimlabs",                   genre:"시뮬레이션", tags:["에임훈련","fps","연습","무료","도구"],         rating:8.7, year:2023, dev:"State Space Labs, Inc.", desc:"FPS 조준 감각과 반응 속도를 체계적으로 훈련할 수 있는 에임 트레이너." },
-  { id:1943950, title:"Escape the Backrooms",      genre:"공포",     tags:["공포","협동","백룸","탐험","퍼즐"],            rating:8.1, year:2022, dev:"Fancy Games", desc:"끝없이 이어지는 백룸을 탐험하며 탈출을 시도하는 협동 호러 게임." },
-  { id:960090,  title:"Bloons TD 6",               genre:"전략",     tags:["타워디펜스","전략","협동","캐주얼","원숭이"],    rating:9.1, year:2018, dev:"Ninja Kiwi", desc:"타워 디펜스 장르의 대표작으로 꼽히는 중독성 강한 전략 게임." },
-
   ];
 
 
@@ -1983,6 +1977,7 @@ const EXTRA_CURATED_GAMES = [
   { id:1196590, title:"Resident Evil Village Gold Edition", genre:"공포", tags:["공포","액션","FPS","뱀파이어","서바이벌"], rating:8.8, year:2022, dev:"CAPCOM", desc:"3인칭 모드가 추가된 바이오하자드 빌리지 완전판." },
   { id:594650, title:"Hunt: Showdown 1896", genre:"공포", tags:["FPS","공포","PvPvE","서부","바운티"], rating:8.7, year:2019, dev:"Crytek", desc:"괴물 사냥과 PvP가 결합된 독특한 호러 FPS." },
   { id:242760, title:"The Forest", genre:"공포", tags:["공포","서바이벌","건설","오픈월드","협동"], rating:8.9, year:2018, dev:"Endnight Games", desc:"식인종이 사는 숲에서 살아남는 서바이벌 공포." },
+  { id:1326470, title:"Sons Of The Forest", genre:"공포", tags:["공포","서바이벌","건설","오픈월드","협동"], rating:8.2, year:2023, dev:"Endnight Games", desc:"더 포레스트 후속작으로 AI 동료와 생존하는 게임." },
   { id:251570, title:"7 Days to Die", genre:"공포", tags:["좀비","공포","서바이벌","건설","크래프팅"], rating:8.3, year:2013, dev:"The Fun Pimps", desc:"좀비 호드에 대비하며 기지를 쌓는 좀비 공포." },
   { id:319630, title:"Life is Strange", genre:"공포", tags:["스토리","선택","어드벤처","감성","미스터리"], rating:9.0, year:2015, dev:"Dontnod Entertainment", desc:"시간을 되돌리며 운명을 바꾸는 감성 어드벤처." },
   { id:945360, title:"Among Us", genre:"공포", tags:["마피아","공포","추리","멀티플레이어","캐주얼"], rating:8.8, year:2018, dev:"Innersloth", desc:"임포스터를 찾아내는 소셜 추리 공포 게임." },
@@ -2658,17 +2653,6 @@ function initTheme() {
   applyThemeButtons();
 }
 
-function sortGenreAppsByPopularity(list) {
-  return [...(list || [])].sort((a,b)=>
-    ((b.ccu||0)-(a.ccu||0)) ||
-    ((b.positive||0)-(a.positive||0)) ||
-    ((b.owners||0)-(a.owners||0)) ||
-    ((b.average_2weeks||0)-(a.average_2weeks||0)) ||
-    ((b.rating||0)-(a.rating||0)) ||
-    String(a.name||'').localeCompare(String(b.name||''))
-  );
-}
-
 async function prefetchCoreData() {
   if (_prefetchStarted) return;
   _prefetchStarted = true;
@@ -2688,16 +2672,13 @@ const THUMB_OVERRIDES = {
   "Crimson Desert": { appid:3321460 },
   "Escape from Tarkov": {
     appid:3932890,
-    link:"https://store.steampowered.com/app/3932890/Escape_from_Tarkov/",
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932890/header.jpg"
-  },
-  "Goose Goose Duck": {
-    appid:1568590,
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1568590/header.jpg"
-  },
-  "Bloons TD 6": {
-    appid:960090,
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg"
+    link:"https://www.escapefromtarkov.com/preorder-page",
+    image: makePosterThumbnail("Escape from Tarkov", "Battlestate Games", {
+      accent:'#d9a441',
+      accent2:'#6b4d1a',
+      silhouette:true,
+      kicker:'EXTRACTION SHOOTER'
+    })
   }
 };
 const EXACT_GENRE_OVERRIDES = {
@@ -2898,8 +2879,8 @@ function getScoreLabel(pos, neg) {
 
 
 function resolveSteamThumbId(appOrId, title='') { return getThumbAppId(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : Number(appOrId), title); }
-function steamThumb(appOrId, title='')    { return imgUrl(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : appOrId, title); }
-function steamThumbAlt(appOrId, title='') { return imgUrlAlt(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : appOrId, title); }
+function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOrId, title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
+function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
 function isTrustedThumbnailMapping(appOrGame) {
   if (!appOrGame) return false;
@@ -2937,7 +2918,7 @@ function makeSteamCard(app, rank, options = {}) {
   const fallback3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
   const fallback4 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_231x87.jpg`;
   return `
-    <a class="steam-card" href="${storeUrl({ id: Number(app.appid || thumbId), title: app.name || '' }, app.name || '')}" target="_blank" rel="noopener">
+    <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${imgSrc}" alt="${displayName.replace(/"/g,'')}" loading="lazy"
              data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId}, ['${fallback1}','${fallback2}','${fallback3}','${fallback4}'])">
@@ -3238,7 +3219,7 @@ async function loadSteamRecommendations() {
   heroEl.innerHTML = safeSorted.slice(0,3).map((app,i)=>{
     const thumbId = resolveSteamThumbId(app, app.name);
     return `
-    <div class="hero-card" onclick="window.open('${storeUrl({ id: Number(app.appid || thumbId), title: app.name || '' }, app.name || '')}','_blank')" style="animation-delay:${i*0.08}s">
+    <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${thumbId}','_blank')" style="animation-delay:${i*0.08}s">
       <img src="${steamThumb(app, app.name)}" alt="${app.name}"
            data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId})">
       <div class="hero-card-overlay">
