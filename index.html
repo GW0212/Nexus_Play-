@@ -150,6 +150,7 @@ body {
 .ob-counter {
   font-family:'Space Mono', monospace;
   font-size:0.8rem; color:var(--text-muted); white-space:nowrap;
+  text-align:center; width:100%;
 }
 .ob-counter span { font-size:1.05rem; font-weight:700; color:var(--accent); }
 
@@ -1225,6 +1226,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
     <div>
       <button class="ob-start-btn" id="ob-start-btn" onclick="startApp()">추천 시작하기 →</button>
       <p class="ob-hint" id="ob-hint">10개를 선택하면 활성화돼요</p>
+      <button id="ob-reset-btn" onclick="resetObSelection()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 16px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.35)';this.style.color='var(--text)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
     </div>
   </div>
 </div>
@@ -3506,10 +3508,30 @@ function goHome() {
 }
 
 
+
+function resetObSelection() {
+  selectedIds = [];
+  document.querySelectorAll('.ob-card.selected').forEach(c => c.classList.remove('selected'));
+  const countEl = document.getElementById('ob-count');
+  const btn = document.getElementById('ob-start-btn');
+  const hint = document.getElementById('ob-hint');
+  const prog = document.getElementById('ob-progress');
+  if (countEl) countEl.textContent = '0';
+  if (btn) { btn.disabled = true; btn.classList.remove('active'); }
+  if (hint) hint.style.display = '';
+  if (prog) prog.style.width = '0%';
+}
 function resetApp() {
   localStorage.removeItem(STORAGE_KEY);
   ++steamRecRequestSeq;
-  selectedIds=[]; currentObFilter='전체'; currentGenreFilter='전체';
+  selectedIds=[  { id:3557620, title:"블루 아카이브", genre:"RPG", tags:["가챠","무료","애니메이션","전략","협동"], rating:9.0, year:2024, dev:"Nexon", desc:"전세계 수천만 명이 플레이한 국산 애니메이션 모바일/PC RPG." },
+  { id:1049590, title:"이터널 리턴", genre:"서바이벌", tags:["배틀로얄","무료","경쟁","전략","캐릭터"], rating:8.2, year:2020, dev:"Nimble Neuron", desc:"쿼터뷰 배틀로얄 생존 게임. 채집·제작·전투가 조화를 이룬다." },
+  { id:1973530, title:"Limbus Company", genre:"RPG", tags:["rpg","무료","애니메이션","턴제","가챠"], rating:8.8, year:2023, dev:"Project Moon", desc:"림버스 컴퍼니 — 프로젝트문의 다크 판타지 턴제 RPG." },
+  { id:3564740, title:"연운", genre:"RPG", tags:["오픈월드","액션rpg","무료","소울라이크","무협"], rating:8.5, year:2025, dev:"Perfect World", desc:"10세기 중국 무협 세계를 배경으로 한 오픈월드 액션 RPG." },
+  { id:4025700, title:"두근두근 타운", genre:"시뮬레이션", tags:["생활시뮬레이션","무료","힐링","멀티플레이어","귀여운"], rating:7.8, year:2024, dev:"Mango Party", desc:"나만의 마을을 꾸미는 무료 힐링 생활 시뮬레이션 게임." },
+  { id:1808500, title:"ARC Raiders", genre:"FPS", tags:["협동","fps","sf","루팅","서바이벌"], rating:8.0, year:2025, dev:"Embark Studios", desc:"압도적인 SF 세계에서 로봇 레이더들을 막아내는 협동 TPS." },
+  { id:2344520, title:"디아블로 IV", genre:"RPG", tags:["액션rpg","핵앤슬래시","다크판타지","멀티플레이어","루팅"], rating:8.3, year:2023, dev:"Blizzard Entertainment", desc:"블리자드의 정통 액션 RPG 시리즈 최신작. 끝없는 성장과 루팅의 재미." },
+]; currentObFilter='전체'; currentGenreFilter='전체';
   obSearch=''; genreSearch=''; steamRecLoaded=false; steamRecSelectionKey=''; hotLoaded=false; hotGenreFilter='전체';
   _hotRawData={ ccu: [], positive: [], average_2weeks: [] }; _steamGenreCache={}; _prefetchStarted=false; window.__steamRecRequestToken=0; window.__steamRecSelectionKey='';
   const si=document.getElementById('ob-search'); if(si) si.value='';
