@@ -534,8 +534,11 @@ const TAG_EN_MAP = {
 };
 
 const EXCLUDED_TITLES = new Set([
-  'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic'
+  'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic',
+  'Marvel Rivals','Delta Force','MONSTER HUNTER: WORLD - Iceborne','Age of Empires III: Definitive Edition',
+  'Gothic 1 Remake','Life is Strange Remastered','Disco Elysium - The Final Cut','Psychonauts 2','Inscryption'
 ]);
+const EXCLUDED_APPIDS = new Set([2767030, 2507950, 2612830]);
 
 function dedupeByIdTitle(list) {
   const seen = new Set();
@@ -547,10 +550,10 @@ function dedupeByIdTitle(list) {
 }
 
 const GAMES_CLEAN = dedupeByIdTitle([
-  ...GAMES.filter(g => !EXCLUDED_TITLES.has(g.title)),
+  ...GAMES,
   ...EXTRA_GAMES,
   ...EXTRA_CURATED_GAMES
-]);
+].filter(g => !EXCLUDED_TITLES.has(g.title) && !EXCLUDED_APPIDS.has(Number(g.id || g.appid || 0))));
 
 let selectedIds = [];
 let currentObFilter = '전체';
