@@ -1,29 +1,4 @@
 {
-  "105600": {
-    "appid": 105600,
-    "name": "Terraria",
-    "developer": "Re-Logic",
-    "ccu": 36000,
-    "positive": 590000,
-    "negative": 12000,
-    "average_2weeks": 2000,
-    "owners": 30000000,
-    "tags": {
-      "샌드박스": 1,
-      "서바이벌": 1,
-      "2d": 1,
-      "크래프팅": 1,
-      "인디": 1
-    },
-    "tags_list": [
-      "샌드박스",
-      "서바이벌",
-      "2d",
-      "크래프팅",
-      "인디"
-    ],
-    "_source": "steamspy"
-  },
   "252490": {
     "appid": 252490,
     "name": "Rust",
@@ -46,31 +21,6 @@
       "크래프팅",
       "멀티플레이어",
       "pvp"
-    ],
-    "_source": "steamspy"
-  },
-  "418370": {
-    "appid": 418370,
-    "name": "Subnautica",
-    "developer": "Unknown Worlds Entertainment",
-    "ccu": 20000,
-    "positive": 320000,
-    "negative": 8000,
-    "average_2weeks": 1400,
-    "owners": 8000000,
-    "tags": {
-      "서바이벌": 1,
-      "탐험": 1,
-      "수중": 1,
-      "공포": 1,
-      "오픈월드": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "탐험",
-      "수중",
-      "공포",
-      "오픈월드"
     ],
     "_source": "steamspy"
   },
@@ -99,6 +49,56 @@
     ],
     "_source": "steamspy"
   },
+  "1623730": {
+    "appid": 1623730,
+    "name": "Palworld",
+    "developer": "Pocketpair",
+    "ccu": 92000,
+    "positive": 480000,
+    "negative": 72000,
+    "average_2weeks": 6800,
+    "owners": 10000000,
+    "tags": {
+      "서바이벌": 1,
+      "몬스터": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "몬스터",
+      "오픈월드",
+      "크래프팅",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "105600": {
+    "appid": 105600,
+    "name": "Terraria",
+    "developer": "Re-Logic",
+    "ccu": 36000,
+    "positive": 590000,
+    "negative": 12000,
+    "average_2weeks": 2000,
+    "owners": 30000000,
+    "tags": {
+      "샌드박스": 1,
+      "서바이벌": 1,
+      "2d": 1,
+      "크래프팅": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "샌드박스",
+      "서바이벌",
+      "2d",
+      "크래프팅",
+      "인디"
+    ],
+    "_source": "steamspy"
+  },
   "1326470": {
     "appid": 1326470,
     "name": "Sons of the Forest",
@@ -124,28 +124,28 @@
     ],
     "_source": "steamspy"
   },
-  "1623730": {
-    "appid": 1623730,
-    "name": "Palworld",
-    "developer": "Pocketpair",
-    "ccu": 92000,
-    "positive": 480000,
-    "negative": 72000,
-    "average_2weeks": 6800,
-    "owners": 10000000,
+  "2357570": {
+    "appid": 2357570,
+    "name": "Enshrouded",
+    "developer": "Keen Games",
+    "ccu": 25000,
+    "positive": 180000,
+    "negative": 12000,
+    "average_2weeks": 1800,
+    "owners": 2500000,
     "tags": {
       "서바이벌": 1,
-      "몬스터": 1,
-      "오픈월드": 1,
       "크래프팅": 1,
-      "협동": 1
+      "오픈월드": 1,
+      "협동": 1,
+      "rpg": 1
     },
     "tags_list": [
       "서바이벌",
-      "몬스터",
-      "오픈월드",
       "크래프팅",
-      "협동"
+      "오픈월드",
+      "협동",
+      "rpg"
     ],
     "_source": "steamspy"
   },
@@ -174,28 +174,28 @@
     ],
     "_source": "steamspy"
   },
-  "2357570": {
-    "appid": 2357570,
-    "name": "Enshrouded",
-    "developer": "Keen Games",
-    "ccu": 25000,
-    "positive": 180000,
-    "negative": 12000,
-    "average_2weeks": 1800,
-    "owners": 2500000,
+  "418370": {
+    "appid": 418370,
+    "name": "Subnautica",
+    "developer": "Unknown Worlds Entertainment",
+    "ccu": 20000,
+    "positive": 320000,
+    "negative": 8000,
+    "average_2weeks": 1400,
+    "owners": 8000000,
     "tags": {
       "서바이벌": 1,
-      "크래프팅": 1,
-      "오픈월드": 1,
-      "협동": 1,
-      "rpg": 1
+      "탐험": 1,
+      "수중": 1,
+      "공포": 1,
+      "오픈월드": 1
     },
     "tags_list": [
       "서바이벌",
-      "크래프팅",
-      "오픈월드",
-      "협동",
-      "rpg"
+      "탐험",
+      "수중",
+      "공포",
+      "오픈월드"
     ],
     "_source": "steamspy"
   }
