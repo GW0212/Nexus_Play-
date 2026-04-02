@@ -1733,9 +1733,18 @@ const EXTRA_GAMES = [
     { id:107100, title:"Bastion", genre:"RPG", tags:["액션","인디","내레이션","감성","고전"], rating:8.8, year:2011, dev:"Supergiant Games", desc:"슈퍼자이언트의 시작을 알린 액션 RPG." },
     { id:237930, title:"Transistor", genre:"RPG", tags:["액션","전략","사이버","감성","인디"], rating:8.9, year:2014, dev:"Supergiant Games", desc:"감각적인 사운드와 전술 액션이 매력적인 작품." },
     { id:462770, title:"Pyre", genre:"RPG", tags:["판타지","스토리","파티","인디","독특"], rating:8.5, year:2017, dev:"Supergiant Games", desc:"독특한 경기 시스템과 서사가 결합된 실험적 작품." },
-    { id:1895880, title:"Ratchet & Clank: Rift Apart", genre:"액션", tags:["플랫포머","액션","sf","유쾌","그래픽"], rating:8.9, year:2023, dev:"Insomniac Games", desc:"포탈 이동과 화끈한 무기 연출이 즐거운 액션 게임." }
+    { id:1895880, title:"Ratchet & Clank: Rift Apart", genre:"액션", tags:["플랫포머","액션","sf","유쾌","그래픽"], rating:8.9, year:2023, dev:"Insomniac Games", desc:"포탈 이동과 화끈한 무기 연출이 즐거운 액션 게임." },
+  { id:3419430, title:"Bongo Cat",                    genre:"인디",     tags:["캐주얼","인디","고양이","밈","무료"],             rating:8.8, year:2025, dev:"Marcel Zurawka, Julius Krüger", desc:"키보드를 두드릴 때마다 책상 위 고양이가 반응하는 캐주얼 밈 게임." },
+  { id:2767030, title:"Marvel Rivals",                genre:"FPS",      tags:["히어로","팀","슈터","마블","멀티플레이어"],      rating:8.4, year:2024, dev:"NetEase Games", desc:"마블 영웅 팀을 조합해 싸우는 팀 기반 PvP 슈터." },
+  { id:1422450, title:"Deadlock",                     genre:"FPS",      tags:["슈터","MOBA","팀","전략","멀티플레이어"],        rating:8.3, year:2025, dev:"Valve", desc:"슈터와 MOBA 요소를 결합한 밸브의 팀 기반 멀티플레이어 게임." },
+  { id:3241660, title:"R.E.P.O.",                     genre:"공포",     tags:["공포","협동","추출","물리","온라인"],            rating:8.9, year:2025, dev:"semiwork", desc:"물리 기반 오브젝트를 회수하며 탈출하는 온라인 협동 호러 게임." },
+  { id:3405690, title:"EA SPORTS FC 26",             genre:"스포츠",   tags:["축구","스포츠","멀티플레이어","경쟁","시뮬"],    rating:7.8, year:2025, dev:"EA Canada, EA Romania", desc:"EA SPORTS FC 시리즈 최신 축구 게임." },
+  { id:2943650, title:"FragPunk",                    genre:"FPS",      tags:["히어로","슈터","5대5","카드","경쟁"],            rating:8.1, year:2025, dev:"Bad Guitar Studio", desc:"샤드 카드로 전투 규칙을 뒤트는 5대5 히어로 슈터." },
+  { id:3167020, title:"Escape from Duckov",          genre:"서바이벌", tags:["추출","PvE","오픈월드","은신처","오리"],         rating:8.5, year:2025, dev:"Team Soda", desc:"오리 세계관에서 파밍과 은신처 건설을 하는 PvE 탈출 서바이벌." },
+  { id:379720,  title:"DOOM",                        genre:"FPS",      tags:["fps","악마","싱글플레이어","빠른","고전부활"],    rating:9.0, year:2016, dev:"id Software", desc:"현대적으로 부활한 DOOM의 하드코어 싱글 FPS." },
+  { id:1721470, title:"Poppy Playtime",              genre:"공포",     tags:["공포","퍼즐","어드벤처","장난감","1인칭"],        rating:7.9, year:2021, dev:"Mob Entertainment", desc:"버려진 장난감 공장에서 퍼즐과 추격을 버티는 호러 어드벤처." },
+  { id:3932890, title:"Escape from Tarkov",          genre:"FPS",      tags:["추출","하드코어","밀리터리","전술","파밍"],      rating:8.7, year:2025, dev:"Battlestate Games", desc:"탈출 슈터 장르를 대표하는 하드코어 전술 FPS." },
   ];
-
 
 
 const EXTRA_CURATED_GAMES = [
@@ -2136,7 +2145,7 @@ const TAG_EN_MAP = {
 
 const EXCLUDED_TITLES = new Set([
   'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic',
-  'Marvel Rivals','Delta Force','MONSTER HUNTER: WORLD - Iceborne',
+  'Delta Force','MONSTER HUNTER: WORLD - Iceborne',
   'Age of Empires III: DE','Age of Empires III: Definitive Edition',
   'Gothic 1 Remake','Life is Strange Remastered','Disco Elysium',
   'Disco Elysium - The Final Cut','Psychonauts 2','Inscryption',
@@ -2145,7 +2154,6 @@ const EXCLUDED_TITLES = new Set([
 
 // 썸네일 불일치 appid 차단 (잘못된 appid → 엉뚱한 썸네일 표시됨)
 const EXCLUDED_APPIDS = new Set([
-  2767030,  // Marvel Rivals 잘못된 appid (GTA V 썸네일)
   2507950,  // Delta Force 잘못된 appid
   1091050,  // MH: World - Iceborne (DLC, 썸네일 불일치)
   933110,   // Age of Empires III: DE (썸네일 불일치)
@@ -2157,7 +2165,6 @@ const EXCLUDED_APPIDS = new Set([
   204060,   // Life is Strange Remastered
   632470,   // Disco Elysium
   1325200,2129590,1151460,1490000,1967680,1644820,460580,1215980,241930,858820,275470,1245430,1566180,1985690,1449560,1625450,1044720,1218210,1455840,1966720,1843020,1100600,1127030,416750,1279490,774181,1289310,
-  3240220,  // Marvel Rivals (SteamSpy 정식 appid)
   2612830,  // Delta Force (SteamSpy 정식 appid)
   860950,   // Hades II (SteamSpy 정식 appid)
 ]);
