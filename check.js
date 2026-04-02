@@ -1523,9 +1523,26 @@ function renderHotGrid() {
   if (!gridEl || !_hotRawData) return;
   let list = [...(_hotRawData[hotSortBy] || [])];
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
-  if (statusEl) statusEl.className = 'hot-status hidden';
-  gridEl.innerHTML = list.length
-    ? list.slice(0,120).map((app,i)=>makeSteamCard(app,i+1)).join('')
+  let safeList = list.filter(app => Number(app.appid || app.id) > 0 && !isExcludedGame(app));
+  let useLiveAppid = true;
+  let showLive = true;
+  if (!safeList.length) {
+    const fallbackSets = _hotRawData || buildHotFallback();
+    let fallbackList = uniqueByAppId([...(fallbackSets.ccu || []), ...(fallbackSets.positive || []), ...(fallbackSets.average_2weeks || [])]).filter(app => !isExcludedGame(app));
+    if (hotGenreFilter !== '전체') fallbackList = fallbackList.filter(app => matchesGenreApp(app, hotGenreFilter));
+    if (!fallbackList.length) fallbackList = GAMES_CLEAN.filter(g => (hotGenreFilter === '전체' || g.genre === hotGenreFilter) && !isExcludedGame(g));
+    safeList = fallbackList.slice(0, 120);
+    useLiveAppid = false;
+    showLive = false;
+    if (statusEl) {
+      statusEl.textContent = '⚠️ 실시간 인기 데이터가 비어 있어 보정 리스트를 표시합니다.';
+      statusEl.className = 'hot-status';
+    }
+  } else if (statusEl) {
+    statusEl.className = 'hot-status hidden';
+  }
+  gridEl.innerHTML = safeList.length
+    ? safeList.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive, useLiveAppid })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 게임이 없습니다.'}</div>`;
 }
 
