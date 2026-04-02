@@ -558,6 +558,8 @@ let currentGenreFilter = '전체';
 let currentTab = 'rec';
 let obSearch = '';
 let genreSearch = '';
+let _genreLastRenderedList = [];
+let _genreLastRenderedGenre = '전체';
 let steamRecLoaded = false;
 let hotLoaded = false;
 let hotSortBy = 'ccu';
@@ -1279,7 +1281,12 @@ async function loadSteamGenreData(genre, opts = {}) {
   return sorted;
 }
 
-function renderGenreGrid() { loadSteamGenreData(currentGenreFilter); }
+function renderGenreGrid() {
+  const sourceList = _genreLastRenderedGenre === currentGenreFilter && _genreLastRenderedList.length
+    ? _genreLastRenderedList
+    : (_steamGenreCache[currentGenreFilter] || []);
+  applyGenreGrid(sourceList, currentGenreFilter);
+}
 
 // ── Hot tab ──
 function renderHotGenrePills() {
@@ -1515,6 +1522,17 @@ function ensureSearchBars() {
     const pills = document.getElementById('genre-pills');
     if (pills) pills.insertAdjacentElement('afterend', wrap);
     document.getElementById('genre-search').addEventListener('input', e => { genreSearch=e.target.value.trim(); renderGenreGrid(); });
+  }
+  const genreGrid = document.getElementById('genre-grid');
+  if (genreGrid && !genreGrid.dataset.staticClickBound) {
+    const keepGenreGridStable = (e) => {
+      if (e.target !== genreGrid) return;
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    genreGrid.addEventListener('click', keepGenreGridStable);
+    genreGrid.addEventListener('pointerdown', keepGenreGridStable);
+    genreGrid.dataset.staticClickBound = '1';
   }
 }
 

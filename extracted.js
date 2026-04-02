@@ -844,6 +844,8 @@ let currentGenreFilter = '전체';
 let currentTab = 'rec';
 let obSearch = '';
 let genreSearch = '';
+let _genreLastRenderedList = [];
+let _genreLastRenderedGenre = '전체';
 let steamRecLoaded = false;
 let steamRecRequestSeq = 0;
 let steamRecSelectionKey = '';
@@ -1918,15 +1920,14 @@ function applyGenreGrid(list, genre) {
 }
 
 function setGenreFilter(g) {
-  if (currentGenreFilter === g && _steamGenreCache[g]?.length) {
-    document.querySelectorAll('#genre-pills .genre-pill').forEach(b =>
-      b.classList.toggle('active', b.textContent.trim()===g));
-    applyGenreGrid(_steamGenreCache[g], g);
-    return;
-  }
+  const sameGenre = currentGenreFilter === g;
   currentGenreFilter = g;
   document.querySelectorAll('#genre-pills .genre-pill').forEach(b =>
     b.classList.toggle('active', b.textContent.trim()===g));
+  if (sameGenre) {
+    renderGenreGrid();
+    return;
+  }
   loadSteamGenreData(g);
 }
 
@@ -1991,7 +1992,12 @@ async function loadSteamGenreData(genre, opts = {}) {
   }
 }
 
-function renderGenreGrid() { loadSteamGenreData(currentGenreFilter); }
+function renderGenreGrid() {
+  const sourceList = _genreLastRenderedGenre === currentGenreFilter && _genreLastRenderedList.length
+    ? _genreLastRenderedList
+    : (_steamGenreCache[currentGenreFilter] || []);
+  applyGenreGrid(sourceList, currentGenreFilter);
+}
 
 // ── Hot tab ──
 function renderHotGenrePills() {
@@ -2284,6 +2290,17 @@ function ensureSearchBars() {
     const pills = document.getElementById('genre-pills');
     if (pills) pills.insertAdjacentElement('afterend', wrap);
     document.getElementById('genre-search').addEventListener('input', e => { genreSearch=e.target.value.trim(); renderGenreGrid(); });
+  }
+  const genreGrid = document.getElementById('genre-grid');
+  if (genreGrid && !genreGrid.dataset.staticClickBound) {
+    const keepGenreGridStable = (e) => {
+      if (e.target !== genreGrid) return;
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    genreGrid.addEventListener('click', keepGenreGridStable);
+    genreGrid.addEventListener('pointerdown', keepGenreGridStable);
+    genreGrid.dataset.staticClickBound = '1';
   }
 }
 
