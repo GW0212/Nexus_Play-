@@ -75,7 +75,7 @@ body {
   min-height: 100vh;
   position: relative;
   background: var(--bg);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ambient glow bg */
@@ -361,6 +361,10 @@ body {
   font-size:1.15rem; letter-spacing:3px;
   cursor:not-allowed;
   transition:all 0.3s;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  user-select:none;
+  -webkit-user-select:none;
 }
 
 .ob-start-btn.ready {
@@ -1225,9 +1229,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
 
   <div class="ob-footer">
     <div>
-      <button type="button" class="ob-start-btn" id="ob-start-btn" onclick="return startApp()">추천 시작하기 →</button>
+      <button class="ob-start-btn" id="ob-start-btn" onclick="startApp()">추천 시작하기 →</button>
       <p class="ob-hint" id="ob-hint">10개를 선택하면 활성화돼요</p>
-      <button type="button" onclick="return resetOnboardingSelection()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
+      <button onclick="(function(){selectedIds=[];document.querySelectorAll('.ob-card.selected').forEach(c=>c.classList.remove('selected'));updateObUI();persistSelection();})()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
     </div>
   </div>
 </div>
@@ -2188,10 +2192,11 @@ const TAG_EN_MAP = {
 
 const EXCLUDED_TITLES = new Set([
   'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic',
-  'Marvel Rivals','Delta Force','MONSTER HUNTER: WORLD - Iceborne','Age of Empires III: Definitive Edition',
-  'Gothic 1 Remake','Life is Strange Remastered','Disco Elysium - The Final Cut','Psychonauts 2','Inscryption'
+  'Marvel Rivals','Delta Force','MONSTER HUNTER: WORLD - Iceborne',
+  'Age of Empires III: DE','Age of Empires III: Definitive Edition',
+  'Gothic 1 Remake','Life is Strange Remastered','Disco Elysium',
+  'Disco Elysium - The Final Cut','Psychonauts 2','Inscryption'
 ]);
-const EXCLUDED_APPIDS = new Set([2767030, 2507950, 2612830]);
 
 function dedupeByIdTitle(list) {
   const seen = new Set();
@@ -2203,10 +2208,10 @@ function dedupeByIdTitle(list) {
 }
 
 const GAMES_CLEAN = dedupeByIdTitle([
-  ...GAMES,
+  ...GAMES.filter(g => !EXCLUDED_TITLES.has(g.title)),
   ...EXTRA_GAMES,
   ...EXTRA_CURATED_GAMES
-].filter(g => !EXCLUDED_TITLES.has(g.title) && !EXCLUDED_APPIDS.has(Number(g.id || g.appid || 0))));
+]);
 
 let selectedIds = [];
 let currentObFilter = '전체';
@@ -2341,13 +2346,10 @@ function normalizeGenreItem(item, genre) {
   if (item.appid || item.name) {
     const canonicalAppid = resolveCanonicalAppId(item, item.name || item.title || '');
     const normalized = { ...item, appid: canonicalAppid, name: item.name || item.title || '', _source: item._source || 'steam' };
-    const displayTitle = normalized.name || normalized.title || item.name || item.title || '';
-    if (EXCLUDED_APPIDS.has(Number(canonicalAppid)) || EXCLUDED_TITLES.has(displayTitle)) return null;
     normalized._genre = resolvePrimaryGenre(normalized);
     return normalized;
   }
   if (!(item.id && item.title)) return null;
-  if (EXCLUDED_APPIDS.has(Number(item.id)) || EXCLUDED_TITLES.has(item.title)) return null;
   // GAMES_CLEAN 로컬 데이터는 item.id가 이미 정식 appid — THUMB_OVERRIDES로 덮어쓰지 않음
   const canonicalAppid = Number(item.id);
   return {
@@ -2418,13 +2420,12 @@ async function fetchMostPlayedLive(forceRemote = false) {
     550: 'Left 4 Dead 2', 4000: 'Garry\'s Mod', 289070: 'Sid Meier\'s Civilization VI',
     620: 'Portal 2', 582010: 'Monster Hunter: World', 292030: 'The Witcher 3: Wild Hunt',
     1091500: 'Cyberpunk 2077', 367520: 'Hollow Knight', 553850: 'Helldivers 2',
-    107410: 'Arma 3', 431960: 'Wallpaper Engine', 2767030: 'Marvel Rivals',
+    107410: 'Arma 3', 431960: 'Wallpaper Engine',
     236390: 'War Thunder', 1144200: 'Ready or Not', 1085660: 'Destiny 2',
     105600: 'Terraria', 2357570: 'Enshrouded', 227300: 'Euro Truck Simulator 2',
     1623730: 'Palworld', 2358720: 'Black Myth: Wukong', 2215430: 'Ghost of Tsushima DIRECTOR\'S CUT',
     1817070: 'Marvel\'s Spider-Man Remastered', 892970: 'Valheim',
     526870: 'Satisfactory', 2246340: 'Monster Hunter Wilds',
-    2767030: 'Marvel Rivals', 2507950: 'Delta Force',
     2694490: 'Path of Exile 2', 2183900: 'Warhammer 40,000: Space Marine 2',
     1295660: 'Sid Meier\'s Civilization VII', 1364780: 'Street Fighter 6',
     1778820: 'TEKKEN 8', 1790600: 'Dragon Ball: Sparking! ZERO',
@@ -2715,8 +2716,6 @@ const THUMB_OVERRIDES = {
   "Civilization VII": { appid:1295660 },
   "Sid Meier's Civilization VII": { appid:1295660 },
   "Sid Meier's Civilization® VII": { appid:1295660 },
-  "Marvel Rivals": { appid:2767030 },
-  "Delta Force": { appid:2507950 },
   "Palworld": { appid:1623730 },
   "Enshrouded": { appid:1203620 },
   "Helldivers 2": { appid:553850 },
@@ -2803,8 +2802,6 @@ const EXACT_GENRE_OVERRIDES = {
   1364780: '격투',     // Street Fighter 6
   1778820: '격투',     // TEKKEN 8
   1790600: '격투',     // Dragon Ball Sparking ZERO
-  2767030: 'FPS',      // Marvel Rivals
-  2507950: 'FPS',      // Delta Force
   1551360: '레이싱',   // Forza Horizon 5
   2440510: '레이싱',   // Forza Motorsport
   1250410: '시뮬레이션', // Microsoft Flight Simulator
@@ -2825,16 +2822,16 @@ const THUMB_OVERRIDES_NORMALIZED = Object.fromEntries(
 );
 
 const POPULAR_GAME_IDS = new Set([
-  730,570,578080,1172470,1245620,1086940,271590,1174180,381210,440,252490,550,4000,289070,620,582010,292030,1091500,367520,413150,359550,553850,107410,431960,2767030,236390,1144200,1085660,252490,105600,2357570,440,227300,
+  730,570,578080,1172470,1245620,1086940,271590,1174180,381210,440,252490,550,4000,289070,620,582010,292030,1091500,367520,413150,359550,553850,107410,431960,236390,1144200,1085660,252490,105600,2357570,440,227300,
   // 추가 인기 게임
   1623730,2358720,2215430,1817070,1593500,2379780,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,814380,374320,1145360,632470,435150,1113000,1687950,1462040,782330,546560,548430,1237970,581320,553850,1361210,671860,393380,686810,
   883710,952060,418370,412020,214490,282140,1693980,275850,1604030,648800,815370,962130,1172620,1426210,1332010,753640,646570,632360,
-  2246340,2767030,2507950,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,
+  2246340,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,
   // 스포츠/레이싱 인기
   3405690,3551340,3472040,2669320,2488620,2882430,1665460
 ]);
 const LEGACY_RECOMMEND_BLOCKLIST = new Set([10,20,30,40,50,60,70,80,130,220,240,300,320,340,360,380,400,420,440,500,550,620,1250,4000,9390,227300]);
-const MODERN_RECOMMEND_KEEP = new Set([730,578080,1172470,1245620,1086940,271590,1174180,381210,252490,553850,431960,2767030,236390,1144200,2357570,1623730,2358720,2215430,1817070,1593500,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,1687950,1462040,782330,548430,1237970,581320,1361210,671860,393380,686810,1693980,1604030,1172620,1426210,1332010,753640,646570,632360,2246340,2767030,2507950,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,3405690,3551340,3472040,2669320,2488620,2882430,1665460]);
+const MODERN_RECOMMEND_KEEP = new Set([730,578080,1172470,1245620,1086940,271590,1174180,381210,252490,553850,431960,236390,1144200,2357570,1623730,2358720,2215430,1817070,1593500,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,1687950,1462040,782330,548430,1237970,581320,1361210,671860,393380,686810,1693980,1604030,1172620,1426210,1332010,753640,646570,632360,2246340,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,3405690,3551340,3472040,2669320,2488620,2882430,1665460]);
 function getAppYear(app) {
   const local = getGameById(Number(app?.appid || app?.id));
   return Number(local?.year || app?.year || 0) || 0;
@@ -3053,11 +3050,10 @@ function updateObUI() {
   if (countEl) countEl.textContent = n;
   if (progressEl) progressEl.style.width = (n*10)+'%';
   if (btn && hint) {
-    btn.disabled = n !== 10;
     if (n === 10) {
-      btn.classList.add('ready'); hint.textContent = '✨ 준비 완료!'; hint.style.color = 'var(--accent)';
+      btn.classList.add('ready'); btn.disabled = false; hint.textContent = '✨ 준비 완료!'; hint.style.color = 'var(--accent)';
     } else {
-      btn.classList.remove('ready'); hint.textContent = (10-n)+'개 더 선택하면 활성화돼요'; hint.style.color = '';
+      btn.classList.remove('ready'); btn.disabled = false; hint.textContent = (10-n)+'개 더 선택하면 활성화돼요'; hint.style.color = '';
     }
   }
 }
@@ -3568,29 +3564,12 @@ async function renderApp() {
 }
 
 function startApp() {
-  if (selectedIds.length!==10) return false;
+  if (selectedIds.length!==10) return;
   persistSelection(true);
-  const onboarding = document.getElementById('onboarding');
-  const app = document.getElementById('app');
-  if (onboarding) onboarding.classList.remove('active');
-  if (app) app.classList.add('active');
+  document.getElementById('onboarding').classList.remove('active');
+  document.getElementById('app').classList.add('active');
   renderApp();
   prefetchCoreData();
-  return false;
-}
-
-function resetOnboardingSelection() {
-  selectedIds = [];
-  document.querySelectorAll('.ob-card.selected').forEach(c => c.classList.remove('selected'));
-  const si = document.getElementById('ob-search');
-  if (si) si.value = '';
-  obSearch = '';
-  currentObFilter = '전체';
-  renderObFilter();
-  renderObGrid();
-  updateObUI();
-  persistSelection(false);
-  return false;
 }
 
 
@@ -3723,6 +3702,14 @@ function ensureSearchBars() {
   renderObFilter();
   renderObGrid();
   updateObUI();
+  // 모바일 터치 이벤트 지원
+  const startBtn = document.getElementById('ob-start-btn');
+  if (startBtn) {
+    startBtn.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      startApp();
+    }, {passive:false});
+  }
   if (savedReady) startApp();
 })();
 
@@ -3734,18 +3721,3 @@ window.addEventListener('focus', () => maybeRefreshLiveData(false));
 
 </body>
 </html>
-
-window.addEventListener('DOMContentLoaded', () => {
-  const startBtn = document.getElementById('ob-start-btn');
-  if (startBtn) {
-    startBtn.type = 'button';
-    startBtn.disabled = selectedIds.length !== 10;
-    startBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      startApp();
-    });
-  }
-  const onboardingResetBtn = document.querySelector('.ob-footer button[onclick*="resetOnboardingSelection"]');
-  if (onboardingResetBtn) onboardingResetBtn.type = 'button';
-  updateObUI();
-});

@@ -820,11 +820,8 @@ const TAG_EN_MAP = {
 };
 
 const EXCLUDED_TITLES = new Set([
-  'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic',
-  'Marvel Rivals','Delta Force','MONSTER HUNTER: WORLD - Iceborne','Age of Empires III: Definitive Edition',
-  'Gothic 1 Remake','Life is Strange Remastered','Disco Elysium - The Final Cut','Psychonauts 2','Inscryption'
+  'Rocket League (Original)','FIFA 23','EA FC 25','NBA 2K23','Riders Republic'
 ]);
-const EXCLUDED_APPIDS = new Set([2767030, 2507950, 2612830]);
 
 function dedupeByIdTitle(list) {
   const seen = new Set();
@@ -836,10 +833,10 @@ function dedupeByIdTitle(list) {
 }
 
 const GAMES_CLEAN = dedupeByIdTitle([
-  ...GAMES,
+  ...GAMES.filter(g => !EXCLUDED_TITLES.has(g.title)),
   ...EXTRA_GAMES,
   ...EXTRA_CURATED_GAMES
-].filter(g => !EXCLUDED_TITLES.has(g.title) && !EXCLUDED_APPIDS.has(Number(g.id || g.appid || 0))));
+]);
 
 let selectedIds = [];
 let currentObFilter = '전체';
@@ -972,13 +969,10 @@ function normalizeGenreItem(item, genre) {
   if (item.appid || item.name) {
     const canonicalAppid = resolveCanonicalAppId(item, item.name || item.title || '');
     const normalized = { ...item, appid: canonicalAppid, name: item.name || item.title || '', _source: item._source || 'steam' };
-    const displayTitle = normalized.name || normalized.title || item.name || item.title || '';
-    if (EXCLUDED_APPIDS.has(Number(canonicalAppid)) || EXCLUDED_TITLES.has(displayTitle)) return null;
     normalized._genre = resolvePrimaryGenre(normalized);
     return normalized;
   }
   if (!(item.id && item.title)) return null;
-  if (EXCLUDED_APPIDS.has(Number(item.id)) || EXCLUDED_TITLES.has(item.title)) return null;
   const canonicalAppid = resolveCanonicalAppId(item.id, item.title);
   return {
     appid: canonicalAppid,
@@ -1643,7 +1637,6 @@ function updateObUI() {
   if (countEl) countEl.textContent = n;
   if (progressEl) progressEl.style.width = (n*10)+'%';
   if (btn && hint) {
-    btn.disabled = n !== 10;
     if (n === 10) {
       btn.classList.add('ready'); hint.textContent = '✨ 준비 완료!'; hint.style.color = 'var(--accent)';
     } else {
@@ -2128,29 +2121,12 @@ async function renderApp() {
 }
 
 function startApp() {
-  if (selectedIds.length!==10) return false;
+  if (selectedIds.length!==10) return;
   persistSelection(true);
-  const onboarding = document.getElementById('onboarding');
-  const app = document.getElementById('app');
-  if (onboarding) onboarding.classList.remove('active');
-  if (app) app.classList.add('active');
+  document.getElementById('onboarding').classList.remove('active');
+  document.getElementById('app').classList.add('active');
   renderApp();
   prefetchCoreData();
-  return false;
-}
-
-function resetOnboardingSelection() {
-  selectedIds = [];
-  document.querySelectorAll('.ob-card.selected').forEach(c => c.classList.remove('selected'));
-  const si = document.getElementById('ob-search');
-  if (si) si.value = '';
-  obSearch = '';
-  currentObFilter = '전체';
-  renderObFilter();
-  renderObGrid();
-  updateObUI();
-  persistSelection(false);
-  return false;
 }
 
 
