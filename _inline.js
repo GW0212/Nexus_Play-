@@ -56,7 +56,6 @@ const GAMES = [
   { id:219150, title:"Hotline Miami",                 genre:"액션",     tags:["탑다운","폭력적","빠른","인디","레트로"],           rating:9.0, year:2012, dev:"Dennaton Games",          desc:"폭발적인 속도감과 강렬한 음악의 탑다운 액션." },
   { id:2138710,title:"Sifu",                          genre:"액션",     tags:["쿵푸","도전적","격투","복수","3인칭"],              rating:8.5, year:2022, dev:"Sloclap",                 desc:"나이를 먹으며 복수하는 쿵푸 액션 게임." },
   { id:1659420,title:"Uncharted: Legacy of Thieves",  genre:"액션",     tags:["어드벤처","액션","스토리","탐험","영화"],           rating:8.8, year:2022, dev:"Naughty Dog",             desc:"영화 같은 연출의 언차티드 시리즈 컬렉션." },
-  { id:1888930,title:"The Last of Us Part I",         genre:"액션",     tags:["서바이벌","스토리","포스트아포칼립스","감동","액션"],rating:9.6, year:2023, dev:"Naughty Dog",             desc:"역사상 가장 감동적인 서바이벌 스토리." },
   { id:1475810,title:"Ghostwire: Tokyo",              genre:"액션",     tags:["도쿄","오컬트","액션","1인칭","일본"],              rating:7.8, year:2022, dev:"Tango Gameworks",         desc:"귀신이 가득한 도쿄에서 영적 능력으로 싸워라." },
   { id:1583230,title:"High on Life",                  genre:"액션",     tags:["fps","코미디","sf","Rick&Morty","독특"],            rating:7.5, year:2022, dev:"Squanch Games",           desc:"릭앤모티 창작자의 말하는 총이 등장하는 광기 FPS." },
   
@@ -1248,8 +1247,11 @@ function renderGenreTab() {
 function applyGenreGrid(list, genre) {
   const gridEl = document.getElementById('genre-grid');
   if (!gridEl) return;
+  const safeList = Array.isArray(list) ? [...list] : [];
+  _genreLastRenderedList = safeList;
+  _genreLastRenderedGenre = genre;
   const q = genreSearch.toLowerCase();
-  const base = (list || []).filter(app => matchesGenreApp(app, genre));
+  const base = safeList.filter(app => matchesGenreApp(app, genre));
   const filtered = q
     ? base.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
     : base;
@@ -1571,4 +1573,3 @@ function ensureSearchBars() {
 
 initTheme();
 initLiveAutoRefresh();
-window.addEventListener('focus', () => maybeRefreshLiveData(false));

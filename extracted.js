@@ -56,7 +56,6 @@ const GAMES = [
   { id:219150, title:"Hotline Miami",                 genre:"액션",     tags:["탑다운","폭력적","빠른","인디","레트로"],           rating:9.0, year:2012, dev:"Dennaton Games",          desc:"폭발적인 속도감과 강렬한 음악의 탑다운 액션." },
   { id:2138710,title:"Sifu",                          genre:"액션",     tags:["쿵푸","도전적","격투","복수","3인칭"],              rating:8.5, year:2022, dev:"Sloclap",                 desc:"나이를 먹으며 복수하는 쿵푸 액션 게임." },
   { id:1659420,title:"Uncharted: Legacy of Thieves",  genre:"액션",     tags:["어드벤처","액션","스토리","탐험","영화"],           rating:8.8, year:2022, dev:"Naughty Dog",             desc:"영화 같은 연출의 언차티드 시리즈 컬렉션." },
-  { id:1888930,title:"The Last of Us Part I",         genre:"액션",     tags:["서바이벌","스토리","포스트아포칼립스","감동","액션"],rating:9.6, year:2023, dev:"Naughty Dog",             desc:"역사상 가장 감동적인 서바이벌 스토리." },
   { id:1475810,title:"Ghostwire: Tokyo",              genre:"액션",     tags:["도쿄","오컬트","액션","1인칭","일본"],              rating:7.8, year:2022, dev:"Tango Gameworks",         desc:"귀신이 가득한 도쿄에서 영적 능력으로 싸워라." },
   { id:1583230,title:"High on Life",                  genre:"액션",     tags:["fps","코미디","sf","Rick&Morty","독특"],            rating:7.5, year:2022, dev:"Squanch Games",           desc:"릭앤모티 창작자의 말하는 총이 등장하는 광기 FPS." },
   
@@ -504,7 +503,6 @@ const EXTRA_CURATED_GAMES = [
   { id:964800, title:"Prodeus", genre:"FPS", tags:["FPS","레트로","고어","맵에디터","인디"], rating:8.8, year:2022, dev:"Bounding Box Software", desc:"현대 그래픽과 레트로 감성을 절묘하게 섞은 FPS." },
   { id:924970, title:"Back 4 Blood", genre:"FPS", tags:["FPS","협동","좀비","카드","멀티플레이어"], rating:7.5, year:2021, dev:"Turtle Rock Studios", desc:"L4D 개발진이 만든 협동 좀비 FPS." },
   { id:493520, title:"GTFO", genre:"FPS", tags:["FPS","협동","공포","하드코어","잠입"], rating:8.6, year:2021, dev:"10 Chambers", desc:"극도의 긴장감을 요구하는 하드코어 협동 FPS." },
-  { id:1328590, title:"Turbo Overkill", genre:"FPS", tags:["FPS","사이버펑크","레트로","속도감","인디"], rating:9.1, year:2023, dev:"Trigger Happy Interactive", desc:"전기톱 다리로 질주하는 사이버펑크 레트로 FPS." },
   { id:324800, title:"Shadow Warrior 2", genre:"FPS", tags:["FPS","핵앤슬래시","협동","루팅","액션"], rating:8.3, year:2016, dev:"Flying Wild Hog", desc:"칼과 총을 동시에 쓰는 호쾌한 액션 FPS." },
   { id:1029690, title:"Sniper Elite 5", genre:"FPS", tags:["FPS","저격","잠입","2차대전","협동"], rating:8.0, year:2022, dev:"Rebellion", desc:"정밀 저격과 침투가 핵심인 전술 FPS." },
   { id:1715130, title:"Crysis Remastered", genre:"FPS", tags:["FPS","SF","그래픽","나노수트","싱글플레이어"], rating:7.8, year:2021, dev:"Crytek", desc:"나노수트의 자유도 높은 전투를 리마스터한 FPS." },
@@ -527,7 +525,6 @@ const EXTRA_CURATED_GAMES = [
   { id:236430, title:"Dark Souls: Remastered", genre:"RPG", tags:["소울라이크","액션RPG","도전적","판타지","다크"], rating:9.0, year:2018, dev:"FromSoftware", desc:"소울라이크 장르를 탄생시킨 전설적인 액션 RPG." },
   { id:1222700, title:"Gothic 1 Remake", genre:"RPG", tags:["오픈월드","RPG","판타지","클래식","리메이크"], rating:8.0, year:2024, dev:"Alkimia Interactive", desc:"고전 RPG 고딕 1의 리메이크 버전." },
   { id:1971870, title:"Star Wars Jedi: Survivor", genre:"RPG", tags:["액션RPG","스타워즈","SF","소울라이크","스토리"], rating:8.5, year:2023, dev:"Respawn Entertainment", desc:"제다이의 성장과 모험을 그린 액션 RPG 후속작." },
-  { id:1817070, title:"Hogwarts Legacy", genre:"RPG", tags:["오픈월드","RPG","마법","해리포터","탐험"], rating:8.5, year:2023, dev:"Avalanche Software", desc:"호그와트에서 마법사 생활을 체험하는 오픈월드 RPG." },
   { id:1593500, title:"God of War", genre:"RPG", tags:["액션RPG","스토리","북유럽신화","싱글플레이어","보스전"], rating:9.4, year:2022, dev:"Santa Monica Studio", desc:"아버지와 아들의 여정을 그린 액션 RPG 명작 PC판." },
   { id:435150, title:"Divinity: Original Sin 2", genre:"RPG", tags:["RPG","턴제","협동","판타지","스토리"], rating:9.6, year:2017, dev:"Larian Studios", desc:"전술과 자유도가 극한인 턴제 RPG의 명작." },
   { id:376210, title:"Pillars of Eternity II: Deadfire", genre:"RPG", tags:["RPG","등거리시점","해적","판타지","스토리"], rating:8.5, year:2018, dev:"Obsidian Entertainment", desc:"해양 탐험과 깊은 스토리의 등거리 RPG." },
@@ -1310,7 +1307,6 @@ const THUMB_OVERRIDES = {
   "Enshrouded": { appid:1203620 },
   "Helldivers 2": { appid:553850 },
   "HELLDIVERS™ 2": { appid:553850 },
-  "Wuthering Waves": { appid:2685760 },
   "The First Descendant": { appid:2074920 },
   "Once Human": { appid:2139460 },
   "Forza Motorsport": { appid:2440510 },
@@ -1902,8 +1898,11 @@ function renderGenreTab() {
 function applyGenreGrid(list, genre) {
   const gridEl = document.getElementById('genre-grid');
   if (!gridEl) return;
+  const safeList = Array.isArray(list) ? [...list] : [];
+  _genreLastRenderedList = safeList;
+  _genreLastRenderedGenre = genre;
   const q = genreSearch.toLowerCase();
-  const base = (list || []).filter(app => matchesGenreApp(app, genre));
+  const base = safeList.filter(app => matchesGenreApp(app, genre));
   const filtered = q
     ? base.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
     : base;
@@ -2313,4 +2312,3 @@ function ensureSearchBars() {
 
 initTheme();
 initLiveAutoRefresh();
-window.addEventListener('focus', () => maybeRefreshLiveData(false));

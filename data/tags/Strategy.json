@@ -49,31 +49,6 @@
     ],
     "_source": "steamspy"
   },
-  "282140": {
-    "appid": 282140,
-    "name": "Sid Meier's Civilization V",
-    "developer": "Firaxis Games",
-    "ccu": 28000,
-    "positive": 340000,
-    "negative": 18000,
-    "average_2weeks": 1200,
-    "owners": 15000000,
-    "tags": {
-      "전략": 1,
-      "턴제": 1,
-      "4x": 1,
-      "역사": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "전략",
-      "턴제",
-      "4x",
-      "역사",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "730": {
     "appid": 730,
     "name": "Counter-Strike 2",

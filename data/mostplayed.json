@@ -546,32 +546,6 @@
     "_source": "steam_charts"
   },
   {
-    "appid": 1888160,
-    "name": "Hogwarts Legacy",
-    "developer": "Avalanche Software",
-    "ccu": 62000,
-    "positive": 420000,
-    "negative": 48000,
-    "average_2weeks": 4300,
-    "rank": 25,
-    "tags": {
-      "rpg": 1,
-      "오픈월드": 1,
-      "마법": 1,
-      "해리포터": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "rpg",
-      "오픈월드",
-      "마법",
-      "해리포터",
-      "싱글플레이어"
-    ],
-    "genre": "RPG",
-    "_source": "steam_charts"
-  },
-  {
     "appid": 2215430,
     "name": "Ghost of Tsushima DIRECTOR'S CUT",
     "developer": "Sucker Punch Productions",
@@ -881,58 +855,6 @@
       "멀티플레이어"
     ],
     "genre": "FPS",
-    "_source": "steam_charts"
-  },
-  {
-    "appid": 2685760,
-    "name": "Wuthering Waves",
-    "developer": "Kuro Games",
-    "ccu": 30000,
-    "positive": 180000,
-    "negative": 42000,
-    "average_2weeks": 1400,
-    "rank": 39,
-    "tags": {
-      "오픈월드": 1,
-      "액션rpg": 1,
-      "무료": 1,
-      "애니메이션": 1,
-      "가챠": 1
-    },
-    "tags_list": [
-      "오픈월드",
-      "액션rpg",
-      "무료",
-      "애니메이션",
-      "가챠"
-    ],
-    "genre": "RPG",
-    "_source": "steam_charts"
-  },
-  {
-    "appid": 282140,
-    "name": "Sid Meier's Civilization V",
-    "developer": "Firaxis Games",
-    "ccu": 28000,
-    "positive": 340000,
-    "negative": 18000,
-    "average_2weeks": 1200,
-    "rank": 40,
-    "tags": {
-      "전략": 1,
-      "턴제": 1,
-      "4x": 1,
-      "역사": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "전략",
-      "턴제",
-      "4x",
-      "역사",
-      "싱글플레이어"
-    ],
-    "genre": "전략",
     "_source": "steam_charts"
   }
 ]

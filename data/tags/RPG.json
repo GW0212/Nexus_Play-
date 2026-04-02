@@ -249,56 +249,6 @@
     ],
     "_source": "steamspy"
   },
-  "1888160": {
-    "appid": 1888160,
-    "name": "Hogwarts Legacy",
-    "developer": "Avalanche Software",
-    "ccu": 62000,
-    "positive": 420000,
-    "negative": 48000,
-    "average_2weeks": 4300,
-    "owners": 7200000,
-    "tags": {
-      "rpg": 1,
-      "오픈월드": 1,
-      "마법": 1,
-      "해리포터": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "rpg",
-      "오픈월드",
-      "마법",
-      "해리포터",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "2685760": {
-    "appid": 2685760,
-    "name": "Wuthering Waves",
-    "developer": "Kuro Games",
-    "ccu": 30000,
-    "positive": 180000,
-    "negative": 42000,
-    "average_2weeks": 1400,
-    "owners": 4000000,
-    "tags": {
-      "오픈월드": 1,
-      "액션rpg": 1,
-      "무료": 1,
-      "애니메이션": 1,
-      "가챠": 1
-    },
-    "tags_list": [
-      "오픈월드",
-      "액션rpg",
-      "무료",
-      "애니메이션",
-      "가챠"
-    ],
-    "_source": "steamspy"
-  },
   "582010": {
     "appid": 582010,
     "name": "Monster Hunter: World",

@@ -199,31 +199,6 @@
     ],
     "_source": "steamspy"
   },
-  "1282100": {
-    "appid": 1282100,
-    "name": "The Last of Us Part I",
-    "developer": "Naughty Dog",
-    "ccu": 22000,
-    "positive": 180000,
-    "negative": 22000,
-    "average_2weeks": 3400,
-    "owners": 2800000,
-    "tags": {
-      "액션": 1,
-      "어드벤처": 1,
-      "스토리": 1,
-      "좀비": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "어드벤처",
-      "스토리",
-      "좀비",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "1868140": {
     "appid": 1868140,
     "name": "Lies of P",

@@ -99,56 +99,6 @@
     ],
     "_source": "steamspy"
   },
-  "1888160": {
-    "appid": 1888160,
-    "name": "Hogwarts Legacy",
-    "developer": "Avalanche Software",
-    "ccu": 62000,
-    "positive": 420000,
-    "negative": 48000,
-    "average_2weeks": 4300,
-    "owners": 7200000,
-    "tags": {
-      "rpg": 1,
-      "오픈월드": 1,
-      "마법": 1,
-      "해리포터": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "rpg",
-      "오픈월드",
-      "마법",
-      "해리포터",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "1282100": {
-    "appid": 1282100,
-    "name": "The Last of Us Part I",
-    "developer": "Naughty Dog",
-    "ccu": 22000,
-    "positive": 180000,
-    "negative": 22000,
-    "average_2weeks": 3400,
-    "owners": 2800000,
-    "tags": {
-      "액션": 1,
-      "어드벤처": 1,
-      "스토리": 1,
-      "좀비": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "어드벤처",
-      "스토리",
-      "좀비",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "1817070": {
     "appid": 1817070,
     "name": "Marvel's Spider-Man Remastered",
