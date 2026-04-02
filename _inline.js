@@ -874,15 +874,15 @@ const THUMB_OVERRIDES = {
   "Escape from Tarkov": {
     appid:3932890,
     link:"https://store.steampowered.com/app/3932890/Escape_from_Tarkov/",
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932890/header.jpg"
+    image:"https://cdn.akamai.steamstatic.com/steam/apps/3932890/header.jpg"
   },
   "Goose Goose Duck": {
     appid:1568590,
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1568590/header.jpg"
+    image:"https://cdn.akamai.steamstatic.com/steam/apps/1568590/header.jpg"
   },
   "Bloons TD 6": {
     appid:960090,
-    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg"
+    image:"https://cdn.akamai.steamstatic.com/steam/apps/960090/header.jpg"
   }
 };
 const EXACT_GENRE_OVERRIDES = {
@@ -1538,7 +1538,16 @@ function openModal(id) {
   const g = getGameById(id); if (!g) return;
   const img = document.getElementById('modal-img');
   img.src = imgUrl(g);
-  img.onerror = function(){ this.src=imgUrlAlt(g); this.onerror=null; };
+  img.onerror = function(){
+    const fallback = imgUrlAlt(g);
+    if (this.src !== fallback) {
+      this.src = fallback;
+      this.onerror = function(){ this.onerror=null; this.removeAttribute('src'); };
+      return;
+    }
+    this.onerror = null;
+    this.removeAttribute('src');
+  };
   document.getElementById('modal-genre-badge').className = 'modal-genre '+genreClass(g.genre);
   document.getElementById('modal-genre-badge').textContent = g.genre;
   document.getElementById('modal-title').textContent = g.title;
