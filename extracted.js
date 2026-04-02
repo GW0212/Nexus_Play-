@@ -1441,18 +1441,31 @@ function resolveSteamThumbId(appOrId, title='') { return getThumbAppId(typeof ap
 function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOrId, title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
 function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
+function simplifyTitleForMatch(title='') {
+  return normalizeTitleKey(title)
+    .replace(/(ultimate|definitive|director s cut|directors cut|deluxe|complete|collection|bundle|edition|remastered|remake|reload(ed)?|goty|game of the year|anniversary|enhanced|premium|special|celebration)/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+function areTitlesCompatible(a='', b='') {
+  const left = simplifyTitleForMatch(a);
+  const right = simplifyTitleForMatch(b);
+  if (!left || !right) return false;
+  if (left === right) return true;
+  if (left.length >= 8 && right.includes(left)) return true;
+  if (right.length >= 8 && left.includes(right)) return true;
+  return false;
+}
 function isTrustedThumbnailMapping(appOrGame) {
   if (!appOrGame) return false;
   const rawTitle = appOrGame.name || appOrGame.title || '';
   const titleKey = normalizeTitleKey(rawTitle);
   const thumbId = resolveSteamThumbId(appOrGame, rawTitle);
-  if (!thumbId) return false;
-  const overrideId = THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid ? Number(THUMB_OVERRIDES_NORMALIZED[titleKey].appid) : 0;
-  if (overrideId && overrideId === thumbId) return true;
+  if (!thumbId || !titleKey) return false;
+  const override = THUMB_OVERRIDES_NORMALIZED[titleKey] || null;
+  if (override?.appid && Number(override.appid) === thumbId) return true;
   const local = getGameById(Number(thumbId));
-  if (local && normalizeTitleKey(local.title) === titleKey) return true;
-  const sourceId = Number(appOrGame.appid || appOrGame.id || 0);
-  if (sourceId && sourceId === thumbId) return true;
+  if (local && areTitlesCompatible(local.title, rawTitle)) return true;
   return false;
 }
 function filterTrustedThumbnailGames(list) {
@@ -1464,22 +1477,15 @@ function sanitizeTrustedSteamApp(app) {
   const rawTitle = app.name || app.title || '';
   const thumbId = resolveSteamThumbId(app, rawTitle);
   if (!thumbId) return null;
-  const titleKey = normalizeTitleKey(rawTitle);
-  const overrideId = THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid ? Number(THUMB_OVERRIDES_NORMALIZED[titleKey].appid) : 0;
   const local = getGameById(Number(thumbId));
-  const localTitle = local?.title || '';
-  const localTitleKey = normalizeTitleKey(localTitle);
-  const sourceId = Number(app.appid || app.id || 0);
-  const trustedByOverride = !!(overrideId && overrideId === thumbId);
-  const trustedByLocal = !!(localTitleKey && titleKey && localTitleKey === titleKey);
-  const trustedBySource = !!(sourceId && sourceId === thumbId && (!localTitleKey || localTitleKey === titleKey));
-  if (!(trustedByOverride || trustedByLocal || trustedBySource)) return null;
+  const canonicalTitle = local?.title || app.name || app.title || `App ${thumbId}`;
   return {
     ...app,
     appid: Number(thumbId),
     id: Number(thumbId),
-    name: app.name || app.title || localTitle || `App ${thumbId}`,
-    title: app.title || app.name || localTitle || `App ${thumbId}`
+    name: canonicalTitle,
+    title: canonicalTitle,
+    developer: app.developer || app.dev || local?.dev || ''
   };
 }
 
