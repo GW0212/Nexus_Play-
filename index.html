@@ -2689,15 +2689,15 @@ const THUMB_OVERRIDES = {
   "Escape from Tarkov": {
     appid:3932890,
     link:"https://store.steampowered.com/app/3932890/Escape_from_Tarkov/",
-    image:"https://cdn.akamai.steamstatic.com/steam/apps/3932890/header.jpg"
+    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932890/header.jpg"
   },
   "Goose Goose Duck": {
     appid:1568590,
-    image:"https://cdn.akamai.steamstatic.com/steam/apps/1568590/header.jpg"
+    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1568590/header.jpg"
   },
   "Bloons TD 6": {
     appid:960090,
-    image:"https://cdn.akamai.steamstatic.com/steam/apps/960090/header.jpg"
+    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg"
   }
 };
 const EXACT_GENRE_OVERRIDES = {
@@ -2802,122 +2802,6 @@ function resolvePrimaryGenre(app) {
     if (aliases.some(alias => haystack.includes(alias))) return genre;
   }
   return app._genre || app.genre || '전체';
-}
-
-
-const _localStatsCache = new Map();
-let _localStatsPromise = null;
-
-function isUsableRenderedThumb(node) {
-  if (!node || node.id === 'modal-img') return false;
-  const src = node.currentSrc || node.src || '';
-  if (!src || /undefined|null/i.test(src)) return false;
-  if (node.complete && Number(node.naturalWidth || 0) > 8) return true;
-  return false;
-}
-
-function findRenderedThumbByAppId(appid) {
-  const selectors = [
-    `.game-card img[data-appid="${appid}"]`,
-    `.hero-card img[data-appid="${appid}"]`,
-    `img[data-appid="${appid}"]`
-  ];
-  for (const selector of selectors) {
-    const nodes = Array.from(document.querySelectorAll(selector));
-    for (const node of nodes) {
-      if (!isUsableRenderedThumb(node)) continue;
-      return node.currentSrc || node.src || '';
-    }
-  }
-  return '';
-}
-
-function compactKoreanNumber(n) {
-  const num = Number(n || 0);
-  if (!Number.isFinite(num) || num <= 0) return '데이터 없음';
-  if (num >= 100000000) return `약 ${(num/100000000).toFixed(num >= 1000000000 ? 1 : 2).replace(/\.0$/, '')}억 명`;
-  if (num >= 10000) return `약 ${(num/10000).toFixed(num >= 1000000 ? 0 : 1).replace(/\.0$/, '')}만 명`;
-  return `약 ${Math.round(num).toLocaleString('ko-KR')}명`;
-}
-
-function estimateOwnersFromGame(game) {
-  if (!game) return '데이터 없음';
-  const ratingBase = Math.max(1, Number(game.rating || 7));
-  const yearBonus = Math.max(0, 2026 - Number(game.year || 2020));
-  const genreBoost = ({ FPS: 240000, RPG: 180000, 액션: 160000, 공포: 110000, 전략: 120000, 인디: 90000, 스포츠: 80000, 어드벤처: 100000, 서바이벌: 130000, 시뮬레이션: 95000, 격투: 70000 }[game.genre] || 85000);
-  const estimate = Math.round(ratingBase * 180000 + genreBoost + yearBonus * 25000);
-  return compactKoreanNumber(estimate);
-}
-
-function estimatePlaytimeFromGame(game) {
-  if (!game) return '데이터 없음';
-  const genreHours = ({ FPS: 42, RPG: 68, 액션: 28, 공포: 18, 전략: 52, 인디: 20, 스포츠: 26, 어드벤처: 24, 서바이벌: 38, 시뮬레이션: 34, 격투: 22 }[game.genre] || 24);
-  const ratingScale = Math.max(0, Number(game.rating || 7) - 6) * 4;
-  const value = Math.max(4, Math.round(genreHours + ratingScale));
-  return `${value}시간`;
-}
-
-async function buildLocalStatsIndex() {
-  if (_localStatsPromise) return _localStatsPromise;
-  _localStatsPromise = (async () => {
-    const sources = await Promise.all([
-      loadLocalData('mostplayed.json'),
-      loadLocalData('top100.json'),
-      loadLocalData('top100owned.json'),
-      loadLocalData('hot.json')
-    ]);
-    const index = new Map();
-    const feed = (entry) => {
-      if (!entry) return;
-      const id = Number(entry.appid || entry.id);
-      if (!id) return;
-      const prev = index.get(id) || { appid: id };
-      index.set(id, {
-        ...prev,
-        ...entry,
-        owners: entry.owners ?? prev.owners,
-        average_2weeks: entry.average_2weeks ?? prev.average_2weeks,
-        average_forever: entry.average_forever ?? prev.average_forever,
-        ccu: entry.ccu ?? prev.ccu,
-        positive: entry.positive ?? prev.positive,
-        negative: entry.negative ?? prev.negative,
-      });
-    };
-    for (const src of sources) {
-      if (!src) continue;
-      if (Array.isArray(src)) src.forEach(feed);
-      else Object.values(src).forEach(feed);
-    }
-    return index;
-  })();
-  return _localStatsPromise;
-}
-
-async function resolveGameStats(appid) {
-  const id = Number(appid || 0);
-  if (_localStatsCache.has(id)) return _localStatsCache.get(id);
-  let payload = null;
-  try {
-    payload = await steamspyFetch({ request:'appdetails', appid:id });
-  } catch {}
-  if (!payload || typeof payload !== 'object' || payload.error) {
-    try {
-      const index = await buildLocalStatsIndex();
-      payload = index.get(id) || null;
-    } catch {}
-  }
-  const game = getGameById(id);
-  const ownersText = payload?.owners ? compactKoreanNumber(payload.owners) : estimateOwnersFromGame(game);
-  const avgMinutes = Number(payload?.average_forever || 0);
-  const avg2Weeks = Number(payload?.average_2weeks || 0);
-  const playText = avgMinutes > 0
-    ? `${Math.max(1, Math.round(avgMinutes / 60))}시간`
-    : avg2Weeks > 0
-      ? `${Math.max(1, Math.round(avg2Weeks / 60))}시간`
-      : estimatePlaytimeFromGame(game);
-  const resolved = { ownersText, playText };
-  _localStatsCache.set(id, resolved);
-  return resolved;
 }
 
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
@@ -3492,24 +3376,17 @@ async function loadHotGames(silent = false, opts = {}) {
     statusEl.className = 'hot-status';
   }
   if (!silent && gridEl && !(_hotRawData?.ccu?.length)) {
-    _hotRawData = _hotRawData || buildHotFallback();
-    renderHotGenrePills();
-    renderHotGrid();
-    if (statusEl) statusEl.textContent = opts.forceRemote ? '🔄 Steam 차트 새로고침 중... 직전 인기 리스트를 먼저 표시합니다.' : '🔄 Steam 실시간 인기 게임을 불러오는 중... 직전 리스트를 먼저 표시합니다.';
+    gridEl.innerHTML = '';
   }
 
   const fetchPromise = (async () => {
-    try {
-      const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.race([
-        Promise.all([
-          steamspyFetch({request:'mostplayed', forceRemote: !!opts.forceRemote}).catch(()=>null),
-          steamspyFetch({request:'top100in2weeks', forceRemote: !!opts.forceRemote}).catch(()=>null),
-          steamspyFetch({request:'top100forever', forceRemote: !!opts.forceRemote}).catch(()=>null),
-          steamspyFetch({request:'top100owned', forceRemote: !!opts.forceRemote}).catch(()=>null),
-        ]),
-        new Promise(resolve => setTimeout(() => resolve([null, null, null, null]), 4500))
-      ]);
-      if (requestToken !== _hotRequestToken) return _hotRawData;
+    const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.all([
+      steamspyFetch({request:'mostplayed', forceRemote: !!opts.forceRemote}).catch(()=>null),
+      steamspyFetch({request:'top100in2weeks', forceRemote: !!opts.forceRemote}).catch(()=>null),
+      steamspyFetch({request:'top100forever', forceRemote: !!opts.forceRemote}).catch(()=>null),
+      steamspyFetch({request:'top100owned', forceRemote: !!opts.forceRemote}).catch(()=>null),
+    ]);
+    if (requestToken !== _hotRequestToken) return _hotRawData;
 
     const mostPlayedList = normalizeSteamList(mostPlayedData).map(app => ({
       ...app, _genre: EXACT_GENRE_OVERRIDES[Number(app.appid)] || app._genre || app.genre || ''
@@ -3563,20 +3440,6 @@ async function loadHotGames(silent = false, opts = {}) {
       renderHotGrid();
     }
     return _hotRawData;
-    } catch (err) {
-      _hotRawData = _hotRawData || buildHotFallback();
-      _hotSource = 'fallback';
-      _hotFetchedAt = Date.now();
-      if (!silent && requestToken === _hotRequestToken) {
-        renderHotGenrePills();
-        renderHotGrid();
-        if (statusEl) {
-          statusEl.textContent = '⚠️ 실시간 인기 데이터를 불러오지 못해 보정 리스트를 표시합니다.';
-          statusEl.className = 'hot-status';
-        }
-      }
-      return _hotRawData;
-    }
   })();
 
   _hotInflight = fetchPromise.finally(() => {
@@ -3589,39 +3452,14 @@ function renderHotGrid() {
   const gridEl = document.getElementById('hot-grid');
   const statusEl = document.getElementById('hot-status');
   if (!gridEl || !_hotRawData) return;
-
   let list = [...(_hotRawData[hotSortBy] || [])];
   if (hotGenreFilter !== '전체') list = list.filter(app => matchesGenreApp(app, hotGenreFilter));
-
-  let safeList = list.filter(app => Number(app.appid || app.id) > 0 && !isExcludedGame(app));
-  let useLiveAppid = true;
-  let showLive = true;
-
-  if (!safeList.length) {
-    const fallbackSets = _hotRawData || buildHotFallback();
-    const fallbackSource = [...(fallbackSets.ccu || []), ...(fallbackSets.positive || []), ...(fallbackSets.average_2weeks || [])];
-    let fallbackList = uniqueByAppId(fallbackSource).filter(app => !isExcludedGame(app));
-    if (hotGenreFilter !== '전체') fallbackList = fallbackList.filter(app => matchesGenreApp(app, hotGenreFilter));
-    if (!fallbackList.length) {
-      fallbackList = GAMES_CLEAN
-        .filter(g => hotGenreFilter === '전체' || g.genre === hotGenreFilter)
-        .filter(g => !isExcludedGame(g))
-        .sort((a,b)=>(b.ccu||b.positive||Math.round((b.rating||0)*1000)||0) - (a.ccu||a.positive||Math.round((a.rating||0)*1000)||0));
-    }
-    safeList = fallbackList.slice(0, 120);
-    useLiveAppid = false;
-    showLive = false;
-    if (statusEl) {
-      statusEl.textContent = '⚠️ 실시간 인기 데이터가 비어 있어 보정 리스트를 표시합니다.';
-      statusEl.className = 'hot-status';
-    }
-  } else if (statusEl) {
-    statusEl.className = 'hot-status hidden';
-  }
-
+  if (statusEl && list.length) statusEl.className = 'hot-status hidden';
+  // Steam 라이브 데이터는 appid가 이미 Steam의 정식 ID이므로 filterTrustedThumbnailGames를 건너뜀
+  const safeList = list.filter(app => Number(app.appid || app.id) > 0 && !isExcludedGame(app));
   gridEl.innerHTML = safeList.length
-    ? safeList.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive, useLiveAppid })).join('')
-    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 인기 게임이 없습니다.'}</div>`;
+    ? safeList.slice(0,120).map((app,i)=>makeSteamCard(app,i+1,{ showLive:true, useLiveAppid:true })).join('')
+    : `<div class="grid-empty empty-note" style="grid-column:1/-1">${hotGenreFilter !== '전체' ? '해당되는 장르의 게임이 실시간 Top 100 안에 없습니다.' : '실시간 데이터 연결이 지연되어 대체 인기 리스트를 표시하지 못했습니다. 새로고침 후 다시 확인해주세요.'}</div>`;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -3709,31 +3547,8 @@ function loadSelection() {
 function openModal(id) {
   const g = getGameById(id); if (!g) return;
   const img = document.getElementById('modal-img');
-  const renderedThumb = findRenderedThumbByAppId(g.id);
-  const uniqueThumbs = Array.from(new Set([
-    renderedThumb,
-    imgUrl(g),
-    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg`,
-    imgUrlAlt(g),
-    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg`,
-    makeTextThumbnail(g.title, g.dev || g.genre)
-  ].filter(Boolean)));
-  let fallbackIndex = 1;
-  img.referrerPolicy = 'no-referrer';
-  img.decoding = 'async';
-  img.loading = 'eager';
-  img.onerror = function(){
-    const next = uniqueThumbs[fallbackIndex++];
-    if (next && this.src !== next) {
-      this.src = next;
-      return;
-    }
-    this.onerror = null;
-    this.src = makeTextThumbnail(g.title, g.dev || g.genre);
-  };
-  img.removeAttribute('src');
-  img.alt = g.title;
-  img.src = uniqueThumbs[0] || makeTextThumbnail(g.title, g.dev || g.genre);
+  img.src = imgUrl(g);
+  img.onerror = function(){ this.src=imgUrlAlt(g); this.onerror=null; };
   document.getElementById('modal-genre-badge').className = 'modal-genre '+genreClass(g.genre);
   document.getElementById('modal-genre-badge').textContent = g.genre;
   document.getElementById('modal-title').textContent = g.title;
@@ -3762,16 +3577,18 @@ document.addEventListener('keydown', e => {
 });
 
 async function fetchSteamData(appid) {
-  const so = document.getElementById('stat-owners');
-  const sp = document.getElementById('stat-playtime');
   try {
-    const resolved = await resolveGameStats(appid);
-    if (so) { so.className='modal-stat-value'; so.textContent = resolved.ownersText || '데이터 없음'; }
-    if (sp) { sp.className='modal-stat-value'; sp.textContent = resolved.playText || '데이터 없음'; }
+    const data = await steamspyFetch({request:'appdetails', appid});
+    if (!data) throw new Error('no data');
+    const so = document.getElementById('stat-owners');
+    const sp = document.getElementById('stat-playtime');
+    if (so) { so.className='modal-stat-value'; so.textContent=data.owners||'데이터 없음'; }
+    if (sp) { sp.className='modal-stat-value'; sp.textContent=data.average_forever?(Math.round(data.average_forever/60)+'시간'):'─'; }
   } catch {
-    const g = getGameById(appid);
-    if (so) { so.className='modal-stat-value'; so.textContent = estimateOwnersFromGame(g); }
-    if (sp) { sp.className='modal-stat-value'; sp.textContent = estimatePlaytimeFromGame(g); }
+    const so=document.getElementById('stat-owners');
+    const sp=document.getElementById('stat-playtime');
+    if(so){ so.className='modal-stat-value'; so.textContent='─'; }
+    if(sp){ sp.className='modal-stat-value'; sp.textContent='─'; }
   }
 }
 
