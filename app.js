@@ -1445,7 +1445,8 @@ function buildHotFallback() {
 }
 
 async function loadHotGames(silent = false) {
-  if (hotLoaded && _hotRawData && (_hotRawData.ccu?.length || _hotRawData.positive?.length || _hotRawData.average_2weeks?.length)) {
+  if (_hotInflight) return _hotInflight;
+  if (hotLoaded && _hotSource === 'live' && (Date.now() - _hotFetchedAt) < LIVE_REFRESH_MS && _hotRawData && (_hotRawData.ccu?.length || _hotRawData.positive?.length || _hotRawData.average_2weeks?.length)) {
     if (!silent) {
       renderHotGenrePills();
       renderHotGrid();
@@ -1456,56 +1457,86 @@ async function loadHotGames(silent = false) {
   hotLoaded = true;
   const statusEl = document.getElementById('hot-status');
   const gridEl = document.getElementById('hot-grid');
-  if (!silent && statusEl && gridEl) {
-    statusEl.textContent = '🔄 Steam 실시간 인기 게임 불러오는 중...';
-    statusEl.className = 'hot-status';
-    gridEl.innerHTML = '';
-  }
-
-  const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.all([
-    steamspyFetch({request:'mostplayed'}).catch(()=>null),
-    steamspyFetch({request:'top100in2weeks'}).catch(()=>null),
-    steamspyFetch({request:'top100forever'}).catch(()=>null),
-    steamspyFetch({request:'top100owned'}).catch(()=>null),
-  ]);
-
-  const mostPlayedList = normalizeSteamList(mostPlayedData);
-  const ccuList = mostPlayedList.length ? mostPlayedList : normalizeSteamList(hot2WeeksData);
-  const positiveList = normalizeSteamList(positiveData);
-  const ownedList = normalizeSteamList(ownedData);
-  const normalized = {
-    ccu: ccuList,
-    positive: positiveList,
-    average_2weeks: normalizeSteamList(hot2WeeksData).length ? normalizeSteamList(hot2WeeksData) : uniqueByAppId([...ccuList, ...ownedList]),
-  };
-
-  if (!normalized.ccu.length && !normalized.positive.length && !normalized.average_2weeks.length) {
-    _hotRawData = buildHotFallback();
-    if (!silent && statusEl) {
-      statusEl.textContent = '⚠️ Steam 실시간 데이터를 가져오지 못해 내장 카탈로그 인기 순위로 표시합니다.';
-      statusEl.className = 'hot-status';
-      setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 5000);
-    }
-  } else {
-    _hotRawData = {
-      ccu: normalized.ccu.length ? [...normalized.ccu].sort((a,b)=>(b.ccu||0)-(a.ccu||0)) : [],
-      positive: normalized.positive.length ? [...normalized.positive].sort((a,b)=>(b.positive||0)-(a.positive||0)) : [],
-      average_2weeks: normalized.average_2weeks.length ? [...normalized.average_2weeks].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)) : [],
-    };
-    if (!silent && statusEl) {
-      statusEl.textContent = mostPlayedList.length
-        ? '✅ Steam 차트 실시간 인기 데이터를 기준으로 표시 중입니다.'
-        : '✅ Steam 데이터를 기준으로 표시 중입니다.';
-      statusEl.className = 'hot-status';
-      setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 2200);
-    }
-  }
-
-  if (!silent) {
+  if (!silent && !(_hotRawData?.ccu?.length)) {
+    _hotRawData = _hotRawData || buildHotFallback();
     renderHotGenrePills();
     renderHotGrid();
+    if (statusEl) {
+      statusEl.textContent = '🔄 Steam 실시간 인기 게임을 불러오는 중... 직전 리스트를 먼저 표시합니다.';
+      statusEl.className = 'hot-status';
+    }
   }
-  return _hotRawData;
+
+  const fetchPromise = (async () => {
+    try {
+      const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.race([
+        Promise.all([
+          steamspyFetch({request:'mostplayed'}).catch(()=>null),
+          steamspyFetch({request:'top100in2weeks'}).catch(()=>null),
+          steamspyFetch({request:'top100forever'}).catch(()=>null),
+          steamspyFetch({request:'top100owned'}).catch(()=>null),
+        ]),
+        new Promise(resolve => setTimeout(() => resolve([null, null, null, null]), 4500))
+      ]);
+
+      const mostPlayedList = normalizeSteamList(mostPlayedData);
+      const ccuList = mostPlayedList.length ? mostPlayedList : normalizeSteamList(hot2WeeksData);
+      const positiveList = normalizeSteamList(positiveData);
+      const ownedList = normalizeSteamList(ownedData);
+      const normalized = {
+        ccu: ccuList,
+        positive: positiveList,
+        average_2weeks: normalizeSteamList(hot2WeeksData).length ? normalizeSteamList(hot2WeeksData) : uniqueByAppId([...ccuList, ...ownedList]),
+      };
+
+      if (!normalized.ccu.length && !normalized.positive.length && !normalized.average_2weeks.length) {
+        _hotRawData = _hotRawData || buildHotFallback();
+        _hotSource = 'fallback';
+        _hotFetchedAt = Date.now();
+        if (!silent && statusEl) {
+          statusEl.textContent = '⚠️ 실시간 인기 데이터를 불러오지 못해 보정 리스트를 표시합니다.';
+          statusEl.className = 'hot-status';
+        }
+      } else {
+        _hotRawData = {
+          ccu: normalized.ccu.length ? [...normalized.ccu].sort((a,b)=>(b.ccu||0)-(a.ccu||0)) : [],
+          positive: normalized.positive.length ? [...normalized.positive].sort((a,b)=>(b.positive||0)-(a.positive||0)) : [],
+          average_2weeks: normalized.average_2weeks.length ? [...normalized.average_2weeks].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)) : [],
+        };
+        _hotSource = mostPlayedList.length ? 'live' : 'cache';
+        _hotFetchedAt = Date.now();
+        if (!silent && statusEl) {
+          statusEl.textContent = mostPlayedList.length
+            ? '✅ Steam 차트 실시간 인기 데이터를 기준으로 표시 중입니다.'
+            : '✅ 최신 Steam 데이터를 기준으로 표시 중입니다.';
+          statusEl.className = 'hot-status';
+          setTimeout(()=>{ statusEl.className='hot-status hidden'; }, 2200);
+        }
+      }
+
+      if (!silent) {
+        renderHotGenrePills();
+        renderHotGrid();
+      }
+      return _hotRawData;
+    } catch (err) {
+      _hotRawData = _hotRawData || buildHotFallback();
+      _hotSource = 'fallback';
+      _hotFetchedAt = Date.now();
+      if (!silent) {
+        renderHotGenrePills();
+        renderHotGrid();
+        if (statusEl) {
+          statusEl.textContent = '⚠️ 실시간 인기 데이터를 불러오지 못해 보정 리스트를 표시합니다.';
+          statusEl.className = 'hot-status';
+        }
+      }
+      return _hotRawData;
+    }
+  })();
+
+  _hotInflight = fetchPromise.finally(() => { _hotInflight = null; });
+  return _hotInflight;
 }
 
 function renderHotGrid() {

@@ -2113,76 +2113,95 @@ async function loadHotGames(silent = false, opts = {}) {
   const requestToken = ++_hotRequestToken;
   const statusEl = document.getElementById('hot-status');
   const gridEl = document.getElementById('hot-grid');
-  if (!silent && statusEl) {
-    statusEl.textContent = opts.forceRemote ? '🔄 Steam 차트 실시간 인기 게임 새로고침 중...' : '🔄 Steam 실시간 인기 게임 불러오는 중...';
-    statusEl.className = 'hot-status';
-  }
-  if (!silent && gridEl && !(_hotRawData?.ccu?.length)) {
-    gridEl.innerHTML = '';
+  if (!silent && !(_hotRawData?.ccu?.length)) {
+    _hotRawData = _hotRawData || buildHotFallback();
+    renderHotGenrePills();
+    renderHotGrid();
+    if (statusEl) {
+      statusEl.textContent = opts.forceRemote ? '🔄 Steam 차트 새로고침 중... 직전 리스트를 먼저 표시합니다.' : '🔄 Steam 실시간 인기 게임을 불러오는 중... 직전 리스트를 먼저 표시합니다.';
+      statusEl.className = 'hot-status';
+    }
   }
 
   const fetchPromise = (async () => {
-    const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.all([
-      steamspyFetch({request:'mostplayed', forceRemote: !!opts.forceRemote}).catch(()=>null),
-      steamspyFetch({request:'top100in2weeks', forceRemote: !!opts.forceRemote}).catch(()=>null),
-      steamspyFetch({request:'top100forever', forceRemote: !!opts.forceRemote}).catch(()=>null),
-      steamspyFetch({request:'top100owned', forceRemote: !!opts.forceRemote}).catch(()=>null),
-    ]);
-    if (requestToken !== _hotRequestToken) return _hotRawData;
+    try {
+      const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.race([
+        Promise.all([
+          steamspyFetch({request:'mostplayed', forceRemote: !!opts.forceRemote}).catch(()=>null),
+          steamspyFetch({request:'top100in2weeks', forceRemote: !!opts.forceRemote}).catch(()=>null),
+          steamspyFetch({request:'top100forever', forceRemote: !!opts.forceRemote}).catch(()=>null),
+          steamspyFetch({request:'top100owned', forceRemote: !!opts.forceRemote}).catch(()=>null),
+        ]),
+        new Promise(resolve => setTimeout(() => resolve([null, null, null, null]), 4500))
+      ]);
+      if (requestToken !== _hotRequestToken) return _hotRawData;
 
-    const mostPlayedList = filterTrustedThumbnailGames(normalizeSteamList(mostPlayedData).map(app => ({
-      ...app,
-      _genre: EXACT_GENRE_OVERRIDES[Number(app.appid)] || app._genre || app.genre || ''
-    })));
-    const twoWeekList = filterTrustedThumbnailGames(normalizeSteamList(hot2WeeksData));
-    const positiveList = filterTrustedThumbnailGames(normalizeSteamList(positiveData));
-    const ownedList = filterTrustedThumbnailGames(normalizeSteamList(ownedData));
-    const fallbackBase = buildHotFallback();
-    const priorData = _hotRawData || fallbackBase;
+      const mostPlayedList = filterTrustedThumbnailGames(normalizeSteamList(mostPlayedData).map(app => ({
+        ...app,
+        _genre: EXACT_GENRE_OVERRIDES[Number(app.appid)] || app._genre || app.genre || ''
+      })));
+      const twoWeekList = filterTrustedThumbnailGames(normalizeSteamList(hot2WeeksData));
+      const positiveList = filterTrustedThumbnailGames(normalizeSteamList(positiveData));
+      const ownedList = filterTrustedThumbnailGames(normalizeSteamList(ownedData));
+      const fallbackBase = buildHotFallback();
+      const priorData = _hotRawData || fallbackBase;
 
-    const ccuList = mostPlayedList.length
-      ? mostPlayedList
-      : (opts.forceRemote ? (priorData.ccu || []) : (twoWeekList.length ? twoWeekList : fallbackBase.ccu));
-    const normalized = {
-      ccu: ccuList,
-      positive: positiveList.length ? positiveList : (opts.forceRemote ? (priorData.positive || []) : fallbackBase.ccu),
-      average_2weeks: twoWeekList.length
-        ? twoWeekList
-        : (opts.forceRemote ? (priorData.average_2weeks || priorData.ccu || []) : uniqueByAppId([...ccuList, ...ownedList, ...fallbackBase.ccu])),
-    };
+      const ccuList = mostPlayedList.length
+        ? mostPlayedList
+        : (opts.forceRemote ? (priorData.ccu || []) : (twoWeekList.length ? twoWeekList : fallbackBase.ccu));
+      const normalized = {
+        ccu: ccuList,
+        positive: positiveList.length ? positiveList : (opts.forceRemote ? (priorData.positive || []) : fallbackBase.ccu),
+        average_2weeks: twoWeekList.length
+          ? twoWeekList
+          : (opts.forceRemote ? (priorData.average_2weeks || priorData.ccu || []) : uniqueByAppId([...ccuList, ...ownedList, ...fallbackBase.ccu])),
+      };
 
-    if (!normalized.ccu.length && !normalized.positive.length && !normalized.average_2weeks.length) {
-      if (!_hotRawData) _hotRawData = fallbackBase;
+      if (!normalized.ccu.length && !normalized.positive.length && !normalized.average_2weeks.length) {
+        _hotRawData = _hotRawData || fallbackBase;
+        _hotSource = 'fallback';
+        _hotFetchedAt = Date.now();
+        if (!silent && statusEl && requestToken === _hotRequestToken) {
+          statusEl.textContent = '⚠️ 실시간 인기 데이터를 불러오지 못해 보정 리스트를 표시합니다.';
+          statusEl.className = 'hot-status';
+        }
+      } else {
+        _hotRawData = {
+          ccu: normalized.ccu.length ? [...normalized.ccu].sort((a,b)=>(b.ccu||0)-(a.ccu||0)).slice(0,100) : [],
+          positive: normalized.positive.length ? [...normalized.positive].sort((a,b)=>(b.positive||0)-(a.positive||0)) : [],
+          average_2weeks: normalized.average_2weeks.length ? [...normalized.average_2weeks].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)) : [],
+        };
+        _hotSource = mostPlayedList.length ? 'live' : 'cache';
+        _hotFetchedAt = Date.now();
+        if (!silent && statusEl && requestToken === _hotRequestToken) {
+          statusEl.textContent = mostPlayedList.length
+            ? '✅ Steam 차트 실시간 인기 데이터를 기준으로 표시 중입니다.'
+            : '✅ 최신 Steam 데이터를 기준으로 표시 중입니다.';
+          statusEl.className = 'hot-status';
+          setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 2200);
+        }
+      }
+
+      if (!silent && requestToken === _hotRequestToken) {
+        window.__nexusLastRefresh = Date.now();
+        renderHotGenrePills();
+        renderHotGrid();
+      }
+      return _hotRawData;
+    } catch (err) {
+      _hotRawData = _hotRawData || buildHotFallback();
       _hotSource = 'fallback';
       _hotFetchedAt = Date.now();
-      if (!silent && statusEl && requestToken === _hotRequestToken) {
-        statusEl.textContent = '⚠️ Steam 차트 실시간 데이터를 가져오지 못했습니다. 직전 리스트를 유지합니다.';
-        statusEl.className = 'hot-status';
-        setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 5000);
+      if (!silent && requestToken === _hotRequestToken) {
+        renderHotGenrePills();
+        renderHotGrid();
+        if (statusEl) {
+          statusEl.textContent = '⚠️ 실시간 인기 데이터를 불러오지 못해 보정 리스트를 표시합니다.';
+          statusEl.className = 'hot-status';
+        }
       }
-    } else {
-      _hotRawData = {
-        ccu: normalized.ccu.length ? [...normalized.ccu].sort((a,b)=>(b.ccu||0)-(a.ccu||0)).slice(0,100) : [],
-        positive: normalized.positive.length ? [...normalized.positive].sort((a,b)=>(b.positive||0)-(a.positive||0)) : [],
-        average_2weeks: normalized.average_2weeks.length ? [...normalized.average_2weeks].sort((a,b)=>(b.average_2weeks||0)-(a.average_2weeks||0)) : [],
-      };
-      _hotSource = mostPlayedList.length ? 'live' : 'cache';
-      _hotFetchedAt = Date.now();
-      if (!silent && statusEl && requestToken === _hotRequestToken) {
-        statusEl.textContent = mostPlayedList.length
-          ? '✅ Steam 차트 실시간 인기 데이터를 기준으로 표시 중입니다.'
-          : '✅ 최신 Steam 데이터를 기준으로 표시 중입니다.';
-        statusEl.className = 'hot-status';
-        setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 2200);
-      }
+      return _hotRawData;
     }
-
-    if (!silent && requestToken === _hotRequestToken) {
-      window.__nexusLastRefresh = Date.now();
-      renderHotGenrePills();
-      renderHotGrid();
-    }
-    return _hotRawData;
   })();
 
   _hotInflight = fetchPromise.finally(() => {

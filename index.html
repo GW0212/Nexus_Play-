@@ -3492,17 +3492,24 @@ async function loadHotGames(silent = false, opts = {}) {
     statusEl.className = 'hot-status';
   }
   if (!silent && gridEl && !(_hotRawData?.ccu?.length)) {
-    gridEl.innerHTML = '';
+    _hotRawData = _hotRawData || buildHotFallback();
+    renderHotGenrePills();
+    renderHotGrid();
+    if (statusEl) statusEl.textContent = opts.forceRemote ? '🔄 Steam 차트 새로고침 중... 직전 인기 리스트를 먼저 표시합니다.' : '🔄 Steam 실시간 인기 게임을 불러오는 중... 직전 리스트를 먼저 표시합니다.';
   }
 
   const fetchPromise = (async () => {
-    const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.all([
-      steamspyFetch({request:'mostplayed', forceRemote: !!opts.forceRemote}).catch(()=>null),
-      steamspyFetch({request:'top100in2weeks', forceRemote: !!opts.forceRemote}).catch(()=>null),
-      steamspyFetch({request:'top100forever', forceRemote: !!opts.forceRemote}).catch(()=>null),
-      steamspyFetch({request:'top100owned', forceRemote: !!opts.forceRemote}).catch(()=>null),
-    ]);
-    if (requestToken !== _hotRequestToken) return _hotRawData;
+    try {
+      const [mostPlayedData, hot2WeeksData, positiveData, ownedData] = await Promise.race([
+        Promise.all([
+          steamspyFetch({request:'mostplayed', forceRemote: !!opts.forceRemote}).catch(()=>null),
+          steamspyFetch({request:'top100in2weeks', forceRemote: !!opts.forceRemote}).catch(()=>null),
+          steamspyFetch({request:'top100forever', forceRemote: !!opts.forceRemote}).catch(()=>null),
+          steamspyFetch({request:'top100owned', forceRemote: !!opts.forceRemote}).catch(()=>null),
+        ]),
+        new Promise(resolve => setTimeout(() => resolve([null, null, null, null]), 4500))
+      ]);
+      if (requestToken !== _hotRequestToken) return _hotRawData;
 
     const mostPlayedList = normalizeSteamList(mostPlayedData).map(app => ({
       ...app, _genre: EXACT_GENRE_OVERRIDES[Number(app.appid)] || app._genre || app.genre || ''
@@ -3556,6 +3563,20 @@ async function loadHotGames(silent = false, opts = {}) {
       renderHotGrid();
     }
     return _hotRawData;
+    } catch (err) {
+      _hotRawData = _hotRawData || buildHotFallback();
+      _hotSource = 'fallback';
+      _hotFetchedAt = Date.now();
+      if (!silent && requestToken === _hotRequestToken) {
+        renderHotGenrePills();
+        renderHotGrid();
+        if (statusEl) {
+          statusEl.textContent = '⚠️ 실시간 인기 데이터를 불러오지 못해 보정 리스트를 표시합니다.';
+          statusEl.className = 'hot-status';
+        }
+      }
+      return _hotRawData;
+    }
   })();
 
   _hotInflight = fetchPromise.finally(() => {
