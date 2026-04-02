@@ -24,31 +24,6 @@
     ],
     "_source": "steamspy"
   },
-  "632470": {
-    "appid": 632470,
-    "name": "Stardew Valley",
-    "developer": "ConcernedApe",
-    "ccu": 32000,
-    "positive": 520000,
-    "negative": 8000,
-    "average_2weeks": 1600,
-    "owners": 15000000,
-    "tags": {
-      "농장": 1,
-      "시뮬레이션": 1,
-      "rpg": 1,
-      "인디": 1,
-      "픽셀": 1
-    },
-    "tags_list": [
-      "농장",
-      "시뮬레이션",
-      "rpg",
-      "인디",
-      "픽셀"
-    ],
-    "_source": "steamspy"
-  },
   "646570": {
     "appid": 646570,
     "name": "Slay the Spire",

@@ -375,60 +375,6 @@
     "_source": "steam_charts",
     "owners": 2664000
   },
-  "2767030": {
-    "appid": 2767030,
-    "name": "Marvel Rivals",
-    "developer": "NetEase Games",
-    "ccu": 110000,
-    "positive": 520000,
-    "negative": 95000,
-    "average_2weeks": 13800,
-    "rank": 13,
-    "tags": {
-      "fps": 1,
-      "슈퍼히어로": 1,
-      "팀기반": 1,
-      "무료": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "슈퍼히어로",
-      "팀기반",
-      "무료",
-      "멀티플레이어"
-    ],
-    "genre": "FPS",
-    "_source": "steam_charts",
-    "owners": 1980000
-  },
-  "632470": {
-    "appid": 632470,
-    "name": "Stardew Valley",
-    "developer": "ConcernedApe",
-    "ccu": 32000,
-    "positive": 520000,
-    "negative": 8000,
-    "average_2weeks": 1600,
-    "rank": 38,
-    "tags": {
-      "농장": 1,
-      "시뮬레이션": 1,
-      "rpg": 1,
-      "인디": 1,
-      "픽셀": 1
-    },
-    "tags_list": [
-      "농장",
-      "시뮬레이션",
-      "rpg",
-      "인디",
-      "픽셀"
-    ],
-    "genre": "시뮬레이션",
-    "_source": "steam_charts",
-    "owners": 576000
-  },
   "1623730": {
     "appid": 1623730,
     "name": "Palworld",
