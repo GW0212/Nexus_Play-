@@ -835,7 +835,7 @@ function makeSteamCard(app, rank, options = {}) {
     <a class="steam-card" href="https://store.steampowered.com/app/${app.appid}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${steamThumb(app.appid)}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
-             onerror="this.src='${steamThumbAlt(app.appid)}';this.onerror=function(){this.remove()}">
+             data-appid="${app.appid}" onerror="handleSteamImgError(this, ${app.appid}, ['${steamThumbAlt(app.appid)}'])">
         ${rank ? `<div class="steam-card-rank">${rank}</div>` : ''}
       </div>
       <div class="steam-card-body">
