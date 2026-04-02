@@ -2140,7 +2140,7 @@ const EXTRA_CURATED_GAMES = [
   { id:1808500, title:"ARC Raiders", genre:"FPS", tags:["협동","tps","sf","루팅","서바이벌"], rating:8.0, year:2025, dev:"Embark Studios", desc:"SF 세계에서 로봇 레이더들을 막아내는 협동 TPS 추출 슈터." },
   { id:2074920, title:"퍼스트 디센던트", genre:"액션", tags:["tps","협동","무료","루팅","sf"], rating:7.8, year:2024, dev:"NEXON", desc:"루팅 TPS 협동 슈터. 다양한 캐릭터와 장비로 적을 섬멸." },
   { id:2344520, title:"디아블로 IV", genre:"RPG", tags:["액션rpg","핵앤슬래시","다크판타지","멀티플레이어","루팅"], rating:8.3, year:2023, dev:"Blizzard Entertainment", desc:"블리자드 정통 액션 RPG 최신작. 끝없는 성장과 루팅의 재미." },
-  { id:2612830, title:"Delta Force", genre:"FPS", tags:["fps","배틀로얄","멀티플레이어","무료","전술"], rating:8.0, year:2024, dev:"TiMi Studio Group", desc:"다이나믹한 전술 전투와 배틀로얄이 결합된 무료 FPS." },];
+  { id:2507950, title:"Delta Force", genre:"FPS", tags:["fps","배틀로얄","멀티플레이어","무료","전술"], rating:8.0, year:2024, dev:"TiMi Studio Group", desc:"다이나믹한 전술 전투와 배틀로얄이 결합된 무료 FPS." },];
 
 const GENRE_CLASS = {
   "FPS":"genre-fps","RPG":"genre-rpg","액션":"genre-action","어드벤처":"genre-adv",
@@ -2353,7 +2353,7 @@ async function fetchMostPlayedLive(forceRemote = false) {
     1623730: 'Palworld', 2358720: 'Black Myth: Wukong', 2215430: 'Ghost of Tsushima DIRECTOR\'S CUT',
     1817070: 'Marvel\'s Spider-Man Remastered', 892970: 'Valheim',
     526870: 'Satisfactory', 2246340: 'Monster Hunter Wilds',
-    2767030: 'Marvel Rivals', 2612830: 'Delta Force',
+    2767030: 'Marvel Rivals', 2507950: 'Delta Force',
     2694490: 'Path of Exile 2', 2183900: 'Warhammer 40,000: Space Marine 2',
     1295660: 'Sid Meier\'s Civilization VII', 1364780: 'Street Fighter 6',
     1778820: 'TEKKEN 8', 1790600: 'Dragon Ball: Sparking! ZERO',
@@ -2635,7 +2635,7 @@ const THUMB_OVERRIDES = {
   "Sid Meier's Civilization VII": { appid:1295660 },
   "Sid Meier's Civilization® VII": { appid:1295660 },
   "Marvel Rivals": { appid:2767030 },
-  "Delta Force": { appid:2612830 },
+  "Delta Force": { appid:2507950 },
   "Palworld": { appid:1623730 },
   "Enshrouded": { appid:1203620 },
   "Helldivers 2": { appid:553850 },
@@ -2723,7 +2723,7 @@ const EXACT_GENRE_OVERRIDES = {
   1778820: '격투',     // TEKKEN 8
   1790600: '격투',     // Dragon Ball Sparking ZERO
   2767030: 'FPS',      // Marvel Rivals
-  2612830: 'FPS',      // Delta Force
+  2507950: 'FPS',      // Delta Force
   1551360: '레이싱',   // Forza Horizon 5
   2440510: '레이싱',   // Forza Motorsport
   1250410: '시뮬레이션', // Microsoft Flight Simulator
@@ -2748,12 +2748,12 @@ const POPULAR_GAME_IDS = new Set([
   // 추가 인기 게임
   1623730,2358720,2215430,1817070,1593500,2379780,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,814380,374320,1145360,632470,435150,1113000,1687950,1462040,782330,546560,548430,1237970,581320,553850,1361210,671860,393380,686810,
   883710,952060,418370,412020,214490,282140,1693980,275850,1604030,648800,815370,962130,1172620,1426210,1332010,753640,646570,632360,
-  2246340,2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,
+  2246340,2767030,2507950,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,
   // 스포츠/레이싱 인기
   3405690,3551340,3472040,2669320,2488620,2882430,1665460
 ]);
 const LEGACY_RECOMMEND_BLOCKLIST = new Set([10,20,30,40,50,60,70,80,130,220,240,300,320,340,360,380,400,420,440,500,550,620,1250,4000,9390,227300]);
-const MODERN_RECOMMEND_KEEP = new Set([730,578080,1172470,1245620,1086940,271590,1174180,381210,252490,553850,431960,3240220,236390,1144200,2357570,1623730,2358720,2215430,1817070,1593500,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,1687950,1462040,782330,548430,1237970,581320,1361210,671860,393380,686810,1693980,1604030,1172620,1426210,1332010,753640,646570,632360,2246340,2767030,2612830,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,3405690,3551340,3472040,2669320,2488620,2882430,1665460]);
+const MODERN_RECOMMEND_KEEP = new Set([730,578080,1172470,1245620,1086940,271590,1174180,381210,252490,553850,431960,3240220,236390,1144200,2357570,1623730,2358720,2215430,1817070,1593500,1868140,1794680,892970,526870,1627720,1888160,1942280,1282100,1687950,1462040,782330,548430,1237970,581320,1361210,671860,393380,686810,1693980,1604030,1172620,1426210,1332010,753640,646570,632360,2246340,2767030,2507950,2694490,2183900,1295660,1364780,1778820,1790600,1551360,2440510,3405690,3551340,3472040,2669320,2488620,2882430,1665460]);
 function getAppYear(app) {
   const local = getGameById(Number(app?.appid || app?.id));
   return Number(local?.year || app?.year || 0) || 0;
@@ -2954,12 +2954,14 @@ function renderObGrid() {
     return;
   }
   grid.innerHTML = games.map((g, i) => {
-    const thumbId = getThumbAppId(g);
+    // g.id를 직접 사용해 썸네일 오염 방지
+    const thumbId = Number(g.id);
+    const thumbSrc = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/header.jpg`;
     return `
     <div class="ob-card ${selectedIds.includes(g.id)?'selected':''}" data-id="${g.id}"
          onclick="toggleSelect(${g.id})" style="animation-delay:${i*0.008}s">
-      <img src="${imgUrl(g)}" alt="${g.title}" loading="lazy"
-           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='${imgUrlAlt(g)}';}else if(this.dataset.t==2){this.dataset.t=3;this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
+      <img src="${thumbSrc}" alt="${g.title}" loading="lazy"
+           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='https://cdn.akamai.steamstatic.com/steam/apps/'+thumbId+'/capsule_616x353.jpg';}else if(this.dataset.t==2){this.dataset.t=3;this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
       <div class="ob-card-genre-badge ${genreClass(g.genre)}">${g.genre}</div>
       <div class="ob-card-overlay">
         <div class="ob-card-title">${g.title}</div>
