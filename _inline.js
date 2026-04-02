@@ -874,10 +874,21 @@ const THUMB_OVERRIDES = {
   "Escape from Tarkov": {
     appid:3932890,
     link:"https://www.escapefromtarkov.com/preorder-page",
-    image:"./assets/thumbs/escape_from_tarkov.png"
+    image: makePosterThumbnail("Escape from Tarkov", "Battlestate Games", {
+      kicker: "EXTRACTION SHOOTER",
+      accent: "#d6a73c",
+      accent2: "#6b4f1d",
+      silhouette: true
+    })
   },
-  "Goose Goose Duck": { appid:1568590 },
-  "Bloons TD 6": { appid:960090 }
+  "Goose Goose Duck": {
+    appid:1568590,
+    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1568590/header.jpg"
+  },
+  "Bloons TD 6": {
+    appid:960090,
+    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960090/header.jpg"
+  }
 };
 const EXACT_GENRE_OVERRIDES = {
   3405690: '스포츠',
