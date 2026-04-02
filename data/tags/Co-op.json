@@ -1,26 +1,76 @@
 {
-  "892970": {
-    "appid": 892970,
-    "name": "Valheim",
-    "developer": "Iron Gate AB",
-    "ccu": 105000,
-    "positive": 390000,
-    "negative": 18000,
-    "average_2weeks": 7800,
-    "owners": 8000000,
+  "550": {
+    "appid": 550,
+    "name": "Left 4 Dead 2",
+    "developer": "Valve",
+    "ccu": 34000,
+    "positive": 420000,
+    "negative": 15000,
+    "average_2weeks": 1800,
+    "owners": 25000000,
     "tags": {
-      "서바이벌": 1,
-      "오픈월드": 1,
       "협동": 1,
-      "크래프팅": 1,
-      "바이킹": 1
+      "공호": 1,
+      "좀비": 1,
+      "fps": 1,
+      "멀티플레이어": 1
     },
     "tags_list": [
-      "서바이벌",
-      "오픈월드",
       "협동",
+      "공호",
+      "좀비",
+      "fps",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "620": {
+    "appid": 620,
+    "name": "Portal 2",
+    "developer": "Valve",
+    "ccu": 9000,
+    "positive": 480000,
+    "negative": 4000,
+    "average_2weeks": 700,
+    "owners": 20000000,
+    "tags": {
+      "퍼즐": 1,
+      "협동": 1,
+      "1인칭": 1,
+      "유머": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "협동",
+      "1인칭",
+      "유머",
+      "sf"
+    ],
+    "_source": "steamspy"
+  },
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 88000,
+    "positive": 320000,
+    "negative": 12000,
+    "average_2weeks": 6400,
+    "owners": 5000000,
+    "tags": {
+      "공장": 1,
+      "시뮬레이션": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "공장",
+      "시뮬레이션",
+      "오픈월드",
       "크래프팅",
-      "바이킹"
+      "협동"
     ],
     "_source": "steamspy"
   },
@@ -46,6 +96,31 @@
       "슈터",
       "sf",
       "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 105000,
+    "positive": 390000,
+    "negative": 18000,
+    "average_2weeks": 7800,
+    "owners": 8000000,
+    "tags": {
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "크래프팅": 1,
+      "바이킹": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "오픈월드",
+      "협동",
+      "크래프팅",
+      "바이킹"
     ],
     "_source": "steamspy"
   },
@@ -99,31 +174,6 @@
     ],
     "_source": "steamspy"
   },
-  "526870": {
-    "appid": 526870,
-    "name": "Satisfactory",
-    "developer": "Coffee Stain Studios",
-    "ccu": 88000,
-    "positive": 320000,
-    "negative": 12000,
-    "average_2weeks": 6400,
-    "owners": 5000000,
-    "tags": {
-      "공장": 1,
-      "시뮬레이션": 1,
-      "오픈월드": 1,
-      "크래프팅": 1,
-      "협동": 1
-    },
-    "tags_list": [
-      "공장",
-      "시뮬레이션",
-      "오픈월드",
-      "크래프팅",
-      "협동"
-    ],
-    "_source": "steamspy"
-  },
   "2183900": {
     "appid": 2183900,
     "name": "Warhammer 40,000: Space Marine 2",
@@ -171,56 +221,6 @@
       "멀티플레이어",
       "협동",
       "오픈월드"
-    ],
-    "_source": "steamspy"
-  },
-  "550": {
-    "appid": 550,
-    "name": "Left 4 Dead 2",
-    "developer": "Valve",
-    "ccu": 34000,
-    "positive": 420000,
-    "negative": 15000,
-    "average_2weeks": 1800,
-    "owners": 25000000,
-    "tags": {
-      "협동": 1,
-      "공호": 1,
-      "좀비": 1,
-      "fps": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "협동",
-      "공호",
-      "좀비",
-      "fps",
-      "멀티플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "620": {
-    "appid": 620,
-    "name": "Portal 2",
-    "developer": "Valve",
-    "ccu": 9000,
-    "positive": 480000,
-    "negative": 4000,
-    "average_2weeks": 700,
-    "owners": 20000000,
-    "tags": {
-      "퍼즐": 1,
-      "협동": 1,
-      "1인칭": 1,
-      "유머": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "퍼즐",
-      "협동",
-      "1인칭",
-      "유머",
-      "sf"
     ],
     "_source": "steamspy"
   }
