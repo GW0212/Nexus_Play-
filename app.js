@@ -541,6 +541,25 @@ const GAMES_CLEAN = dedupeByIdTitle([
   ...EXTRA_GAMES,
   ...EXTRA_CURATED_GAMES
 ]);
+const LOCAL_TAGS_BY_APPID = new Map(GAMES_CLEAN.map(g => [Number(g.id), Array.isArray(g.tags) ? [...g.tags] : []]));
+const LOCAL_TAGS_BY_TITLE = new Map(GAMES_CLEAN.map(g => [String(g.title || '').trim().toLowerCase(), Array.isArray(g.tags) ? [...g.tags] : []]));
+
+function extractTagList(tags) {
+  if (Array.isArray(tags)) return tags.filter(Boolean).slice(0, 6);
+  if (tags && typeof tags === 'object') return Object.keys(tags).filter(Boolean).slice(0, 6);
+  return [];
+}
+
+function getStableTagList(app) {
+  const direct = extractTagList(app?.tags);
+  if (direct.length) return direct;
+  const byAppid = LOCAL_TAGS_BY_APPID.get(Number(app?.appid || app?.id || 0)) || [];
+  if (byAppid.length) return [...byAppid];
+  const key = String(app?.name || app?.title || '').trim().toLowerCase();
+  const byTitle = LOCAL_TAGS_BY_TITLE.get(key) || [];
+  return [...byTitle];
+}
+
 
 let selectedIds = [];
 let currentObFilter = '전체';
@@ -664,7 +683,7 @@ function normalizeSteamList(data) {
 
 function normalizeGenreItem(item, genre) {
   if (!item) return null;
-  if (item.appid || item.name) return { ...item, appid: Number(item.appid), name: item.name || '', _source: item._source || 'steam' };
+  if (item.appid || item.name) { const normalized = { ...item, appid: Number(item.appid || item.id), name: item.name || item.title || '', _source: item._source || 'steam' }; const stableTags = getStableTagList(normalized); if (stableTags.length) normalized.tags = Object.fromEntries(stableTags.slice(0, 6).map(t => [t, 1])); return normalized; }
   if (!(item.id && item.title)) return null;
   return {
     appid: Number(item.id),
@@ -800,7 +819,7 @@ function steamThumb(id)    { return `https://cdn.akamai.steamstatic.com/steam/ap
 function steamThumbAlt(id) { return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
 function makeSteamCard(app, rank, options = {}) {
-  const tags = Object.keys(app.tags || {}).slice(0, 4);
+  const tags = getStableTagList(app).slice(0, 4);
   const ccu  = formatCCU(app.ccu);
   const score = getScoreLabel(app.positive||0, app.negative||0);
   const showLive = options.showLive !== false;
