@@ -170,7 +170,7 @@ body {
 /* ── Tip ── */
 .ob-tip {
   position:relative; z-index:2;
-  max-width:600px; margin:0 auto 20px;
+  max-width:700px; margin:0 auto 20px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   background:rgba(124,58,237,0.08);
   border:1px solid rgba(124,58,237,0.2);
@@ -1227,7 +1227,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
     <div>
       <button class="ob-start-btn" id="ob-start-btn" onclick="startApp()">추천 시작하기 →</button>
       <p class="ob-hint" id="ob-hint">10개를 선택하면 활성화돼요</p>
-      <button id="ob-reset-btn" onclick="resetObSelection()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 16px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.35)';this.style.color='var(--text)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
+      <button onclick="(function(){selectedIds=[];document.querySelectorAll('.ob-card.selected').forEach(c=>c.classList.remove('selected'));var el=document.getElementById('ob-count');if(el)el.textContent='0';var btn=document.getElementById('ob-start-btn');if(btn){btn.disabled=true;btn.classList.remove('active');}var p=document.getElementById('ob-progress');if(p)p.style.width='0%';})()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
     </div>
   </div>
 </div>
@@ -1407,7 +1407,7 @@ const GAMES = [
   { id:1593500,title:"God of War",                    genre:"액션",     tags:["액션","신화","스토리","북유럽","부자"],              rating:9.5, year:2022, dev:"Santa Monica Studio",     desc:"크레토스와 아트레우스의 북유럽 신화 대서사시." },
   { id:1817070,title:"Marvel's Spider-Man Remastered",genre:"액션",     tags:["슈퍼히어로","오픈월드","액션","스윙","뉴욕"],        rating:9.0, year:2022, dev:"Insomniac Games",         desc:"뉴욕을 자유롭게 누비는 스파이더맨이 되어라." },
   { id:752590,title:"A Plague Tale: Innocence",      genre:"액션",     tags:["스토리","중세","공포","형제","어드벤처"],           rating:9.0, year:2019, dev:"Asobo Studio",            desc:"중세 프랑스의 흑사병 속 남매의 생존기." },
-  
+  { id:1546320,title:"A Plague Tale: Requiem",        genre:"액션",     tags:["스토리","중세","공포","형제","어드벤처"],           rating:8.5, year:2022, dev:"Asobo Studio",            desc:"이노센스의 감동을 이어받은 압도적인 후속작." },
   { id:601150, title:"Devil May Cry 5",               genre:"액션",     tags:["액션","스타일리시","악마","빠른","보스"],            rating:9.3, year:2019, dev:"Capcom",                  desc:"스타일리시 액션의 정점. DMC 시리즈의 화려한 귀환." },
   { id:219150, title:"Hotline Miami",                 genre:"액션",     tags:["탑다운","폭력적","빠른","인디","레트로"],           rating:9.0, year:2012, dev:"Dennaton Games",          desc:"폭발적인 속도감과 강렬한 음악의 탑다운 액션." },
   { id:2138710,title:"Sifu",                          genre:"액션",     tags:["쿵푸","도전적","격투","복수","3인칭"],              rating:8.5, year:2022, dev:"Sloclap",                 desc:"나이를 먹으며 복수하는 쿵푸 액션 게임." },
@@ -1430,7 +1430,7 @@ const GAMES = [
   { id:620,title:"Portal 2",                      genre:"어드벤처", tags:["퍼즐","협동","1인칭","유머","sf"],                  rating:9.9, year:2011, dev:"Valve",                   desc:"역사상 가장 완벽한 퍼즐 게임. 웃음과 감동의 명작." },
   { id:400,   title:"Portal",                         genre:"어드벤처", tags:["퍼즐","1인칭","sf","ai","단편"],                   rating:9.8, year:2007, dev:"Valve",                   desc:"포탈 건 하나로 세상을 바꾸는 천재적 퍼즐." },
   { id:383870,title:"Firewatch",                     genre:"어드벤처", tags:["스토리","자연","1인칭","감성","미스터리"],           rating:8.5, year:2016, dev:"Campo Santo",             desc:"광활한 숲 속에서 펼쳐지는 감성적인 미스터리." },
-  
+  { id:1240260, title:"DEATH STRANDING",               genre:"어드벤처", tags:["오픈월드","독특","배달","연결","코지마"],           rating:8.5, year:2021, dev:"Kojima Productions",      desc:"코지마 히데오의 독창적인 연결과 여행의 이야기." },
   
   
   { id:753640, title:"Outer Wilds",                   genre:"어드벤처", tags:["우주","탐험","미스터리","감동","루프"],             rating:9.8, year:2019, dev:"Mobius Digital",          desc:"시간의 루프 속에서 우주의 비밀을 밝혀가는 명작." },
@@ -1461,7 +1461,7 @@ const GAMES = [
   { id:975370,title:"Dwarf Fortress",                genre:"시뮬레이션",tags:["드워프","건설","관리","복잡한","전설"],             rating:9.2, year:2022, dev:"Bay 12 Games",            desc:"극도로 깊은 드워프 요새 건설 및 관리." },
   { id:1250410,title:"Microsoft Flight Simulator",    genre:"시뮬레이션",tags:["비행","사실적","지구","조종사","vr"],               rating:9.0, year:2020, dev:"Asobo Studio",            desc:"실제 지구를 비행하는 궁극의 비행 시뮬레이터." },
   { id:227300, title:"Euro Truck Simulator 2",        genre:"시뮬레이션",tags:["트럭","드라이빙","유럽","릴렉싱","협동"],           rating:9.1, year:2012, dev:"SCS Software",            desc:"유럽을 누비는 트럭 드라이버 시뮬레이터의 왕." },
-  
+  { id:1430690,title:"Hardspace: Shipbreaker",        genre:"시뮬레이션",tags:["우주선해체","sf","릴렉싱","독특","건설"],           rating:8.5, year:2022, dev:"Blackbird Interactive",  desc:"우주선을 해체하는 독특하고 몰입감 있는 시뮬레이션." },
   { id:954850, title:"Kerbal Space Program 2",        genre:"시뮬레이션",tags:["우주","물리","로켓","교육","건설"],                 rating:7.0, year:2023, dev:"Intercept Games",         desc:"로켓을 설계하고 우주를 탐험하는 물리 시뮬레이션." },
   { id:244850, title:"Space Engineers",               genre:"시뮬레이션",tags:["우주","건설","엔지니어링","협동","sf"],             rating:8.8, year:2019, dev:"Keen Software House",     desc:"우주에서 선박과 기지를 자유롭게 건설하라." },
   { id:108600, title:"Project Zomboid",               genre:"시뮬레이션",tags:["좀비","서바이벌","탑다운","협동","리얼리즘"],       rating:9.2, year:2013, dev:"The Indie Stone",         desc:"가장 현실적이고 깊이 있는 좀비 서바이벌." },
@@ -1483,7 +1483,7 @@ const GAMES = [
   { id:513710, title:"SCUM",                          genre:"서바이벌", tags:["서바이벌","리얼리즘","오픈월드","멀티플레이어","군사"],rating:7.5,year:2018, dev:"Gamepires",               desc:"극도의 현실적인 생존 메카닉의 서바이벌 게임." },
   { id:848450,title:"Subnautica: Below Zero",        genre:"서바이벌", tags:["수중","서바이벌","탐험","추위","오픈월드"],          rating:8.3, year:2021, dev:"Unknown Worlds",          desc:"수나우티카의 속편. 얼음 행성 속 수중 생존." },
   { id:815370, title:"Green Hell",                    genre:"서바이벌", tags:["정글","서바이벌","1인칭","리얼리즘","협동"],         rating:8.0, year:2019, dev:"Creepy Jar",              desc:"아마존 밀림에서 살아남는 극도의 리얼 서바이벌." },
-  
+  { id:1632360, title:"Smalland: Survive the Wilds",   genre:"서바이벌", tags:["서바이벌","소인","자연","협동","건설"],             rating:7.8, year:2023, dev:"Merge Games",             desc:"작은 존재가 되어 거대한 자연에서 살아남아라." },
   { id:962130,title:"Grounded",                      genre:"서바이벌", tags:["서바이벌","축소","마당","협동","건설"],             rating:8.8, year:2022, dev:"Obsidian Entertainment",  desc:"개미 크기로 줄어든 아이들의 뒷마당 서바이벌." },
 
   // ── 샌드박스 ──────────────────────────────────────────────────────────────  { id:220,     title:"Half-Life 2",                   genre:"샌드박스", tags:["fps","sf","스토리","클래식","전설"],                rating:9.9, year:2004, dev:"Valve",                   desc:"FPS의 역사를 바꾼 전설적인 마스터피스." },
@@ -1515,7 +1515,7 @@ const GAMES = [
   { id:412020,  title:"Metro Exodus",                 genre:"FPS",       tags:["fps","포스트아포칼립스","싱글플레이어","스토리","공포"],rating:8.7,year:2019, dev:"4A Games",                 desc:"지하철 세계를 탈출해 황무지를 횡단하는 FPS." },
   { id:1643320, title:"S.T.A.L.K.E.R. 2: Heart of Chornobyl", genre:"FPS", tags:["fps","오픈월드","공포","서바이벌","싱글플레이어"], rating:7.5, year:2024, dev:"GSC Game World",          desc:"체르노빌 지역을 배경으로 한 공포 FPS." },
   { id:870780,  title:"Control",                      genre:"액션",       tags:["액션","싱글플레이어","스토리","미스터리","슈터"],      rating:8.7, year:2019, dev:"Remedy Entertainment",    desc:"초자연적 현상에 맞서는 신비로운 액션 어드벤처." },
-  
+  { id:1903940, title:"Alan Wake 2",                  genre:"공포",       tags:["공포","싱글플레이어","스토리","미스터리","액션"],      rating:9.0, year:2023, dev:"Remedy Entertainment",    desc:"심리 공포 소설로 진입하는 독창적인 속편." },
   { id:612880,  title:"Wolfenstein II: The New Colossus", genre:"FPS",   tags:["fps","싱글플레이어","스토리","액션","나치"],          rating:8.5, year:2017, dev:"MachineGames",             desc:"대체 역사 세계에서 나치에 맞서 싸우는 FPS." },
   { id:1252330, title:"DEATHLOOP",                    genre:"FPS",       tags:["fps","싱글플레이어","시간루프","액션","스텔스"],       rating:8.1, year:2021, dev:"Arkane Studios",           desc:"타임루프를 이용해 암살 목표를 처치하는 FPS." },
   { id:480490,  title:"Prey",                         genre:"FPS",       tags:["fps","sf","싱글플레이어","공포","탐험"],              rating:8.5, year:2017, dev:"Arkane Studios",           desc:"우주정거장에서 외계 생명체에 맞서는 임몰시브 심." },
@@ -1536,10 +1536,10 @@ const GAMES = [
   { id:238960,  title:"Path of Exile",                  genre:"RPG",       tags:["핵앤슬래시","무료","멀티플레이어","다크판타지","경쟁"], rating:8.6, year:2013, dev:"Grinding Gear Games",      desc:"복잡한 스킬 시스템을 가진 무료 핵앤슬래시." },
   { id:899770,  title:"Last Epoch",                     genre:"RPG",       tags:["핵앤슬래시","rpg","시간여행","싱글플레이어","멀티플레이어"], rating:8.4, year:2024, dev:"Eleventh Hour Games",  desc:"시간여행 테마의 깊이 있는 액션 RPG." },
   { id:1627720, title:"Lies of P",                      genre:"액션",       tags:["soulslike","액션","싱글플레이어","도전적","판타지"],   rating:8.3, year:2023, dev:"Round8 Studio",           desc:"피노키오를 재해석한 국산 소울라이크 명작." },
-  
+  { id:2129590, title:"Wo Long: Fallen Dynasty",        genre:"액션",       tags:["soulslike","액션","싱글플레이어","중국","도전적"],     rating:7.5, year:2023, dev:"Team Ninja",              desc:"삼국지 시대 중국을 배경으로 한 소울라이크." },
   { id:1172380, title:"Star Wars Jedi: Fallen Order",   genre:"액션",       tags:["액션","싱글플레이어","sf","스토리","소울라이크"],      rating:8.4, year:2019, dev:"Respawn Entertainment",   desc:"제다이 기사의 성장을 그린 스타워즈 액션." },
   { id:2215430, title:"Ghost of Tsushima DIRECTOR'S CUT", genre:"액션",    tags:["액션","싱글플레이어","오픈월드","역사","스텔스"],      rating:9.1, year:2024, dev:"Sucker Punch Productions", desc:"몽골 침략에 맞선 사무라이의 아름다운 오픈월드." },
-  
+  { id:1151460, title:"Horizon Zero Dawn Remastered",   genre:"RPG",       tags:["rpg","오픈월드","싱글플레이어","액션","포스트아포칼립스"], rating:8.3, year:2020, dev:"Guerrilla Games",       desc:"기계 생명체가 가득한 세계를 탐험하는 액션 RPG." },
   { id:1446780, title:"Monster Hunter Rise",            genre:"액션",       tags:["액션","협동","rpg","헌팅","일본풍"],                  rating:8.5, year:2022, dev:"Capcom",                   desc:"거대 몬스터를 사냥하는 다이나믹 액션 RPG." },
 
   // ── 추가 인디 / 로그라이크 ───────────────────────────────────────────────
@@ -1581,8 +1581,8 @@ const GAMES = [
   { id:305620,  title:"The Long Dark",                 genre:"서바이벌",   tags:["서바이벌","눈","자연","1인칭","단독","스토리"],          rating:8.5, year:2017, dev:"Hinterland Studio",        desc:"캐나다 황야에서 생존하는 아름다운 서바이벌 게임." },
 
   // ── 추가 어드벤처 / 기타 ─────────────────────────────────────────────────
-  
-  
+  { id:1490000, title:"The Forgotten City",            genre:"RPG",        tags:["rpg","역사","스토리","시간루프","싱글플레이어"],        rating:8.8, year:2021, dev:"Modern Storyteller",       desc:"고대 로마 도시의 저주를 푸는 어워드 수상 RPG." },
+  { id:1967680, title:"Pentiment",                     genre:"RPG",        tags:["rpg","역사","스토리","독특한","중세"],                  rating:8.8, year:2022, dev:"Obsidian Entertainment",    desc:"중세 유럽 수도원 살인 사건을 파헤치는 내러티브 RPG." },
   { id:1290000, title:"PowerWash Simulator",           genre:"시뮬레이션", tags:["힐링","시뮬레이션","캐주얼","협동","스트레스해소"],     rating:8.6, year:2022, dev:"FuturLab",                  desc:"온갖 것을 세척하는 중독성 넘치는 힐링 게임." },
   { id:613100,  title:"House Flipper",                 genre:"시뮬레이션", tags:["시뮬레이션","힐링","건설","캐주얼","인테리어"],         rating:8.0, year:2018, dev:"Empyrean",                  desc:"집을 사서 고치고 파는 인테리어 시뮬." },
   { id:1551360, title:"Forza Horizon 5",               genre:"레이싱",     tags:["레이싱","오픈월드","멀티플레이어","캐주얼","현실적"],    rating:9.0, year:2021, dev:"Playground Games",         desc:"멕시코를 배경으로 한 역대 최고의 레이싱 게임." },
@@ -1611,7 +1611,7 @@ const GAMES = [
   { id:349040,  title:"NARUTO Shippuden: Ultimate Ninja STORM 4", genre:"격투", tags:["격투","나루토","애니","스토리","멀티플레이어"], rating:8.7, year:2016, dev:"CyberConnect2",          desc:"나루토 시리즈를 완벽 재현한 최고의 애니 격투 게임." },
   { id:544750,  title:"SOULCALIBUR VI",               genre:"격투",     tags:["격투","3D","무기","역사","경쟁"],                     rating:8.3, year:2018, dev:"Bandai Namco",            desc:"무기 기반 화려한 3D 격투 게임의 정석." },
   { id:245170,  title:"Skullgirls 2nd Encore",        genre:"격투",     tags:["격투","2D","인디","캐릭터","애니"],                   rating:9.0, year:2014, dev:"Hidden Variable",         desc:"아름다운 수제 애니메이션으로 만든 인디 격투 게임." },
-  { id:1090630, title:"Granblue Fantasy Versus",      genre:"격투",     tags:["격투","애니","경쟁","스토리","rpg요소"],              rating:8.2, year:2020, dev:"Arc System Works",         desc:"인기 모바일 RPG 그랜블루를 화려한 격투 게임으로." },
+  { id:1166990, title:"Granblue Fantasy Versus",      genre:"격투",     tags:["격투","애니","경쟁","스토리","rpg요소"],              rating:8.2, year:2020, dev:"Arc System Works",         desc:"인기 모바일 RPG 그랜블루를 화려한 격투 게임으로." },
   { id:1498570, title:"THE KING OF FIGHTERS XV",      genre:"격투",     tags:["격투","팀","경쟁","클래식","멀티플레이어"],           rating:8.0, year:2022, dev:"SNK",                     desc:"KOF 시리즈의 30주년 기념작. 팀 배틀 격투의 전통." },
   { id:577940,  title:"Killer Instinct",              genre:"격투",     tags:["격투","무료","경쟁","콤보","Xbox"],                   rating:8.5, year:2013, dev:"Iron Galaxy",             desc:"화려한 콤보와 개성 강한 캐릭터의 무료 격투 게임." },
   { id:1372280, title:"Melty Blood: Type Lumina",     genre:"격투",     tags:["격투","비주얼노벨","애니","2D","경쟁"],               rating:8.6, year:2021, dev:"French Bread",            desc:"달의 노래 세계관의 정교한 2D 격투 게임." },
@@ -1622,10 +1622,10 @@ const GAMES = [
   { id:962730,  title:"Skater XL",                    genre:"스포츠",   tags:["스케이트보드","리얼리즘","트릭","캐주얼","물리"],     rating:7.8, year:2020, dev:"Easy Day Studios",       desc:"실제 스케이트보드를 재현한 물리 기반 스케이팅." },
   { id:2108330,  title:"F1 23",                        genre:"스포츠",   tags:["F1","레이싱","리얼리즘","경쟁","스포츠"],             rating:8.0, year:2023, dev:"Codemasters",            desc:"F1 공식 라이선스의 가장 현실적인 포뮬러 레이싱." },
   { id:2252570, title:"Football Manager 2024",        genre:"스포츠",   tags:["축구","경영","전술","시뮬레이션","중독성"],           rating:8.5, year:2023, dev:"Sports Interactive",      desc:"세계 최고의 축구 감독 시뮬레이션. 끝없는 중독." },
-  
+  { id:2225040, title:"Trackmania",                   genre:"스포츠",   tags:["레이싱","아케이드","트랙빌더","경쟁","무료"],         rating:8.7, year:2020, dev:"Nadeo",                   desc:"초고속 아케이드 레이싱과 트랙 제작의 무료 게임." },
   { id:2338770, title:"NBA 2K24",                     genre:"스포츠",   tags:["농구","NBA","리얼리즘","스포츠","경쟁"],             rating:7.5, year:2023, dev:"Visual Concepts",         desc:"NBA의 모든 것을 담은 최신 농구 시뮬레이션." },
-  
-  
+  { id:460580,  title:"Steep",                        genre:"스포츠",   tags:["익스트림","오픈월드","스키","스노보드","협동"],       rating:8.0, year:2016, dev:"Ubisoft Annecy",          desc:"알프스를 무대로 한 멀티 익스트림 스포츠 어드벤처." },
+  { id:1215980, title:"OlliOlli World",               genre:"스포츠",   tags:["스케이트","2D","아케이드","인디","캐주얼"],           rating:8.8, year:2022, dev:"Roll7",                   desc:"생동감 넘치는 2D 스케이트보딩 아케이드 게임." },
   { id:1465360, title:"SnowRunner",                   genre:"스포츠",   tags:["오프로드","트럭","오픈월드","도전적","협동"],         rating:8.8, year:2020, dev:"Saber Interactive",       desc:"극한 지형을 오프로드 차량으로 극복하는 어드벤처." },
   { id:1785650, title:"TopSpin 2K25",                 genre:"스포츠",   tags:["테니스","스포츠","리얼리즘","경쟁","캐릭터"],         rating:7.8, year:2024, dev:"Hangar 13",               desc:"최고의 테니스 선수들과 대결하는 공식 테니스 게임." },
   { id:861650,  title:"Session: Skate Sim",           genre:"스포츠",   tags:["스케이트","리얼리즘","물리","도전적","인디"],         rating:7.9, year:2022, dev:"crea-ture Studios",       desc:"실제 스케이트보드 기술을 최대한 리얼하게 구현." },
@@ -1672,7 +1672,7 @@ const EXTRA_GAMES = [
     { id:1817070, title:"Marvel's Spider-Man Remastered", genre:"액션", tags:["히어로","오픈월드","액션","스토리","마블"], rating:9.1, year:2022, dev:"Insomniac Games", desc:"도심을 질주하는 손맛이 탁월한 히어로 액션." },
     { id:1817190, title:"Marvel's Spider-Man: Miles Morales", genre:"액션", tags:["히어로","오픈월드","액션","스토리","마블"], rating:8.7, year:2022, dev:"Insomniac Games", desc:"더 감각적인 전투와 성장 서사가 특징인 후속작." },
     { id:1259420, title:"Days Gone", genre:"액션", tags:["좀비","오픈월드","바이크","생존","스토리"], rating:8.4, year:2021, dev:"Bend Studio", desc:"바이크와 좀비 떼가 인상적인 오픈월드 액션." },
-    
+    { id:1091490, title:"DEATH STRANDING DIRECTOR'S CUT", genre:"어드벤처", tags:["스토리","배달","오픈월드","sf","독특"], rating:8.8, year:2022, dev:"KOJIMA PRODUCTIONS", desc:"연결을 주제로 한 독창적인 오픈월드 어드벤처." },
     { id:870780, title:"Control Ultimate Edition", genre:"액션", tags:["초능력","액션","스토리","sf","분위기"], rating:8.8, year:2021, dev:"Remedy Entertainment", desc:"초능력 전투와 미스터리한 분위기가 강한 액션." },
     { id:753640, title:"Outer Wilds", genre:"어드벤처", tags:["탐험","우주","퍼즐","스토리","명작"], rating:9.6, year:2019, dev:"Mobius Digital", desc:"탐험의 즐거움 자체를 완성형으로 보여주는 우주 게임." },
     { id:646570, title:"Slay the Spire", genre:"전략", tags:["덱빌딩","로그라이크","전략","인디","턴제"], rating:9.5, year:2019, dev:"Mega Crit", desc:"덱빌딩 로그라이크 장르를 대표하는 작품." },
@@ -1859,7 +1859,7 @@ const EXTRA_CURATED_GAMES = [
   { id:964800, title:"Prodeus", genre:"FPS", tags:["FPS","레트로","고어","맵에디터","인디"], rating:8.8, year:2022, dev:"Bounding Box Software", desc:"현대 그래픽과 레트로 감성을 절묘하게 섞은 FPS." },
   { id:924970, title:"Back 4 Blood", genre:"FPS", tags:["FPS","협동","좀비","카드","멀티플레이어"], rating:7.5, year:2021, dev:"Turtle Rock Studios", desc:"L4D 개발진이 만든 협동 좀비 FPS." },
   { id:493520, title:"GTFO", genre:"FPS", tags:["FPS","협동","공포","하드코어","잠입"], rating:8.6, year:2021, dev:"10 Chambers", desc:"극도의 긴장감을 요구하는 하드코어 협동 FPS." },
-  
+  { id:1328590, title:"Turbo Overkill", genre:"FPS", tags:["FPS","사이버펑크","레트로","속도감","인디"], rating:9.1, year:2023, dev:"Trigger Happy Interactive", desc:"전기톱 다리로 질주하는 사이버펑크 레트로 FPS." },
   { id:324800, title:"Shadow Warrior 2", genre:"FPS", tags:["FPS","핵앤슬래시","협동","루팅","액션"], rating:8.3, year:2016, dev:"Flying Wild Hog", desc:"칼과 총을 동시에 쓰는 호쾌한 액션 FPS." },
   { id:1029690, title:"Sniper Elite 5", genre:"FPS", tags:["FPS","저격","잠입","2차대전","협동"], rating:8.0, year:2022, dev:"Rebellion", desc:"정밀 저격과 침투가 핵심인 전술 FPS." },
   { id:1715130, title:"Crysis Remastered", genre:"FPS", tags:["FPS","SF","그래픽","나노수트","싱글플레이어"], rating:7.8, year:2021, dev:"Crytek", desc:"나노수트의 자유도 높은 전투를 리마스터한 FPS." },
@@ -1873,20 +1873,20 @@ const EXTRA_CURATED_GAMES = [
   { id:812140, title:"Assassin's Creed Odyssey", genre:"RPG", tags:["오픈월드","액션RPG","그리스","역사","탐험"], rating:8.4, year:2018, dev:"Ubisoft Quebec", desc:"고대 그리스를 배경으로 한 방대한 오픈월드 액션 RPG." },
   { id:578650, title:"The Outer Worlds", genre:"RPG", tags:["RPG","SF","스토리","선택","싱글플레이어"], rating:8.3, year:2019, dev:"Obsidian Entertainment", desc:"유머와 선택이 풍부한 SF 1인칭 RPG." },
   { id:582010, title:"Monster Hunter: World", genre:"RPG", tags:["액션RPG","사냥","협동","파밍","보스전"], rating:9.1, year:2018, dev:"CAPCOM", desc:"대형 몬스터 사냥의 짜릿함을 경험하는 협동 RPG." },
-  
+  { id:275470, title:"Tyranny", genre:"RPG", tags:["RPG","스토리","선택","다크판타지","등거리시점"], rating:8.4, year:2016, dev:"Obsidian Entertainment", desc:"악이 승리한 세계에서 도덕적 선택을 내리는 RPG." },
   { id:39210, title:"Final Fantasy VI", genre:"RPG", tags:["JRPG","턴제","클래식","스토리","도트"], rating:9.0, year:2022, dev:"Square Enix", desc:"파이널 판타지 시리즈 최고의 스토리를 가진 클래식 JRPG." },
-  
+  { id:1245430, title:"Ni no Kuni II: Revenant Kingdom", genre:"RPG", tags:["JRPG","액션RPG","애니","판타지","왕국건설"], rating:8.2, year:2018, dev:"Level-5", desc:"지브리 감성과 왕국 건설이 어우러진 액션 RPG." },
   { id:251570, title:"7 Days to Die", genre:"RPG", tags:["서바이벌","RPG","좀비","크래프팅","건설"], rating:8.3, year:2013, dev:"The Fun Pimps", desc:"좀비 호드에 대비하며 기지를 쌓는 서바이벌 RPG." },
   { id:1151340, title:"Fallout 76", genre:"RPG", tags:["오픈월드","RPG","멀티플레이어","포스트아포칼립스","생존"], rating:7.5, year:2018, dev:"Bethesda Game Studios", desc:"온라인 멀티로 즐기는 폴아웃 세계관 RPG." },
   { id:1245620, title:"ELDEN RING", genre:"RPG", tags:["오픈월드","액션RPG","소울라이크","판타지","도전적"], rating:9.3, year:2022, dev:"FromSoftware", desc:"프롬소프트웨어의 오픈월드 액션 RPG 대작." },
   { id:236430, title:"Dark Souls: Remastered", genre:"RPG", tags:["소울라이크","액션RPG","도전적","판타지","다크"], rating:9.0, year:2018, dev:"FromSoftware", desc:"소울라이크 장르를 탄생시킨 전설적인 액션 RPG." },
-  
+  { id:1229750, title:"Gothic 1 Remake", genre:"RPG", tags:["오픈월드","RPG","판타지","클래식","리메이크"], rating:8.0, year:2024, dev:"Alkimia Interactive", desc:"고전 RPG 고딕 1의 리메이크 버전." },
   { id:1774580, title:"Star Wars Jedi: Survivor", genre:"RPG", tags:["액션RPG","스타워즈","SF","소울라이크","스토리"], rating:8.5, year:2023, dev:"Respawn Entertainment", desc:"제다이의 성장과 모험을 그린 액션 RPG 후속작." },
   { id:990080, title:"Hogwarts Legacy", genre:"RPG", tags:["오픈월드","RPG","마법","해리포터","탐험"], rating:8.5, year:2023, dev:"Avalanche Software", desc:"호그와트에서 마법사 생활을 체험하는 오픈월드 RPG." },
   { id:1593500, title:"God of War", genre:"RPG", tags:["액션RPG","스토리","북유럽신화","싱글플레이어","보스전"], rating:9.4, year:2022, dev:"Santa Monica Studio", desc:"아버지와 아들의 여정을 그린 액션 RPG 명작 PC판." },
   { id:435150, title:"Divinity: Original Sin 2", genre:"RPG", tags:["RPG","턴제","협동","판타지","스토리"], rating:9.6, year:2017, dev:"Larian Studios", desc:"전술과 자유도가 극한인 턴제 RPG의 명작." },
   { id:560130, title:"Pillars of Eternity II: Deadfire", genre:"RPG", tags:["RPG","등거리시점","해적","판타지","스토리"], rating:8.5, year:2018, dev:"Obsidian Entertainment", desc:"해양 탐험과 깊은 스토리의 등거리 RPG." },
-  
+  { id:1091050, title:"MONSTER HUNTER: WORLD - Iceborne", genre:"RPG", tags:["액션RPG","사냥","확장팩","협동","보스전"], rating:9.2, year:2020, dev:"CAPCOM", desc:"몬스터 헌터 월드의 대규모 확장팩." },
 
   // ── 추가 액션 (20) ──
   { id:287700, title:"Metal Gear Solid V: The Phantom Pain", genre:"액션", tags:["잠입","오픈월드","액션","전술","싱글플레이어"], rating:9.1, year:2015, dev:"Kojima Productions", desc:"잠입 액션의 정점을 찍은 메탈기어 시리즈." },
@@ -1901,10 +1901,10 @@ const EXTRA_CURATED_GAMES = [
   { id:236430, title:"Dark Souls: Remastered", genre:"액션", tags:["소울라이크","액션","도전적","판타지","다크"], rating:9.0, year:2018, dev:"FromSoftware", desc:"소울라이크 장르를 탄생시킨 전설적인 액션 RPG." },
   { id:1426210, title:"It Takes Two", genre:"액션", tags:["협동","액션","플랫포머","스토리","2인"], rating:9.5, year:2021, dev:"Hazelight Studios", desc:"2인 협동 전용으로 설계된 창의적인 액션 어드벤처." },
   { id:1145360, title:"Hades", genre:"액션", tags:["로그라이크","액션","인디","그리스신화","핵앤슬래시"], rating:9.7, year:2020, dev:"Supergiant Games", desc:"그리스 신화 속 지하세계를 탈출하는 로그라이크 액션." },
-  
+  { id:1566180, title:"Hades II", genre:"액션", tags:["로그라이크","액션","인디","그리스신화","마법"], rating:9.2, year:2024, dev:"Supergiant Games", desc:"멜리노에가 주인공인 하데스의 정식 후속작." },
   { id:307690, title:"Sleeping Dogs: Definitive Edition", genre:"액션", tags:["오픈월드","액션","격투","홍콩","범죄"], rating:8.6, year:2014, dev:"United Front Games", desc:"홍콩 느와르 감성의 오픈월드 액션 게임." },
   { id:1174180, title:"Red Dead Redemption 2", genre:"액션", tags:["오픈월드","서부","스토리","액션","싱글플레이어"], rating:9.5, year:2019, dev:"Rockstar Games", desc:"서부 시대 무법자의 삶을 압도적 디테일로 그린 명작." },
-  
+  { id:1985690, title:"Lethal Company", genre:"액션", tags:["공포","액션","협동","코옵","인디"], rating:9.4, year:2023, dev:"Zeekerss", desc:"위험한 달에서 폐품을 모으는 협동 액션 공포." },
   { id:646570, title:"Slay the Spire", genre:"액션", tags:["카드","로그라이크","덱빌딩","전략","인디"], rating:9.5, year:2019, dev:"MegaCrit", desc:"덱빌딩 로그라이크 장르를 개척한 인디 명작." },
   { id:414340, title:"Hellblade: Senua's Sacrifice", genre:"액션", tags:["액션","심리","북유럽","스토리","싱글플레이어"], rating:9.0, year:2017, dev:"Ninja Theory", desc:"정신질환을 예술적으로 묘사한 액션 어드벤처." },
   { id:632360, title:"Risk of Rain 2", genre:"액션", tags:["로그라이크","3D","협동","액션","인디"], rating:9.3, year:2020, dev:"Hopoo Games", desc:"아이템 쌓기의 쾌감이 강한 3D 로그라이크 액션." },
@@ -1913,12 +1913,12 @@ const EXTRA_CURATED_GAMES = [
   // ── 추가 어드벤처 (20) ──
   { id:524220, title:"NieR:Automata", genre:"어드벤처", tags:["액션","스토리","SF","철학적","JRPG"], rating:9.3, year:2017, dev:"PlatinumGames", desc:"안드로이드들의 존재론적 여정을 그린 액션 어드벤처." },
   { id:1113560, title:"NieR Replicant ver.1.22474487139...", genre:"어드벤처", tags:["액션","스토리","JRPG","감성","리마스터"], rating:8.8, year:2021, dev:"Toylogic", desc:"니어 오토마타의 전작을 리마스터한 작품." },
-  { id:632470, title:"Disco Elysium - The Final Cut", genre:"어드벤처", tags:["RPG","스토리","대화","탐정","독창적"], rating:9.5, year:2021, dev:"ZA/UM", desc:"대화와 내면 탐구로 이끌어가는 혁신적 RPG 어드벤처." },
-  { id:607080, title:"Psychonauts 2", genre:"어드벤처", tags:["플랫포머","어드벤처","코미디","초능력","3D"], rating:9.1, year:2021, dev:"Double Fine Productions", desc:"기발한 정신세계 탐험이 돋보이는 3D 플랫포머." },
+  { id:1419370, title:"Disco Elysium - The Final Cut", genre:"어드벤처", tags:["RPG","스토리","대화","탐정","독창적"], rating:9.5, year:2021, dev:"ZA/UM", desc:"대화와 내면 탐구로 이끌어가는 혁신적 RPG 어드벤처." },
+  { id:960090, title:"Psychonauts 2", genre:"어드벤처", tags:["플랫포머","어드벤처","코미디","초능력","3D"], rating:9.1, year:2021, dev:"Double Fine Productions", desc:"기발한 정신세계 탐험이 돋보이는 3D 플랫포머." },
   { id:1151640, title:"Horizon Zero Dawn", genre:"어드벤처", tags:["오픈월드","액션","SF","포스트아포칼립스","스토리"], rating:8.8, year:2020, dev:"Guerrilla Games", desc:"기계 생물이 지배하는 세계를 탐험하는 오픈월드 어드벤처." },
   { id:1659420, title:"Uncharted: Legacy of Thieves Collection", genre:"어드벤처", tags:["어드벤처","액션","스토리","보물","시네마틱"], rating:9.0, year:2022, dev:"Naughty Dog", desc:"시네마틱 액션 어드벤처의 최고봉 PC판." },
   { id:1150690, title:"OMORI", genre:"어드벤처", tags:["RPG","심리","호러","스토리","도트"], rating:9.6, year:2020, dev:"OMOCAT", desc:"밝은 외면과 어두운 내면이 대비되는 심리 RPG." },
-  { id:1265920, title:"Life is Strange Remastered", genre:"어드벤처", tags:["스토리","선택","어드벤처","감성","시간여행"], rating:9.0, year:2022, dev:"Deck Nine Games", desc:"시간을 되돌리는 능력과 선택이 핵심인 감성 어드벤처." },
+  { id:204060, title:"Life is Strange Remastered", genre:"어드벤처", tags:["스토리","선택","어드벤처","감성","시간여행"], rating:9.0, year:2022, dev:"Deck Nine Games", desc:"시간을 되돌리는 능력과 선택이 핵심인 감성 어드벤처." },
   { id:1174180, title:"Red Dead Redemption 2", genre:"어드벤처", tags:["오픈월드","서부","스토리","액션","싱글플레이어"], rating:9.5, year:2019, dev:"Rockstar Games", desc:"서부 시대의 삶을 압도적 디테일로 그린 오픈월드 명작." },
   { id:257850, title:"Hyper Light Drifter", genre:"어드벤처", tags:["인디","액션","도트","탐험","어려움"], rating:9.2, year:2016, dev:"Heart Machine", desc:"아름다운 도트 그래픽과 빠른 전투의 인디 명작." },
   { id:367520, title:"Hollow Knight", genre:"어드벤처", tags:["메트로바니아","인디","탐험","도전적","2D"], rating:9.6, year:2017, dev:"Team Cherry", desc:"방대한 지하 왕국을 탐험하는 메트로바니아 명작." },
@@ -1930,7 +1930,7 @@ const EXTRA_CURATED_GAMES = [
   { id:304430, title:"Inside", genre:"어드벤처", tags:["퍼즐","플랫포머","분위기","디스토피아","인디"], rating:9.4, year:2016, dev:"Playdead", desc:"Limbo 개발사의 디스토피아 퍼즐 플랫포머." },
   { id:972660, title:"Spiritfarer", genre:"어드벤처", tags:["힐링","경영","감성","2D","스토리"], rating:9.2, year:2020, dev:"Thunder Lotus Games", desc:"영혼들을 배웅하는 감동적인 경영 어드벤처." },
   { id:782330, title:"DOOM Eternal", genre:"어드벤처", tags:["FPS","액션","악마","속도감","싱글플레이어"], rating:9.1, year:2020, dev:"id Software", desc:"지옥의 악마를 상대로 극한의 속도전을 벌이는 FPS." },
-  
+  { id:1568590, title:"Inscryption", genre:"어드벤처", tags:["카드","공포","인디","덱빌딩","미스터리"], rating:9.5, year:2021, dev:"Daniel Mullins Games", desc:"카드 게임의 틀을 깨는 미스터리 인디 명작." },
 
   // ── 추가 전략 (20) ──
   { id:289070, title:"Civilization VI", genre:"전략", tags:["4X","턴제","역사","전략","국가운영"], rating:8.8, year:2016, dev:"Firaxis Games", desc:"문명을 건설하고 역사를 이끄는 대표 4X 전략 게임." },
@@ -1941,7 +1941,7 @@ const EXTRA_CURATED_GAMES = [
   { id:457140, title:"Oxygen Not Included", genre:"전략", tags:["시뮬레이션","전략","기지건설","과학","생존"], rating:9.4, year:2019, dev:"Klei Entertainment", desc:"우주 기지에서 자원과 산소를 관리하는 전략 시뮬레이션." },
   { id:1466860, title:"Age of Empires IV", genre:"전략", tags:["RTS","역사","전략","중세","멀티플레이어"], rating:8.3, year:2021, dev:"Relic Entertainment", desc:"에이지 오브 엠파이어 시리즈의 정통 후속작." },
   { id:813780, title:"Age of Empires II: Definitive Edition", genre:"전략", tags:["RTS","역사","전략","경쟁","클래식"], rating:9.3, year:2019, dev:"Forgotten Empires", desc:"RTS 장르의 교과서를 리마스터한 명작." },
-  
+  { id:1167450, title:"Manor Lords", genre:"전략", tags:["중세","도시건설","전략","전투","리얼타임"], rating:8.3, year:2024, dev:"Slavic Magic", desc:"중세 영지를 경영하고 전투를 지휘하는 전략 게임." },
   { id:323190, title:"Frostpunk", genre:"전략", tags:["도시건설","서바이벌","전략","디스토피아","선택"], rating:9.2, year:2018, dev:"11 bit studios", desc:"극한의 추위 속에서 문명을 유지하는 도시 건설 전략." },
   { id:916440, title:"Anno 1800", genre:"전략", tags:["도시건설","전략","19세기","무역","경영"], rating:8.8, year:2023, dev:"Ubisoft Blue Byte", desc:"산업혁명 시대의 도시와 무역을 건설하는 전략 게임." },
   { id:322330, title:"Don't Starve Together", genre:"전략", tags:["서바이벌","협동","전략","크래프팅","고딕"], rating:9.2, year:2016, dev:"Klei Entertainment", desc:"자원 관리와 생존 전략이 핵심인 협동 게임." },
@@ -1950,7 +1950,7 @@ const EXTRA_CURATED_GAMES = [
   { id:105600, title:"Terraria", genre:"전략", tags:["샌드박스","2D","전략","크래프팅","보스전"], rating:9.6, year:2011, dev:"Re-Logic", desc:"2D 세계에서 전략적 건설과 보스전을 즐기는 샌드박스." },
   { id:594570, title:"Total War: WARHAMMER II", genre:"전략", tags:["전략","RTS","판타지","대규모전투","턴제"], rating:9.2, year:2017, dev:"Creative Assembly", desc:"판타지 세계의 대규모 전투를 지휘하는 전략 명작." },
   { id:590380, title:"Into the Breach", genre:"전략", tags:["인디","턴제","전략","메카","퍼즐"], rating:9.3, year:2018, dev:"Subset Games", desc:"작은 맵에서 벌어지는 긴장감 넘치는 턴제 전략." },
-  { id:933110, title:"Age of Empires III: Definitive Edition", genre:"전략", tags:["RTS","역사","식민지","전략","멀티플레이어"], rating:8.1, year:2020, dev:"Tantalus Media", desc:"식민지 시대 RTS를 리마스터한 디피니티브 에디션." },
+  { id:1237950, title:"Age of Empires III: Definitive Edition", genre:"전략", tags:["RTS","역사","식민지","전략","멀티플레이어"], rating:8.1, year:2020, dev:"Tantalus Media", desc:"식민지 시대 RTS를 리마스터한 디피니티브 에디션." },
   { id:1601580, title:"Frostpunk 2", genre:"전략", tags:["도시건설","서바이벌","전략","디스토피아","선택"], rating:8.0, year:2024, dev:"11 bit studios", desc:"얼어붙은 세계에서 사회를 이끄는 서바이벌 전략 후속작." },
   { id:4000, title:"Garry's Mod", genre:"전략", tags:["샌드박스","물리","모드","창작","멀티플레이어"], rating:9.5, year:2006, dev:"Facepunch Studios", desc:"소스 엔진으로 무엇이든 만드는 대표 샌드박스." },
 
@@ -1960,41 +1960,41 @@ const EXTRA_CURATED_GAMES = [
   { id:255710, title:"Cities: Skylines", genre:"시뮬레이션", tags:["도시건설","시뮬레이션","경영","모드","교통"], rating:9.1, year:2015, dev:"Colossal Order", desc:"도시 건설과 교통 관리에 몰입하는 시뮬레이션 대표작." },
   { id:1290000, title:"PowerWash Simulator", genre:"시뮬레이션", tags:["시뮬레이션","청소","힐링","협동","캐주얼"], rating:9.2, year:2022, dev:"FuturLab", desc:"고압 세척기로 모든 것을 깨끗이 씻는 힐링 시뮬레이션." },
   { id:613100, title:"House Flipper", genre:"시뮬레이션", tags:["시뮬레이션","인테리어","리모델링","경영","1인칭"], rating:8.6, year:2018, dev:"Empyrean", desc:"폐가를 사서 리모델링하고 되파는 인테리어 시뮬레이션." },
-  
+  { id:1449560, title:"Timberborn", genre:"시뮬레이션", tags:["도시건설","시뮬레이션","비버","전략","자원관리"], rating:9.0, year:2021, dev:"Mechanistry", desc:"비버 문명을 건설하는 독창적인 도시 건설 시뮬레이션." },
   { id:493340, title:"Planet Coaster", genre:"시뮬레이션", tags:["놀이공원","건설","시뮬레이션","경영","창의적"], rating:8.8, year:2016, dev:"Frontier Developments", desc:"놀이공원을 자유롭게 설계하고 운영하는 시뮬레이션." },
-  
+  { id:1625450, title:"Plate Up!", genre:"시뮬레이션", tags:["요리","경영","로그라이크","협동","캐주얼"], rating:9.2, year:2022, dev:"It's Happening", desc:"레스토랑을 자동화하며 요리하는 협동 로그라이크." },
   { id:1649080, title:"Two Point Campus", genre:"시뮬레이션", tags:["경영","유머","대학","시뮬레이션","캐주얼"], rating:8.3, year:2022, dev:"Two Point Studios", desc:"대학교를 운영하며 학생들을 관리하는 경영 시뮬레이션." },
   { id:1044720, title:"Cooking Simulator", genre:"시뮬레이션", tags:["요리","시뮬레이션","물리","캐주얼","유머"], rating:8.5, year:2019, dev:"Big Cheese Studio", desc:"현실적인 주방에서 요리하는 물리 기반 시뮬레이션." },
   { id:413150, title:"Stardew Valley", genre:"시뮬레이션", tags:["농장","시뮬레이션","힐링","인디","협동"], rating:9.7, year:2016, dev:"ConcernedApe", desc:"농장 생활의 모든 것을 담은 대표 힐링 시뮬레이션." },
-  { id:1944790, title:"Train Sim World 3", genre:"시뮬레이션", tags:["기차","시뮬레이션","운전","현실적","힐링"], rating:7.8, year:2022, dev:"Dovetail Games", desc:"실제 노선을 달리는 열차 시뮬레이션 최신작." },
-  { id:1896700, title:"Wylde Flowers", genre:"시뮬레이션", tags:["농장","마법","시뮬레이션","힐링","스토리"], rating:8.7, year:2023, dev:"Studio Drydock", desc:"농장 경영과 마녀 생활이 결합된 힐링 시뮬레이션." },
+  { id:1218210, title:"Train Sim World 3", genre:"시뮬레이션", tags:["기차","시뮬레이션","운전","현실적","힐링"], rating:7.8, year:2022, dev:"Dovetail Games", desc:"실제 노선을 달리는 열차 시뮬레이션 최신작." },
+  { id:1455840, title:"Wylde Flowers", genre:"시뮬레이션", tags:["농장","마법","시뮬레이션","힐링","스토리"], rating:8.7, year:2023, dev:"Studio Drydock", desc:"농장 경영과 마녀 생활이 결합된 힐링 시뮬레이션." },
   { id:427520, title:"Factorio", genre:"시뮬레이션", tags:["자동화","공장","시뮬레이션","전략","중독성"], rating:9.7, year:2020, dev:"Wube Software", desc:"공장 자동화의 끝없는 최적화 재미를 주는 게임." },
   { id:526870, title:"Satisfactory", genre:"시뮬레이션", tags:["공장자동화","시뮬레이션","건설","협동","SF"], rating:9.5, year:2024, dev:"Coffee Stain Studios", desc:"외계 행성에서 공장을 짓는 자동화 시뮬레이션." },
   { id:457140, title:"Oxygen Not Included", genre:"시뮬레이션", tags:["시뮬레이션","기지건설","과학","전략","생존"], rating:9.4, year:2019, dev:"Klei Entertainment", desc:"우주 기지에서 자원과 산소를 관리하는 시뮬레이션." },
   { id:703080, title:"Planet Zoo", genre:"시뮬레이션", tags:["동물원","시뮬레이션","건설","경영","동물"], rating:8.7, year:2019, dev:"Frontier Developments", desc:"동물원을 설계하고 동물을 관리하는 시뮬레이션." },
   { id:535930, title:"Two Point Hospital", genre:"시뮬레이션", tags:["병원","경영","유머","시뮬레이션","캐주얼"], rating:8.8, year:2018, dev:"Two Point Studios", desc:"유머러스한 병원 경영 시뮬레이션." },
   { id:1465360, title:"Snowrunner", genre:"시뮬레이션", tags:["트럭","오프로드","시뮬레이션","오픈월드","협동"], rating:8.7, year:2021, dev:"Saber Interactive", desc:"험로를 돌파하며 화물을 배달하는 오프로드 시뮬레이션." },
-  
+  { id:3243440, title:"Planet Coaster 2", genre:"시뮬레이션", tags:["놀이공원","워터파크","시뮬레이션","경영","건설"], rating:7.8, year:2024, dev:"Frontier Developments", desc:"워터파크가 추가된 놀이공원 시뮬레이션 후속작." },
 
   // ── 추가 공포 (20) ──
   { id:739630, title:"Phasmophobia", genre:"공포", tags:["공포","협동","유령","조사","VR"], rating:9.1, year:2020, dev:"Kinetic Games", desc:"유령의 종류를 추리하며 조사하는 협동 공포 게임." },
-  
+  { id:1985690, title:"Lethal Company", genre:"공포", tags:["공포","협동","코옵","몬스터","인디"], rating:9.4, year:2023, dev:"Zeekerss", desc:"위험한 달에서 폐품을 모아야 하는 협동 공포 게임." },
   { id:1966720, title:"Content Warning", genre:"공포", tags:["공포","협동","코미디","촬영","인디"], rating:9.1, year:2024, dev:"Landfall", desc:"공포 영상을 찍어 조회수를 올리는 유쾌한 협동 공포." },
-  
-  
+  { id:1568590, title:"Inscryption", genre:"공포", tags:["카드","공포","인디","덱빌딩","미스터리"], rating:9.5, year:2021, dev:"Daniel Mullins Games", desc:"카드 게임의 틀을 깨는 미스터리 공포 인디 명작." },
+  { id:1843020, title:"Resident Evil 4 Remake", genre:"공포", tags:["공포","액션","서바이벌","리메이크","TPS"], rating:9.3, year:2023, dev:"CAPCOM", desc:"바이오하자드 4를 현대적으로 재탄생시킨 리메이크." },
   { id:883710, title:"Resident Evil 2 Remake", genre:"공포", tags:["공포","서바이벌","리메이크","좀비","TPS"], rating:9.4, year:2019, dev:"CAPCOM", desc:"바이오하자드 2를 완벽하게 재구성한 리메이크 걸작." },
   { id:952060, title:"Resident Evil 3 Remake", genre:"공포", tags:["공포","액션","서바이벌","네메시스","리메이크"], rating:8.1, year:2020, dev:"CAPCOM", desc:"네메시스의 추격이 긴장감을 극대화하는 리메이크." },
   { id:1196590, title:"Resident Evil Village Gold Edition", genre:"공포", tags:["공포","액션","FPS","뱀파이어","서바이벌"], rating:8.8, year:2022, dev:"CAPCOM", desc:"3인칭 모드가 추가된 바이오하자드 빌리지 완전판." },
-  { id:1929610, title:"Demonologist", genre:"공포", tags:["공포","유령","협동","조사","1인칭"], rating:7.5, year:2023, dev:"Clock Wizard Games", desc:"팀으로 유령을 조사하는 협동 호러 게임." },
+  { id:1100600, title:"Demonologist", genre:"공포", tags:["공포","유령","협동","조사","1인칭"], rating:7.5, year:2023, dev:"Clock Wizard Games", desc:"팀으로 유령을 조사하는 협동 호러 게임." },
   { id:594650, title:"Hunt: Showdown 1896", genre:"공포", tags:["FPS","공포","PvPvE","서부","바운티"], rating:8.7, year:2019, dev:"Crytek", desc:"괴물 사냥과 PvP가 결합된 독특한 호러 FPS." },
   { id:242760, title:"The Forest", genre:"공포", tags:["공포","서바이벌","건설","오픈월드","협동"], rating:8.9, year:2018, dev:"Endnight Games", desc:"식인종이 사는 숲에서 살아남는 서바이벌 공포." },
   { id:1326470, title:"Sons Of The Forest", genre:"공포", tags:["공포","서바이벌","건설","오픈월드","협동"], rating:8.2, year:2023, dev:"Endnight Games", desc:"더 포레스트 후속작으로 AI 동료와 생존하는 게임." },
   { id:251570, title:"7 Days to Die", genre:"공포", tags:["좀비","공포","서바이벌","건설","크래프팅"], rating:8.3, year:2013, dev:"The Fun Pimps", desc:"좀비 호드에 대비하며 기지를 쌓는 좀비 공포." },
-  
+  { id:1127030, title:"The Dark Pictures Anthology: Little Hope", genre:"공포", tags:["공포","스토리","선택","심리","협동"], rating:7.8, year:2020, dev:"Supermassive Games", desc:"마녀재판의 저주를 쫓는 인터랙티브 호러 어드벤처." },
   { id:319630, title:"Life is Strange", genre:"공포", tags:["스토리","선택","어드벤처","감성","미스터리"], rating:9.0, year:2015, dev:"Dontnod Entertainment", desc:"시간을 되돌리며 운명을 바꾸는 감성 어드벤처." },
   { id:945360, title:"Among Us", genre:"공포", tags:["마피아","공포","추리","멀티플레이어","캐주얼"], rating:8.8, year:2018, dev:"Innersloth", desc:"임포스터를 찾아내는 소셜 추리 공포 게임." },
   { id:493520, title:"GTFO", genre:"공포", tags:["공포","FPS","협동","하드코어","지하"], rating:8.6, year:2021, dev:"10 Chambers", desc:"극도의 긴장감을 요구하는 하드코어 협동 FPS." },
-  
+  { id:416750, title:"Shadow of Mordor GOTY", genre:"공포", tags:["오픈월드","액션","판타지","다크","네메시스"], rating:8.6, year:2014, dev:"Monolith Productions", desc:"네메시스 시스템이 혁신적인 다크 오픈월드 액션." },
   { id:1150690, title:"OMORI", genre:"공포", tags:["심리공포","RPG","스토리","도트","우울"], rating:9.6, year:2020, dev:"OMOCAT", desc:"밝은 외면과 어두운 내면의 심리 공포 RPG." },
   { id:1295660, title:"Deaths Door", genre:"공포", tags:["액션","인디","죽음","보스전","다크"], rating:9.0, year:2021, dev:"Acid Nerve", desc:"영혼을 수확하는 까마귀의 다크 액션 어드벤처." },
 
@@ -2007,7 +2007,7 @@ const EXTRA_CURATED_GAMES = [
   { id:105600, title:"Terraria", genre:"서바이벌", tags:["서바이벌","2D","크래프팅","탐험","보스전"], rating:9.6, year:2011, dev:"Re-Logic", desc:"2D 세계에서 탐험과 건설을 즐기는 서바이벌 샌드박스." },
   { id:304930, title:"Unturned", genre:"서바이벌", tags:["서바이벌","좀비","무료","샌드박스","멀티플레이어"], rating:8.4, year:2017, dev:"Smartly Dressed Games", desc:"블록 스타일의 무료 좀비 서바이벌 게임." },
   { id:526870, title:"Satisfactory", genre:"서바이벌", tags:["공장자동화","서바이벌","건설","협동","SF"], rating:9.5, year:2024, dev:"Coffee Stain Studios", desc:"외계 행성에서 공장을 짓는 서바이벌 건설 게임." },
-  
+  { id:1985690, title:"Lethal Company", genre:"서바이벌", tags:["서바이벌","공포","협동","코옵","인디"], rating:9.4, year:2023, dev:"Zeekerss", desc:"위험한 달에서 폐품을 수집하며 생존하는 협동 게임." },
   { id:513710, title:"SCUM", genre:"서바이벌", tags:["서바이벌","오픈월드","PvP","현실적","감옥"], rating:7.8, year:2018, dev:"Gamepires", desc:"상세한 신체 메커닉의 하드코어 오픈월드 서바이벌." },
   { id:1149460, title:"Icarus", genre:"서바이벌", tags:["서바이벌","SF","건설","크래프팅","협동"], rating:7.5, year:2021, dev:"RocketWerkz", desc:"외계 행성에서 자원을 채취하고 귀환하는 세션형 서바이벌." },
   { id:1928980, title:"Nightingale", genre:"서바이벌", tags:["서바이벌","빅토리안","판타지","건설","협동"], rating:7.2, year:2024, dev:"Inflexion Games", desc:"빅토리안 판타지 세계에서 생존하는 협동 서바이벌." },
@@ -2028,13 +2028,13 @@ const EXTRA_CURATED_GAMES = [
   { id:1790600, title:"Dragon Ball: Sparking! ZERO", genre:"격투", tags:["격투","애니","드래곤볼","3D","대전"], rating:8.8, year:2024, dev:"Spike Chunsoft", desc:"드래곤볼 버스트리밋의 최신 3D 대전 격투." },
   { id:291550, title:"Brawlhalla", genre:"격투", tags:["격투","무료","플랫폼","멀티플레이어","인디"], rating:8.5, year:2017, dev:"Blue Mammoth Games", desc:"스매시브라더스 스타일의 무료 플랫폼 격투 게임." },
   { id:323470, title:"Dragon Ball Xenoverse 2", genre:"격투", tags:["격투","드래곤볼","RPG","애니","커스터마이즈"], rating:8.3, year:2016, dev:"Dimps", desc:"나만의 캐릭터로 드래곤볼 세계에서 싸우는 RPG 격투." },
-  { id:1090630, title:"Granblue Fantasy Versus", genre:"격투", tags:["격투","애니","RPG모드","2D","판타지"], rating:8.3, year:2020, dev:"Arc System Works", desc:"그랑블루 판타지의 아름다운 2D 격투 게임." },
+  { id:1166990, title:"Granblue Fantasy Versus", genre:"격투", tags:["격투","애니","RPG모드","2D","판타지"], rating:8.3, year:2020, dev:"Arc System Works", desc:"그랑블루 판타지의 아름다운 2D 격투 게임." },
   { id:307780, title:"Mortal Kombat X", genre:"격투", tags:["격투","고어","경쟁","스토리","멀티플레이어"], rating:8.4, year:2015, dev:"NetherRealm Studios", desc:"세대교체 캐릭터가 등장하는 모탈 컴뱃 시리즈." },
   { id:242700, title:"Injustice: Gods Among Us Ultimate Edition", genre:"격투", tags:["격투","DC코믹스","슈퍼히어로","스토리","2D"], rating:8.3, year:2013, dev:"NetherRealm Studios", desc:"DC 히어로들이 맞붙는 격투 게임." },
-  
+  { id:473770, title:"Absolver", genre:"격투", tags:["격투","무술","온라인","커스터마이즈","인디"], rating:7.8, year:2017, dev:"Sloclap", desc:"무술 모션을 조합해 자신만의 스타일을 만드는 격투." },
   { id:383980, title:"Rivals of Aether", genre:"격투", tags:["격투","플랫폼","인디","경쟁","도트"], rating:9.0, year:2017, dev:"Dan Fornace", desc:"원소 능력 기반의 인디 플랫폼 격투 게임." },
   { id:2076010, title:"Under Night In-Birth II Sys:Celes", genre:"격투", tags:["격투","애니","2D","경쟁","인디"], rating:8.5, year:2024, dev:"French-Bread", desc:"독자적 시스템이 깊은 2D 애니 격투 게임." },
-  
+  { id:1279490, title:"DNF Duel", genre:"격투", tags:["격투","2D","던파","애니","경쟁"], rating:7.8, year:2022, dev:"Eighting", desc:"던전앤파이터 캐릭터들의 화려한 2D 격투." },
   { id:245170, title:"Skullgirls 2nd Encore", genre:"격투", tags:["격투","애니","인디","2D","경쟁"], rating:9.1, year:2020, dev:"Hidden Variable Studios", desc:"핸드드로잉 애니메이션이 빛나는 인디 격투 명작." },
   { id:2138710, title:"Sifu", genre:"격투", tags:["격투","무술","액션","로그라이크","싱글플레이어"], rating:8.8, year:2022, dev:"Sloclap", desc:"죽을수록 나이 들며 강해지는 무술 격투 액션." },
   { id:565170, title:"Blade Strangers", genre:"격투", tags:["격투","크로스오버","인디","2D","캐주얼"], rating:7.5, year:2018, dev:"Studio Saizensen", desc:"인디 게임 캐릭터들이 모인 크로스오버 격투." },
@@ -2045,7 +2045,7 @@ const EXTRA_CURATED_GAMES = [
   // ── 추가 스포츠 (20) ──
   { id:252950, title:"Rocket League", genre:"스포츠", tags:["스포츠","자동차","축구","멀티플레이어","경쟁"], rating:9.3, year:2015, dev:"Psyonix", desc:"차량으로 축구하는 독창적인 스포츠 게임." },
   { id:431240, title:"Golf With Your Friends", genre:"스포츠", tags:["골프","멀티플레이어","캐주얼","미니골프","파티"], rating:8.3, year:2020, dev:"Blacklight Interactive", desc:"친구들과 즐기는 캐주얼 미니골프 파티 게임." },
-  
+  { id:460580, title:"Steep", genre:"스포츠", tags:["스키","스노보드","익스트림","오픈월드","멀티플레이어"], rating:8.0, year:2016, dev:"Ubisoft Annecy", desc:"알프스를 배경으로 한 오픈월드 익스트림 스포츠." },
   { id:1255630, title:"WWE 2K22", genre:"스포츠", tags:["프로레슬링","스포츠","액션","멀티플레이어","격투"], rating:8.0, year:2022, dev:"Visual Concepts", desc:"프로레슬링의 박진감을 살린 WWE 시뮬레이션." },
   { id:2195250, title:"EA SPORTS FC 24", genre:"스포츠", tags:["축구","스포츠","멀티플레이어","경쟁","시뮬레이션"], rating:7.5, year:2023, dev:"EA Vancouver", desc:"FIFA 후속으로 이름이 바뀐 축구 시뮬레이션." },
   { id:2669320, title:"EA SPORTS FC 25", genre:"스포츠", tags:["축구","스포츠","멀티플레이어","경쟁","전술"], rating:7.0, year:2024, dev:"EA Vancouver", desc:"전술 AI가 강화된 축구 시뮬레이션 최신작." },
@@ -2057,7 +2057,7 @@ const EXTRA_CURATED_GAMES = [
   { id:2698940, title:"The Crew Motorfest", genre:"스포츠", tags:["레이싱","오픈월드","스포츠","멀티플레이어","축제"], rating:7.8, year:2023, dev:"Ubisoft Ivory Tower", desc:"하와이 배경의 오픈월드 레이싱 페스티벌." },
   { id:327030, title:"Worms W.M.D", genre:"스포츠", tags:["턴제","전략","파티","유머","멀티플레이어"], rating:8.6, year:2016, dev:"Team17", desc:"차량과 건물 진입이 추가된 웜즈 시리즈 최신작." },
   { id:231670, title:"Football Manager 2014", genre:"스포츠", tags:["축구","감독","시뮬레이션","전략","데이터"], rating:8.5, year:2013, dev:"Sports Interactive", desc:"풋볼 매니저 시리즈의 클래식 버전." },
-  
+  { id:774181, title:"Sports Story", genre:"스포츠", tags:["스포츠","인디","골프","RPG","도트"], rating:7.0, year:2022, dev:"Sidebar Games", desc:"골프를 중심으로 다양한 스포츠를 즐기는 인디 RPG." },
   { id:265930, title:"Goat Simulator", genre:"스포츠", tags:["코미디","시뮬레이션","샌드박스","파괴","스포츠"], rating:8.5, year:2014, dev:"Coffee Stain Studios", desc:"염소가 되어 세상을 파괴하는 유쾌한 시뮬레이션." },
   { id:785790, title:"What the Golf?", genre:"스포츠", tags:["골프","코미디","퍼즐","인디","캐주얼"], rating:9.0, year:2020, dev:"Triband", desc:"골프의 모든 규칙을 비트는 코미디 물리 퍼즐 게임." },
   { id:924970, title:"Back 4 Blood", genre:"스포츠", tags:["FPS","협동","좀비","팀전","멀티플레이어"], rating:7.5, year:2021, dev:"Turtle Rock Studios", desc:"팀 기반 협동 좀비 사격 게임." },
@@ -2075,12 +2075,12 @@ const EXTRA_CURATED_GAMES = [
   { id:255710, title:"Cities: Skylines", genre:"샌드박스", tags:["도시건설","샌드박스","경영","모드","교통"], rating:9.1, year:2015, dev:"Colossal Order", desc:"나만의 도시를 자유롭게 건설하는 샌드박스 시뮬레이션." },
   { id:304930, title:"Unturned", genre:"샌드박스", tags:["샌드박스","좀비","무료","서바이벌","건설"], rating:8.4, year:2017, dev:"Smartly Dressed Games", desc:"블록 스타일 무료 좀비 샌드박스." },
   { id:892970, title:"Valheim", genre:"샌드박스", tags:["바이킹","샌드박스","건설","협동","오픈월드"], rating:9.2, year:2021, dev:"Iron Gate Studio", desc:"바이킹 세계에서 탐험하고 건설하는 샌드박스." },
-  
+  { id:1449560, title:"Timberborn", genre:"샌드박스", tags:["도시건설","비버","샌드박스","전략","자원관리"], rating:9.0, year:2021, dev:"Mechanistry", desc:"비버 문명을 건설하는 독창적 샌드박스." },
   { id:1604030, title:"V Rising", genre:"샌드박스", tags:["뱀파이어","샌드박스","건설","서바이벌","액션"], rating:8.8, year:2024, dev:"Stunlock Studios", desc:"뱀파이어 성을 짓고 영지를 넓히는 액션 샌드박스." },
   { id:211820, title:"Starbound", genre:"샌드박스", tags:["우주","2D","샌드박스","탐험","크래프팅"], rating:8.7, year:2016, dev:"Chucklefish", desc:"우주를 횡단하며 행성을 탐험하는 2D 샌드박스." },
   { id:1621690, title:"Core Keeper", genre:"샌드박스", tags:["지하","샌드박스","크래프팅","협동","탐험"], rating:8.8, year:2024, dev:"Pugstorm", desc:"거대한 지하 동굴의 자유로운 탐험과 건설." },
   { id:1203620, title:"Enshrouded", genre:"샌드박스", tags:["판타지","샌드박스","건설","RPG","서바이벌"], rating:8.3, year:2024, dev:"Keen Games", desc:"안개 낀 판타지 세계의 자유도 높은 샌드박스 RPG." },
-  
+  { id:1167450, title:"Manor Lords", genre:"샌드박스", tags:["중세","샌드박스","도시건설","전략","전투"], rating:8.3, year:2024, dev:"Slavic Magic", desc:"중세 영지를 자유롭게 건설하고 관리하는 샌드박스." },
   { id:613100, title:"House Flipper", genre:"샌드박스", tags:["시뮬레이션","인테리어","샌드박스","경영","1인칭"], rating:8.6, year:2018, dev:"Empyrean", desc:"집을 자유롭게 리모델링하는 인테리어 샌드박스." },
   { id:1290000, title:"PowerWash Simulator", genre:"샌드박스", tags:["시뮬레이션","청소","샌드박스","힐링","협동"], rating:9.2, year:2022, dev:"FuturLab", desc:"고압 세척기로 무엇이든 깨끗이 씻는 힐링 샌드박스." },
   { id:427520, title:"Factorio", genre:"샌드박스", tags:["자동화","공장","샌드박스","전략","중독성"], rating:9.7, year:2020, dev:"Wube Software", desc:"공장 자동화의 끝없는 최적화 샌드박스." },
@@ -2097,7 +2097,7 @@ const EXTRA_CURATED_GAMES = [
   { id:753640, title:"Outer Wilds", genre:"인디", tags:["인디","탐험","우주","미스터리","퍼즐"], rating:9.7, year:2020, dev:"Mobius Digital", desc:"시간 루프 속 우주를 탐험하는 독창적 인디 어드벤처." },
   { id:391540, title:"Undertale", genre:"인디", tags:["인디","RPG","스토리","도트","선택"], rating:9.6, year:2015, dev:"tobyfox", desc:"전투를 피할 수 있는 혁신적 인디 RPG." },
   { id:588650, title:"Dead Cells", genre:"인디", tags:["인디","로그라이크","메트로바니아","액션","도전적"], rating:9.3, year:2018, dev:"Motion Twin", desc:"빠른 전투의 로그바니아 인디 명작." },
-  
+  { id:1568590, title:"Inscryption", genre:"인디", tags:["인디","카드","공포","덱빌딩","미스터리"], rating:9.5, year:2021, dev:"Daniel Mullins Games", desc:"장르를 깨부수는 미스터리 인디 카드 게임." },
   { id:646570, title:"Slay the Spire", genre:"인디", tags:["인디","카드","로그라이크","덱빌딩","전략"], rating:9.5, year:2019, dev:"MegaCrit", desc:"덱빌딩 로그라이크 장르를 개척한 인디 명작." },
   { id:590380, title:"Into the Breach", genre:"인디", tags:["인디","턴제","전략","메카","퍼즐"], rating:9.3, year:2018, dev:"Subset Games", desc:"작은 맵의 긴장감 넘치는 턴제 전략 인디." },
   { id:1295660, title:"Deaths Door", genre:"인디", tags:["인디","액션","탐험","보스전","아이소메트릭"], rating:9.0, year:2021, dev:"Acid Nerve", desc:"영혼을 수확하는 까마귀의 인디 액션 어드벤처." },
@@ -2128,20 +2128,20 @@ const EXTRA_CURATED_GAMES = [
   { id:252950, title:"Rocket League", genre:"레이싱", tags:["레이싱","자동차","축구","멀티플레이어","경쟁"], rating:9.3, year:2015, dev:"Psyonix", desc:"차량을 활용한 초고속 액션 스포츠." },
   { id:1465360, title:"Snowrunner", genre:"레이싱", tags:["레이싱","오프로드","트럭","시뮬레이션","오픈월드"], rating:8.7, year:2021, dev:"Saber Interactive", desc:"험로를 돌파하며 화물을 배달하는 오프로드 레이싱." },
   { id:227300, title:"Euro Truck Simulator 2", genre:"레이싱", tags:["트럭","레이싱","시뮬레이션","유럽","힐링"], rating:9.5, year:2012, dev:"SCS Software", desc:"유럽 대륙을 트럭으로 달리는 시뮬레이션 레이싱." },
-  
+  { id:1289310, title:"Drag", genre:"레이싱", tags:["레이싱","드래그","자동차","튜닝","아케이드"], rating:7.5, year:2018, dev:"Oronaan", desc:"드래그 레이싱에 특화된 아케이드 레이싱." },
 
 
-  { id:3557620, title:"블루 아카이브", genre:"RPG", tags:["가챠","무료","애니메이션","전략","협동"], rating:9.0, year:2024, dev:"Nexon", desc:"전세계 수천만 명이 플레이한 국산 애니메이션 모바일/PC RPG." },
-  { id:1049590, title:"이터널 리턴", genre:"서바이벌", tags:["배틀로얄","무료","경쟁","전략","캐릭터"], rating:8.2, year:2020, dev:"Nimble Neuron", desc:"쿼터뷰 배틀로얄 생존 게임. 채집·제작·전투가 조화를 이룬다." },
-  { id:1973530, title:"Limbus Company", genre:"RPG", tags:["rpg","무료","애니메이션","턴제","가챠"], rating:8.8, year:2023, dev:"Project Moon", desc:"프로젝트문의 다크 판타지 턴제 RPG." },
-  { id:3564740, title:"연운", genre:"RPG", tags:["오픈월드","액션rpg","무료","소울라이크","무협"], rating:8.5, year:2025, dev:"Perfect World", desc:"10세기 중국 무협 세계를 배경으로 한 오픈월드 액션 RPG." },
-  { id:4025700, title:"두근두근 타운", genre:"시뮬레이션", tags:["생활시뮬레이션","무료","힐링","멀티플레이어","귀여운"], rating:7.8, year:2024, dev:"Mango Party", desc:"나만의 마을을 꾸미는 무료 힐링 생활 시뮬레이션 게임." },
-  { id:2139460, title:"Once Human", genre:"서바이벌", tags:["서바이벌","오픈월드","무료","tps","포스트아포칼립스"], rating:7.8, year:2023, dev:"Starry Studio", desc:"포스트아포칼립스 오픈월드 서바이벌. 변이된 생물과 싸우며 생존." },
-  { id:1808500, title:"ARC Raiders", genre:"FPS", tags:["협동","tps","sf","루팅","서바이벌"], rating:8.0, year:2025, dev:"Embark Studios", desc:"SF 세계에서 로봇 레이더들을 막아내는 협동 TPS 추출 슈터." },
-  { id:2074920, title:"퍼스트 디센던트", genre:"액션", tags:["tps","협동","무료","루팅","sf"], rating:7.8, year:2024, dev:"NEXON", desc:"루팅 TPS 협동 슈터. 다양한 캐릭터와 장비로 적을 섬멸." },
-  { id:2344520, title:"디아블로 IV", genre:"RPG", tags:["액션rpg","핵앤슬래시","다크판타지","멀티플레이어","루팅"], rating:8.3, year:2023, dev:"Blizzard Entertainment", desc:"블리자드 정통 액션 RPG 최신작. 끝없는 성장과 루팅의 재미." },
-  { id:2507950, title:"Delta Force", genre:"FPS", tags:["fps","배틀로얄","멀티플레이어","무료","전술"], rating:8.0, year:2024, dev:"TiMi Studio Group", desc:"다이나믹한 전술 전투와 배틀로얄이 결합된 무료 FPS." },
-  { id:2767030, title:"Marvel Rivals", genre:"FPS", tags:["fps","슈퍼히어로","팀기반","무료","멀티플레이어"], rating:8.8, year:2024, dev:"NetEase Games", desc:"마블 히어로들이 격돌하는 무료 팀기반 PVP 슈터." },];
+  { id:3557620, title:"블루 아카이브", genre:"RPG", tags:["가챠","무료","애니메이션","전략","협동"], rating:9.0, year:2024, dev:"Nexon", desc:"전세계 수천만 명이 즐기는 국산 애니메이션 RPG." },
+  { id:1049590, title:"이터널 리턴", genre:"서바이벌", tags:["배틀로얄","무료","경쟁","전략","캐릭터"], rating:8.2, year:2020, dev:"Nimble Neuron", desc:"쿼터뷰 배틀로얄 생존 게임." },
+  { id:1973530, title:"Limbus Company", genre:"RPG", tags:["rpg","무료","턴제","가챠","다크판타지"], rating:8.8, year:2023, dev:"Project Moon", desc:"프로젝트문의 다크 판타지 턴제 RPG." },
+  { id:3564740, title:"연운", genre:"RPG", tags:["오픈월드","액션rpg","무료","소울라이크","무협"], rating:8.5, year:2025, dev:"Perfect World", desc:"10세기 중국 무협 오픈월드 액션 RPG." },
+  { id:4025700, title:"두근두근 타운", genre:"시뮬레이션", tags:["생활시뮬레이션","무료","힐링","멀티플레이어","귀여운"], rating:7.8, year:2024, dev:"Mango Party", desc:"나만의 마을을 꾸미는 무료 힐링 생활 시뮬레이션." },
+  { id:2139460, title:"Once Human", genre:"서바이벌", tags:["서바이벌","오픈월드","무료","tps","포스트아포칼립스"], rating:7.8, year:2023, dev:"Starry Studio", desc:"포스트아포칼립스 오픈월드 서바이벌 게임." },
+  { id:1808500, title:"ARC Raiders", genre:"FPS", tags:["협동","tps","sf","루팅","서바이벌"], rating:8.0, year:2025, dev:"Embark Studios", desc:"SF 세계 협동 추출 TPS 슈터." },
+  { id:2074920, title:"퍼스트 디센던트", genre:"액션", tags:["tps","협동","무료","루팅","sf"], rating:7.8, year:2024, dev:"NEXON", desc:"루팅 TPS 협동 슈터." },
+  { id:2344520, title:"디아블로 IV", genre:"RPG", tags:["액션rpg","핵앤슬래시","다크판타지","멀티플레이어","루팅"], rating:8.3, year:2023, dev:"Blizzard Entertainment", desc:"블리자드 정통 액션 RPG 최신작." },
+  { id:2767030, title:"Marvel Rivals", genre:"FPS", tags:["fps","슈퍼히어로","팀기반","무료","멀티플레이어"], rating:8.8, year:2024, dev:"NetEase Games", desc:"마블 히어로들의 무료 팀기반 PVP 슈터." },
+  { id:2507950, title:"Delta Force", genre:"FPS", tags:["fps","배틀로얄","멀티플레이어","무료","전술"], rating:7.8, year:2024, dev:"TiMi Studio Group", desc:"전술 FPS와 배틀로얄이 결합된 무료 게임." },];
 
 const GENRE_CLASS = {
   "FPS":"genre-fps","RPG":"genre-rpg","액션":"genre-action","어드벤처":"genre-adv",
@@ -2271,8 +2271,7 @@ function normalizeSteamList(data) {
 function normalizeGenreItem(item, genre) {
   if (!item) return null;
   if (item.appid || item.name) {
-    // appid를 THUMB_OVERRIDES로 덮어쓰지 않음 — 원본 appid 보존
-    const canonicalAppid = Number(item.appid || item.id || 0);
+    const canonicalAppid = resolveCanonicalAppId(item, item.name || item.title || '');
     const normalized = { ...item, appid: canonicalAppid, name: item.name || item.title || '', _source: item._source || 'steam' };
     normalized._genre = resolvePrimaryGenre(normalized);
     return normalized;
@@ -2361,8 +2360,7 @@ async function fetchMostPlayedLive(forceRemote = false) {
     1551360: 'Forza Horizon 5', 2440510: 'Forza Motorsport',
     374320: 'Dark Souls III', 1145360: 'Hades', 632470: 'Stardew Valley',
     1627720: 'Dave the Diver', 1888160: 'Hogwarts Legacy',
-    814380: 'Sekiro: Shadows Die Twice', 1237970: 'Titanfall 2',
-    2074920: 'The First Descendant',
+    814380: 'Sekiro: Shadows Die Twice', 1237970: 'Titanfall 2', 2074920: 'The First Descendant',
     2139460: 'Once Human', 1203620: 'Enshrouded',
     3321460: 'Crimson Desert',  // 붉은사막
     2379780: 'Hogwarts Legacy', 1868140: 'Lies of P',
@@ -2801,18 +2799,15 @@ function resolvePrimaryGenre(app) {
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
 function getGameById(id)  { return GAMES_CLEAN.find(g => g.id === id); }
 function resolveCanonicalAppId(gameOrId, title='') {
-  // appid/id가 이미 있으면 THUMB_OVERRIDES로 덮어쓰지 않음 — 썸네일 오염 방지
   if (typeof gameOrId === 'object' && gameOrId) {
     const existing = Number(gameOrId.appid || gameOrId.id || 0);
-    if (existing > 0) return existing;
-    const rawTitle = gameOrId.title || gameOrId.name || title;
-    const titleKey = normalizeTitleKey(rawTitle);
-    return Number((THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || 0);
+    if (existing > 0) return existing;  // 이미 appid 있으면 THUMB_OVERRIDES 무시
+    const titleKey = normalizeTitleKey(gameOrId.title || gameOrId.name || title);
+    return Number(THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid || 0);
   }
   const numId = Number(gameOrId || 0);
   if (numId > 0) return numId;
-  const titleKey = normalizeTitleKey(title);
-  return Number((THUMB_OVERRIDES_NORMALIZED[titleKey]?.appid) || 0);
+  return Number(THUMB_OVERRIDES_NORMALIZED[normalizeTitleKey(title)]?.appid || 0);
 }
 function getThumbAppId(gameOrId, title='') {
   return resolveCanonicalAppId(gameOrId, title);
@@ -2849,7 +2844,6 @@ function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOr
 function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
 
 function isTrustedThumbnailMapping(appOrGame) {
-  // appid > 0이면 신뢰 — 화이트리스트 체크 제거
   if (!appOrGame) return false;
   return Number(appOrGame.appid || appOrGame.id || 0) > 0;
 }
@@ -2858,11 +2852,10 @@ function filterTrustedThumbnailGames(list) {
 }
 
 function sanitizeTrustedSteamApp(app) {
-  // appid 보존 — THUMB_OVERRIDES로 덮어쓰지 않음
   if (!app) return null;
   const appid = Number(app.appid || app.id || 0);
   if (!appid) return null;
-  return { ...app, appid, id: appid, name: app.name || app.title || '', title: app.title || app.name || '' };
+  return { ...app, appid, id: appid, name: app.name||app.title||'', title: app.title||app.name||'' };
 }
 
 function makeSteamCard(app, rank, options = {}) {
@@ -2935,14 +2928,13 @@ function renderObGrid() {
     return;
   }
   grid.innerHTML = games.map((g, i) => {
-    // g.id를 직접 사용해 썸네일 오염 방지
     const thumbId = Number(g.id);
-    const thumbSrc = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/header.jpg`;
+    const _obSrc = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/header.jpg`;
     return `
     <div class="ob-card ${selectedIds.includes(g.id)?'selected':''}" data-id="${g.id}"
          onclick="toggleSelect(${g.id})" style="animation-delay:${i*0.008}s">
-      <img src="${thumbSrc}" alt="${g.title}" loading="lazy"
-           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='https://cdn.akamai.steamstatic.com/steam/apps/'+thumbId+'/capsule_616x353.jpg';}else if(this.dataset.t==2){this.dataset.t=3;this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
+      <img src="${_obSrc}" alt="${g.title}" loading="lazy"
+           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='${imgUrlAlt(g)}';}else if(this.dataset.t==2){this.dataset.t=3;this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
       <div class="ob-card-genre-badge ${genreClass(g.genre)}">${g.genre}</div>
       <div class="ob-card-overlay">
         <div class="ob-card-title">${g.title}</div>
@@ -2991,13 +2983,10 @@ function updateObUI() {
 // MAIN APP RENDER
 // ══════════════════════════════════════════════════════════════
 function makeGameCard(g, delay) {
-  const _gcId = Number(g.id);
-  const _gcSrc = `https://cdn.akamai.steamstatic.com/steam/apps/${_gcId}/header.jpg`;
-  const _gcAlt = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${_gcId}/header.jpg`;
   return `
     <div class="game-card" onclick="openModal(${g.id})" style="animation-delay:${delay||0}s">
-      <img class="game-card-img" src="${_gcSrc}" alt="${g.title}" loading="lazy"
-           onerror="if(!this.dataset.e){this.dataset.e=1;this.src='${_gcAlt}';}else{this.style.background='var(--surface3)';this.style.display='none';}">
+      <img class="game-card-img" src="${imgUrl(g)}" alt="${g.title}" loading="lazy"
+           onerror="this.src='${imgUrlAlt(g)}';this.onerror=function(){this.style.background='var(--surface3)'}">
       <div class="game-card-body">
         <div class="game-card-title">${g.title}</div>
         <div class="game-card-meta">
@@ -3022,7 +3011,7 @@ function renderHeroGrid(games) {
     const thumbId = getThumbAppId(g);
     return `
     <div class="hero-card" onclick="openModal(${g.id})" style="animation-delay:${i*0.08}s">
-      <img src="https://cdn.akamai.steamstatic.com/steam/apps/${Number(g.id)}/header.jpg" alt="${g.title}"
+      <img src="${imgUrl(g)}" alt="${g.title}"
            onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='${imgUrlAlt(g)}';}else if(this.dataset.t==2){this.dataset.t=3;this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else{this.style.display='none';}">
       <div class="hero-card-overlay">
         <div class="hero-rank">${i+1}</div>
@@ -3139,7 +3128,7 @@ async function loadSteamRecommendations() {
     });
   });
 
-  const sorted = Object.values(map)
+  const sorted = filterTrustedThumbnailGames(Object.values(map)
     .map(app => {
       const appid = Number(app.appid);
       const year = getAppYear(app);
@@ -3159,7 +3148,7 @@ async function loadSteamRecommendations() {
     .filter(app => app._eligible)
     .filter(app => (app.ccu||0) >= 1000 || (app.owners||0) >= 750000 || (app.positive||0) >= 5000 || POPULAR_GAME_IDS.has(Number(app.appid)))
     .sort((a,b)=>b._score-a._score)
-    .slice(0,120);
+    .slice(0,120));
   if (!sorted.length) {
     if (requestToken !== window.__steamRecRequestToken || selectionKey !== window.__steamRecSelectionKey) return;
     // Steam API 실패 시 → 내장 게임 추천으로 최종 표시
@@ -3186,9 +3175,9 @@ async function loadSteamRecommendations() {
     hs.insertBefore(b, hs.firstChild);
   }
 
-  const safeSorted = sorted.filter(app => Number(app.appid||app.id) > 0);
+  const safeSorted = filterTrustedThumbnailGames(sorted);
   heroEl.innerHTML = safeSorted.slice(0,3).map((app,i)=>{
-    const thumbId = Number(app.appid || app.id);
+    const thumbId = resolveSteamThumbId(app, app.name);
     return `
     <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${thumbId}','_blank')" style="animation-delay:${i*0.08}s">
       <img src="${steamThumb(app, app.name)}" alt="${app.name}"
@@ -3381,10 +3370,8 @@ async function loadHotGames(silent = false, opts = {}) {
     ]);
     if (requestToken !== _hotRequestToken) return _hotRawData;
 
-    // filterTrustedThumbnailGames 제거 — Steam 공식 appid는 신뢰, appid>0 필터만 사용
     const mostPlayedList = normalizeSteamList(mostPlayedData).map(app => ({
-      ...app,
-      _genre: EXACT_GENRE_OVERRIDES[Number(app.appid)] || app._genre || app.genre || ''
+      ...app, _genre: EXACT_GENRE_OVERRIDES[Number(app.appid)] || app._genre || app.genre || ''
     })).filter(app => Number(app.appid) > 0);
     const twoWeekList = normalizeSteamList(hot2WeeksData).filter(app => Number(app.appid) > 0);
     const positiveList = normalizeSteamList(positiveData).filter(app => Number(app.appid) > 0);
@@ -3504,19 +3491,6 @@ function goHome() {
 }
 
 
-
-function resetObSelection() {
-  selectedIds = [];
-  document.querySelectorAll('.ob-card.selected').forEach(c => c.classList.remove('selected'));
-  const countEl = document.getElementById('ob-count');
-  const btn = document.getElementById('ob-start-btn');
-  const hint = document.getElementById('ob-hint');
-  const prog = document.getElementById('ob-progress');
-  if (countEl) countEl.textContent = '0';
-  if (btn) { btn.disabled = true; btn.classList.remove('active'); }
-  if (hint) hint.style.display = '';
-  if (prog) prog.style.width = '0%';
-}
 function resetApp() {
   localStorage.removeItem(STORAGE_KEY);
   ++steamRecRequestSeq;
