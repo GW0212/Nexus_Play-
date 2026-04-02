@@ -2,8 +2,8 @@ name: Fetch Steam Data
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch:
+    - cron: '0 */6 * * *'   # 6시간마다 (하루 4회) - 무료 플랜 월 2,000분 한도 고려
+  workflow_dispatch:         # 수동 실행 가능
 
 jobs:
   fetch:
