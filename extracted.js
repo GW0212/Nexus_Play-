@@ -1436,8 +1436,8 @@ function getScoreLabel(pos, neg) {
 
 
 function resolveSteamThumbId(appOrId, title='') { return getThumbAppId(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : Number(appOrId), title); }
-function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOrId, title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
-function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
+function steamThumb(appOrId, title='')    { return imgUrl(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : appOrId, title); }
+function steamThumbAlt(appOrId, title='') { return imgUrlAlt(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : appOrId, title); }
 
 function isTrustedThumbnailMapping(appOrGame) {
   if (!appOrGame) return false;
@@ -1496,7 +1496,7 @@ function makeSteamCard(app, rank, options = {}) {
   const fallback3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
   const fallback4 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_231x87.jpg`;
   return `
-    <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
+    <a class="steam-card" href="${storeUrl({ id: Number(app.appid || thumbId), title: app.name || '' }, app.name || '')}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${imgSrc}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
              data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId}, ['${fallback1}','${fallback2}','${fallback3}','${fallback4}'])">
@@ -1796,7 +1796,7 @@ async function loadSteamRecommendations() {
   heroEl.innerHTML = safeSorted.slice(0,3).map((app,i)=>{
     const thumbId = resolveSteamThumbId(app, app.name);
     return `
-    <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${thumbId}','_blank')" style="animation-delay:${i*0.08}s">
+    <div class="hero-card" onclick="window.open('${storeUrl({ id: Number(app.appid || thumbId), title: app.name || '' }, app.name || '')}','_blank')" style="animation-delay:${i*0.08}s">
       <img src="${steamThumb(app, app.name)}" alt="${app.name}"
            data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId})">
       <div class="hero-card-overlay">
@@ -1840,7 +1840,8 @@ function applyGenreGrid(list, genre) {
   const filtered = q
     ? base.filter(a => (a.name||'').toLowerCase().includes(q) || Object.keys(a.tags||{}).some(t => t.toLowerCase().includes(q)))
     : base;
-  const safeFiltered = filterTrustedThumbnailGames(filtered);
+  const sortedFiltered = [...filtered].sort((a,b)=>((b.ccu||0)-(a.ccu||0))||((b.positive||0)-(a.positive||0))||((b.owners||0)-(a.owners||0))||((b.rating||0)-(a.rating||0))||String(a.name||'').localeCompare(String(b.name||'')));
+  const safeFiltered = filterTrustedThumbnailGames(sortedFiltered);
   gridEl.innerHTML = safeFiltered.length
     ? safeFiltered.map(app=>makeSteamCard(app,null,{ showLive:false, safeOnly:true })).join('')
     : `<div class="grid-empty empty-note" style="grid-column:1/-1">${genre === '전체' ? '조건에 맞는 게임이 없습니다.' : `${genre} 장르 검색 결과 없음`}</div>`;

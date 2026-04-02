@@ -990,8 +990,8 @@ function getScoreLabel(pos, neg) {
 
 
 function resolveSteamThumbId(appOrId, title='') { return getThumbAppId(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : Number(appOrId), title); }
-function steamThumb(appOrId, title='')    { const id = resolveSteamThumbId(appOrId, title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`; }
-function steamThumbAlt(appOrId, title='') { const id = resolveSteamThumbId(appOrId, title); return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`; }
+function steamThumb(appOrId, title='')    { return imgUrl(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : appOrId, title); }
+function steamThumbAlt(appOrId, title='') { return imgUrlAlt(typeof appOrId === 'object' ? { id: Number(appOrId.appid || appOrId.id), title: appOrId.name || appOrId.title || title } : appOrId, title); }
 
 function makeSteamCard(app, rank, options = {}) {
   const tags = getStableTagList(app).slice(0, 4);
