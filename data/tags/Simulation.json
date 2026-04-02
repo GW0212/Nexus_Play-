@@ -1,0 +1,177 @@
+{
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 88000,
+    "positive": 320000,
+    "negative": 12000,
+    "average_2weeks": 6400,
+    "owners": 5000000,
+    "tags": {
+      "공장": 1,
+      "시뮬레이션": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "공장",
+      "시뮬레이션",
+      "오픈월드",
+      "크래프팅",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "227300": {
+    "appid": 227300,
+    "name": "Euro Truck Simulator 2",
+    "developer": "SCS Software",
+    "ccu": 46000,
+    "positive": 450000,
+    "negative": 18000,
+    "average_2weeks": 3000,
+    "owners": 20000000,
+    "tags": {
+      "운전": 1,
+      "시뮬레이션": 1,
+      "트럭": 1,
+      "유럽": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "운전",
+      "시뮬레이션",
+      "트럭",
+      "유럽",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "1250410": {
+    "appid": 1250410,
+    "name": "Microsoft Flight Simulator",
+    "developer": "Asobo Studio",
+    "ccu": 22000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 1600,
+    "owners": 4000000,
+    "tags": {
+      "비행": 1,
+      "시뮬레이션": 1,
+      "사실적": 1,
+      "항공": 1,
+      "오픈월드": 1
+    },
+    "tags_list": [
+      "비행",
+      "시뮬레이션",
+      "사실적",
+      "항공",
+      "오픈월드"
+    ],
+    "_source": "steamspy"
+  },
+  "632470": {
+    "appid": 632470,
+    "name": "Stardew Valley",
+    "developer": "ConcernedApe",
+    "ccu": 32000,
+    "positive": 520000,
+    "negative": 8000,
+    "average_2weeks": 1600,
+    "owners": 15000000,
+    "tags": {
+      "농장": 1,
+      "시뮬레이션": 1,
+      "rpg": 1,
+      "인디": 1,
+      "픽셀": 1
+    },
+    "tags_list": [
+      "농장",
+      "시뮬레이션",
+      "rpg",
+      "인디",
+      "픽셀"
+    ],
+    "_source": "steamspy"
+  },
+  "4000": {
+    "appid": 4000,
+    "name": "Garry's Mod",
+    "developer": "Facepunch Studios",
+    "ccu": 13000,
+    "positive": 680000,
+    "negative": 32000,
+    "average_2weeks": 1800,
+    "owners": 18000000,
+    "tags": {
+      "샌드박스": 1,
+      "물리": 1,
+      "멀티플레이어": 1,
+      "유머": 1,
+      "모딩": 1
+    },
+    "tags_list": [
+      "샌드박스",
+      "물리",
+      "멀티플레이어",
+      "유머",
+      "모딩"
+    ],
+    "_source": "steamspy"
+  },
+  "703080": {
+    "appid": 703080,
+    "name": "Planet Zoo",
+    "developer": "Frontier Developments",
+    "ccu": 10000,
+    "positive": 120000,
+    "negative": 8000,
+    "average_2weeks": 800,
+    "owners": 2500000,
+    "tags": {
+      "동물원": 1,
+      "시뮬레이션": 1,
+      "경영": 1,
+      "동물": 1,
+      "창작": 1
+    },
+    "tags_list": [
+      "동물원",
+      "시뮬레이션",
+      "경영",
+      "동물",
+      "창작"
+    ],
+    "_source": "steamspy"
+  },
+  "1601580": {
+    "appid": 1601580,
+    "name": "Frostpunk 2",
+    "developer": "11 bit studios",
+    "ccu": 14000,
+    "positive": 95000,
+    "negative": 22000,
+    "average_2weeks": 1000,
+    "owners": 1500000,
+    "tags": {
+      "생존": 1,
+      "도시경영": 1,
+      "전략": 1,
+      "포스트아포칼립스": 1,
+      "어둠": 1
+    },
+    "tags_list": [
+      "생존",
+      "도시경영",
+      "전략",
+      "포스트아포칼립스",
+      "어둠"
+    ],
+    "_source": "steamspy"
+  }
+}

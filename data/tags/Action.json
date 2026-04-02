@@ -1,0 +1,302 @@
+{
+  "3321460": {
+    "appid": 3321460,
+    "name": "Crimson Desert",
+    "developer": "Pearl Abyss",
+    "ccu": 270000,
+    "positive": 185000,
+    "negative": 48000,
+    "average_2weeks": 22000,
+    "owners": 3000000,
+    "tags": {
+      "오픈월드": 1,
+      "액션": 1,
+      "어드벤처": 1,
+      "rpg": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "액션",
+      "어드벤처",
+      "rpg",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "2358720": {
+    "appid": 2358720,
+    "name": "Black Myth: Wukong",
+    "developer": "Game Science",
+    "ccu": 118000,
+    "positive": 360000,
+    "negative": 22000,
+    "average_2weeks": 9200,
+    "owners": 5000000,
+    "tags": {
+      "액션": 1,
+      "소울라이크": 1,
+      "중국신화": 1,
+      "싱글플레이어": 1,
+      "판타지": 1
+    },
+    "tags_list": [
+      "액션",
+      "소울라이크",
+      "중국신화",
+      "싱글플레이어",
+      "판타지"
+    ],
+    "_source": "steamspy"
+  },
+  "2183900": {
+    "appid": 2183900,
+    "name": "Warhammer 40,000: Space Marine 2",
+    "developer": "Saber Interactive",
+    "ccu": 80000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 5900,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "협동": 1,
+      "sf": 1,
+      "슈터": 1,
+      "전쟁": 1
+    },
+    "tags_list": [
+      "액션",
+      "협동",
+      "sf",
+      "슈터",
+      "전쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "271590": {
+    "appid": 271590,
+    "name": "Grand Theft Auto V",
+    "developer": "Rockstar North",
+    "ccu": 108000,
+    "positive": 1050000,
+    "negative": 270000,
+    "average_2weeks": 8200,
+    "owners": 38000000,
+    "tags": {
+      "오픈월드": 1,
+      "액션": 1,
+      "범죄": 1,
+      "멀티플레이어": 1,
+      "드라이빙": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "액션",
+      "범죄",
+      "멀티플레이어",
+      "드라이빙"
+    ],
+    "_source": "steamspy"
+  },
+  "1174180": {
+    "appid": 1174180,
+    "name": "Red Dead Redemption 2",
+    "developer": "Rockstar Games",
+    "ccu": 65000,
+    "positive": 560000,
+    "negative": 42000,
+    "average_2weeks": 4600,
+    "owners": 14000000,
+    "tags": {
+      "오픈월드": 1,
+      "서부": 1,
+      "액션": 1,
+      "어드벤처": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "오픈월드",
+      "서부",
+      "액션",
+      "어드벤처",
+      "스토리"
+    ],
+    "_source": "steamspy"
+  },
+  "2215430": {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DIRECTOR'S CUT",
+    "developer": "Sucker Punch Productions",
+    "ccu": 58000,
+    "positive": 290000,
+    "negative": 18000,
+    "average_2weeks": 4000,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "오픈월드": 1,
+      "일본": 1,
+      "스텔스": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "오픈월드",
+      "일본",
+      "스텔스",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "814380": {
+    "appid": 814380,
+    "name": "Sekiro: Shadows Die Twice",
+    "developer": "FromSoftware",
+    "ccu": 15000,
+    "positive": 220000,
+    "negative": 8000,
+    "average_2weeks": 2200,
+    "owners": 3800000,
+    "tags": {
+      "소울라이크": 1,
+      "액션": 1,
+      "일본": 1,
+      "닌자": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "소울라이크",
+      "액션",
+      "일본",
+      "닌자",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "782330": {
+    "appid": 782330,
+    "name": "DOOM Eternal",
+    "developer": "id Software",
+    "ccu": 16000,
+    "positive": 260000,
+    "negative": 12000,
+    "average_2weeks": 2400,
+    "owners": 4200000,
+    "tags": {
+      "fps": 1,
+      "액션": 1,
+      "악마": 1,
+      "싱글플레이어": 1,
+      "빠른속도": 1
+    },
+    "tags_list": [
+      "fps",
+      "액션",
+      "악마",
+      "싱글플레이어",
+      "빠른속도"
+    ],
+    "_source": "steamspy"
+  },
+  "1282100": {
+    "appid": 1282100,
+    "name": "The Last of Us Part I",
+    "developer": "Naughty Dog",
+    "ccu": 22000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 3400,
+    "owners": 2800000,
+    "tags": {
+      "액션": 1,
+      "어드벤처": 1,
+      "스토리": 1,
+      "좀비": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "어드벤처",
+      "스토리",
+      "좀비",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1868140": {
+    "appid": 1868140,
+    "name": "Lies of P",
+    "developer": "Round8 Studio",
+    "ccu": 12000,
+    "positive": 140000,
+    "negative": 12000,
+    "average_2weeks": 1200,
+    "owners": 1800000,
+    "tags": {
+      "소울라이크": 1,
+      "액션": 1,
+      "공포": 1,
+      "싱글플레이어": 1,
+      "피노키오": 1
+    },
+    "tags_list": [
+      "소울라이크",
+      "액션",
+      "공포",
+      "싱글플레이어",
+      "피노키오"
+    ],
+    "_source": "steamspy"
+  },
+  "1237970": {
+    "appid": 1237970,
+    "name": "Titanfall 2",
+    "developer": "Respawn Entertainment",
+    "ccu": 28000,
+    "positive": 310000,
+    "negative": 14000,
+    "average_2weeks": 2200,
+    "owners": 6000000,
+    "tags": {
+      "fps": 1,
+      "이동성": 1,
+      "싱글플레이어": 1,
+      "멀티플레이어": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "fps",
+      "이동성",
+      "싱글플레이어",
+      "멀티플레이어",
+      "sf"
+    ],
+    "_source": "steamspy"
+  },
+  "1817070": {
+    "appid": 1817070,
+    "name": "Marvel's Spider-Man Remastered",
+    "developer": "Insomniac Games",
+    "ccu": 32000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 2400,
+    "owners": 3800000,
+    "tags": {
+      "액션": 1,
+      "어드벤처": 1,
+      "슈퍼히어로": 1,
+      "오픈월드": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "어드벤처",
+      "슈퍼히어로",
+      "오픈월드",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "252490": {
+    "appid": 252490,
+    "name": "Rust",
+    "developer": "Facepunch Studios",
+    "ccu": 138000,
+    "positive": 540000,
+    "negative": 210000,
+    "average_2weeks": 10800,
+    "owners": 15000000,
+    "tags": {
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "멀티플레이어": 1,
+      "pvp": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "오픈월드",
+      "크래프팅",
+      "멀티플레이어",
+      "pvp"
+    ],
+    "_source": "steamspy"
+  },
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 105000,
+    "positive": 390000,
+    "negative": 18000,
+    "average_2weeks": 7800,
+    "owners": 8000000,
+    "tags": {
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "크래프팅": 1,
+      "바이킹": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "오픈월드",
+      "협동",
+      "크래프팅",
+      "바이킹"
+    ],
+    "_source": "steamspy"
+  },
+  "1623730": {
+    "appid": 1623730,
+    "name": "Palworld",
+    "developer": "Pocketpair",
+    "ccu": 92000,
+    "positive": 480000,
+    "negative": 72000,
+    "average_2weeks": 6800,
+    "owners": 10000000,
+    "tags": {
+      "서바이벌": 1,
+      "몬스터": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "몬스터",
+      "오픈월드",
+      "크래프팅",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "105600": {
+    "appid": 105600,
+    "name": "Terraria",
+    "developer": "Re-Logic",
+    "ccu": 36000,
+    "positive": 590000,
+    "negative": 12000,
+    "average_2weeks": 2000,
+    "owners": 30000000,
+    "tags": {
+      "샌드박스": 1,
+      "서바이벌": 1,
+      "2d": 1,
+      "크래프팅": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "샌드박스",
+      "서바이벌",
+      "2d",
+      "크래프팅",
+      "인디"
+    ],
+    "_source": "steamspy"
+  },
+  "1326470": {
+    "appid": 1326470,
+    "name": "Sons of the Forest",
+    "developer": "Endnight Games",
+    "ccu": 18000,
+    "positive": 240000,
+    "negative": 28000,
+    "average_2weeks": 1400,
+    "owners": 4000000,
+    "tags": {
+      "공포": 1,
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "크래프팅": 1
+    },
+    "tags_list": [
+      "공포",
+      "서바이벌",
+      "오픈월드",
+      "협동",
+      "크래프팅"
+    ],
+    "_source": "steamspy"
+  },
+  "2357570": {
+    "appid": 2357570,
+    "name": "Enshrouded",
+    "developer": "Keen Games",
+    "ccu": 25000,
+    "positive": 180000,
+    "negative": 12000,
+    "average_2weeks": 1800,
+    "owners": 2500000,
+    "tags": {
+      "서바이벌": 1,
+      "크래프팅": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "rpg": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "크래프팅",
+      "오픈월드",
+      "협동",
+      "rpg"
+    ],
+    "_source": "steamspy"
+  },
+  "2139460": {
+    "appid": 2139460,
+    "name": "Once Human",
+    "developer": "Starry Studio",
+    "ccu": 14000,
+    "positive": 120000,
+    "negative": 55000,
+    "average_2weeks": 2000,
+    "owners": 2100000,
+    "tags": {
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "무료": 1,
+      "tps": 1,
+      "포스트아포칼립스": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "오픈월드",
+      "무료",
+      "tps",
+      "포스트아포칼립스"
+    ],
+    "_source": "steamspy"
+  },
+  "418370": {
+    "appid": 418370,
+    "name": "Subnautica",
+    "developer": "Unknown Worlds Entertainment",
+    "ccu": 20000,
+    "positive": 320000,
+    "negative": 8000,
+    "average_2weeks": 1400,
+    "owners": 8000000,
+    "tags": {
+      "서바이벌": 1,
+      "탐험": 1,
+      "수중": 1,
+      "공포": 1,
+      "오픈월드": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "탐험",
+      "수중",
+      "공포",
+      "오픈월드"
+    ],
+    "_source": "steamspy"
+  }
+}

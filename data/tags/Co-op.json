@@ -1,0 +1,227 @@
+{
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 105000,
+    "positive": 390000,
+    "negative": 18000,
+    "average_2weeks": 7800,
+    "owners": 8000000,
+    "tags": {
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "크래프팅": 1,
+      "바이킹": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "오픈월드",
+      "협동",
+      "크래프팅",
+      "바이킹"
+    ],
+    "_source": "steamspy"
+  },
+  "553850": {
+    "appid": 553850,
+    "name": "Helldivers 2",
+    "developer": "Arrowhead Game Studios",
+    "ccu": 98000,
+    "positive": 420000,
+    "negative": 85000,
+    "average_2weeks": 7200,
+    "owners": 8000000,
+    "tags": {
+      "fps": 1,
+      "협동": 1,
+      "슈터": 1,
+      "sf": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "fps",
+      "협동",
+      "슈터",
+      "sf",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1086940": {
+    "appid": 1086940,
+    "name": "Baldur's Gate 3",
+    "developer": "Larian Studios",
+    "ccu": 142000,
+    "positive": 680000,
+    "negative": 28000,
+    "average_2weeks": 11200,
+    "owners": 8000000,
+    "tags": {
+      "rpg": 1,
+      "턴제": 1,
+      "협동": 1,
+      "판타지": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "rpg",
+      "턴제",
+      "협동",
+      "판타지",
+      "스토리"
+    ],
+    "_source": "steamspy"
+  },
+  "1623730": {
+    "appid": 1623730,
+    "name": "Palworld",
+    "developer": "Pocketpair",
+    "ccu": 92000,
+    "positive": 480000,
+    "negative": 72000,
+    "average_2weeks": 6800,
+    "owners": 10000000,
+    "tags": {
+      "서바이벌": 1,
+      "몬스터": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "몬스터",
+      "오픈월드",
+      "크래프팅",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 88000,
+    "positive": 320000,
+    "negative": 12000,
+    "average_2weeks": 6400,
+    "owners": 5000000,
+    "tags": {
+      "공장": 1,
+      "시뮬레이션": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
+    },
+    "tags_list": [
+      "공장",
+      "시뮬레이션",
+      "오픈월드",
+      "크래프팅",
+      "협동"
+    ],
+    "_source": "steamspy"
+  },
+  "2183900": {
+    "appid": 2183900,
+    "name": "Warhammer 40,000: Space Marine 2",
+    "developer": "Saber Interactive",
+    "ccu": 80000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 5900,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "협동": 1,
+      "sf": 1,
+      "슈터": 1,
+      "전쟁": 1
+    },
+    "tags_list": [
+      "액션",
+      "협동",
+      "sf",
+      "슈터",
+      "전쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "2246340": {
+    "appid": 2246340,
+    "name": "Monster Hunter Wilds",
+    "developer": "Capcom",
+    "ccu": 248000,
+    "positive": 310000,
+    "negative": 42000,
+    "average_2weeks": 19800,
+    "owners": 6000000,
+    "tags": {
+      "액션": 1,
+      "rpg": 1,
+      "멀티플레이어": 1,
+      "협동": 1,
+      "오픈월드": 1
+    },
+    "tags_list": [
+      "액션",
+      "rpg",
+      "멀티플레이어",
+      "협동",
+      "오픈월드"
+    ],
+    "_source": "steamspy"
+  },
+  "550": {
+    "appid": 550,
+    "name": "Left 4 Dead 2",
+    "developer": "Valve",
+    "ccu": 34000,
+    "positive": 420000,
+    "negative": 15000,
+    "average_2weeks": 1800,
+    "owners": 25000000,
+    "tags": {
+      "협동": 1,
+      "공호": 1,
+      "좀비": 1,
+      "fps": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "협동",
+      "공호",
+      "좀비",
+      "fps",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "620": {
+    "appid": 620,
+    "name": "Portal 2",
+    "developer": "Valve",
+    "ccu": 9000,
+    "positive": 480000,
+    "negative": 4000,
+    "average_2weeks": 700,
+    "owners": 20000000,
+    "tags": {
+      "퍼즐": 1,
+      "협동": 1,
+      "1인칭": 1,
+      "유머": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "퍼즐",
+      "협동",
+      "1인칭",
+      "유머",
+      "sf"
+    ],
+    "_source": "steamspy"
+  }
+}

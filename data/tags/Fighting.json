@@ -1,0 +1,127 @@
+{
+  "1778820": {
+    "appid": 1778820,
+    "name": "Mortal Kombat 1",
+    "developer": "NetherRealm Studios",
+    "ccu": 20000,
+    "positive": 160000,
+    "negative": 48000,
+    "average_2weeks": 1600,
+    "owners": 2500000,
+    "tags": {
+      "격투": 1,
+      "고어": 1,
+      "스토리": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "격투",
+      "고어",
+      "스토리",
+      "멀티플레이어",
+      "경쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "1790600": {
+    "appid": 1790600,
+    "name": "Dragon Ball: Sparking! ZERO",
+    "developer": "Bandai Namco",
+    "ccu": 52000,
+    "positive": 190000,
+    "negative": 42000,
+    "average_2weeks": 3600,
+    "owners": 3500000,
+    "tags": {
+      "격투": 1,
+      "애니메이션": 1,
+      "드래곤볼": 1,
+      "멀티플레이어": 1,
+      "3d": 1
+    },
+    "tags_list": [
+      "격투",
+      "애니메이션",
+      "드래곤볼",
+      "멀티플레이어",
+      "3d"
+    ],
+    "_source": "steamspy"
+  },
+  "1364780": {
+    "appid": 1364780,
+    "name": "Street Fighter 6",
+    "developer": "Capcom",
+    "ccu": 26000,
+    "positive": 210000,
+    "negative": 18000,
+    "average_2weeks": 4200,
+    "owners": 3800000,
+    "tags": {
+      "격투": 1,
+      "경쟁": 1,
+      "2d": 1,
+      "멀티플레이어": 1,
+      "카운터": 1
+    },
+    "tags_list": [
+      "격투",
+      "경쟁",
+      "2d",
+      "멀티플레이어",
+      "카운터"
+    ],
+    "_source": "steamspy"
+  },
+  "678950": {
+    "appid": 678950,
+    "name": "Dragon Ball FighterZ",
+    "developer": "Arc System Works",
+    "ccu": 18000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 1400,
+    "owners": 3500000,
+    "tags": {
+      "격투": 1,
+      "2d": 1,
+      "애니메이션": 1,
+      "드래곤볼": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "격투",
+      "2d",
+      "애니메이션",
+      "드래곤볼",
+      "경쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "291550": {
+    "appid": 291550,
+    "name": "Brawlhalla",
+    "developer": "Blue Mammoth Games",
+    "ccu": 22000,
+    "positive": 280000,
+    "negative": 45000,
+    "average_2weeks": 1800,
+    "owners": 18000000,
+    "tags": {
+      "격투": 1,
+      "플랫포머": 1,
+      "무료": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "격투",
+      "플랫포머",
+      "무료",
+      "멀티플레이어",
+      "경쟁"
+    ],
+    "_source": "steamspy"
+  }
+}
