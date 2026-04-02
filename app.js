@@ -804,13 +804,8 @@ const THUMB_OVERRIDES = {
   "Crimson Desert": { appid:3321460 },
   "Escape from Tarkov": {
     appid:3932890,
-    link:"https://www.escapefromtarkov.com/preorder-page",
-    image: makePosterThumbnail("Escape from Tarkov", "Battlestate Games", {
-      kicker: "EXTRACTION SHOOTER",
-      accent: "#d6a73c",
-      accent2: "#6b4f1d",
-      silhouette: true
-    })
+    link:"https://store.steampowered.com/app/3932890/Escape_from_Tarkov/",
+    image:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3932890/header.jpg"
   },
   "Goose Goose Duck": {
     appid:1568590,
