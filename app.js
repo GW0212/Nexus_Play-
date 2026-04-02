@@ -592,6 +592,69 @@ const TAG_FILE_MAP = {
 };
 
 const _sessionDataCache = new Map();
+const _steamImageUrlCache = new Map();
+let _hotSource = "";
+let _hotFetchedAt = 0;
+
+async function resolveSteamHeaderImage(appid) {
+  const id = Number(appid || 0);
+  if (!id) return null;
+  if (_steamImageUrlCache.has(id)) return _steamImageUrlCache.get(id);
+  const candidates = [
+    `https://store.steampowered.com/api/appdetails?appids=${id}&l=koreana&cc=KR`,
+    `https://store.steampowered.com/api/appdetails?appids=${id}&l=english&cc=US`,
+  ];
+  for (const url of candidates) {
+    try {
+      const json = await fetchJsonViaAnyProxy(url, 7000, true);
+      const app = json?.[id]?.data || json?.data || null;
+      const header = app?.header_image || app?.capsule_image || app?.capsule_imagev5 || null;
+      if (header) {
+        _steamImageUrlCache.set(id, header);
+        return header;
+      }
+    } catch {}
+  }
+  _steamImageUrlCache.set(id, null);
+  return null;
+}
+
+function setSteamImgFallback(el, appid) {
+  const wrap = el?.closest?.('.steam-card-img-wrap, .hero-card, .ob-card');
+  if (wrap) wrap.classList.add('thumb-fallback');
+  if (el) {
+    el.style.display = 'none';
+    el.alt = (el.alt || '') + ' (thumbnail unavailable)';
+  }
+}
+
+async function handleSteamImgError(el, appid, explicitFallbacks = []) {
+  if (!el) return;
+  const id = Number(appid || el.dataset.appid || 0);
+  const fallbackList = [
+    ...explicitFallbacks.filter(Boolean),
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`,
+    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_231x87.jpg`,
+  ].filter(Boolean);
+  let step = Number(el.dataset.fbStep || 0);
+  if (step < fallbackList.length) {
+    el.dataset.fbStep = String(step + 1);
+    el.src = fallbackList[step];
+    return;
+  }
+  if (!el.dataset.apiResolved && id > 0) {
+    el.dataset.apiResolved = '1';
+    const resolved = await resolveSteamHeaderImage(id);
+    if (resolved) {
+      el.style.display = '';
+      el.src = resolved;
+      return;
+    }
+  }
+  setSteamImgFallback(el, id);
+}
 
 function normalizeSteamList(data) {
   if (!data) return [];
@@ -801,7 +864,7 @@ function renderObGrid() {
     <div class="ob-card ${selectedIds.includes(g.id)?'selected':''}" data-id="${g.id}"
          onclick="toggleSelect(${g.id})" style="animation-delay:${i*0.008}s">
       <img src="${imgUrl(g)}" alt="${g.title}" loading="lazy"
-           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='${imgUrlAlt(g)}';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
+           data-appid="${g.id}" onerror="handleSteamImgError(this, ${g.id}, ['https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${g.id}/header.jpg','${imgUrlAlt(g)}'])">
       <div class="ob-card-genre-badge ${genreClass(g.genre)}">${g.genre}</div>
       <div class="ob-card-overlay">
         <div class="ob-card-title">${g.title}</div>

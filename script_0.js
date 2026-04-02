@@ -618,7 +618,7 @@ const EXTRA_CURATED_GAMES = [
   { id:493340, title:"Planet Zoo", genre:"시뮬레이션", tags:["동물원","시뮬레이션","건설","경영","동물"], rating:8.7, year:2019, dev:"Frontier Developments", desc:"동물원을 설계하고 동물을 관리하는 시뮬레이션." },
   { id:648350, title:"Two Point Hospital", genre:"시뮬레이션", tags:["병원","경영","유머","시뮬레이션","캐주얼"], rating:8.8, year:2018, dev:"Two Point Studios", desc:"유머러스한 병원 경영 시뮬레이션." },
   { id:1042550, title:"Snowrunner", genre:"시뮬레이션", tags:["트럭","오프로드","시뮬레이션","오픈월드","협동"], rating:8.7, year:2021, dev:"Saber Interactive", desc:"험로를 돌파하며 화물을 배달하는 오프로드 시뮬레이션." },
-  { id:3243440, title:"Planet Coaster 2", genre:"시뮬레이션", tags:["놀이공원","워터파크","시뮬레이션","경영","건설"], rating:7.8, year:2024, dev:"Frontier Developments", desc:"워터파크가 추가된 놀이공원 시뮬레이션 후속작." },
+  { id:2688950, title:"Planet Coaster 2", genre:"시뮬레이션", tags:["놀이공원","워터파크","시뮬레이션","경영","건설"], rating:7.8, year:2024, dev:"Frontier Developments", desc:"워터파크가 추가된 놀이공원 시뮬레이션 후속작." },
 
   // ── 추가 공포 (20) ──
   { id:739630, title:"Phasmophobia", genre:"공포", tags:["공포","협동","유령","조사","VR"], rating:9.1, year:2020, dev:"Kinetic Games", desc:"유령의 종류를 추리하며 조사하는 협동 공포 게임." },
@@ -882,6 +882,69 @@ const TAG_FILE_MAP = {
 };
 
 const _sessionDataCache = new Map();
+const _steamImageUrlCache = new Map();
+let _hotSource = "";
+let _hotFetchedAt = 0;
+
+async function resolveSteamHeaderImage(appid) {
+  const id = Number(appid || 0);
+  if (!id) return null;
+  if (_steamImageUrlCache.has(id)) return _steamImageUrlCache.get(id);
+  const candidates = [
+    `https://store.steampowered.com/api/appdetails?appids=${id}&l=koreana&cc=KR`,
+    `https://store.steampowered.com/api/appdetails?appids=${id}&l=english&cc=US`,
+  ];
+  for (const url of candidates) {
+    try {
+      const json = await fetchJsonViaAnyProxy(url, 7000, true);
+      const app = json?.[id]?.data || json?.data || null;
+      const header = app?.header_image || app?.capsule_image || app?.capsule_imagev5 || null;
+      if (header) {
+        _steamImageUrlCache.set(id, header);
+        return header;
+      }
+    } catch {}
+  }
+  _steamImageUrlCache.set(id, null);
+  return null;
+}
+
+function setSteamImgFallback(el, appid) {
+  const wrap = el?.closest?.('.steam-card-img-wrap, .hero-card, .ob-card');
+  if (wrap) wrap.classList.add('thumb-fallback');
+  if (el) {
+    el.style.display = 'none';
+    el.alt = (el.alt || '') + ' (thumbnail unavailable)';
+  }
+}
+
+async function handleSteamImgError(el, appid, explicitFallbacks = []) {
+  if (!el) return;
+  const id = Number(appid || el.dataset.appid || 0);
+  const fallbackList = [
+    ...explicitFallbacks.filter(Boolean),
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`,
+    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_231x87.jpg`,
+  ].filter(Boolean);
+  let step = Number(el.dataset.fbStep || 0);
+  if (step < fallbackList.length) {
+    el.dataset.fbStep = String(step + 1);
+    el.src = fallbackList[step];
+    return;
+  }
+  if (!el.dataset.apiResolved && id > 0) {
+    el.dataset.apiResolved = '1';
+    const resolved = await resolveSteamHeaderImage(id);
+    if (resolved) {
+      el.style.display = '';
+      el.src = resolved;
+      return;
+    }
+  }
+  setSteamImgFallback(el, id);
+}
 
 function normalizeSteamList(data) {
   if (!data) return [];
@@ -967,7 +1030,7 @@ function buildSteamDetailMap(...sources) {
   return map;
 }
 async function fetchMostPlayedLive(forceRemote = false) {
-  const chart = await fetchJsonViaAnyProxy('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json', 8000, forceRemote);
+  const chart = await fetchJsonViaAnyProxy('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json', 8000, true);
   const ranks = (chart?.response?.ranks || chart?.response?.items || chart?.ranks || chart?.items || [])
     .map((row, idx) => ({
       appid: Number(row.appid || row.app_id || row.id || row.appID || 0),
@@ -1096,7 +1159,10 @@ function matchesGenreApp(app, genre) {
 }
 function clearLiveDataCache() {
   _sessionDataCache.clear();
+  _steamImageUrlCache.clear();
   hotLoaded = false;
+  _hotSource = '';
+  _hotFetchedAt = 0;
   _steamGenreInflight = {};
 }
 function maybeRefreshLiveData(force = false) {
@@ -1177,6 +1243,14 @@ const THUMB_OVERRIDES = {
   "NBA 2K25": { appid:2688840 },
   "NBA 2K24": { appid:2338770 },
   "Heartopia": { appid:4025700 },
+  "블루 아카이브": { appid:3557620 },
+  "Blue Archive": { appid:3557620 },
+  "연운": { appid:3564740 },
+  "Where Winds Meet": { appid:3564740 },
+  "두근두근 타운": { appid:4025700 },
+  "두근두근타운": { appid:4025700 },
+  "붉은 사막": { appid:3321460 },
+  "Planet Coaster 2": { appid:2688950 },
   "The Seven Deadly Sins: Origin": { appid:3679080 },
   "〈The Seven Deadly Sins: Origin〉": { appid:3679080 },
   "Battlefield 6": { appid:2622380 },
@@ -1472,7 +1546,7 @@ function makeSteamCard(app, rank, options = {}) {
     <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${imgSrc}" alt="${(app.name||'').replace(/"/g,'')}" loading="lazy"
-             onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${fallback1}'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='${fallback2}'}else if(this.dataset.fb==='2'){this.dataset.fb='3';this.src='${fallback3}'}else if(this.dataset.fb==='3'){this.dataset.fb='4';this.src='${fallback4}'}else{this.style.display='none'}">
+             data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId}, ['${fallback1}','${fallback2}','${fallback3}','${fallback4}'])">
         ${rank ? `<div class="steam-card-rank">${rank}</div>` : ''}
       </div>
       <div class="steam-card-body">
@@ -1524,7 +1598,7 @@ function renderObGrid() {
     <div class="ob-card ${selectedIds.includes(g.id)?'selected':''}" data-id="${g.id}"
          onclick="toggleSelect(${g.id})" style="animation-delay:${i*0.008}s">
       <img src="${imgUrl(g)}" alt="${g.title}" loading="lazy"
-           onerror="if(!this.dataset.t){this.dataset.t=1;this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else if(this.dataset.t==1){this.dataset.t=2;this.src='${imgUrlAlt(g)}';}else if(this.dataset.t==2){this.dataset.t=3;this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg';}else{this.closest('.ob-card').style.background='var(--surface3)';this.style.display='none';}">
+           data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId}, ['https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg','${imgUrlAlt(g)}','https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'])">
       <div class="ob-card-genre-badge ${genreClass(g.genre)}">${g.genre}</div>
       <div class="ob-card-overlay">
         <div class="ob-card-title">${g.title}</div>
@@ -1768,7 +1842,7 @@ async function loadSteamRecommendations() {
     return `
     <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${thumbId}','_blank')" style="animation-delay:${i*0.08}s">
       <img src="${steamThumb(app, app.name)}" alt="${app.name}"
-           onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg'}else{this.dataset.fb='3';this.src='https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg'}">
+           data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId})">
       <div class="hero-card-overlay">
         <div class="hero-rank">${i+1}</div>
         <div class="hero-title">${app.name}</div>
