@@ -491,7 +491,6 @@ body {
   color:var(--danger);
   background:rgba(239,68,68,0.06);
 }
-.reset-btn-mobile { display:none; }
 
 /* ══════════════════════════════════════════════════════
    MAIN CONTENT
@@ -805,12 +804,11 @@ body {
 .modal-overlay.hidden { display:none; }
 
 @media (max-width:600px) {
-  .modal-overlay { align-items:center; justify-content:center; padding:12px; }
+  .modal-overlay { align-items:flex-end; padding:0; }
   .modal {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     max-height:88dvh;
     width:100%;
-    max-width:calc(100vw - 24px);
   }
 }
 
@@ -1120,13 +1118,6 @@ body {
   .rec-filter-row { gap: 4px; }
   .rec-filter-btn { font-size: 0.68rem; padding: 4px 7px; }
   .modal-action-row { flex-wrap: wrap; }
-  .compare-btn,
-  #modal-compare-btn,
-  .compare-bar,
-  #compare-bar,
-  #compare-modal {
-    display: none !important;
-  }
 }
 
 .hot-grid {
@@ -1352,11 +1343,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
   .nav-logo{font-size:1.05rem;justify-content:center;text-align:center;width:100%}
   .nav-tabs{gap:4px;justify-content:stretch}
   .nav-tab{font-size:0.72rem;padding:9px 6px;flex:1;text-align:center}
-  .nav-left{display:none}
-  .nav-right{display:flex;flex-wrap:nowrap;gap:6px;width:100%;justify-content:center;align-items:center}
-  .theme-toggle-group{width:auto;flex:1;min-width:0;justify-content:center}
-  .theme-btn{flex:1 1 0;text-align:center;min-height:36px;min-width:0;font-size:0.72rem;padding:8px 10px}
-  .reset-btn-mobile{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:auto;min-height:36px;padding:8px 12px;font-size:0.72rem;white-space:nowrap}
+  .nav-right,.nav-left{display:flex;flex-wrap:wrap;gap:6px;width:100%;justify-content:center}
+  .reset-btn{width:100%;justify-content:center;min-height:44px}
+  .theme-toggle-group{width:100%;justify-content:center}
+  .theme-btn{flex:1;text-align:center;min-height:36px}
   .steam-badge{display:none}
   /* 타이틀 */
   .section-title{font-size:1.8rem;line-height:1.1}
@@ -1472,7 +1462,6 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
         <button class="theme-btn" id="theme-dark-btn" onclick="setTheme('dark')">🌙 다크모드</button>
         <button class="theme-btn" id="theme-light-btn" onclick="setTheme('light')">☀ 화이트 모드</button>
       </div>
-      <button class="reset-btn reset-btn-mobile" onclick="goToReselect()">↩ 다시 선택</button>
     </div>
   </nav>
 
@@ -3562,17 +3551,13 @@ function showTab(tab) {
   if (tab==='bookmarks') { renderBookmarkGrid(); renderBookmarkBadge(); }
 }
 
-const TOP3_RECOMMEND_EXCLUDE_IDS = new Set([3405690, 3932890]); // EA SPORTS FC 26, Escape from Tarkov
-
 async function renderApp() {
   steamRecLoaded = false;
   window.__steamRecSelectionKey = selectedIds.slice().sort((a,b)=>a-b).join(',');
   const allRecs = getLocalRecommendations();
   const local = applyRecFilter(allRecs);
-  const heroLocal = local.filter(g => !TOP3_RECOMMEND_EXCLUDE_IDS.has(Number(g.id))).slice(0,3);
-  const moreLocal = [...heroLocal, ...local.filter(g => TOP3_RECOMMEND_EXCLUDE_IDS.has(Number(g.id)) || !heroLocal.some(h => h.id === g.id))].slice(3,30);
-  renderHeroGrid(heroLocal);
-  renderMoreGrid(moreLocal);
+  renderHeroGrid(local.slice(0,3));
+  renderMoreGrid(local.slice(3,30));
   renderRecFilterUI();
   const hs = document.getElementById('hero-grid')?.closest('.rec-hero');
   if (hs) {
@@ -4090,6 +4075,192 @@ function goToReselect() {
   renderObGrid();
 }
 
+</script>
+
+
+<script>
+(function(){
+  const style = document.createElement('style');
+  style.textContent = `
+  .compare-btn,#compare-bar{display:none !important}
+  .rec-summary-bar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+  .rec-summary-chip,.history-chip,.quality-chip,.insight-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.75rem;font-weight:700;color:var(--text-muted)}
+  .rec-summary-chip strong,.history-chip strong,.quality-chip strong,.insight-chip strong{color:var(--text)}
+  .rec-helper-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-bottom:14px}
+  .history-panel,.quality-panel,.rec-side-card,.modal-insight-panel,.modal-similar-panel{padding:14px;border:1px solid var(--border2);border-radius:18px;background:rgba(255,255,255,0.03)}
+  .side-card-title{font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:8px}
+  .side-card-sub,.modal-note{font-size:0.76rem;line-height:1.55;color:var(--text-muted);margin-bottom:10px}
+  .history-list,.quality-list,.similar-list{display:flex;flex-wrap:wrap;gap:8px}.history-chip,.similar-link{cursor:pointer}
+  .trust-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border-radius:999px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.22);font-size:0.68rem;font-weight:800;color:#86efac;margin-top:8px}
+  .trust-badge.medium{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.24);color:#fcd34d}.trust-badge.low{background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.22);color:#fca5a5}
+  .modal-insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.insight-title{font-size:0.72rem;font-weight:800;color:var(--text-muted);margin-bottom:8px}.insight-value{font-size:0.95rem;font-weight:800;color:var(--text)}
+  .insight-bar{height:8px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden;margin-top:8px}.insight-bar>span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg, rgba(0,229,255,0.75), rgba(124,58,237,0.85))}
+  .modal-section-title{font-size:0.74rem;font-weight:800;color:var(--text-muted);margin:14px 0 8px}.similar-link{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:12px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.74rem;color:var(--text)}
+  .hot-extra-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}.hot-meta-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.72rem;color:var(--text-muted);font-weight:700}
+  .search-hint{font-size:0.68rem;color:var(--text-muted);margin-top:8px}.rec-filter-row{row-gap:8px}
+  @media (max-width:768px){.rec-helper-grid,.modal-insight-grid{grid-template-columns:1fr}.modal{max-width:min(92vw,560px)!important;margin:auto!important;max-height:min(86vh,760px)!important;border-radius:24px!important}.modal-overlay{align-items:center!important;padding:16px!important}.nav-left{display:none!important}.nav-right{width:100%;justify-content:space-between;flex-wrap:wrap}.theme-toggle-group{width:auto!important;flex:0 0 auto}.modal-close{width:42px;height:42px}}
+  `;
+  document.head.appendChild(style);
+
+  const PREFS_KEY = 'nexus-play-prefs-v2';
+  const HISTORY_KEY = 'nexus-play-history-v1';
+  let viewHistory = [];
+  let userPrefs = { lastTab:'rec', searchAlias:true };
+  try { viewHistory = JSON.parse(localStorage.getItem(HISTORY_KEY)||'[]').slice(0,8); } catch(e) {}
+  try { userPrefs = { ...userPrefs, ...(JSON.parse(localStorage.getItem(PREFS_KEY)||'{}') || {}) }; } catch(e) {}
+  const TOP_PICKS_EXCLUDED = new Set(['EA SPORTS FC 26','Escape from Tarkov']);
+  const SEARCH_ALIASES = {
+    '타르코프':'escape from tarkov','tarkov':'escape from tarkov',
+    'ea fports':'ea sports', 'fc26':'ea sports fc 26', '피파':'ea sports fc',
+    '카스':'counter strike', '러스트':'rust', '배그':'pubg', '사펑':'cyberpunk 2077'
+  };
+
+  function savePrefs(){ try { localStorage.setItem(PREFS_KEY, JSON.stringify(userPrefs)); } catch(e) {} }
+  function saveHistory(){ try { localStorage.setItem(HISTORY_KEY, JSON.stringify(viewHistory.slice(0,8))); } catch(e) {} }
+  function normalizeSearchText(str=''){ return String(str||'').toLowerCase().replace(/[^a-z0-9가-힣ㄱ-ㅎ\s]/g,' ').replace(/\s+/g,' ').trim(); }
+  function aliasSearchTerms(q=''){
+    const norm = normalizeSearchText(q); const set = new Set([norm]);
+    Object.entries(SEARCH_ALIASES).forEach(([k,v])=>{ const nk=normalizeSearchText(k), nv=normalizeSearchText(v); if(norm.includes(nk)||nk.includes(norm)){ set.add(nv); set.add(nk);} if(norm.includes(nv)) set.add(nk); });
+    return [...set].filter(Boolean);
+  }
+  function getGameFeatureFlags(g){
+    const tags=((g?.tags)||[]).join(' ').toLowerCase();
+    return { multi:/멀티|협동|온라인|경쟁/.test(tags), single:/싱글|스토리|솔로/.test(tags), coop:/협동|co-op/.test(tags), openworld:/오픈월드|샌드박스|탐험/.test(tags), free:/무료/.test(tags) };
+  }
+  function buildAudienceText(g){ const f=getGameFeatureFlags(g); if(f.coop) return '협동 플레이 선호 유저'; if(f.openworld) return '자유도 높은 탐험형 유저'; if(f.multi) return '경쟁/멀티 중심 유저'; return '싱글 몰입형 유저'; }
+  function buildCautionText(g){ const tags=((g?.tags)||[]).join(' '); if(/도전적|소울즈라이크|하드코어/.test(tags)) return '진입장벽이 꽤 높은 편입니다.'; if(/멀티|경쟁/.test(tags)) return '혼자보단 함께할 때 만족도가 높습니다.'; if(/스토리|서사/.test(tags)) return '스토리 몰입을 위해 초반 템포가 느릴 수 있습니다.'; return '취향이 맞으면 오래 파기 좋은 타입입니다.'; }
+  function recommendationInsight(g){
+    const selected=(typeof GAMES_CLEAN!=='undefined'?GAMES_CLEAN:[]).filter(x => (typeof selectedIds!=='undefined'?selectedIds:[]).includes(x.id));
+    const myTags=new Set(selected.flatMap(x=>x.tags||[])); const myGenres=new Set(selected.map(x=>x.genre));
+    const matchedTags=(g.tags||[]).filter(t=>myTags.has(t));
+    const matchedGames=selected.filter(s=>s.genre===g.genre || (s.tags||[]).some(t=>matchedTags.includes(t)));
+    let score=45; if(myGenres.has(g.genre)) score+=22; score+=Math.min(24, matchedTags.length*8); score+=Math.max(0, ((g.rating||7)-7)*7); if((g.year||0)>=2023) score+=6; score=Math.max(20,Math.min(98,Math.round(score)));
+    return { score, level: score>=80?'high':score>=60?'medium':'low', matchedTags, matchedGames, audience:buildAudienceText(g), caution:buildCautionText(g) };
+  }
+  function validateGameQuality(g){ return !!(g && g.id && g.title && g.genre && !(window.isExcludedGame && isExcludedGame(g))); }
+  function pushViewHistory(id){ const n=Number(id); viewHistory=[n, ...viewHistory.filter(v=>Number(v)!==n)].slice(0,8); saveHistory(); renderRecentHistory(); }
+  function ensureEnhancementNodes(){
+    const recHero=document.querySelector('#tab-rec .rec-hero');
+    if(recHero && !document.getElementById('rec-summary-bar')){ const div=document.createElement('div'); div.id='rec-summary-bar'; div.className='rec-summary-bar'; const hero=recHero.querySelector('#hero-grid'); recHero.insertBefore(div, hero); }
+    const more=document.querySelector('#tab-rec .more-recs');
+    if(more && !document.getElementById('recent-history-list')){
+      const wrap=document.createElement('div'); wrap.className='rec-helper-grid'; wrap.innerHTML=`<div class="history-panel"><div class="side-card-title">최근 본 게임</div><div class="side-card-sub">최근 확인한 상세 페이지를 빠르게 다시 열 수 있습니다.</div><div id="recent-history-list" class="history-list"></div></div><div class="quality-panel"><div class="side-card-title">추천 품질 관리</div><div class="side-card-sub">링크/썸네일/태그 기준으로 자동 검증된 게임만 우선 노출합니다.</div><div id="quality-status-list" class="quality-list"></div></div>`;
+      const filterBar=document.getElementById('rec-filter-bar'); if(filterBar) more.insertBefore(wrap, filterBar.nextSibling);
+    }
+    const hotControls=document.querySelector('.hot-controls');
+    if(hotControls && hotControls.querySelectorAll('.hot-sort-btn').length < 3){
+      hotControls.insertAdjacentHTML('beforeend', `<button class="hot-sort-btn" onclick="setHotSort('average_2weeks')">📈 최근 관심도</button><button class="hot-sort-btn" onclick="setHotSort('positive')">👍 누적 평판</button>`);
+    }
+    const hotTab=document.querySelector('#tab-hot .hot-tab-content');
+    if(hotTab && !document.getElementById('hot-extra-meta')){ const meta=document.createElement('div'); meta.id='hot-extra-meta'; meta.className='hot-extra-meta'; const pills=hotTab.querySelector('#hot-genre-pills'); hotTab.insertBefore(meta, pills); }
+    const modalBody=document.querySelector('#modal .modal-body');
+    if(modalBody && !document.getElementById('modal-insight-chips')){
+      const desc=document.getElementById('modal-desc');
+      const box=document.createElement('div');
+      box.innerHTML=`<div class="modal-insight-panel"><div class="modal-section-title">추천 신뢰도</div><div id="modal-insight-chips" class="history-list"></div><div class="modal-insight-grid"><div class="rec-side-card"><div class="insight-title">추천 적합도</div><div class="insight-value" id="modal-trust-score">-</div><div class="insight-bar"><span id="modal-trust-bar" style="width:0%"></span></div></div><div class="rec-side-card"><div class="insight-title">이런 유저에게 추천</div><div class="insight-value" id="modal-audience">-</div></div></div><div class="modal-note" id="modal-note"></div></div><div class="modal-similar-panel"><div class="modal-section-title">비슷한 게임</div><div id="modal-similar-list" class="similar-list"></div></div>`;
+      desc.insertAdjacentElement('afterend', box);
+    }
+    document.querySelectorAll('.compare-btn').forEach(el=>el.remove());
+    const gs=document.getElementById('genre-search-wrap'); if(gs && !gs.querySelector('.search-hint')) gs.insertAdjacentHTML('beforeend','<div class="search-hint">오타, 한글/영문, 별칭 검색 지원</div>');
+    const os=document.getElementById('ob-search-wrap'); if(os && !os.querySelector('.search-hint')) os.insertAdjacentHTML('beforeend','<div class="search-hint">오타, 한글/영문, 별칭 검색 지원</div>');
+  }
+  function renderRecentHistory(){
+    const el=document.getElementById('recent-history-list'); if(!el) return;
+    if(!viewHistory.length){ el.innerHTML='<span class="history-chip">아직 본 게임이 없습니다</span>'; return; }
+    el.innerHTML=viewHistory.map(id=>{ const g=(typeof getGameById==='function' && getGameById(id)); return g?`<button class="history-chip" onclick="openModal(${g.id})"><strong>${g.title}</strong></button>`:''; }).join('');
+  }
+  function renderQualityStatus(){
+    const el=document.getElementById('quality-status-list'); if(!el || typeof GAMES_CLEAN==='undefined') return;
+    const validated=(typeof GAMES_CLEAN!=='undefined'?GAMES_CLEAN:[]).filter(validateGameQuality).length; const total=(typeof GAMES_CLEAN!=='undefined'?GAMES_CLEAN:[]).length; const selected=(typeof selectedIds!=='undefined'?selectedIds:[]).length;
+    el.innerHTML=`<span class="quality-chip">검증 통과 <strong>${validated}</strong>/<strong>${total}</strong></span><span class="quality-chip">선택 기반 <strong>${selected}</strong>개 분석</span><span class="quality-chip">문제 게임 <strong>${(window.EXCLUDED_APPIDS?.size||0)+(window.EXCLUDED_TITLES?.size||0)}</strong>개 차단</span>`;
+  }
+  function renderRecSummary(games){
+    const el=document.getElementById('rec-summary-bar'); if(!el) return;
+    const selected=(typeof GAMES_CLEAN!=='undefined'?GAMES_CLEAN:[]).filter(g => (typeof selectedIds!=='undefined'?selectedIds:[]).includes(g.id));
+    const genres=[...new Set(selected.map(g=>g.genre))].slice(0,3).join(' · ') || '취향 분석';
+    const avg=games.length ? Math.round(games.slice(0,8).reduce((a,g)=>a+recommendationInsight(g).score,0)/Math.min(8,games.length)) : 0;
+    el.innerHTML=`<span class="rec-summary-chip">추천 신뢰도 <strong>${avg}%</strong></span><span class="rec-summary-chip">핵심 취향 <strong>${genres}</strong></span><span class="rec-summary-chip">결과 수 <strong>${games.length}</strong>개</span>`;
+  }
+  function renderModalInsights(g){
+    const insight=recommendationInsight(g); const chips=document.getElementById('modal-insight-chips'); const bar=document.getElementById('modal-trust-bar'); const score=document.getElementById('modal-trust-score'); const aud=document.getElementById('modal-audience'); const note=document.getElementById('modal-note'); const similar=document.getElementById('modal-similar-list');
+    if(chips){ const arr=[`<span class="insight-chip"><strong>${insight.score}%</strong> 매칭</span>`]; if(insight.matchedTags.length) arr.push(`<span class="insight-chip">태그 일치 <strong>${insight.matchedTags.slice(0,3).join(', ')}</strong></span>`); if(insight.matchedGames.length) arr.push(`<span class="insight-chip">근거 게임 <strong>${insight.matchedGames.slice(0,2).map(x=>x.title).join(', ')}</strong></span>`); chips.innerHTML=arr.join(''); }
+    if(bar) bar.style.width=insight.score+'%'; if(score) score.textContent=insight.score+'%'; if(aud) aud.textContent=insight.audience; if(note) note.textContent=insight.caution;
+    const recs=(window.getLocalRecommendations?getLocalRecommendations():[]).filter(x=>x.id!==g.id && (x.genre===g.genre || (x.tags||[]).some(t=>(g.tags||[]).includes(t)))).slice(0,3);
+    if(similar) similar.innerHTML=recs.map(x=>`<button class="similar-link" onclick="openModal(${x.id})">${x.title}</button>`).join('') || '<span class="history-chip">비슷한 게임 데이터 준비 중</span>';
+  }
+
+  const originalFilterBySearch = window.filterBySearch;
+  window.filterBySearch = function(g,q){
+    if(!q) return true;
+    const hay=normalizeSearchText([g.title,g.genre,g.dev,...(g.tags||[])].join(' '));
+    const terms=aliasSearchTerms(q);
+    if(terms.some(term => hay.includes(term))) return true;
+    if(/^[ㄱ-ㅎ]+$/.test(String(q||'')) && window.getChosung) return getChosung(g.title).includes(q);
+    return originalFilterBySearch ? originalFilterBySearch(g,q) : false;
+  };
+
+  const originalGetRecommendReason = window.getRecommendReason;
+  window.getRecommendReason = function(g){
+    const insight=recommendationInsight(g); const reasons=[];
+    if(insight.matchedGames.length) reasons.push(`${insight.matchedGames[0].title}와 취향 연결`);
+    if(insight.matchedTags.length) reasons.push(`${insight.matchedTags.slice(0,2).join(', ')} 태그 일치`);
+    if((g.rating||0)>=9) reasons.push('고평점 검증'); if((g.year||0)>=2024) reasons.push('최신작');
+    return reasons.length ? reasons.slice(0,2).join(' · ') : (originalGetRecommendReason ? originalGetRecommendReason(g) : null);
+  };
+
+  window.setRecFilter = function(key,val){
+    _recFilter[key]=val; savePrefs(); if(typeof renderRecFilterUI==='function') renderRecFilterUI(); if(typeof renderApp==='function') renderApp();
+  };
+  window.resetRecFilter = function(){ _recFilter={ minRating:0, maxYear:9999, minYear:0, mode:'전체', price:'전체', feature:'전체', played:false }; if(typeof renderRecFilterUI==='function') renderRecFilterUI(); if(typeof renderApp==='function') renderApp(); };
+  window.applyRecFilter = function(games){
+    const f=_recFilter||{};
+    return (games||[]).filter(g => {
+      const flags=getGameFeatureFlags(g);
+      if(!validateGameQuality(g)) return false;
+      if(f.minRating && (g.rating||0)<f.minRating) return false;
+      if(f.minYear && (g.year||0)<f.minYear) return false;
+      if(f.maxYear && f.maxYear<9999 && (g.year||0)>f.maxYear) return false;
+      if(f.mode==='멀티' && !flags.multi) return false;
+      if(f.mode==='싱글' && !flags.single) return false;
+      if(f.feature==='협동' && !flags.coop) return false;
+      if(f.feature==='오픈월드' && !flags.openworld) return false;
+      if(f.feature==='최신작' && (g.year||0)<2023) return false;
+      if(f.played && viewHistory.includes(Number(g.id))) return false;
+      return true;
+    });
+  };
+  window.renderRecFilterUI = function(){
+    const el=document.getElementById('rec-filter-bar'); if(!el) return; const f=_recFilter||{};
+    const active = f.minRating>0 || f.mode!=='전체' || f.feature && f.feature!=='전체' || f.played;
+    el.innerHTML=`<div class="rec-filter-row"><span class="rec-filter-label">필터</span><button class="rec-filter-btn ${f.minRating===0?'active':''}" onclick="setRecFilter('minRating',0)">전체 평점</button><button class="rec-filter-btn ${f.minRating===8?'active':''}" onclick="setRecFilter('minRating',8)">8점+</button><button class="rec-filter-btn ${f.minRating===9?'active':''}" onclick="setRecFilter('minRating',9)">9점+</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${f.mode==='전체'?'active':''}" onclick="setRecFilter('mode','전체')">전체</button><button class="rec-filter-btn ${f.mode==='멀티'?'active':''}" onclick="setRecFilter('mode','멀티')">멀티</button><button class="rec-filter-btn ${f.mode==='싱글'?'active':''}" onclick="setRecFilter('mode','싱글')">싱글</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${f.feature==='전체'||!f.feature?'active':''}" onclick="setRecFilter('feature','전체')">전체 성향</button><button class="rec-filter-btn ${f.feature==='협동'?'active':''}" onclick="setRecFilter('feature','협동')">협동</button><button class="rec-filter-btn ${f.feature==='오픈월드'?'active':''}" onclick="setRecFilter('feature','오픈월드')">오픈월드</button><button class="rec-filter-btn ${f.feature==='최신작'?'active':''}" onclick="setRecFilter('feature','최신작')">최신작</button><button class="rec-filter-btn ${f.played?'active':''}" onclick="setRecFilter('played', ${!f.played})">본 게임 제외</button>${active?`<button class="rec-filter-reset" onclick="resetRecFilter()">✕ 초기화</button>`:''}</div>`;
+  };
+
+  const originalMakeGameCard = window.makeGameCard;
+  window.makeGameCard = function(g,delay){
+    const reason=window.getRecommendReason ? getRecommendReason(g) : null; const isBm=window.isBookmarked ? isBookmarked(g.id) : false; const insight=recommendationInsight(g); const cls=insight.level==='high'?'':insight.level;
+    return `<div class="game-card" onclick="openModal(${g.id})" style="animation-delay:${delay||0}s"><img class="game-card-img" src="${imgUrl(g)}" alt="${g.title}" loading="lazy" onerror="handleSteamImgError(this, ${g.id}, ['${imgUrlAlt(g)}'])"><div class="game-card-body"><div class="game-card-title">${g.title}</div><div class="game-card-meta"><span class="game-card-genre ${genreClass(g.genre)}">${g.genre}</span><div class="game-card-rating">★ ${g.rating||'-'}</div></div><div class="game-card-tags">${(g.tags||[]).slice(0,4).map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div><div class="trust-badge ${cls}">신뢰도 ${insight.score}%</div>${reason ? `<div class="rec-reason">💡 ${reason}</div>` : ''}</div><div class="game-card-footer"><div class="game-card-dev">${g.dev}</div><div style="display:flex;gap:5px;align-items:center"><button class="bookmark-btn ${isBm?'active':''}" data-id="${g.id}" onclick="event.stopPropagation();toggleBookmark(${g.id})" title="${isBm?'북마크 해제':'북마크 추가'}">${isBm?'★':'☆'}</button></div></div></div>`;
+  };
+
+  const originalRenderHeroGrid = window.renderHeroGrid;
+  window.renderHeroGrid = function(games){ return originalRenderHeroGrid((games||[]).filter(g => !TOP_PICKS_EXCLUDED.has(g.title))); };
+
+  const originalFillAndShowModal = window.fillAndShowModal;
+  window.fillAndShowModal = function(g,thumbId){ originalFillAndShowModal(g,thumbId); renderModalInsights(g); pushViewHistory(g.id || thumbId); document.querySelectorAll('.compare-btn').forEach(el=>el.remove()); };
+
+  window.setHotSort = function(by){ hotSortBy = by; document.querySelectorAll('.hot-sort-btn').forEach(btn => btn.classList.toggle('active', (btn.getAttribute('onclick')||'').includes(`'${by}'`))); if(typeof renderHotGrid==='function') renderHotGrid(); };
+  const originalRenderHotGrid = window.renderHotGrid;
+  window.renderHotGrid = function(){ originalRenderHotGrid(); const meta=document.getElementById('hot-extra-meta'); if(meta){ const label=hotSortBy==='ccu'?'현재 동시 접속':hotSortBy==='average_2weeks'?'최근 2주 평균 플레이':'누적 긍정 반응'; const ts=_hotFetchedAt ? new Date(_hotFetchedAt).toLocaleString('ko-KR') : '업데이트 대기'; meta.innerHTML=`<span class="hot-meta-pill">기준 <strong>${label}</strong></span><span class="hot-meta-pill">마지막 갱신 <strong>${ts}</strong></span><span class="hot-meta-pill">소스 <strong>${_hotSource || 'local'}</strong></span>`; } };
+
+  const originalRenderApp = window.renderApp;
+  window.renderApp = async function(){ ensureEnhancementNodes(); await originalRenderApp(); const all=(typeof getLocalRecommendations==='function'?getLocalRecommendations():[]).filter(validateGameQuality); const filtered=(typeof applyRecFilter==='function'?applyRecFilter(all):all); renderRecSummary(filtered); renderRecentHistory(); renderQualityStatus(); if(userPrefs.lastTab && userPrefs.lastTab !== 'rec' && typeof originalShowTab==='function'){ originalShowTab(userPrefs.lastTab); } };
+
+  const originalShowTab = window.showTab;
+  window.showTab = function(tab){ userPrefs.lastTab = tab; savePrefs(); return originalShowTab(tab); };
+
+  const originalInit = window.initTheme;
+  document.addEventListener('DOMContentLoaded', function(){ ensureEnhancementNodes(); renderRecentHistory(); renderQualityStatus(); setTimeout(()=>{ if(typeof _recFilter!=='undefined' && !('feature' in _recFilter)) Object.assign(_recFilter,{feature:'전체',played:false,price:'전체'}); if(window._userPrefsLastApplied) return; if(userPrefs.lastTab && typeof showTab==='function' && document.getElementById('app')?.classList.contains('active')) showTab(userPrefs.lastTab); }, 50); });
+  ensureEnhancementNodes();
+})();
 </script>
 
 </body>
