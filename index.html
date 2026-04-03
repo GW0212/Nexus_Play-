@@ -848,6 +848,8 @@ body {
 .modal-close:hover { background:rgba(239,68,68,0.2); border-color:var(--danger); color:var(--danger); }
 
 .modal-body { padding:18px 20px 20px; }
+.modal-actions { padding-bottom: 2px; }
+.btn-steam { width:100%; min-height:48px; box-sizing:border-box; }
 
 .modal-genre {
   display:inline-block; padding:3px 10px;
@@ -1115,6 +1117,8 @@ body {
   .modal-meta { flex-wrap: wrap; gap: 8px; }
   .modal-title { font-size: 1.35rem; line-height: 1.15; word-break: keep-all; }
   .modal-desc { word-break: keep-all; }
+  .modal-body { padding: 18px 16px calc(110px + env(safe-area-inset-bottom, 0px)); }
+  .modal { max-height: calc(100dvh - 12px); }
   .modal-steam-data,
   .modal-steam-data.has-ccu { grid-template-columns: 1fr; }
   .modal-steam-data.has-ccu #stat-ccu-wrap { grid-column: auto; }
@@ -1127,6 +1131,8 @@ body {
   .modal-action-row { flex-wrap: wrap; }
   .modal-action-row > * { flex: 1 1 100%; }
   .modal-action-row .bookmark-btn { flex: 0 0 48px; }
+  .modal-actions { position: sticky; bottom: 0; background: linear-gradient(to top, var(--surface) 78%, rgba(7,7,15,0)); padding-top: 10px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); margin-top: 8px; }
+  .btn-steam { min-height: 52px; border-radius: 12px; }
 }
 
 .hot-grid {
@@ -4118,7 +4124,7 @@ function goToReselect() {
   .modal-section-title{font-size:0.74rem;font-weight:800;color:var(--text-muted);margin:14px 0 8px}.similar-link{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:12px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.74rem;color:var(--text)}
   .hot-extra-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}.hot-meta-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.72rem;color:var(--text-muted);font-weight:700}.modal-insight-panel{position:relative;overflow:hidden}.modal-insight-panel .history-list{margin-bottom:12px}.modal-insight-grid{align-items:stretch}.modal-note{display:block;clear:both;margin:10px 0 0}.modal-tags{position:relative;z-index:0;margin-top:14px;clear:both}.modal-insight-panel,.modal-tags,.modal-steam-data{isolation:isolate}
   .search-hint{font-size:0.68rem;color:var(--text-muted);margin-top:8px}.rec-filter-row{row-gap:8px}
-  @media (max-width:768px){.rec-helper-grid,.modal-insight-grid{grid-template-columns:1fr}.modal{max-width:min(92vw,560px)!important;margin:auto!important;max-height:min(86vh,760px)!important;border-radius:24px!important}.modal-overlay{align-items:center!important;padding:16px!important}.nav-left{display:none!important}.nav-right{width:100%;justify-content:center;flex-wrap:wrap}.theme-toggle-group{width:100%!important;max-width:360px!important;flex:0 0 auto;margin:0 auto!important;justify-content:center!important}.modal-close{width:42px;height:42px}.hot-extra-meta{justify-content:center;text-align:center}.hot-extra-meta .hot-meta-pill{justify-content:center}.modal-insight-panel{padding-bottom:16px}.modal-note{margin-bottom:14px}.modal-tags{margin-bottom:14px}}
+  @media (max-width:768px){.rec-helper-grid,.modal-insight-grid{grid-template-columns:1fr}.modal{max-width:min(92vw,560px)!important;margin:auto!important;max-height:min(86vh,760px)!important;border-radius:24px!important}.modal-overlay{align-items:center!important;padding:16px!important}.nav-left{display:none!important}.nav-right{width:100%;justify-content:center;flex-wrap:wrap}.theme-toggle-group{width:100%!important;max-width:360px!important;flex:0 0 auto;margin:0 auto!important;justify-content:center!important}.modal-close{width:42px;height:42px}.hot-extra-meta{justify-content:center;text-align:center}.hot-extra-meta .hot-meta-pill{justify-content:center}.modal-insight-panel{padding-bottom:16px}.modal-note{margin-bottom:14px}.modal-tags{margin-bottom:14px}@media (max-width:600px){.modal-body{padding:18px 16px calc(110px + env(safe-area-inset-bottom, 0px))!important}.modal-actions{position:sticky;bottom:0;background:linear-gradient(to top,var(--surface) 78%,rgba(7,7,15,0));padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px))!important;margin-top:8px}.btn-steam{min-height:52px;width:100%;box-sizing:border-box;border-radius:12px}.modal{max-height:calc(100dvh - 12px)!important}}}
   `;
   document.head.appendChild(style);
 
@@ -4277,13 +4283,13 @@ function goToReselect() {
   window.renderHotGrid = function(){ originalRenderHotGrid(); const meta=document.getElementById('hot-extra-meta'); if(meta){ const label=hotSortBy==='ccu'?'현재 동시 접속':hotSortBy==='average_2weeks'?'최근 2주 평균 플레이':'누적 긍정 반응'; const ts=_hotFetchedAt ? new Date(_hotFetchedAt).toLocaleString('ko-KR') : '업데이트 대기'; meta.innerHTML=`<span class="hot-meta-pill">기준 : <strong>${label}</strong></span><span class="hot-meta-pill">마지막 갱신 : <strong>${ts}</strong></span>`; } };
 
   const originalRenderApp = window.renderApp;
-  window.renderApp = async function(){ ensureEnhancementNodes(); await originalRenderApp(); const heroEl=document.getElementById('hero-grid'); if(heroEl){ [...heroEl.querySelectorAll('.hero-card')].forEach(card=>{ const title=(card.querySelector('.hero-title')?.textContent||'').trim(); if(TOP_PICKS_EXCLUDED.has(title)) card.remove(); }); [...heroEl.querySelectorAll('.hero-card')].forEach((card,idx)=>{ const rank=card.querySelector('.hero-rank'); if(rank) rank.textContent=String(idx+1); }); } const all=(typeof getLocalRecommendations==='function'?getLocalRecommendations():[]).filter(validateGameQuality); const filtered=(typeof applyRecFilter==='function'?applyRecFilter(all):all); renderRecSummary(filtered); renderRecentHistory(); renderQualityStatus(); if(userPrefs.lastTab && userPrefs.lastTab !== 'rec' && typeof originalShowTab==='function'){ originalShowTab(userPrefs.lastTab); } };
+  window.renderApp = async function(){ ensureEnhancementNodes(); await originalRenderApp(); const heroEl=document.getElementById('hero-grid'); if(heroEl){ [...heroEl.querySelectorAll('.hero-card')].forEach(card=>{ const title=(card.querySelector('.hero-title')?.textContent||'').trim(); if(TOP_PICKS_EXCLUDED.has(title)) card.remove(); }); [...heroEl.querySelectorAll('.hero-card')].forEach((card,idx)=>{ const rank=card.querySelector('.hero-rank'); if(rank) rank.textContent=String(idx+1); }); } const all=(typeof getLocalRecommendations==='function'?getLocalRecommendations():[]).filter(validateGameQuality); const filtered=(typeof applyRecFilter==='function'?applyRecFilter(all):all); renderRecSummary(filtered); renderRecentHistory(); renderQualityStatus(); userPrefs.lastTab = 'rec'; savePrefs(); };
 
   const originalShowTab = window.showTab;
   window.showTab = function(tab){ userPrefs.lastTab = tab; savePrefs(); return originalShowTab(tab); };
 
   const originalInit = window.initTheme;
-  document.addEventListener('DOMContentLoaded', function(){ ensureEnhancementNodes(); renderRecentHistory(); renderQualityStatus(); setTimeout(()=>{ if(typeof _recFilter!=='undefined' && !('feature' in _recFilter)) Object.assign(_recFilter,{feature:'전체',played:false,price:'전체'}); if(window._userPrefsLastApplied) return; if(userPrefs.lastTab && typeof showTab==='function' && document.getElementById('app')?.classList.contains('active')) showTab(userPrefs.lastTab); }, 50); });
+  document.addEventListener('DOMContentLoaded', function(){ ensureEnhancementNodes(); renderRecentHistory(); renderQualityStatus(); setTimeout(()=>{ if(typeof _recFilter!=='undefined' && !('feature' in _recFilter)) Object.assign(_recFilter,{feature:'전체',played:false,price:'전체'}); if(window._userPrefsLastApplied) return; if(document.getElementById('app')?.classList.contains('active') && typeof showTab==='function'){ userPrefs.lastTab = 'rec'; savePrefs(); showTab('rec'); } }, 50); });
   ensureEnhancementNodes();
 })();
 </script>
