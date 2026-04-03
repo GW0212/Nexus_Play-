@@ -3171,6 +3171,7 @@ function getSelectionKey() {
 }
 
 function getLocalRecommendations() {
+  const TOP3_EXCLUDED_TITLES = new Set(['EA SPORTS FC 26','Escape from Tarkov']);
   const selected = GAMES_CLEAN.filter(g => selectedIds.includes(g.id));
   const tagW = {}, genreW = {};
   selected.forEach(g => {
@@ -3180,6 +3181,7 @@ function getLocalRecommendations() {
   const currentYear = new Date().getFullYear();
   return GAMES_CLEAN
     .filter(g => !selectedIds.includes(g.id))
+    .filter(g => !TOP3_EXCLUDED_TITLES.has(String(g.title||'').trim()))
     .filter(g => isRecommendableModernGame(g))
     .map(g => {
       let s = (genreW[g.genre]||0)*5 + 2;
@@ -4247,7 +4249,7 @@ function goToReselect() {
   };
 
   const originalRenderHeroGrid = window.renderHeroGrid;
-  window.renderHeroGrid = function(games){ return originalRenderHeroGrid((games||[]).filter(g => !TOP_PICKS_EXCLUDED.has(g.title))); };
+  window.renderHeroGrid = function(games){ return originalRenderHeroGrid((games||[]).filter(g => !TOP_PICKS_EXCLUDED.has(String(g?.title||g?.name||'').trim()))); };
 
   const originalFillAndShowModal = window.fillAndShowModal;
   window.fillAndShowModal = function(g,thumbId){ originalFillAndShowModal(g,thumbId); renderModalInsights(g); pushViewHistory(g.id || thumbId); document.querySelectorAll('.compare-btn').forEach(el=>el.remove()); };
@@ -4257,7 +4259,7 @@ function goToReselect() {
   window.renderHotGrid = function(){ originalRenderHotGrid(); const meta=document.getElementById('hot-extra-meta'); if(meta){ const label=hotSortBy==='ccu'?'현재 동시 접속':hotSortBy==='average_2weeks'?'최근 2주 평균 플레이':'누적 긍정 반응'; const ts=_hotFetchedAt ? new Date(_hotFetchedAt).toLocaleString('ko-KR') : '업데이트 대기'; meta.innerHTML=`<span class="hot-meta-pill">기준 <strong>${label}</strong></span><span class="hot-meta-pill">마지막 갱신 <strong>${ts}</strong></span><span class="hot-meta-pill">소스 <strong>${_hotSource || 'local'}</strong></span>`; } };
 
   const originalRenderApp = window.renderApp;
-  window.renderApp = async function(){ ensureEnhancementNodes(); await originalRenderApp(); const all=(typeof getLocalRecommendations==='function'?getLocalRecommendations():[]).filter(validateGameQuality); const filtered=(typeof applyRecFilter==='function'?applyRecFilter(all):all); renderRecSummary(filtered); renderRecentHistory(); renderQualityStatus(); if(userPrefs.lastTab && userPrefs.lastTab !== 'rec' && typeof originalShowTab==='function'){ originalShowTab(userPrefs.lastTab); } };
+  window.renderApp = async function(){ ensureEnhancementNodes(); await originalRenderApp(); const heroEl=document.getElementById('hero-grid'); if(heroEl){ [...heroEl.querySelectorAll('.hero-card')].forEach(card=>{ const title=(card.querySelector('.hero-title')?.textContent||'').trim(); if(TOP_PICKS_EXCLUDED.has(title)) card.remove(); }); [...heroEl.querySelectorAll('.hero-card')].forEach((card,idx)=>{ const rank=card.querySelector('.hero-rank'); if(rank) rank.textContent=String(idx+1); }); } const all=(typeof getLocalRecommendations==='function'?getLocalRecommendations():[]).filter(validateGameQuality); const filtered=(typeof applyRecFilter==='function'?applyRecFilter(all):all); renderRecSummary(filtered); renderRecentHistory(); renderQualityStatus(); if(userPrefs.lastTab && userPrefs.lastTab !== 'rec' && typeof originalShowTab==='function'){ originalShowTab(userPrefs.lastTab); } };
 
   const originalShowTab = window.showTab;
   window.showTab = function(tab){ userPrefs.lastTab = tab; savePrefs(); return originalShowTab(tab); };
