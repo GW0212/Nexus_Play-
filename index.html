@@ -886,7 +886,7 @@ body {
 .modal-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:14px; }
 
 .modal-steam-data {
-  display:grid; grid-template-columns:1fr 1fr 1fr;
+  display:grid; grid-template-columns:1fr 1fr;
   gap:8px; margin-bottom:14px;
 }
 .modal-steam-data.has-ccu { grid-template-columns:1fr 1fr 1fr; }
@@ -1112,12 +1112,21 @@ body {
 .modal-action-row { display: flex; gap: 8px; margin-bottom: 10px; }
 
 @media (max-width:600px) {
-  .modal-steam-data.has-ccu { grid-template-columns: 1fr 1fr; }
-  .modal-steam-data.has-ccu #stat-ccu-wrap { grid-column: 1 / -1; }
+  .modal-meta { flex-wrap: wrap; gap: 8px; }
+  .modal-title { font-size: 1.35rem; line-height: 1.15; word-break: keep-all; }
+  .modal-desc { word-break: keep-all; }
+  .modal-steam-data,
+  .modal-steam-data.has-ccu { grid-template-columns: 1fr; }
+  .modal-steam-data.has-ccu #stat-ccu-wrap { grid-column: auto; }
+  .modal-stat { min-width: 0; }
+  .modal-stat-label, .modal-stat-value { word-break: keep-all; }
   .compare-bar-inner { gap: 7px; }
-  .rec-filter-row { gap: 4px; }
+  .rec-filter-bar { overflow: hidden; }
+  .rec-filter-row { gap: 4px; row-gap: 8px; align-items: center; }
   .rec-filter-btn { font-size: 0.68rem; padding: 4px 7px; }
   .modal-action-row { flex-wrap: wrap; }
+  .modal-action-row > * { flex: 1 1 100%; }
+  .modal-action-row .bookmark-btn { flex: 0 0 48px; }
 }
 
 .hot-grid {
@@ -1343,10 +1352,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
   .nav-logo{font-size:1.05rem;justify-content:center;text-align:center;width:100%}
   .nav-tabs{gap:4px;justify-content:stretch}
   .nav-tab{font-size:0.72rem;padding:9px 6px;flex:1;text-align:center}
-  .nav-right,.nav-left{display:flex;flex-wrap:wrap;gap:6px;width:100%;justify-content:center}
+  .nav-right,.nav-left{display:flex;flex-wrap:wrap;gap:6px;width:100%;justify-content:center;align-items:center}
   .reset-btn{width:100%;justify-content:center;min-height:44px}
-  .theme-toggle-group{width:100%;justify-content:center}
-  .theme-btn{flex:1;text-align:center;min-height:36px}
+  .theme-toggle-group{width:100%;max-width:360px;justify-content:center;margin:0 auto}
+  .theme-btn{flex:1 1 0;text-align:center;min-height:36px;display:flex;align-items:center;justify-content:center}
   .steam-badge{display:none}
   /* 타이틀 */
   .section-title{font-size:1.8rem;line-height:1.1}
@@ -1553,7 +1562,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
         </div>
         <div class="modal-stat" id="stat-ccu-wrap">
           <div class="modal-stat-label"><span class="steam-stat-dot" style="width:6px;height:6px;border-radius:50%;background:var(--success);display:inline-block;margin-right:4px;animation:glowPulse 2s ease-in-out infinite"></span>지금 플레이 중</div>
-          <div class="modal-stat-value loading" id="stat-ccu"></div>
+          <div class="modal-stat-value" id="stat-ccu"></div>
         </div>
       </div>
       <div class="modal-action-row">
@@ -3688,11 +3697,12 @@ function fillAndShowModal(g, thumbId) {
     `<span class="tag-pill" style="font-size:0.72rem;padding:4px 10px">${t}</span>`).join('');
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
-  const sc = document.getElementById('stat-ccu');
+  const ccuWrap = document.getElementById('stat-ccu-wrap');
   if(so){ so.className='modal-stat-value loading'; so.textContent=''; }
   if(sp){ sp.className='modal-stat-value loading'; sp.textContent=''; }
-  if(sc){ sc.className='modal-stat-value loading'; sc.textContent=''; }
-  document.getElementById('modal-steam-data')?.classList.add('has-ccu');
+  if(ccuWrap){ ccuWrap.style.display=''; document.getElementById('modal-steam-data')?.classList.add('has-ccu'); }
+  const ccuElInit = document.getElementById('stat-ccu');
+  if(ccuElInit){ ccuElInit.className='modal-stat-value loading'; ccuElInit.textContent=''; }
   // 북마크/비교 버튼 상태 업데이트
   const bmBtn = document.getElementById('modal-bookmark-btn');
   const cmpBtn = document.getElementById('modal-compare-btn');
@@ -3723,7 +3733,6 @@ async function fetchSteamData(appid, game = null) {
   const targetAppid = Number(getThumbAppId(game || appid, game?.title || ''));
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
-  const sc = document.getElementById('stat-ccu');
 
   // 모달 식별자 — 모달이 바뀌면 이전 결과 무시
   const modalKey = targetAppid;
@@ -3735,17 +3744,15 @@ async function fetchSteamData(appid, game = null) {
     return Number(document.getElementById('modal-steam-link')?.href?.split('/').pop() || 0);
   }
 
-  function showStats(owners, playtime, ccu) {
+  function showStats(owners, playtime) {
     if (!isModalStillOpen() || currentModalId() !== modalKey) return;
-    if (so) { so.className = 'modal-stat-value'; so.textContent = owners ? formatOwnersValue(owners) : '데이터 없음'; }
-    if (sp) { sp.className = 'modal-stat-value'; sp.textContent = playtime ? formatPlaytimeMinutes(playtime) : '데이터 없음'; }
-    if (sc) { sc.className = 'modal-stat-value'; sc.textContent = ccu ? `${formatCCU(ccu)}명` : '데이터 없음'; }
+    if (so) { so.className = 'modal-stat-value'; so.textContent = formatOwnersValue(owners); }
+    if (sp) { sp.className = 'modal-stat-value'; sp.textContent = formatPlaytimeMinutes(playtime); }
   }
   function showEmpty() {
     if (!isModalStillOpen() || currentModalId() !== modalKey) return;
     if (so) { so.className = 'modal-stat-value'; so.textContent = '데이터 없음'; }
     if (sp) { sp.className = 'modal-stat-value'; sp.textContent = '데이터 없음'; }
-    if (sc) { sc.className = 'modal-stat-value'; sc.textContent = '데이터 없음'; }
   }
 
   const localGame = getGameById(targetAppid) || (game?.id ? getGameById(Number(game.id)) : null);
@@ -3769,13 +3776,31 @@ async function fetchSteamData(appid, game = null) {
     const ccu     = apiData?.ccu             || localData?.ccu             || localGame?.ccu             || 0;
     const playtime = avgF || avg2w;
 
-    if (owners || playtime || ccu) {
-      showStats(owners, playtime, ccu);
+    if (owners || playtime) {
+      showStats(owners, playtime);
     } else {
       showEmpty();
     }
+
+    // CCU 표시 - 항상 영역 유지, 값 없으면 데이터 없음
+    const ccuWrap = document.getElementById('stat-ccu-wrap');
+    const ccuEl   = document.getElementById('stat-ccu');
+    if (ccuWrap && ccuEl) {
+      ccuWrap.style.display = '';
+      document.getElementById('modal-steam-data')?.classList.add('has-ccu');
+      ccuEl.className = 'modal-stat-value';
+      ccuEl.textContent = ccu > 0 ? (formatCCU(ccu) + '명') : '데이터 없음';
+    }
   } catch {
     showEmpty();
+    const ccuWrap = document.getElementById('stat-ccu-wrap');
+    const ccuEl = document.getElementById('stat-ccu');
+    if (ccuWrap && ccuEl) {
+      ccuWrap.style.display = '';
+      document.getElementById('modal-steam-data')?.classList.add('has-ccu');
+      ccuEl.className = 'modal-stat-value';
+      ccuEl.textContent = '데이터 없음';
+    }
   }
 }
 
@@ -4093,7 +4118,7 @@ function goToReselect() {
   .modal-section-title{font-size:0.74rem;font-weight:800;color:var(--text-muted);margin:14px 0 8px}.similar-link{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:12px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.74rem;color:var(--text)}
   .hot-extra-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}.hot-meta-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,0.04);font-size:0.72rem;color:var(--text-muted);font-weight:700}
   .search-hint{font-size:0.68rem;color:var(--text-muted);margin-top:8px}.rec-filter-row{row-gap:8px}
-  @media (max-width:768px){.rec-helper-grid,.modal-insight-grid{grid-template-columns:1fr}.modal{max-width:min(92vw,560px)!important;margin:auto!important;max-height:min(86vh,760px)!important;border-radius:24px!important}.modal-overlay{align-items:center!important;padding:16px!important}.nav-left{display:none!important}.nav-right{width:100%;justify-content:space-between;flex-wrap:wrap}.theme-toggle-group{width:auto!important;flex:0 0 auto}.modal-close{width:42px;height:42px}}
+  @media (max-width:768px){.rec-helper-grid,.modal-insight-grid{grid-template-columns:1fr}.modal{max-width:min(92vw,560px)!important;margin:auto!important;max-height:min(86vh,760px)!important;border-radius:24px!important}.modal-overlay{align-items:center!important;padding:16px!important}.nav-left{display:none!important}.nav-right{width:100%;justify-content:center;flex-wrap:wrap}.theme-toggle-group{width:100%!important;max-width:360px!important;flex:0 0 auto;margin:0 auto!important;justify-content:center!important}.modal-close{width:42px;height:42px}}
   `;
   document.head.appendChild(style);
 
@@ -4230,8 +4255,8 @@ function goToReselect() {
   };
   window.renderRecFilterUI = function(){
     const el=document.getElementById('rec-filter-bar'); if(!el) return; const f=_recFilter||{};
-    const active = f.minRating>0 || f.mode!=='전체' || f.feature && f.feature!=='전체' || f.played;
-    el.innerHTML=`<div class="rec-filter-row"><span class="rec-filter-label">필터</span><button class="rec-filter-btn ${f.minRating===0?'active':''}" onclick="setRecFilter('minRating',0)">전체 평점</button><button class="rec-filter-btn ${f.minRating===8?'active':''}" onclick="setRecFilter('minRating',8)">8점+</button><button class="rec-filter-btn ${f.minRating===9?'active':''}" onclick="setRecFilter('minRating',9)">9점+</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${f.mode==='전체'?'active':''}" onclick="setRecFilter('mode','전체')">전체</button><button class="rec-filter-btn ${f.mode==='멀티'?'active':''}" onclick="setRecFilter('mode','멀티')">멀티</button><button class="rec-filter-btn ${f.mode==='싱글'?'active':''}" onclick="setRecFilter('mode','싱글')">싱글</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${f.feature==='전체'||!f.feature?'active':''}" onclick="setRecFilter('feature','전체')">전체 성향</button><button class="rec-filter-btn ${f.feature==='협동'?'active':''}" onclick="setRecFilter('feature','협동')">협동</button><button class="rec-filter-btn ${f.feature==='오픈월드'?'active':''}" onclick="setRecFilter('feature','오픈월드')">오픈월드</button><button class="rec-filter-btn ${f.feature==='최신작'?'active':''}" onclick="setRecFilter('feature','최신작')">최신작</button><button class="rec-filter-btn ${f.played?'active':''}" onclick="setRecFilter('played', ${!f.played})">본 게임 제외</button>${active?`<button class="rec-filter-reset" onclick="resetRecFilter()">✕ 초기화</button>`:''}</div>`;
+    const active = f.minRating>0 || f.minYear>0 || f.maxYear<9999 || f.mode!=='전체' || (f.feature && f.feature!=='전체') || f.played;
+    el.innerHTML=`<div class="rec-filter-row"><span class="rec-filter-label">필터</span><button class="rec-filter-btn ${f.minRating===0?'active':''}" onclick="setRecFilter('minRating',0)">전체 평점</button><button class="rec-filter-btn ${f.minRating===8?'active':''}" onclick="setRecFilter('minRating',8)">8점+</button><button class="rec-filter-btn ${f.minRating===9?'active':''}" onclick="setRecFilter('minRating',9)">9점+</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${(f.minYear||0)===0&&(f.maxYear||9999)===9999?'active':''}" onclick="setRecFilter('minYear',0);setRecFilter('maxYear',9999)">전체 연도</button><button class="rec-filter-btn ${(f.minYear||0)===2022&&(f.maxYear||9999)===9999?'active':''}" onclick="setRecFilter('minYear',2022);setRecFilter('maxYear',9999)">2022+</button><button class="rec-filter-btn ${(f.minYear||0)===0&&(f.maxYear||9999)===2021?'active':''}" onclick="setRecFilter('minYear',0);setRecFilter('maxYear',2021)">~2021</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${f.mode==='전체'?'active':''}" onclick="setRecFilter('mode','전체')">전체</button><button class="rec-filter-btn ${f.mode==='멀티'?'active':''}" onclick="setRecFilter('mode','멀티')">멀티플레이</button><button class="rec-filter-btn ${f.mode==='싱글'?'active':''}" onclick="setRecFilter('mode','싱글')">싱글플레이</button><span class="rec-filter-sep">|</span><button class="rec-filter-btn ${f.feature==='전체'||!f.feature?'active':''}" onclick="setRecFilter('feature','전체')">전체 성향</button><button class="rec-filter-btn ${f.feature==='협동'?'active':''}" onclick="setRecFilter('feature','협동')">협동</button><button class="rec-filter-btn ${f.feature==='오픈월드'?'active':''}" onclick="setRecFilter('feature','오픈월드')">오픈월드</button><button class="rec-filter-btn ${f.feature==='최신작'?'active':''}" onclick="setRecFilter('feature','최신작')">최신작</button><button class="rec-filter-btn ${f.played?'active':''}" onclick="setRecFilter('played', ${!f.played})">본 게임 제외</button>${active?`<button class="rec-filter-reset" onclick="resetRecFilter()">✕ 초기화</button>`:''}</div>`;
   };
 
   const originalMakeGameCard = window.makeGameCard;
@@ -4248,7 +4273,7 @@ function goToReselect() {
 
   window.setHotSort = function(by){ hotSortBy = by; document.querySelectorAll('.hot-sort-btn').forEach(btn => btn.classList.toggle('active', (btn.getAttribute('onclick')||'').includes(`'${by}'`))); if(typeof renderHotGrid==='function') renderHotGrid(); };
   const originalRenderHotGrid = window.renderHotGrid;
-  window.renderHotGrid = function(){ originalRenderHotGrid(); const meta=document.getElementById('hot-extra-meta'); if(meta){ const label=hotSortBy==='ccu'?'현재 동시 접속':hotSortBy==='average_2weeks'?'최근 2주 평균 플레이':'누적 긍정 반응'; const ts=_hotFetchedAt ? new Date(_hotFetchedAt).toLocaleString('ko-KR') : '업데이트 대기'; meta.innerHTML=`<span class="hot-meta-pill">기준 <strong>${label}</strong></span><span class="hot-meta-pill">마지막 갱신 <strong>${ts}</strong></span><span class="hot-meta-pill">소스 <strong>${_hotSource || 'local'}</strong></span>`; } };
+  window.renderHotGrid = function(){ originalRenderHotGrid(); const meta=document.getElementById('hot-extra-meta'); if(meta){ const label=hotSortBy==='ccu'?'현재 동시 접속':hotSortBy==='average_2weeks'?'최근 2주 평균 플레이':'누적 긍정 반응'; const ts=_hotFetchedAt ? new Date(_hotFetchedAt).toLocaleString('ko-KR') : '업데이트 대기'; meta.innerHTML=`<span class="hot-meta-pill">기준 <strong>${label}</strong></span><span class="hot-meta-pill">마지막 갱신 <strong>${ts}</strong></span>`; } };
 
   const originalRenderApp = window.renderApp;
   window.renderApp = async function(){ ensureEnhancementNodes(); await originalRenderApp(); const heroEl=document.getElementById('hero-grid'); if(heroEl){ [...heroEl.querySelectorAll('.hero-card')].forEach(card=>{ const title=(card.querySelector('.hero-title')?.textContent||'').trim(); if(TOP_PICKS_EXCLUDED.has(title)) card.remove(); }); [...heroEl.querySelectorAll('.hero-card')].forEach((card,idx)=>{ const rank=card.querySelector('.hero-rank'); if(rank) rank.textContent=String(idx+1); }); } const all=(typeof getLocalRecommendations==='function'?getLocalRecommendations():[]).filter(validateGameQuality); const filtered=(typeof applyRecFilter==='function'?applyRecFilter(all):all); renderRecSummary(filtered); renderRecentHistory(); renderQualityStatus(); if(userPrefs.lastTab && userPrefs.lastTab !== 'rec' && typeof originalShowTab==='function'){ originalShowTab(userPrefs.lastTab); } };

@@ -1511,10 +1511,8 @@ function openModal(id) {
     `<span class="tag-pill" style="font-size:0.72rem;padding:4px 10px">${t}</span>`).join('');
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
-  const sc = document.getElementById('stat-ccu');
   if(so){ so.className='modal-stat-value loading'; so.textContent=''; }
   if(sp){ sp.className='modal-stat-value loading'; sp.textContent=''; }
-  if(sc){ sc.className='modal-stat-value loading'; sc.textContent=''; }
   document.getElementById('modal').classList.remove('hidden');
   fetchSteamData(getThumbAppId(g), g);
 }
@@ -1532,29 +1530,24 @@ async function fetchSteamData(appid, game = null) {
   const targetAppid = Number(getThumbAppId(game || appid, game?.title || ''));
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
-  const sc = document.getElementById('stat-ccu');
   try {
     let data = await steamspyFetch({request:'appdetails', appid: targetAppid});
-    if (!data || (!data.owners && !data.average_forever && !data.ccu)) {
+    if (!data || (!data.owners && !data.average_forever)) {
       const localData = await lookupLocalAppDetails(targetAppid);
       data = { ...(localData || {}), ...(data || {}) };
     }
+    if (!data || (!data.owners && !data.average_forever && !data.average_2weeks)) throw new Error('no data');
     if (so) {
       so.className='modal-stat-value';
-      so.textContent = data?.owners ? formatOwnersValue(data.owners) : '데이터 없음';
+      so.textContent = formatOwnersValue(data.owners);
     }
     if (sp) {
       sp.className='modal-stat-value';
-      sp.textContent = (data?.average_forever || data?.average_2weeks) ? formatPlaytimeMinutes(data.average_forever || data.average_2weeks) : '데이터 없음';
-    }
-    if (sc) {
-      sc.className='modal-stat-value';
-      sc.textContent = data?.ccu ? `${formatCCU(data.ccu)}명` : '데이터 없음';
+      sp.textContent = formatPlaytimeMinutes(data.average_forever || data.average_2weeks);
     }
   } catch {
     if (so) { so.className='modal-stat-value'; so.textContent='데이터 없음'; }
     if (sp) { sp.className='modal-stat-value'; sp.textContent='데이터 없음'; }
-    if (sc) { sc.className='modal-stat-value'; sc.textContent='데이터 없음'; }
   }
 }
 
