@@ -3306,7 +3306,8 @@ async function loadSteamRecommendations() {
   }
 
   const safeSorted = filterTrustedThumbnailGames(sorted);
-  heroEl.innerHTML = safeSorted.slice(0,3).map((app,i)=>{
+  const heroSafeSorted = safeSorted.filter(app => !['EA SPORTS FC 26','Escape from Tarkov'].includes(String(app?.name || app?.title || '').trim()));
+  heroEl.innerHTML = heroSafeSorted.slice(0,3).map((app,i)=>{
     const thumbId = resolveSteamThumbId(app, app.name);
     return `
     <div class="hero-card" onclick="window.open('https://store.steampowered.com/app/${thumbId}','_blank')" style="animation-delay:${i*0.08}s">
@@ -3324,7 +3325,7 @@ async function loadSteamRecommendations() {
     </div>`;
   }).join('');
 
-  moreEl.innerHTML = safeSorted.slice(3,120).map(app=>makeSteamCard(app,null,{ showLive:false, safeOnly:true })).join('') || '<div class="grid-empty" style="grid-column:1/-1">추천 결과 없음</div>';
+  moreEl.innerHTML = heroSafeSorted.slice(3,120).map(app=>makeSteamCard(app,null,{ showLive:false, safeOnly:true })).join('') || '<div class="grid-empty" style="grid-column:1/-1">추천 결과 없음</div>';
 }
 
 // ── Genre tab ──
@@ -4157,7 +4158,7 @@ function goToReselect() {
     if(modalBody && !document.getElementById('modal-insight-chips')){
       const desc=document.getElementById('modal-desc');
       const box=document.createElement('div');
-      box.innerHTML=`<div class="modal-insight-panel"><div class="modal-section-title">추천 신뢰도</div><div id="modal-insight-chips" class="history-list"></div><div class="modal-insight-grid"><div class="rec-side-card"><div class="insight-title">추천 적합도</div><div class="insight-value" id="modal-trust-score">-</div><div class="insight-bar"><span id="modal-trust-bar" style="width:0%"></span></div></div><div class="rec-side-card"><div class="insight-title">이런 유저에게 추천</div><div class="insight-value" id="modal-audience">-</div></div></div><div class="modal-note" id="modal-note"></div></div><div class="modal-similar-panel"><div class="modal-section-title">비슷한 게임</div><div id="modal-similar-list" class="similar-list"></div></div>`;
+      box.innerHTML=`<div class="modal-insight-panel"><div id="modal-insight-chips" class="history-list"></div><div class="modal-insight-grid"><div class="rec-side-card"><div class="insight-title">이런 유저에게 추천</div><div class="insight-value" id="modal-audience">-</div></div></div><div class="modal-note" id="modal-note"></div></div>`;
       desc.insertAdjacentElement('afterend', box);
     }
     document.querySelectorAll('.compare-btn').forEach(el=>el.remove());
@@ -4182,11 +4183,11 @@ function goToReselect() {
     el.innerHTML=`<span class="rec-summary-chip">추천 신뢰도 <strong>${avg}%</strong></span><span class="rec-summary-chip">핵심 취향 <strong>${genres}</strong></span><span class="rec-summary-chip">결과 수 <strong>${games.length}</strong>개</span>`;
   }
   function renderModalInsights(g){
-    const insight=recommendationInsight(g); const chips=document.getElementById('modal-insight-chips'); const bar=document.getElementById('modal-trust-bar'); const score=document.getElementById('modal-trust-score'); const aud=document.getElementById('modal-audience'); const note=document.getElementById('modal-note'); const similar=document.getElementById('modal-similar-list');
-    if(chips){ const arr=[`<span class="insight-chip"><strong>${insight.score}%</strong> 매칭</span>`]; if(insight.matchedTags.length) arr.push(`<span class="insight-chip">태그 일치 <strong>${insight.matchedTags.slice(0,3).join(', ')}</strong></span>`); if(insight.matchedGames.length) arr.push(`<span class="insight-chip">근거 게임 <strong>${insight.matchedGames.slice(0,2).map(x=>x.title).join(', ')}</strong></span>`); chips.innerHTML=arr.join(''); }
+    const insight=recommendationInsight(g); const chips=document.getElementById('modal-insight-chips'); const aud=document.getElementById('modal-audience'); const note=document.getElementById('modal-note'); const similar=document.getElementById('modal-similar-list');
+    if(chips){ const arr=[`<span class="insight-chip"><strong>${insight.score}%</strong> 매칭</span>`]; if(insight.matchedTags.length) arr.push(`<span class="insight-chip">태그 일치 <strong>${insight.matchedTags.slice(0,3).join(', ')}</strong></span>`); chips.innerHTML=arr.join(''); }
     if(bar) bar.style.width=insight.score+'%'; if(score) score.textContent=insight.score+'%'; if(aud) aud.textContent=insight.audience; if(note) note.textContent=insight.caution;
     const recs=(window.getLocalRecommendations?getLocalRecommendations():[]).filter(x=>x.id!==g.id && (x.genre===g.genre || (x.tags||[]).some(t=>(g.tags||[]).includes(t)))).slice(0,3);
-    if(similar) similar.innerHTML=recs.map(x=>`<button class="similar-link" onclick="openModal(${x.id})">${x.title}</button>`).join('') || '<span class="history-chip">비슷한 게임 데이터 준비 중</span>';
+    if(similar) similar.innerHTML='';
   }
 
   const originalFilterBySearch = window.filterBySearch;
