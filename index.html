@@ -491,6 +491,7 @@ body {
   color:var(--danger);
   background:rgba(239,68,68,0.06);
 }
+.reset-btn-mobile { display:none; }
 
 /* ══════════════════════════════════════════════════════
    MAIN CONTENT
@@ -1118,6 +1119,13 @@ body {
   .rec-filter-row { gap: 4px; }
   .rec-filter-btn { font-size: 0.68rem; padding: 4px 7px; }
   .modal-action-row { flex-wrap: wrap; }
+  .compare-btn,
+  #modal-compare-btn,
+  .compare-bar,
+  #compare-bar,
+  #compare-modal {
+    display: none !important;
+  }
 }
 
 .hot-grid {
@@ -1343,10 +1351,11 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
   .nav-logo{font-size:1.05rem;justify-content:center;text-align:center;width:100%}
   .nav-tabs{gap:4px;justify-content:stretch}
   .nav-tab{font-size:0.72rem;padding:9px 6px;flex:1;text-align:center}
-  .nav-right,.nav-left{display:flex;flex-wrap:wrap;gap:6px;width:100%;justify-content:center}
-  .reset-btn{width:100%;justify-content:center;min-height:44px}
-  .theme-toggle-group{width:100%;justify-content:center}
-  .theme-btn{flex:1;text-align:center;min-height:36px}
+  .nav-left{display:none}
+  .nav-right{display:flex;flex-wrap:nowrap;gap:6px;width:100%;justify-content:center;align-items:center}
+  .theme-toggle-group{width:auto;flex:1;min-width:0;justify-content:center}
+  .theme-btn{flex:1 1 0;text-align:center;min-height:36px;min-width:0;font-size:0.72rem;padding:8px 10px}
+  .reset-btn-mobile{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:auto;min-height:36px;padding:8px 12px;font-size:0.72rem;white-space:nowrap}
   .steam-badge{display:none}
   /* 타이틀 */
   .section-title{font-size:1.8rem;line-height:1.1}
@@ -1462,6 +1471,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
         <button class="theme-btn" id="theme-dark-btn" onclick="setTheme('dark')">🌙 다크모드</button>
         <button class="theme-btn" id="theme-light-btn" onclick="setTheme('light')">☀ 화이트 모드</button>
       </div>
+      <button class="reset-btn reset-btn-mobile" onclick="goToReselect()">↩ 다시 선택</button>
     </div>
   </nav>
 
