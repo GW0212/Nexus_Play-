@@ -2180,6 +2180,12 @@ let currentObFilter = '전체';
 let currentGenreFilter = '전체';
 let currentTab = 'rec';
 let obSearch = '';
+// ── 새 기능 상태 변수 (INIT 전에 선언 필수) ──
+const BOOKMARK_KEY = 'nexus-bookmarks-v1';
+let _bookmarks = new Set();
+try { _bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY)||'[]')); } catch(e){}
+let _compareList = [];
+let _recFilter = { minRating: 0, maxYear: 9999, minYear: 0, mode: '전체' };
 let genreSearch = '';
 let _genreLastRenderedList = [];
 let _genreLastRenderedGenre = '전체';
@@ -3838,8 +3844,8 @@ initLiveAutoRefresh();
 // ══════════════════════════════════════════════════════════════
 // ★ 북마크 시스템
 // ══════════════════════════════════════════════════════════════
-const BOOKMARK_KEY = 'nexus-bookmarks-v1';
-let _bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY)||'[]'));
+// (_bookmarks, BOOKMARK_KEY는 상단에 선언됨)
+try { _bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY)||'[]')); } catch(e){}
 
 function saveBookmarks() {
   try { localStorage.setItem(BOOKMARK_KEY, JSON.stringify([..._bookmarks])); } catch(e){}
@@ -3897,7 +3903,7 @@ function getRecommendReason(g) {
 // ══════════════════════════════════════════════════════════════
 // ★ 게임 비교 기능
 // ══════════════════════════════════════════════════════════════
-let _compareList = [];
+
 
 function toggleCompare(id) {
   const n = Number(id);
@@ -4003,7 +4009,7 @@ function showToast(msg, duration=2400) {
 // ══════════════════════════════════════════════════════════════
 // ★ 추천 탭 필터 기능
 // ══════════════════════════════════════════════════════════════
-let _recFilter = { minRating: 0, maxYear: 9999, minYear: 0, mode: '전체' };
+
 
 function setRecFilter(key, val) {
   _recFilter[key] = val;
