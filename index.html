@@ -2149,17 +2149,19 @@ function normalizeGenreItem(item, genre) {
   };
 }
 
-async function loadLocalData(path) {
+async function loadLocalData(path, forceRemote = false) {
   if (!DATA_BASE) return null;
-  const cacheKey = `${path}::${Math.floor(Date.now() / LIVE_REFRESH_MS)}`;
-  if (_sessionDataCache.has(cacheKey)) return _sessionDataCache.get(cacheKey);
+  // forceRemote 시 세션 캐시 무시 + URL에 현재 timestamp로 브라우저 캐시도 우회
+  const bust = forceRemote ? Date.now() : Math.floor(Date.now() / LIVE_REFRESH_MS);
+  const cacheKey = `${path}::${bust}`;
+  if (!forceRemote && _sessionDataCache.has(cacheKey)) return _sessionDataCache.get(cacheKey);
   try {
     const sep = path.includes('?') ? '&' : '?';
-    const res = await fetch(DATA_BASE + path + `${sep}v=${Math.floor(Date.now() / LIVE_REFRESH_MS)}`, { cache: 'no-store' });
+    const res = await fetch(DATA_BASE + path + `${sep}v=${bust}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const d = await res.json();
     if (!d || d._note || (Array.isArray(d) ? d.length === 0 : Object.keys(d).length < 1)) return null;
-    _sessionDataCache.set(cacheKey, d);
+    if (!forceRemote) _sessionDataCache.set(cacheKey, d);
     return d;
   } catch { return null; }
 }
@@ -2297,12 +2299,31 @@ function mergeLocalTopGames(liveList, detailMap, maxMissed = 15) {
 async function steamspyFetch(params) {
   const {request, tag, appid, forceRemote = false} = params;
 
-  // mostplayed는 항상 라이브 Steam Charts API를 먼저 시도해야 실시간 인기 리스트가 정확히 표시됨
+  // mostplayed: Steam Charts 라이브 → SteamSpy API → 로컬 순으로 시도
   if (request === 'mostplayed') {
     const liveMostPlayed = await fetchMostPlayedLive(forceRemote);
     if (liveMostPlayed?.length) return liveMostPlayed;
-    // 라이브 실패 시 로컬 fallback
-    const d = await loadLocalData('mostplayed.json');
+
+    // Steam Charts 실패 시 SteamSpy API top100in2weeks 직접 호출
+    if (forceRemote) {
+      const PROXIES = [
+        'https://steamspy.com/api.php',
+        'https://corsproxy.io/?https://steamspy.com/api.php',
+        'https://api.allorigins.win/raw?url=https%3A//steamspy.com/api.php',
+      ];
+      for (const base of PROXIES) {
+        try {
+          const url = base + (base.includes('?') ? '&' : '?') + 'request=top100in2weeks';
+          const res = await fetch(url, { signal: AbortSignal.timeout(8000), cache: 'no-store' });
+          if (!res.ok) continue;
+          const d = await res.json();
+          if (d && typeof d === 'object' && !d.error && Object.keys(d).length > 5) return d;
+        } catch { }
+      }
+    }
+
+    // 최후 fallback: 로컬 파일 (cache-busting으로 최신 버전 강제 요청)
+    const d = await loadLocalData('mostplayed.json', forceRemote);
     if (d) return d;
   }
 
@@ -2319,6 +2340,17 @@ async function steamspyFetch(params) {
     if (request === 'tag' && tag) {
       const f = TAG_FILE_MAP[tag];
       if (f) { const d = await loadLocalData('tags/' + f + '.json'); if (d) return d; }
+    }
+  } else {
+    // forceRemote: SteamSpy API 실패 후 로컬 파일도 cache-bust해서 재요청
+    if (request === 'top100in2weeks') {
+      const d = await loadLocalData('hot.json', true); if (d) return d;
+    }
+    if (request === 'top100forever') {
+      const d = await loadLocalData('top100.json', true); if (d) return d;
+    }
+    if (request === 'top100owned') {
+      const d = await loadLocalData('top100owned.json', true); if (d) return d;
     }
   }
 
@@ -2417,9 +2449,22 @@ function forceRefreshHot() {
   _hotInflight = null;
   clearLiveDataCache();
   window.__nexusLastRefresh = Date.now();
-  const el = document.getElementById('hot-refresh-text');
-  if (el) el.textContent = '갱신 중...';
-  loadHotGames(false, { forceRemote: true });
+  const textEl = document.getElementById('hot-refresh-text');
+  const btn = document.querySelector('.hot-sort-btn[onclick="forceRefreshHot()"]');
+  if (textEl) textEl.textContent = '갱신 중...';
+  if (btn) { btn.disabled = true; btn.style.opacity = '0.5'; }
+
+  loadHotGames(false, { forceRemote: true }).then(data => {
+    const source = _hotSource;
+    if (textEl) textEl.textContent = source === 'live' ? '✅ 실시간 갱신 완료' : '⚠️ 최신 로컬 데이터 사용 중';
+    setTimeout(() => { if (textEl) textEl.textContent = '10분마다 자동 갱신'; }, 3000);
+  }).catch(() => {
+    if (textEl) textEl.textContent = '❌ 갱신 실패';
+    setTimeout(() => { if (textEl) textEl.textContent = '10분마다 자동 갱신'; }, 3000);
+  }).finally(() => {
+    if (btn) { btn.disabled = false; btn.style.opacity = ''; }
+  });
+
   if (currentTab === 'genre') loadSteamGenreData(currentGenreFilter, { force: true, forceRemote: true, silent: false });
 }
 function applyThemeButtons() {
