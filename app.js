@@ -861,9 +861,19 @@ function formatCCU(n) {
 
 function formatOwnersValue(value) {
   if (value == null || value === '') return '데이터 없음';
-  if (typeof value === 'string' && value.trim()) return value;
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = Number(String(value).replace(/,/g, '').trim());
+    if (!Number.isFinite(parsed) || parsed <= 0) return value;
+    value = parsed;
+  }
   const n = Number(value);
   if (!Number.isFinite(n) || n <= 0) return '데이터 없음';
+  const formatCompact = (num, unit) => {
+    const compact = num.toFixed(num >= 10 ? 0 : 1).replace(/\.0$/, '');
+    return compact + unit + '명';
+  };
+  if (n >= 1e6) return formatCompact(n / 1e6, 'M');
+  if (n >= 1e3) return formatCompact(n / 1e3, 'K');
   return new Intl.NumberFormat('ko-KR').format(Math.round(n)) + '명';
 }
 
