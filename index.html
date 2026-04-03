@@ -889,6 +889,7 @@ body {
   display:grid; grid-template-columns:1fr 1fr;
   gap:8px; margin-bottom:14px;
 }
+.modal-steam-data.has-ccu { grid-template-columns:1fr 1fr 1fr; }
 
 .modal-stat {
   background:var(--surface2);
@@ -944,13 +945,13 @@ body {
 ══════════════════════════════════════════════════════ */
 @media (max-width:900px) {
   .hero-grid { grid-template-columns:1fr 1fr; }
-  .hero-grid .hero-card:nth-child(3) { display:none; }
+  /* 히어로 카드 3개 모두 표시 */
 }
 
 @media (max-width:600px) {
   .ob-grid { grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:8px; padding:0 12px 130px; }
   .hero-grid { grid-template-columns:1fr; }
-  .hero-grid .hero-card:nth-child(2), .hero-grid .hero-card:nth-child(3) { display:none; }
+  /* 모바일 히어로 카드 3개 모두 표시 */
   .game-grid { grid-template-columns:repeat(auto-fill, minmax(170px, 1fr)); }
   .ob-filter { padding:0 12px 12px; }
   .main-content { padding:20px 12px; }
@@ -1017,6 +1018,107 @@ body {
 }
 .hot-status.error { color: var(--danger); }
 .hot-status.hidden { display: none; }
+
+/* ── 북마크 버튼 ── */
+.bookmark-btn {
+  background: none; border: 1px solid var(--border2);
+  border-radius: 6px; color: var(--text-muted);
+  cursor: pointer; font-size: 1rem; padding: 4px 10px;
+  transition: all 0.18s; line-height: 1;
+}
+.bookmark-btn:hover, .bookmark-btn.active { color: var(--accent3); border-color: var(--accent3); }
+.bookmark-btn.active { background: rgba(245,158,11,0.1); }
+
+/* ── 비교 버튼 ── */
+.compare-btn {
+  background: none; border: 1px solid var(--border2);
+  border-radius: 6px; color: var(--text-muted);
+  cursor: pointer; font-size: 0.72rem; padding: 4px 10px;
+  font-family: 'Nunito', sans-serif; font-weight: 700;
+  transition: all 0.18s;
+}
+.compare-btn:hover, .compare-btn.active { color: var(--accent); border-color: var(--accent); }
+.compare-btn.active { background: rgba(0,229,255,0.08); }
+
+/* ── 비교 바 ── */
+.compare-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+  background: var(--surface); border-top: 1px solid var(--border2);
+  padding: 10px 20px; transform: translateY(100%);
+  transition: transform 0.25s ease; backdrop-filter: blur(12px);
+}
+.compare-bar.visible { transform: translateY(0); }
+.compare-bar-inner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+.compare-chips { display: flex; gap: 6px; flex: 1; flex-wrap: wrap; }
+.compare-chip {
+  background: var(--surface2); border: 1px solid var(--border2);
+  border-radius: 6px; padding: 3px 8px; font-size: 0.76rem;
+  display: flex; align-items: center; gap: 4px;
+}
+.compare-chip button { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.8rem; padding: 0; }
+.compare-go-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none; border-radius: 8px; color: #fff; cursor: pointer;
+  font-weight: 800; font-size: 0.8rem; padding: 7px 16px;
+  font-family: 'Nunito', sans-serif; white-space: nowrap;
+}
+.compare-clear-btn {
+  background: none; border: 1px solid var(--border2); border-radius: 8px;
+  color: var(--text-muted); cursor: pointer; font-size: 0.76rem; padding: 5px 12px;
+  font-family: 'Nunito', sans-serif; white-space: nowrap;
+}
+
+/* ── 토스트 ── */
+.nexus-toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--surface3); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 10px 20px; font-size: 0.84rem;
+  color: var(--text); z-index: 9999; opacity: 0; transition: all 0.25s;
+  white-space: nowrap; pointer-events: none;
+}
+.nexus-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── 추천 이유 배지 ── */
+.rec-reason {
+  font-size: 0.68rem; color: var(--accent); background: rgba(0,229,255,0.08);
+  border: 1px solid rgba(0,229,255,0.18); border-radius: 4px;
+  padding: 2px 7px; margin-top: 4px; display: inline-block; line-height: 1.4;
+}
+
+/* ── 추천 필터 바 ── */
+.rec-filter-bar { margin-bottom: 14px; }
+.rec-filter-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.rec-filter-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+.rec-filter-sep { color: var(--border2); font-size: 0.8rem; }
+.rec-filter-btn {
+  padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border2);
+  background: rgba(255,255,255,0.03); color: var(--text-muted);
+  font-size: 0.72rem; font-weight: 700; cursor: pointer;
+  font-family: 'Nunito', sans-serif; transition: all 0.15s;
+}
+.rec-filter-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
+.rec-filter-btn.active { background: rgba(0,229,255,0.1); border-color: rgba(0,229,255,0.3); color: var(--accent); }
+.rec-filter-reset {
+  padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(239,68,68,0.3);
+  background: rgba(239,68,68,0.08); color: #f87171;
+  font-size: 0.72rem; font-weight: 700; cursor: pointer;
+  font-family: 'Nunito', sans-serif; transition: all 0.15s;
+}
+
+/* ── 북마크 탭 ── */
+#tab-bookmarks .game-grid { grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); }
+
+/* ── 모달 액션 버튼 행 ── */
+.modal-action-row { display: flex; gap: 8px; margin-bottom: 10px; }
+
+@media (max-width:600px) {
+  .modal-steam-data.has-ccu { grid-template-columns: 1fr 1fr; }
+  .modal-steam-data.has-ccu #stat-ccu-wrap { grid-column: 1 / -1; }
+  .compare-bar-inner { gap: 7px; }
+  .rec-filter-row { gap: 4px; }
+  .rec-filter-btn { font-size: 0.68rem; padding: 4px 7px; }
+  .modal-action-row { flex-wrap: wrap; }
+}
 
 .hot-grid {
   display: grid;
@@ -1318,7 +1420,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
     <div>
       <button class="ob-start-btn" id="ob-start-btn" onclick="startApp()">추천 시작하기 →</button>
       <p class="ob-hint" id="ob-hint">10개를 선택하면 활성화돼요</p>
-      <button onclick="(function(){selectedIds=[];document.querySelectorAll('.ob-card.selected').forEach(c=>c.classList.remove('selected'));updateObUI();persistSelection();})()" style="margin-top:10px;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↩ 선택 초기화</button>
+      <div style="display:flex;gap:10px;margin-top:10px;justify-content:center">
+        <button onclick="selectedIds=[];document.querySelectorAll('.ob-card.selected').forEach(c=>c.classList.remove('selected'));updateObUI();persistSelection();" style="background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">↺ 선택 초기화</button>
+        <button id="ob-back-btn" onclick="goHome()" style="display:none;background:none;border:1px solid rgba(255,255,255,0.15);color:var(--text-muted);font-size:0.78rem;padding:6px 18px;border-radius:8px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--text-muted)'">← 돌아가기</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1343,9 +1448,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
       <button class="nav-tab active" onclick="showTab('rec')">🎯 추천</button>
       <button class="nav-tab" onclick="showTab('genre')">🗂 장르별</button>
       <button class="nav-tab" onclick="showTab('hot')">🔥 실시간 인기</button>
+      <button class="nav-tab" onclick="showTab('bookmarks')" id="bookmark-tab-label">★ 북마크</button>
     </div>
     <div class="nav-left">
-      <button class="reset-btn" onclick="resetApp()">↩ 다시 선택</button>
+      <button class="reset-btn" onclick="goToReselect()">↩ 다시 선택</button>
     </div>
     <div class="nav-right">
       <div class="steam-badge">
@@ -1369,6 +1475,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
       </div>
       <div class="more-recs">
         <div class="section-label">MORE RECOMMENDATIONS</div>
+        <div id="rec-filter-bar" class="rec-filter-bar"></div>
         <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:1.5px;margin-bottom:0;">더 많은 추천 게임</h3>
         <div class="game-grid" id="more-grid"></div>
       </div>
@@ -1407,6 +1514,14 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
         <div class="hot-grid" id="hot-grid"></div>
       </div>
     </div>
+
+    <!-- BOOKMARKS TAB -->
+    <div id="tab-bookmarks" style="display:none;">
+      <div class="hot-tab-content">
+        <h2 class="section-title" style="margin-bottom:16px">★ 북마크</h2>
+        <div class="game-grid" id="bookmark-grid"></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1436,7 +1551,15 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
           <div class="modal-stat-label">⏱ 평균 플레이</div>
           <div class="modal-stat-value loading" id="stat-playtime"></div>
         </div>
+        <div class="modal-stat" id="stat-ccu-wrap" style="display:none">
+          <div class="modal-stat-label"><span class="steam-stat-dot" style="width:6px;height:6px;border-radius:50%;background:var(--success);display:inline-block;margin-right:4px;animation:glowPulse 2s ease-in-out infinite"></span>지금 플레이 중</div>
+          <div class="modal-stat-value" id="stat-ccu"></div>
+        </div>
       </div>
+      <div class="modal-action-row">
+          <button class="bookmark-btn" id="modal-bookmark-btn" data-id="0" onclick="toggleBookmark(this.dataset.id)" title="북마크 추가">☆</button>
+          <button class="compare-btn" id="modal-compare-btn" data-id="0" onclick="toggleCompare(this.dataset.id);updateCompareBtnState(this.dataset.id)" title="비교에 추가">⇆ 비교</button>
+        </div>
       <div class="modal-actions">
         <a id="modal-steam-link" href="#" target="_blank" class="btn-steam">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.523-4.524 4.523h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0z"/></svg>
@@ -2739,9 +2862,24 @@ function imgUrl(gameOrId, title='')       { const override = getThumbOverride(ga
 function imgUrlAlt(gameOrId, title='')    { const override = getThumbOverride(gameOrId,title); if (override?.image) return override.image; const id=getThumbAppId(gameOrId,title); return `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`; }
 function storeUrl(gameOrId, title='')     { const override = getThumbOverride(gameOrId,title); if (override?.link) return override.link; const id=getThumbAppId(gameOrId,title); return `https://store.steampowered.com/app/${id}`; }
 
+// 한글 초성 추출
+function getChosung(str) {
+  const CHO = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+  return [...str].map(c => {
+    const code = c.charCodeAt(0) - 0xAC00;
+    return (code >= 0 && code <= 11171) ? CHO[Math.floor(code / 588)] : c;
+  }).join('');
+}
 function filterBySearch(g, q) {
   if (!q) return true;
-  return g.title.toLowerCase().includes(q.toLowerCase());
+  const ql = q.toLowerCase();
+  const tl = g.title.toLowerCase();
+  if (tl.includes(ql)) return true;
+  // 초성 검색 (예: ㄷㅅ → 다크소울, ㄹ → 러스트)
+  if (/^[ㄱ-ㅎ]+$/.test(q)) return getChosung(g.title).includes(q);
+  // 영문+한글 혼합 검색
+  if ((g.tags||[]).some(t => t.toLowerCase().includes(ql))) return true;
+  return false;
 }
 
 function formatCCU(n) {
@@ -2952,7 +3090,15 @@ function updateObUI() {
 // ══════════════════════════════════════════════════════════════
 // MAIN APP RENDER
 // ══════════════════════════════════════════════════════════════
+function updateCompareBtnState(id) {
+  const btn = document.getElementById('modal-compare-btn');
+  if (btn) btn.classList.toggle('active', _compareList.includes(Number(id)));
+}
+
 function makeGameCard(g, delay) {
+  const reason = getRecommendReason(g);
+  const isBm = isBookmarked(g.id);
+  const isCmp = _compareList.includes(g.id);
   return `
     <div class="game-card" onclick="openModal(${g.id})" style="animation-delay:${delay||0}s">
       <img class="game-card-img" src="${imgUrl(g)}" alt="${g.title}" loading="lazy"
@@ -2964,10 +3110,18 @@ function makeGameCard(g, delay) {
           <div class="game-card-rating">★ ${g.rating||'-'}</div>
         </div>
         <div class="game-card-tags">${(g.tags||[]).slice(0,4).map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
+        ${reason ? `<div class="rec-reason">💡 ${reason}</div>` : ''}
       </div>
       <div class="game-card-footer">
         <div class="game-card-dev">${g.dev}</div>
-        <a href="${storeUrl(g)}" target="_blank" class="game-card-link" onclick="event.stopPropagation()">Steam ↗</a>
+        <div style="display:flex;gap:5px;align-items:center">
+          <button class="bookmark-btn ${isBm?'active':''}" data-id="${g.id}"
+            onclick="event.stopPropagation();toggleBookmark(${g.id})"
+            title="${isBm?'북마크 해제':'북마크 추가'}">${isBm?'★':'☆'}</button>
+          <button class="compare-btn ${isCmp?'active':''}" data-id="${g.id}"
+            onclick="event.stopPropagation();toggleCompare(${g.id});this.classList.toggle('active',_compareList.includes(${g.id}))"
+            title="비교에 추가">⇆</button>
+        </div>
       </div>
     </div>`;
 }
@@ -3380,21 +3534,25 @@ function renderHotGrid() {
 // ══════════════════════════════════════════════════════════════
 function showTab(tab) {
   currentTab = tab;
-  document.getElementById('tab-rec').style.display   = tab==='rec'   ? 'block' : 'none';
-  document.getElementById('tab-genre').style.display = tab==='genre' ? 'block' : 'none';
-  document.getElementById('tab-hot').style.display   = tab==='hot'   ? 'block' : 'none';
+  document.getElementById('tab-rec').style.display       = tab==='rec'       ? 'block' : 'none';
+  document.getElementById('tab-genre').style.display     = tab==='genre'     ? 'block' : 'none';
+  document.getElementById('tab-hot').style.display       = tab==='hot'       ? 'block' : 'none';
+  document.getElementById('tab-bookmarks').style.display = tab==='bookmarks' ? 'block' : 'none';
   document.querySelectorAll('.nav-tab').forEach((b,i)=>
-    b.classList.toggle('active',(i===0&&tab==='rec')||(i===1&&tab==='genre')||(i===2&&tab==='hot')));
+    b.classList.toggle('active',(i===0&&tab==='rec')||(i===1&&tab==='genre')||(i===2&&tab==='hot')||(i===3&&tab==='bookmarks')));
   if (tab==='genre') renderGenreTab();
   if (tab==='hot') loadHotGames();
+  if (tab==='bookmarks') { renderBookmarkGrid(); renderBookmarkBadge(); }
 }
 
 async function renderApp() {
   steamRecLoaded = false;
   window.__steamRecSelectionKey = selectedIds.slice().sort((a,b)=>a-b).join(',');
-  const local = getLocalRecommendations();
+  const allRecs = getLocalRecommendations();
+  const local = applyRecFilter(allRecs);
   renderHeroGrid(local.slice(0,3));
   renderMoreGrid(local.slice(3,30));
+  renderRecFilterUI();
   const hs = document.getElementById('hero-grid')?.closest('.rec-hero');
   if (hs) {
     hs.querySelectorAll('.rec-source-badge').forEach(el => el.remove());
@@ -3420,6 +3578,8 @@ function startApp() {
 function goHome() {
   document.getElementById('onboarding').classList.remove('active');
   document.getElementById('app').classList.add('active');
+  const backBtn = document.getElementById('ob-back-btn');
+  if (backBtn) backBtn.style.display = 'none';
   showTab('rec');
   renderApp();
 }
@@ -3433,6 +3593,8 @@ function resetApp() {
   const si=document.getElementById('ob-search'); if(si) si.value='';
   const gi=document.getElementById('genre-search'); if(gi) gi.value='';
   updateObUI(); renderObFilter(); renderObGrid();
+  const backBtn = document.getElementById('ob-back-btn');
+  if (backBtn) backBtn.style.display = 'none';
   document.getElementById('app').classList.remove('active');
   document.getElementById('onboarding').classList.add('active');
 }
@@ -3517,8 +3679,23 @@ function fillAndShowModal(g, thumbId) {
     `<span class="tag-pill" style="font-size:0.72rem;padding:4px 10px">${t}</span>`).join('');
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
+  const ccuWrap = document.getElementById('stat-ccu-wrap');
   if(so){ so.className='modal-stat-value loading'; so.textContent=''; }
   if(sp){ sp.className='modal-stat-value loading'; sp.textContent=''; }
+  if(ccuWrap){ ccuWrap.style.display='none'; document.getElementById('modal-steam-data')?.classList.remove('has-ccu'); }
+  // 북마크/비교 버튼 상태 업데이트
+  const bmBtn = document.getElementById('modal-bookmark-btn');
+  const cmpBtn = document.getElementById('modal-compare-btn');
+  if (bmBtn) {
+    bmBtn.dataset.id = _thumbId;
+    bmBtn.classList.toggle('active', isBookmarked(_thumbId));
+    bmBtn.textContent = isBookmarked(_thumbId) ? '★' : '☆';
+    bmBtn.title = isBookmarked(_thumbId) ? '북마크 해제' : '북마크 추가';
+  }
+  if (cmpBtn) {
+    cmpBtn.dataset.id = _thumbId;
+    cmpBtn.classList.toggle('active', _compareList.includes(_thumbId));
+  }
   document.getElementById('modal').classList.remove('hidden');
   fetchSteamData(_thumbId, g);
 }
@@ -3576,12 +3753,25 @@ async function fetchSteamData(appid, game = null) {
     const owners  = apiData?.owners          || localData?.owners          || localGame?.owners          || 0;
     const avgF    = apiData?.average_forever || localData?.average_forever || localGame?.average_forever || 0;
     const avg2w   = apiData?.average_2weeks  || localData?.average_2weeks  || localGame?.average_2weeks  || 0;
+    const ccu     = apiData?.ccu             || localData?.ccu             || localGame?.ccu             || 0;
     const playtime = avgF || avg2w;
 
     if (owners || playtime) {
       showStats(owners, playtime);
     } else {
       showEmpty();
+    }
+
+    // CCU 표시
+    const ccuWrap = document.getElementById('stat-ccu-wrap');
+    const ccuEl   = document.getElementById('stat-ccu');
+    if (ccuWrap && ccuEl && ccu > 0) {
+      ccuEl.textContent = formatCCU(ccu) + '명';
+      ccuWrap.style.display = '';
+      document.getElementById('modal-steam-data')?.classList.add('has-ccu');
+    } else if (ccuWrap) {
+      ccuWrap.style.display = 'none';
+      document.getElementById('modal-steam-data')?.classList.remove('has-ccu');
     }
   } catch {
     showEmpty();
@@ -3639,10 +3829,246 @@ function ensureSearchBars() {
     }, {passive:false});
   }
   if (savedReady) startApp();
+  renderBookmarkBadge();
 })();
 
 initTheme();
 initLiveAutoRefresh();
+
+// ══════════════════════════════════════════════════════════════
+// ★ 북마크 시스템
+// ══════════════════════════════════════════════════════════════
+const BOOKMARK_KEY = 'nexus-bookmarks-v1';
+let _bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARK_KEY)||'[]'));
+
+function saveBookmarks() {
+  try { localStorage.setItem(BOOKMARK_KEY, JSON.stringify([..._bookmarks])); } catch(e){}
+}
+function isBookmarked(id) { return _bookmarks.has(Number(id)); }
+function toggleBookmark(id) {
+  const n = Number(id);
+  if (_bookmarks.has(n)) _bookmarks.delete(n);
+  else _bookmarks.add(n);
+  saveBookmarks();
+  // 현재 열린 모달이 이 게임이면 버튼 업데이트
+  document.querySelectorAll('.bookmark-btn').forEach(btn => {
+    if (Number(btn.dataset.id) === n) {
+      btn.classList.toggle('active', _bookmarks.has(n));
+      btn.title = _bookmarks.has(n) ? '북마크 해제' : '북마크 추가';
+      btn.textContent = _bookmarks.has(n) ? '★' : '☆';
+    }
+  });
+  renderBookmarkBadge();
+  if (currentTab === 'bookmarks') renderBookmarkGrid();
+}
+function renderBookmarkBadge() {
+  const el = document.getElementById('bookmark-tab-label');
+  if (el) el.textContent = _bookmarks.size > 0 ? `★ 북마크 (${_bookmarks.size})` : '★ 북마크';
+}
+function renderBookmarkGrid() {
+  const el = document.getElementById('bookmark-grid');
+  if (!el) return;
+  const games = GAMES_CLEAN.filter(g => _bookmarks.has(g.id));
+  if (!games.length) {
+    el.innerHTML = '<div class="grid-empty" style="grid-column:1/-1;padding:40px 0">북마크한 게임이 없습니다.<br><small style="color:var(--text-muted);font-size:0.8rem">게임 상세 정보에서 ☆ 버튼을 누르면 저장됩니다.</small></div>';
+    return;
+  }
+  el.innerHTML = games.map((g,i) => makeGameCard(g, i*0.02)).join('');
+}
+
+// ══════════════════════════════════════════════════════════════
+// ★ 추천 이유 표시
+// ══════════════════════════════════════════════════════════════
+function getRecommendReason(g) {
+  if (!selectedIds.length) return null;
+  const selected = GAMES_CLEAN.filter(x => selectedIds.includes(x.id));
+  const myTags = new Set(selected.flatMap(x => x.tags || []));
+  const myGenres = new Set(selected.map(x => x.genre));
+  const matchTags = (g.tags || []).filter(t => myTags.has(t));
+  const genreMatch = myGenres.has(g.genre);
+  const reasons = [];
+  if (genreMatch) reasons.push(`${g.genre} 장르 취향`);
+  if (matchTags.length > 0) reasons.push(`"${matchTags.slice(0,2).join('", "')}" 태그 일치`);
+  if ((g.rating || 0) >= 9.0) reasons.push('압도적 고평점');
+  if ((g.year || 0) >= 2024) reasons.push('최신작');
+  return reasons.length ? reasons.slice(0, 2).join(' · ') : null;
+}
+
+// ══════════════════════════════════════════════════════════════
+// ★ 게임 비교 기능
+// ══════════════════════════════════════════════════════════════
+let _compareList = [];
+
+function toggleCompare(id) {
+  const n = Number(id);
+  const idx = _compareList.indexOf(n);
+  if (idx !== -1) {
+    _compareList.splice(idx, 1);
+  } else {
+    if (_compareList.length >= 3) {
+      showToast('최대 3개까지 비교할 수 있습니다.');
+      return;
+    }
+    _compareList.push(n);
+  }
+  updateCompareBar();
+}
+function updateCompareBar() {
+  let bar = document.getElementById('compare-bar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'compare-bar';
+    bar.className = 'compare-bar';
+    document.body.appendChild(bar);
+  }
+  if (!_compareList.length) { bar.classList.remove('visible'); return; }
+  const names = _compareList.map(id => {
+    const g = getGameById(id);
+    return `<span class="compare-chip">${g?.title || id} <button onclick="toggleCompare(${id})">✕</button></span>`;
+  }).join('');
+  bar.innerHTML = `
+    <div class="compare-bar-inner">
+      <span style="font-weight:700;font-size:0.82rem;color:var(--accent)">비교 중 ${_compareList.length}/3</span>
+      <div class="compare-chips">${names}</div>
+      ${_compareList.length >= 2
+        ? `<button class="compare-go-btn" onclick="openCompareModal()">비교 보기</button>`
+        : `<span style="font-size:0.75rem;color:var(--text-muted)">${3-_compareList.length}개 더 선택</span>`}
+      <button class="compare-clear-btn" onclick="_compareList=[];updateCompareBar()">전체 취소</button>
+    </div>`;
+  bar.classList.add('visible');
+}
+function openCompareModal() {
+  if (_compareList.length < 2) return;
+  const games = _compareList.map(id => getGameById(id)).filter(Boolean);
+  const rows = [
+    ['장르', g => `<span class="modal-genre ${genreClass(g.genre)}" style="padding:2px 8px;border-radius:4px;font-size:0.75rem">${g.genre}</span>`],
+    ['평점', g => `<strong style="color:var(--accent3)">★ ${g.rating || '-'}</strong> / 10`],
+    ['출시년도', g => g.year ? `${g.year}년` : '-'],
+    ['개발사', g => g.dev || '-'],
+    ['추정 소유자', g => formatOwnersValue(g.owners || 0)],
+    ['평균 플레이', g => formatPlaytimeMinutes(g.average_forever || g.average_2weeks || 0)],
+    ['태그', g => (g.tags||[]).slice(0,4).map(t=>`<span class="tag-pill" style="font-size:0.7rem">${t}</span>`).join(' ')],
+  ];
+  const colStyle = `flex:1;text-align:center;padding:0 8px`;
+  const header = games.map(g => `
+    <div style="${colStyle}">
+      <img src="${imgUrl(g)}" style="width:100%;border-radius:8px;aspect-ratio:16/7;object-fit:cover;margin-bottom:6px"
+           onerror="this.src='${imgUrlAlt(g)}'" />
+      <div style="font-weight:800;font-size:0.9rem">${g.title}</div>
+    </div>`).join('');
+  const body = rows.map(([label, fn]) => `
+    <tr>
+      <td style="padding:8px 10px;color:var(--text-muted);font-size:0.78rem;white-space:nowrap;border-bottom:1px solid var(--border)">${label}</td>
+      ${games.map(g=>`<td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);font-size:0.82rem">${fn(g)}</td>`).join('')}
+    </tr>`).join('');
+  const html = `
+    <div class="modal-overlay" id="compare-modal" onclick="if(event.target===this)this.classList.add('hidden')">
+      <div class="modal" style="max-width:680px">
+        <div style="display:flex;padding:16px 16px 0;gap:8px">${header}</div>
+        <div style="padding:12px 16px 20px;overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse">
+            <tbody>${body}</tbody>
+          </table>
+          <div style="display:flex;gap:8px;margin-top:14px">
+            ${games.map(g=>`<a href="https://store.steampowered.com/app/${g.id}" target="_blank" class="btn-steam" style="flex:1;justify-content:center;padding:10px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.523-4.524 4.523h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0z"/></svg>
+              ${g.title}</a>`).join('')}
+          </div>
+        </div>
+        <button class="modal-close" style="position:absolute;top:12px;right:12px" onclick="document.getElementById('compare-modal').classList.add('hidden')">✕</button>
+      </div>
+    </div>`;
+  let el = document.getElementById('compare-modal');
+  if (el) el.remove();
+  document.body.insertAdjacentHTML('beforeend', html);
+}
+
+// ══════════════════════════════════════════════════════════════
+// ★ 토스트 알림
+// ══════════════════════════════════════════════════════════════
+function showToast(msg, duration=2400) {
+  let t = document.getElementById('nexus-toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'nexus-toast';
+    t.className = 'nexus-toast';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ══════════════════════════════════════════════════════════════
+// ★ 추천 탭 필터 기능
+// ══════════════════════════════════════════════════════════════
+let _recFilter = { minRating: 0, maxYear: 9999, minYear: 0, mode: '전체' };
+
+function setRecFilter(key, val) {
+  _recFilter[key] = val;
+  renderRecFilterUI();
+  renderApp();
+}
+function resetRecFilter() {
+  _recFilter = { minRating: 0, maxYear: 9999, minYear: 0, mode: '전체' };
+  renderRecFilterUI();
+  renderApp();
+}
+function applyRecFilter(games) {
+  return games.filter(g => {
+    if (_recFilter.minRating && (g.rating || 0) < _recFilter.minRating) return false;
+    if (_recFilter.minYear && (g.year || 0) < _recFilter.minYear) return false;
+    if (_recFilter.maxYear < 9999 && (g.year || 0) > _recFilter.maxYear) return false;
+    if (_recFilter.mode === '멀티') {
+      const tags = (g.tags||[]).join(' ').toLowerCase();
+      if (!tags.match(/멀티|협동|온라인|경쟁/)) return false;
+    }
+    if (_recFilter.mode === '싱글') {
+      const tags = (g.tags||[]).join(' ').toLowerCase();
+      if (!tags.match(/싱글|스토리|솔로/)) return false;
+    }
+    return true;
+  });
+}
+function renderRecFilterUI() {
+  const el = document.getElementById('rec-filter-bar');
+  if (!el) return;
+  const active = _recFilter.minRating>0 || _recFilter.minYear>0 || _recFilter.maxYear<9999 || _recFilter.mode!=='전체';
+  el.innerHTML = `
+    <div class="rec-filter-row">
+      <span class="rec-filter-label">필터</span>
+      <button class="rec-filter-btn ${_recFilter.minRating===0?'active':''}" onclick="setRecFilter('minRating',0)">전체 평점</button>
+      <button class="rec-filter-btn ${_recFilter.minRating===8?'active':''}" onclick="setRecFilter('minRating',8)">8점+</button>
+      <button class="rec-filter-btn ${_recFilter.minRating===9?'active':''}" onclick="setRecFilter('minRating',9)">9점+</button>
+      <span class="rec-filter-sep">|</span>
+      <button class="rec-filter-btn ${_recFilter.minYear===0&&_recFilter.maxYear===9999?'active':''}" onclick="setRecFilter('minYear',0);setRecFilter('maxYear',9999)">전체 연도</button>
+      <button class="rec-filter-btn ${_recFilter.minYear===2022?'active':''}" onclick="setRecFilter('minYear',2022);setRecFilter('maxYear',9999)">2022+</button>
+      <button class="rec-filter-btn ${_recFilter.maxYear===2021?'active':''}" onclick="setRecFilter('minYear',0);setRecFilter('maxYear',2021)">~2021</button>
+      <span class="rec-filter-sep">|</span>
+      <button class="rec-filter-btn ${_recFilter.mode==='전체'?'active':''}" onclick="setRecFilter('mode','전체')">전체</button>
+      <button class="rec-filter-btn ${_recFilter.mode==='멀티'?'active':''}" onclick="setRecFilter('mode','멀티')">멀티플레이</button>
+      <button class="rec-filter-btn ${_recFilter.mode==='싱글'?'active':''}" onclick="setRecFilter('mode','싱글')">싱글플레이</button>
+      ${active ? `<button class="rec-filter-reset" onclick="resetRecFilter()">✕ 초기화</button>` : ''}
+    </div>`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// ★ 선택 유지 (다시 선택 화면에서 기존 선택 보존)
+// ══════════════════════════════════════════════════════════════
+// resetApp 오버라이드: 선택 초기화는 하되 UI 복원은 하지 않음
+const _origResetApp = resetApp;
+function goToReselect() {
+  // selectedIds 유지한 채로 온보딩 화면으로
+  document.getElementById('app').classList.remove('active');
+  document.getElementById('onboarding').classList.add('active');
+  const backBtn = document.getElementById('ob-back-btn');
+  if (backBtn) backBtn.style.display = '';
+  updateObUI();
+  renderObFilter();
+  renderObGrid();
+}
+
 </script>
 
 </body>
