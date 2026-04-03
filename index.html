@@ -2449,19 +2449,10 @@ function forceRefreshHot() {
   _hotInflight = null;
   clearLiveDataCache();
   window.__nexusLastRefresh = Date.now();
-  const textEl = document.getElementById('hot-refresh-text');
   const btn = document.querySelector('.hot-sort-btn[onclick="forceRefreshHot()"]');
-  if (textEl) textEl.textContent = '갱신 중...';
   if (btn) { btn.disabled = true; btn.style.opacity = '0.5'; }
 
-  loadHotGames(false, { forceRemote: true }).then(data => {
-    const source = _hotSource;
-    if (textEl) textEl.textContent = source === 'live' ? '✅ 실시간 갱신 완료' : '⚠️ 최신 로컬 데이터 사용 중';
-    setTimeout(() => { if (textEl) textEl.textContent = '10분마다 자동 갱신'; }, 3000);
-  }).catch(() => {
-    if (textEl) textEl.textContent = '❌ 갱신 실패';
-    setTimeout(() => { if (textEl) textEl.textContent = '10분마다 자동 갱신'; }, 3000);
-  }).finally(() => {
+  loadHotGames(false, { forceRemote: true }).finally(() => {
     if (btn) { btn.disabled = false; btn.style.opacity = ''; }
   });
 
@@ -3263,7 +3254,7 @@ async function loadHotGames(silent = false, opts = {}) {
       if (!silent && statusEl && requestToken === _hotRequestToken) {
         statusEl.textContent = '⚠️ Steam 차트 실시간 데이터를 가져오지 못했습니다. 직전 리스트를 유지합니다.';
         statusEl.className = 'hot-status';
-        setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 5000);
+        setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 3000);
       }
     } else {
       _hotRawData = {
@@ -3276,9 +3267,9 @@ async function loadHotGames(silent = false, opts = {}) {
       if (!silent && statusEl && requestToken === _hotRequestToken) {
         statusEl.textContent = mostPlayedList.length
           ? '✅ Steam 차트 실시간 인기 데이터를 기준으로 표시 중입니다.'
-          : '✅ 최신 Steam 데이터를 기준으로 표시 중입니다.';
+          : '⚠️ 최신 로컬 데이터를 기준으로 표시 중입니다.';
         statusEl.className = 'hot-status';
-        setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 2200);
+        setTimeout(()=>{ if (requestToken === _hotRequestToken) statusEl.className='hot-status hidden'; }, 3000);
       }
     }
 
