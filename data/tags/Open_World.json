@@ -24,56 +24,6 @@
     ],
     "_source": "steamspy"
   },
-  "892970": {
-    "appid": 892970,
-    "name": "Valheim",
-    "developer": "Iron Gate AB",
-    "ccu": 105000,
-    "positive": 390000,
-    "negative": 18000,
-    "average_2weeks": 7800,
-    "owners": 8000000,
-    "tags": {
-      "서바이벌": 1,
-      "오픈월드": 1,
-      "협동": 1,
-      "크래프팅": 1,
-      "바이킹": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "오픈월드",
-      "협동",
-      "크래프팅",
-      "바이킹"
-    ],
-    "_source": "steamspy"
-  },
-  "1086940": {
-    "appid": 1086940,
-    "name": "Baldur's Gate 3",
-    "developer": "Larian Studios",
-    "ccu": 142000,
-    "positive": 680000,
-    "negative": 28000,
-    "average_2weeks": 11200,
-    "owners": 8000000,
-    "tags": {
-      "rpg": 1,
-      "턴제": 1,
-      "협동": 1,
-      "판타지": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "rpg",
-      "턴제",
-      "협동",
-      "판타지",
-      "스토리"
-    ],
-    "_source": "steamspy"
-  },
   "1174180": {
     "appid": 1174180,
     "name": "Red Dead Redemption 2",
@@ -124,31 +74,6 @@
     ],
     "_source": "steamspy"
   },
-  "2215430": {
-    "appid": 2215430,
-    "name": "Ghost of Tsushima DIRECTOR'S CUT",
-    "developer": "Sucker Punch Productions",
-    "ccu": 58000,
-    "positive": 290000,
-    "negative": 18000,
-    "average_2weeks": 4000,
-    "owners": 4500000,
-    "tags": {
-      "액션": 1,
-      "오픈월드": 1,
-      "일본": 1,
-      "스텔스": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "오픈월드",
-      "일본",
-      "스텔스",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "3321460": {
     "appid": 3321460,
     "name": "Crimson Desert",
@@ -170,6 +95,81 @@
       "액션",
       "어드벤처",
       "rpg",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1086940": {
+    "appid": 1086940,
+    "name": "Baldur's Gate 3",
+    "developer": "Larian Studios",
+    "ccu": 142000,
+    "positive": 680000,
+    "negative": 28000,
+    "average_2weeks": 11200,
+    "owners": 8000000,
+    "tags": {
+      "rpg": 1,
+      "턴제": 1,
+      "협동": 1,
+      "판타지": 1,
+      "스토리": 1
+    },
+    "tags_list": [
+      "rpg",
+      "턴제",
+      "협동",
+      "판타지",
+      "스토리"
+    ],
+    "_source": "steamspy"
+  },
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 105000,
+    "positive": 390000,
+    "negative": 18000,
+    "average_2weeks": 7800,
+    "owners": 8000000,
+    "tags": {
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "크래프팅": 1,
+      "바이킹": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "오픈월드",
+      "협동",
+      "크래프팅",
+      "바이킹"
+    ],
+    "_source": "steamspy"
+  },
+  "2215430": {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DIRECTOR'S CUT",
+    "developer": "Sucker Punch Productions",
+    "ccu": 58000,
+    "positive": 290000,
+    "negative": 18000,
+    "average_2weeks": 4000,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "오픈월드": 1,
+      "일본": 1,
+      "스텔스": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "오픈월드",
+      "일본",
+      "스텔스",
       "싱글플레이어"
     ],
     "_source": "steamspy"

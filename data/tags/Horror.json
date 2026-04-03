@@ -24,53 +24,28 @@
     ],
     "_source": "steamspy"
   },
-  "418370": {
-    "appid": 418370,
-    "name": "Subnautica",
-    "developer": "Unknown Worlds Entertainment",
-    "ccu": 20000,
-    "positive": 320000,
-    "negative": 8000,
-    "average_2weeks": 1400,
-    "owners": 8000000,
+  "1868140": {
+    "appid": 1868140,
+    "name": "Lies of P",
+    "developer": "Round8 Studio",
+    "ccu": 12000,
+    "positive": 140000,
+    "negative": 12000,
+    "average_2weeks": 1200,
+    "owners": 1800000,
     "tags": {
-      "서바이벌": 1,
-      "탐험": 1,
-      "수중": 1,
-      "공포": 1,
-      "오픈월드": 1
+      "소울라이크": 1,
+      "액션": 1,
+      "공호": 1,
+      "싱글플레이어": 1,
+      "피노키오": 1
     },
     "tags_list": [
-      "서바이벌",
-      "탐험",
-      "수중",
-      "공포",
-      "오픈월드"
-    ],
-    "_source": "steamspy"
-  },
-  "952060": {
-    "appid": 952060,
-    "name": "Phasmophobia",
-    "developer": "Kinetic Games",
-    "ccu": 22000,
-    "positive": 320000,
-    "negative": 18000,
-    "average_2weeks": 1600,
-    "owners": 8000000,
-    "tags": {
-      "공포": 1,
-      "협동": 1,
-      "귀신": 1,
-      "심리": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "공포",
-      "협동",
-      "귀신",
-      "심리",
-      "멀티플레이어"
+      "소울라이크",
+      "액션",
+      "공호",
+      "싱글플레이어",
+      "피노키오"
     ],
     "_source": "steamspy"
   },
@@ -124,28 +99,53 @@
     ],
     "_source": "steamspy"
   },
-  "1868140": {
-    "appid": 1868140,
-    "name": "Lies of P",
-    "developer": "Round8 Studio",
-    "ccu": 12000,
-    "positive": 140000,
-    "negative": 12000,
-    "average_2weeks": 1200,
-    "owners": 1800000,
+  "952060": {
+    "appid": 952060,
+    "name": "Phasmophobia",
+    "developer": "Kinetic Games",
+    "ccu": 22000,
+    "positive": 320000,
+    "negative": 18000,
+    "average_2weeks": 1600,
+    "owners": 8000000,
     "tags": {
-      "소울라이크": 1,
-      "액션": 1,
-      "공호": 1,
-      "싱글플레이어": 1,
-      "피노키오": 1
+      "공포": 1,
+      "협동": 1,
+      "귀신": 1,
+      "심리": 1,
+      "멀티플레이어": 1
     },
     "tags_list": [
-      "소울라이크",
-      "액션",
-      "공호",
-      "싱글플레이어",
-      "피노키오"
+      "공포",
+      "협동",
+      "귀신",
+      "심리",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "418370": {
+    "appid": 418370,
+    "name": "Subnautica",
+    "developer": "Unknown Worlds Entertainment",
+    "ccu": 20000,
+    "positive": 320000,
+    "negative": 8000,
+    "average_2weeks": 1400,
+    "owners": 8000000,
+    "tags": {
+      "서바이벌": 1,
+      "탐험": 1,
+      "수중": 1,
+      "공포": 1,
+      "오픈월드": 1
+    },
+    "tags_list": [
+      "서바이벌",
+      "탐험",
+      "수중",
+      "공포",
+      "오픈월드"
     ],
     "_source": "steamspy"
   }

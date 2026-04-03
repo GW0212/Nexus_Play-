@@ -1,26 +1,26 @@
 {
-  "367520": {
-    "appid": 367520,
-    "name": "Hollow Knight",
-    "developer": "Team Cherry",
-    "ccu": 15000,
+  "1145360": {
+    "appid": 1145360,
+    "name": "Hades",
+    "developer": "Supergiant Games",
+    "ccu": 40000,
     "positive": 280000,
-    "negative": 4000,
-    "average_2weeks": 1000,
-    "owners": 7000000,
+    "negative": 5000,
+    "average_2weeks": 2400,
+    "owners": 5000000,
     "tags": {
-      "메트로바니아": 1,
+      "로그라이크": 1,
       "액션": 1,
       "인디": 1,
-      "로그라이크": 1,
-      "어두운": 1
+      "그리스신화": 1,
+      "핵앤슬래시": 1
     },
     "tags_list": [
-      "메트로바니아",
+      "로그라이크",
       "액션",
       "인디",
-      "로그라이크",
-      "어두운"
+      "그리스신화",
+      "핵앤슬래시"
     ],
     "_source": "steamspy"
   },
@@ -49,31 +49,6 @@
     ],
     "_source": "steamspy"
   },
-  "1145360": {
-    "appid": 1145360,
-    "name": "Hades",
-    "developer": "Supergiant Games",
-    "ccu": 40000,
-    "positive": 280000,
-    "negative": 5000,
-    "average_2weeks": 2400,
-    "owners": 5000000,
-    "tags": {
-      "로그라이크": 1,
-      "액션": 1,
-      "인디": 1,
-      "그리스신화": 1,
-      "핵앤슬래시": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "액션",
-      "인디",
-      "그리스신화",
-      "핵앤슬래시"
-    ],
-    "_source": "steamspy"
-  },
   "2694490": {
     "appid": 2694490,
     "name": "Path of Exile 2",
@@ -96,6 +71,31 @@
       "무료",
       "로그라이크",
       "판타지"
+    ],
+    "_source": "steamspy"
+  },
+  "367520": {
+    "appid": 367520,
+    "name": "Hollow Knight",
+    "developer": "Team Cherry",
+    "ccu": 15000,
+    "positive": 280000,
+    "negative": 4000,
+    "average_2weeks": 1000,
+    "owners": 7000000,
+    "tags": {
+      "메트로바니아": 1,
+      "액션": 1,
+      "인디": 1,
+      "로그라이크": 1,
+      "어두운": 1
+    },
+    "tags_list": [
+      "메트로바니아",
+      "액션",
+      "인디",
+      "로그라이크",
+      "어두운"
     ],
     "_source": "steamspy"
   }

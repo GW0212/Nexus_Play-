@@ -1,26 +1,26 @@
 {
-  "4000": {
-    "appid": 4000,
-    "name": "Garry's Mod",
-    "developer": "Facepunch Studios",
-    "ccu": 13000,
-    "positive": 680000,
-    "negative": 32000,
-    "average_2weeks": 1800,
-    "owners": 18000000,
+  "526870": {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "developer": "Coffee Stain Studios",
+    "ccu": 88000,
+    "positive": 320000,
+    "negative": 12000,
+    "average_2weeks": 6400,
+    "owners": 5000000,
     "tags": {
-      "샌드박스": 1,
-      "물리": 1,
-      "멀티플레이어": 1,
-      "유머": 1,
-      "모딩": 1
+      "공장": 1,
+      "시뮬레이션": 1,
+      "오픈월드": 1,
+      "크래프팅": 1,
+      "협동": 1
     },
     "tags_list": [
-      "샌드박스",
-      "물리",
-      "멀티플레이어",
-      "유머",
-      "모딩"
+      "공장",
+      "시뮬레이션",
+      "오픈월드",
+      "크래프팅",
+      "협동"
     ],
     "_source": "steamspy"
   },
@@ -49,28 +49,53 @@
     ],
     "_source": "steamspy"
   },
-  "526870": {
-    "appid": 526870,
-    "name": "Satisfactory",
-    "developer": "Coffee Stain Studios",
-    "ccu": 88000,
-    "positive": 320000,
-    "negative": 12000,
-    "average_2weeks": 6400,
-    "owners": 5000000,
+  "1250410": {
+    "appid": 1250410,
+    "name": "Microsoft Flight Simulator",
+    "developer": "Asobo Studio",
+    "ccu": 22000,
+    "positive": 180000,
+    "negative": 22000,
+    "average_2weeks": 1600,
+    "owners": 4000000,
     "tags": {
-      "공장": 1,
+      "비행": 1,
       "시뮬레이션": 1,
-      "오픈월드": 1,
-      "크래프팅": 1,
-      "협동": 1
+      "사실적": 1,
+      "항공": 1,
+      "오픈월드": 1
     },
     "tags_list": [
-      "공장",
+      "비행",
       "시뮬레이션",
-      "오픈월드",
-      "크래프팅",
-      "협동"
+      "사실적",
+      "항공",
+      "오픈월드"
+    ],
+    "_source": "steamspy"
+  },
+  "4000": {
+    "appid": 4000,
+    "name": "Garry's Mod",
+    "developer": "Facepunch Studios",
+    "ccu": 13000,
+    "positive": 680000,
+    "negative": 32000,
+    "average_2weeks": 1800,
+    "owners": 18000000,
+    "tags": {
+      "샌드박스": 1,
+      "물리": 1,
+      "멀티플레이어": 1,
+      "유머": 1,
+      "모딩": 1
+    },
+    "tags_list": [
+      "샌드박스",
+      "물리",
+      "멀티플레이어",
+      "유머",
+      "모딩"
     ],
     "_source": "steamspy"
   },
@@ -96,31 +121,6 @@
       "경영",
       "동물",
       "창작"
-    ],
-    "_source": "steamspy"
-  },
-  "1250410": {
-    "appid": 1250410,
-    "name": "Microsoft Flight Simulator",
-    "developer": "Asobo Studio",
-    "ccu": 22000,
-    "positive": 180000,
-    "negative": 22000,
-    "average_2weeks": 1600,
-    "owners": 4000000,
-    "tags": {
-      "비행": 1,
-      "시뮬레이션": 1,
-      "사실적": 1,
-      "항공": 1,
-      "오픈월드": 1
-    },
-    "tags_list": [
-      "비행",
-      "시뮬레이션",
-      "사실적",
-      "항공",
-      "오픈월드"
     ],
     "_source": "steamspy"
   },
