@@ -805,11 +805,12 @@ body {
 .modal-overlay.hidden { display:none; }
 
 @media (max-width:600px) {
-  .modal-overlay { align-items:flex-end; padding:0; }
+  .modal-overlay { align-items:center; justify-content:center; padding:12px; }
   .modal {
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-radius: var(--radius-lg);
     max-height:88dvh;
     width:100%;
+    max-width:calc(100vw - 24px);
   }
 }
 
