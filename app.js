@@ -642,8 +642,12 @@ function setSteamImgFallback(el, appid) {
   const wrap = el?.closest?.('.steam-card-img-wrap, .hero-card, .ob-card');
   if (wrap) wrap.classList.add('thumb-fallback');
   if (el) {
-    el.style.display = 'none';
-    el.alt = (el.alt || '') + ' (thumbnail unavailable)';
+    const title = (el.getAttribute('alt') || el.dataset.title || '').trim();
+    const poster = makePosterThumbnail(title || 'Game Thumbnail', 'IMAGE READY', { accent:'#22d3ee', accent2:'#312e81', kicker:'THUMBNAIL FALLBACK', silhouette:true });
+    el.onerror = null;
+    el.style.display = '';
+    el.src = poster;
+    el.alt = (title || 'Game Thumbnail') + ' poster';
   }
 }
 
@@ -785,7 +789,14 @@ const THUMB_OVERRIDES = {
   "Marvel's Spider-Man Remastered": { appid:1817070 },
   "Marvel's Spider-Man: Miles Morales": { appid:1817190 },
   "Crimson Desert": { appid:3321460 },
-  "Escape from Tarkov": { appid:3932890 }
+  "Escape from Tarkov": {
+    appid: 3932890,
+    image: makePosterThumbnail("Escape from Tarkov", "HARDCORE EXTRACTION SHOOTER", { accent:'#a3e635', accent2:'#365314', kicker:'TACTICAL FPS', silhouette:true })
+  },
+  "EA SPORTS FC 26": {
+    appid: 3405690,
+    image: makePosterThumbnail("EA SPORTS FC 26", "FOOTBALL CLUB", { accent:'#22d3ee', accent2:'#1d4ed8', kicker:'SPORTS', silhouette:true })
+  }
 };
 
 function genreClass(g)    { return GENRE_CLASS[g] || ''; }
@@ -832,9 +843,21 @@ function makePosterThumbnail(title, subtitle='', opts = {}) {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 function makeTextThumbnail(title, subtitle='') { return makePosterThumbnail(title, subtitle); }
+function normalizeThumbTitle(v='') {
+  return String(v || '')
+    .toLowerCase()
+    .replace(/&amp;/g, '&')
+    .replace(/[^a-z0-9가-힣]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 function getThumbOverride(gameOrId, title='') {
-  const key = typeof gameOrId === 'object' && gameOrId ? gameOrId.title : title;
-  return THUMB_OVERRIDES[key] || null;
+  const raw = typeof gameOrId === 'object' && gameOrId ? (gameOrId.title || gameOrId.name || '') : (title || '');
+  const key = normalizeThumbTitle(raw);
+  for (const [name, value] of Object.entries(THUMB_OVERRIDES)) {
+    if (normalizeThumbTitle(name) === key) return value;
+  }
+  return THUMB_OVERRIDES[raw] || null;
 }
 function getThumbAppId(gameOrId, title='') {
   const override = getThumbOverride(gameOrId, title);
