@@ -2736,8 +2736,10 @@ function makeSteamCard(app, rank, options = {}) {
   const fallback2 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg`;
   const fallback3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
   const fallback4 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_231x87.jpg`;
+  // 카드 데이터를 캐시에 저장 (openSteamModal에서 활용)
+  _steamCardCache.set(thumbId, app);
   return `
-    <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
+    <div class="steam-card" onclick="openSteamModal(event, ${thumbId})" style="cursor:pointer">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${imgSrc}" alt="${displayName.replace(/"/g,'')}" loading="lazy"
              data-appid="${thumbId}" data-title="${displayName.replace(/"/g,'')}" data-dev="${displayDev.replace(/"/g,'')}" data-genre="${displayGenre}"
@@ -2753,10 +2755,10 @@ function makeSteamCard(app, rank, options = {}) {
         <div class="steam-card-tags">${tags.map(t=>`<span class="tag-pill">${t}</span>`).join('')}</div>
       </div>
       <div class="steam-card-footer">
-        <div class="steam-card-dev">${app.developer||''}</div>
-        <span class="steam-card-link">Steam ↗</span>
+        <div class="steam-card-dev">${displayDev}</div>
+        <span class="steam-card-link">상세 보기 →</span>
       </div>
-    </a>`;
+    </div>`;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -3343,15 +3345,45 @@ function loadSelection() {
 // ══════════════════════════════════════════════════════════════
 // MODAL
 // ══════════════════════════════════════════════════════════════
+
+// 장르/실시간 카드용 Steam 앱 데이터 캐시
+const _steamCardCache = new Map();
+
+// Steam 앱 데이터 기반 모달 오픈 (장르별/실시간 인기)
+function openSteamModal(event, appid) {
+  event.preventDefault();
+  event.stopPropagation();
+  const id = Number(appid);
+  const cached = _steamCardCache.get(id);
+  const local  = getGameById(id);
+  // GAMES_CLEAN 로컬 데이터 우선, 없으면 Steam 캐시 데이터로 채움
+  const g = {
+    id,
+    title:  local?.title  || cached?.name      || cached?.title || '',
+    genre:  local?.genre  || cached?.genre     || cached?._genre || '',
+    rating: local?.rating ?? null,
+    year:   local?.year   ?? null,
+    dev:    local?.dev    || cached?.developer || '',
+    desc:   local?.desc   || '',
+    tags:   local?.tags   || Object.keys(cached?.tags || {}),
+  };
+  if (!g.title) return;
+  fillAndShowModal(g, id);
+}
+
 function openModal(id) {
   const g = getGameById(id); if (!g) return;
+  fillAndShowModal(g, getThumbAppId(g));
+}
+
+function fillAndShowModal(g, thumbId) {
+  const _thumbId = Number(thumbId) || getThumbAppId(g);
   const img = document.getElementById('modal-img');
-  const _thumbId = getThumbAppId(g);
   const _alt1 = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${_thumbId}/header.jpg`;
   const _alt2 = `https://cdn.akamai.steamstatic.com/steam/apps/${_thumbId}/capsule_616x353.jpg`;
   const _alt3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${_thumbId}/header.jpg`;
   const _poster = makePosterThumbnail(g.title, g.dev || '', { kicker: g.genre || 'GAME', silhouette: true });
-  img.src = imgUrl(g);
+  img.src = `https://cdn.akamai.steamstatic.com/steam/apps/${_thumbId}/header.jpg`;
   img.onerror = function() {
     const fallbacks = [_alt1, _alt2, _alt3];
     const tryNext = (list) => {
@@ -3370,7 +3402,7 @@ function openModal(id) {
   document.getElementById('modal-year').textContent = g.year ? g.year+'년' : '';
   document.getElementById('modal-dev').textContent = g.dev||'';
   document.getElementById('modal-desc').textContent = g.desc||'';
-  document.getElementById('modal-steam-link').href = storeUrl(g);
+  document.getElementById('modal-steam-link').href = `https://store.steampowered.com/app/${_thumbId}`;
   document.getElementById('modal-tags').innerHTML = (g.tags||[]).map(t=>
     `<span class="tag-pill" style="font-size:0.72rem;padding:4px 10px">${t}</span>`).join('');
   const so = document.getElementById('stat-owners');
@@ -3378,7 +3410,7 @@ function openModal(id) {
   if(so){ so.className='modal-stat-value loading'; so.textContent=''; }
   if(sp){ sp.className='modal-stat-value loading'; sp.textContent=''; }
   document.getElementById('modal').classList.remove('hidden');
-  fetchSteamData(getThumbAppId(g), g);
+  fetchSteamData(_thumbId, g);
 }
 
 function closeModal(e) {
