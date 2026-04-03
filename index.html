@@ -4184,9 +4184,13 @@ function goToReselect() {
   }
   function renderModalInsights(g){
     const insight=recommendationInsight(g); const chips=document.getElementById('modal-insight-chips'); const aud=document.getElementById('modal-audience'); const note=document.getElementById('modal-note'); const similar=document.getElementById('modal-similar-list');
-    if(chips){ const arr=[`<span class="insight-chip"><strong>${insight.score}%</strong> 매칭</span>`]; if(insight.matchedTags.length) arr.push(`<span class="insight-chip">태그 일치 <strong>${insight.matchedTags.slice(0,3).join(', ')}</strong></span>`); chips.innerHTML=arr.join(''); }
-    if(bar) bar.style.width=insight.score+'%'; if(score) score.textContent=insight.score+'%'; if(aud) aud.textContent=insight.audience; if(note) note.textContent=insight.caution;
-    const recs=(window.getLocalRecommendations?getLocalRecommendations():[]).filter(x=>x.id!==g.id && (x.genre===g.genre || (x.tags||[]).some(t=>(g.tags||[]).includes(t)))).slice(0,3);
+    if(chips){
+      const arr=[];
+      if(insight.matchedTags.length) arr.push(`<span class="insight-chip">태그 일치 <strong>${insight.matchedTags.slice(0,3).join(', ')}</strong></span>`);
+      chips.innerHTML=arr.join('');
+      chips.style.display = arr.length ? '' : 'none';
+    }
+    if(aud) aud.textContent=insight.audience; if(note) note.textContent=insight.caution;
     if(similar) similar.innerHTML='';
   }
 
