@@ -11,10 +11,10 @@
    DESIGN TOKENS
 ══════════════════════════════════════════════════════ */
 :root {
-  --bg:        #07070f;
-  --surface:   #0d0d1a;
-  --surface2:  #13131f;
-  --surface3:  #1a1a2e;
+  --bg:        #0d1117;
+  --surface:   #141b27;
+  --surface2:  #1a2233;
+  --surface3:  #1f2d45;
   --border:    rgba(255,255,255,0.06);
   --border2:   rgba(255,255,255,0.12);
   --accent:    #00e5ff;
@@ -36,7 +36,8 @@
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
-  background: var(--bg);
+  background: linear-gradient(160deg, #0f1724 0%, #0d1117 40%, #111827 100%);
+  background-attachment: fixed;
   color: var(--text);
   font-family: 'Nunito', sans-serif;
   min-height: 100vh;
@@ -2367,7 +2368,7 @@ async function steamspyFetch(params) {
   for (const base of PROXIES) {
     try {
       const url = base + (base.includes('?') ? '&' : '?') + qs;
-      const res = await fetch(url, { signal: AbortSignal.timeout(7000), cache: forceRemote ? 'no-store' : 'default' });
+      const res = await fetch(url, { signal: AbortSignal.timeout(3000), cache: forceRemote ? 'no-store' : 'default' });
       if (!res.ok) continue;
       const d = await res.json();
       if (d && typeof d === 'object' && !d.error && !d._note) return d;
@@ -3462,36 +3463,46 @@ async function fetchSteamData(appid, game = null) {
   const targetAppid = Number(getThumbAppId(game || appid, game?.title || ''));
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
+
+  function showStats(owners, playtime) {
+    if (so) { so.className = 'modal-stat-value'; so.textContent = formatOwnersValue(owners); }
+    if (sp) { sp.className = 'modal-stat-value'; sp.textContent = formatPlaytimeMinutes(playtime); }
+  }
+  function showEmpty() {
+    if (so) { so.className = 'modal-stat-value'; so.textContent = '데이터 없음'; }
+    if (sp) { sp.className = 'modal-stat-value'; sp.textContent = '데이터 없음'; }
+  }
+
+  // ① GAMES_CLEAN 로컬 데이터 즉시 표시 (0ms)
+  const localGame = getGameById(targetAppid) || (game?.id ? getGameById(Number(game.id)) : null);
+  if (localGame?.owners || localGame?.average_forever || localGame?.average_2weeks) {
+    showStats(localGame.owners || 0, localGame.average_forever || localGame.average_2weeks || 0);
+  }
+
+  // ② 로컬 JSON 파일 + SteamSpy API 병렬 실행
   try {
-    let data = await steamspyFetch({request:'appdetails', appid: targetAppid});
-    if (!data || (!data.owners && !data.average_forever)) {
-      const localData = await lookupLocalAppDetails(targetAppid);
-      data = { ...(localData || {}), ...(data || {}) };
-    }
-    // GAMES_CLEAN 로컬 데이터를 최종 fallback으로 활용
-    if (!data || (!data.owners && !data.average_forever && !data.average_2weeks)) {
-      const localGame = getGameById(targetAppid) || (game?.id ? getGameById(game.id) : null);
-      if (localGame) {
-        data = {
-          owners: localGame.owners || 0,
-          average_forever: localGame.average_forever || 0,
-          average_2weeks: localGame.average_2weeks || 0,
-          ...(data || {})
-        };
-      }
-    }
-    if (!data || (!data.owners && !data.average_forever && !data.average_2weeks)) throw new Error('no data');
-    if (so) {
-      so.className='modal-stat-value';
-      so.textContent = formatOwnersValue(data.owners);
-    }
-    if (sp) {
-      sp.className='modal-stat-value';
-      sp.textContent = formatPlaytimeMinutes(data.average_forever || data.average_2weeks);
+    const [localResult, apiResult] = await Promise.allSettled([
+      lookupLocalAppDetails(targetAppid),
+      steamspyFetch({request:'appdetails', appid: targetAppid}),
+    ]);
+
+    const localData = localResult.status === 'fulfilled' ? localResult.value : null;
+    const apiData   = apiResult.status === 'fulfilled'   ? apiResult.value   : null;
+
+    // 우선순위: API > 로컬파일 > GAMES_CLEAN
+    const merged = {
+      owners:          apiData?.owners          || localData?.owners          || localGame?.owners          || 0,
+      average_forever: apiData?.average_forever || localData?.average_forever || localGame?.average_forever || 0,
+      average_2weeks:  apiData?.average_2weeks  || localData?.average_2weeks  || localGame?.average_2weeks  || 0,
+    };
+
+    if (merged.owners || merged.average_forever || merged.average_2weeks) {
+      showStats(merged.owners, merged.average_forever || merged.average_2weeks);
+    } else if (!localGame?.owners && !localGame?.average_forever) {
+      showEmpty();
     }
   } catch {
-    if (so) { so.className='modal-stat-value'; so.textContent='데이터 없음'; }
-    if (sp) { sp.className='modal-stat-value'; sp.textContent='데이터 없음'; }
+    if (!localGame?.owners && !localGame?.average_forever) showEmpty();
   }
 }
 
