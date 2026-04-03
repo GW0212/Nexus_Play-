@@ -1761,7 +1761,7 @@ const EXTRA_GAMES = [
   { id:3167020, title:"Escape from Duckov",          genre:"서바이벌", tags:["추출","PvE","오픈월드","은신처","오리"],         rating:8.5, year:2025, dev:"Team Soda", desc:"오리 세계관에서 파밍과 은신처 건설을 하는 PvE 탈출 서바이벌." },
   { id:379720,  title:"DOOM",                        genre:"FPS",      tags:["fps","악마","싱글플레이어","빠른","고전부활"],    rating:9.0, year:2016, dev:"id Software", desc:"현대적으로 부활한 DOOM의 하드코어 싱글 FPS." },
   { id:1721470, title:"Poppy Playtime",              genre:"공포",     tags:["공포","퍼즐","어드벤처","장난감","1인칭"],        rating:7.9, year:2021, dev:"Mob Entertainment", desc:"버려진 장난감 공장에서 퍼즐과 추격을 버티는 호러 어드벤처." },
-  { id:3932890, title:"Escape from Tarkov",          genre:"FPS",      tags:["추출","하드코어","밀리터리","전술","파밍"],      rating:8.7, year:2025, dev:"Battlestate Games", desc:"탈출 슈터 장르를 대표하는 하드코어 전술 FPS." },
+  { id:3932890, title:"Escape from Tarkov",          genre:"FPS",      tags:["추출","하드코어","밀리터리","전술","파밍"],      rating:8.7, year:2025, dev:"Battlestate Games", owners:4200000, average_forever:21600, average_2weeks:19800, desc:"탈출 슈터 장르를 대표하는 하드코어 전술 FPS." },
   { id:990080,  title:"Hogwarts Legacy",              genre:"액션",     tags:["오픈월드","마법","액션","스토리","판타지"],      rating:8.8, year:2023, dev:"Avalanche Software", desc:"호그와트와 마법 세계를 자유롭게 탐험하는 오픈월드 액션 RPG." },
   { id:1888930, title:"The Last of Us Part I",        genre:"액션",     tags:["스토리","액션","생존","포스트아포칼립스","명작"], rating:9.2, year:2023, dev:"Naughty Dog LLC, Iron Galaxy Studios", desc:"조엘과 엘리의 여정을 고퀄리티로 재구성한 포스트아포칼립스 액션 어드벤처." },
   { id:2531310, title:"The Last of Us Part II",       genre:"액션",     tags:["스토리","액션","생존","포스트아포칼립스","드라마"], rating:9.1, year:2025, dev:"Naughty Dog LLC, Nixxes Software, Iron Galaxy Studios", desc:"엘리와 애비의 이야기를 다룬 서사 중심 액션 어드벤처 후속작." },
@@ -1789,7 +1789,7 @@ const EXTRA_CURATED_GAMES = [
   { id:601150, title:"Devil May Cry 5", genre:"액션", tags:["액션","콤보","핵앤슬래시","스타일리시","악마"], rating:9.3, year:2019, dev:"CAPCOM", desc:"스타일리시 액션 장르의 기준점 같은 작품." },
   { id:2215430, title:"Ghost of Tsushima DIRECTOR'S CUT", genre:"액션", tags:["오픈월드","사무라이","액션","스토리","잠입"], rating:9.3, year:2024, dev:"Sucker Punch Productions", desc:"사무라이 감성과 오픈월드 전투를 높은 완성도로 담아낸 작품." },
   { id:2358720, title:"Black Myth: Wukong", genre:"액션", tags:["액션","소울라이크","중국신화","보스전","싱글플레이어"], rating:8.8, year:2024, dev:"Game Science", desc:"손오공 신화를 현대적으로 재해석한 고퀄리티 액션 게임." },
-  { id:3321460, title:"Crimson Desert", genre:"액션", tags:["오픈월드","액션","어드벤처","판타지","싱글플레이어"], rating:8.8, year:2026, dev:"Pearl Abyss", desc:"광활한 판타지 대륙을 누비는 오픈월드 액션 어드벤처." },
+  { id:3321460, title:"Crimson Desert", genre:"액션", tags:["오픈월드","액션","어드벤처","판타지","싱글플레이어"], rating:8.8, year:2026, dev:"Pearl Abyss", owners:4860000, average_forever:22000, average_2weeks:22000, desc:"광활한 판타지 대륙을 누비는 오픈월드 액션 어드벤처." },
 
   // 어드벤처
   { id:1222140, title:"Detroit: Become Human", genre:"어드벤처", tags:["스토리","선택","어드벤처","SF","드라마"], rating:8.9, year:2020, dev:"Quantic Dream", desc:"선택에 따라 큰 분기가 생기는 인터랙티브 어드벤처." },
@@ -2315,12 +2315,24 @@ async function resolveSteamHeaderImage(appid) {
 }
 
 function setSteamImgFallback(el, appid) {
+  if (!el) return;
+  const id = Number(appid || 0);
+  const local = id ? getGameById(id) : null;
+  const title = local?.title || el.dataset.title || el.alt || '';
+  const dev   = local?.dev   || el.dataset.dev  || '';
+  const genre = local?.genre || el.dataset.genre || '';
+  if (title) {
+    try {
+      el.src = makePosterThumbnail(title, dev, { kicker: genre || 'GAME', silhouette: true });
+      el.style.display = '';
+      el.onerror = null;
+      return;
+    } catch {}
+  }
   const wrap = el?.closest?.('.steam-card-img-wrap, .hero-card, .ob-card');
   if (wrap) wrap.classList.add('thumb-fallback');
-  if (el) {
-    el.style.display = 'none';
-    el.alt = (el.alt || '') + ' (thumbnail unavailable)';
-  }
+  el.style.display = 'none';
+  el.alt = (el.alt || '') + ' (thumbnail unavailable)';
 }
 
 async function handleSteamImgError(el, appid, explicitFallbacks = []) {
@@ -2465,6 +2477,7 @@ async function fetchMostPlayedLive(forceRemote = false) {
     3321460: 'Crimson Desert', 1868140: 'Lies of P',
     1794680: 'Mortal Kombat 1', 1942280: 'Starfield', 1687950: 'Forspoken',
     1462040: 'Trek to Yomi', 782330: 'DOOM Eternal',
+    3932890: 'Escape from Tarkov',
   };
   const chart = await fetchJsonViaAnyProxy('https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?format=json', 8000, true);
   const ranks = (chart?.response?.ranks || chart?.response?.items || chart?.ranks || chart?.items || [])
@@ -2485,7 +2498,7 @@ async function fetchMostPlayedLive(forceRemote = false) {
   ]);
   const detailMap = buildSteamDetailMap(localMost, localHot, localTop, localOwned);
 
-  return ranks.map((row, idx) => {
+  const liveList = ranks.map((row, idx) => {
     const detail = detailMap.get(row.appid);
     const local = getGameById(row.appid);
     // KNOWN_APPIDS → detail → local → fallback 순으로 이름 결정
@@ -2507,6 +2520,38 @@ async function fetchMostPlayedLive(forceRemote = false) {
       _source: 'steam_charts_live'
     };
   });
+
+  // 로컬 데이터에 있지만 Steam API 응답에 누락된 주요 게임(붉은 사막 등) 보완
+  return mergeLocalTopGames(liveList, detailMap, 20);
+}
+
+// 로컬 mostplayed 데이터에서 live 결과에 누락된 상위 게임을 보완하는 헬퍼
+function mergeLocalTopGames(liveList, detailMap, maxMissed = 15) {
+  if (!liveList?.length) return liveList;
+  const liveIds = new Set(liveList.map(a => Number(a.appid)));
+  // detailMap에서 ccu 기준 상위 게임 중 live에 없는 것 추가
+  const missed = [];
+  detailMap.forEach((app, appid) => {
+    if (!liveIds.has(appid) && (app.ccu || 0) > 5000 && !isExcludedGame(app)) {
+      const local = getGameById(appid);
+      missed.push({
+        appid,
+        name: app.name || local?.title || '',
+        developer: app.developer || local?.dev || '',
+        ccu: app.ccu || 0,
+        positive: app.positive || 0,
+        negative: app.negative || 0,
+        average_2weeks: app.average_2weeks || 0,
+        rank: app.rank || 999,
+        tags: app.tags || Object.fromEntries((local?.tags || []).map(t => [t, 1])),
+        tags_list: app.tags_list || Object.keys(app.tags || {}),
+        genre: app.genre || local?.genre || '',
+        _source: 'steam_charts_local'
+      });
+    }
+  });
+  missed.sort((a, b) => (b.ccu || 0) - (a.ccu || 0));
+  return [...liveList, ...missed.slice(0, maxMissed)];
 }
 async function steamspyFetch(params) {
   const {request, tag, appid, forceRemote = false} = params;
@@ -2863,7 +2908,10 @@ function formatOwnersValue(value) {
   if (typeof value === 'string' && value.trim()) return value;
   const n = Number(value);
   if (!Number.isFinite(n) || n <= 0) return '데이터 없음';
-  return new Intl.NumberFormat('ko-KR').format(Math.round(n)) + '명';
+  if (n >= 1e8)  return (n / 1e8).toFixed(1).replace(/\.0$/, '') + 'b명';
+  if (n >= 1e6)  return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'm명';
+  if (n >= 1e3)  return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'k명';
+  return Math.round(n) + '명';
 }
 
 function formatPlaytimeMinutes(value) {
@@ -2942,6 +2990,8 @@ function makeSteamCard(app, rank, options = {}) {
     : resolveSteamThumbId(app, app.name);
   if (!thumbId) return '';
   const displayName = app.name || app.title || '';
+  const displayDev  = app.developer || app.dev || '';
+  const displayGenre = app.genre || app._genre || '';
   const imgSrc = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/header.jpg`;
   const fallback1 = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${thumbId}/header.jpg`;
   const fallback2 = `https://cdn.akamai.steamstatic.com/steam/apps/${thumbId}/capsule_616x353.jpg`;
@@ -2951,7 +3001,8 @@ function makeSteamCard(app, rank, options = {}) {
     <a class="steam-card" href="https://store.steampowered.com/app/${thumbId}" target="_blank" rel="noopener">
       <div class="steam-card-img-wrap">
         <img class="steam-card-img" src="${imgSrc}" alt="${displayName.replace(/"/g,'')}" loading="lazy"
-             data-appid="${thumbId}" onerror="handleSteamImgError(this, ${thumbId}, ['${fallback1}','${fallback2}','${fallback3}','${fallback4}'])">
+             data-appid="${thumbId}" data-title="${displayName.replace(/"/g,'')}" data-dev="${displayDev.replace(/"/g,'')}" data-genre="${displayGenre}"
+             onerror="handleSteamImgError(this, ${thumbId}, ['${fallback1}','${fallback2}','${fallback3}','${fallback4}'])">
         ${rank ? `<div class="steam-card-rank">${rank}</div>` : ''}
       </div>
       <div class="steam-card-body">
@@ -3558,8 +3609,23 @@ function loadSelection() {
 function openModal(id) {
   const g = getGameById(id); if (!g) return;
   const img = document.getElementById('modal-img');
+  const _thumbId = getThumbAppId(g);
+  const _alt1 = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${_thumbId}/header.jpg`;
+  const _alt2 = `https://cdn.akamai.steamstatic.com/steam/apps/${_thumbId}/capsule_616x353.jpg`;
+  const _alt3 = `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${_thumbId}/header.jpg`;
+  const _poster = makePosterThumbnail(g.title, g.dev || '', { kicker: g.genre || 'GAME', silhouette: true });
   img.src = imgUrl(g);
-  img.onerror = function(){ this.src=imgUrlAlt(g); this.onerror=null; };
+  img.onerror = function() {
+    const fallbacks = [_alt1, _alt2, _alt3];
+    const tryNext = (list) => {
+      if (!list.length) { this.src = _poster; this.onerror = null; return; }
+      const [next, ...rest] = list;
+      if (this.src === next) { tryNext(rest); return; }
+      this.onerror = () => tryNext(rest);
+      this.src = next;
+    };
+    tryNext(fallbacks);
+  };
   document.getElementById('modal-genre-badge').className = 'modal-genre '+genreClass(g.genre);
   document.getElementById('modal-genre-badge').textContent = g.genre;
   document.getElementById('modal-title').textContent = g.title;
@@ -3596,6 +3662,18 @@ async function fetchSteamData(appid, game = null) {
     if (!data || (!data.owners && !data.average_forever)) {
       const localData = await lookupLocalAppDetails(targetAppid);
       data = { ...(localData || {}), ...(data || {}) };
+    }
+    // GAMES_CLEAN 로컬 데이터를 최종 fallback으로 활용
+    if (!data || (!data.owners && !data.average_forever && !data.average_2weeks)) {
+      const localGame = getGameById(targetAppid) || (game?.id ? getGameById(game.id) : null);
+      if (localGame) {
+        data = {
+          owners: localGame.owners || 0,
+          average_forever: localGame.average_forever || 0,
+          average_2weeks: localGame.average_2weeks || 0,
+          ...(data || {})
+        };
+      }
     }
     if (!data || (!data.owners && !data.average_forever && !data.average_2weeks)) throw new Error('no data');
     if (so) {
