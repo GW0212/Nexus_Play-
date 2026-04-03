@@ -3537,45 +3537,54 @@ async function fetchSteamData(appid, game = null) {
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
 
+  // 모달 식별자 — 모달이 바뀌면 이전 결과 무시
+  const modalKey = targetAppid;
+
+  function isModalStillOpen() {
+    return !document.getElementById('modal')?.classList.contains('hidden');
+  }
+  function currentModalId() {
+    return Number(document.getElementById('modal-steam-link')?.href?.split('/').pop() || 0);
+  }
+
   function showStats(owners, playtime) {
+    if (!isModalStillOpen() || currentModalId() !== modalKey) return;
     if (so) { so.className = 'modal-stat-value'; so.textContent = formatOwnersValue(owners); }
     if (sp) { sp.className = 'modal-stat-value'; sp.textContent = formatPlaytimeMinutes(playtime); }
   }
   function showEmpty() {
+    if (!isModalStillOpen() || currentModalId() !== modalKey) return;
     if (so) { so.className = 'modal-stat-value'; so.textContent = '데이터 없음'; }
     if (sp) { sp.className = 'modal-stat-value'; sp.textContent = '데이터 없음'; }
   }
 
-  // ① GAMES_CLEAN 로컬 데이터 즉시 표시 (0ms)
   const localGame = getGameById(targetAppid) || (game?.id ? getGameById(Number(game.id)) : null);
-  if (localGame?.owners || localGame?.average_forever || localGame?.average_2weeks) {
-    showStats(localGame.owners || 0, localGame.average_forever || localGame.average_2weeks || 0);
-  }
 
-  // ② 로컬 JSON 파일 + SteamSpy API 병렬 실행
   try {
+    // 로컬 JSON + API 동시 요청 (race)
+    // lookupLocalAppDetails는 빠르고(CDN), steamspyFetch는 느림
+    // → 둘 다 기다렸다가 우선순위대로 딱 한 번만 표시
     const [localResult, apiResult] = await Promise.allSettled([
       lookupLocalAppDetails(targetAppid),
       steamspyFetch({request:'appdetails', appid: targetAppid}),
     ]);
 
     const localData = localResult.status === 'fulfilled' ? localResult.value : null;
-    const apiData   = apiResult.status === 'fulfilled'   ? apiResult.value   : null;
+    const apiData   = apiResult.status  === 'fulfilled'  ? apiResult.value  : null;
 
-    // 우선순위: API > 로컬파일 > GAMES_CLEAN
-    const merged = {
-      owners:          apiData?.owners          || localData?.owners          || localGame?.owners          || 0,
-      average_forever: apiData?.average_forever || localData?.average_forever || localGame?.average_forever || 0,
-      average_2weeks:  apiData?.average_2weeks  || localData?.average_2weeks  || localGame?.average_2weeks  || 0,
-    };
+    // 우선순위: SteamSpy API > 로컬 JSON > GAMES_CLEAN (딱 한 번만 적용)
+    const owners  = apiData?.owners          || localData?.owners          || localGame?.owners          || 0;
+    const avgF    = apiData?.average_forever || localData?.average_forever || localGame?.average_forever || 0;
+    const avg2w   = apiData?.average_2weeks  || localData?.average_2weeks  || localGame?.average_2weeks  || 0;
+    const playtime = avgF || avg2w;
 
-    if (merged.owners || merged.average_forever || merged.average_2weeks) {
-      showStats(merged.owners, merged.average_forever || merged.average_2weeks);
-    } else if (!localGame?.owners && !localGame?.average_forever) {
+    if (owners || playtime) {
+      showStats(owners, playtime);
+    } else {
       showEmpty();
     }
   } catch {
-    if (!localGame?.owners && !localGame?.average_forever) showEmpty();
+    showEmpty();
   }
 }
 
