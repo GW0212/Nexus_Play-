@@ -1,54 +1,4 @@
 {
-  "1295660": {
-    "appid": 1295660,
-    "name": "Sid Meier's Civilization VII",
-    "developer": "Firaxis Games",
-    "ccu": 72000,
-    "positive": 180000,
-    "negative": 45000,
-    "average_2weeks": 5200,
-    "owners": 3000000,
-    "tags": {
-      "전략": 1,
-      "턴제": 1,
-      "4x": 1,
-      "역사": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "전략",
-      "턴제",
-      "4x",
-      "역사",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "289070": {
-    "appid": 289070,
-    "name": "Sid Meier's Civilization VI",
-    "developer": "Firaxis Games",
-    "ccu": 20000,
-    "positive": 310000,
-    "negative": 38000,
-    "average_2weeks": 3100,
-    "owners": 5400000,
-    "tags": {
-      "전략": 1,
-      "턴제": 1,
-      "4x": 1,
-      "역사": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "전략",
-      "턴제",
-      "4x",
-      "역사",
-      "멀티플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "730": {
     "appid": 730,
     "name": "Counter-Strike 2",
@@ -74,28 +24,28 @@
     ],
     "_source": "steamspy"
   },
-  "1142710": {
-    "appid": 1142710,
-    "name": "Total War: Warhammer III",
-    "developer": "Creative Assembly",
-    "ccu": 15000,
-    "positive": 120000,
-    "negative": 22000,
-    "average_2weeks": 1200,
-    "owners": 2000000,
+  "289070": {
+    "appid": 289070,
+    "name": "Sid Meier's Civilization VI",
+    "developer": "Firaxis Games",
+    "ccu": 20000,
+    "positive": 310000,
+    "negative": 38000,
+    "average_2weeks": 3100,
+    "owners": 5400000,
     "tags": {
       "전략": 1,
       "턴제": 1,
-      "실시간": 1,
-      "판타지": 1,
-      "전쟁": 1
+      "4x": 1,
+      "역사": 1,
+      "멀티플레이어": 1
     },
     "tags_list": [
       "전략",
       "턴제",
-      "실시간",
-      "판타지",
-      "전쟁"
+      "4x",
+      "역사",
+      "멀티플레이어"
     ],
     "_source": "steamspy"
   },
@@ -171,6 +121,56 @@
       "무료",
       "협동",
       "sf"
+    ],
+    "_source": "steamspy"
+  },
+  "1142710": {
+    "appid": 1142710,
+    "name": "Total War: Warhammer III",
+    "developer": "Creative Assembly",
+    "ccu": 15000,
+    "positive": 120000,
+    "negative": 22000,
+    "average_2weeks": 1200,
+    "owners": 2000000,
+    "tags": {
+      "전략": 1,
+      "턴제": 1,
+      "실시간": 1,
+      "판타지": 1,
+      "전쟁": 1
+    },
+    "tags_list": [
+      "전략",
+      "턴제",
+      "실시간",
+      "판타지",
+      "전쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "1295660": {
+    "appid": 1295660,
+    "name": "Sid Meier's Civilization VII",
+    "developer": "Firaxis Games",
+    "ccu": 72000,
+    "positive": 180000,
+    "negative": 45000,
+    "average_2weeks": 5200,
+    "owners": 3000000,
+    "tags": {
+      "전략": 1,
+      "턴제": 1,
+      "4x": 1,
+      "역사": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "전략",
+      "턴제",
+      "4x",
+      "역사",
+      "싱글플레이어"
     ],
     "_source": "steamspy"
   }

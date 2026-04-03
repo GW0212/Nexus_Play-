@@ -1,25 +1,25 @@
 {
-  "1091500": {
-    "appid": 1091500,
-    "name": "Cyberpunk 2077",
-    "developer": "CD PROJEKT RED",
-    "ccu": 48000,
-    "positive": 590000,
-    "negative": 110000,
-    "average_2weeks": 3200,
-    "owners": 18000000,
+  "620": {
+    "appid": 620,
+    "name": "Portal 2",
+    "developer": "Valve",
+    "ccu": 9000,
+    "positive": 480000,
+    "negative": 4000,
+    "average_2weeks": 700,
+    "owners": 20000000,
     "tags": {
-      "rpg": 1,
-      "오픈월드": 1,
-      "사이버펑크": 1,
-      "싱글플레이어": 1,
+      "퍼즐": 1,
+      "협동": 1,
+      "1인칭": 1,
+      "유머": 1,
       "sf": 1
     },
     "tags_list": [
-      "rpg",
-      "오픈월드",
-      "사이버펑크",
-      "싱글플레이어",
+      "퍼즐",
+      "협동",
+      "1인칭",
+      "유머",
       "sf"
     ],
     "_source": "steamspy"
@@ -49,81 +49,6 @@
     ],
     "_source": "steamspy"
   },
-  "1174180": {
-    "appid": 1174180,
-    "name": "Red Dead Redemption 2",
-    "developer": "Rockstar Games",
-    "ccu": 65000,
-    "positive": 560000,
-    "negative": 42000,
-    "average_2weeks": 4600,
-    "owners": 14000000,
-    "tags": {
-      "오픈월드": 1,
-      "서부": 1,
-      "액션": 1,
-      "어드벤처": 1,
-      "스토리": 1
-    },
-    "tags_list": [
-      "오픈월드",
-      "서부",
-      "액션",
-      "어드벤처",
-      "스토리"
-    ],
-    "_source": "steamspy"
-  },
-  "2215430": {
-    "appid": 2215430,
-    "name": "Ghost of Tsushima DIRECTOR'S CUT",
-    "developer": "Sucker Punch Productions",
-    "ccu": 58000,
-    "positive": 290000,
-    "negative": 18000,
-    "average_2weeks": 4000,
-    "owners": 4500000,
-    "tags": {
-      "액션": 1,
-      "오픈월드": 1,
-      "일본": 1,
-      "스텔스": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "오픈월드",
-      "일본",
-      "스텔스",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
-  "1817070": {
-    "appid": 1817070,
-    "name": "Marvel's Spider-Man Remastered",
-    "developer": "Insomniac Games",
-    "ccu": 32000,
-    "positive": 280000,
-    "negative": 22000,
-    "average_2weeks": 2400,
-    "owners": 3800000,
-    "tags": {
-      "액션": 1,
-      "어드벤처": 1,
-      "슈퍼히어로": 1,
-      "오픈월드": 1,
-      "싱글플레이어": 1
-    },
-    "tags_list": [
-      "액션",
-      "어드벤처",
-      "슈퍼히어로",
-      "오픈월드",
-      "싱글플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "753640": {
     "appid": 753640,
     "name": "Outer Wilds",
@@ -146,6 +71,31 @@
       "우주",
       "미스터리",
       "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "1091500": {
+    "appid": 1091500,
+    "name": "Cyberpunk 2077",
+    "developer": "CD PROJEKT RED",
+    "ccu": 48000,
+    "positive": 590000,
+    "negative": 110000,
+    "average_2weeks": 3200,
+    "owners": 18000000,
+    "tags": {
+      "rpg": 1,
+      "오픈월드": 1,
+      "사이버펑크": 1,
+      "싱글플레이어": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "rpg",
+      "오픈월드",
+      "사이버펑크",
+      "싱글플레이어",
+      "sf"
     ],
     "_source": "steamspy"
   },
@@ -174,28 +124,78 @@
     ],
     "_source": "steamspy"
   },
-  "620": {
-    "appid": 620,
-    "name": "Portal 2",
-    "developer": "Valve",
-    "ccu": 9000,
-    "positive": 480000,
-    "negative": 4000,
-    "average_2weeks": 700,
-    "owners": 20000000,
+  "1174180": {
+    "appid": 1174180,
+    "name": "Red Dead Redemption 2",
+    "developer": "Rockstar Games",
+    "ccu": 65000,
+    "positive": 560000,
+    "negative": 42000,
+    "average_2weeks": 4600,
+    "owners": 14000000,
     "tags": {
-      "퍼즐": 1,
-      "협동": 1,
-      "1인칭": 1,
-      "유머": 1,
-      "sf": 1
+      "오픈월드": 1,
+      "서부": 1,
+      "액션": 1,
+      "어드벤처": 1,
+      "스토리": 1
     },
     "tags_list": [
-      "퍼즐",
-      "협동",
-      "1인칭",
-      "유머",
-      "sf"
+      "오픈월드",
+      "서부",
+      "액션",
+      "어드벤처",
+      "스토리"
+    ],
+    "_source": "steamspy"
+  },
+  "1817070": {
+    "appid": 1817070,
+    "name": "Marvel's Spider-Man Remastered",
+    "developer": "Insomniac Games",
+    "ccu": 32000,
+    "positive": 280000,
+    "negative": 22000,
+    "average_2weeks": 2400,
+    "owners": 3800000,
+    "tags": {
+      "액션": 1,
+      "어드벤처": 1,
+      "슈퍼히어로": 1,
+      "오픈월드": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "어드벤처",
+      "슈퍼히어로",
+      "오픈월드",
+      "싱글플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "2215430": {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DIRECTOR'S CUT",
+    "developer": "Sucker Punch Productions",
+    "ccu": 58000,
+    "positive": 290000,
+    "negative": 18000,
+    "average_2weeks": 4000,
+    "owners": 4500000,
+    "tags": {
+      "액션": 1,
+      "오픈월드": 1,
+      "일본": 1,
+      "스텔스": 1,
+      "싱글플레이어": 1
+    },
+    "tags_list": [
+      "액션",
+      "오픈월드",
+      "일본",
+      "스텔스",
+      "싱글플레이어"
     ],
     "_source": "steamspy"
   }

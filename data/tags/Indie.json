@@ -1,54 +1,4 @@
 {
-  "1145360": {
-    "appid": 1145360,
-    "name": "Hades",
-    "developer": "Supergiant Games",
-    "ccu": 40000,
-    "positive": 280000,
-    "negative": 5000,
-    "average_2weeks": 2400,
-    "owners": 5000000,
-    "tags": {
-      "로그라이크": 1,
-      "액션": 1,
-      "인디": 1,
-      "그리스신화": 1,
-      "핵앤슬래시": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "액션",
-      "인디",
-      "그리스신화",
-      "핵앤슬래시"
-    ],
-    "_source": "steamspy"
-  },
-  "646570": {
-    "appid": 646570,
-    "name": "Slay the Spire",
-    "developer": "MegaCrit",
-    "ccu": 18000,
-    "positive": 220000,
-    "negative": 5000,
-    "average_2weeks": 1400,
-    "owners": 5000000,
-    "tags": {
-      "로그라이크": 1,
-      "덱빌딩": 1,
-      "전략": 1,
-      "인디": 1,
-      "카드": 1
-    },
-    "tags_list": [
-      "로그라이크",
-      "덱빌딩",
-      "전략",
-      "인디",
-      "카드"
-    ],
-    "_source": "steamspy"
-  },
   "105600": {
     "appid": 105600,
     "name": "Terraria",
@@ -99,28 +49,53 @@
     ],
     "_source": "steamspy"
   },
-  "1282730": {
-    "appid": 1282730,
-    "name": "Loop Hero",
-    "developer": "Four Quarters",
-    "ccu": 8000,
-    "positive": 95000,
+  "457140": {
+    "appid": 457140,
+    "name": "Oxygen Not Included",
+    "developer": "Klei Entertainment",
+    "ccu": 10000,
+    "positive": 120000,
     "negative": 4000,
-    "average_2weeks": 600,
-    "owners": 2000000,
+    "average_2weeks": 800,
+    "owners": 3000000,
+    "tags": {
+      "시뮬레이션": 1,
+      "서바이벌": 1,
+      "우주": 1,
+      "경영": 1,
+      "인디": 1
+    },
+    "tags_list": [
+      "시뮬레이션",
+      "서바이벌",
+      "우주",
+      "경영",
+      "인디"
+    ],
+    "_source": "steamspy"
+  },
+  "646570": {
+    "appid": 646570,
+    "name": "Slay the Spire",
+    "developer": "MegaCrit",
+    "ccu": 18000,
+    "positive": 220000,
+    "negative": 5000,
+    "average_2weeks": 1400,
+    "owners": 5000000,
     "tags": {
       "로그라이크": 1,
+      "덱빌딩": 1,
       "전략": 1,
-      "레트로": 1,
-      "자동전투": 1,
-      "덱빌딩": 1
+      "인디": 1,
+      "카드": 1
     },
     "tags_list": [
       "로그라이크",
+      "덱빌딩",
       "전략",
-      "레트로",
-      "자동전투",
-      "덱빌딩"
+      "인디",
+      "카드"
     ],
     "_source": "steamspy"
   },
@@ -149,28 +124,53 @@
     ],
     "_source": "steamspy"
   },
-  "457140": {
-    "appid": 457140,
-    "name": "Oxygen Not Included",
-    "developer": "Klei Entertainment",
-    "ccu": 10000,
-    "positive": 120000,
-    "negative": 4000,
-    "average_2weeks": 800,
-    "owners": 3000000,
+  "1145360": {
+    "appid": 1145360,
+    "name": "Hades",
+    "developer": "Supergiant Games",
+    "ccu": 40000,
+    "positive": 280000,
+    "negative": 5000,
+    "average_2weeks": 2400,
+    "owners": 5000000,
     "tags": {
-      "시뮬레이션": 1,
-      "서바이벌": 1,
-      "우주": 1,
-      "경영": 1,
-      "인디": 1
+      "로그라이크": 1,
+      "액션": 1,
+      "인디": 1,
+      "그리스신화": 1,
+      "핵앤슬래시": 1
     },
     "tags_list": [
-      "시뮬레이션",
-      "서바이벌",
-      "우주",
-      "경영",
-      "인디"
+      "로그라이크",
+      "액션",
+      "인디",
+      "그리스신화",
+      "핵앤슬래시"
+    ],
+    "_source": "steamspy"
+  },
+  "1282730": {
+    "appid": 1282730,
+    "name": "Loop Hero",
+    "developer": "Four Quarters",
+    "ccu": 8000,
+    "positive": 95000,
+    "negative": 4000,
+    "average_2weeks": 600,
+    "owners": 2000000,
+    "tags": {
+      "로그라이크": 1,
+      "전략": 1,
+      "레트로": 1,
+      "자동전투": 1,
+      "덱빌딩": 1
+    },
+    "tags_list": [
+      "로그라이크",
+      "전략",
+      "레트로",
+      "자동전투",
+      "덱빌딩"
     ],
     "_source": "steamspy"
   }

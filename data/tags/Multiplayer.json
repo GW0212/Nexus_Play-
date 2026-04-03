@@ -1,29 +1,4 @@
 {
-  "730": {
-    "appid": 730,
-    "name": "Counter-Strike 2",
-    "developer": "Valve",
-    "ccu": 985234,
-    "positive": 1245000,
-    "negative": 320000,
-    "average_2weeks": 28500,
-    "owners": 35000000,
-    "tags": {
-      "fps": 1,
-      "경쟁": 1,
-      "전술": 1,
-      "멀티플레이어": 1,
-      "무료": 1
-    },
-    "tags_list": [
-      "fps",
-      "경쟁",
-      "전술",
-      "멀티플레이어",
-      "무료"
-    ],
-    "_source": "steamspy"
-  },
   "570": {
     "appid": 570,
     "name": "Dota 2",
@@ -46,6 +21,31 @@
       "멀티플레이어",
       "무료",
       "경쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "730": {
+    "appid": 730,
+    "name": "Counter-Strike 2",
+    "developer": "Valve",
+    "ccu": 985234,
+    "positive": 1245000,
+    "negative": 320000,
+    "average_2weeks": 28500,
+    "owners": 35000000,
+    "tags": {
+      "fps": 1,
+      "경쟁": 1,
+      "전술": 1,
+      "멀티플레이어": 1,
+      "무료": 1
+    },
+    "tags_list": [
+      "fps",
+      "경쟁",
+      "전술",
+      "멀티플레이어",
+      "무료"
     ],
     "_source": "steamspy"
   },
@@ -74,6 +74,31 @@
     ],
     "_source": "steamspy"
   },
+  "252950": {
+    "appid": 252950,
+    "name": "Rocket League",
+    "developer": "Psyonix",
+    "ccu": 45000,
+    "positive": 520000,
+    "negative": 95000,
+    "average_2weeks": 3200,
+    "owners": 30000000,
+    "tags": {
+      "스포츠": 1,
+      "레이싱": 1,
+      "축구": 1,
+      "멀티플레이어": 1,
+      "무료": 1
+    },
+    "tags_list": [
+      "스포츠",
+      "레이싱",
+      "축구",
+      "멀티플레이어",
+      "무료"
+    ],
+    "_source": "steamspy"
+  },
   "381210": {
     "appid": 381210,
     "name": "Dead by Daylight",
@@ -96,31 +121,6 @@
       "멀티플레이어",
       "비대칭",
       "무료"
-    ],
-    "_source": "steamspy"
-  },
-  "892970": {
-    "appid": 892970,
-    "name": "Valheim",
-    "developer": "Iron Gate AB",
-    "ccu": 105000,
-    "positive": 390000,
-    "negative": 18000,
-    "average_2weeks": 7800,
-    "owners": 8000000,
-    "tags": {
-      "서바이벌": 1,
-      "오픈월드": 1,
-      "협동": 1,
-      "크래프팅": 1,
-      "바이킹": 1
-    },
-    "tags_list": [
-      "서바이벌",
-      "오픈월드",
-      "협동",
-      "크래프팅",
-      "바이킹"
     ],
     "_source": "steamspy"
   },
@@ -149,28 +149,28 @@
     ],
     "_source": "steamspy"
   },
-  "252950": {
-    "appid": 252950,
-    "name": "Rocket League",
-    "developer": "Psyonix",
-    "ccu": 45000,
-    "positive": 520000,
-    "negative": 95000,
-    "average_2weeks": 3200,
-    "owners": 30000000,
+  "892970": {
+    "appid": 892970,
+    "name": "Valheim",
+    "developer": "Iron Gate AB",
+    "ccu": 105000,
+    "positive": 390000,
+    "negative": 18000,
+    "average_2weeks": 7800,
+    "owners": 8000000,
     "tags": {
-      "스포츠": 1,
-      "레이싱": 1,
-      "축구": 1,
-      "멀티플레이어": 1,
-      "무료": 1
+      "서바이벌": 1,
+      "오픈월드": 1,
+      "협동": 1,
+      "크래프팅": 1,
+      "바이킹": 1
     },
     "tags_list": [
-      "스포츠",
-      "레이싱",
-      "축구",
-      "멀티플레이어",
-      "무료"
+      "서바이벌",
+      "오픈월드",
+      "협동",
+      "크래프팅",
+      "바이킹"
     ],
     "_source": "steamspy"
   },

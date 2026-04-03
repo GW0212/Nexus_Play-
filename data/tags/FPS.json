@@ -1,104 +1,4 @@
 {
-  "730": {
-    "appid": 730,
-    "name": "Counter-Strike 2",
-    "developer": "Valve",
-    "ccu": 985234,
-    "positive": 1245000,
-    "negative": 320000,
-    "average_2weeks": 28500,
-    "owners": 35000000,
-    "tags": {
-      "fps": 1,
-      "경쟁": 1,
-      "전술": 1,
-      "멀티플레이어": 1,
-      "무료": 1
-    },
-    "tags_list": [
-      "fps",
-      "경쟁",
-      "전술",
-      "멀티플레이어",
-      "무료"
-    ],
-    "_source": "steamspy"
-  },
-  "578080": {
-    "appid": 578080,
-    "name": "PUBG: BATTLEGROUNDS",
-    "developer": "KRAFTON",
-    "ccu": 198500,
-    "positive": 620000,
-    "negative": 410000,
-    "average_2weeks": 14200,
-    "owners": 25000000,
-    "tags": {
-      "배틀로얄": 1,
-      "fps": 1,
-      "생존": 1,
-      "멀티플레이어": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "배틀로얄",
-      "fps",
-      "생존",
-      "멀티플레이어",
-      "경쟁"
-    ],
-    "_source": "steamspy"
-  },
-  "1172470": {
-    "appid": 1172470,
-    "name": "Apex Legends",
-    "developer": "Respawn Entertainment",
-    "ccu": 155000,
-    "positive": 840000,
-    "negative": 280000,
-    "average_2weeks": 12400,
-    "owners": 30000000,
-    "tags": {
-      "배틀로얄": 1,
-      "fps": 1,
-      "무료": 1,
-      "멀티플레이어": 1,
-      "경쟁": 1
-    },
-    "tags_list": [
-      "배틀로얄",
-      "fps",
-      "무료",
-      "멀티플레이어",
-      "경쟁"
-    ],
-    "_source": "steamspy"
-  },
-  "553850": {
-    "appid": 553850,
-    "name": "Helldivers 2",
-    "developer": "Arrowhead Game Studios",
-    "ccu": 98000,
-    "positive": 420000,
-    "negative": 85000,
-    "average_2weeks": 7200,
-    "owners": 8000000,
-    "tags": {
-      "fps": 1,
-      "협동": 1,
-      "슈터": 1,
-      "sf": 1,
-      "멀티플레이어": 1
-    },
-    "tags_list": [
-      "fps",
-      "협동",
-      "슈터",
-      "sf",
-      "멀티플레이어"
-    ],
-    "_source": "steamspy"
-  },
   "440": {
     "appid": 440,
     "name": "Team Fortress 2",
@@ -121,106 +21,6 @@
       "무료",
       "클래식",
       "캐릭터"
-    ],
-    "_source": "steamspy"
-  },
-  "236390": {
-    "appid": 236390,
-    "name": "War Thunder",
-    "developer": "Gaijin Entertainment",
-    "ccu": 50000,
-    "positive": 380000,
-    "negative": 280000,
-    "average_2weeks": 3400,
-    "owners": 25000000,
-    "tags": {
-      "전쟁": 1,
-      "멀티플레이어": 1,
-      "무료": 1,
-      "전투기": 1,
-      "탱크": 1
-    },
-    "tags_list": [
-      "전쟁",
-      "멀티플레이어",
-      "무료",
-      "전투기",
-      "탱크"
-    ],
-    "_source": "steamspy"
-  },
-  "782330": {
-    "appid": 782330,
-    "name": "DOOM Eternal",
-    "developer": "id Software",
-    "ccu": 16000,
-    "positive": 260000,
-    "negative": 12000,
-    "average_2weeks": 2400,
-    "owners": 4200000,
-    "tags": {
-      "fps": 1,
-      "액션": 1,
-      "악마": 1,
-      "싱글플레이어": 1,
-      "빠른속도": 1
-    },
-    "tags_list": [
-      "fps",
-      "액션",
-      "악마",
-      "싱글플레이어",
-      "빠른속도"
-    ],
-    "_source": "steamspy"
-  },
-  "1237970": {
-    "appid": 1237970,
-    "name": "Titanfall 2",
-    "developer": "Respawn Entertainment",
-    "ccu": 28000,
-    "positive": 310000,
-    "negative": 14000,
-    "average_2weeks": 2200,
-    "owners": 6000000,
-    "tags": {
-      "fps": 1,
-      "이동성": 1,
-      "싱글플레이어": 1,
-      "멀티플레이어": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "fps",
-      "이동성",
-      "싱글플레이어",
-      "멀티플레이어",
-      "sf"
-    ],
-    "_source": "steamspy"
-  },
-  "1085660": {
-    "appid": 1085660,
-    "name": "Destiny 2",
-    "developer": "Bungie",
-    "ccu": 45000,
-    "positive": 480000,
-    "negative": 320000,
-    "average_2weeks": 3800,
-    "owners": 18000000,
-    "tags": {
-      "fps": 1,
-      "mmo": 1,
-      "무료": 1,
-      "협동": 1,
-      "sf": 1
-    },
-    "tags_list": [
-      "fps",
-      "mmo",
-      "무료",
-      "협동",
-      "sf"
     ],
     "_source": "steamspy"
   },
@@ -249,6 +49,31 @@
     ],
     "_source": "steamspy"
   },
+  "730": {
+    "appid": 730,
+    "name": "Counter-Strike 2",
+    "developer": "Valve",
+    "ccu": 985234,
+    "positive": 1245000,
+    "negative": 320000,
+    "average_2weeks": 28500,
+    "owners": 35000000,
+    "tags": {
+      "fps": 1,
+      "경쟁": 1,
+      "전술": 1,
+      "멀티플레이어": 1,
+      "무료": 1
+    },
+    "tags_list": [
+      "fps",
+      "경쟁",
+      "전술",
+      "멀티플레이어",
+      "무료"
+    ],
+    "_source": "steamspy"
+  },
   "107410": {
     "appid": 107410,
     "name": "Arma 3",
@@ -274,6 +99,131 @@
     ],
     "_source": "steamspy"
   },
+  "236390": {
+    "appid": 236390,
+    "name": "War Thunder",
+    "developer": "Gaijin Entertainment",
+    "ccu": 50000,
+    "positive": 380000,
+    "negative": 280000,
+    "average_2weeks": 3400,
+    "owners": 25000000,
+    "tags": {
+      "전쟁": 1,
+      "멀티플레이어": 1,
+      "무료": 1,
+      "전투기": 1,
+      "탱크": 1
+    },
+    "tags_list": [
+      "전쟁",
+      "멀티플레이어",
+      "무료",
+      "전투기",
+      "탱크"
+    ],
+    "_source": "steamspy"
+  },
+  "553850": {
+    "appid": 553850,
+    "name": "Helldivers 2",
+    "developer": "Arrowhead Game Studios",
+    "ccu": 98000,
+    "positive": 420000,
+    "negative": 85000,
+    "average_2weeks": 7200,
+    "owners": 8000000,
+    "tags": {
+      "fps": 1,
+      "협동": 1,
+      "슈터": 1,
+      "sf": 1,
+      "멀티플레이어": 1
+    },
+    "tags_list": [
+      "fps",
+      "협동",
+      "슈터",
+      "sf",
+      "멀티플레이어"
+    ],
+    "_source": "steamspy"
+  },
+  "578080": {
+    "appid": 578080,
+    "name": "PUBG: BATTLEGROUNDS",
+    "developer": "KRAFTON",
+    "ccu": 198500,
+    "positive": 620000,
+    "negative": 410000,
+    "average_2weeks": 14200,
+    "owners": 25000000,
+    "tags": {
+      "배틀로얄": 1,
+      "fps": 1,
+      "생존": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "배틀로얄",
+      "fps",
+      "생존",
+      "멀티플레이어",
+      "경쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "782330": {
+    "appid": 782330,
+    "name": "DOOM Eternal",
+    "developer": "id Software",
+    "ccu": 16000,
+    "positive": 260000,
+    "negative": 12000,
+    "average_2weeks": 2400,
+    "owners": 4200000,
+    "tags": {
+      "fps": 1,
+      "액션": 1,
+      "악마": 1,
+      "싱글플레이어": 1,
+      "빠른속도": 1
+    },
+    "tags_list": [
+      "fps",
+      "액션",
+      "악마",
+      "싱글플레이어",
+      "빠른속도"
+    ],
+    "_source": "steamspy"
+  },
+  "1085660": {
+    "appid": 1085660,
+    "name": "Destiny 2",
+    "developer": "Bungie",
+    "ccu": 45000,
+    "positive": 480000,
+    "negative": 320000,
+    "average_2weeks": 3800,
+    "owners": 18000000,
+    "tags": {
+      "fps": 1,
+      "mmo": 1,
+      "무료": 1,
+      "협동": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "fps",
+      "mmo",
+      "무료",
+      "협동",
+      "sf"
+    ],
+    "_source": "steamspy"
+  },
   "1144200": {
     "appid": 1144200,
     "name": "Ready or Not",
@@ -296,6 +246,56 @@
       "경찰",
       "협동",
       "singlplayer"
+    ],
+    "_source": "steamspy"
+  },
+  "1172470": {
+    "appid": 1172470,
+    "name": "Apex Legends",
+    "developer": "Respawn Entertainment",
+    "ccu": 155000,
+    "positive": 840000,
+    "negative": 280000,
+    "average_2weeks": 12400,
+    "owners": 30000000,
+    "tags": {
+      "배틀로얄": 1,
+      "fps": 1,
+      "무료": 1,
+      "멀티플레이어": 1,
+      "경쟁": 1
+    },
+    "tags_list": [
+      "배틀로얄",
+      "fps",
+      "무료",
+      "멀티플레이어",
+      "경쟁"
+    ],
+    "_source": "steamspy"
+  },
+  "1237970": {
+    "appid": 1237970,
+    "name": "Titanfall 2",
+    "developer": "Respawn Entertainment",
+    "ccu": 28000,
+    "positive": 310000,
+    "negative": 14000,
+    "average_2weeks": 2200,
+    "owners": 6000000,
+    "tags": {
+      "fps": 1,
+      "이동성": 1,
+      "싱글플레이어": 1,
+      "멀티플레이어": 1,
+      "sf": 1
+    },
+    "tags_list": [
+      "fps",
+      "이동성",
+      "싱글플레이어",
+      "멀티플레이어",
+      "sf"
     ],
     "_source": "steamspy"
   },
