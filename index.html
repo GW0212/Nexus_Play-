@@ -886,7 +886,7 @@ body {
 .modal-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:14px; }
 
 .modal-steam-data {
-  display:grid; grid-template-columns:1fr 1fr;
+  display:grid; grid-template-columns:1fr 1fr 1fr;
   gap:8px; margin-bottom:14px;
 }
 .modal-steam-data.has-ccu { grid-template-columns:1fr 1fr 1fr; }
@@ -1551,9 +1551,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;ba
           <div class="modal-stat-label">⏱ 평균 플레이</div>
           <div class="modal-stat-value loading" id="stat-playtime"></div>
         </div>
-        <div class="modal-stat" id="stat-ccu-wrap" style="display:none">
+        <div class="modal-stat" id="stat-ccu-wrap">
           <div class="modal-stat-label"><span class="steam-stat-dot" style="width:6px;height:6px;border-radius:50%;background:var(--success);display:inline-block;margin-right:4px;animation:glowPulse 2s ease-in-out infinite"></span>지금 플레이 중</div>
-          <div class="modal-stat-value" id="stat-ccu"></div>
+          <div class="modal-stat-value loading" id="stat-ccu"></div>
         </div>
       </div>
       <div class="modal-action-row">
@@ -3688,10 +3688,11 @@ function fillAndShowModal(g, thumbId) {
     `<span class="tag-pill" style="font-size:0.72rem;padding:4px 10px">${t}</span>`).join('');
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
-  const ccuWrap = document.getElementById('stat-ccu-wrap');
+  const sc = document.getElementById('stat-ccu');
   if(so){ so.className='modal-stat-value loading'; so.textContent=''; }
   if(sp){ sp.className='modal-stat-value loading'; sp.textContent=''; }
-  if(ccuWrap){ ccuWrap.style.display='none'; document.getElementById('modal-steam-data')?.classList.remove('has-ccu'); }
+  if(sc){ sc.className='modal-stat-value loading'; sc.textContent=''; }
+  document.getElementById('modal-steam-data')?.classList.add('has-ccu');
   // 북마크/비교 버튼 상태 업데이트
   const bmBtn = document.getElementById('modal-bookmark-btn');
   const cmpBtn = document.getElementById('modal-compare-btn');
@@ -3722,6 +3723,7 @@ async function fetchSteamData(appid, game = null) {
   const targetAppid = Number(getThumbAppId(game || appid, game?.title || ''));
   const so = document.getElementById('stat-owners');
   const sp = document.getElementById('stat-playtime');
+  const sc = document.getElementById('stat-ccu');
 
   // 모달 식별자 — 모달이 바뀌면 이전 결과 무시
   const modalKey = targetAppid;
@@ -3733,15 +3735,17 @@ async function fetchSteamData(appid, game = null) {
     return Number(document.getElementById('modal-steam-link')?.href?.split('/').pop() || 0);
   }
 
-  function showStats(owners, playtime) {
+  function showStats(owners, playtime, ccu) {
     if (!isModalStillOpen() || currentModalId() !== modalKey) return;
-    if (so) { so.className = 'modal-stat-value'; so.textContent = formatOwnersValue(owners); }
-    if (sp) { sp.className = 'modal-stat-value'; sp.textContent = formatPlaytimeMinutes(playtime); }
+    if (so) { so.className = 'modal-stat-value'; so.textContent = owners ? formatOwnersValue(owners) : '데이터 없음'; }
+    if (sp) { sp.className = 'modal-stat-value'; sp.textContent = playtime ? formatPlaytimeMinutes(playtime) : '데이터 없음'; }
+    if (sc) { sc.className = 'modal-stat-value'; sc.textContent = ccu ? `${formatCCU(ccu)}명` : '데이터 없음'; }
   }
   function showEmpty() {
     if (!isModalStillOpen() || currentModalId() !== modalKey) return;
     if (so) { so.className = 'modal-stat-value'; so.textContent = '데이터 없음'; }
     if (sp) { sp.className = 'modal-stat-value'; sp.textContent = '데이터 없음'; }
+    if (sc) { sc.className = 'modal-stat-value'; sc.textContent = '데이터 없음'; }
   }
 
   const localGame = getGameById(targetAppid) || (game?.id ? getGameById(Number(game.id)) : null);
@@ -3765,22 +3769,10 @@ async function fetchSteamData(appid, game = null) {
     const ccu     = apiData?.ccu             || localData?.ccu             || localGame?.ccu             || 0;
     const playtime = avgF || avg2w;
 
-    if (owners || playtime) {
-      showStats(owners, playtime);
+    if (owners || playtime || ccu) {
+      showStats(owners, playtime, ccu);
     } else {
       showEmpty();
-    }
-
-    // CCU 표시
-    const ccuWrap = document.getElementById('stat-ccu-wrap');
-    const ccuEl   = document.getElementById('stat-ccu');
-    if (ccuWrap && ccuEl && ccu > 0) {
-      ccuEl.textContent = formatCCU(ccu) + '명';
-      ccuWrap.style.display = '';
-      document.getElementById('modal-steam-data')?.classList.add('has-ccu');
-    } else if (ccuWrap) {
-      ccuWrap.style.display = 'none';
-      document.getElementById('modal-steam-data')?.classList.remove('has-ccu');
     }
   } catch {
     showEmpty();
