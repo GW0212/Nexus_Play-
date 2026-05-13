@@ -2901,9 +2901,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "2999",
-    "initialprice": "2999",
-    "discount": "0",
+    "price": "874",
+    "initialprice": "3499",
+    "discount": "75",
     "ccu": 1
   },
   "388750": {
@@ -3300,9 +3300,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "899",
+    "price": "359",
     "initialprice": "899",
-    "discount": "0",
+    "discount": "60",
     "ccu": 0
   },
   "413710": {
@@ -5656,9 +5656,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "399",
+    "price": "1999",
     "initialprice": "1999",
-    "discount": "80",
+    "discount": "0",
     "ccu": 1
   },
   "586140": {
@@ -5865,9 +5865,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "999",
+    "price": "79",
     "initialprice": "999",
-    "discount": "0",
+    "discount": "92",
     "ccu": 0
   },
   "598780": {
@@ -8943,9 +8943,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "224",
+    "price": "1499",
     "initialprice": "1499",
-    "discount": "85",
+    "discount": "0",
     "ccu": 1
   },
   "798510": {
@@ -9779,9 +9779,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1999",
+    "price": "999",
     "initialprice": "1999",
-    "discount": "0",
+    "discount": "50",
     "ccu": 7
   },
   "873220": {
@@ -11033,9 +11033,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "699",
+    "price": "999",
     "initialprice": "999",
-    "discount": "30",
+    "discount": "0",
     "ccu": 99
   },
   "971690": {
@@ -12876,9 +12876,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "89",
+    "price": "299",
     "initialprice": "299",
-    "discount": "70",
+    "discount": "0",
     "ccu": 0
   },
   "1096690": {
@@ -13484,9 +13484,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1999",
-    "initialprice": "3999",
-    "discount": "50",
+    "price": "2999",
+    "initialprice": "2999",
+    "discount": "0",
     "ccu": 174
   },
   "1140790": {
@@ -18310,9 +18310,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "99",
+    "price": "49",
     "initialprice": "99",
-    "discount": "0",
+    "discount": "51",
     "ccu": 1
   },
   "1396500": {
@@ -18367,9 +18367,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "99",
+    "price": "49",
     "initialprice": "99",
-    "discount": "0",
+    "discount": "51",
     "ccu": 0
   },
   "1400170": {
@@ -20856,9 +20856,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1124",
+    "price": "1499",
     "initialprice": "1499",
-    "discount": "25",
+    "discount": "0",
     "ccu": 0
   },
   "1528300": {
@@ -21464,9 +21464,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "499",
+    "price": "4999",
     "initialprice": "4999",
-    "discount": "90",
+    "discount": "0",
     "ccu": 0
   },
   "1682580": {
@@ -22870,9 +22870,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "799",
+    "price": "3999",
     "initialprice": "3999",
-    "discount": "80",
+    "discount": "0",
     "ccu": 64
   },
   "2157560": {
@@ -24580,9 +24580,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "374",
+    "price": "499",
     "initialprice": "499",
-    "discount": "25",
+    "discount": "0",
     "ccu": 4
   },
   "2958950": {
@@ -24721,8 +24721,8 @@
   "3030810": {
     "appid": 3030810,
     "name": "ARVIS Punch",
-    "developer": "MindFly Studio",
-    "publisher": "MindFly Studio",
+    "developer": "Mindfly Studio",
+    "publisher": "Mindfly Studio",
     "score_rank": "",
     "positive": 1,
     "negative": 7,
