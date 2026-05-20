@@ -868,9 +868,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "55",
+    "price": "199",
     "initialprice": "199",
-    "discount": "72",
+    "discount": "0",
     "ccu": 0
   },
   "1917390": {
@@ -925,16 +925,16 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "799",
+    "price": "3999",
     "initialprice": "3999",
-    "discount": "80",
+    "discount": "0",
     "ccu": 0
   },
   "2093540": {
     "appid": 2093540,
     "name": "The Pier Arcade",
-    "developer": "Greg Giddens",
-    "publisher": "Peacock Pie Productions",
+    "developer": "DIG Games",
+    "publisher": "DIG Games",
     "score_rank": "",
     "positive": 3,
     "negative": 1,
@@ -1305,9 +1305,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "599",
     "initialprice": "599",
-    "discount": "50",
+    "discount": "0",
     "ccu": 0
   },
   "3564260": {
