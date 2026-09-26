@@ -287,8 +287,8 @@
   "2280": {
     "appid": 2280,
     "name": "DOOM + DOOM II",
-    "developer": "id Software, Nightdive Studios",
-    "publisher": "Bethesda",
+    "developer": "id Software, Night Dive Studios, Romero Games Ltd, MachineGames",
+    "publisher": "Bethesda Softworks",
     "score_rank": "",
     "positive": 24105,
     "negative": 879,
@@ -3072,9 +3072,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "199",
+    "price": "999",
     "initialprice": "999",
-    "discount": "80",
+    "discount": "0",
     "ccu": 1
   },
   "201810": {
@@ -10349,9 +10349,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "104",
     "initialprice": "299",
-    "discount": "0",
+    "discount": "65",
     "ccu": 0
   },
   "302390": {
@@ -13237,9 +13237,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "3999",
+    "price": "1999",
     "initialprice": "3999",
-    "discount": "0",
+    "discount": "50",
     "ccu": 1612
   },
   "335660": {
@@ -20343,9 +20343,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1049",
+    "price": "1499",
     "initialprice": "1499",
-    "discount": "30",
+    "discount": "0",
     "ccu": 2
   },
   "401190": {
@@ -30603,9 +30603,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "149",
+    "price": "1499",
     "initialprice": "1499",
-    "discount": "90",
+    "discount": "0",
     "ccu": 3
   },
   "523780": {
@@ -31382,9 +31382,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1499",
+    "price": "299",
     "initialprice": "1499",
-    "discount": "0",
+    "discount": "80",
     "ccu": 12
   },
   "530920": {
@@ -32465,9 +32465,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "499",
+    "price": "999",
     "initialprice": "999",
-    "discount": "50",
+    "discount": "0",
     "ccu": 1
   },
   "543460": {
@@ -35239,9 +35239,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1999",
+    "price": "499",
     "initialprice": "1999",
-    "discount": "0",
+    "discount": "75",
     "ccu": 4
   },
   "579720": {
@@ -37766,9 +37766,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "2499",
+    "price": "999",
     "initialprice": "2499",
-    "discount": "0",
+    "discount": "60",
     "ccu": 30
   },
   "617970": {
@@ -41395,9 +41395,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "749",
+    "price": "2999",
     "initialprice": "2999",
-    "discount": "75",
+    "discount": "0",
     "ccu": 0
   },
   "678800": {
@@ -44758,9 +44758,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "159",
+    "price": "399",
     "initialprice": "399",
-    "discount": "60",
+    "discount": "0",
     "ccu": 0
   },
   "734580": {
@@ -44967,9 +44967,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "149",
+    "price": "299",
     "initialprice": "299",
-    "discount": "50",
+    "discount": "0",
     "ccu": 4
   },
   "738060": {
@@ -46164,9 +46164,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "149",
+    "price": "299",
     "initialprice": "299",
-    "discount": "50",
+    "discount": "0",
     "ccu": 2
   },
   "749890": {
@@ -48710,9 +48710,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "209",
+    "price": "299",
     "initialprice": "299",
-    "discount": "30",
+    "discount": "0",
     "ccu": 0
   },
   "788810": {
@@ -51047,9 +51047,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "679",
+    "price": "1999",
     "initialprice": "1999",
-    "discount": "66",
+    "discount": "0",
     "ccu": 28
   },
   "824830": {
@@ -51522,9 +51522,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "624",
+    "price": "2499",
     "initialprice": "2499",
-    "discount": "75",
+    "discount": "0",
     "ccu": 3
   },
   "838270": {
@@ -54334,9 +54334,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "324",
+    "price": "1299",
     "initialprice": "1299",
-    "discount": "75",
+    "discount": "0",
     "ccu": 0
   },
   "883710": {
@@ -54448,9 +54448,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1499",
+    "price": "599",
     "initialprice": "1499",
-    "discount": "0",
+    "discount": "60",
     "ccu": 11
   },
   "886010": {
@@ -59616,9 +59616,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "69",
+    "price": "199",
     "initialprice": "199",
-    "discount": "65",
+    "discount": "0",
     "ccu": 0
   },
   "968700": {
@@ -68090,9 +68090,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "349",
+    "price": "999",
     "initialprice": "999",
-    "discount": "65",
+    "discount": "0",
     "ccu": 1
   },
   "1111210": {
@@ -68983,9 +68983,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "399",
+    "price": "999",
     "initialprice": "999",
-    "discount": "60",
+    "discount": "0",
     "ccu": 0
   },
   "1124630": {
@@ -72802,9 +72802,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "49",
+    "price": "99",
     "initialprice": "99",
-    "discount": "51",
+    "discount": "0",
     "ccu": 0
   },
   "1184600": {
@@ -75329,9 +75329,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "2999",
+    "price": "299",
     "initialprice": "2999",
-    "discount": "0",
+    "discount": "90",
     "ccu": 0
   },
   "1230100": {
@@ -77913,9 +77913,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "2799",
+    "price": "3999",
     "initialprice": "3999",
-    "discount": "30",
+    "discount": "0",
     "ccu": 30
   },
   "1271400": {
@@ -78236,9 +78236,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "199",
+    "price": "99",
     "initialprice": "199",
-    "discount": "0",
+    "discount": "50",
     "ccu": 0
   },
   "1275370": {
@@ -88078,9 +88078,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "399",
+    "price": "239",
     "initialprice": "399",
-    "discount": "0",
+    "discount": "40",
     "ccu": 0
   },
   "1411840": {
@@ -88914,9 +88914,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "119",
+    "price": "399",
     "initialprice": "399",
-    "discount": "70",
+    "discount": "0",
     "ccu": 0
   },
   "1423270": {
@@ -90510,9 +90510,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "69",
+    "price": "499",
     "initialprice": "499",
-    "discount": "86",
+    "discount": "0",
     "ccu": 0
   },
   "1442750": {
@@ -99022,9 +99022,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "679",
+    "price": "1999",
     "initialprice": "1999",
-    "discount": "66",
+    "discount": "0",
     "ccu": 0
   },
   "1567020": {
@@ -104418,9 +104418,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "49",
+    "price": "99",
     "initialprice": "99",
-    "discount": "51",
+    "discount": "0",
     "ccu": 0
   },
   "1666310": {
@@ -105615,9 +105615,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "69",
+    "price": "199",
     "initialprice": "199",
-    "discount": "65",
+    "discount": "0",
     "ccu": 0
   },
   "1686680": {
@@ -108617,9 +108617,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "119",
+    "price": "599",
     "initialprice": "599",
-    "discount": "80",
+    "discount": "0",
     "ccu": 0
   },
   "1734470": {
@@ -114963,9 +114963,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "499",
+    "price": "999",
     "initialprice": "999",
-    "discount": "50",
+    "discount": "0",
     "ccu": 0
   },
   "1825550": {
@@ -115666,9 +115666,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "399",
+    "price": "299",
     "initialprice": "399",
-    "discount": "0",
+    "discount": "25",
     "ccu": 2
   },
   "1837840": {
@@ -119922,9 +119922,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "1499",
     "initialprice": "1499",
-    "discount": "80",
+    "discount": "0",
     "ccu": 0
   },
   "1905230": {
@@ -132443,9 +132443,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "51",
+    "price": "399",
     "initialprice": "399",
-    "discount": "87",
+    "discount": "0",
     "ccu": 0
   },
   "2144590": {
@@ -133735,9 +133735,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "209",
+    "price": "699",
     "initialprice": "699",
-    "discount": "70",
+    "discount": "0",
     "ccu": 0
   },
   "2165120": {
@@ -138295,9 +138295,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "69",
+    "price": "499",
     "initialprice": "499",
-    "discount": "86",
+    "discount": "0",
     "ccu": 0
   },
   "2233900": {
@@ -141639,9 +141639,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "149",
+    "price": "999",
     "initialprice": "999",
-    "discount": "85",
+    "discount": "0",
     "ccu": 0
   },
   "2292630": {
@@ -141810,9 +141810,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "499",
+    "price": "999",
     "initialprice": "999",
-    "discount": "50",
+    "discount": "0",
     "ccu": 0
   },
   "2294600": {
@@ -142133,9 +142133,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "224",
     "initialprice": "299",
-    "discount": "0",
+    "discount": "25",
     "ccu": 0
   },
   "2299270": {
@@ -144128,9 +144128,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "599",
     "initialprice": "599",
-    "discount": "50",
+    "discount": "0",
     "ccu": 0
   },
   "2330500": {
@@ -145857,9 +145857,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "2499",
+    "price": "1249",
     "initialprice": "2499",
-    "discount": "0",
+    "discount": "50",
     "ccu": 71
   },
   "2370680": {
@@ -146009,9 +146009,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "749",
+    "price": "999",
     "initialprice": "999",
-    "discount": "25",
+    "discount": "0",
     "ccu": 0
   },
   "2374430": {
@@ -147415,9 +147415,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "159",
+    "price": "399",
     "initialprice": "399",
-    "discount": "60",
+    "discount": "0",
     "ccu": 0
   },
   "2401410": {
@@ -151367,9 +151367,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1299",
+    "price": "129",
     "initialprice": "1299",
-    "discount": "0",
+    "discount": "90",
     "ccu": 0
   },
   "2475480": {
@@ -158081,7 +158081,7 @@
   },
   "2595700": {
     "appid": 2595700,
-    "name": "IDILI",
+    "name": "IDILI: Awakens",
     "developer": "Megalith Interactive Studios",
     "publisher": "Megalith Interactive Studios",
     "score_rank": "",
@@ -158416,9 +158416,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "719",
+    "price": "1199",
     "initialprice": "1199",
-    "discount": "40",
+    "discount": "0",
     "ccu": 11
   },
   "2599480": {
@@ -162558,9 +162558,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "55",
+    "price": "399",
     "initialprice": "399",
-    "discount": "86",
+    "discount": "0",
     "ccu": 0
   },
   "2679590": {
@@ -163869,9 +163869,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "599",
+    "price": "999",
     "initialprice": "999",
-    "discount": "40",
+    "discount": "0",
     "ccu": 0
   },
   "2700570": {
@@ -164800,9 +164800,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1249",
+    "price": "2499",
     "initialprice": "2499",
-    "discount": "50",
+    "discount": "0",
     "ccu": 4
   },
   "2712720": {
@@ -167612,9 +167612,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "719",
+    "price": "999",
     "initialprice": "999",
-    "discount": "28",
+    "discount": "0",
     "ccu": 7
   },
   "2773230": {
@@ -169493,9 +169493,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "77",
+    "price": "599",
     "initialprice": "599",
-    "discount": "87",
+    "discount": "0",
     "ccu": 0
   },
   "2806940": {
@@ -172400,9 +172400,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "124",
+    "price": "499",
     "initialprice": "499",
-    "discount": "75",
+    "discount": "0",
     "ccu": 0
   },
   "2856570": {
@@ -173122,9 +173122,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "55",
+    "price": "399",
     "initialprice": "399",
-    "discount": "86",
+    "discount": "0",
     "ccu": 0
   },
   "2870710": {
@@ -174034,9 +174034,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "209",
+    "price": "299",
     "initialprice": "299",
-    "discount": "30",
+    "discount": "0",
     "ccu": 0
   },
   "2891560": {
@@ -176922,9 +176922,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "194",
     "initialprice": "299",
-    "discount": "0",
+    "discount": "35",
     "ccu": 0
   },
   "2943440": {
@@ -177416,9 +177416,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "104",
+    "price": "349",
     "initialprice": "349",
-    "discount": "70",
+    "discount": "0",
     "ccu": 0
   },
   "2951710": {
@@ -178518,9 +178518,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "449",
+    "price": "499",
     "initialprice": "499",
-    "discount": "10",
+    "discount": "0",
     "ccu": 19
   },
   "2971900": {
@@ -181368,9 +181368,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "399",
+    "price": "999",
     "initialprice": "999",
-    "discount": "60",
+    "discount": "0",
     "ccu": 24
   },
   "3028550": {
@@ -181862,9 +181862,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "119",
+    "price": "599",
     "initialprice": "599",
-    "discount": "80",
+    "discount": "0",
     "ccu": 0
   },
   "3037020": {
@@ -194383,9 +194383,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "299",
+    "price": "149",
     "initialprice": "299",
-    "discount": "0",
+    "discount": "50",
     "ccu": 0
   },
   "3286190": {
@@ -195029,9 +195029,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "1099",
+    "price": "1999",
     "initialprice": "1999",
-    "discount": "45",
+    "discount": "0",
     "ccu": 12
   },
   "3297340": {
@@ -202268,9 +202268,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "199",
+    "price": "111",
     "initialprice": "199",
-    "discount": "0",
+    "discount": "44",
     "ccu": 0
   },
   "3487660": {
@@ -205042,9 +205042,9 @@
     "average_2weeks": 0,
     "median_forever": 0,
     "median_2weeks": 0,
-    "price": "329",
+    "price": "599",
     "initialprice": "599",
-    "discount": "45",
+    "discount": "0",
     "ccu": 0
   },
   "3599470": {
