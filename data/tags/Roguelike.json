@@ -9,14 +9,14 @@
     "negative": 800,
     "userscore": 95,
     "owners": "1,000,000 .. 2,000,000",
-    "average_forever": 405,
-    "average_2weeks": 89,
-    "median_forever": 124,
-    "median_2weeks": 90,
+    "average_forever": 361,
+    "average_2weeks": 104,
+    "median_forever": 133,
+    "median_2weeks": 113,
     "price": "999",
     "initialprice": "999",
     "discount": "0",
-    "ccu": 252
+    "ccu": 303
   },
   "12210": {
     "appid": 12210,
@@ -28,32 +28,13 @@
     "negative": 30079,
     "userscore": 83,
     "owners": "5,000,000 .. 10,000,000",
-    "average_forever": 1752,
-    "average_2weeks": 371,
-    "median_forever": 740,
-    "median_2weeks": 276,
+    "average_forever": 1584,
+    "average_2weeks": 385,
+    "median_forever": 649,
+    "median_2weeks": 250,
     "price": "599",
     "initialprice": "1999",
     "discount": "70",
-    "ccu": 6189
-  },
-  "5285370": {
-    "appid": 5285370,
-    "name": "RetroHub",
-    "developer": "Réseau Inter-Système inc.",
-    "publisher": "Réseau Inter-Système inc.",
-    "score_rank": 100,
-    "positive": 2,
-    "negative": 0,
-    "userscore": 100,
-    "owners": "0 .. 20,000",
-    "average_forever": 0,
-    "average_2weeks": 0,
-    "median_forever": 0,
-    "median_2weeks": 0,
-    "price": "1499",
-    "initialprice": "1499",
-    "discount": "0",
-    "ccu": 0
+    "ccu": 6691
   }
 }
